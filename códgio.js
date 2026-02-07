@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
       let idDestino = "tela-inicial"; // Destino padrão
       
-      if (telaAtual.id === "Classes" || telaAtual.id === "Origens" || telaAtual.id === "Trilhas" || telaAtual.id === "Poderes") {
+      if (telaAtual.id === "Classes" || telaAtual.id === "Origens" || telaAtual.id === "Trilhas" || telaAtual.id === "Poderes" || telaAtual.id === "Poderes Paranormais") {
         idDestino = "Criação_persona";
       } else if (telaAtual.id === "Poderes ocultista" || telaAtual.id === "Poderes especialista" || telaAtual.id === "Poderes combatente") {
         idDestino = "Poderes";
@@ -285,4 +285,143 @@ document.addEventListener('DOMContentLoaded', () => {
     erroMsg: 'Não foi possível carregar as modificações de itens paranormais'
   });
 
+  // 4. Lógica de Busca Simples
+  document.addEventListener('input', (e) => {
+  if (e.target.classList.contains('input-busca')) {
+    const termo = e.target.value.toLowerCase();
+    const idContainer = e.target.getAttribute('data-container');
+    const container = document.getElementById(idContainer);
+    const cards = container.querySelectorAll('.classe-card');
+
+    cards.forEach(card => {
+      const nome = card.querySelector('h2').innerText.toLowerCase();
+      const texto = card.innerText.toLowerCase(); // Pega todo o texto do card
+      if (nome.includes(termo) || texto.includes(termo)) {
+        card.style.display = "block"; // Mostra se bater com a busca
+      } else {
+        card.style.display = "none";  // Esconde se não bater
+      }
+    });
+    } 
+  });
+
+  // 5. Configuração do que vamos procurar dentro dos cards
+    const categoriasParaBuscar = {
+        'Elemento': 'Elemento',
+        'Círculo': 'Círculo',
+        'Origem': 'Origem',
+        'Tag': 'Tag',
+        'Pré-requisito': 'Pré-requisito'
+    };
+
+    const botoesFiltro = document.querySelectorAll('.btn-abrir-filtros');
+
+    // 5.1. Ao clicar no botão Filtros
+    botoesFiltro.forEach(botao => {
+    botao.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const menuDesteBotao = botao.nextElementSibling; // Pega o menu daquela tela específica
+        const telaAtiva = botao.closest('.tela');
+        const containerLista = telaAtiva.querySelector('[id^="lista-"]');
+
+        if (containerLista) {
+            gerarMenuDeFiltros(containerLista, menuDesteBotao); // Passa o menu específico
+            menuDesteBotao.classList.toggle('oculta');
+        }
+      });
+    });
+    // 5.2. Função que cria a lista (O Coração do Código)
+    function gerarMenuDeFiltros(container, menuElemento) {
+        const cards = container.querySelectorAll('.classe-card');
+        const dadosEncontrados = {};
+
+        // Inicializa os arrays vazios
+        for (let chave in categoriasParaBuscar) {
+            dadosEncontrados[chave] = new Set();
+        }
+
+        // Varre cada card para ver o que tem dentro
+        cards.forEach(card => {
+            const strongs = card.querySelectorAll('strong');
+            strongs.forEach(s => {
+                // Verifica se o texto do strong bate com nossas categorias (ex: "Elemento:")
+                const textoLabel = s.innerText.replace(':', '').trim();
+                
+                // Se esse label for um dos que queremos filtrar
+                if (Object.values(categoriasParaBuscar).includes(textoLabel)) {
+                    // Pega o valor (o texto logo depois do strong)
+                    const valor = s.nextSibling.textContent.trim();
+                    
+                    // Acha a chave correta (Ex: Converte "Círculo" para a categoria certa)
+                    const categoriaChave = Object.keys(categoriasParaBuscar).find(key => categoriasParaBuscar[key] === textoLabel);
+                    
+                    if (valor && categoriaChave) {
+                        dadosEncontrados[categoriaChave].add(valor);
+                    }
+                }
+            });
+        });
+
+        // 5.3. Monta o HTML do Menu
+        let htmlMenu = '';
+        
+        // Botão para limpar tudo
+        htmlMenu += `<div class="item-filtro limpar" data-valor="todos">Limpar Filtros</div>`;
+
+        // Para cada categoria que achamos dados
+        for (let [categoria, valores] of Object.entries(dadosEncontrados)) {
+            if (valores.size > 0) {
+                htmlMenu += `<div class="titulo-categoria">${categoria}</div>`;
+                
+                // Transforma o Set em Array e ordena
+                const listaOrdenada = Array.from(valores).sort();
+                
+                listaOrdenada.forEach(valor => {
+                    htmlMenu += `<div class="item-filtro" data-valor="${valor}">↳ ${valor}</div>`;
+                });
+            }
+        }
+
+        // Se não achou nada
+        if (htmlMenu === `<div class="item-filtro limpar" data-valor="todos">Limpar Filtros 🗑️</div>`) {
+            htmlMenu = '<div class="aviso-vazio">Nada para filtrar aqui.</div>';
+        }
+
+      menuElemento.innerHTML = htmlMenu;
+    }
+
+    // 5.4. Lógica do Clique no Item do Menu (Corrigida para múltiplos menus)
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('item-filtro')) {
+            const valorClicado = e.target.getAttribute('data-valor').toLowerCase();
+            
+            // Acha o menu onde o item está, a tela e o container de cards
+            const menu = e.target.closest('.menu-filtros-flutuante');
+            const telaAtiva = menu.closest('.tela');
+            const container = telaAtiva.querySelector('[id^="lista-"]');
+            const cards = container.querySelectorAll('.classe-card');
+
+            cards.forEach(card => {
+                if (valorClicado === 'todos') {
+                    card.style.display = 'block';
+                } else {
+                    const textoCard = card.innerText.toLowerCase();
+                    card.style.display = textoCard.includes(valorClicado) ? 'block' : 'none';
+                }
+            });
+
+            // Fecha o menu específico que foi usado
+            menu.classList.add('oculta');
+        }
+    });
+
+    // 5.5. Fecha qualquer menu se clicar fora dele (Corrigida)
+    document.addEventListener('click', (e) => {
+        // Se o clique NÃO foi em um botão de abrir filtro E NÃO foi dentro de um menu
+        if (!e.target.classList.contains('btn-abrir-filtros') && !e.target.closest('.menu-filtros-flutuante')) {
+            document.querySelectorAll('.menu-filtros-flutuante').forEach(menu => {
+                menu.classList.add('oculta');
+            });
+        }
+    });
 });
