@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Estilo.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title> Arquivos Ordem Paranormal</title>
+    <Style>
+    html, body {
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    </Style>
+</head>
+<body id = "fundo">
+    <div class ="caixa">
+        <div id="tela-inicial" class="tela ativa">
+        <p class="centralizar">Um site para que seja possivel organizar as informações espalhadas entre o livro de regras, os suplementos, e outros materiais da Ordem Paranormal.</p>
+        <div class="centralizar">
+            <button class="btn-navegar" data-destino="Criação_persona">Criação de Personagens</button>
+            <button class="btn-navegar" data-destino="Itens">Itens</button>
+            <button class="btn-navegar" data-destino="Regras">Regras</button>
+        </div>
+        </div>
+
+        <div id="Criação_persona" class="tela oculta">
+        <h1>Criação de Personagens</h1>
+        <div class="centralizar">
+            <button class="btn-navegar" data-destino="Classes">Classes</button>
+            <button class="btn-navegar" data-destino="Origens">Origens</button>
+            <button class="btn-voltar">Voltar</button>
+        </div>
+        </div>
+
+        <div id="Itens" class="tela oculta">
+        <h1>Itens</h1>
+        <div class="centralizar">
+            <button class="btn-voltar">Voltar</button>
+        </div> 
+        </div>
+        
+        <div id="Regras" class="tela oculta">
+        <h1>Regras</h1>
+        <div class="centralizar">
+            <button class="btn-voltar">Voltar</button>
+        </div> 
+        </div>
+
+        <div id="Classes" class="tela oculta">
+        <h1>Classes</h1>
+        <div id="lista-classes"></div>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+
+        <div id="Origens" class="tela oculta">
+        <h1>Origens</h1>
+        <div id="lista-origens"></div>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+
+        <footer class="rodape">
+            <p>Ordem Paranormal é um produto da Jambô Editora e seus respectivos criadores, todos os direitos reservados.</p>
+            <p>Arquivos Ordem Paranormal is unofficial Fan Content permitted under the Fan Content Policy. </p>
+        </footer>
+    
+    </div>
+        
+    <script src="códgio.js"></script>
+</body>
+</html>

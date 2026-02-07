@@ -1,0 +1,16 @@
+# Ignore arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+
+# Ignore logs
+*.log
+
+# Ignore arquivos de cache do editor (exemplo: VSCode)
+.vscode/
+
+# Ignore node_modules caso use npm ou yarn (não aparece na sua lista)
+node_modules/
+
+# Ignore arquivos de build/output (caso tenha)
+dist/
+build/

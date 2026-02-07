@@ -1,0 +1,30 @@
+[
+    {
+        "id":"ocultista",
+        "nome":"Ocultista",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"O ocultista é um indivíduo que se dedica ao estudo e prática do paranormal."
+    },
+    {
+        "id":"combatente",
+        "nome":"Combatente",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"O combatente é um indivíduo que se dedica ao combate, é o tank do grupo."
+    },
+    {
+        "id":"especialista",
+        "nome":"Especialista",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"O especialista é um indivíduo que se dedica ao aprimoramento de habilidades específicas, trazendo versatilidade ao grupo."
+    },
+    {
+        "id":"sobrevivente",
+        "nome":"Sobrevivente",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"O sobrevivente é um indivíduo que ainda não teve contato com o paranormal, uma pessoa comum."
+    }
+]

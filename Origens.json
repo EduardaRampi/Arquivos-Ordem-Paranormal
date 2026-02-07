@@ -1,0 +1,408 @@
+[
+    {
+        "id":"academico",
+        "nome":"Acadêmico",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você era um pesquisador ou professor universitário."
+    },
+    {
+        "id":"agente_de_saude",
+        "nome":"Agente de Saúde",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você era um profissional da área de saúde, como médico, enfermeiro ou farmacêutico, psicólogo ou socorrista."
+    },
+    {
+        "id":"amnesico",
+        "nome":"Amnésico",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você perdeu parte de suas memórias."
+    },
+    {
+        "id":"artista",
+        "nome":"Artista",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você era um ator, músico, escritor, dançarino, influenciador ..."
+    },
+    {
+        "id":"atleta",
+        "nome":"Atleta",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você competia em esportes individuais ou coletivos, como natação ou futebol."
+    },
+    {
+        "id":"chef",
+        "nome":"Chef",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você era um cozinheiro amador ou profissional."
+    },
+    {
+        "id":"criminoso",
+        "nome":"Criminoso",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você vivia uma vida fora da lei, seja como mero batedor de carteiras, seja como membro de uma facção criminosa."
+    },
+    {
+        "id":"cultista_arrependido",
+        "nome":"Cultista Arrependido",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você fez parte de um culto paranormal."
+    },
+    {
+        "id":"desgarrado",
+        "nome":"Desgarrado",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você não vivia de acordo com as normas da sociedade."
+    },
+    {
+        "id":"engenheiro",
+        "nome":"Engenheiro",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você era um engenheiro, seja civil, mecânico, elétrico."
+    },
+    {
+        "id":"executivo",
+        "nome":"Executivo",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você possuía um trabalho de escritório em uma grande empresa, banco ou corporação."
+    },
+    {
+        "id":"investigador",
+        "nome":"Investigador",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você era um investigador do governo, como um perito forense ou policial federal, ou privado, como um detetive particular."
+    },
+    {
+        "id":"lutador",
+        "nome":"Lutador",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você pratica uma arte marcial ou esporte de luta, ou cresceu em um bairro perigoso onde aprendeu briga de rua."
+    },
+    {
+        "id":"magnata",
+        "nome":"Magnata",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você possui muito dinheiro ou patrimônio."
+    },
+    {
+        "id":"mercenario",
+        "nome":"Mercenário",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você é um soldado de aluguel, que trabalha sozinho ou como parte de alguma organização que vende serviços militares."
+    },
+    {
+        "id":"militar",
+        "nome":"Militar",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você serviu nas forças militares, como o exército ou a marinha."
+    },
+    {
+        "id":"operario",
+        "nome":"Operário",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você passou uma parte de sua vida em um emprego braçal."
+    },
+    {
+        "id":"policial",
+        "nome":"Policial",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você fez parte de uma força de segurança pública, civil ou militar."
+    },
+    {
+        "id":"religioso",
+        "nome":"Religioso",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você é devoto ou sacerdote de uma fé."
+    },
+    {
+        "id":"servidor_publico",
+        "nome":"Servidor Público",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você possuía carreira em um órgão do governo, lidando com burocracia e atendendo pessoas."
+    },
+    {
+        "id":"teorico_da_conspiracao",
+        "nome":"Teórico da Conspiração",    
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você é um teórico da conspiração, alguém que acredita em teorias conspiratórias e as compartilha com outras pessoas."
+    },
+    {
+        "id":"ti",
+        "nome":"T.I.",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você trabalha com tecnologia da informação, seja como programador, analista de sistemas ou especialista em segurança da informação."
+    },
+    {
+        "id":"trambiqueiro",
+        "nome":"Trambiqueiro",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você vivia de pequenos golpes, jogatina ilegal e falcatruas."
+    },
+    {
+        "id":"universitario",
+        "nome":"Universitário",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você era um aluno de uma faculdade."
+    }, 
+    {
+        "id":"vitima",
+        "nome":"Vítima",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Em algum momento de sua vida você encontrou o paranormal e a experiência não foi boa."
+    },
+    {
+        "id":"amigo_dos_animais",
+        "nome":"Amigo dos Animais",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você desenvolve uma conexão especial com outros seres: os animais."
+    },
+    {
+        "id":"astronauta",
+        "nome":"Astronauta",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você é um astronauta, alguém que viajou para o espaço e teve experiências únicas fora da Terra."
+    },
+    {
+        "id":"chef_do_outro_lado",
+        "nome":"Chef do Outro Lado",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você é um chef que teve contato com o outro lado, trazendo influências sobrenaturais para sua culinária."
+    },
+    {
+        "id":"colegial",
+        "nome":"Colegial",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você era um aluno do colegial e tinha uma rotina baseada nos estudos, nas amizades e nos dramas típicos de alguém da sua idade."
+    },
+    {
+        "id":"cosplayer",
+        "nome":"Cosplayer",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você é apaixonado pela arte do cosplay e dedicou sua vida a criar a melhor fantasia possível."
+    },
+    {
+        "id":"diplomata",
+        "nome":"Diplomata",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você atuava em uma área onde as habilidades sociais e políticas eram ferramentas indispensáveis."
+    }, 
+    {
+        "id":"explorador",
+        "nome":"Explorador",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você é uma pessoa que se interessa muito por história ou geografia, frequentemente embarcando em trilhas e explorações para enriquecer seus estudos."
+    },
+    {
+        "id":"experimento",
+        "nome":"Experimento",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você foi uma cobaia em um experimento físico."
+    },
+    {
+        "id":"fanatico_por_criaturas",
+        "nome":"Fanático por Criaturas",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você sempre foi obcecado pelo sobrenatural."
+    },
+    {
+        "id":"fotografo",
+        "nome":"Fotógrafo",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você é um artista visual que usa câmeras para capturar momentos e transmitir histórias através de imagens estáticas."
+    },
+    {
+        "id":"inventor_paranormal",
+        "nome":"Inventor Paranormal",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você é um inventor que explora o desconhecido, criando dispositivos e soluções inspiradas pelo sobrenatural."
+    },
+    {
+        "id":"jovem_mistico",
+        "nome":"Jovem Místico",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você possui uma profunda conexão com sua espiritualidade, suas crenças ou o próprio universo."
+    },
+    {
+        "id":"legista_do_turno_da_noite",
+        "nome":"Legista do Turno da Noite", 
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você é um legista que trabalha durante a noite, lidando com os mistérios da morte e do além."
+    },
+    {
+        "id":"mateiro",
+        "nome":"Mateiro",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você conhece áreas rurais e selvagens."
+    },
+    {
+        "id":"mergulhador",
+        "nome":"Mergulhador",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você é um mergulhador, alguém que explora as profundezas do oceano e os mistérios que ele guarda."
+    },
+    {
+        "id":"motorista",
+        "nome":"Motorista",
+        "origem":"Sobrevivendo ao Horror",  
+        "tag":"",
+        "descricao":"Você é um caminhoneiro, motorista de aplicativo, motoboy, piloto de corrida, motorista de ambulância ou qualquer outro tipo de condutor profissional."
+    },
+    {
+        "id":"nerd_entusiasta",
+        "nome":"Nerd Entusiasta",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você dedicou muito do seu tempo aprendendo sobre videogames, RPGs de mesa, ficção científica ou qualquer outro assunto considerado nerd."
+    },
+    {
+        "id":"psicologo",
+        "nome":"Psicólogo", 
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você se especializou no estudo e tratamento das questões mentais do ser humano."
+    },
+    {
+        "id":"profetizado",
+        "nome":"Profetizado",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você sabe como você vai morrer."
+    },
+    {
+        "id":"reporter_investigativo",              
+        "nome":"Repórter Investigativo",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você está sempre em busca de histórias significativas, investigando eventos, entrevistando fontes e analisando dados para descobrir a verdade por trás dos acontecimentos."
+    }, 
+    {
+        "id":"ferrido_por_ritual",
+        "nome":"Ferrido por Ritual",
+        "origem":"Arquivos Secretos",
+        "tag":"Janeiro-2026",
+        "descricao":"Você tinha uma vida ordinária, até sofrer os efeitos paranormais de um ritual."
+    },
+    {
+        "id":"transtornado_arrependido",
+        "nome":"Transtornado Arrependido",
+        "origem":"Arquivos Secretos",
+        "tag":"Janeiro-2026",
+        "descricao":"Você já caminhou entre os Transtornados."
+    },
+    {
+        "id":"jornalista",
+        "nome":"Jornalista",
+        "origem":"Marca página",
+        "tag":"Thiago",
+        "descricao":"Você atuava investigando notícias para um jornal, rede de televisão, blog, canal do Youtube ..."
+    },
+    {
+        "id":"cientista_forense",
+        "nome":"Cientista Forense",
+        "origem":"Marca página",
+        "tag":"Liz",
+        "descricao":"Você trabalhava coletando provas para resolução de crimes."
+    },
+    {
+        "id":"escritor",
+        "nome":"Escritor",
+        "origem":"Marca página",
+        "tag":"Daniel",
+        "descricao":"Você ganhava a vida inventando mundos, pessoas e histórias."
+    },
+    {
+        "id":"professor",
+        "nome":"Professor",
+        "origem":"Marca página",
+        "tag":"Alex",
+        "descricao":"Você lecionava em uma escola ou universidade, ensinando ciências, artes ou outro campo do saber."
+    },
+    {
+        "id":"revoltado",
+        "nome":"Revoltado",
+        "origem":"Marca página",
+        "tag":"Cesar",
+        "descricao":"Alguma coisa aconteceu em sua juventude que fez com que você se rebelasse contra o mundo ao seu redor."
+    },
+    {
+        "id":"duble",
+        "nome":"Dublê",
+        "origem":"Marca página",
+        "tag":"Cris",
+        "descricao":"Você sempre combinou um gosto por alta velocidade, manobras ousadas e esportes radicais com uma total falta de noção de perigo."
+    },
+    {
+        "id":"ginasta",
+        "nome":"Ginasta",
+        "origem":"Marca página",
+        "tag":"Joui",
+        "descricao":"Você passou a maior parte de sua vida em ginásios praticando as mais difíceis acrobacias."
+    },
+    {
+        "id":"gauderio_abutre",
+        "nome":"Gaudério Abutre",
+        "origem":"Marca página",
+        "tag":"Arthur",
+        "descricao":"Você fez parte dos valorosos Gaudérios Abutres."
+    },
+    {
+        "id":"body_builder",
+        "nome":"Body Builder",
+        "origem":"Marca página",
+        "tag":"Miguel",
+        "descricao":"Você é um bodybuilder, alguém que dedica sua vida a esculpir o corpo através de treinamento intenso e dieta rigorosa."
+    },
+    {
+        "id":"personal_trainer",
+        "nome":"Personal Trainer",
+        "origem":"Marca página",
+        "tag":"Mariana",
+        "descricao":"Você é um personal trainer, alguém que ajuda outras pessoas a alcançarem seus objetivos de fitness e saúde através de treinamento personalizado."
+    },
+    {
+        "id":"blaster",
+        "nome":"Blaster",
+        "origem":"Marca página",
+        "tag":"Kenan",
+        "descricao":"Você foi responsavel por conduzir e inspecionar explosivos."
+    }
+]
