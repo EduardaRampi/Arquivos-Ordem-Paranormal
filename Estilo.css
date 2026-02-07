@@ -54,15 +54,18 @@ footer {
 }
 footer p {
     margin: 5px;
-
 }
-#lista-classes, #lista-origens {
+footer .canto {
+    text-align: right;
+    font-size: 10px;
+    color: rgb(180, 180, 180);
+}
+#lista-classes, #lista-origens, #lista-trilhas-ocultista, #lista-trilhas-especialista, #lista-trilhas-combatente, #lista-poderes, #lista-poderes-ocultista, #lista-poderes-especialista, #lista-poderes-combatente, #lista-poderes-sangue, #lista-poderes-morte, #lista-poderes-conhecimento, #lista-poderes-energia{
     display: grid;
     margin: 10px;
-    /* O segredo: ele calcula quantas colunas cabem com no mínimo 200px */
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
-    justify-items: center; /* Centraliza o card dentro da "célula" do grid */
+    justify-items: center;
 }
 .classe-card{
     width: 100%;

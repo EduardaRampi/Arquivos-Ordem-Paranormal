@@ -20,10 +20,14 @@
     <div class ="caixa">
         <div id="tela-inicial" class="tela ativa">
         <p class="centralizar">Um site para que seja possivel organizar as informações espalhadas entre o livro de regras, os suplementos, e outros materiais da Ordem Paranormal.</p>
+        <p class="centralizar">Clique nos botões abaixo para navegar entre as seções:</p>
         <div class="centralizar">
             <button class="btn-navegar" data-destino="Criação_persona">Criação de Personagens</button>
             <button class="btn-navegar" data-destino="Itens">Itens</button>
+            <button class="btn-navegar" data-destino="Rituais">Rituais</button>
             <button class="btn-navegar" data-destino="Regras">Regras</button>
+            <button class="btn-navegar" data-destino="Criaturas">Criaturas</button>
+            <button class="btn-navegar" data-destino="Missões">Missões</button>
         </div>
         </div>
 
@@ -32,6 +36,9 @@
         <div class="centralizar">
             <button class="btn-navegar" data-destino="Classes">Classes</button>
             <button class="btn-navegar" data-destino="Origens">Origens</button>
+            <button class="btn-navegar" data-destino="Trilhas">Trilhas</button>
+            <button class="btn-navegar" data-destino="Poderes">Poderes</button>
+            <button class="btn-navegar" data-destino="Poderes Paranormais">Poderes Paranormais</button>
             <button class="btn-voltar">Voltar</button>
         </div>
         </div>
@@ -43,8 +50,29 @@
         </div> 
         </div>
         
+        <div id="Rituais" class="tela oculta">
+        <h1>Rituais</h1>
+        <div class="centralizar">
+            <button class="btn-voltar">Voltar</button>
+        </div> 
+        </div>
+
         <div id="Regras" class="tela oculta">
         <h1>Regras</h1>
+        <div class="centralizar">
+            <button class="btn-voltar">Voltar</button>
+        </div> 
+        </div>
+
+        <div id="Criaturas" class="tela oculta">
+        <h1>Criaturas</h1>
+        <div class="centralizar">
+            <button class="btn-voltar">Voltar</button>
+        </div> 
+        </div>
+        
+        <div id="Missões" class="tela oculta">
+        <h1>Missões</h1>
         <div class="centralizar">
             <button class="btn-voltar">Voltar</button>
         </div> 
@@ -59,6 +87,98 @@
         <div id="Origens" class="tela oculta">
         <h1>Origens</h1>
         <div id="lista-origens"></div>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+
+        <div id="Trilhas" class="tela oculta">
+        <h1>Trilhas</h1>
+        <div class="centralizar">
+            <button class="btn-navegar" data-destino="Trilhas ocultista">Trilhas de Ocultista</button>
+            <button class="btn-navegar" data-destino="Trilhas especialista">Trilhas de Especialista</button>
+            <button class="btn-navegar" data-destino="Trilhas combatente">Trilhas de Combatente</button>
+            <button class="btn-voltar">Voltar</button>
+        </div> 
+        </div>
+
+        <div id="Poderes" class="tela oculta">
+        <h1>Poderes Gerais</h1>
+        <div id="lista-poderes"></div>
+        <div class="centralizar">
+            <button class="btn-navegar" data-destino="Poderes ocultista">Poderes de Ocultista</button>
+            <button class="btn-navegar" data-destino="Poderes especialista">Poderes de Especialista</button>
+            <button class="btn-navegar" data-destino="Poderes combatente">Poderes de Combatente</button>
+            <button class="btn-voltar">Voltar</button>
+        </div> 
+        </div>
+
+        <div id="Poderes Paranormais" class="tela oculta">
+        <h1>Poderes Paranormais</h1>
+        <div class="centralizar">
+            <button class="btn-navegar" data-destino="Poderes Sangue">Poderes de Sangue</button>
+            <button class="btn-navegar" data-destino="Poderes Morte">Poderes de Morte</button>
+            <button class="btn-navegar" data-destino="Poderes Conhecimento">Poderes de Conhecimento</button>
+            <button class="btn-navegar" data-destino="Poderes Energia">Poderes de Energia</button>            
+            <button class="btn-voltar">Voltar</button>
+        </div>
+        </div>
+
+        <div id="Poderes ocultista" class="tela oculta">
+        <h1>Poderes de Ocultista</h1>
+        <div id="lista-poderes-ocultista"></div>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+
+        <div id="Poderes especialista" class="tela oculta">
+        <h1>Poderes de Especialista</h1>
+        <div id="lista-poderes-especialista"></div>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+
+        <div id="Poderes combatente" class="tela oculta">
+        <h1>Poderes de Combatente</h1>
+        <div id="lista-poderes-combatente"></div>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+
+        <div id="Trilhas ocultista" class="tela oculta">
+        <h1>Trilhas de Ocultista</h1>
+        <div id="lista-trilhas-ocultista"></div>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+
+        <div id="Trilhas especialista" class="tela oculta">
+        <h1>Trilhas de Especialista</h1>
+        <div id="lista-trilhas-especialista"></div>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+
+        <div id="Trilhas combatente" class="tela oculta">
+        <h1>Trilhas de Combatente</h1>
+        <div id="lista-trilhas-combatente"></div>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+
+        <div id="Poderes Sangue" class="tela oculta">
+        <h1>Poderes de Sangue</h1>
+        <div id="lista-poderes-sangue"></div>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+
+        <div id="Poderes Morte" class="tela oculta">
+        <h1>Poderes de Morte</h1>
+        <div id="lista-poderes-morte"></div>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+
+        <div id="Poderes Conhecimento" class="tela oculta">
+        <h1>Poderes de Conhecimento</h1>
+        <div id="lista-poderes-conhecimento"></div>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+
+        <div id="Poderes Energia" class="tela oculta">
+        <h1>Poderes de Energia</h1>
+        <div id="lista-poderes-energia"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 

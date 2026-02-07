@@ -1,0 +1,65 @@
+[
+    {
+        "id":"conduite",
+        "nome":"Conduíte",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você domina os aspectos fundamentais da conjuração de rituais e é capaz de aumentar o alcance e velocidade de suas conjurações."
+    },
+    {
+        "id":"flagelador",
+        "nome":"Flagelador",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Dor é um poderoso catalisador paranormal e você aprendeu a transformá-la em poder para seus rituais."
+    },
+    {
+        "id":"graduado",
+        "nome":"Graduado",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você foca seus estudos em se tornar um conjurador versátil e poderoso, conhecendo mais rituais que os outros ocultistas e sendo capaz de torná-los mais difíceis de serem resistidos."
+    },
+    {
+        "id":"intuitivo",
+        "nome":"Intuitivo",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Seu foco e força de vontade fazem com que você expanda os limites de suas capacidades paranormais."
+    },
+    {
+        "id":"lamina_paranormal",
+        "nome":"Lâmina Paranormal",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você, prefere usar o paranormal como uma arma."
+    },
+    {
+        "id":"exorcista",
+        "nome":"Exorcista",
+        "origem":"Sobrivivendo ao Horror",
+        "tag":"",
+        "descricao":"Com sua fé como escudo e suas palavras como espada, independente de sua religião ou crença, você mergulha na escuridão, onde a Realidade e o Outro Lado travam uma batalha pelo medo humano."
+    }, 
+    {
+        "id":"possuido",
+        "nome":"Possuído",
+        "origem":"Sobrivivendo ao Horror",
+        "tag":"",
+        "descricao":"Você nunca quis contato com o Outro Lado, mas ele parece ter especialmente escolhido você para perseguir."
+    },
+    {
+        "id":"parapsicologo",
+        "nome":"Parapsicólogo",
+        "origem":"Sobrivivendo ao Horror",
+        "tag":"",
+        "descricao":"Se o paranormal pode ser usado para perturbar, também pode ser usado para sanar."
+    },
+    {
+        "id":"maledictologo",
+        "nome":"Maledictólogo",
+        "origem":"Arquivos Secretos",
+        "tag":"Janeiro-2026",
+        "descricao":"Compreender o paranormal fica cada vez mais prático com o tempo."
+    }
+]

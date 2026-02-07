@@ -1,0 +1,58 @@
+[
+    {
+        "id":"atirador_de_elite",
+        "nome":"Atirador de Elite",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você trata sua arma como uma ferramenta de precisão, sendo capaz de executar façanhas incríveis."
+    },
+    {
+        "id":"infiltrador",
+        "nome":"Infiltrador",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você é um perito em infiltração e sabe neutralizar alvos desprevenidos sem causar alarde."
+    },
+    {
+        "id":"medico_de_campo",
+        "nome":"Médico de Campo",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você é treinado em técnicas de primeiros socorros e tratamento de emergência, o que torna você um membro valioso para qualquer grupo de agentes."
+    },
+    {
+        "id":"negociador",
+        "nome":"Negociador",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você é um diplomata habilidoso e consegue influenciar outras pessoas, seja por lábia ou intimidação."
+    },
+    {
+        "id":"tecnico",
+        "nome":"Técnico",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Sua principal habilidade é a manutenção e reparo do valioso equipamento que seu time carrega em missão."
+    },
+    {
+        "id":"bibliotecario",
+        "nome":"Bibliotecário",
+        "origem":"Sobrivivendo ao Horror",
+        "tag":"",
+        "descricao":"Poucas pessoas lêem tanto quanto você, mas diferente do que imaginam, passar a vida cercado de conhecimento não o torna menos apto."
+    }, 
+    {
+        "id":"perseverante",
+        "nome":"Perseverante",
+        "origem":"Sobrivivendo ao Horror",
+        "tag":"",
+        "descricao":"Você sabe que é um sobrevivente"
+    },
+    {
+        "id":"muambeiro",
+        "nome":"Muambeiro",
+        "origem":"Sobrivivendo ao Horror",
+        "tag":"",
+        "descricao":"Você sempre foi bom em lidar com equipamentos, e aprendeu como produzir ou encontrar, os itens certos em qualquer ocasião."
+    }
+]

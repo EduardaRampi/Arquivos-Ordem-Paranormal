@@ -1,0 +1,58 @@
+[
+    {
+        "id":"aniquilador",
+        "nome":"Aniquilador",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você é treinado para abater alvos com eficiência evelocidade."
+    },
+    {
+        "id":"comandante_de_campo",
+        "nome":"Comandante de Campo",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você é treinado para coordenar e auxiliar seus companheiros em combate, tomando decisões rápidas e tirando melhor proveito da situação e do talento de seus aliados."
+    },
+    {
+        "id":"guerreiro",
+        "nome":"Guerreiro",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você treinou sua musculatura e movimentos a ponto de transformar seu corpo em uma verdadeira arma."
+    },
+    {
+        "id":"operacoes_especiais",
+        "nome":"Operações Especiais",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você é um combatente eficaz."
+    },
+    {
+        "id":"tropa_de_choque",
+        "nome":"Tropa de Choque",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você é duro na queda."
+    },
+    {
+        "id":"agente_secreto",
+        "nome":"Agente Secreto",
+        "origem":"Sobrivivendo ao Horror",
+        "tag":"",
+        "descricao":"Às vezes, um governo precisa lidar com um problema de forma discreta — por precisar operar fora de sua jurisdição, para não assustar a população ou por vários outros motivos."
+    },
+    {
+        "id":"cacador",
+        "nome":"Caçador",
+        "origem":"Sobrivivendo ao Horror",
+        "tag":"",
+        "descricao":"Em um mundo cheio de predadores sobrenaturais, você decidiu não ser mais uma presa."
+    }, 
+    {
+        "id":"monstruoso",
+        "nome":"Monstruoso",
+        "origem":"Sobrivivendo ao Horror",
+        "tag":"",
+        "descricao":"Você propositalmente desfigura e altera seu corpo para que as Entidades o invadam com maior intensidade"
+    }
+]
