@@ -1,0 +1,227 @@
+[
+    {
+        "id":"armamento_pesado",
+        "nome":"Armamento Pesado",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você recebe proficiência com armas pesadas.",
+        "PreR":"For 2"
+    },
+    {
+        "id":"artista_marcial",
+        "nome":"Artista Marcial",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Seus ataques desarmados causam 1d6 pontos de dano, podem causar dano letal e se tornam ágeis."
+    },
+    {
+        "id":"ataque_de_oportunidade",
+        "nome":"Ataque de Oportunidade",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Sempre que um ser sair voluntariamente de um espaço adjacente ao seu, você pode gastar uma reação e 1 PE para fazer um ataque corpo a corpo contra ele."
+    },
+    {
+        "id":"combater_com_duas_armas",
+        "nome":"Combater com Duas Armas",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Se estiver empunhando duas armas (pelo menos uma leve) e fizer a ação agredir, pode fazer dois ataques, um com cada arma",
+        "PreR":"Agi 3, treinado em Luta ou Pontaria"
+    },
+    {
+        "id":"combate_defensivo",
+        "nome":"Combate Defensivo",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Ao usar a ação agredir, pode combater defensivamente.",
+        "PreR":"Int 2"
+    },
+    {
+        "id":"golpe_demolidor",
+        "nome":"Golpe Demolidor",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Quando usa a manobra quebrar ou ataca um objeto, pode gastar 1 PE para causar dois dados de dano extra do mesmo tipo da arma.",
+        "PreR":"For 2, treinado em Luta"
+    },
+    {
+        "id":"golpe_pesado",
+        "nome":"Golpe Pesado",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Enquanto estiver empunhando uma arma corpo a corpo, o dano dela aumenta em mais um dado do mesmo tipo."
+    },
+    {
+        "id":"incansavel",
+        "nome":"Incansável",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Uma vez por cena, pode gastar 2 PE para fazer uma ação de investigação adicional, usando Força ou Agilidade como atributo-base do teste."
+    },
+    {
+        "id":"presteza_atletica",
+        "nome":"Presteza Atlética",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Ao fazer um teste de facilitar investigação, pode gastar 1 PE para usar Força ou Agilidade no lugar do atributo-base."
+    },
+    {
+        "id":"protecao_pesada",
+        "nome":"Proteção Pesada",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você recebe proficiência com Proteções Pesadas.",
+        "PreR":"NEX 30%"
+    },
+    {
+        "id":"reflexos_defensivos",
+        "nome":"Reflexos Defensivos",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você recebe +2 em Defesa e em testes de resistência.",
+        "PreR":"Agi 2"
+    },
+    {
+        "id":"saque_rapido",
+        "nome":"Saque Rápido",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Pode sacar ou guardar itens como ação livre. Se estiver usando a regra opcional de munição, uma vez por rodada pode recarregar uma arma de disparo como ação livre.",
+        "PreR":"Treinado em Iniciativa"
+    },
+    {
+        "id":"segurar_o_gatilho",
+        "nome":"Segurar o Gatilho",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Sempre que acerta um ataque com uma arma de fogo, pode fazer outro ataque com a mesma arma contra o mesmo alvo, pagando 2 PE por cada ataque extra.",
+        "PreR":"NEX 60%"
+    },
+    {
+        "id":"sentido_tatico",
+        "nome":"Sentido Tático",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Pode gastar uma ação de movimento e 2 PE para analisar o ambiente. Recebe bônus em Defesa e testes de resistência igual ao seu Intelecto até o fim da cena.",
+        "PreR":"Int 2, treinado em Percepção e Tática"
+    },
+    {
+        "id":"tanque_de_guerra",
+        "nome":"Tanque de Guerra",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Se estiver usando proteção pesada, a Defesa e a resistência a dano que ela fornece aumentam em +2.",
+        "PreR":"Proteção Pesada"
+    },
+    {
+        "id":"tiro_certeiro",
+        "nome":"Tiro Certeiro",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Se estiver usando uma arma de disparo, soma sua Agilidade nas rolagens de dano e ignora a penalidade contra alvos em combate corpo a corpo.",
+        "PreR":"Treinado em Pontaria"
+    },
+    {
+        "id":"tiro_de_cobertura",
+        "nome":"Tiro de Cobertura",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Pode gastar uma ação padrão e 1 PE para disparar uma arma de fogo em direção a um ser para forçá-lo a se proteger."
+    },
+    {
+        "id":"transcender",
+        "nome":"Transcender",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Escolha um poder paranormal. Você recebe o poder, mas não ganha Sanidade neste aumento de NEX. Pode escolher este poder várias vezes."
+    },
+    {
+        "id":"treinamento_em_pericia",
+        "nome":"Treinamento em Perícia",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Escolha duas perícias. Torna-se treinado nelas. Pode escolher este poder várias vezes."
+    },
+    {
+        "id":"apego_angustiado",
+        "nome":"Apego Angustiado",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Não importa o quão profundos sejam seus ferimentos, você escolhe a agonia da dor a perder a consciência diante da própria morte."
+    },
+    {
+        "id":"caminho_para_forca",
+        "nome":"Caminho para Forca",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Se for para alguém do seu grupo ser pego, que seja você."
+    },
+    {
+        "id":"ciente_das_cicatrizes",
+        "nome":"Ciente das Cicatrizes",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Acostumado a manusear armas, você aprendeu a identificar as marcas que elas deixam.",
+        "PreR":"Treinado em Luta ou Pontaria"
+    },
+    {
+        "id":"correria_desesperada",
+        "nome":"Correria Desesperada",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você aprendeu que às vezes fugir é a única chance de vitória."
+    },
+    {
+        "id":"engolir_o_choro",
+        "nome":"Engolir o Choro",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Mesmo ferido, você não vai emitir um pio até que a ameaça se afaste."
+    },
+    {
+        "id":"instinto_de_fuga",
+        "nome":"Instinto de Fuga",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você desenvolveu um sexto sentido para prever quando é hora de fugir.",
+        "PreR":"Treinado em Intuição"
+    },
+    {
+        "id":"mochileiro",
+        "nome":"Mochileiro",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você aprendeu a carregar tudo que precisa ao fugir.",
+        "PreR":"Vig 2"
+    },
+    {
+        "id":"paranoia_defensiva",
+        "nome":"Paranoia Defensiva",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Uma vez por cena, pode gastar uma rodada e 3 PE. Você e cada aliado presente escolhem entre receber +5 na Defesa contra o próximo ataque na cena ou +5 em um único teste de perícia feito até o fim da cena."
+    },
+    {
+        "id":"sacrificar_os_joelhos",
+        "nome":"Sacrificar os Joelhos",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Diante de algo que não pode ser vencido, você abre mão da autopreservação para superar seus limites de fuga.",
+        "PreR":"Treinado em Atletismo"
+    },
+    {
+        "id":"sem_tempo_irmao",
+        "nome":"Sem Tempo, Irmão",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Em cenas de investigação, ao usar a ação facilitar investigação, pode gastar 2 PE para prestar ajuda apressada."
+    },
+    {
+        "id":"valentao",
+        "nome":"Valentão",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você aprendeu que a brutalidade amedronta."
+    }
+]

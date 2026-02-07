@@ -1,0 +1,193 @@
+[
+    {
+        "id":"artista_marcial",
+        "nome":"Artista Marcial",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Seus ataques desarmados causam 1d6 pontos de dano, podem causar dano letal e contam como armas ágeis. Em NEX 35%, o dano aumenta para 1d8 e, em NEX 70%, para 1d10."
+    },
+    {
+        "id":"balistica_avancada",
+        "nome":"Balística Avançada",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você recebe proficiência com armas táticas de fogo e +2 em rolagens de dano com armas de fogo."
+    },
+    {
+        "id":"conhecimento_aplicado",
+        "nome":"Conhecimento Aplicado",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Quando faz um teste de perícia (exceto Luta e Pontaria), você pode gastar 2 PE para mudar o atributo-base da perícia para Int.",
+        "PreR":"Int 2"
+    },
+    {
+        "id":"hacker",
+        "nome":"Hacker",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você recebe +5 em testes de Tecnologia para invadir sistemas e diminui o tempo necessário para hackear qualquer sistema para uma ação completa.",
+        "PreR":"Treinado em Tecnologia"
+    },
+    {
+        "id":"maos_rapidas",
+        "nome":"Mãos Rápidas",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Ao fazer um teste de Crime, você pode pagar 1 PE para fazê-lo como uma ação livre.",
+        "PreR":"Agi 3, Treinado em Crime"
+    },
+    {
+        "id":"mochila_de_utilidades",
+        "nome":"Mochila de Utilidades",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Um item a sua escolha (exceto armas) conta como uma categoria abaixo e ocupa 1 espaço a menos."
+    },
+    {
+        "id":"movimento_tatico",
+        "nome":"Movimento Tático",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você pode gastar 1 PE para ignorar a penalidade em deslocamento por terreno difícil e por escalar até o final do turno.",
+        "PreR":"Treinado em Atletismo"
+    },
+    {
+        "id":"na_trilha_certa",
+        "nome":"Na Trilha Certa",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Sempre que tiver sucesso em um teste para procurar pistas, você pode gastar 1 PE para receber +O no próximo teste. Os custos e os bônus são cumulativos."
+    },
+    {
+        "id":"nerd",
+        "nome":"Nerd",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Uma vez por cena, pode gastar 2 PE para fazer um teste de Atualidades (DT 20). Se passar, recebe uma informação útil para essa cena."
+    },
+    {
+        "id":"ninja_urbano",
+        "nome":"Ninja Urbano",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você recebe proficiência com armas táticas de ataque corpo a corpo e de disparo (exceto de fogo) e +2 em rolagens de dano com armas de corpo a corpo e de disparo."
+    },
+    {
+        "id":"pensamento_agil",
+        "nome":"Pensamento Ágil",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Uma vez por rodada, durante uma cena de investigação, você pode gastar 2 PE para fazer uma ação de procurar pistas adicional."
+    },
+    {
+        "id":"perito_em_explosivos",
+        "nome":"Perito em Explosivos",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você soma seu Intelecto na DT para resistir aos seus explosivos e pode excluir dos efeitos da explosão um número de alvos igual ao seu valor de Intelecto."
+    },
+    {
+        "id":"primeira_impressao",
+        "nome":"Primeira Impressão",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você recebe +OO no primeiro teste de Diplomacia, Enganação, Intimidação ou Intuição que fizer em uma cena."
+    },
+    {
+        "id":"transcender",
+        "nome":"Transcender",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Escolha um poder paranormal. Você recebe o poder escolhido, mas não ganha Sanidade neste aumento de NEX. Pode escolher este poder várias vezes."
+    },
+    {
+        "id":"treinamento_em_pericia",
+        "nome":"Treinamento em Perícia",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Escolha duas perícias. Você se torna treinado nelas. Pode escolher este poder várias vezes."
+    },
+    {
+        "id":"acolher_o_terror",
+        "nome":"Acolher o Terror",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você já sofreu tanto medo que às vezes aceitar o terror é como voltar para casa. Você pode se entregar para o medo uma vez por sessão de jogo adicional."
+    },
+    {
+        "id":"contatos_oportunos",
+        "nome":"Contatos Oportunos",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Ao longo de sua vida, você fez amizades úteis com pessoas de vários tipos em muitos lugares."
+    },
+    {
+        "id":"disfarce_sutil",
+        "nome":"Disfarce Sutil",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você sabe como se disfarçar rapidamente, usando pequenos detalhes para alterar sua aparência."
+    },
+    {
+        "id":"esconderijo_desesperado",
+        "nome":"Esconderijo Desesperado",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você aprendeu que às vezes se esconder é a única chance de vitória."
+    },
+    {
+        "id":"especialista_diletante",
+        "nome":"Especialista Diletante",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você aprende um poder que não pertença à sua classe, desde que consiga cumprir os pré-requisitos desse poder.",
+        "PreR":"NEX 30%"
+    },
+    {
+        "id":"flashback",
+        "nome":"Flashback",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Um trauma recente desbloqueia um conhecimento adormecido. Escolha uma origem que não seja a sua; você recebe o poder dessa origem."
+    },
+    {
+        "id":"leitura_fria",
+        "nome":"Leitura Fria",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você estudou técnicas de leitura fria.",
+        "PreR":"Treinado em Intuição"
+    },
+    {
+        "id":"maos_firmes",
+        "nome":"Mãos Firmes",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Quando faz um teste de Furtividade ou manipula discretamente um objeto, pode gastar 2 PE para receber +O no teste.",
+        "PreR":"Treinado em Furtividade"
+    },
+    {
+        "id":"plano_de_fuga",
+        "nome":"Plano de Fuga",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você pensa em estratégias de fuga constantemente. Pode usar Intelecto no lugar de Força para criar obstáculos em perseguições. "
+    },
+    {
+        "id":"remoer_memorias",
+        "nome":"Remoer Memórias",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Sua mente revivendo memórias lhe dá vantagem.",
+        "PreR":"Int 1"
+    },
+    {
+        "id":"resistir_a_pressao",
+        "nome":"Resistir à Pressão",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Uma vez por cena de investigação, você pode gastar 5 PE para coordenar esforços dos companheiros. A urgência aumenta em 1 rodada, e todos recebem +2 em testes de perícia durante essa rodada.",
+        "PreR":"Treinado em Investigação"
+    }
+]

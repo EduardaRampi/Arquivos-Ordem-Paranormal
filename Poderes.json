@@ -1,0 +1,346 @@
+[
+    {
+        "id":"artista_marcial",
+        "nome":"Artista Marcial",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Seus ataques desarmados causam mais dano, podem causar dano letal e se tornam ágeis.",
+        "PreR":""
+    },
+    {
+        "id":"combater_com_duas_armas",
+        "nome":"Combater com Duas Armas",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você pode fazer dois ataques, um com cada arma.",
+        "PreR":"Agi 3, treinado em Luta ou Pontaria"
+    },
+    {
+        "id":"saque_rapido",
+        "nome":"Saque Rápido",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você pode sacar ou guardar itens como uma ação livre.",
+        "PreR":"treinado em Iniciativa"
+    },
+    {
+        "id":"tiro_certeiro",
+        "nome":"Tiro Certeiro",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Se estiver usando uma arma de disparo, você soma sua Agilidade nas rolagens de dano e ignora a penalidade contra alvos envolvidos em combate corpo a corpo",
+        "PreR":"treinado em Pontaria"
+    },
+    {
+        "id":"acrobatico",
+        "nome":"Acrobático",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você possui um talento natural para piruetas, cambalhotas e outras acrobacias complexas.",
+        "PreR":"Agi 2"
+    },
+    {
+        "id":"as_do_volante",
+        "nome":"Ás do Volante",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você é um apaixonado por velocidade, e tem a coragem (ou falta de juízo) necessária para executar qualquer manobra.",
+        "PreR":"Agi 2"
+    },
+    {
+        "id":"atletico",
+        "nome":"Atlético",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você possui um corpo atlético, resultado de uma fortuita disposição genética ou árduo treinamento.",
+        "PreR":"For 2"
+    },
+    {
+        "id":"atraente",
+        "nome":"Atraente",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Seja por pura beleza física ou por sua postura e atitude, você atrai olhares por onde passa.",
+        "PreR":"Pre 2"
+    },
+    {
+        "id":"dedos_ageis",
+        "nome":"Dedos Ágeis",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você possui uma motricidade fina precisa, particularmente útil para manipular ferramentas delicadas.",
+        "PreR":"Agi 2"
+    },
+    {
+        "id":"detector_de_mentiras",
+        "nome":"Detector de Mentiras",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você possui uma aptidão para perceber os sutis sinais de alguém que está mentindo.",
+        "PreR":"Pre 2"
+    },
+    {
+        "id":"especialista_em_emergencias",
+        "nome":"Especialista em Emergências",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você recebeu treinamento como socorrista de emergência e sabe como tratar um paciente em situações de urgência.",
+        "PreR":"Int 2"
+    },
+    {
+        "id":"estigmado",
+        "nome":"Estigmado",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"A adrenalina causada pela dor faz você se manter focado no que está acontecendo.",
+        "PreR":""
+    },
+    {
+        "id":"foco_em_pericia",
+        "nome":"Foco em Perícia",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você se dedicou a estudar e treinar os vários pormenores de uma área de conhecimento específica.",
+        "PreR":"Treinado na perícia escolhida"
+    },
+    {
+        "id":"inventario_organizado",
+        "nome":"Inventário Organizado",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você sabe como organizar sua mochila e seu equipamento de forma organizada e racional.",
+        "PreR":"Int 2"
+    },
+    {
+        "id":"informado",
+        "nome":"Informado",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você passa bastante tempo consumindo fofocas… bem, notícias sobre o mundo ao seu redor.",
+        "PreR":"Int 2"
+    },
+    {
+        "id":"interrogador",
+        "nome":"Interrogador",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você sabe como usar o medo para extrair todo tipo de informação das outras pessoas.",
+        "PreR":"For 2"
+    },
+    {
+        "id":"mentiroso_nato",
+        "nome":"Mentiroso Nato",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você é um cara de pau, capaz de mentir descaradamente sem que ninguém perceba.",
+        "PreR":"Pre 2"
+    },
+    {
+        "id":"observador",
+        "nome":"Observador",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você possui uma combinação de sentidos apurados para perceber pistas e intelecto afiado para processá-las.",
+        "PreR":"Int 2"
+    },
+    {
+        "id":"pai_de_pet",
+        "nome":"Pai de Pet",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você adora animais e cuida de seus pets como se fossem seus filhos.",
+        "PreR":"Pre 2"
+    },
+    {
+        "id":"palavras_de_devocao",
+        "nome":"Palavras de Devoção",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você combina uma fé verdadeira com o conhecimento dos ritos e tradições de sua religião.",
+        "PreR":"Pre 2"
+    },
+    {
+        "id":"parceiro",
+        "nome":"Parceiro",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Em algum momento da sua vida, você conquistou uma amizade fiel e verdadeira; alguém disposto a até mesmo a se arriscar para lhe ajudar.",
+        "PreR":"Treinado em Diplomacia, NEX 30%"
+    },
+    {
+        "id":"pensamento_tatico",
+        "nome":"Pensamento Tático",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você possui uma mente voltada para análises táticas e pensamento estratégico.",
+        "PreR":"Int 2"
+    },
+    {
+        "id":"personalidade_esoterica",
+        "nome":"Personalidade Esotérica",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você sempre teve uma afinidade com assuntos esotéricos.",
+        "PreR":"Int 2"
+    },
+    {
+        "id":"persuasivo",
+        "nome":"Persuasivo",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você possui uma personalidade diplomática e sabe obter o que deseja por meio de argumentação e conversa.",
+        "PreR":"Pre 2"
+    },
+    {
+        "id":"pesquisador_cientifico",
+        "nome":"Pesquisador Científico",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você possui um profundo respeito pela ciência e acredita que ela é a resposta para muitos de seus questionamentos.",
+        "PreR":"Int 2"
+    },
+    {
+        "id":"proativo",
+        "nome":"Proativo",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Seu negócio é fazer as coisas, e não deixar para depois.",
+        "PreR":"Agi 2"
+    },
+    {
+        "id":"provisoes_de_emergencia",
+        "nome":"Provisões de Emergência",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você é um sujeito precavido e mantém uma reserva secreta para quando as coisas ficarem ruins.",
+        "PreR":""
+    },
+    {
+        "id":"racionalidade_inflexivel",
+        "nome":"Racionalidade Inflexível",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Suas convicções e sua visão de mundo são baseadas em argumentos racionais e lógicos.",
+        "PreR":"Int 3"
+    },
+        {
+        "id":"rato_de_computador",
+        "nome":"Rato de Computador",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você adora computadores e outros dispositivos tecnológicos.",
+        "PreR":"Int 2"
+    },
+    {
+        "id":"resposta_rapida",
+        "nome":"Resposta Rápida",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Seus reflexos são tão apurados que o permitem agir antes mesmo de você perceber as ameaças de forma consciente.",
+        "PreR":"Agi 2"
+    },
+    {
+        "id":"talentoso",
+        "nome":"Talentoso",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você possui inclinação para todas as formas de expressão artística.",
+        "PreR":"Pre 2"
+    },
+    {
+        "id":"teimosia_obstinada",
+        "nome":"Teimosia Obstinada",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"As pessoas chamam você de teimoso, mas elas estão erradas!",
+        "PreR":"Pre 2"
+    },
+    {
+        "id":"tenacidade",
+        "nome":"Tenacidade",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Seu corpo desenvolveu a capacidade de suportar rigores extremos.",
+        "PreR":"Vig 2"
+    },
+    {
+        "id":"sentidos_aguçados",
+        "nome":"Sentidos Aguçados",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Todos os seus sentidos são mais aguçados que o normal.",
+        "PreR":"Pre 2"
+    },
+    {
+        "id":"sobrevivencialista",
+        "nome":"Sobrevivencialista",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você aprecia — ou aprecia enfrentar — a natureza.",
+        "PreR":"Int 2"
+    },
+    {
+        "id":"sorrateiro",
+        "nome":"Sorrateiro",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você sabe ser discreto em qualquer situação.",
+        "PreR":"Agi 2"
+    },
+    {
+        "id":"vitalidade_reforcada",
+        "nome":"Vitalidade Reforçada",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você possui uma capacidade superior de suportar ferimentos.",
+        "PreR":"Vig 2"
+    },
+    {
+        "id":"vontade_inabalavel",
+        "nome":"Vontade Inabalável",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Sua mente é preparada para suportar os mais rigorosos traumas.",
+        "PreR":"Pre 2"
+    },
+        {
+        "id":"cicatrizes_expostas",
+        "nome":"Cicatrizes Expostas",
+        "origem":"Arquivos Secretos",
+        "tag":"Janeiro-2026",
+        "descricao":"Você tem cicatrizes graves, físicas ou psicológicas, que podem deixá-lo em um estado de ira caso sejam expostas.",
+        "PreR":"Ter cicatrizes"
+    },
+    {
+        "id":"curiosidade_oculta",
+        "nome":"Curiosidade Oculta",
+        "origem":"Arquivos Secretos",
+        "tag":"Janeiro-2026",
+        "descricao":"Seu gosto bizarro pelo oculto abriu sua mente.",
+        "PreR":"Int 2"
+    },
+    {
+        "id":"especialista_esoterico",
+        "nome":"Especialista Esotérico",
+        "origem":"Arquivos Secretos",
+        "tag":"Janeiro-2026",
+        "descricao":"Poucos compreendem o uso de catalisadores ritualísticos como você.",
+        "PreR":"Int 3, conjurar ritual de 2º círculo, Domínio Esotérico (SaH, p. 26)."
+    },
+    {
+        "id":"habilidade_aprimorada",
+        "nome":"Habilidade Aprimorada",
+        "origem":"Arquivos Secretos",
+        "tag":"Janeiro-2026",
+        "descricao":"Escolha uma habilidade ou um ritual que tenha DT.",
+        "PreR":""
+    },
+    {
+        "id":"instintos_urbanos",
+        "nome":"Instintos Urbanos",
+        "origem":"Arquivos Secretos",
+        "tag":"Janeiro-2026",
+        "descricao":"Você não confia na sociedade civilizada e está pronto para sobreviver na selva de concreto.",
+        "PreR":"Agi 2"
+    }
+]

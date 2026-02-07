@@ -23,7 +23,8 @@
         <p class="centralizar">Clique nos botões abaixo para navegar entre as seções:</p>
         <div class="centralizar">
             <button class="btn-navegar" data-destino="Criação_persona">Criação de Personagens</button>
-            <button class="btn-navegar" data-destino="Itens">Itens</button>
+            <button class="btn-navegar" data-destino="Equipamentos">Equipamentos</button>
+            <button class="btn-navegar" data-destino="Itens Amaldiçoados">Itens Amaldiçoados</button>
             <button class="btn-navegar" data-destino="Rituais">Rituais</button>
             <button class="btn-navegar" data-destino="Regras">Regras</button>
             <button class="btn-navegar" data-destino="Criaturas">Criaturas</button>
@@ -43,8 +44,22 @@
         </div>
         </div>
 
-        <div id="Itens" class="tela oculta">
-        <h1>Itens</h1>
+        <div id="Equipamentos" class="tela oculta">
+        <h1>Equipamentos</h1>
+        <div class="centralizar">
+            <button class="btn-navegar" data-destino="Armas">Armas</button>
+            <button class="btn-navegar" data-destino="Munições">Munições</button>
+            <button class="btn-navegar" data-destino="Proteções">Proteções</button>
+            <button class="btn-navegar" data-destino="Acessórios">Acessórios</button>
+            <button class="btn-navegar" data-destino="Explosivos">Explosivos</button>
+            <button class="btn-navegar" data-destino="Itens Operacionais">Itens Operacionais</button>
+            <button class="btn-navegar" data-destino="Itens Paranormais">Itens Paranormais</button>
+            <button class="btn-voltar">Voltar</button>
+        </div>
+        </div>
+
+        <div id="Itens Amaldiçoados" class="tela oculta">
+        <h1>Itens Amaldiçoados</h1>
         <div class="centralizar">
             <button class="btn-voltar">Voltar</button>
         </div> 
@@ -111,8 +126,66 @@
         </div> 
         </div>
 
+        <div id="Armas" class="tela oculta">
+        <h1>Armas</h1>
+        <div id="lista-armas"></div>
+        <div class="centralizar">
+            <button class="btn-navegar" data-destino="Modificações de Armas">Modificações de Armas</button>
+            <button class="btn-voltar">Voltar</button>
+        </div> 
+        </div>
+
+        <div id="Munições" class="tela oculta">
+        <h1>Munições</h1>
+        <div id="lista-municoes"></div>
+        <div class="centralizar">
+            <button class="btn-navegar" data-destino="Modificações de Munições">Modificações de Munições</button>
+            <button class="btn-voltar">Voltar</button>
+        </div> 
+        </div>
+
+        <div id="Proteções" class="tela oculta">
+        <h1>Proteções</h1>
+        <div id="lista-protecoes"></div>
+        <div class="centralizar">
+            <button class="btn-navegar" data-destino="Modificações de Proteções">Modificações de Proteções</button>
+            <button class="btn-voltar">Voltar</button>
+        </div> 
+        </div>
+
+        <div id="Acessórios" class="tela oculta">
+        <h1>Acessórios</h1>
+        <div id="lista-acessorios"></div>
+        <div class="centralizar">
+            <button class="btn-navegar" data-destino="Modificações de Acessórios">Modificações de Acessórios</button>
+            <button class="btn-voltar">Voltar</button>
+        </div> 
+        </div>
+
+        <div id="Explosivos" class="tela oculta">
+        <h1>Explosivos</h1>
+        <div id="lista-explosivos"></div>
+        <button class="btn-voltar">Voltar</button> 
+        </div>
+
+        <div id="Itens Operacionais" class="tela oculta">
+        <h1>Itens Operacionais</h1>
+        <div id="lista-itens-operacionais"></div>
+        <button class="btn-voltar">Voltar</button> 
+        </div>
+
+        <div id="Itens Paranormais" class="tela oculta">
+        <h1>Itens Paranormais</h1>
+        <div id="lista-itens-paranormais"></div>
+        <div class="centralizar">
+            <button class="btn-navegar" data-destino="Modificações de Itens Paranormais">Modificações de Itens Paranormais</button>
+            <button class="btn-voltar">Voltar</button>
+        </div> 
+        </div>
+
         <div id="Poderes Paranormais" class="tela oculta">
         <h1>Poderes Paranormais</h1>
+        <div id="lista-poderes-paranormais"></div>
         <div class="centralizar">
             <button class="btn-navegar" data-destino="Poderes Sangue">Poderes de Sangue</button>
             <button class="btn-navegar" data-destino="Poderes Morte">Poderes de Morte</button>
@@ -179,6 +252,36 @@
         <div id="Poderes Energia" class="tela oculta">
         <h1>Poderes de Energia</h1>
         <div id="lista-poderes-energia"></div>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+
+        <div id="Modificações de Armas" class="tela oculta">
+        <h1>Modificações de Armas</h1>
+        <div id="lista-modificacoes-armas"></div>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+
+        <div id="Modificações de Munições" class="tela oculta">
+        <h1>Modificações de Munições</h1>
+        <div id="lista-modificacoes-municao"></div>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+
+        <div id="Modificações de Proteções" class="tela oculta">
+        <h1>Modificações de Proteções</h1>
+        <div id="lista-modificacoes-protecoes"></div>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+
+        <div id="Modificações de Acessórios" class="tela oculta">
+        <h1>Modificações de Acessórios</h1>
+        <div id="lista-modificacoes-acessorios"></div>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+
+        <div id="Modificações de Itens Paranormais" class="tela oculta">
+        <h1>Modificações de Itens Paranormais</h1>
+        <div id="lista-modificacoes-itens-paranormais"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 

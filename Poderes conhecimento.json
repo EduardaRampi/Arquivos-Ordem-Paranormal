@@ -1,0 +1,58 @@
+[
+    {
+    "id": "expansao_de_conhecimento",
+    "nome": "Expansão de Conhecimento",
+    "origem": "Livro de Regras",
+    "tag": "",
+    "descricao": "Você se conecta com o Conhecimento do Outro Lado, rompendo os limites de sua compreensão.",
+    "PreR": "Conhecimento 1"
+    },
+    {
+    "id": "percepcao_paranormal",
+    "nome": "Percepção Paranormal",
+    "origem": "Livro de Regras",
+    "tag": "",
+    "descricao": "O Conhecimento sussurra em sua mente. Em cenas de investigação, sempre que fizer um teste para procurar pistas, você pode rolar novamente um dado com resultado menor que 10.",
+    "PreR": ""
+    },
+    {
+    "id": "precognicao",
+    "nome": "Precognição",
+    "origem": "Livro de Regras",
+    "tag": "",
+    "descricao": "Você possui um 'sexto sentido' que o avisa do perigo antes que ele aconteça.",
+    "PreR": "Conhecimento 1"
+    },
+    {
+    "id": "sensitivo",
+    "nome": "Sensitivo",
+    "origem": "Livro de Regras",
+    "tag": "",
+    "descricao": "Você consegue sentir as emoções e intenções de outros seres, como medo, raiva ou malícia.",
+    "PreR": ""
+    },
+    {
+    "id": "visao_do_oculto",
+    "nome": "Visão do Oculto",
+    "origem": "Livro de Regras",
+    "tag": "",
+    "descricao": "Você não enxerga mais pelos olhos, mas sim pela percepção do Conhecimento em sua mente.",
+    "PreR": ""
+    },
+    {
+    "id": "absorver_conhecimento",
+    "nome": "Absorver Conhecimento",
+    "origem": "Sobrevivendo ao Horror",
+    "tag": "",
+    "descricao": "Você se conecta com o Conhecimento do Outro Lado para adquirir informação de forma paranormal, sem precisar gastar tempo de pesquisa. ",
+    "PreR": "Conhecimento 1"
+    },
+    {
+    "id": "apatia_herege",
+    "nome": "Apatia Herege",
+    "origem": "Sobrevivendo ao Horror",
+    "tag": "",
+    "descricao": "Saber tudo é perder tudo. Contudo, não se deve subestimar a capacidade de adaptação humana.",
+    "PreR": "Conhecimento 1"
+    }
+]

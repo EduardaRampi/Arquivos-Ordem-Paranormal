@@ -1,14 +1,12 @@
 # Arquivos-Ordem-Paranormal
-um site feito para organizar as coisas de ordem paranormal
+um site feito para organizar as informações de ordem paranormal
 
 # 📕 Arquivos Ordem Paranormal
 
 Um guia interativo e responsivo para organizar as informações do livro de regras, suplementos e materiais oficiais do RPG **Ordem Paranormal**. Ele ainda está em produção, então no futuro teremos atualizações
 
 ## 🚀 Funcionalidades
-* **Consulta de Classes:** Listagem dinâmica via JSON com as classes.
-* **Consulta de Origens:** Listagem de origens carregadas dinamicamente.
-* **Consulta de Trilhas:** Listagem de todas as trilhas das três origens principais.
+* **Consulta Criação de Personagem:** As principais informações necessárias para você criar seu personagem
 * **Interface Responsiva:** Adaptado para computadores e dispositivos móveis.
 
 ## 🛠️ Tecnologias Utilizadas

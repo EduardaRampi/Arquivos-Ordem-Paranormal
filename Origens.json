@@ -315,20 +315,6 @@
         "descricao":"Você está sempre em busca de histórias significativas, investigando eventos, entrevistando fontes e analisando dados para descobrir a verdade por trás dos acontecimentos."
     }, 
     {
-        "id":"ferrido_por_ritual",
-        "nome":"Ferrido por Ritual",
-        "origem":"Arquivos Secretos",
-        "tag":"Janeiro-2026",
-        "descricao":"Você tinha uma vida ordinária, até sofrer os efeitos paranormais de um ritual."
-    },
-    {
-        "id":"transtornado_arrependido",
-        "nome":"Transtornado Arrependido",
-        "origem":"Arquivos Secretos",
-        "tag":"Janeiro-2026",
-        "descricao":"Você já caminhou entre os Transtornados."
-    },
-    {
         "id":"jornalista",
         "nome":"Jornalista",
         "origem":"Marca página",
@@ -404,5 +390,19 @@
         "origem":"Marca página",
         "tag":"Kenan",
         "descricao":"Você foi responsavel por conduzir e inspecionar explosivos."
+    },
+    {
+        "id":"ferrido_por_ritual",
+        "nome":"Ferrido por Ritual",
+        "origem":"Arquivos Secretos",
+        "tag":"Janeiro-2026",
+        "descricao":"Você tinha uma vida ordinária, até sofrer os efeitos paranormais de um ritual."
+    },
+    {
+        "id":"transtornado_arrependido",
+        "nome":"Transtornado Arrependido",
+        "origem":"Arquivos Secretos",
+        "tag":"Janeiro-2026",
+        "descricao":"Você já caminhou entre os Transtornados."
     }
 ]

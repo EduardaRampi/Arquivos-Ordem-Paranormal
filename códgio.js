@@ -14,6 +14,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const containerPoderesMorte = document.getElementById('lista-poderes-morte');
   const containerPoderesConhecimento = document.getElementById('lista-poderes-conhecimento');
   const containerPoderesEnergia = document.getElementById('lista-poderes-energia');
+  const containerArmas = document.getElementById('lista-armas');
+  const containerModificacoesArmas = document.getElementById('lista-modificacoes-armas');
+  const containerMunicoes = document.getElementById('lista-municoes');
+  const containerModificacoesMunicoes = document.getElementById('lista-modificacoes-municao');
+  const containerProtecoes = document.getElementById('lista-protecoes');
+  const containerModificacoesProtecoes = document.getElementById('lista-modificacoes-protecoes');
+  const containerAcessorios = document.getElementById('lista-acessorios');
+  const containerModificacoesAcessorios = document.getElementById('lista-modificacoes-acessorios');
+  const containerExplosivos = document.getElementById('lista-explosivos');
+  const containerItensOperacionais = document.getElementById('lista-itens-operacionais');
+  const containerItensParanormais = document.getElementById('lista-itens-paranormais');
+  const containerModificacoesItensParanormais = document.getElementById('lista-modificacoes-itens-paranormais');
+  const containerPoderesParanormais = document.getElementById('lista-poderes-paranormais');
 
   // Variável para salvar qual era a tela anterior (ajuda no botão voltar)
   let telaAnterior = null;
@@ -41,26 +54,29 @@ document.addEventListener('DOMContentLoaded', () => {
   botoesVoltar.forEach(btn => {
     btn.addEventListener('click', () => {
       const telaAtual = btn.closest('.tela');
-      
-      // Lógica específica: Para onde voltar?
-      // Se estivermos em "Classes", voltamos para "Criação_persona"
-      // Se estivermos em "Criação_persona", voltamos para "tela-inicial"
+    
       let idDestino = "tela-inicial"; // Destino padrão
       
       if (telaAtual.id === "Classes" || telaAtual.id === "Origens" || telaAtual.id === "Trilhas" || telaAtual.id === "Poderes") {
         idDestino = "Criação_persona";
-      }
-
-      if (telaAtual.id === "Poderes ocultista" || telaAtual.id === "Poderes especialista" || telaAtual.id === "Poderes combatente") {
+      } else if (telaAtual.id === "Poderes ocultista" || telaAtual.id === "Poderes especialista" || telaAtual.id === "Poderes combatente") {
         idDestino = "Poderes";
-      }
-      
-      if (telaAtual.id === "Trilhas ocultista" || telaAtual.id === "Trilhas especialista" || telaAtual.id === "Trilhas combatente") {
+      } else if (telaAtual.id === "Trilhas ocultista" || telaAtual.id === "Trilhas especialista" || telaAtual.id === "Trilhas combatente") {
         idDestino = "Trilhas";
-      }
-
-      if (telaAtual.id === "Poderes Sangue" || telaAtual.id === "Poderes Morte" || telaAtual.id === "Poderes Conhecimento" || telaAtual.id === "Poderes Energia") {
+      } else if (telaAtual.id === "Poderes Sangue" || telaAtual.id === "Poderes Morte" || telaAtual.id === "Poderes Conhecimento" || telaAtual.id === "Poderes Energia") {
         idDestino = "Poderes Paranormais";
+      } else if (telaAtual.id === "Armas" || telaAtual.id === "Munições" || telaAtual.id === "Proteções" || telaAtual.id === "Acessórios" || telaAtual.id === "Explosivos" || telaAtual.id === "Itens Operacionais" || telaAtual.id === "Itens Paranormais") {
+        idDestino = "Equipamentos";
+      } else if (telaAtual.id === "Modificações de Armas") {
+        idDestino = "Armas";
+      } else if (telaAtual.id === "Modificações de Munições") {
+        idDestino = "Munições";
+      } else if (telaAtual.id === "Modificações de Proteções") {
+        idDestino = "Proteções";
+      } else if (telaAtual.id === "Modificações de Acessórios") {
+        idDestino = "Acessórios";
+      } else if (telaAtual.id === "Modificações de Itens Paranormais") {
+        idDestino = "Itens Paranormais";
       }
 
       const telaDestino = document.getElementById(idDestino);
@@ -73,291 +89,200 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 3. Busca o arquivo das Classes
-  fetch('classes.json')
+  // 3. Lógica para CARREGAR OS CARDS
+  function carregarCards({ arquivo, container, erroMsg, tituloDescricao = "Descrição" }) {
+  fetch(arquivo)
     .then(response => {
-      if (!response.ok) throw new Error("Não foi possível carregar o JSON");
+      if (!response.ok) throw new Error(erroMsg);
       return response.json();
     })
     .then(dados => {
       dados.forEach(item => {
-        const htmlTag = item.tag ? `<p><strong>Tag:</strong> ${item.tag}</p>` : '';
-        const card = `
-          <div class="classe-card">
-            <h2>${item.nome}</h2>
-            <p><strong>Origem:</strong> ${item.origem}</p>
-            <p><strong>Resumo:</strong> ${item.descricao}</p>
-            ${htmlTag}
-          </div>
-        `;
-        containerClasses.innerHTML += card;
-      });
-    })
-    .catch(error => console.error("Erro:", error));
-  
-  // 4. Busca o arquivo das Origens
-  fetch('Origens.json')
-    .then(response => {
-      if (!response.ok) throw new Error("Não foi possível carregar as origens");
-      return response.json();
-    })
-    .then(dados => {
-      dados.forEach(item => {
-        // Mantendo exatamente a mesma estrutura visual (classe-card)
-        const htmlTag = item.tag ? `<p><strong>Tag:</strong> ${item.tag}</p>` : '';
-        const card = `
-          <div class="classe-card">
-            <h2>${item.nome}</h2>
-            <p><strong>Origem:</strong> ${item.origem}</p>
-            <p><strong>Descrição:</strong> ${item.descricao}</p>
-            ${htmlTag}
-          </div>
-        `;
-        containerOrigens.innerHTML += card;
-      });
-    })
-    .catch(error => console.error("Erro ao carregar origens:", error));
+        const htmlTag = item.tag 
+          ? `<p><strong>Tag:</strong> ${item.tag}</p>` 
+          : '';
+        const htmlPreR = item.PreR 
+          ? `<p><strong>Pré-requisito:</strong> ${item.PreR}</p>` 
+          : '';   
+        const htmlCirculo = item.htmlCirculo 
+          ? `<p><strong>Círculo:</strong> ${item.Circulo}</p>` 
+          : '';          
+        const htmlElemento = item.htmlElemento 
+          ? `<p><strong>Elemento:</strong> ${item.Elemento}</p>` 
+          : ''; 
 
-    // 5. Busca o arquivo dos Poderes
-    fetch('Poderes.json')
-    .then(response => {
-      if (!response.ok) throw new Error("Não foi possível carregar os poderes");  
-      return response.json();
-    })
-    .then(dados => {
-      dados.forEach(item => {
-        const htmlTag = item.tag ? `<p><strong>Tag:</strong> ${item.tag}</p>` : '';
         const card = `
           <div class="classe-card">
             <h2>${item.nome}</h2>
             <p><strong>Origem:</strong> ${item.origem}</p>
-            <p><strong>Descrição:</strong> ${item.descricao}</p>
+            ${htmlCirculo}
+            ${htmlElemento}
+            <p><strong>${tituloDescricao}:</strong> ${item.descricao}</p>
             ${htmlTag}
+            ${htmlPreR}
           </div>
         `;
-        containerPoderes.innerHTML += card;
-      });
-    })
-    .catch(error => console.error("Erro ao carregar poderes:", error));
 
-    // 6. Busca o arquivo dos Poderes de Ocultista
-    fetch('Poderes ocultista.json')
-    .then(response => {
-      if (!response.ok) throw new Error("Não foi possível carregar os poderes de ocultista");  
-      return response.json();
-    })
-    .then(dados => {
-      dados.forEach(item => {
-        const htmlTag = item.tag ? `<p><strong>Tag:</strong> ${item.tag}</p>` : '';
-        const card = `
-          <div class="classe-card">
-            <h2>${item.nome}</h2>
-            <p><strong>Origem:</strong> ${item.origem}</p>
-            <p><strong>Descrição:</strong> ${item.descricao}</p>
-            ${htmlTag}
-          </div>
-        `;
-        containerPoderesOcultista.innerHTML += card;
+        container.innerHTML += card;
       });
     })
-    .catch(error => console.error("Erro ao carregar poderes de ocultista:", error));
+    .catch(error => console.error(error.message));
+  }
+  carregarCards({
+    arquivo: 'classes.json',
+    container: containerClasses,
+    erroMsg: 'Não foi possível carregar as classes',
+    tituloDescricao: 'Resumo'
+  });
 
-    // 7. Busca o arquivo dos Poderes de Especialista
-    fetch('Poderes especialista.json')
-    .then(response => {
-      if (!response.ok) throw new Error("Não foi possível carregar os poderes de especialista");  
-      return response.json();
-    })
-    .then(dados => {
-      dados.forEach(item => {
-        const htmlTag = item.tag ? `<p><strong>Tag:</strong> ${item.tag}</p>` : '';
-        const card = `
-          <div class="classe-card">
-            <h2>${item.nome}</h2>
-            <p><strong>Origem:</strong> ${item.origem}</p>
-            <p><strong>Descrição:</strong> ${item.descricao}</p>
-            ${htmlTag}
-          </div>
-        `;
-        containerPoderesEspecialista.innerHTML += card;
-      });
-    })
-    .catch(error => console.error("Erro ao carregar poderes de especialista:", error));
+  carregarCards({
+    arquivo: 'Origens.json',
+    container: containerOrigens,
+    erroMsg: 'Não foi possível carregar as origens'
+  });
 
-    // 8. Busca o arquivo dos Poderes de Combatente
-    fetch('Poderes combatente.json')
-    .then(response => {
-      if (!response.ok) throw new Error("Não foi possível carregar os poderes de combatente");  
-      return response.json();
-    })
-    .then(dados => {
-      dados.forEach(item => {
-        const htmlTag = item.tag ? `<p><strong>Tag:</strong> ${item.tag}</p>` : '';
-        const card = `
-          <div class="classe-card">
-            <h2>${item.nome}</h2>
-            <p><strong>Origem:</strong> ${item.origem}</p>
-            <p><strong>Descrição:</strong> ${item.descricao}</p>
-            ${htmlTag}
-          </div>
-        `;
-        containerPoderesCombatente.innerHTML += card;
-      });
-    })
-    .catch(error => console.error("Erro ao carregar poderes de combatente:", error));
+  carregarCards({
+    arquivo: 'Poderes.json',
+    container: containerPoderes,
+    erroMsg: 'Não foi possível carregar os poderes'
+  });
 
-    // 9. Busca o arquivo das Trilhas de Ocultista
-    fetch('Trilhas ocultista.json')
-    .then(response => {
-      if (!response.ok) throw new Error("Não foi possível carregar as trilhas de ocultista");  
-      return response.json();
-    })
-    .then(dados => {
-      dados.forEach(item => {
-        const htmlTag = item.tag ? `<p><strong>Tag:</strong> ${item.tag}</p>` : '';
-        const card = `
-          <div class="classe-card">
-            <h2>${item.nome}</h2>
-            <p><strong>Origem:</strong> ${item.origem}</p>
-            <p><strong>Descrição:</strong> ${item.descricao}</p>
-            ${htmlTag}
-          </div>
-        `;
-        containerTrilhasOcultista.innerHTML += card;
-      });
-    })
-    .catch(error => console.error("Erro ao carregar trilhas de ocultista:", error));
+  carregarCards({
+    arquivo: 'Poderes ocultista.json',
+    container: containerPoderesOcultista,
+    erroMsg: 'Não foi possível carregar os poderes de ocultista'
+  });
 
-    // 10. Busca o arquivo das Trilhas de Especialista
-    fetch('Trilhas especialista.json')
-    .then(response => {
-      if (!response.ok) throw new Error("Não foi possível carregar as trilhas de especialista");  
-      return response.json();
-    })
-    .then(dados => {
-      dados.forEach(item => {
-        const htmlTag = item.tag ? `<p><strong>Tag:</strong> ${item.tag}</p>` : '';
-        const card = `
-          <div class="classe-card">
-            <h2>${item.nome}</h2>
-            <p><strong>Origem:</strong> ${item.origem}</p>
-            <p><strong>Descrição:</strong> ${item.descricao}</p>
-            ${htmlTag}
-          </div>
-        `;
-        containerTrilhasEspecialista.innerHTML += card;
-      });
-    })
-    .catch(error => console.error("Erro ao carregar trilhas de especialista:", error));
+  carregarCards({
+    arquivo: 'Poderes especialista.json',
+    container: containerPoderesEspecialista,
+    erroMsg: 'Não foi possível carregar os poderes de especialista'
+  });
 
-    // 11. Busca o arquivo das Trilhas de Combatente
-    fetch('Trilhas combatente.json')
-    .then(response => {
-      if (!response.ok) throw new Error("Não foi possível carregar as trilhas de combatente");  
-      return response.json();
-    })
-    .then(dados => {
-      dados.forEach(item => {
-        const htmlTag = item.tag ? `<p><strong>Tag:</strong> ${item.tag}</p>` : '';
-        const card = `
-          <div class="classe-card">
-            <h2>${item.nome}</h2>
-            <p><strong>Origem:</strong> ${item.origem}</p>
-            <p><strong>Descrição:</strong> ${item.descricao}</p>
-            ${htmlTag}
-          </div>
-        `;
-        containerTrilhasCombatente.innerHTML += card;
-      });
-    })
-    .catch(error => console.error("Erro ao carregar trilhas de combatente:", error));
+  carregarCards({
+    arquivo: 'Poderes combatente.json',
+    container: containerPoderesCombatente,
+    erroMsg: 'Não foi possível carregar os poderes de combatente'
+  });
 
-    // 12. Busca o arquivo dos Poderes de Sangue
-    fetch('Poderes sangue.json')
-    .then(response => {
-      if (!response.ok) throw new Error("Não foi possível carregar os poderes de sangue");  
-      return response.json();
-    })
-    .then(dados => {
-      dados.forEach(item => {
-        const htmlTag = item.tag ? `<p><strong>Tag:</strong> ${item.tag}</p>` : '';
-        const card = `
-          <div class="classe-card">
-            <h2>${item.nome}</h2>
-            <p><strong>Origem:</strong> ${item.origem}</p>
-            <p><strong>Descrição:</strong> ${item.descricao}</p>
-            ${htmlTag}
-          </div>
-        `;
-        containerPoderesSangue.innerHTML += card;
-      });
-    })
-    .catch(error => console.error("Erro ao carregar poderes de sangue:", error));
+  carregarCards({
+    arquivo: 'Trilhas ocultista.json',
+    container: containerTrilhasOcultista,
+    erroMsg: 'Não foi possível carregar as trilhas de ocultista'
+  });
 
-    // 13. Busca o arquivo dos Poderes de Morte
-    fetch('Poderes morte.json')
-    .then(response => {
-      if (!response.ok) throw new Error("Não foi possível carregar os poderes de morte");  
-      return response.json();
-    })
-    .then(dados => {
-      dados.forEach(item => {
-        const htmlTag = item.tag ? `<p><strong>Tag:</strong> ${item.tag}</p>` : '';
-        const card = `
-          <div class="classe-card">
-            <h2>${item.nome}</h2>
-            <p><strong>Origem:</strong> ${item.origem}</p>
-            <p><strong>Descrição:</strong> ${item.descricao}</p>
-            ${htmlTag}
-          </div>
-        `;
-        containerPoderesMorte.innerHTML += card;
-      });
-    })
-    .catch(error => console.error("Erro ao carregar poderes de morte:", error));
+  carregarCards({
+    arquivo: 'Trilhas especialista.json',
+    container: containerTrilhasEspecialista,
+    erroMsg: 'Não foi possível carregar as trilhas de especialista'
+  });
 
-    // 14. Busca o arquivo dos Poderes de Conhecimento
-    fetch('Poderes conhecimento.json')
-    .then(response => {
-      if (!response.ok) throw new Error("Não foi possível carregar os poderes de conhecimento");  
-      return response.json();
-    })
-    .then(dados => {
-      dados.forEach(item => {
-        const htmlTag = item.tag ? `<p><strong>Tag:</strong> ${item.tag}</p>` : '';
-        const card = `
-          <div class="classe-card">
-            <h2>${item.nome}</h2>
-            <p><strong>Origem:</strong> ${item.origem}</p>
-            <p><strong>Descrição:</strong> ${item.descricao}</p>
-            ${htmlTag}
-          </div>
-        `;
-        containerPoderesConhecimento.innerHTML += card;
-      });
-    })
-    .catch(error => console.error("Erro ao carregar poderes de conhecimento:", error));
+  carregarCards({
+    arquivo: 'Trilhas combatente.json',
+    container: containerTrilhasCombatente,
+    erroMsg: 'Não foi possível carregar as trilhas de combatente'
+  });
 
-    // 15. Busca o arquivo dos Poderes de Energia
-    fetch('Poderes energia.json')
-    .then(response => {
-      if (!response.ok) throw new Error("Não foi possível carregar os poderes de energia");  
-      return response.json();
-    })
-    .then(dados => {
-      dados.forEach(item => {
-        const htmlTag = item.tag ? `<p><strong>Tag:</strong> ${item.tag}</p>` : '';
-        const card = `
-          <div class="classe-card">
-            <h2>${item.nome}</h2>
-            <p><strong>Origem:</strong> ${item.origem}</p>
-            <p><strong>Descrição:</strong> ${item.descricao}</p>
-            ${htmlTag}
-          </div>
-        `;
-        containerPoderesEnergia.innerHTML += card;
-      });
-    })
-    .catch(error => console.error("Erro ao carregar poderes de energia:", error));
+  carregarCards({
+    arquivo: 'Poderes Paranormais.json',
+    container: containerPoderesParanormais,
+    erroMsg: 'Não foi possível carregar os poderes paranormais'
+  });
+
+  carregarCards({
+    arquivo: 'Poderes sangue.json',
+    container: containerPoderesSangue,
+    erroMsg: 'Não foi possível carregar os poderes de sangue'
+  });
+
+  carregarCards({
+    arquivo: 'Poderes morte.json',
+    container: containerPoderesMorte,
+    erroMsg: 'Não foi possível carregar os poderes de morte'
+  });
+
+  carregarCards({
+    arquivo: 'Poderes conhecimento.json',
+    container: containerPoderesConhecimento,
+    erroMsg: 'Não foi possível carregar os poderes de conhecimento'
+  });
+
+  carregarCards({
+    arquivo: 'Poderes energia.json',
+    container: containerPoderesEnergia,
+    erroMsg: 'Não foi possível carregar os poderes de energia'
+  });
+
+  carregarCards({
+    arquivo: 'Armas.json',
+    container: containerArmas,
+    erroMsg: 'Não foi possível carregar as armas'
+  });
+
+  carregarCards({
+    arquivo: 'Modificações Armas.json',
+    container: containerModificacoesArmas,
+    erroMsg: 'Não foi possível carregar as modificações de armas'
+  });
+
+  carregarCards({
+    arquivo: 'Munições.json',
+    container: containerMunicoes,
+    erroMsg: 'Não foi possível carregar as munições'
+  });
+
+  carregarCards({
+    arquivo: 'Modificações de Munições.json',
+    container: containerModificacoesMunicoes,
+    erroMsg: 'Não foi possível carregar as modificações de munições'
+  });
+
+  carregarCards({
+    arquivo: 'Proteções.json',
+    container: containerProtecoes,
+    erroMsg: 'Não foi possível carregar as proteções'
+  });
+
+  carregarCards({
+    arquivo: 'Modificações de Proteções.json',
+    container: containerModificacoesProtecoes,
+    erroMsg: 'Não foi possível carregar as modificações de proteções'
+  });
+
+  carregarCards({
+    arquivo: 'Acessórios.json',
+    container: containerAcessorios,
+    erroMsg: 'Não foi possível carregar os acessórios'
+  });
+
+  carregarCards({
+    arquivo: 'Modificações de Acessórios.json',
+    container: containerModificacoesAcessorios,
+    erroMsg: 'Não foi possível carregar as modificações de acessórios'
+  });
+
+  carregarCards({
+    arquivo: 'Explosivos.json',
+    container: containerExplosivos,
+    erroMsg: 'Não foi possível carregar os explosivos'
+  });
+
+  carregarCards({
+    arquivo: 'Itens Operacionais.json',
+    container: containerItensOperacionais,
+    erroMsg: 'Não foi possível carregar os itens operacionais'
+  });
+
+  carregarCards({
+    arquivo: 'Itens Paranormais.json',
+    container: containerItensParanormais,
+    erroMsg: 'Não foi possível carregar os itens paranormais'
+  });
+
+  carregarCards({
+    arquivo: 'Modificações de Itens Paranormais.json',
+    container: containerModificacoesItensParanormais,
+    erroMsg: 'Não foi possível carregar as modificações de itens paranormais'
+  });
 
 });

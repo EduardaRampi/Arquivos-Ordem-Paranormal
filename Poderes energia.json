@@ -1,0 +1,56 @@
+[
+    {
+        "id":"afortunado",
+        "nome":"Afortunado",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"A Energia considera resultados medíocres entediantes. Uma vez por rolagem, você pode rolar novamente um resultado 1 em qualquer dado que não seja d20."
+    },
+    {
+        "id":"campo_protetor",
+        "nome":"Campo Protetor",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você consegue gerar um campo de Energia que o protege de perigos. Quando usa a ação esquiva, pode gastar 1 PE para receber +5 em Defesa.",
+        "PreR":"Energia 1"
+    },
+    {
+        "id":"causalidade_fortuita",
+        "nome":"Causalidade Fortuita",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"A Energia o conduz rumo a descobertas. Em cenas de investigação, a DT para procurar pistas diminui em –5 para você até encontrar uma pista."
+    },
+    {
+        "id":"golpe_de_sorte",
+        "nome":"Golpe de Sorte",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Seus ataques recebem +1 na margem de ameaça.",
+        "PreR":"Energia 1"
+    },
+    {
+        "id":"manipular_entropia",
+        "nome":"Manipular Entropia",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Nada diverte mais a Energia do que a possibilidade de um desastre ainda maior. Quando outro ser em alcance curto faz um teste de perícia, você pode gastar 2 PE para fazê-lo rolar novamente um dos dados desse teste.",
+        "PreR":"Energia 1"
+    },
+    {
+    "id": "conexao_empatica",
+    "nome": "Conexão Empática",
+    "origem": "Sobrevivendo ao Horror",
+    "tag": "",
+    "descricao": "Você consegue usar a Energia do Outro Lado para se conectar com objetos tecnológicos energizados. ",
+    "PreR": "Energia 1"
+    },
+    {
+    "id": "valerse_do_caos",
+    "nome": "Valer-se do Caos",
+    "origem": "Sobrevivendo ao Horror",
+    "tag": "",
+    "descricao": "Você pode tentar manipular o caos do mundo ao seu redor, um ato que fornece grande poder às custas da ordem de sua mente.",
+    "PreR": ""
+    }
+]

@@ -1,0 +1,234 @@
+[
+    {
+        "id":"camuflar_ocultismo",
+        "nome":"Camuflar Ocultismo",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você pode esconder símbolos e sigilos que estejam desenhados ou gravados em objetos ou em sua pele, tornando-os invisíveis para outras pessoas além de você mesmo.",
+        "PreR":""
+    },
+    {
+        "id":"criar_selo",
+        "nome":"Criar Selo",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você sabe fabricar selos paranormais de rituais que conheça.",
+        "PreR":""
+    },
+    {
+        "id":"envolto_em_misterio",
+        "nome":"Envolto em Mistério",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Sua aparência e postura assombrosas o permitem manipular e assustar pessoas ignorantes ou supersticiosas.",
+        "PreR":""
+    },
+    {
+        "id":"especialista_em_elemento",
+        "nome":"Especialista em Elemento",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Escolha um elemento. A DT para resistir aos seus rituais desse elemento aumenta em +2.",
+        "PreR":""
+    },
+    {
+        "id":"ferramentas_paranormais",
+        "nome":"Ferramentas Paranormais",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você reduz a categoria de um item paranormal em I e pode ativar itens paranormais sem pagar seu custo em PE.",
+        "PreR":""
+    },
+    {
+        "id":"fluxo_de_poder",
+        "nome":"Fluxo de Poder",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você pode manter dois efeitos sustentados de rituais ativos ao mesmo tempo com apenas uma ação livre, pagando o custo de cada efeito separadamente.",
+        "PreR":"NEX 60%"
+    },
+    {
+        "id":"guiado_pelo_paranormal",
+        "nome":"Guiado pelo Paranormal",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Uma vez por cena, você pode gastar 2 PE para fazer uma ação de investigação adicional.",
+        "PreR":""
+    },
+    {
+        "id":"identificacao_paranormal",
+        "nome":"Identificação Paranormal",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você recebe +10 em testes de Ocultismo para identificar criaturas, objetos ou rituais.",
+        "PreR":""
+    },
+    {
+        "id":"improvisar_componentes",
+        "nome":"Improvisar Componentes",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Uma vez por cena, você pode gastar uma ação completa para fazer um teste de Investigação (DT 15). Se passar, encontra objetos que podem servir como componentes ritualísticos de um elemento à sua escolha. ",
+        "PreR":""
+    },
+    {
+        "id":"intuicao_paranormal",
+        "nome":"Intuição Paranormal",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Sempre que usa a ação facilitar investigação, você soma seu Intelecto ou Presença no teste, à sua escolha.",
+        "PreR":""
+    },
+    {
+        "id":"mestre_em_elemento",
+        "nome":"Mestre em Elemento",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Escolha um elemento. O custo para lançar rituais desse elemento diminui em –1 PE.",
+        "PreR":"Especialista em Elemento no elemento escolhido, NEX 45%"
+    },
+    {
+        "id":"ritual_potente",
+        "nome":"Ritual Potente",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você soma seu Intelecto nas rolagens de dano ou nos efeitos de cura de seus rituais.",
+        "PreR":"Int 2"
+    },
+    {
+        "id":"ritual_predileto",
+        "nome":"Ritual Predileto",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Escolha um ritual que você conhece. Você reduz em –1 PE o custo do ritual. Essa redução se acumula com reduções fornecidas por outras fontes.",
+        "PreR":""
+    },
+    {
+        "id":"tatuagem_ritualistica",
+        "nome":"Tatuagem Ritualística",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Símbolos marcados em sua pele reduzem em –1 PE o custo de rituais de alcance pessoal que têm você como alvo.",
+        "PreR":""
+    },
+    {
+        "id":"transcender",
+        "nome":"Transcender",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Escolha um poder paranormal. Você recebe o poder escolhido, mas não ganha Sanidade neste aumento de NEX. Você pode escolher este poder várias vezes.",
+        "PreR":""
+    },
+    {
+        "id":"treinamento_em_pericia",
+        "nome":"Treinamento em Perícia",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Escolha duas perícias. Você se torna treinado nessas perícias. Você pode escolher este poder várias vezes.",
+        "PreR":""
+    },
+    {
+        "id":"deixe_os_sussurros_guiarem",
+        "nome":"Deixe os Sussurros Guiarem",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você sabe abrir sua mente para os sussurros do Paranormal, vozes que lhe guiam às custas de sua Sanidade.",
+        "PreR":""
+    },
+    {
+        "id":"dominio_esoterico",
+        "nome":"Domínio Esotérico",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você estudou a fundo a complexidade de catalisadores esotéricos e aprendeu a combinar suas propriedades paranormais.",
+        "PreR":"Int 3"
+    },
+    {
+        "id":"estalos_macabros",
+        "nome":"Estalos Macabros",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você sabe colidir pequenos objetos amaldiçoados para gerar distrações fortuitas em momentos de necessidade.",
+        "PreR":""
+    },
+    {
+        "id":"minha_dor_me_impulsiona",
+        "nome":"Minha Dor me Impulsiona",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você está acostumado com sacrifícios dolorosos e aprendeu a transformar sua dor em impulso físico.",
+        "PreR":"Vig 2"
+    },
+   {
+        "id":"nos_olhos_do_monstro",
+        "nome":"Nos Olhos do Monstro",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Por mais assustador que seja encarar o paranormal, fazer isso pode fornecer a chave para escapar dele com vida.",
+        "PreR":""
+    },
+    {
+        "id":"olhar_sinistro",
+        "nome":"Olhar Sinistro",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Aquilo que para outros é quase uma ciência, para você é a imposição da própria vontade.",
+        "PreR":"Pre 1"
+    },
+    {
+        "id":"sentido_premonitorio",
+        "nome":"Sentido Premonitório",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Sua exposição paranormal dá outros significados para arrepios e calafrios.",
+        "PreR":""
+    },
+    {
+        "id":"sincronia_paranormal",
+        "nome":"Sincronia Paranormal",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"A exposição paranormal de momentos terríveis que você compartilhou com seus aliados criou uma conexão invisível de Medo entre vocês.",
+        "PreR":"Pre 2"
+    },
+    {
+        "id":"tracado_conjuratorio",
+        "nome":"Traçado Conjuratório",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "descricao":"Você conhece versões de proteção e fortalecimento de vários símbolos paranormais, e pode usá-los para reforçar seus rituais.",
+        "PreR":""
+    },
+    {
+        "id":"acostumado_maldicao_elemento",
+        "nome":"Acostumado à Maldição de <Elemento>",
+        "origem":"Arquivos Secretos",
+        "tag":"Janeiro-2026",
+        "descricao":"Escolha um elemento (exceto Medo). Por já interagir ritualísticamente com esta entidade, quando falha em um teste relacionado ao preço da maldição de itens amaldiçoados do elemento escolhido, você não perde pontos de sanidade.",
+        "PreR":"Int 2, conjurar ritual de 2° círculo do elemento escolhido"
+    },
+    {
+        "id":"reter_ritual_de_combate",
+        "nome":"Reter Ritual de Combate",
+        "origem":"Arquivos Secretos",
+        "tag":"Janeiro-2026",
+        "descricao":"Quando um ritual com duração retida está afetando negativamente um alvo, você pode mudar a duração para cena, como reação, no instante em que ele sai da linha de efeito.",
+        "PreR":"Int 2, conjurar ritual de 1° círculo"
+    },
+    {
+        "id":"ritual_intenso",
+        "nome":"Ritual Intenso",
+        "origem":"Arquivos Secretos",
+        "tag":"Janeiro-2026",
+        "descricao":"Você soma sua Presença nas rolagens de dano e de cura de seus rituais.",
+        "PreR":"Pre 2"
+    },
+    {
+        "id":"saude_sobrenatural",
+        "nome":"Saúde Sobrenatural",
+        "origem":"Arquivos Secretos",
+        "tag":"Janeiro-2026",
+        "descricao":"Uma vez por cena, você pode gastar uma ação de movimento e 3 PE para receber pontos de vida temporários igual a sua Presença x 10.",
+        "PreR":"Int 2, Pre 2, conjurar ritual de 1° círculo"
+    }
+]

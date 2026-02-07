@@ -1,0 +1,90 @@
+[
+    {
+    "id": "anatomia_insana",
+    "nome": "Anatomia Insana",
+    "origem": "Livro de Regras",
+    "tag": "",
+    "descricao": "O seu corpo é transfigurado e parece desenvolver um instinto próprio separado da sua consciência.",
+    "PreR": "Sangue 2"
+    },
+    {
+    "id": "arma_de_sangue",
+    "nome": "Arma de Sangue",
+    "origem": "Livro de Regras",
+    "tag": "",
+    "descricao": "O Sangue devora parte de seu corpo e se manifesta como parte de você.",
+    "PreR": ""
+    },
+    {
+    "id": "sangue_de_ferro",
+    "nome": "Sangue de Ferro",
+    "origem": "Livro de Regras",
+    "tag": "",
+    "descricao": "O seu sangue flui de forma paranormal e agressiva, concedendo vigor não natural.",
+    "PreR": ""
+    },
+    {
+    "id": "sangue_fervente",
+    "nome": "Sangue Fervente",
+    "origem": "Livro de Regras",
+    "tag": "",
+    "descricao": "A intensidade da dor desperta em você sentimentos bestiais e prazerosos que você nem imaginava que existiam.",
+    "PreR": "Sangue 2"
+    },
+    {
+    "id": "sangue_vivo",
+    "nome": "Sangue Vivo",
+    "origem": "Livro de Regras",
+    "tag": "",
+    "descricao": "A carnificina não pode parar, o Sangue precisa continuar fluindo.",
+    "PreR": ""
+    },
+    {
+    "id": "espreitar_da_besta",
+    "nome": "Espreitar da Besta",
+    "origem": "Sobrevivendo ao Horror",
+    "tag": "",
+    "descricao": "O Sangue do Outro Lado deu a você o poder de controlar seu corpo e se mover exatamente como as bestas predadoras fazem.",
+    "PreR": ""
+    },
+    {
+    "id": "instintos_sanguinarios",
+    "nome": "Instintos Sanguinários",
+    "origem": "Sobrevivendo ao Horror",
+    "tag": "",
+    "descricao": "Ao se conectar com o Sangue do Outro Lado, você desperta instintos animalescos paranormais.",
+    "PreR": ""
+    },
+    {
+  "id": "ferro_maculado",
+  "nome": "Ferro Maculado",
+  "origem": "Arquivos Secretos",
+  "tag": "Janeiro-2026",
+  "descricao": "Acostumado a usar munições especiais contra ameaças, sua relação com armas que disparam projéteis se intensifica conforme você é corrompido pelo Sangue.",
+  "PreR": ""
+    },
+    {
+    "id": "placas_sanguinolentas",
+    "nome": "Placas Sanguinolentas",
+    "origem": "Arquivos Secretos",
+    "tag": "Janeiro-2026",
+    "descricao": "Você consegue manipular parte do Sangue presente em um ritual para criar placas rubras que o protegem. ",
+    "PreR": "Conjurar ritual de Sangue"
+    },
+    {
+    "id": "sangue_corrosivo",
+    "nome": "Sangue Corrosivo",
+    "origem": "Arquivos Secretos",
+    "tag": "Janeiro-2026",
+    "descricao": "A maldade do Sangue borbulha nas suas veias como um ácido extraído do inferno.",
+    "PreR": ""
+    },
+    {
+    "id": "sangue_prazeroso",
+    "nome": "Sangue Prazeroso",
+    "origem": "Arquivos Secretos",
+    "tag": "Janeiro-2026",
+    "descricao": "Sua conexão com o Sangue permite que você resista a dor apenas para que consiga senti-la por mais tempo.",
+    "PreR": "Sangue 1"
+    }
+]

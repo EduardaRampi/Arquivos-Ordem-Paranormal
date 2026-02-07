@@ -1,0 +1,18 @@
+[
+    {
+    "id": "aprender_ritual",
+    "nome": "Aprender Ritual",
+    "origem": "Livro de Regras",
+    "tag": "",
+    "descricao": "Através de uma conexão com as memórias de ocultistas do passado e os segredos das entidades, você aprende e pode conjurar um ritual. Este poder conta como um poder do elemento escolhido.",
+    "PreR": ""
+    },
+    {
+    "id": "resistir_a_elemento",
+    "nome": "Resistir a <Elemento>",
+    "origem": "Livro de Regras",
+    "tag": "",
+    "descricao": "Escolha entre Conhecimento, Energia, Morte ou Sangue. Você recebe resistência 10 contra esse elemento. Este poder conta como um poder do elemento escolhido.",
+    "PreR": ""
+    }
+]
