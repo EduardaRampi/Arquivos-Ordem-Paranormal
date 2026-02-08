@@ -1,6 +1,5 @@
 .centralizar, h1 {
     text-align: center;
-    font-size: 20px;
     color: rgb(180, 180, 180);
 }
 #fundo {
@@ -8,9 +7,16 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    font-family: "Space Grotesk", sans-serif;
 }
 .caixa {
-    background-color: rgb(131, 49, 49);
+    background: linear-gradient(
+        180deg,
+        rgba(131, 49, 49, 0.95),
+        rgba(90,25,25,0.95)
+    );
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.15);
     width: calc(100% - 40px);
     min-height: calc(100dvh - 40px);
     margin: 20px;
@@ -32,11 +38,29 @@ button {
     margin: 10px;
     cursor: pointer;
     border-radius: 5px;
+    transition:
+        background-color 0.2s,
+        transform 0.1s,
+        box-shadow 0.1s;
 }
 button:hover {
     background-color: rgb(105, 30, 30);
     color:rgb(204, 204, 204);
     border: 1px solid rgb(70, 18, 18);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+}
+.tela {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease;
+}
+.tela.ativa {
+  opacity: 1;
+  transform: translateY(0);
+}
+.tela.oculta {
+  opacity: 0;
 }
 .oculta {
   display: none;
@@ -75,6 +99,16 @@ footer .canto {
     padding: 10px;
     color: rgb(180, 180, 180);
     box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.144);
+    border-radius: 8px;
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease,
+                border 0.2s ease;
+}
+.classe-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0, 0.6);
+    border-color: #833131
 }
 .search-box {
     margin: 10px auto;
@@ -83,7 +117,6 @@ footer .canto {
     gap: 10px;
     justify-content: center;
 }
-
 .input-busca {
     flex: 2;
     padding: 12px;
@@ -105,7 +138,6 @@ footer .canto {
     display: inline-block;
     margin-bottom: 15px;
 }
-
 .btn-filtro-geral {
     background-color: rgba(0, 0, 0, 0.4);
     color: #fff;
@@ -115,11 +147,9 @@ footer .canto {
     font-size: 1rem;
     border-radius: 5px;
 }
-
 .btn-filtro-geral:hover {
     background-color: #500a0a;
 }
-
 .menu-filtros {
     position: absolute;
     top: 100%; /* Logo abaixo do botão */
@@ -134,7 +164,6 @@ footer .canto {
     max-height: 400px;
     overflow-y: auto; /* Barra de rolagem se ficar muito grande */
 }
-
 .titulo-categoria {
     color: #833131;
     font-weight: bold;
@@ -145,7 +174,6 @@ footer .canto {
     text-transform: uppercase;
     font-size: 0.9rem;
 }
-
 .item-filtro {
     color: #ccc;
     padding: 5px 10px;
@@ -153,19 +181,23 @@ footer .canto {
     transition: background 0.2s;
     font-size: 0.95rem;
 }
-
 .item-filtro:hover {
     background-color: #333;
     color: white;
 }
-
 .item-filtro.limpar {
     color: #ffcccc;
     font-style: italic;
     border-bottom: 1px solid #555;
     margin-bottom: 5px;
 }
-
-.oculta {
-    display: none !important;
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: #833131;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+    background: #111;
 }

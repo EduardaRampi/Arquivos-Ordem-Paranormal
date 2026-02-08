@@ -38,15 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const telaDestino = document.getElementById(idDestino);
       const telaAtual = btn.closest('.tela');
 
-      if (telaDestino) {
-        // Esconde a tela onde o botão estava
+      if (!telaDestino || telaDestino === telaAtual) return;
+      telaAtual.classList.remove('ativa');
+      setTimeout(() => {
         telaAtual.classList.add('oculta');
-        telaAtual.classList.remove('ativa');
-
-        // Mostra a nova tela
         telaDestino.classList.remove('oculta');
+        telaDestino.offsetHeight; // Força o reflow para garantir que a transição funcione
         telaDestino.classList.add('ativa');
-      }
+      }, 250); // Tempo para a transição de fade (ajuste conforme necessário)
     });
   });
 
@@ -81,11 +80,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const telaDestino = document.getElementById(idDestino);
 
-      // Esconde a atual e mostra a anterior
-      telaAtual.classList.add('oculta');
       telaAtual.classList.remove('ativa');
-      telaDestino.classList.remove('oculta');
-      telaDestino.classList.add('ativa');
+      setTimeout(() => {
+        telaAtual.classList.add('oculta');
+        telaDestino.classList.remove('oculta');
+        telaDestino.offsetHeight; // Força o reflow para garantir que a transição funcione
+        telaDestino.classList.add('ativa');
+      }, 250); // Tempo para a transição de fade (ajuste conforme necessário)
     });
   });
 
