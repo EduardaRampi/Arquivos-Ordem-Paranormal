@@ -7,6 +7,9 @@ Um guia interativo e responsivo para organizar as informações do livro de regr
 
 ## 🚀 Funcionalidades
 * **Consulta Criação de Personagem:** As principais informações necessárias para você criar seu personagem
+* **Consulta dos Rituais:** Todos os rituais de ordem paranormal, agora estão nos arquivos
+* **Consulta de Regras Novas:** Todas as regras extras presentes na Dragão Brasil e Arquivos Secretos estão listadas
+* **Consulta das Missões oficiais:** Um indice com todas as missões oficiais de Ordem Paranormal RPG
 * **Interface Responsiva:** Adaptado para computadores e dispositivos móveis.
 
 ## 🛠️ Tecnologias Utilizadas

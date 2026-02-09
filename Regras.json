@@ -1,0 +1,51 @@
+[
+    {
+        "nome": "Palcos Paranormais",
+        "origem": "Dragão Brasil",
+        "descricao": "Locais tão assustadores quanto reais para as suas missões.",
+        "tag": "#187",
+        "Comp": ""
+    },
+    {
+        "nome": "Fiquei sabendo",
+        "origem": "Dragão Brasil",
+        "descricao": "Lendar urbanas para as suas missões paranormais.",
+        "tag": "#191",
+        "Comp": ""
+    },
+    {
+        "nome": "A Clausura da alma liberta corpo e mente",
+        "origem": "Dragão Brasil",
+        "descricao": "Ao redor do mundo, diversas pessoas demonstram habilidades assombrosas, realizando feitos impossíveis para uma pessoa comum.",
+        "tag": "#192",
+        "Comp": ""
+    },
+    {
+        "nome": "Novo uso para Perícia Ocultismo",
+        "origem": "Arquivos Secretos",
+        "descricao": "Blindar a Mente.",
+        "tag": "Janeiro-2026",
+        "Comp": "Livro de regras - pg.47"
+    },
+    {
+        "nome": "Rituais de Vários Elementos",
+        "origem": "Arquivos Secretos",
+        "descricao": "Existem, por mais raro que sejam, rituais que p ertencem a mais de um elemento.",
+        "tag": "Janeiro-2026",
+        "Comp": "Livro de regras - pg.117"
+    },
+    {
+        "nome": "Transcender com Itens",
+        "origem": "Arquivos Secretos",
+        "descricao": "Locais tão assustadores quanto reais para as suas missões.",
+        "tag": "Janeiro-2026",
+        "Comp": "Livro de regras - pg.110"
+    },
+    {
+        "nome": "Reter Rituais",
+        "origem": "Arquivos Secretos",
+        "descricao": "Nesta regra opcional, a duração dos rituais sofre uma transformação intensa.",
+        "tag": "Janeiro-2026",
+        "Comp": "Livro de regras - pg.117"
+    }
+]

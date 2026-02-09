@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const containerCriaturasEnergia = document.getElementById('lista-criaturas-energia');
   const containerCriaturasMedo = document.getElementById('lista-criaturas-medo');
   const containerCriaturasRealidade = document.getElementById('lista-criaturas-realidade');
+  const containerRegras = document.getElementById('lista-regras');
 
   // Variável para salvar qual era a tela anterior (ajuda no botão voltar)
   let telaAnterior = null;
@@ -135,6 +136,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const htmlVd = item.Vd 
           ? `<p><strong>VD:</strong> ${item.Vd}</p>` 
           : ''; 
+        const htmlComp = item.Comp
+          ? `<p><strong>Complementa:</strong> ${item.Comp}</p>` 
+          : ''; 
 
         const card = `
           <div class="classe-card">
@@ -145,6 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ${htmlElemento}
             <p><strong>${tituloDescricao}:</strong> ${item.descricao}</p>
             ${htmlTag}
+            ${htmlComp}            
             ${htmlPreR}
           </div>
         `;
@@ -413,6 +418,12 @@ document.addEventListener('DOMContentLoaded', () => {
     erroMsg: 'Não foi possível carregar as criaturas da realidade'
   });
 
+  carregarCards({
+    arquivo: 'Regras.json',
+    container: containerRegras,
+    erroMsg: 'Não foi possível carregar as regras'
+  });
+
   // 4. Lógica de Busca Simples
   document.addEventListener('input', (e) => {
   if (e.target.classList.contains('input-busca')) {
@@ -440,7 +451,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'Origem': 'Origem',
         'Tag': 'Tag',
         'Pré-requisito': 'Pré-requisito',
-        'VD': 'VD'
+        'VD': 'VD',
+        'Complementa': 'Complementa'
     };
 
     const botoesFiltro = document.querySelectorAll('.btn-abrir-filtros');

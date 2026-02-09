@@ -24,13 +24,14 @@
         <div id="tela-inicial" class="tela ativa">
         <h1>Bem-vindo aos Arquivos de Ordem Paranormal</h1>
         <p class="centralizar">Um site para que seja possivel organizar as informações espalhadas entre o livro de regras, os suplementos, e outros materiais da Ordem Paranormal.</p>
+        <p class="centralizar">Aqui só terá informações oficiais de Ordem Paranormal RPG, publicadas pela Jambô, nada de Homebrews.</p>        
         <p class="centralizar">Clique nos botões abaixo para navegar entre as seções:</p>
         <div class="centralizar">
             <button class="btn-navegar" data-destino="Criação_persona">Criação de Personagens</button>
             <button class="btn-navegar" data-destino="Equipamentos">Equipamentos</button>
             <button class="btn-navegar" data-destino="Itens Amaldiçoados">Itens Amaldiçoados</button>
             <button class="btn-navegar" data-destino="Rituais">Rituais</button>
-            <!-- <button class="btn-navegar" data-destino="Regras">Regras</button>-->
+            <button class="btn-navegar" data-destino="Regras">Regras</button>
             <button class="btn-navegar" data-destino="Criaturas">Criaturas</button>
             <button class="btn-navegar" data-destino="Missões">Missões</button>
         </div>
@@ -92,9 +93,18 @@
 
         <div id="Regras" class="tela oculta">
         <h1>Regras</h1>
-        <div class="centralizar">
-            <button class="btn-voltar">Voltar</button>
-        </div> 
+        <p class="centralizar">Aqui só tera as regras que extras que aparecem na Dragão Brasil e em Arquivos secretos, nada do livro de regras ou do suplemento</p>
+        <div class="search-box">
+            <input type="text" class="input-busca" data-container="lista-regras" placeholder="Pesquisar por palavra chave..."> 
+            <div class="container-botao-filtro">
+                <button class="btn-filtro-geral btn-abrir-filtros">
+                    <i class="fas fa-filter"></i> Filtros
+                </button>
+                <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
+            </div>     
+        </div>        
+        <div id="lista-regras"></div>
+        <button class="btn-voltar">Voltar</button>
         </div>
 
         <div id="Criaturas" class="tela oculta">

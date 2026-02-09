@@ -1,0 +1,74 @@
+[
+    {
+        "nome":"As mãos que nos acolhem",
+        "tag":"Nex 5%",
+        "descricao": "A cidade de Tronco do Oeste está borbulhando com desaparecimentos de crianças de 6 anos de idade.",
+        "origem":"Casos Paranormais"
+    },
+    {
+        "nome":"Carga Mortal",
+        "tag":"Nex 10%",
+        "descricao": "o tráfico paranormal é uma realidade",
+        "origem":"Casos Paranormais"
+    },
+    {
+        "nome":"Os Espinhos da Aurora Escarlate",
+        "tag":"Nex 20%",
+        "descricao": "A pequena cidade de Aurora se tornou palco de uma série de desaparecimentos. Sete moradores, sem conexão entre si, sumiram ao longo do último mês.",
+        "origem":"Casos Paranormais"
+    },
+    {
+        "nome":"(Não) Siga a Luz",
+        "tag":"Nex 30%",
+        "descricao": "Os agentes acordam deitados em camas de hospital, sem a menor ideia de como foram parar ali.",
+        "origem":"Casos Paranormais"
+    },
+    {
+        "nome":"Noite de Compras",
+        "tag":"Nível 1",
+        "descricao": "Uma tempestade prende os personagens em um shopping center.",
+        "origem":"Sobrevivendo ao Horror"
+    },
+    {
+        "nome":"O Terminal do Fim",
+        "tag":"Nex 60%",
+        "descricao": "Um acidente com mortes em uma das linhas do metrô obrigou o governo a fechar o local.",
+        "origem":"Sobrevivendo ao Horror"
+    },
+    {
+        "nome":"O Voo da Morte",
+        "tag":"Nex 0/5/10/15%",
+        "descricao": "Durante uma viagem aérea de rotina, os personagens se deparam com uma série de eventos misteriosos e assustadores, que culminam com um pouso forçado em um aeroporto abandonado.",
+        "origem":"Missões Extras"
+    },
+    {
+        "nome":"Brumas de Vento Baixo",
+        "tag":"Nex 45%",
+        "descricao": "Um veículo quebrado no meio da madrugada acaba por desviar a rota dos agentes, que estavam voltando de uma missão perigosa.",
+        "origem":"Missões Extras"
+    },
+    {
+        "nome":"Fumaça Purpura",
+        "tag":"Nex 0%",
+        "descricao": "Um idílico passeio de trem pelos vinhedos da Serra Gaúcha se transforma em um terrível pesadelo",
+        "origem":"Vendeta Oculta"
+    },
+    {
+        "nome":"A Canção do Mar",
+        "tag":"Nex 5%",
+        "descricao": "Os agentes são enviados para sua primeira missão: investigar um mistério na ilha da Praia da Sereia.",
+        "origem":"Vendeta Oculta"
+    },
+    {
+        "nome":"Distúrbio Selvagem",
+        "tag":"Nex 15%",
+        "descricao": "Animais silvestres estão se comportando de forma violenta em Campo Grande, capital do Mato Grosso do Sul.",
+        "origem":"Vendeta Oculta"
+    },
+    {
+        "nome":"Coração da Insanidade",
+        "tag":"Nex 25%",
+        "descricao": "Após décadas em silêncio, um velho manicômio assombrado volta a clamar vítimas.",
+        "origem":"Vendeta Oculta"
+    }
+]
