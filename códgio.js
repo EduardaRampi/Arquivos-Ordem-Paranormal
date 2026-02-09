@@ -27,6 +27,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const containerItensParanormais = document.getElementById('lista-itens-paranormais');
   const containerModificacoesItensParanormais = document.getElementById('lista-modificacoes-itens-paranormais');
   const containerPoderesParanormais = document.getElementById('lista-poderes-paranormais');
+  const containerRituais = document.getElementById('lista-rituais');
+  const containersMissoes = document.getElementById('lista-missoes');
+  const containerMaldiçoesArmas = document.getElementById('lista-maldicoes-armas');
+  const containerMaldiçoesProtecoes = document.getElementById('lista-maldicoes-protecoes');
+  const containerMaldiçoesAcessorios = document.getElementById('lista-maldicoes-acessorios');
+  const containerItensAmaldicoadosSangue = document.getElementById('lista-itens-amaldicoados-sangue');
+  const containerItensAmaldicoadosMorte = document.getElementById('lista-itens-amaldicoados-morte');
+  const containerItensAmaldicoadosConhecimento = document.getElementById('lista-itens-amaldicoados-conhecimento');
+  const containerItensAmaldicoadosEnergia = document.getElementById('lista-itens-amaldicoados-energia');
+  const containerItensAmaldicoadosMedo = document.getElementById('lista-itens-amaldicoados-medo');
+  const containerItensAmaldicoadosVaria = document.getElementById('lista-itens-amaldicoados-varia');
+  const containerCriaturasSangue = document.getElementById('lista-criaturas-sangue');
+  const containerCriaturasMorte = document.getElementById('lista-criaturas-morte');
+  const containerCriaturasConhecimento = document.getElementById('lista-criaturas-conhecimento');
+  const containerCriaturasEnergia = document.getElementById('lista-criaturas-energia');
+  const containerCriaturasMedo = document.getElementById('lista-criaturas-medo');
+  const containerCriaturasRealidade = document.getElementById('lista-criaturas-realidade');
 
   // Variável para salvar qual era a tela anterior (ajuda no botão voltar)
   let telaAnterior = null;
@@ -66,16 +83,20 @@ document.addEventListener('DOMContentLoaded', () => {
         idDestino = "Poderes Paranormais";
       } else if (telaAtual.id === "Armas" || telaAtual.id === "Munições" || telaAtual.id === "Proteções" || telaAtual.id === "Acessórios" || telaAtual.id === "Explosivos" || telaAtual.id === "Itens Operacionais" || telaAtual.id === "Itens Paranormais") {
         idDestino = "Equipamentos";
-      } else if (telaAtual.id === "Modificações de Armas") {
+      } else if (telaAtual.id === "Modificações para Armas" || telaAtual.id === "Maldições para Armas") {
         idDestino = "Armas";
-      } else if (telaAtual.id === "Modificações de Munições") {
+      } else if (telaAtual.id === "Modificações para Munições") {
         idDestino = "Munições";
-      } else if (telaAtual.id === "Modificações de Proteções") {
+      } else if (telaAtual.id === "Modificações para Proteções" || telaAtual.id === "Maldições para Proteções") {
         idDestino = "Proteções";
-      } else if (telaAtual.id === "Modificações de Acessórios") {
+      } else if (telaAtual.id === "Modificações para Acessórios" || telaAtual.id === "Maldições para Acessórios") {
         idDestino = "Acessórios";
-      } else if (telaAtual.id === "Modificações de Itens Paranormais") {
+      } else if (telaAtual.id === "Modificações para Itens Paranormais") {
         idDestino = "Itens Paranormais";
+      } else if (telaAtual.id === "Itens Amaldiçoados Sangue" || telaAtual.id === "Itens Amaldiçoados Morte" || telaAtual.id === "Itens Amaldiçoados Conhecimento" || telaAtual.id === "Itens Amaldiçoados Energia" || telaAtual.id === "Itens Amaldiçoados Medo" || telaAtual.id === "Itens Amaldiçoados Variados") {
+        idDestino = "Itens Amaldiçoados";
+      } else if (telaAtual.id === "Criaturas Sangue" || telaAtual.id === "Criaturas Morte" || telaAtual.id === "Criaturas Conhecimento" || telaAtual.id === "Criaturas Energia" || telaAtual.id === "Criaturas Medo" || telaAtual.id === "Criaturas Realidade"){
+        idDestino = "Criaturas";
       }
 
       const telaDestino = document.getElementById(idDestino);
@@ -105,17 +126,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const htmlPreR = item.PreR 
           ? `<p><strong>Pré-requisito:</strong> ${item.PreR}</p>` 
           : '';   
-        const htmlCirculo = item.htmlCirculo 
+        const htmlCirculo = item.Circulo 
           ? `<p><strong>Círculo:</strong> ${item.Circulo}</p>` 
           : '';          
-        const htmlElemento = item.htmlElemento 
+        const htmlElemento = item.Elemento 
           ? `<p><strong>Elemento:</strong> ${item.Elemento}</p>` 
+          : ''; 
+        const htmlVd = item.Vd 
+          ? `<p><strong>VD:</strong> ${item.Vd}</p>` 
           : ''; 
 
         const card = `
           <div class="classe-card">
             <h2>${item.nome}</h2>
             <p><strong>Origem:</strong> ${item.origem}</p>
+            ${htmlVd}
             ${htmlCirculo}
             ${htmlElemento}
             <p><strong>${tituloDescricao}:</strong> ${item.descricao}</p>
@@ -286,6 +311,108 @@ document.addEventListener('DOMContentLoaded', () => {
     erroMsg: 'Não foi possível carregar as modificações de itens paranormais'
   });
 
+  carregarCards({
+    arquivo: 'Rituais.json',
+    container: containerRituais,
+    erroMsg: 'Não foi possível carregar os rituais'
+  });
+
+  carregarCards({
+    arquivo: 'Missoes.json',
+    container: containersMissoes,
+    erroMsg: 'Não foi possível carregar as missões'
+  });
+
+  carregarCards({
+    arquivo: 'Maldições Armas.json',
+    container: containerMaldiçoesArmas,
+    erroMsg: 'Não foi possível carregar as maldições para armas'
+  });
+
+  carregarCards({
+    arquivo: 'Maldições Proteção.json',
+    container: containerMaldiçoesProtecoes,
+    erroMsg: 'Não foi possível carregar as maldições para proteção'
+  });
+
+  carregarCards({
+    arquivo: 'Maldições Acessórios.json',
+    container: containerMaldiçoesAcessorios,
+    erroMsg: 'Não foi possível carregar as maldições para acessórios'
+  });
+
+  carregarCards({
+    arquivo: 'Itens Amaldiçoados Sangue.json',
+    container: containerItensAmaldicoadosSangue,
+    erroMsg: 'Não foi possível carregar os itens amaldiçoados de sangue'
+  });
+
+  carregarCards({
+    arquivo: 'Itens Amaldiçoados Morte.json',
+    container: containerItensAmaldicoadosMorte,
+    erroMsg: 'Não foi possível carregar os itens amaldiçoados de morte'
+  });
+
+  carregarCards({
+    arquivo: 'Itens Amaldiçoados Conhecimento.json',
+    container: containerItensAmaldicoadosConhecimento,
+    erroMsg: 'Não foi possível carregar os itens amaldiçoados de conhecimento'
+  });
+
+  carregarCards({
+    arquivo: 'Itens Amaldiçoados Energia.json',
+    container: containerItensAmaldicoadosEnergia,
+    erroMsg: 'Não foi possível carregar os itens amaldiçoados de energia'
+  });
+
+  carregarCards({
+    arquivo: 'Itens Amaldiçoados Medo.json',
+    container: containerItensAmaldicoadosMedo,
+    erroMsg: 'Não foi possível carregar os itens amaldiçoados de medo'
+  });
+
+  carregarCards({
+    arquivo: 'Itens Amaldiçoados Varia.json',
+    container: containerItensAmaldicoadosVaria,
+    erroMsg: 'Não foi possível carregar os itens amaldiçoados variados'
+  });
+
+  carregarCards({
+    arquivo: 'Critaturas Sangue.json',
+    container: containerCriaturasSangue,
+    erroMsg: 'Não foi possível carregar as criaturas de sangue'
+  });
+
+  carregarCards({
+    arquivo: 'Critaturas Morte.json',
+    container: containerCriaturasMorte,
+    erroMsg: 'Não foi possível carregar as criaturas de morte'
+  });
+
+  carregarCards({
+    arquivo: 'Critaturas Conhecimento.json',
+    container: containerCriaturasConhecimento,
+    erroMsg: 'Não foi possível carregar as criaturas de conhecimento'
+  });
+
+  carregarCards({
+    arquivo: 'Critaturas Energia.json',
+    container: containerCriaturasEnergia,
+    erroMsg: 'Não foi possível carregar as criaturas de energia'
+  });
+
+  carregarCards({
+    arquivo: 'Critaturas Medo.json',
+    container: containerCriaturasMedo,
+    erroMsg: 'Não foi possível carregar as criaturas de medo'
+  });
+
+  carregarCards({
+    arquivo: 'Critaturas Realidade.json',
+    container: containerCriaturasRealidade,
+    erroMsg: 'Não foi possível carregar as criaturas da realidade'
+  });
+
   // 4. Lógica de Busca Simples
   document.addEventListener('input', (e) => {
   if (e.target.classList.contains('input-busca')) {
@@ -312,7 +439,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'Círculo': 'Círculo',
         'Origem': 'Origem',
         'Tag': 'Tag',
-        'Pré-requisito': 'Pré-requisito'
+        'Pré-requisito': 'Pré-requisito',
+        'VD': 'VD'
     };
 
     const botoesFiltro = document.querySelectorAll('.btn-abrir-filtros');

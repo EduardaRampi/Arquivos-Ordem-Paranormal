@@ -1,0 +1,814 @@
+[
+    {
+        "id":"amaldicoar_arma",
+        "nome":"Amaldiçoar Arma",
+        "origem":"Livro de Regras",
+        "descricao":"Arma causa mais dano.",
+        "Circulo":"1º",
+        "Elemento":"Qualquer"
+    },
+    {
+        "id":"compreensao_paranormal",
+        "nome":"Compreensão Paranormal",
+        "origem":"Livro de Regras",
+        "descricao":"Você entende qualquer linguagem escrita ou falada.",
+        "Circulo":"1º",
+        "Elemento":"Conhecimento"
+    },
+    {
+        "id":"enfeiticar",
+        "nome":"Enfeitiçar",
+        "origem":"Livro de Regras",
+        "descricao":"Alvo se torna prestativo.",
+        "Circulo":"1º",
+        "Elemento":"Conhecimento"
+    },
+    {
+        "id":"perturbacao",
+        "nome":"Perturbação",
+        "origem":"Livro de Regras",
+        "descricao":"Força o alvo a obedecer a uma ordem.",
+        "Circulo":"1º",
+        "Elemento":"Conhecimento"
+    },
+    {
+        "id":"ouvir_os_sussurros",
+        "nome":"Ouvir os Sussurros",
+        "origem":"Livro de Regras",
+        "descricao":"Você se comunica com vozes do Outro Lado para receber informações.",
+        "Circulo":"1º",
+        "Elemento":"Conhecimento"
+    },
+    {
+        "id":"tecer_ilusao",
+        "nome":"Tecer Ilusão",
+        "origem":"Livro de Regras",
+        "descricao":"Cria uma ilusão visual ou sonora.",
+        "Circulo":"1º",
+        "Elemento":"Conhecimento"
+    },
+    {
+        "id":"terceiro_olho",
+        "nome":"Terceiro Olho",
+        "origem":"Livro de Regras",
+        "descricao":"Você vê manifestações paranormais.",
+        "Circulo":"1º",
+        "Elemento":"Conhecimento"
+    },
+    {
+        "id":"amaldicoar_tecnologia",
+        "nome":"Amaldiçoar Tecnologia",
+        "origem":"Livro de Regras",
+        "descricao":"Aprimora um item.",
+        "Circulo":"1º",
+        "Elemento":"Energia"
+    },
+    {
+        "id":"coincidencia_forcada",
+        "nome":"Coincidência Forçada",
+        "origem":"Livro de Regras",
+        "descricao":"Recebe bônus em testes.",
+        "Circulo":"1º",
+        "Elemento":"Energia"
+    },
+    {
+        "id":"eletrocussao",
+        "nome":"Eletrocussão",
+        "origem":"Livro de Regras",
+        "descricao":"Corrente voltaica eletrocuta o alvo.",
+        "Circulo":"1º",
+        "Elemento":"Energia"
+    },
+    {
+        "id":"embaralhar",
+        "nome":"Embaralhar",
+        "origem":"Livro de Regras",
+        "descricao":"Cria duplicatas para confundir os inimigos, oferecendo bônus na Defesa.",
+        "Circulo":"1º",
+        "Elemento":"Energia"
+    },
+    {
+        "id":"luz",
+        "nome":"Luz",
+        "origem":"Livro de Regras",
+        "descricao":"Objeto brilha como uma lâmpada.",
+        "Circulo":"1º",
+        "Elemento":"Energia"
+    },
+    {
+        "id":"polarizacao_caotica",
+        "nome":"Polarização Caótica",
+        "origem":"Livro de Regras",
+        "descricao":"Objetos metálicos são atraídos ou repelidos conforme sua vontade.",
+        "Circulo":"1º",
+        "Elemento":"Energia"
+    },
+    {
+        "id":"cicatrizacao",
+        "nome":"Cicatrização",
+        "origem":"Livro de Regras",
+        "descricao":"Acelera a regeneração de um ferimento.",
+        "Circulo":"1º",
+        "Elemento":"Morte"
+    },
+    {
+        "id":"consumir_manancial",
+        "nome":"Consumir Manancial",
+        "origem":"Livro de Regras",
+        "descricao":"Suga o tempo de vida de seres próximos, recebendo PV temporários.",
+        "Circulo":"1º",
+        "Elemento":"Morte"
+    },
+    {
+        "id":"decadencia",
+        "nome":"Decadência",
+        "origem":"Livro de Regras",
+        "descricao":"Acelera o envelhecimento dos órgãos internos do alvo, fazendo seu corpo definhar.",
+        "Circulo":"1º",
+        "Elemento":"Morte"
+    },
+    {
+        "id":"definhar",
+        "nome":"Definhar",
+        "origem":"Livro de Regras",
+        "descricao":"Alvo fica fatigado ou vulnerável.",
+        "Circulo":"1º",
+        "Elemento":"Morte"
+    },
+    {
+        "id":"espirais_da_perdicao",
+        "nome":"Espirais da Perdição",
+        "origem":"Livro de Regras",
+        "descricao":"Inimigos sofrem penalidade em ataque.",
+        "Circulo":"1º",
+        "Elemento":"Morte"
+    },
+    {
+        "id":"nuvem_de_cinzas",
+        "nome":"Nuvem de Cinzas",
+        "origem":"Livro de Regras",
+        "descricao":"Nuvem fornece camuflagem.",
+        "Circulo":"1º",
+        "Elemento":"Morte"
+    },
+    {
+        "id":"arma_atroz",
+        "nome":"Arma Atroz",
+        "origem":"Livro de Regras",
+        "descricao":"Arma corpo a corpo recebe bônus em testes de ataque e margem de ameaça.",
+        "Circulo":"1º",
+        "Elemento":"Sangue"
+    },
+    {
+        "id":"armadura_de_sangue",
+        "nome":"Armadura de Sangue",
+        "origem":"Livro de Regras",
+        "descricao":"Recobre o corpo com placas de sangue endurecido.",
+        "Circulo":"1º",
+        "Elemento":"Sangue"
+    },
+    {
+        "id":"corpo_adaptado",
+        "nome":"Corpo Adaptado",
+        "origem":"Livro de Regras",
+        "descricao":"Ignora frio e calor, pode respirar debaixo d’água.",
+        "Circulo":"1º",
+        "Elemento":"Sangue"
+    },
+    {
+        "id":"distorcer_aparencia",
+        "nome":"Distorcer Aparência",
+        "origem":"Livro de Regras",
+        "descricao":"Muda a aparência de um ou mais alvos.",
+        "Circulo":"1º",
+        "Elemento":"Sangue"
+    },
+    {
+        "id":"fortalecimento_sensorial",
+        "nome":"Fortalecimento Sensorial",
+        "origem":"Livro de Regras",
+        "descricao":"Melhora seus sentidos e sua percepção.",
+        "Circulo":"1º",
+        "Elemento":"Sangue"
+    },
+    {
+        "id":"odio_incontrolavel",
+        "nome":"Ódio Incontrolável",
+        "origem":"Livro de Regras",
+        "descricao":"Aumenta dano corpo a corpo e perícias físicas, mas impede calma e concentração.",
+        "Circulo":"1º",
+        "Elemento":"Sangue"
+    },
+    {
+        "id":"cineraria",
+        "nome":"Cinerária",
+        "origem":"Livro de Regras",
+        "descricao":"Névoa fortalece rituais na área.",
+        "Circulo":"1º",
+        "Elemento":"Medo"
+    },
+    {
+        "id":"aprimorar_mente",
+        "nome":"Aprimorar Mente",
+        "origem":"Livro de Regras",
+        "descricao":"Fornece bônus em Intelecto ou Presença.",
+        "Circulo":"2º",
+        "Elemento":"Conhecimento"
+    },
+    {
+        "id":"deteccao_de_ameacas",
+        "nome":"Detecção de Ameaças",
+        "origem":"Livro de Regras",
+        "descricao":"Detecta seres hostis e armadilhas na área.",
+        "Circulo":"2º",
+        "Elemento":"Conhecimento"
+    },
+    {
+        "id":"esconder_dos_olhos",
+        "nome":"Esconder dos Olhos",
+        "origem":"Livro de Regras",
+        "descricao":"Torna o usuário invisível aos olhos comuns por determinado tempo.",
+        "Circulo":"2º",
+        "Elemento":"Conhecimento"
+    },
+    {
+        "id":"invadir_mente",
+        "nome":"Invadir Mente",
+        "origem":"Livro de Regras",
+        "descricao":"Gera uma rajada mental ou se conecta telepaticamente.",
+        "Circulo":"2º",
+        "Elemento":"Conhecimento"
+    },
+    {
+        "id":"localizacao",
+        "nome":"Localização",
+        "origem":"Livro de Regras",
+        "descricao":"Determina em que direção está um objeto ou ser a sua escolha.",
+        "Circulo":"2º",
+        "Elemento":"Conhecimento"
+    },
+
+    {
+        "id":"chamas_do_caos",
+        "nome":"Chamas do Caos",
+        "origem":"Livro de Regras",
+        "descricao":"Controla o fogo.",
+        "Circulo":"2º",
+        "Elemento":"Energia"
+    },
+    {
+        "id":"contencao_fantasmagorica",
+        "nome":"Contenção Fantasmagórica",
+        "origem":"Livro de Regras",
+        "descricao":"Laços de energia prendem o alvo.",
+        "Circulo":"2º",
+        "Elemento":"Energia"
+    },
+    {
+        "id":"dissonancia_acustica",
+        "nome":"Dissonância Acústica",
+        "origem":"Livro de Regras",
+        "descricao":"Cria uma área em que é impossível ouvir sons.",
+        "Circulo":"2º",
+        "Elemento":"Energia"
+    },
+    {
+        "id":"sopro_do_caos",
+        "nome":"Sopro do Caos",
+        "origem":"Livro de Regras",
+        "descricao":"Move o ar de formas impossíveis.",
+        "Circulo":"2º",
+        "Elemento":"Energia"
+    },
+    {
+        "id":"tela_de_ruido",
+        "nome":"Tela de Ruído",
+        "origem":"Livro de Regras",
+        "descricao":"Cria uma película protetora que absorve dano.",
+        "Circulo":"2º",
+        "Elemento":"Energia"
+    },
+    {
+        "id":"desacelerar_impacto",
+        "nome":"Desacelerar Impacto",
+        "origem":"Livro de Regras",
+        "descricao":"Diminui dano de queda e reduz o dano de projéteis à metade.",
+        "Circulo":"2º",
+        "Elemento":"Morte"
+    },
+    {
+        "id":"eco_espiral",
+        "nome":"Eco Espiral",
+        "origem":"Livro de Regras",
+        "descricao":"Repete o dano que o alvo sofreu ao longo das rodadas concentrando.",
+        "Circulo":"2º",
+        "Elemento":"Morte"
+    },
+    {
+        "id":"paradoxo",
+        "nome":"Paradoxo",
+        "origem":"Livro de Regras",
+        "descricao":"Cria uma área de tempo paradoxal, capaz de envelhecer corpo e alma.",
+        "Circulo":"2º",
+        "Elemento":"Morte"
+    },
+    {
+        "id":"miasma_entropico",
+        "nome":"Miasma Entrópico",
+        "origem":"Livro de Regras",
+        "descricao":"Nuvem tóxica enjoa e sufoca os alvos.",
+        "Circulo":"2º",
+        "Elemento":"Morte"
+    },
+    {
+        "id":"velocidade_mortal",
+        "nome":"Velocidade Mortal",
+        "origem":"Livro de Regras",
+        "descricao":"Alvo acelera no tempo, realizando ações adicionais.",
+        "Circulo":"2º",
+        "Elemento":"Morte"
+    },
+    {
+        "id":"aprimorar_fisico",
+        "nome":"Aprimorar Físico",
+        "origem":"Livro de Regras",
+        "descricao":"Bônus em Agilidade ou Força.",
+        "Circulo":"2º",
+        "Elemento":"Sangue"
+    },
+    {
+        "id":"descanar",
+        "nome":"Descarnar",
+        "origem":"Livro de Regras",
+        "descricao":"A pele do alvo é dilacerada, abrindo cortes profundos.",
+        "Circulo":"2º",
+        "Elemento":"Sangue"
+    },
+    {
+        "id":"flagelo_de_sangue",
+        "nome":"Flagelo de Sangue",
+        "origem":"Livro de Regras",
+        "descricao":"Alvo precisa obedecer uma ordem.",
+        "Circulo":"2º",
+        "Elemento":"Sangue"
+    },
+    {
+        "id":"hemofagia",
+        "nome":"Hemofagia",
+        "origem":"Livro de Regras",
+        "descricao":"Absorve o sangue do alvo, causando dano e recuperando seus pontos de vida.",
+        "Circulo":"2º",
+        "Elemento":"Sangue"
+    },
+    {
+        "id":"transfusao_vital",
+        "nome":"Transfusão Vital",
+        "origem":"Livro de Regras",
+        "descricao":"Transfere vida do usuário para um ser, curando-o instantaneamente.",
+        "Circulo":"2º",
+        "Elemento":"Sangue"
+    },
+    {
+        "id":"protecao_contra_rituais",
+        "nome":"Proteção contra Rituais",
+        "origem":"Livro de Regras",
+        "descricao":"Alvo recebe resistência contra efeitos e criaturas paranormais.",
+        "Circulo":"2º",
+        "Elemento":"Medo"
+    },
+    {
+        "id":"rejeitar_nevoa",
+        "nome":"Rejeitar Névoa",
+        "origem":"Livro de Regras",
+        "descricao":"Enfraquece a conjuração de rituais.",
+        "Circulo":"2º",
+        "Elemento":"Medo"
+    },
+    {
+        "id":"alterar_memoria",
+        "nome":"Alterar Memória",
+        "origem":"Livro de Regras",
+        "descricao":"Pode apagar ou modificar a memória recente do alvo.",
+        "Circulo":"3º",
+        "Elemento":"Conhecimento"
+    },
+    {
+        "id":"contato_paranormal",
+        "nome":"Contato Paranormal",
+        "origem":"Livro de Regras",
+        "descricao":"Você barganha com o Outro Lado para obter ajuda.",
+        "Circulo":"3º",
+        "Elemento":"Conhecimento"
+    },
+    {
+        "id":"mergulho_mental",
+        "nome":"Mergulho Mental",
+        "origem":"Livro de Regras",
+        "descricao":"Se infiltra na mente do alvo para vasculhar seus pensamentos.",
+        "Circulo":"3º",
+        "Elemento":"Conhecimento"
+    },
+    {
+        "id":"videncia",
+        "nome":"Vidência",
+        "origem":"Livro de Regras",
+        "descricao":"Pode observar e ouvir um alvo à distância.",
+        "Circulo":"3º",
+        "Elemento":"Conhecimento"
+    },
+    {
+        "id":"convocacao_instantanea",
+        "nome":"Convocação Instantânea",
+        "origem":"Livro de Regras",
+        "descricao":"Teletransporta um objeto marcado para suas mãos.",
+        "Circulo":"3º",
+        "Elemento":"Energia"
+    },
+    {
+        "id":"salto_fantasma",
+        "nome":"Salto Fantasma",
+        "origem":"Livro de Regras",
+        "descricao":"Teletransporta você e outros seres para um ponto dentro do alcance.",
+        "Circulo":"3º",
+        "Elemento":"Energia"
+    },
+    {
+        "id":"transfigurar_agua",
+        "nome":"Transfigurar Água",
+        "origem":"Livro de Regras",
+        "descricao":"Água e gelo se comportam de forma caótica.",
+        "Circulo":"3º",
+        "Elemento":"Energia"
+    },
+    {
+        "id":"transfigurar_terra",
+        "nome":"Transfigurar Terra",
+        "origem":"Livro de Regras",
+        "descricao":"Rochas, lama e areia se comportam de forma caótica.",
+        "Circulo":"3º",
+        "Elemento":"Energia"
+    },
+    {
+        "id":"ancora_temporal",
+        "nome":"Âncora Temporal",
+        "origem":"Livro de Regras",
+        "descricao":"Impede o alvo de se afastar de um ponto.",
+        "Circulo":"3º",
+        "Elemento":"Morte"
+    },
+    {
+        "id":"poeira_da_podridao",
+        "nome":"Poeira da Podridão",
+        "origem":"Livro de Regras",
+        "descricao":"Nuvem de poeira apodrece tudo que toca.",
+        "Circulo":"3º",
+        "Elemento":"Morte"
+    },
+    {
+        "id":"tentaculos_de_lodo",
+        "nome":"Tentáculos de Lodo",
+        "origem":"Livro de Regras",
+        "descricao":"Tentáculos pretos atacam e agarram seres na área.",
+        "Circulo":"3º",
+        "Elemento":"Morte"
+    },
+    {
+        "id":"zerar_entropia",
+        "nome":"Zerar Entropia",
+        "origem":"Livro de Regras",
+        "descricao":"O alvo fica lento ou paralisado.",
+        "Circulo":"3º",
+        "Elemento":"Morte"
+    },
+    {
+        "id":"ferver_sangue",
+        "nome":"Ferver Sangue",
+        "origem":"Livro de Regras",
+        "descricao":"Faz o sangue do alvo entrar em ebulição, causando dano e deixando-o fraco.",
+        "Circulo":"3º",
+        "Elemento":"Sangue"
+    },
+    {
+        "id":"forma_monstruosa",
+        "nome":"Forma Monstruosa",
+        "origem":"Livro de Regras",
+        "descricao":"Você assume a aparência e forma de uma criatura monstruosa.",
+        "Circulo":"3º",
+        "Elemento":"Sangue"
+    },
+    {
+        "id":"purgatorio",
+        "nome":"Purgatório",
+        "origem":"Livro de Regras",
+        "descricao":"Área de sangue deixa alvos vulneráveis a dano e causa dor a quem tentar sair.",
+        "Circulo":"3º",
+        "Elemento":"Sangue"
+    },
+    {
+        "id":"vomitar_pestes",
+        "nome":"Vomitar Pestes",
+        "origem":"Livro de Regras",
+        "descricao":"Vomita um enxame de pequenas criaturas de Sangue.",
+        "Circulo":"3º",
+        "Elemento":"Sangue"
+    },
+    {
+        "id":"dissipar_ritual",
+        "nome":"Dissipar Ritual",
+        "origem":"Livro de Regras",
+        "descricao":"Cancela os efeitos de rituais em um alvo ou área.",
+        "Circulo":"3º",
+        "Elemento":"Medo"
+    },
+    {
+        "id":"controle_mental",
+        "nome":"Controle Mental",
+        "origem":"Livro de Regras",
+        "descricao":"Faz com que a mente da vítima seja controlada por outra pessoa.",
+        "Circulo":"4º",
+        "Elemento":"Conhecimento"
+    },
+    {
+        "id":"inexistir",
+        "nome":"Inexistir",
+        "origem":"Livro de Regras",
+        "descricao":"Você toca um alvo e o apaga completamente da existência.",
+        "Circulo":"4º",
+        "Elemento":"Conhecimento"
+    },
+    {
+        "id":"possessao",
+        "nome":"Possessão",
+        "origem":"Livro de Regras",
+        "descricao":"Transfere sua consciência para o corpo do alvo.",
+        "Circulo":"4º",
+        "Elemento":"Conhecimento"
+    },
+    {
+        "id":"alterar_destino",
+        "nome":"Alterar Destino",
+        "origem":"Livro de Regras",
+        "descricao":"Enxerga o futuro próximo, podendo alterar o resultado de um teste.",
+        "Circulo":"4º",
+        "Elemento":"Energia"
+    },
+    {
+        "id":"deflagracao_de_energia",
+        "nome":"Deflagração de Energia",
+        "origem":"Livro de Regras",
+        "descricao":"Explosão de energia bruta causa dano e afeta itens amaldiçoados.",
+        "Circulo":"4º",
+        "Elemento":"Energia"
+    },
+    {
+        "id":"teletransporte",
+        "nome":"Teletransporte",
+        "origem":"Livro de Regras",
+        "descricao":"Teletransporta você e outros seres.",
+        "Circulo":"4º",
+        "Elemento":"Energia"
+    },
+    {
+        "id":"convocar_o_algoz",
+        "nome":"Convocar o Algoz",
+        "origem":"Livro de Regras",
+        "descricao":"Conjura o maior medo do alvo, que irá persegui-lo e tentar matá-lo.",
+        "Circulo":"4º",
+        "Elemento":"Morte"
+    },
+    {
+        "id":"distorcao_temporal",
+        "nome":"Distorção Temporal",
+        "origem":"Livro de Regras",
+        "descricao":"Você age livremente por um curto período de tempo.",
+        "Circulo":"4º",
+        "Elemento":"Morte"
+    },
+    {
+        "id":"fim_inevitavel",
+        "nome":"Fim Inevitável",
+        "origem":"Livro de Regras",
+        "descricao":"Abre uma ruptura no espaço que suga tudo ao redor.",
+        "Circulo":"4º",
+        "Elemento":"Morte"
+    },
+    {
+        "id":"capturar_o_coracao",
+        "nome":"Capturar o Coração",
+        "origem":"Livro de Regras",
+        "descricao":"Manipula as emoções e vontades do alvo, fazendo dele seu aliado.",
+        "Circulo":"4º",
+        "Elemento":"Sangue"
+    },
+    {
+        "id":"involucro_de_carne",
+        "nome":"Invólucro de Carne",
+        "origem":"Livro de Regras",
+        "descricao":"Cria um clone de carne e sangue com as mesmas estatísticas do alvo.",
+        "Circulo":"4º",
+        "Elemento":"Sangue"
+    },
+    {
+        "id":"vinculo_de_sangue",
+        "nome":"Vínculo de Sangue",
+        "origem":"Livro de Regras",
+        "descricao":"Alvo sofre todo dano que você sofrer.",
+        "Circulo":"4º",
+        "Elemento":"Sangue"
+    },
+    {
+        "id":"canalizar_o_medo",
+        "nome":"Canalizar o Medo",
+        "origem":"Livro de Regras",
+        "descricao":"Transfere parte de seu poder paranormal para um alvo.",
+        "Circulo":"4º",
+        "Elemento":"Medo"
+    },
+    {
+        "id":"conhecendo_o_medo",
+        "nome":"Conhecendo o Medo",
+        "origem":"Livro de Regras",
+        "descricao":"Manifesta o Medo absoluto na mente do alvo.",
+        "Circulo":"4º",
+        "Elemento":"Medo"
+    },
+    {
+        "id":"lamina_do_medo",
+        "nome":"Lâmina do Medo",
+        "origem":"Livro de Regras",
+        "descricao":"Golpeia o alvo com uma lâmina de medo puro.",
+        "Circulo":"4º",
+        "Elemento":"Medo"
+    },
+    {
+        "id":"medo_tangivel",
+        "nome":"Medo Tangível",
+        "origem":"Livro de Regras",
+        "descricao":"Recebe uma série de imunidades.",
+        "Circulo":"4º",
+        "Elemento":"Medo"
+    },
+    {
+        "id":"presenca_do_medo",
+        "nome":"Presença do Medo",
+        "origem":"Livro de Regras",
+        "descricao":"Você assume uma forma impossível dentro da Realidade.",
+        "Circulo":"4º",
+        "Elemento":"Medo"
+    },
+    {
+        "id":"esfolar",
+        "nome":"Esfolar",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Você usa seu corpo como passagem para o Sangue, projetando agulhas e lâminas rubras praticamente imperceptíveis que se projetam contra o alvo.",
+        "Circulo":"1º",
+        "Elemento":"Sangue"
+    },
+    {
+        "id":"sede_de_adrenalina",
+        "nome":"Sede de Adrenalina",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Quando você falha em um teste de Acrobacia ou Atletismo, pode conjurar esse ritual para repetir esse teste, usando Presença no lugar do atributo base daquela perícia.",
+        "Circulo":"2º",
+        "Elemento":"Sangue"
+    },
+    {
+        "id":"odor_da_caçada",
+        "nome":"Odor da Caçada",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Você recebe faro. Além disso, essa nova camada de percepção inunda seu corpo com capacidades que você desconhecia",
+        "Circulo":"3º",
+        "Elemento":"Sangue"
+    },
+    {
+        "id":"martirio_de_sangue",
+        "nome":"Martírio de Sangue",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Você fica mais forte, rápido e resistente, em troca de uma mente nublada pela raiva e uma aparência animalesca, sentindo os músculos rasgando, os ossos ficando protuberantes e a sua pele endurecendo em uma estrutura de couro rubro.",
+        "Circulo":"4º",
+        "Elemento":"Sangue"
+    },
+    {
+        "id":"apagar_as_luzes",
+        "nome":"Apagar as Luzes",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Ao conjurar esse ritual, qualquer fonte de luz em alcance curto de você, natural ou paranormal, se apaga",
+        "Circulo":"1º",
+        "Elemento":"Morte"
+    },
+    {
+        "id":"lingua_morta",
+        "nome":"Língua Morta",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Ao preparar um cadáver humano e conjurar esse ritual, o Lodo da Morte se espalha por dentro do cadáver, reanimando-o forçadamente.",
+        "Circulo":"2º",
+        "Elemento":"Morte"
+    },
+    {
+        "id":"fedor_putrido",
+        "nome":"Fedor Pútrido",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Ao conjurar este ritual, você cobre o seu corpo com o fedor da Morte, parando suas funções biológicas e passando a cheirar como um cadáver apodrecendo.",
+        "Circulo":"3º",
+        "Elemento":"Morte"
+    },
+    {
+        "id":"singularidade_temporal",
+        "nome":"Singularidade Temporal",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Você distorce a Realidade em espirais capazes de alterar as condições temporais de um objeto para avançá-lo no tempo, fazendo com que ele atinja o estado de decomposição mais avançado que um objeto do seu tipo poderia alcançar.",
+        "Circulo":"4º",
+        "Elemento":"Morte"
+    },
+    {
+        "id":"desgazer_sinapses",
+        "nome":"Desfazer Sinapses",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"A entidade do Conhecimento inexiste bilhões de neurônios de dentro do cérebro do alvo, causando a angústia inexplicável do vazio.",
+        "Circulo":"1º",
+        "Elemento":"Conhecimento"
+    },
+    {
+        "id":"aurora_da_verdade",
+        "nome":"Aurora da Verdade",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Qualquer ser dentro dessa área é obrigado a falar apenas a verdade, inclusive o conjurador.",
+        "Circulo":"2º",
+        "Elemento":"Conhecimento"
+    },
+    {
+        "id":"relembrar_fragmento",
+        "nome":"Relembrar Fragmento",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Após a conjuração, o objeto é completamente restaurado para o momento em que recebeu sua última anotação.",
+        "Circulo":"3º",
+        "Elemento":"Conhecimento"
+    },
+    {
+        "id":"pronunciar_sigilo",
+        "nome":"Pronunciar Sigilo",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Você profana a Realidade, pronunciando um dos Sigilos do Conhecimento em voz alta, deturpando a natureza de um ser com o poder do Outro Lado.",
+        "Circulo":"4º",
+        "Elemento":"Conhecimento"
+    },
+    {
+        "id":"overlock",
+        "nome":"Overlock",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Ao fazer um teste de Tecnologia para lidar com um objeto eletrônico, você pode conjurar este ritual para receber as informações que buscava de outra forma",
+        "Circulo":"1º",
+        "Elemento":"Energia"
+    },
+    {
+        "id":"tremeluzir",
+        "nome":"Tremeluzir",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Você e todo objeto que estiver carregando são capazes de atravessar objetos sólidos.",
+        "Circulo":"2º",
+        "Elemento":"Energia"
+    },
+    {
+        "id":"mutar",
+        "nome":"Mutar",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Você inibe a emissão de qualquer som a partir de você.",
+        "Circulo":"3º",
+        "Elemento":"Energia"
+    },
+    {
+        "id":"milagre_ionizante",
+        "nome":"",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Você pode curar o ser de uma condição ou uma doença ou um veneno, a sua escolha.",
+        "Circulo":"3º",
+        "Elemento":"Energia"
+    },
+    {
+        "id":"barganha_insana",
+        "nome":"Barganha Insana",
+        "origem":"Marca Página",
+        "descricao":"Você contata a entidade da Morte e entrega a ela parte de sua própria percepção temporal da Realidade, em troca da restauração plena de sua saúde.",
+        "Circulo":"3º",
+        "Elemento":"Morte",
+        "tag":"Personagens Ordem"
+    },
+    {
+        "id":"passagem_de_conhecimento",
+        "nome":"Passagem de Conhecimento",
+        "origem":"Arquivos Secretos",
+        "descricao":"Você transfere sua consciência para o corpo do alvo.",
+        "Circulo":"2º",
+        "Elemento":"Sangue/Conhecimento",
+        "tag":"Janeiro-2026"
+    },
+    {
+        "id":"passagem_de_conhecimento_expandido",
+        "nome":"Passagem de Conhecimento Expandido",
+        "origem":"Arquivos Secretos",
+        "descricao":"Capaz de afetar várias pessoas ao mesmo tempo. Ele só pode ser aprendido por personagens capazes de conjurar Passagem de Conhecimento.",
+        "Circulo":"4º",
+        "Elemento":"Sangue/Conhecimento",
+        "tag":"Janeiro-2026"
+    }
+]
