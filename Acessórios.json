@@ -1,0 +1,52 @@
+[
+    {
+        "nome": "Kit de Perícia",
+        "origem": "Livro de Regras",
+        "descricao": "Conjunto de ferramentas necessárias para certas perícias. Sem o kit, você sofre –5 no teste. Existe um kit para cada perícia que exige este item."
+    },
+    {
+        "nome": "Utensílio",
+        "origem": "Livro de Regras",
+        "descricao": "Item comum com utilidade específica que fornece +2 em uma perícia (exceto Luta e Pontaria). Ocupa 1 espaço e deve ser empunhado para conceder o bônus."
+    },
+    {
+        "nome": "Vestimenta",
+        "origem": "Livro de Regras",
+        "descricao": "Peça de vestuário que fornece +2 em uma perícia (exceto Luta e Pontaria). É possível receber bônus de até duas vestimentas ao mesmo tempo. Vestir ou despir exige uma ação completa."
+    },
+    {
+        "nome":"Amuleto Sagrado",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Objetos de fé que fornecem +2 em Religião e Vontade. Ocupa espaço de item vestido."
+    },
+    {
+        "nome":"Celular",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Permite comunicação, internet e luz fraca. +2 em testes de adquirir informações."
+    },
+    {
+        "nome":"Chave de Fenda Universal",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Ferramenta multifuncional. +2 em criar/ reparar objetos e interações especiais."
+    },
+    {
+        "nome":"Chaves",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Molho de chaves, usado para distração (+2 em Furtividade)."
+    },
+    {
+        "nome":"Documentos Falsos",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Identidades falsas, +2 em Diplomacia, Enganação e Intimidação."
+    },
+    {
+        "nome":"Manual Operacional",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Permite usar uma perícia como treinada por um interlúdio. Versão aprimorada +5 na perícia."
+    },
+    {
+        "nome":"Notebook",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Semelhante ao celular, +2 em adquirir informações, luz 4,5m, +1 Sanidade em interlúdios."
+    }
+]

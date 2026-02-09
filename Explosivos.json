@@ -1,0 +1,52 @@
+[
+    {
+        "nome": "Granada de Atordoamento",
+        "origem": "Livro de Regras",
+        "descricao": "Granada flash-bang que atordoa seres na área por 1 rodada. Fortitude reduz para ofuscado e surdo."
+    },
+    {
+        "nome": "Granada de Fragmentação",
+        "origem": "Livro de Regras",
+        "descricao": "Espalha estilhaços perfurantes, causando 8d6 de dano de perfuração. Reflexos reduz à metade."
+    },
+    {
+        "nome": "Granada de Fumaça",
+        "origem": "Livro de Regras",
+        "descricao": "Cria fumaça espessa que deixa seres cegos e sob camuflagem total por 2 rodadas."
+    },
+    {
+        "nome": "Granada Incendiária",
+        "origem": "Livro de Regras",
+        "descricao": "Espalha chamas, causando 6d6 de dano de fogo e deixando os alvos em chamas. Reflexos reduz o dano e evita a condição."
+    },
+    {
+        "nome": "Mina Antipessoal",
+        "origem": "Livro de Regras",
+        "descricao": "Mina detonada remotamente que causa 12d6 de dano de perfuração em cone de 6m. Instalar exige ação completa e teste de Tática."
+    },
+    {
+        "nome":"Dinamite",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Explosivo, acende e arremessa em ação padrão. Dano 4d6 impacto + 4d6 fogo, inflama objetos."
+    },
+    {
+        "nome":"Explosivo Plástico",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Massa adesiva com detonador remoto. Dano 16d6 impacto, especialista causa dobro e ignora RD."
+    },
+    {
+        "nome":"Galão Vermelho",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Substância inflamável. Explode ao receber dano de fogo/balístico (12d6). Mantém fogo por rodada."
+    },
+    {
+        "nome":"Granada de Gás Sonífero",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Libera fumaça, deixa seres inconscientes ou fatigados por 1 rodada, dura 2 rodadas."
+    },
+    {
+        "nome":"Granada de PEM",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Pulso eletromagnético desativa equipamentos em raio de 18m. Energia sofre 6d6 e paralisia 1 rodada."
+    }
+]

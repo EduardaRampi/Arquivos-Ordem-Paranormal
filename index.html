@@ -53,7 +53,6 @@
         <h1>Equipamentos</h1>
         <div class="centralizar">
             <button class="btn-navegar" data-destino="Armas">Armas</button>
-            <button class="btn-navegar" data-destino="Munições">Munições</button>
             <button class="btn-navegar" data-destino="Proteções">Proteções</button>
             <button class="btn-navegar" data-destino="Acessórios">Acessórios</button>
             <button class="btn-navegar" data-destino="Explosivos">Explosivos</button>
@@ -197,62 +196,117 @@
 
         <div id="Armas" class="tela oculta">
         <h1>Armas</h1>
-        <div id="lista-armas"></div>
+        <div class="search-box">
+            <input type="text" class="input-busca" data-container="lista-modificacoes-armas" placeholder="Pesquisar por palavra chave..."> 
+            <div class="container-botao-filtro">
+                <button class="btn-filtro-geral btn-abrir-filtros">
+                    <i class="fas fa-filter"></i> Filtros
+                </button>
+                <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
+            </div>     
+        </div>
         <div class="centralizar">
             <button class="btn-navegar" data-destino="Modificações para Armas">Modificações para Armas</button>
             <button class="btn-navegar" data-destino="Maldições para Armas">Maldições para Armas</button>
-            <button class="btn-voltar">Voltar</button>
-        </div> 
+            <button class="btn-navegar" data-destino="Munições">Munições</button>
+        </div>
+        <div id="lista-armas"></div>        
+        <button class="btn-voltar">Voltar</button>
         </div>
 
         <div id="Munições" class="tela oculta">
         <h1>Munições</h1>
-        <div id="lista-municoes"></div>
+        <div class="search-box">
+            <input type="text" class="input-busca" data-container="lista-municoes" placeholder="Pesquisar por palavra chave..."> 
+            <div class="container-botao-filtro">
+                <button class="btn-filtro-geral btn-abrir-filtros">
+                    <i class="fas fa-filter"></i> Filtros
+                </button>
+                <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
+            </div>     
+        </div>
         <div class="centralizar">
             <button class="btn-navegar" data-destino="Modificações para Munições">Modificações para Munições</button>
-            <button class="btn-voltar">Voltar</button>
-        </div> 
+        </div>
+        <div id="lista-municoes"></div>
+        <button class="btn-voltar">Voltar</button> 
         </div>
 
         <div id="Proteções" class="tela oculta">
         <h1>Proteções</h1>
-        <div id="lista-protecoes"></div>
         <div class="centralizar">
             <button class="btn-navegar" data-destino="Modificações para Proteções">Modificações para Proteções</button>
             <button class="btn-navegar" data-destino="Maldições para Proteções">Maldições para Proteções</button>            
-            <button class="btn-voltar">Voltar</button>
         </div> 
+        <div id="lista-protecoes"></div>
+        <button class="btn-voltar">Voltar</button>
         </div>
 
         <div id="Acessórios" class="tela oculta">
         <h1>Acessórios</h1>
-        <div id="lista-acessorios"></div>
+        <div class="search-box">
+            <input type="text" class="input-busca" data-container="lista-acessorios" placeholder="Pesquisar por palavra chave..."> 
+            <div class="container-botao-filtro">
+                <button class="btn-filtro-geral btn-abrir-filtros">
+                    <i class="fas fa-filter"></i> Filtros
+                </button>
+                <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
+            </div>     
+        </div>
         <div class="centralizar">
             <button class="btn-navegar" data-destino="Modificações para Acessórios">Modificações para Acessórios</button>
             <button class="btn-navegar" data-destino="Maldições para Acessórios">Maldições para Acessórios</button>
-            <button class="btn-voltar">Voltar</button>
-        </div> 
+        </div>
+        <div id="lista-acessorios"></div>
+        <button class="btn-voltar">Voltar</button>
         </div>
 
         <div id="Explosivos" class="tela oculta">
         <h1>Explosivos</h1>
+        <div class="search-box">
+            <input type="text" class="input-busca" data-container="lista-explosivos" placeholder="Pesquisar por palavra chave..."> 
+            <div class="container-botao-filtro">
+                <button class="btn-filtro-geral btn-abrir-filtros">
+                    <i class="fas fa-filter"></i> Filtros
+                </button>
+                <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
+            </div>     
+        </div>
         <div id="lista-explosivos"></div>
         <button class="btn-voltar">Voltar</button> 
         </div>
 
         <div id="Itens Operacionais" class="tela oculta">
         <h1>Itens Operacionais</h1>
+        <div class="search-box">
+            <input type="text" class="input-busca" data-container="lista-itens-operacionais" placeholder="Pesquisar por palavra chave..."> 
+            <div class="container-botao-filtro">
+                <button class="btn-filtro-geral btn-abrir-filtros">
+                    <i class="fas fa-filter"></i> Filtros
+                </button>
+                <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
+            </div>     
+        </div>
         <div id="lista-itens-operacionais"></div>
         <button class="btn-voltar">Voltar</button> 
         </div>
 
         <div id="Itens Paranormais" class="tela oculta">
-        <h1>Itens Paranormais</h1>
-        <div id="lista-itens-paranormais"></div>
+        <h1>Itens Paranormais</h1>  
+        <div class="search-box">
+            <input type="text" class="input-busca" data-container="lista-itens-paranormais" placeholder="Pesquisar por palavra chave..."> 
+            <div class="container-botao-filtro">
+                <button class="btn-filtro-geral btn-abrir-filtros">
+                    <i class="fas fa-filter"></i> Filtros
+                </button>
+                <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
+            </div>     
+        </div>
         <div class="centralizar">
             <button class="btn-navegar" data-destino="Modificações para Itens Paranormais">Modificações para Itens Paranormais</button>
-            <button class="btn-voltar">Voltar</button>
-        </div> 
+        </div>
+        <div id="lista-itens-paranormais"></div>         
+        <button class="btn-voltar">Voltar</button>
         </div>
 
         <div id="Poderes Paranormais" class="tela oculta">
@@ -434,15 +488,6 @@
 
         <div id="Modificações para Munições" class="tela oculta">
         <h1>Modificações de Munições</h1>
-        <div class="search-box">
-            <input type="text" class="input-busca" data-container="lista-modificacoes-municao" placeholder="Pesquisar por palavra chave..."> 
-            <div class="container-botao-filtro">
-                <button class="btn-filtro-geral btn-abrir-filtros">
-                    <i class="fas fa-filter"></i> Filtros
-                </button>
-                <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
-            </div>     
-        </div>
         <div id="lista-modificacoes-municao"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
@@ -479,15 +524,6 @@
 
         <div id="Modificações para Itens Paranormais" class="tela oculta">
         <h1>Modificações de Itens Paranormais</h1>
-        <div class="search-box">
-            <input type="text" class="input-busca" data-container="lista-modificacoes-itens-paranormais" placeholder="Pesquisar por palavra chave..."> 
-            <div class="container-botao-filtro">
-                <button class="btn-filtro-geral btn-abrir-filtros">
-                    <i class="fas fa-filter"></i> Filtros
-                </button>
-                <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
-            </div>     
-        </div>
         <div id="lista-modificacoes-itens-paranormais"></div>
         <button class="btn-voltar">Voltar</button>
         </div>

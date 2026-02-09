@@ -1,0 +1,74 @@
+[
+  {
+    "nome": "Antielemento",
+    "origem": "Livro de Regras",
+    "descricao": "A arma causa dano extra contra criaturas de um elemento específico, gastando 2 PE.",
+    "Elemento": "Conhecimento"
+  },
+  {
+    "nome": "Ritualística",
+    "origem": "Livro de Regras",
+    "descricao": "Arma pode armazenar um ritual e liberá-lo em um ataque como ação livre.",
+    "Elemento": "Conhecimento"
+  },
+  {
+    "nome": "Senciente",
+    "origem": "Livro de Regras",
+    "descricao": "Arma flutua ao lado do usuário e ataca automaticamente gastando 1 PE por turno.",
+    "Elemento": "Conhecimento"
+  },
+  {
+    "nome": "Empuxo",
+    "origem": "Livro de Regras",
+    "descricao": "Arma pode ser arremessada em curto alcance, causando dano adicional e retornando automaticamente.",
+    "Elemento": "Energia"
+  },
+  {
+    "nome": "Energética",
+    "origem": "Livro de Regras",
+    "descricao": "Arma converte dano em Energia, ignora resistências e fornece +5 em ataques gastando 2 PE.",
+    "Elemento": "Energia"
+  },
+  {
+    "nome": "Vibrante",
+    "origem": "Livro de Regras",
+    "descricao": "Arma vibra com Energia, concedendo Ataque Extra ou reduzindo seu custo em 1 PE.",
+    "Elemento": "Energia"
+  },
+  {
+    "nome": "Consumidora",
+    "origem": "Livro de Regras",
+    "descricao": "Arma drena a entropia de alvos, tornando-os lentos até o fim da cena.",
+    "Elemento": "Morte"
+  },
+  {
+    "nome": "Erosiva",
+    "origem": "Livro de Regras",
+    "descricao": "Arma acelera envelhecimento dos alvos, causando dano de Morte adicional nas próximas rodadas.",
+    "Elemento": "Morte"
+  },
+  {
+    "nome": "Repulsora",
+    "origem": "Livro de Regras",
+    "descricao": "Arma cria aura que aumenta Defesa e bônus adicional ao bloquear gastando 2 PE.",
+    "Elemento": "Morte"
+  },
+  {
+    "nome": "Lancinante",
+    "origem": "Livro de Regras",
+    "descricao": "Arma causa dano de Sangue adicional, multiplicado em críticos.",
+    "Elemento": "Sangue"
+  },
+  {
+    "nome": "Predadora",
+    "origem": "Livro de Regras",
+    "descricao": "Arma persegue alvos, ignora camuflagem e aumenta alcance ou margem de ameaça.",
+    "Elemento": "Sangue"
+  },
+  {
+    "nome": "Sanguinária",
+    "origem": "Livro de Regras",
+    "descricao": "Arma causa sangramento cumulativo e concede vida temporária em acertos críticos.",
+    "Elemento": "Sangue"
+  }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "nome": "Dum Dum",
+        "origem": "Livro de Regras",
+        "descricao": "Balas feitas para se expandir durante o impacto, causando ferimentos terríveis. Só pode ser aplicada em balas curtas e longas e aumenta o multiplicador de crítico em +1."
+    },
+    {
+        "nome": "Explosiva",
+        "origem": "Livro de Regras",
+        "descricao": "Munições que explodem ao atingir o alvo. Só pode ser aplicada em balas curtas e longas e aumenta o dano causado em +2d6."
+    }
+]

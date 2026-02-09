@@ -10,7 +10,9 @@ Um guia interativo e responsivo para organizar as informações do livro de regr
 * **Consulta dos Rituais:** Todos os rituais de ordem paranormal, agora estão nos arquivos
 * **Consulta de Regras Novas:** Todas as regras extras presentes na Dragão Brasil e Arquivos Secretos estão listadas
 * **Consulta das Missões oficiais:** Um indice com todas as missões oficiais de Ordem Paranormal RPG
+* **Consulta dos Equipamentos:** Todas as armas, munições, proteções, itens operacionais, itens paranormais, acessórios e suas respectivas modificações e maldições
 * **Interface Responsiva:** Adaptado para computadores e dispositivos móveis.
+* **Área de busca:** Todos aqueles que tiverem mais de 3 itens tem uma barra de pesquisa e um botão de filtro.
 
 ## 🛠️ Tecnologias Utilizadas
 * **HTML5:** Estrutura das telas e navegação.

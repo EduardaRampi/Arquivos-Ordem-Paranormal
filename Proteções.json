@@ -1,0 +1,17 @@
+[
+    {
+        "nome": "Proteção Leve",
+        "origem": "Livro de Regras",
+        "descricao": "Jaqueta de couro pesada ou colete de kevlar, tipicamente usada por seguranças e policiais."
+    },
+    {
+        "nome": "Proteção Pesada",
+        "origem": "Livro de Regras",
+        "descricao": "Equipamento usado por forças especiais e pelo exército, composto por capacete, ombreiras, joelheiras, caneleiras e colete de kevlar. Fornece resistência 2 a balístico, corte, impacto e perfuração, mas impõe –5 em testes de perícias afetadas por penalidade de carga."
+    },
+    {
+        "nome": "Escudo",
+        "origem": "Livro de Regras",
+        "descricao": "Escudo medieval ou moderno usado por tropas de choque. Deve ser empunhado em uma mão e fornece Defesa +2, acumulando com proteções. Para proficiência e penalidades, conta como proteção pesada."
+    }
+]

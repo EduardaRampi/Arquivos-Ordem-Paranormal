@@ -1,0 +1,182 @@
+[
+    {
+        "nome": "Algemas",
+        "origem": "Livro de Regras",
+        "descricao": "Par de algemas de aço usadas para imobilizar alvos. Escapar exige teste de Acrobacia DT 30 ou as chaves."
+    },
+    {
+        "nome": "Arpéu",
+        "origem": "Livro de Regras",
+        "descricao": "Gancho de aço usado com corda para escalada. Prender exige teste de Pontaria e fornece +5 em Atletismo para subir."
+    },
+    {
+        "nome": "Bandoleira",
+        "origem": "Livro de Regras",
+        "descricao": "Cinto com bolsos e alças. Uma vez por rodada, permite sacar ou guardar um item como ação livre."
+    },
+    {
+        "nome": "Binóculos",
+        "origem": "Livro de Regras",
+        "descricao": "Binóculos militares que fornecem +5 em testes de Percepção para observar alvos distantes."
+    },
+    {
+        "nome": "Bloqueador de Sinal",
+        "origem": "Livro de Regras",
+        "descricao": "Dispositivo que bloqueia sinais de celular em alcance médio."
+    },
+    {
+        "nome": "Cicatrizante",
+        "origem": "Livro de Regras",
+        "descricao": "Spray medicinal que cura 2d8+2 PV com uma ação padrão."
+    },
+    {
+        "nome": "Corda",
+        "origem": "Livro de Regras",
+        "descricao": "Rolo com 10 metros de corda resistente, útil para escalada, descida e amarrações."
+    },
+    {
+        "nome": "Equipamento de Sobrevivência",
+        "origem": "Livro de Regras",
+        "descricao": "Mochila com itens para sobrevivência. Fornece +5 em testes de Sobrevivência e permite testes sem treinamento."
+    },
+    {
+        "nome": "Lanterna Tática",
+        "origem": "Livro de Regras",
+        "descricao": "Ilumina um cone de 9m e pode ofuscar um alvo por 1 rodada."
+    },
+    {
+        "nome": "Máscara de Gás",
+        "origem": "Livro de Regras",
+        "descricao": "Máscara com filtro que fornece +10 em testes de Fortitude contra efeitos respiratórios."
+    },
+    {
+        "nome": "Mochila Militar",
+        "origem": "Livro de Regras",
+        "descricao": "Mochila leve que não ocupa espaço e aumenta a capacidade de carga em 2."
+    },
+    {
+        "nome": "Óculos de Visão Térmica",
+        "origem": "Livro de Regras",
+        "descricao": "Eliminam penalidades em testes causadas por camuflagem."
+    },
+    {
+        "nome": "Pé de Cabra",
+        "origem": "Livro de Regras",
+        "descricao": "Barra de ferro que fornece +5 em testes de Força para arrombar portas e pode ser usada como bastão."
+    },
+    {
+        "nome": "Pistola de Dardos",
+        "origem": "Livro de Regras",
+        "descricao": "Dispara dardos com sonífero que podem deixar o alvo inconsciente até o fim da cena."
+    },
+    {
+        "nome": "Pistola Sinalizadora",
+        "origem": "Livro de Regras",
+        "descricao": "Dispara sinalizadores luminosos e pode causar 2d6 de dano de fogo."
+    },
+    {
+        "nome": "Soqueira",
+        "origem": "Livro de Regras",
+        "descricao": "Peça metálica usada nos punhos que torna ataques desarmados letais e concede +1 no dano."
+    },
+    {
+        "nome": "Spray de Pimenta",
+        "origem": "Livro de Regras",
+        "descricao": "Spray químico que pode cegar o alvo por 1d4 rodadas. Possui dois usos."
+    },
+    {
+        "nome": "Taser",
+        "origem": "Livro de Regras",
+        "descricao": "Dispositivo de choque que causa dano elétrico e atordoa o alvo. Possui dois usos."
+    },
+    {
+        "nome": "Traje Hazmat",
+        "origem": "Livro de Regras",
+        "descricao": "Roupa de proteção total que fornece resistência a químico 10 e bônus contra efeitos ambientais."
+    },
+    {
+        "nome":"Alarme de Movimento",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Detecta movimento em cone de 30m, sinaliza dispositivo ou emite som alto, sensibilidade ajustável."
+    },
+    {
+        "nome":"Alimento Energético",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Recupera 1d4 PE consumindo em ação padrão."
+    },
+    {
+        "nome":"Aplicador de Medicamentos",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Dispensa substâncias (cicatrizantes, remédios) com ação de movimento. Armazena 3 doses."
+    },
+    {
+        "nome":"Braçadeira Reforçada",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Absorve impacto de bloqueios. +2 RD ao bloquear golpes."
+    },
+    {
+        "nome":"Cão Adestrado",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Parceiro treinado em Adestramento, age como aliado."
+    },
+    {
+        "nome":"Coldre Saque Rápido",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Permite sacar ou guardar arma leve como ação livre, uma vez por rodada."
+    },
+    {
+        "nome":"Equipamento de Escuta",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Receptor 90m, transmissores 9m. Instalação exige teste de Crime. Detecta sons discretamente."
+    },
+    {
+        "nome":"Estrepes",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Ferramenta com pontas afiadas. Área de 1,5m, dano 1d4 e reduz velocidade. Reflexos DT evita."
+    },
+    {
+        "nome":"Faixa de Pregos",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Linha de 9m com pregos. Funciona como estrepes, perfura pneus de veículos, reduz deslocamento."
+    },
+    {
+        "nome":"Isqueiro",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Produz chama, incendeia objetos, ilumina 3m."
+    },
+    {
+        "nome":"Medicamentos",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Inclui antibiótico, antídoto, antiemético, anti-inflamatório, antitérmico, broncodilatador, coagulante. Ajudam em condições específicas ou testes."
+    },
+    {
+        "nome":"Óculos Escuros",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Evita ofuscamento."
+    },
+    {
+        "nome":"Óculos de Visão Noturna",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Permite enxergar no escuro, penalidade contra ofuscamento ou luz intensa."
+    },
+    {
+        "nome":"Pá",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Ferramenta pesada, +5 Força para cavar/mover detritos. Pode ser usada como bastão."
+    },
+    {
+        "nome":"Paraquedas",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Anula dano de queda, uso exige teste se personagem não treinado ou queda curta."
+    },
+    {
+        "nome":"Traje de Mergulho",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Roupa impermeável, tanque e máscara, +5 resistência ambiental e dano químico 5. Ocupa espaço de vestimenta."
+    },
+    {
+        "nome":"Traje Espacial",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Protege no vácuo, água/oxigênio 8h, +10 resistência ambiental e dano químico 20. Ocupa vestimenta, vesti-lo demora duas rodadas."
+    }
+]

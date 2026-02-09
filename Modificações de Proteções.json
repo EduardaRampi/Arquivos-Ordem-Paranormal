@@ -1,0 +1,22 @@
+[
+    {
+        "nome": "Antibombas",
+        "origem": "Livro de Regras",
+        "descricao": "Proteção quimicamente tratada para resistir ao calor e amortecer estilhaços, acompanhada de capacete com viseira contra luz e barulho de explosões. Fornece +5 em testes de resistência contra efeitos de área. Só pode ser aplicada em proteções pesadas."
+    },
+    {
+        "nome": "Blindada",
+        "origem": "Livro de Regras",
+        "descricao": "Reforçada com placas de aço e cerâmica integradas ao kevlar. Aumenta a resistência a dano para 5 e o espaço ocupado em +1. Só pode ser aplicada em proteções pesadas."
+    },
+    {
+        "nome": "Discreta",
+        "origem": "Livro de Regras",
+        "descricao": "Colete compacto feito de kevlar denso para reduzir volume. Reduz os espaços ocupados em 1, fornece +5 em testes de Crime para ser ocultada e permite o teste mesmo sem treinamento. Só pode ser aplicada em proteções leves."
+    },
+    {
+        "nome": "Reforçada",
+        "origem": "Livro de Regras",
+        "descricao": "Aumenta a Defesa fornecida pela proteção em +2 e o espaço ocupado em +1. Uma proteção não pode ser reforçada e discreta ao mesmo tempo."
+    }
+]

@@ -1,0 +1,80 @@
+[
+    {
+    "nome": "Carisma",
+    "origem": "Livro de Regras",
+    "descricao": "Acessório gera aura que aumenta carisma e autoconfiança, concedendo +1 em Presença.",
+    "Elemento": "Conhecimento"
+  },
+  {
+    "nome": "Conjuração",
+    "origem": "Livro de Regras",
+    "descricao": "Acessório possui ritual de 1º círculo; permite conjurá-lo como se conhecido e reduz custo em 1 PE se já conhecido.",
+    "Elemento": "Conhecimento"
+  },
+  {
+    "nome": "Escudo Mental",
+    "origem": "Livro de Regras",
+    "descricao": "Gera barreira psíquica que fornece resistência mental 10.",
+    "Elemento": "Conhecimento"
+  },
+  {
+    "nome": "Reflexão",
+    "origem": "Livro de Regras",
+    "descricao": "Uma vez por rodada, permite refletir um ritual gastando PE igual ao custo dele.",
+    "Elemento": "Conhecimento"
+  },
+  {
+    "nome": "Sagacidade",
+    "origem": "Livro de Regras",
+    "descricao": "Acessório acelera a mente, concedendo +1 em Intelecto.",
+    "Elemento": "Conhecimento"
+  },
+  {
+    "nome": "Defesa",
+    "origem": "Livro de Regras",
+    "descricao": "Gera barreira de Energia invisível, fornecendo +5 de Defesa.",
+    "Elemento": "Energia"
+  },
+  {
+    "nome": "Destreza",
+    "origem": "Livro de Regras",
+    "descricao": "Acessório aumenta coordenação e velocidade, concedendo +1 em Agilidade.",
+    "Elemento": "Energia"
+  },
+  {
+    "nome": "Potência",
+    "origem": "Livro de Regras",
+    "descricao": "Aumenta a DT contra habilidades, poderes e rituais em +1.",
+    "Elemento": "Energia"
+  },
+  {
+    "nome": "Esforço Adicional",
+    "origem": "Livro de Regras",
+    "descricao": "Fornece +5 PE, efeito ativado após um dia de uso.",
+    "Elemento": "Morte"
+  },
+  {
+    "nome": "Disposição",
+    "origem": "Livro de Regras",
+    "descricao": "Acessório concede +1 em Vigor.",
+    "Elemento": "Sangue"
+  },
+  {
+    "nome": "Pujança",
+    "origem": "Livro de Regras",
+    "descricao": "Acessório aumenta potência muscular, concedendo +1 em Força.",
+    "Elemento": "Sangue"
+  },
+  {
+    "nome": "Vitalidade",
+    "origem": "Livro de Regras",
+    "descricao": "Fornece +15 PV, efeito ativado após um dia de uso.",
+    "Elemento": "Sangue"
+  },
+  {
+    "nome": "Proteção Elemental",
+    "origem": "Livro de Regras",
+    "descricao": "Concede resistência 10 contra um elemento, funcionando como item do mesmo elemento.",
+    "Elemento": "Varia"
+  }
+]

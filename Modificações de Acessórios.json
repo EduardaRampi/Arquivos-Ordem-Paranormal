@@ -1,0 +1,27 @@
+[
+    {
+        "nome": "Aprimorado",
+        "origem": "Livro de Regras",
+        "descricao": "O bônus em perícia concedido pelo acessório aumenta para +5. Se o item tiver função adicional, esta modificação pode ser escolhida uma segunda vez para essa função."
+    },
+    {
+        "nome": "Discreto",
+        "origem": "Livro de Regras",
+        "descricao": "Item miniaturizado ou disfarçado. Reduz os espaços ocupados em 1, fornece +5 em testes de Crime para ser ocultado e permite o teste mesmo sem treinamento."
+    },
+    {
+        "nome": "Função Adicional",
+        "origem": "Livro de Regras",
+        "descricao": "O acessório fornece +2 em uma perícia adicional à escolha do usuário, sujeita à aprovação do mestre."
+    },
+    {
+        "nome": "Instrumental",
+        "origem": "Livro de Regras",
+        "descricao": "O acessório pode ser usado como um kit de perícia específico, escolhido ao aplicar esta modificação."
+    },
+    {
+        "nome":"Bateria Potente",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Dobra duração de aparelhos. Pode dobrar usos e dano de Taser."
+    }
+]

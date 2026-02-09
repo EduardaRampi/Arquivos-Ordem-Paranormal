@@ -1,0 +1,62 @@
+[
+      {
+    "nome": "Abascanta",
+    "origem": "Livro de Regras",
+    "descricao": "Recebe +5 em testes de resistência contra rituais e pode refletir um ritual de volta ao conjurador gastando reação e PE.",
+    "Elemento": "Conhecimento"
+  },
+  {
+    "nome": "Profética",
+    "origem": "Livro de Regras",
+    "descricao": "Proteção concede resistência a Conhecimento 10 e permite rerolar testes de resistência gastando 2 PE.",
+    "Elemento": "Conhecimento"
+  },
+  {
+    "nome": "Sombria",
+    "origem": "Livro de Regras",
+    "descricao": "Confunde os sentidos, concede +5 em Furtividade e permite mudar a aparência do item gastando 1 PE.",
+    "Elemento": "Conhecimento"
+  },
+  {
+    "nome": "Cinética",
+    "origem": "Livro de Regras",
+    "descricao": "Cria barreira invisível, concedendo +2 em Defesa e resistência a dano 2 ou 5.",
+    "Elemento": "Energia"
+  },
+  {
+    "nome": "Lépida",
+    "origem": "Livro de Regras",
+    "descricao": "Aumenta mobilidade (+10 em Atletismo, +3m deslocamento) e permite movimento sobrenatural gastando 2 PE.",
+    "Elemento": "Energia"
+  },
+  {
+    "nome": "Voltaica",
+    "origem": "Livro de Regras",
+    "descricao": "Resistência a Energia 10; pode emitir arcos de Energia causando 2d6 dano em todos os adjacentes por turno gastando 2 PE.",
+    "Elemento": "Energia"
+  },
+  {
+    "nome": "Letárgica",
+    "origem": "Livro de Regras",
+    "descricao": "Desacelera ataques, concedendo +2 em Defesa e chance de ignorar dano extra de críticos ou ataques furtivos.",
+    "Elemento": "Morte"
+  },
+  {
+    "nome": "Repulsiva",
+    "origem": "Livro de Regras",
+    "descricao": "Resistência a Morte 10; pode cobrir-se com lodo negro, causando 2d8 de dano de Morte a quem atacar em corpo a corpo.",
+    "Elemento": "Morte"
+  },
+  {
+    "nome": "Regenerativa",
+    "origem": "Livro de Regras",
+    "descricao": "Resistência a Sangue 10; pode gastar 1 PE para recuperar 1d12 pontos de vida.",
+    "Elemento": "Sangue"
+  },
+  {
+    "nome": "Sádica",
+    "origem": "Livro de Regras",
+    "descricao": "No início do turno, ganha +1 em ataques e dano para cada 10 pontos de dano sofrido desde o último turno.",
+    "Elemento": "Sangue"
+  }
+]

@@ -1,0 +1,85 @@
+[
+    {
+        "nome": "Amarras de (Elemento)",
+        "origem": "Livro de Regras",
+        "descricao": "Cordas ou correntes feitas de um elemento paranormal, usadas para imobilizar criaturas vulneráveis a esse elemento."
+    },
+    {
+        "nome": "Câmera de Aura Paranormal",
+        "origem": "Livro de Regras",
+        "descricao": "Câmera amaldiçoada que revela auras paranormais ao tirar fotos, consumindo PE."
+    },
+    {
+        "nome": "Componentes Ritualísticos",
+        "origem": "Livro de Regras",
+        "descricao": "Objetos necessários para conjurar rituais de um elemento específico."
+    },
+    {
+        "nome": "Emissor de Pulsos Paranormais",
+        "origem": "Livro de Regras",
+        "descricao": "Dispositivo que emite pulsos de um elemento para atrair criaturas desse tipo e afastar as opostas."
+    },
+    {
+        "nome": "Escuta de Ruídos Paranormais",
+        "origem": "Livro de Regras",
+        "descricao": "Microfone que grava sons paranormais e concede bônus em Ocultismo para identificação."
+    },
+    {
+        "nome": "Medidor de Estabilidade da Membrana",
+        "origem": "Livro de Regras",
+        "descricao": "Dispositivo que permite avaliar o estado da Membrana e a chance de manifestações paranormais."
+    },
+    {
+        "nome": "Scanner de Manifestação Paranormal",
+        "origem": "Livro de Regras",
+        "descricao": "Scanner que detecta manifestações paranormais de um elemento específico em alcance longo, consumindo PE por rodada."
+    },
+    {
+        "nome":"Catalisadores Ritualísticos",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Componentes consumíveis para rituais, mais eficientes que os comuns."
+    },
+    {
+        "nome":"Ligação Direta Infernal",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Fios de cobre e energia. Controla veículo automaticamente (+5 Pilotagem), aumenta RD e imunidade a Sangue. Pode gerar caos."
+    },
+    {
+        "nome":"Medidor de Condição Vertebral",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Coluna vertebral conectada ao usuário, fornece +2 Fortitude e cores indicam saúde. Pulsos lilás sob efeitos paranormais."
+    },
+    {
+        "nome":"Pé de Morto",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Botas de pele de cadáver, passos quase silenciosos, +5 Furtividade e +1 visibilidade em cenas furtivas."
+    },
+    {
+        "nome":"Pen Drive Selado",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Protegido por sigilos dourados, resistente a invasões e efeitos paranormais."
+    },
+    {
+        "nome":"Valete da Salvação",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Carta com sigilos dourados que indica rota de fuga. Gasta-se ação padrão para usar."
+    },
+    {
+        "nome":"Agrupador Ritualistico",
+        "origem":"Arquivos Secretos",
+        "descricao":"Um item pequeno — não maior que uma faca — e de aparência variada.",
+        "tag":"Janeiro-2026"
+    },
+    {
+        "nome":"Amuleto Sinalizadr de (Elemento)",
+        "origem":"Arquivos Secretos",
+        "descricao":"Este item vestido emite um tênue sinal quando uma criatura do elemento respectivo entra em alcance longo dele, mesmo tendo paredes ou outros objetos no caminho.",
+        "tag":"Janeiro-2026"
+    },
+    {
+        "nome":"Rubra",
+        "origem":"Arquivos Secretos",
+        "descricao":"Esta droga paranormal tem a aparência de um pó viscoso vermelho amarronzado.",
+        "tag":"Janeiro-2026"
+    }
+]

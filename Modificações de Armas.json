@@ -1,0 +1,80 @@
+[
+    {
+        "nome": "Alongada",
+        "origem": "Livro de Regras",
+        "descricao": "Com um cano mais longo que aumenta a precisão dos disparos, a arma fornece +2 nos testes de ataque.",
+        "tag":"Armas de Fogo"
+    },
+    {
+        "nome": "Calibre Grosso",
+        "origem": "Livro de Regras",
+        "descricao": "A arma é modificada para disparar munição de maior calibre, aumentando seu dano em mais um dado do mesmo tipo. Armas com esta modificação precisam usar munição específica de calibre grosso, que possui o mesmo custo da munição normal, mas não pode ser usada em armas normais.",
+        "tag":"Armas de Fogo"
+    },
+    {
+        "nome": "Certeira",
+        "origem": "Livro de Regras",
+        "descricao": "Fabricada para ser mais precisa e balanceada, a arma fornece +2 nos testes de ataque.",
+        "tag":"Armas Corpo a Corpo e de Disparo"
+    },
+    {
+        "nome": "Compensador",
+        "origem": "Livro de Regras",
+        "descricao": "Apenas para armas automáticas. Um sistema de amortecimento reduz o coice da arma, anulando a penalidade em testes de ataque por disparar rajadas.",
+        "tag":"Armas de Fogo"
+    },
+    {
+        "nome": "Cruel",
+        "origem": "Livro de Regras",
+        "descricao": "A arma possui a lâmina especialmente afiada ou foi fabricada com materiais mais densos. Fornece +2 nas rolagens de dano.",
+        "tag":"Armas Corpo a Corpo e de Disparo"
+    },
+    {
+        "nome": "Discreta",
+        "origem": "Livro de Regras",
+        "descricao": "A arma possui modificações para chamar menos atenção e ocupar menos espaço. Fornece +5 em testes de Crime para ser ocultada, permite o teste mesmo sem treinamento na perícia e reduz em 1 o número de espaços ocupados.",
+        "tag":"Armas Corpo a Corpo e de Disparo"
+    },
+    {
+        "nome": "Ferrolho Automático",
+        "origem": "Livro de Regras",
+        "descricao": "O mecanismo de ação da arma é modificado para disparar várias vezes em sequência, tornando a arma automática.",
+        "tag":"Armas de Fogo"
+    },
+    {
+        "nome": "Mira Laser",
+        "origem": "Livro de Regras",
+        "descricao": "Um laser interno cria um retículo luminoso visível ao atirador, ajudando em disparos mais letais. Aumenta a margem de ameaça em +2.",
+        "tag":"Armas de Fogo"
+    },
+    {
+        "nome": "Mira Telescópica",
+        "origem": "Livro de Regras",
+        "descricao": "Luneta com marcações de medida para disparos de longa distância. Aumenta o alcance da arma em uma categoria e permite usar Ataque Furtivo em qualquer alcance.",
+        "tag":"Armas de Fogo"
+    },
+    {
+        "nome": "Perigosa",
+        "origem": "Livro de Regras",
+        "descricao": "A arma possui lâmina extremamente afiada ou materiais maciços, causando golpes de impacto terrível. Aumenta a margem de ameaça em +2.",
+        "tag":"Armas Corpo a Corpo e de Disparo"
+    },
+    {
+        "nome": "Silenciador",
+        "origem": "Livro de Regras",
+        "descricao": "Reduz em –2d20 a penalidade em Furtividade para se esconder no mesmo turno em que atacou com uma arma de fogo.",
+        "tag":"Armas de Fogo"
+    },
+    {
+        "nome": "Tática",
+        "origem": "Livro de Regras",
+        "descricao": "A arma possui acessórios que facilitam o manuseio. Você pode sacar a arma como uma ação livre.",
+        "tag":"Armas Corpo a Corpo e de Disparo"
+    },
+    {
+        "nome": "Visão de Calor",
+        "origem": "Livro de Regras",
+        "descricao": "Sistema eletrônico que combina imagens visíveis e infravermelho. Ao disparar, você ignora qualquer camuflagem do alvo.",
+        "tag":"Armas de Fogo"
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "nome": "Balas Curtas",
+        "origem": "Livro de Regras",
+        "descricao": "Munição básica usada em pistolas, revólveres e submetralhadoras. Um pacote de balas curtas dura duas cenas."
+    },
+    {
+        "nome": "Balas Longas",
+        "origem": "Livro de Regras",
+        "descricao": "Munição maior e mais potente, usada em fuzis e metralhadoras. Um pacote de balas longas dura uma cena."
+    },
+    {
+        "nome": "Cartuchos",
+        "origem": "Livro de Regras",
+        "descricao": "Usados em espingardas, esses cartuchos são carregados com esferas de chumbo. Um pacote de cartuchos dura uma cena."
+    },
+    {
+        "nome": "Combustível",
+        "origem": "Livro de Regras",
+        "descricao": "Tanque de combustível para lança-chamas. Dura uma cena."
+    },
+    {
+        "nome": "Flechas",
+        "origem": "Livro de Regras",
+        "descricao": "Usadas em arcos e bestas. Flechas podem ser reaproveitadas após cada combate, por isso um pacote dura uma missão inteira."
+    },
+    {
+        "nome": "Foguete",
+        "origem": "Livro de Regras",
+        "descricao": "Disparado por bazucas. Cada foguete dura apenas um disparo, não uma cena. Para realizar vários ataques, é necessário carregar vários foguetes."
+    }
+]

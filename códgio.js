@@ -82,9 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
         idDestino = "Trilhas";
       } else if (telaAtual.id === "Poderes Sangue" || telaAtual.id === "Poderes Morte" || telaAtual.id === "Poderes Conhecimento" || telaAtual.id === "Poderes Energia") {
         idDestino = "Poderes Paranormais";
-      } else if (telaAtual.id === "Armas" || telaAtual.id === "Munições" || telaAtual.id === "Proteções" || telaAtual.id === "Acessórios" || telaAtual.id === "Explosivos" || telaAtual.id === "Itens Operacionais" || telaAtual.id === "Itens Paranormais") {
+      } else if (telaAtual.id === "Armas"  || telaAtual.id === "Proteções" || telaAtual.id === "Acessórios" || telaAtual.id === "Explosivos" || telaAtual.id === "Itens Operacionais" || telaAtual.id === "Itens Paranormais") {
         idDestino = "Equipamentos";
-      } else if (telaAtual.id === "Modificações para Armas" || telaAtual.id === "Maldições para Armas") {
+      } else if (telaAtual.id === "Modificações para Armas" || telaAtual.id === "Maldições para Armas" || telaAtual.id === "Munições") {
         idDestino = "Armas";
       } else if (telaAtual.id === "Modificações para Munições") {
         idDestino = "Munições";
@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   carregarCards({
-    arquivo: 'Modificações Armas.json',
+    arquivo: 'Modificações de Armas.json',
     container: containerModificacoesArmas,
     erroMsg: 'Não foi possível carregar as modificações de armas'
   });

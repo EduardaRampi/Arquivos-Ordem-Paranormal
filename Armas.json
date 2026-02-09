@@ -1,0 +1,272 @@
+[
+    {
+        "nome": "Acha",
+        "origem": "Livro de Regras",
+        "descricao": "Machado grande e pesado, usado no corte de árvores largas.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome": "Arco",
+        "origem": "Livro de Regras",
+        "descricao": "Arco e flecha comum, próprio para tiro ao alvo.",
+        "tag":"Arma Simples"
+    },
+    {
+        "nome": "Arco Composto",
+        "origem": "Livro de Regras",
+        "descricao": "Arco moderno com materiais de alta tensão e sistema de roldanas. Permite aplicar o valor de Força às rolagens de dano.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome": "Balestra",
+        "origem": "Livro de Regras",
+        "descricao": "Besta pesada capaz de disparos poderosos. Exige uma ação de movimento para ser recarregada a cada disparo.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome": "Bastão",
+        "origem": "Livro de Regras",
+        "descricao": "Cilindro de madeira maciça, como taco de beisebol ou cassetete. Pode ser empunhado com uma mão (1d6) ou duas mãos (1d8).",
+        "tag":"Arma Simples"
+    },
+    {
+        "nome": "Bazuca",
+        "origem": "Livro de Regras",
+        "descricao": "Lança-foguetes que causa dano no alvo e em todos os seres num raio de 3m. Seres afetados podem fazer teste de Reflexos para reduzir o dano. Exige ação de movimento para recarregar.",
+        "tag":"Arma Pesada"
+    },
+    {
+        "nome": "Besta",
+        "origem": "Livro de Regras",
+        "descricao": "Arma da antiguidade que exige uma ação de movimento para ser recarregada a cada disparo.",
+        "tag":"Arma Simples"
+    },
+    {
+        "nome": "Cajado",
+        "origem": "Livro de Regras",
+        "descricao": "Cabo longo de madeira ou ferro. É uma arma ágil e pode ser usada com Combater com Duas Armas como se fosse uma arma de uma mão e uma leve.",
+        "tag":"Arma Simples"
+    },
+    {
+        "nome": "Corrente",
+        "origem": "Livro de Regras",
+        "descricao": "Corrente grossa usada como arma. Fornece +2 em testes para desarmar e derrubar.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome": "Espada",
+        "origem": "Livro de Regras",
+        "descricao": "Espada medieval que pode ser empunhada com uma mão (1d8) ou duas mãos (1d10).",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome": "Espingarda",
+        "origem": "Livro de Regras",
+        "descricao": "Arma de fogo longa de cano liso. Causa apenas metade do dano em alcance médio ou maior.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome": "Faca",
+        "origem": "Livro de Regras",
+        "descricao": "Lâmina afiada como navalha ou faca militar. É uma arma ágil e pode ser arremessada.",
+        "tag":"Arma Simples"
+    },
+    {
+        "nome": "Florete",
+        "origem": "Livro de Regras",
+        "descricao": "Espada de lâmina fina e comprida usada por esgrimistas. É uma arma ágil.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome": "Fuzil de Assalto",
+        "origem": "Livro de Regras",
+        "descricao": "Arma de fogo padrão de exércitos modernos. É uma arma automática.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome": "Fuzil de Caça",
+        "origem": "Livro de Regras",
+        "descricao": "Arma de fogo popular entre fazendeiros, caçadores e atiradores esportivos.",
+        "tag":"Arma Simples"
+    },
+    {
+        "nome": "Fuzil de Precisão",
+        "origem": "Livro de Regras",
+        "descricao": "Arma militar para disparos longos e precisos. Veteranos em Pontaria recebem +5 na margem de ameaça ao mirar.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome": "Gadanho",
+        "origem": "Livro de Regras",
+        "descricao": "Ferramenta agrícola de duas mãos usada para ceifar cereais — e vidas.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome": "Katana",
+        "origem": "Livro de Regras",
+        "descricao": "Espada japonesa longa e levemente curvada. É uma arma ágil e pode ser usada com uma mão por veteranos em Luta.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome": "Lança",
+        "origem": "Livro de Regras",
+        "descricao": "Haste de madeira com ponta metálica afiada. Pode ser arremessada.",
+        "tag":"Arma Simples"
+    },
+    {
+        "nome": "Lança-chamas",
+        "origem": "Livro de Regras",
+        "descricao": "Equipamento militar que atinge todos os seres em uma linha curta. Seres atingidos sofrem dano e ficam em chamas.",
+        "tag":"Arma Pesada"
+    },
+    {
+        "nome": "Machadinha",
+        "origem": "Livro de Regras",
+        "descricao": "Ferramenta comum para cortar madeira. Pode ser arremessada.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome": "Machado",
+        "origem": "Livro de Regras",
+        "descricao": "Ferramenta usada por lenhadores e bombeiros, capaz de causar ferimentos terríveis.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome": "Maça",
+        "origem": "Livro de Regras",
+        "descricao": "Bastão com cabeça metálica cheia de protuberâncias.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome": "Machete",
+        "origem": "Livro de Regras",
+        "descricao": "Lâmina longa e larga usada para abrir trilhas.",
+        "tag":"Arma Simples"
+    },
+    {
+        "nome": "Marreta",
+        "origem": "Livro de Regras",
+        "descricao": "Ferramenta pesada usada para demolição — inclusive de pessoas.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome": "Martelo",
+        "origem": "Livro de Regras",
+        "descricao": "Ferramenta comum que pode ser usada como arma improvisada.",
+        "tag":"Arma Simples"
+    },
+    {
+        "nome": "Metralhadora",
+        "origem": "Livro de Regras",
+        "descricao": "Arma de fogo pesada e automática. Exige Força 4 ou apoio adequado, caso contrário impõe –5 nos ataques.",
+        "tag":"Arma Pesada"
+    },
+    {
+        "nome": "Montante",
+        "origem": "Livro de Regras",
+        "descricao": "Espada enorme e pesada de cerca de 1,5m de comprimento.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome": "Motoserra",
+        "origem": "Livro de Regras",
+        "descricao": "Ferramenta extremamente perigosa. Sempre que rolar 6 em um dado de dano, role um dado adicional. Impõe penalidade nos testes de ataque.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome": "Nunchaku",
+        "origem": "Livro de Regras",
+        "descricao": "Dois bastões curtos ligados por uma corrente. É uma arma ágil.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome": "Pistola",
+        "origem": "Livro de Regras",
+        "descricao": "Arma de mão comum entre policiais e militares, facilmente recarregável.",
+        "tag":"Arma Simples"
+    },
+    {
+        "nome": "Punhal",
+        "origem": "Livro de Regras",
+        "descricao": "Faca de lâmina longa e pontiaguda. É uma arma ágil.",
+        "tag":"Arma Simples"
+    },
+    {
+        "nome": "Revólver",
+        "origem": "Livro de Regras",
+        "descricao": "Arma de fogo comum e altamente confiável.",
+        "tag":"Arma Simples"
+    },
+    {
+        "nome": "Submetralhadora",
+        "origem": "Livro de Regras",
+        "descricao": "Arma de fogo automática que pode ser empunhada com apenas uma mão.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome":"Baioneta",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Lâmina fixável em armas de duas mãos. Aumenta dano para 1d6, mas reduz precisão à distância.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome":"Bastão Policial",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Bastão com guarda lateral. Ágil, causa dano contundente e aumenta bônus de defesa ao aparar.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome":"Espingarda de Cano Duplo",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Dois cartuchos, requer ação de recarga. Pode disparar ambos os canos com penalidade no ataque e dano 6d6.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome":"Estilingue",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Projéteis leves. Usa Força no dano, munição reaproveitável ou pedras, pode lançar granadas.",
+        "tag":"Arma Simples"
+    },
+    {
+        "nome":"Faca Tática",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Ágil, usada para contra-ataque ou bloqueio. Pode ser arremessada e aumenta defesa temporária.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome":"Gancho de Carne",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Gancho metálico, pode ser usado como arma. Alcance aumentável com corda ou corrente.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome":"Picareta",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Ferramenta de mineração usada como arma improvisada.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome":"Pistola Pesada",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Calibre superior, penalidade no ataque, anulável se empunhada com duas mãos.",
+        "tag":"Arma Tática"
+    },
+    {
+        "nome":"Pregador Pneumático",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Dispositivo que dispara pregos, conta como arma de fogo, munição para uma missão inteira.",
+        "tag":"Arma Simples"
+    },
+    {
+        "nome":"Revolver Compacto",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Arma de baixo calibre, facilmente escondida. Especialista em Crime pode reduzir espaço ocupado.",
+        "tag":"Arma Simples"
+    },
+    {
+        "nome":"Shuriken",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Projéteis metálicos, ataque extra gastando 1 PE. Pacote dura duas cenas.",
+        "tag":"Arma Tática"
+    }
+]
