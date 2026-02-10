@@ -64,15 +64,17 @@
 
         <div id="Itens Amaldiçoados" class="tela oculta">
         <h1>Itens Amaldiçoados</h1>
-        <div class="centralizar">
-            <button class="btn-navegar" data-destino="Itens Amaldiçoados Sangue">Itens Amaldiçoados de Sangue</button>
-            <button class="btn-navegar" data-destino="Itens Amaldiçoados Morte">Itens Amaldiçoados de Morte</button>
-            <button class="btn-navegar" data-destino="Itens Amaldiçoados Conhecimento">Itens Amaldiçoados de Conhecimento</button>
-            <button class="btn-navegar" data-destino="Itens Amaldiçoados Energia">Itens Amaldiçoados de Energia</button>
-            <button class="btn-navegar" data-destino="Itens Amaldiçoados Medo">Itens Amaldiçoados de Medo</button>
-            <button class="btn-navegar" data-destino="Itens Amaldiçoados Varia">Itens Amaldiçoados Variados</button>
-            <button class="btn-voltar">Voltar</button>
-        </div> 
+        <div class="search-box">
+            <input type="text" class="input-busca" data-container="lista-itens-amaldicoados" placeholder="Pesquisar por palavra chave..."> 
+            <div class="container-botao-filtro">
+                <button class="btn-filtro-geral btn-abrir-filtros">
+                    <i class="fas fa-filter"></i> Filtros
+                </button>
+                <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
+            </div>     
+        </div>
+        <div id="lista-itens-amaldicoados"></div>
+        <button class="btn-voltar">Voltar</button> 
         </div>
         
         <div id="Rituais" class="tela oculta">
@@ -108,15 +110,20 @@
 
         <div id="Criaturas" class="tela oculta">
         <h1>Criaturas</h1>
-        <div class="centralizar">
-            <button class="btn-navegar" data-destino="Criaturas Sangue">Criaturas de Sangue</button>
-            <button class="btn-navegar" data-destino="Criaturas Morte">Criaturas de Morte</button>
-            <button class="btn-navegar" data-destino="Criaturas Conhecimento">Criaturas de Conhecimento</button>
-            <button class="btn-navegar" data-destino="Criaturas Energia">Criaturas de Energia</button>
-            <button class="btn-navegar" data-destino="Criaturas Medo">Criaturas de Medo</button>
-            <button class="btn-navegar" data-destino="Criaturas Realidade">Criaturas da Realidade</button>
-            <button class="btn-voltar">Voltar</button>
+        <div class="search-box">
+            <input type="text" class="input-busca" data-container="lista-criaturas" placeholder="Pesquisar por palavra chave..."> 
+            <div class="container-botao-filtro">
+                <button class="btn-filtro-geral btn-abrir-filtros">
+                    <i class="fas fa-filter"></i> Filtros
+                </button>
+                <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
+            </div>     
         </div> 
+        <div class="centralizar">
+            <button class="btn-navegar" data-destino="Criaturas Realidade">Criaturas da Realidade</button>
+        </div> 
+        <div id="lista-criaturas"></div>
+        <button class="btn-voltar">Voltar</button>
         </div>
         
         <div id="Missões" class="tela oculta">
@@ -572,145 +579,7 @@
         <div id="lista-maldicoes-acessorios"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
-
-        <div id="Itens Amaldiçoados Sangue" class="tela oculta">
-        <h1>Itens Amaldiçoados de Sangue</h1>
-        <div class="search-box">
-            <input type="text" class="input-busca" data-container="lista-itens-amaldicoados-sangue" placeholder="Pesquisar por palavra chave..."> 
-            <div class="container-botao-filtro">
-                <button class="btn-filtro-geral btn-abrir-filtros">
-                    <i class="fas fa-filter"></i> Filtros
-                </button>
-                <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
-            </div>     
-        </div>
-        <div id="lista-itens-amaldicoados-sangue"></div>
-        <button class="btn-voltar">Voltar</button>
-        </div> 
-        
-        <div id="Itens Amaldiçoados Morte" class="tela oculta">
-        <h1>Itens Amaldiçoados de Morte</h1>
-        <div class="search-box">
-            <input type="text" class="input-busca" data-container="lista-itens-amaldicoados-morte" placeholder="Pesquisar por palavra chave..."> 
-            <div class="container-botao-filtro">
-                <button class="btn-filtro-geral btn-abrir-filtros">
-                    <i class="fas fa-filter"></i> Filtros
-                </button>
-                <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
-            </div>     
-        </div>
-        <div id="lista-itens-amaldicoados-morte"></div>
-        <button class="btn-voltar">Voltar</button>
-        </div>          
-
-        <div id="Itens Amaldiçoados Conhecimento" class="tela oculta">
-        <h1>Itens Amaldiçoados de Conhecimento</h1>
-        <div class="search-box">
-            <input type="text" class="input-busca" data-container="lista-itens-amaldicoados-conhecimento" placeholder="Pesquisar por palavra chave..."> 
-            <div class="container-botao-filtro">
-                <button class="btn-filtro-geral btn-abrir-filtros">
-                    <i class="fas fa-filter"></i> Filtros
-                </button>
-                <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
-            </div>     
-        </div>
-        <div id="lista-itens-amaldicoados-conhecimento"></div>
-        <button class="btn-voltar">Voltar</button>
-        </div>  
-
-        <div id="Itens Amaldiçoados Energia" class="tela oculta">
-        <h1>Itens Amaldiçoados de Energia</h1>
-        <div class="search-box">
-            <input type="text" class="input-busca" data-container="lista-itens-amaldicoados-energia" placeholder="Pesquisar por palavra chave..."> 
-            <div class="container-botao-filtro">
-                <button class="btn-filtro-geral btn-abrir-filtros">
-                    <i class="fas fa-filter"></i> Filtros
-                </button>
-                <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
-            </div>     
-        </div>
-        <div id="lista-itens-amaldicoados-energia"></div>
-        <button class="btn-voltar">Voltar</button>
-        </div>  
-
-        <div id="Itens Amaldiçoados Medo" class="tela oculta">
-        <h1>Itens Amaldiçoados de Medo</h1>
-        <div id="lista-itens-amaldicoados-medo"></div>
-        <button class="btn-voltar">Voltar</button>
-        </div>  
-
-        <div id="Itens Amaldiçoados Varia" class="tela oculta">
-        <h1>Itens Amaldiçoados Variados</h1>
-        <div id="lista-itens-amaldicoados-varia"></div>
-        <button class="btn-voltar">Voltar</button>
-        </div>
-        
-        <div id="Criaturas Sangue" class="tela oculta">
-        <h1>Criaturas de Sangue</h1>
-        <div class="search-box">
-            <input type="text" class="input-busca" data-container="lista-criaturas-sangue" placeholder="Pesquisar por palavra chave..."> 
-            <div class="container-botao-filtro">
-                <button class="btn-filtro-geral btn-abrir-filtros">
-                    <i class="fas fa-filter"></i> Filtros
-                </button>
-                <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
-            </div>     
-        </div>
-        <div id="lista-criaturas-sangue"></div>
-        <button class="btn-voltar">Voltar</button>
-        </div>  
-        
-        <div id="Criaturas Morte" class="tela oculta">
-        <h1>Criaturas de Morte</h1>
-        <div class="search-box">
-            <input type="text" class="input-busca" data-container="lista-criaturas-morte" placeholder="Pesquisar por palavra chave..."> 
-            <div class="container-botao-filtro">
-                <button class="btn-filtro-geral btn-abrir-filtros">
-                    <i class="fas fa-filter"></i> Filtros
-                </button>
-                <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
-            </div>     
-        </div>
-        <div id="lista-criaturas-morte"></div>
-        <button class="btn-voltar">Voltar</button>
-        </div>     
-        
-        <div id="Criaturas Conhecimento" class="tela oculta">
-        <h1>Criaturas de Conhecimento</h1>
-        <div class="search-box">
-            <input type="text" class="input-busca" data-container="lista-criaturas-conhecimento" placeholder="Pesquisar por palavra chave..."> 
-            <div class="container-botao-filtro">
-                <button class="btn-filtro-geral btn-abrir-filtros">
-                    <i class="fas fa-filter"></i> Filtros
-                </button>
-                <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
-            </div>     
-        </div>
-        <div id="lista-criaturas-conhecimento"></div>
-        <button class="btn-voltar">Voltar</button>
-        </div>     
-        
-        <div id="Criaturas Energia" class="tela oculta">
-        <h1>Criaturas de Sangue</h1>
-        <div class="search-box">
-            <input type="text" class="input-busca" data-container="lista-criaturas-energia" placeholder="Pesquisar por palavra chave..."> 
-            <div class="container-botao-filtro">
-                <button class="btn-filtro-geral btn-abrir-filtros">
-                    <i class="fas fa-filter"></i> Filtros
-                </button>
-                <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
-            </div>     
-        </div>
-        <div id="lista-criaturas-energia"></div>
-        <button class="btn-voltar">Voltar</button>
-        </div>  
-        
-        <div id="Criaturas Medo" class="tela oculta">
-        <h1>Criaturas de Medo</h1>
-        <div id="lista-criaturas-Medo"></div>
-        <button class="btn-voltar">Voltar</button>
-        </div>  
-        
+         
         <div id="Criaturas Realidade" class="tela oculta">
         <h1>Criaturas da Realidade</h1>
         <div class="search-box">

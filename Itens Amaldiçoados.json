@@ -1,0 +1,373 @@
+[
+    {
+        "nome":"Coração Pulsante",
+        "origem":"Livro de Regras",
+        "descricao":"Um coração humano banhado em Sangue, pulsando como se ainda estivesse dentro de um corpo. Se estiver empunhando o coração pulsante e sofrer dano, você pode gastar uma reação para espremer o item e reduzir esse dano pela metade. Sempre que usa o coração, você deve fazer um teste de Fortitude (DT 15 + 5 por uso adicional no mesmo dia). Se falhar, o item é destruído. Compartimentos com o coração devem ser drenados uma vez por dia.",
+        "Elemento":"Sangue",
+        "tag":""
+    },
+    {
+        "nome":"Coroa de Espinhos",
+        "origem":"Livro de Regras",
+        "descricao":"Uma coroa, colar ou pulseira feita de espinhos banhados em Sangue. Uma vez por rodada, você pode usar uma reação para transformar dano mental em dano de Sangue, mas não consegue recuperar sanidade por descanso enquanto estiver vestindo o item. Requer uma semana de uso para ativar.",
+        "Elemento":"Sangue",
+        "tag":""
+    },
+    {
+        "nome":"Frasco de Vitalidade",
+        "origem":"Livro de Regras",
+        "descricao":"Pequeno frasco de vidro com tampa de metal gravada com um selo de Sangue. Você pode sofrer até 20 pontos de dano para encher o frasco com seu próprio sangue. Beber o conteúdo recupera a mesma quantidade de PV armazenada, mas exige teste de Fortitude (DT 20) para não ficar enjoado por uma rodada.",
+        "Elemento":"Sangue",
+        "tag":""
+    },
+    {
+        "nome":"Pérola de Sangue",
+        "origem":"Livro de Regras",
+        "descricao":"Esfera vermelha de 2cm que pode ser absorvida na pele, fornecendo +5 em Agilidade, Força e Vigor até o final da cena. Ao final, teste de Fortitude (DT 20) para evitar fadiga; falha grave causa parada cardíaca e transformação em criatura de Sangue de VD similar ao NEX.",
+        "Elemento":"Sangue",
+        "tag":""
+    },
+    {
+        "nome":"Punhos Enraivecidos",
+        "origem":"Livro de Regras",
+        "descricao":"Soqueiras de metal vermelho gravadas com símbolos de Sangue. Ataques desarmados causam +1d8 de dano de Sangue letal. Sempre que acerta, pode realizar ataques extras pagando 2 PE adicionais por ataque já realizado no turno.",
+        "Elemento":"Sangue",
+        "tag":""
+    },
+    {
+        "nome":"Seringa de Transfiguração",
+        "origem":"Livro de Regras",
+        "descricao":"Seringa orgânica com veias pulsantes. Pode sugar sangue de um alvo e injetá-lo em outro, transfigurando sua aparência como o ritual Distorcer Aparência por 1 dia. Ao final, teste 1d6 para possíveis danos permanentes (1 PV) se resultado for 1.",
+        "Elemento":"Sangue",
+        "tag":""
+    },
+    {
+        "nome":"Amarras Mortais",
+        "origem":"Livro de Regras",
+        "descricao":"Correntes de ferro negro que se enrolam nos antebraços. Uma vez por rodada, pode gastar ação padrão e 2 PE para usar a manobra agarrar contra um alvo.",
+        "Elemento":"Morte",
+        "tag":""
+    },
+    {
+        "nome":"Casaco de Lodo",
+        "origem":"Livro de Regras",
+        "descricao":"Sobretudo preto feito de Lodo ativo. Protege contra corte, impacto, Morte e perfuração 5, mas é vulnerável a dano balístico e de Energia.",
+        "Elemento":"Morte",
+        "tag":""
+    },
+    {
+        "nome":"Coletora",
+        "origem":"Livro de Regras",
+        "descricao":"Punhal negro que absorve PE da vítima morta (1d8 PE, máximo 20). Quem o porta sofre pesadelos e condições de descanso ruins.",
+        "Elemento":"Morte",
+        "tag":""
+    },
+    {
+        "nome":"Crânio Espiral",
+        "origem":"Livro de Regras",
+        "descricao":"Crânio apodrecido em formato espiral. Uma vez por rodada, pode gastar ação livre para obter uma ação padrão adicional. Cada uso exige teste de Vontade (DT 15 + 5 por uso adicional), falha envelhece 1d4 anos e impede uso no dia.",
+        "Elemento":"Morte",
+        "tag":""
+    },
+    {
+        "nome":"Frasco de Lodo",
+        "origem":"Livro de Regras",
+        "descricao":"Frasco com Lodo da Morte. Aplicar em ferimento recente recupera 6d8+20 PV; se ferimento antigo, 50% chance de curar 3d8+10 PV ou causar 3d8+10 de dano de Morte.",
+        "Elemento":"Morte",
+        "tag":""
+    },
+    {
+        "nome":"Vislumbre do Fim",
+        "origem":"Livro de Regras",
+        "descricao":"Óculos escuros com símbolos e espirais. Uma ação de movimento permite obter informações sobre a morte de uma criatura ou seu ponto de vulnerabilidade, dependendo do alvo.",
+        "Elemento":"Morte",
+        "tag":""
+    },
+    {
+        "nome":"Anéis do Elo Mental",
+        "origem":"Livro de Regras",
+        "descricao":"Par de anéis dourados conectando duas pessoas por 24h. Após ativação, permite ligação telepática permanente enquanto usados. Dano mental ou condição de medo sofrida por uma pessoa afeta a outra igualmente.",
+        "Elemento":"Conhecimento",
+        "tag":""
+    },
+    {
+        "nome":"Lanterna Reveladora",
+        "origem":"Livro de Regras",
+        "descricao":"Lanterna dourada com sigilos do Outro Lado. Ativar gasta 1 ação padrão e 1 PE, emitindo luz com propriedades do ritual Terceiro Olho. Incomoda criaturas de Sangue, que atacarão o usuário se iluminadas.",
+        "Elemento":"Conhecimento",
+        "tag":""
+    },
+    {
+        "nome":"Máscara das Pessoas nas Sombras",
+        "origem":"Livro de Regras",
+        "descricao":"Máscara da Seita das Máscaras. Usuário recebe resistência a Conhecimento 10 e pode gastar ação de movimento + 2 PE para se teletransportar entre sombras adjacentes. Vestir o item pode ter consequências se despertar atenção da mente única das Máscaras.",
+        "Elemento":"Conhecimento",
+        "tag":""
+    },
+    {
+        "nome":"Munição Jurada",
+        "origem":"Livro de Regras",
+        "descricao":"Bala com sigilo gravado. Ritual de 1h vincula a bala a um ser conhecido. Ataque contra ele fornece +10 no teste, dobra margem de ameaça e causa +6d12 de dano de Conhecimento. Obsessão pelo alvo impõe –2 em Defesa e ataque contra outros alvos.",
+        "Elemento":"Conhecimento",
+        "tag":""
+    },
+    {
+        "nome":"Pergaminho da Pertinácia",
+        "origem":"Livro de Regras",
+        "descricao":"Pergaminho antigo com sigilos dourados. Gasta 1 ação padrão para encarar os sigilos e receber 5 PE temporários. Cada uso exige teste de Ocultismo (DT 15 + 5 por uso adicional), falha destrói o pergaminho.",
+        "Elemento":"Conhecimento",
+        "tag":""
+    },
+    {
+        "nome":"Arcabuz dos Moretti",
+        "origem":"Livro de Regras",
+        "descricao":"Arma de fogo antiga que ainda funciona. +2 em testes de ataque, causa dano de Energia. Dano básico do disparo é definido por 1d6 (1-6 variando de 2d4 a 2d20). Alcance curto, crítico x3, sem necessidade de munição.",
+        "Elemento":"Energia",
+        "tag":""
+    },
+    {
+        "nome":"Bateria Reversa",
+        "origem":"Livro de Regras",
+        "descricao":"Bateria elétrica com sigilos paranormais. Pode absorver carga de dispositivos em alcance curto gastando ação padrão e 2 PE. Se cheia, pode transferir carga. Cada uso exige teste de Ocultismo (DT 15 + 5), falha causa explosão de 12d6 de dano de Energia em 3m.",
+        "Elemento":"Energia",
+        "tag":""
+    },
+    {
+        "nome":"Peitoral da Segunda Chance",
+        "origem":"Livro de Regras",
+        "descricao":"Colete eletrônico sobre o peito. Ao ser reduzido a 0 PV, gasta 5 PE para reanimar com 4d10 PV por surto de Energia. Falha se PE insuficiente. Existe chance (1 em 1d10) de descarga letal transformando corpo em plasma de Energia.",
+        "Elemento":"Energia",
+        "tag":""
+    },
+    {
+        "nome":"Relógio de Arnaldo",
+        "origem":"Livro de Regras",
+        "descricao":"Relógio de ouro antigo. Uma vez por rodada, pode gastar 1 PE para rolar novamente qualquer dado com resultado 1. Custo aumenta +1 para cada uso no mesmo dia. Item único.",
+        "Elemento":"Energia",
+        "tag":""
+    },
+    {
+        "nome":"Talismã da Sorte",
+        "origem":"Livro de Regras",
+        "descricao":"Moeda ou amuleto ritualístico. Quando sofre dano, pode gastar reação + 3 PE para rolar 1d4: 2-3 evita dano, 4 evita mas queima o talismã, 1 sofre dano dobrado e talismã queima.",
+        "Elemento":"Energia",
+        "tag":""
+    },
+    {
+        "nome":"Teclado de Conexão Neural",
+        "origem":"Livro de Regras",
+        "descricao":"Teclado USB coberto de glifos de Energia. Ao plugar no computador, conecta sua mente à máquina. Permite uso sem impedimentos tecnológicos e +10 em testes relacionados.",
+        "Elemento":"Energia",
+        "tag":""
+    },
+    {
+        "nome":"Tela do Pesadelo",
+        "origem":"Livro de Regras",
+        "descricao":"Dispositivo com tela e sigilos minúsculos. Ativar (ação padrão + 2 PE) faz a próxima pessoa que tocar na tela ver imagem horrível causando teste de Vontade (DT +5). Falha resulta em atordoamento, 4d6 de dano mental e repetição do teste. Até passar ou ser destruída.",
+        "Elemento":"Energia",
+        "tag":""
+    },
+    {
+        "nome":"Veículo Energizado",
+        "origem":"Livro de Regras",
+        "descricao":"Veículo modificado para não precisar de combustível. Motorista pode gastar reação + teste de Pilotagem (DT 25) para transformar carro e ocupantes em energia pura por um instante, evitando colisões como se fossem incorpóreos.",
+        "Elemento":"Energia",
+        "tag":""
+    },
+    {
+        "nome":"Jaqueta de Veríssimo",
+        "origem":"Livro de Regras",
+        "descricao":"Jaqueta de couro estilo aviador. Recebe resistência a dano paranormal 15. Pode gastar reação + 2 PE para se tornar alvo de dano no lugar de aliado adjacente. Item único, categoria IV.",
+        "Elemento":"Medo",
+        "tag":""
+    },
+    {
+        "nome":"Dedo Decepado",
+        "origem":"Livro de Regras",
+        "descricao":"Dedo decepado de alguém com exposição paranormal. Concede poder paranormal do dono, elemento do poder define a maldição. Durante descanso, 1d4: resultado 1 causa assombração e não recupera PV, PE ou sanidade. Visível, penalidade –10 em Diplomacia.",
+        "Elemento":"Varía",
+        "tag":""
+    },
+    {
+        "nome":"Selos Paranormais",
+        "origem":"Livro de Regras",
+        "descricao":"Conjunto de sigilos em objetos pequenos. Para ativar, empunhar e ler os sigilos em voz alta. Requer ação padrão ou equivalente a ritual, além de conhecimento do ritual ou teste de Ocultismo (DT 20 + custo em PE). Selo se desfaz após uso; efeitos de “O Custo do Paranormal” e “Invocando o Medo” se aplicam. Categoria igual ao círculo do ritual.",
+        "Elemento":"Varía",
+        "tag":""
+    },
+    {
+        "nome":"Conector de Membros",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Aparato composto por dois anéis metálicos ajustáveis, banhados em símbolos de Sangue e conectados por uma sanfona de tecido humano. Com uma ação padrão, permite reconectar um braço, perna ou cabeça decepados de uma pessoa ou animal, desde que o ferimento tenha ocorrido em até três rodadas. Reconectar não cura PV, mas remove as condições morrendo ou morto, deixando o alvo inconsciente com 1 PV. Se removido, a parte é novamente decepada e não pode ser reconectada por este item. Ao usar, há 25% de chance de a parte ganhar vida própria, causando efeitos negativos dependendo do membro reconectado.",
+        "Elemento":"Sangue",
+        "tag":""
+    },
+    {
+        "nome":"Dose d’A Praga",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Pequeno frasco de vidro reforçado contendo um líquido espesso vermelho. Com uma ação padrão, você ou um ser adjacente fica sob efeito dos poderes Arma de Sangue, Sangue de Ferro e Sangue Vivo até o fim da cena. Ao término, o alvo deve passar em um teste de Fortitude (DT 20 + 5 por dose anterior desde o último interlúdio) ou sofre 2d4 de dano mental, mantém os poderes até o fim da próxima cena e fica sob efeito do ritual Ódio Incontrolável.",
+        "Elemento":"Sangue",
+        "tag":""
+    },
+    {
+        "nome":"Mandíbula Agonizante",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Parte inferior de um crânio com músculos e símbolos pintados com sangue, emitindo sons perturbadores. Com uma ação padrão, pode ser pressionada e arremessada em alcance médio, passando a gritar alto e abafando outros sons em um raio de 30 metros até o fim da cena. Em cenas de furtividade, permite passar automaticamente em um teste para distrair. Criaturas de Sangue são atraídas pelos gritos e devem passar em um teste de Vontade (DT 35) para evitar ir até ela e comê-la. Após a cena, só pode ser usada novamente após descansar por uma cena.",
+        "Elemento":"Sangue",
+        "tag":""
+    },
+    {
+        "nome":"Retalho Tenebroso",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Pedaço de carne retangular com pele e pelos bestiais esparsos, impregnado de instintos primais. Você pode gastar uma ação padrão para aplicá-lo sobre seu rosto como se fosse uma máscara. Se fizer isso, recebe faro e",
+        "Elemento":"Sangue",
+        "tag":""
+    },
+    {
+        "nome":"Ampulheta do Tempo Sofrido",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Ampulheta de madeira trabalhada com areia negra que assume formas humanoides em desespero quando girada. Enquanto estiver empunhando, você pode gastar 5 PE para receber imediatamente os benefícios de uma ação de interlúdio à sua escolha. Após usar, não pode utilizá-la novamente até gastar uma ação de interlúdio para devolver o tempo emprestado pela Morte.",
+        "Elemento":"Morte",
+        "tag":""
+    },
+    {
+        "nome":"Injeção de Lodo",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Seringa de bronze enferrujado preenchida com Lodo da Morte. Com uma ação padrão, pode ser injetada em você ou em um ser adjacente voluntário. Até o fim da cena, o alvo recebe vulnerabilidade a dano balístico e de Energia, mas na próxima vez que for reduzido a 0 PV nessa cena, é reduzido a 1 PV.",
+        "Elemento":"Morte",
+        "tag":""
+    },
+    {
+        "nome":"Instantâneo Mortal",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Fotografia retratando um dos últimos momentos de uma pessoa antes de sua morte. Ao fazer um teste de perícia para procurar pistas, você pode gastar 1 PE para olhar fixamente para a imagem. Se a perícia estiver relacionada às circunstâncias da morte retratada, a imagem se move discretamente e concede um bônus no teste. O mestre decide quais perícias se aplicam.",
+        "Elemento":"Morte",
+        "tag":""
+    },
+    {
+        "nome":"Projétil de Lodo",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Projétil forjado com Lodo da Morte. Ao ser usado, todo o dano da arma se torna dano de Morte. Ao fim da cena, a arma utilizada se degrada completamente, sendo consumida pelo tempo.",
+        "Elemento":"Morte",
+        "tag":""
+    },
+    {
+        "nome":"Rádio Chiador",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Pequeno rádio gravador de bolso que emite um chiado constante. Enquanto ligado, o chiado indica a presença de criaturas Paranormais em alcance extremo, tornando-se mais intenso conforme a proximidade. Criaturas Paranormais tendem a ser atraídas pelo som. Funciona com pilhas que duram 12 horas antes de se tornarem Lodo preto.",
+        "Elemento":"Morte",
+        "tag":""
+    },
+    {
+        "nome":"Câmera Obscura",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Câmera Polaroid Model 95 usada para capturar auras paranormais. Possui lente de revelação paranormal, com DT aumentada em +10. Se a criatura falhar no teste, além do efeito normal, sofre 6d6 de dano de frio. Apenas criaturas com invisibilidade, incorporeidade ou camuflagem sofrem esse dano.",
+        "Elemento":"Conhecimento",
+        "tag":""
+    },
+    {
+        "nome":"Enxame Fantasmagórico",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Manto quase invisível feito de traças e mariposas esbranquiçadas. Enquanto estiver vestindo, o usuário fica invisível, mas sofre 1 ponto de dano mental no início de cada turno. Esse dano ignora resistências.",
+        "Elemento":"Conhecimento",
+        "tag":""
+    },
+    {
+        "nome":"Repositório do Fracasso",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Pequena caixa de madeira decorada com figuras espectrais. Sempre que uma criatura Paranormal em alcance médio obtém resultados 1 em testes, o item recebe cargas (máximo 6). Uma vez por rodada, você pode consumir uma carga para recuperar 1d4 PE, sofrendo –1 cumulativo em Vontade até o próximo interlúdio.",
+        "Elemento":"Conhecimento",
+        "tag":""
+    },
+    {
+        "nome":"Tábula do Saber Custoso",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Tábula marcada com sigilos de Conhecimento. Enquanto empunhada, pode conceder os benefícios de ser treinado em uma perícia por um único teste. Ao fazer isso, você perde uma quantidade de Sanidade igual ao valor do atributo-chave da perícia.",
+        "Elemento":"Conhecimento",
+        "tag":""
+    },
+    {
+        "nome":"Arreio Neural",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Conjunto de correias e fivelas que fixa a cabeça do usuário, mantendo olhos abertos e dentes expostos. Sempre que sofre 5 ou mais pontos de dano de eletricidade ou Energia, você recupera 1 PE, até um máximo diário igual ao dobro do seu Vigor.",
+        "Elemento":"Energia",
+        "tag":""
+    },
+    {
+        "nome":"Centrifugador Existencial",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Dispositivo com dois círculos de cobre concêntricos. Com uma ação padrão e 3 PE, você recebe um turno adicional na última contagem de iniciativa da rodada, existindo brevemente em duas possibilidades de futuro ao mesmo tempo. Ao final da rodada, uma das versões se dissipa, mas todos os efeitos sofridos permanecem.",
+        "Elemento":"Energia",
+        "tag":""
+    },
+    {
+        "nome":"Espelho Refletor",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Placa metálica ritualisticamente polida. Pode ser usada para observar pontos fora do campo de visão em alcance médio, concedendo bônus em Percepção e permitindo enxergar objetos com cobertura total. Pode ser sacrificada para evitar dano de Energia e refletir esse dano à origem.",
+        "Elemento":"Energia",
+        "tag":""
+    },
+    {
+        "nome":"Fuzil Alheio",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"Fuzil de precisão alienígena com mira telescópica e laser. Causa dano de Energia e não necessita de munição.",
+        "Elemento":"Energia",
+        "tag":""
+    },
+    {
+        "nome":"A Primeira Adaga",
+        "origem":"Sobrevivendo ao Horror",
+        "descricao":"A primeira adaga já usada em um ritual. Pode ser usada como componente ritualístico, concedendo os efeitos dos catalisadores ampliador, perturbador, potencializador e prolongador, além de reduzir o tempo de conjuração para 1 rodada. O conjurador perde PV igual à metade de seus PV totais. É possível pagar esse custo com uma vítima de sacrifício.",
+        "Elemento":"Medo",
+        "tag":""
+    },
+    {
+        "nome":"Faixas da Vidência",
+        "origem":"Marca Página",
+        "descricao":"Uma faixa de tecido, geralmente preto, com pequenos símbolos de Morte gravados em suas bordas.",
+        "Elemento":"Morte",
+        "tag":"Degolificada"
+    },
+    {
+        "nome":"Óculos Que Viram Morte Demais",
+        "origem":"Marca Página",
+        "descricao":"Um par de óculos de armação quadrada e preta corrompido pela entidade de Morte po ter testemunhado horrores do Paranormal em excesso",
+        "Elemento":"Morte",
+        "tag":"Dante"
+    },
+    {
+        "nome":"Pigente da Lua Dourada",
+        "origem":"Marca Página",
+        "descricao":"Um pequeno pingente dourado com uma lua crescente",
+        "Elemento":"Conhecimento",
+        "tag":"Beatriz"
+    },
+    {
+        "nome":"Colar Banhado em Sangue",
+        "origem":"Marca Página",
+        "descricao":"Um colar simples de cordão preto e pingente metálico que já presenciou rituais de Sangue suficientes para ser distorcido pela entidade",
+        "Elemento":"Sangue",
+        "tag":"Agatha"
+    },
+    {
+        "nome":"Arpão do Pescador",
+        "origem":"Arquivos Secretos",
+        "descricao":"Um arpão de pesca rústico, sujo de sangue originado de um pacto com o Diabo.",
+        "Elemento":"Sangue",
+        "tag":"Janeiro-2026"
+    },
+    {
+        "nome":"Combustivel de Sangue",
+        "origem":"Arquivos Secretos",
+        "descricao":"Um tanque com combustível inflamável misturado com Sangue.",
+        "Elemento":"Sangue",
+        "tag":"Janeiro-2026"
+    },
+    {
+        "nome":"Marreta Transtornada",
+        "origem":"Arquivos Secretos",
+        "descricao":"Uma marreta banhada em fluidos humanos e enrolada em espinhos foi amaldiçoada 6 vezes, através de 6 sacrifícios humanos, ao longo de 6 rituais de Sangue.",
+        "Elemento":"Sangue",
+        "tag":"Janeiro-2026"
+    }
+]

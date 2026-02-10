@@ -32,19 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const containerMaldiçoesArmas = document.getElementById('lista-maldicoes-armas');
   const containerMaldiçoesProtecoes = document.getElementById('lista-maldicoes-protecoes');
   const containerMaldiçoesAcessorios = document.getElementById('lista-maldicoes-acessorios');
-  const containerItensAmaldicoadosSangue = document.getElementById('lista-itens-amaldicoados-sangue');
-  const containerItensAmaldicoadosMorte = document.getElementById('lista-itens-amaldicoados-morte');
-  const containerItensAmaldicoadosConhecimento = document.getElementById('lista-itens-amaldicoados-conhecimento');
-  const containerItensAmaldicoadosEnergia = document.getElementById('lista-itens-amaldicoados-energia');
-  const containerItensAmaldicoadosMedo = document.getElementById('lista-itens-amaldicoados-medo');
-  const containerItensAmaldicoadosVaria = document.getElementById('lista-itens-amaldicoados-varia');
-  const containerCriaturasSangue = document.getElementById('lista-criaturas-sangue');
-  const containerCriaturasMorte = document.getElementById('lista-criaturas-morte');
-  const containerCriaturasConhecimento = document.getElementById('lista-criaturas-conhecimento');
-  const containerCriaturasEnergia = document.getElementById('lista-criaturas-energia');
-  const containerCriaturasMedo = document.getElementById('lista-criaturas-medo');
+  const containerItensAmaldicoados = document.getElementById('lista-itens-amaldicoados');
   const containerCriaturasRealidade = document.getElementById('lista-criaturas-realidade');
   const containerRegras = document.getElementById('lista-regras');
+  const containerCriaturas= document.getElementById('lista-criaturas');
 
   // Variável para salvar qual era a tela anterior (ajuda no botão voltar)
   let telaAnterior = null;
@@ -94,9 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         idDestino = "Acessórios";
       } else if (telaAtual.id === "Modificações para Itens Paranormais") {
         idDestino = "Itens Paranormais";
-      } else if (telaAtual.id === "Itens Amaldiçoados Sangue" || telaAtual.id === "Itens Amaldiçoados Morte" || telaAtual.id === "Itens Amaldiçoados Conhecimento" || telaAtual.id === "Itens Amaldiçoados Energia" || telaAtual.id === "Itens Amaldiçoados Medo" || telaAtual.id === "Itens Amaldiçoados Variados") {
-        idDestino = "Itens Amaldiçoados";
-      } else if (telaAtual.id === "Criaturas Sangue" || telaAtual.id === "Criaturas Morte" || telaAtual.id === "Criaturas Conhecimento" || telaAtual.id === "Criaturas Energia" || telaAtual.id === "Criaturas Medo" || telaAtual.id === "Criaturas Realidade"){
+      } else if ( telaAtual.id === "Criaturas Realidade" ){
         idDestino = "Criaturas";
       }
 
@@ -139,12 +128,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const htmlComp = item.Comp
           ? `<p><strong>Complementa:</strong> ${item.Comp}</p>` 
           : ''; 
+        const htmlTipo = item.Tipo
+          ? `<p><strong>Tipo:</strong> ${item.Tipo}</p>` 
+          : ''; 
 
         const card = `
           <div class="classe-card">
             <h2>${item.nome}</h2>
             <p><strong>Origem:</strong> ${item.origem}</p>
             ${htmlVd}
+            ${htmlTipo}            
             ${htmlCirculo}
             ${htmlElemento}
             <p><strong>${tituloDescricao}:</strong> ${item.descricao}</p>
@@ -347,75 +340,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   carregarCards({
-    arquivo: 'Itens Amaldiçoados Sangue.json',
-    container: containerItensAmaldicoadosSangue,
-    erroMsg: 'Não foi possível carregar os itens amaldiçoados de sangue'
+    arquivo: 'Itens Amaldiçoados.json',
+    container: containerItensAmaldicoados,
+    erroMsg: 'Não foi possível carregar os itens amaldiçoados'
   });
 
   carregarCards({
-    arquivo: 'Itens Amaldiçoados Morte.json',
-    container: containerItensAmaldicoadosMorte,
-    erroMsg: 'Não foi possível carregar os itens amaldiçoados de morte'
-  });
-
-  carregarCards({
-    arquivo: 'Itens Amaldiçoados Conhecimento.json',
-    container: containerItensAmaldicoadosConhecimento,
-    erroMsg: 'Não foi possível carregar os itens amaldiçoados de conhecimento'
-  });
-
-  carregarCards({
-    arquivo: 'Itens Amaldiçoados Energia.json',
-    container: containerItensAmaldicoadosEnergia,
-    erroMsg: 'Não foi possível carregar os itens amaldiçoados de energia'
-  });
-
-  carregarCards({
-    arquivo: 'Itens Amaldiçoados Medo.json',
-    container: containerItensAmaldicoadosMedo,
-    erroMsg: 'Não foi possível carregar os itens amaldiçoados de medo'
-  });
-
-  carregarCards({
-    arquivo: 'Itens Amaldiçoados Varia.json',
-    container: containerItensAmaldicoadosVaria,
-    erroMsg: 'Não foi possível carregar os itens amaldiçoados variados'
-  });
-
-  carregarCards({
-    arquivo: 'Critaturas Sangue.json',
-    container: containerCriaturasSangue,
-    erroMsg: 'Não foi possível carregar as criaturas de sangue'
-  });
-
-  carregarCards({
-    arquivo: 'Critaturas Morte.json',
-    container: containerCriaturasMorte,
-    erroMsg: 'Não foi possível carregar as criaturas de morte'
-  });
-
-  carregarCards({
-    arquivo: 'Critaturas Conhecimento.json',
-    container: containerCriaturasConhecimento,
-    erroMsg: 'Não foi possível carregar as criaturas de conhecimento'
-  });
-
-  carregarCards({
-    arquivo: 'Critaturas Energia.json',
-    container: containerCriaturasEnergia,
-    erroMsg: 'Não foi possível carregar as criaturas de energia'
-  });
-
-  carregarCards({
-    arquivo: 'Critaturas Medo.json',
-    container: containerCriaturasMedo,
-    erroMsg: 'Não foi possível carregar as criaturas de medo'
-  });
-
-  carregarCards({
-    arquivo: 'Critaturas Realidade.json',
+    arquivo: 'Criaturas Realidade.json',
     container: containerCriaturasRealidade,
     erroMsg: 'Não foi possível carregar as criaturas da realidade'
+  });
+
+  carregarCards({
+    arquivo: 'Criaturas.json',
+    container: containerCriaturas,
+    erroMsg: 'Não foi possível carregar as criaturas'
   });
 
   carregarCards({
@@ -444,125 +383,150 @@ document.addEventListener('DOMContentLoaded', () => {
     } 
   });
 
-  // 5. Configuração do que vamos procurar dentro dos cards
-    const categoriasParaBuscar = {
-        'Elemento': 'Elemento',
-        'Círculo': 'Círculo',
-        'Origem': 'Origem',
-        'Tag': 'Tag',
-        'Pré-requisito': 'Pré-requisito',
-        'VD': 'VD',
-        'Complementa': 'Complementa'
-    };
+  // 5. Configuração Sistema Multi-Filtros
+  const categoriasParaBuscar = {
+      'Elemento': 'Elemento',
+      'Círculo': 'Círculo',
+      'Origem': 'Origem',
+      'Tag': 'Tag',
+      'Pré-requisito': 'Pré-requisito',
+      'VD': 'VD',
+      'Complementa': 'Complementa',
+      'Tipo': 'Tipo'
+  };
 
-    const botoesFiltro = document.querySelectorAll('.btn-abrir-filtros');
+  const botoesFiltro = document.querySelectorAll('.btn-abrir-filtros');
 
-    // 5.1. Ao clicar no botão Filtros
-    botoesFiltro.forEach(botao => {
-    botao.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const menuDesteBotao = botao.nextElementSibling; // Pega o menu daquela tela específica
-        const telaAtiva = botao.closest('.tela');
-        const containerLista = telaAtiva.querySelector('[id^="lista-"]');
+  // 5.1. Ao clicar no botão Filtros
+  botoesFiltro.forEach(botao => {
+      botao.addEventListener('click', (e) => {
+          e.stopPropagation();
+          
+          const containerPai = botao.closest('.container-botao-filtro');
+          const menuDesteBotao = containerPai.querySelector('.menu-filtros-flutuante');
+          
+          const telaAtiva = botao.closest('.tela');
+          const containerLista = telaAtiva.querySelector('[id^="lista-"]');
 
-        if (containerLista) {
-            gerarMenuDeFiltros(containerLista, menuDesteBotao); // Passa o menu específico
-            menuDesteBotao.classList.toggle('oculta');
-        }
+          if (containerLista && menuDesteBotao) {
+              // MUDANÇA 1: Só gera o menu se ele estiver vazio. 
+              // Se já tiver itens, a gente mantém (para não perder a seleção).
+              if (menuDesteBotao.innerHTML.trim() === '') {
+                  gerarMenuDeFiltros(containerLista, menuDesteBotao);
+              }
+              
+              // Abre/Fecha o menu visualmente
+              menuDesteBotao.classList.toggle('oculta');
+          }
       });
-    });
-    // 5.2. Função que cria a lista (O Coração do Código)
-    function gerarMenuDeFiltros(container, menuElemento) {
-        const cards = container.querySelectorAll('.classe-card');
-        const dadosEncontrados = {};
+  });
 
-        // Inicializa os arrays vazios
-        for (let chave in categoriasParaBuscar) {
-            dadosEncontrados[chave] = new Set();
-        }
+  // 5.2. Função que cria a lista (Executada apenas na 1ª vez)
+  function gerarMenuDeFiltros(container, menuElemento) {
+      const cards = container.querySelectorAll('.classe-card');
+      const dadosEncontrados = {};
 
-        // Varre cada card para ver o que tem dentro
-        cards.forEach(card => {
-            const strongs = card.querySelectorAll('strong');
-            strongs.forEach(s => {
-                // Verifica se o texto do strong bate com nossas categorias (ex: "Elemento:")
-                const textoLabel = s.innerText.replace(':', '').trim();
-                
-                // Se esse label for um dos que queremos filtrar
-                if (Object.values(categoriasParaBuscar).includes(textoLabel)) {
-                    // Pega o valor (o texto logo depois do strong)
-                    const valor = s.nextSibling.textContent.trim();
-                    
-                    // Acha a chave correta (Ex: Converte "Círculo" para a categoria certa)
-                    const categoriaChave = Object.keys(categoriasParaBuscar).find(key => categoriasParaBuscar[key] === textoLabel);
-                    
-                    if (valor && categoriaChave) {
-                        dadosEncontrados[categoriaChave].add(valor);
-                    }
-                }
-            });
-        });
+      for (let chave in categoriasParaBuscar) {
+          dadosEncontrados[chave] = new Set();
+      }
 
-        // 5.3. Monta o HTML do Menu
-        let htmlMenu = '';
-        
-        // Botão para limpar tudo
-        htmlMenu += `<div class="item-filtro limpar" data-valor="todos">Limpar Filtros</div>`;
+      cards.forEach(card => {
+          const strongs = card.querySelectorAll('strong');
+          strongs.forEach(s => {
+              const textoLabel = s.innerText.replace(':', '').trim();
+              if (Object.values(categoriasParaBuscar).includes(textoLabel)) {
+                  const valor = s.nextSibling.textContent.trim();
+                  const categoriaChave = Object.keys(categoriasParaBuscar).find(key => categoriasParaBuscar[key] === textoLabel);
+                  if (valor && categoriaChave) {
+                      dadosEncontrados[categoriaChave].add(valor);
+                  }
+              }
+          });
+      });
 
-        // Para cada categoria que achamos dados
-        for (let [categoria, valores] of Object.entries(dadosEncontrados)) {
-            if (valores.size > 0) {
-                htmlMenu += `<div class="titulo-categoria">${categoria}</div>`;
-                
-                // Transforma o Set em Array e ordena
-                const listaOrdenada = Array.from(valores).sort();
-                
-                listaOrdenada.forEach(valor => {
-                    htmlMenu += `<div class="item-filtro" data-valor="${valor}">↳ ${valor}</div>`;
+      // 5.3. Monta o HTML do Menu
+      let htmlMenu = '';
+      htmlMenu += `<div class="item-filtro limpar" data-valor="limpar">Limpar Filtros 🗑️</div>`;
+
+      for (let [categoria, valores] of Object.entries(dadosEncontrados)) {
+          if (valores.size > 0) {
+              htmlMenu += `<div class="titulo-categoria">${categoria}</div>`;
+              // Ordena números corretamente (10 vem depois de 2, não de 1)
+                const listaOrdenada = Array.from(valores).sort((a, b) => {
+                    return isNaN(a) ? a.localeCompare(b) : a - b;
                 });
-            }
-        }
+              listaOrdenada.forEach(valor => {
+                  htmlMenu += `<div class="item-filtro" data-valor="${valor}" data-categoria="${categoria}">${valor}</div>`;
+              });
+          }
+      }
 
-        // Se não achou nada
-        if (htmlMenu === `<div class="item-filtro limpar" data-valor="todos">Limpar Filtros 🗑️</div>`) {
-            htmlMenu = '<div class="aviso-vazio">Nada para filtrar aqui.</div>';
-        }
+      if (!htmlMenu.includes('item-filtro" data-valor')) {
+          htmlMenu = '<div class="aviso-vazio">Nada para filtrar aqui.</div>';
+      }
 
       menuElemento.innerHTML = htmlMenu;
-    }
+  }
 
-    // 5.4. Lógica do Clique no Item do Menu (Corrigida para múltiplos menus)
-    document.addEventListener('click', (e) => {
-        if (e.target.classList.contains('item-filtro')) {
-            const valorClicado = e.target.getAttribute('data-valor').toLowerCase();
-            
-            // Acha o menu onde o item está, a tela e o container de cards
-            const menu = e.target.closest('.menu-filtros-flutuante');
-            const telaAtiva = menu.closest('.tela');
-            const container = telaAtiva.querySelector('[id^="lista-"]');
-            const cards = container.querySelectorAll('.classe-card');
+  // 5.4. Lógica do Clique (AGORA COM MULTI-SELEÇÃO)
+  document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('item-filtro')) {
+          e.stopPropagation(); // Impede que o menu feche ao clicar numa opção
 
-            cards.forEach(card => {
-                if (valorClicado === 'todos') {
-                    card.style.display = 'block';
-                } else {
-                    const textoCard = card.innerText.toLowerCase();
-                    card.style.display = textoCard.includes(valorClicado) ? 'block' : 'none';
-                }
-            });
+          const menu = e.target.closest('.menu-filtros-flutuante');
+          const telaAtiva = menu.closest('.tela');
+          const container = telaAtiva.querySelector('[id^="lista-"]');
+          const cards = container.querySelectorAll('.classe-card');
+          const valorClicado = e.target.getAttribute('data-valor');
 
-            // Fecha o menu específico que foi usado
-            menu.classList.add('oculta');
-        }
-    });
+          // A) Se clicou em "Limpar Filtros"
+          if (valorClicado === 'limpar') {
+              // Remove a classe 'selecionado' de todos
+              menu.querySelectorAll('.item-filtro').forEach(el => el.classList.remove('selecionado'));
+              // Mostra todos os cards
+              cards.forEach(card => card.style.display = 'block');
+              return; // Encerra por aqui
+          }
 
-    // 5.5. Fecha qualquer menu se clicar fora dele (Corrigida)
-    document.addEventListener('click', (e) => {
-        // Se o clique NÃO foi em um botão de abrir filtro E NÃO foi dentro de um menu
-        if (!e.target.classList.contains('btn-abrir-filtros') && !e.target.closest('.menu-filtros-flutuante')) {
-            document.querySelectorAll('.menu-filtros-flutuante').forEach(menu => {
-                menu.classList.add('oculta');
-            });
-        }
-    });
+          // B) Se clicou em um item normal: Alterna (Liga/Desliga)
+          e.target.classList.toggle('selecionado');
+
+          // C) Coleta TODOS os filtros que estão ativos AGORA
+          const filtrosAtivos = Array.from(menu.querySelectorAll('.item-filtro.selecionado'))
+                                    .map(el => ({ 
+                                      valor: el.getAttribute('data-valor'),
+                                      categoria: el.getAttribute('data-categoria')
+                                    }));
+
+          // D) Aplica a filtragem "E" (Tem que ter TODOS os itens selecionados)
+          cards.forEach(card => {
+              if (filtrosAtivos.length === 0) {
+                  card.style.display = 'block'; // Nenhum filtro? Mostra tudo.
+              } else {
+                  const textoCard = card.innerText;
+                  
+                  // MÁGICA DO MULTI-FILTRO: verifica se o card tem TODOS os filtros ativos
+                  const atendeTodosFiltros = filtrosAtivos.every(filtro => {
+                    const valorEscapado = filtro.valor.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                    const regexRigida = new RegExp(`${filtro.categoria}\\s*:\\s*${valorEscapado}\\b`, 'i');
+                    return regexRigida.test(textoCard);
+                  });
+                  
+                  card.style.display = atendeTodosFiltros ? 'block' : 'none';
+              }
+          });
+          
+          // NOTA: Removemos a linha que fechava o menu (menu.classList.add('oculta')) 
+          // para o usuário poder continuar clicando em mais opções.
+      }
+  });
+
+  // 5.5. Fecha menu ao clicar fora
+  document.addEventListener('click', (e) => {
+      if (!e.target.classList.contains('btn-abrir-filtros') && !e.target.closest('.container-botao-filtro')) {
+          document.querySelectorAll('.menu-filtros-flutuante').forEach(menu => {
+              menu.classList.add('oculta');
+          });
+      }
+  });
 });

@@ -1,0 +1,432 @@
+[
+    {
+        "nome":"Bandido",
+        "origem":"Livro de Regra",
+        "Vd":"10",
+        "Tipo":"Pessoa",
+        "descricao":"Um criminoso típico, como um ladrão ou assaltante."
+    },
+    {
+        "nome":"Capanga",
+        "origem":"Livro de Regra",
+        "Vd":"20",
+        "Tipo":"Pessoa",
+        "descricao":"Pessoas embrutecidas, que vivem pela violência. Esta ficha pode representar membros de gangue a executores da máfia e leões de chácara de boates."
+    },
+    {
+        "nome":"Soldado de Aluguel",
+        "origem":"Livro de Regra",
+        "Vd":"40",
+        "Tipo":"Pessoa",
+        "descricao":"Um combatente profissional, que trabalha para quem pagar mais."
+    },
+    {
+        "nome":"Assassino",
+        "origem":"Livro de Regra",
+        "Vd":"80",
+        "Tipo":"Pessoa",
+        "descricao":"O assassino é um matador habilidoso e furtivo, que surge quando as ameaças da Realidade precisam eliminar alguém de forma discreta e eficiente."
+    },
+    {
+        "nome":"Comandante Mercenário",
+        "origem":"Livro de Regra",
+        "Vd":"120",
+        "Tipo":"Pessoa",
+        "descricao":"Um homem ou mulher endurecido por anos de conflitos, capaz de liderar seus subordinados e lutar de forma perigosa por conta própria."
+    },
+    {
+        "nome":"Iniciado",
+        "origem":"Livro de Regra",
+        "Vd":"20",
+        "Tipo":"Pessoa",
+        "descricao":"Ainda que seja um iniciado no caminho da adoração às entidades, este cultista já é capaz de conjurar rituais e pode se mostrar perigoso para agentes inexperientes."
+    },
+    {
+        "nome":"Investido",
+        "origem":"Livro de Regra",
+        "Vd":"40",
+        "Tipo":"Pessoa",
+        "descricao":"Cultista que executou os ritos iniciais de admissão, comprometido com as entidades e perigoso para a Realidade."
+    },
+    {
+        "nome":"Líder de Culto",
+        "origem":"Livro de Regra",
+        "Vd":"140",
+        "Tipo":"Pessoa",
+        "descricao":"Experiente e capaz de conjurar rituais mais poderosos, mantendo seu disfarce de bom cidadão enquanto é um mestre cultista."
+    },
+    {
+        "nome":"Policial",
+        "origem":"Livro de Regra",
+        "Vd":"20",
+        "Tipo":"Pessoa",
+        "descricao":"O policial padrão, patrulhando ruas e praças, sem experiência com o paranormal. Também pode representar vigias e seguranças corporativos."
+    },
+    {
+        "nome":"Policial de Elite",
+        "origem":"Livro de Regra",
+        "Vd":"60",
+        "Tipo":"Pessoa",
+        "descricao":"Treinados e equipados para situações extremas, os policiais de elite são os primeiros a aparecer quando uma investigação se torna um confronto armado."
+    },
+    {
+        "nome":"Chefe de Polícia",
+        "origem":"Livro de Regra",
+        "Vd":"100",
+        "Tipo":"Pessoa",
+        "descricao":"Delegado ou coronel experiente, que já passou por situações difíceis e não se intimida facilmente."
+    },
+    {
+        "nome":"Cão de Guarda",
+        "origem":"Livro de Regra",
+        "Vd":"10",
+        "Tipo":"Animal",
+        "descricao":"Cães treinados para guarda, que podem causar problemas para agentes furtivos. Também podem representar cães policiais ou lobos."
+    },
+    {
+        "nome":"Enxame de Abelhas",
+        "origem":"Livro de Regra",
+        "Vd":"10",
+        "Tipo":"Animal",
+        "descricao":"Abelhas que podem se tornar agressivas se sua colmeia for ameaçada. Encontradas em zonas rurais, parques ou casas abandonadas."
+    },
+    {
+        "nome":"Enxame de Ratos",
+        "origem":"Livro de Regra",
+        "Vd":"10",
+        "Tipo":"Animal",
+        "descricao":"Ratos tímidos que podem se unir em enxames perigosos por fome intensa ou energias paranormais, podendo transmitir doenças."
+    },
+    {
+        "nome":"Jacaré",
+        "origem":"Livro de Regra",
+        "Vd":"40",
+        "Tipo":"Animal",
+        "descricao":"Espécime grande de jacaré, perigoso para agentes, capaz de nadar e atacar com mordida e cauda, causando grande dano."
+    },
+    {
+        "nome":"Javaporco",
+        "origem":"Livro de Regra",
+        "Vd":"20",
+        "Tipo":"Animal",
+        "descricao":"Resultado do cruzamento de javalis com porcos domésticos, voraz e agressivo, presente em áreas rurais e fazendas."
+    },
+    {
+        "nome":"Onça-pintada",
+        "origem":"Livro de Regra",
+        "Vd":"40",
+        "Tipo":"Animal",
+        "descricao":"O maior felino das Américas, predador natural da selva brasileira, capaz de atacar com mordida e garras, extremamente perigosa."
+    },
+    {
+        "nome":"Sucuri",
+        "origem":"Livro de Regra",
+        "Vd":"40",
+        "Tipo":"Animal",
+        "descricao":"Grande cobra constritora da Amazônia, que pode ser possuída por colecionadores ou cultistas, representando perigo para qualquer agente."
+    },
+    {
+        "nome": "Bêbado Local",
+        "origem": "Sobrevivendo ao Horror",
+        "Vd": "10",
+        "Tipo": "Pessoa",
+        "descricao": "Simpático, falante e sempre cheio de histórias. Conhece a vizinhança e pode ser fonte de informações para agentes de fora da cidade."
+    },
+    {
+        "nome": "Burocrata",
+        "origem": "Sobrevivendo ao Horror",
+        "Vd": "10",
+        "Tipo": "Pessoa",
+        "descricao": "Responsável por organizar procedimentos, normas e informações. Pode ser uma fonte de informações, mas sua morosidade e regras confusas frustram os personagens."
+    },
+    {
+        "nome": "Fazendeiro Isolado",
+        "origem": "Sobrevivendo ao Horror",
+        "Vd": "20",
+        "Tipo": "Pessoa",
+        "descricao": "Acostumado a resolver problemas sozinho, desconfiado de estranhos. Pode ajudar personagens com sua experiência no campo e com animais de guarda."
+    },
+    {
+        "nome": "Investigador",
+        "origem": "Sobrevivendo ao Horror",
+        "Vd": "40",
+        "Tipo": "Pessoa",
+        "descricao": "Agente especializado em investigação, trabalhando para a lei ou corporações. Capaz de rastrear pistas e analisar cenas complexas."
+    },
+    {
+        "nome": "Médico",
+        "origem": "Sobrevivendo ao Horror",
+        "Vd": "20",
+        "Tipo": "Pessoa",
+        "descricao": "Treinado para socorrer ou causar dano, dependendo de suas intenções. Pode tratar ferimentos ou ferir usando conhecimento anatômico."
+    },
+    {
+        "nome": "Religioso",
+        "origem": "Sobrevivendo ao Horror",
+        "Vd": "40",
+        "Tipo": "Pessoa",
+        "descricao": "Líder carismático capaz de influenciar fiéis, manipular seguidores e proteger-se de efeitos paranormais com sua fé."
+    },
+    {
+        "nome": "Predador Sofisticado",
+        "origem": "Sobrevivendo ao Horror",
+        "Vd": "60",
+        "Tipo": "Pessoa",
+        "descricao": "Assassino metódico, vivendo luxuosamente, prefere mortes limpas e discretas, mas com métodos brutais quando oportuno."
+    },
+    {
+        "nome": "Caçador de Gente",
+        "origem": "Sobrevivendo ao Horror",
+        "Vd": "80",
+        "Tipo": "Pessoa",
+        "descricao": "Assassino brutal, com métodos grotescos e limites sociais reduzidos. Extremamente eficaz em ambientes isolados."
+    },
+    {
+        "nome": "Artista da Morte",
+        "origem": "Sobrevivendo ao Horror",
+        "Vd": "140",
+        "Tipo": "Pessoa",
+        "descricao": "Assassino que vê a morte como arte, meticuloso e técnico, deixando cenas de crime perturbadoras e difíceis de analisar."
+    },
+    {
+        "nome": "Ariranha",
+        "origem": "Sobrevivendo ao Horror",
+        "Vd": "20",
+        "Tipo": "Animal",
+        "descricao": "Predador corajoso e habilidoso, vive em bandos familiares, capaz de derrotar oponentes maiores e proteger seus pares."
+    },
+    {
+        "nome": "Cavalo",
+        "origem": "Sobrevivendo ao Horror",
+        "Vd": "10",
+        "Tipo": "Animal",
+        "descricao": "Usado como transporte e tração. Geralmente pacato, mas capaz de desferir chutes poderosos."
+    },
+    {
+        "nome": "Enxame de Tocandiras",
+        "origem": "Sobrevivendo ao Horror",
+        "Vd": "20",
+        "Tipo": "Animal",
+        "descricao": "Formiga-bala amazônica com mordida debilitante. Enxames agem juntos, imunes a algumas manobras de combate e ataques de área causam dano extra."
+    },
+    {
+        "nome": "Gorila",
+        "origem": "Sobrevivendo ao Horror",
+        "Vd": "40",
+        "Tipo": "Animal",
+        "descricao": "Territorial e poderoso, protege seu habitat com ataques físicos intensos."
+    },
+    {
+        "nome": "Leão",
+        "origem": "Sobrevivendo ao Horror",
+        "Vd": "60",
+        "Tipo": "Animal",
+        "descricao": "Predador da savana, pode ser encontrado em abrigos ou coleções ilegais. Ataca com garras e mordida, podendo agarrar a presa."
+    },
+    {
+        "nome": "Lobo",
+        "origem": "Sobrevivendo ao Horror",
+        "Vd": "20",
+        "Tipo": "Animal",
+        "descricao": "Caçador em grupo, habilidoso em atacar em alcateia e derrubar inimigos menores."
+    },
+    {
+        "nome": "Touro",
+        "origem": "Sobrevivendo ao Horror",
+        "Vd": "20",
+        "Tipo": "Animal",
+        "descricao": "Montanha de músculos, famoso por temperamento imprevisível. Pode atropelar ou atacar com chifres causando grande dano."
+    },
+    {
+        "nome": "Urso Pardo",
+        "origem": "Sobrevivendo ao Horror",
+        "Vd": "60",
+        "Tipo": "Animal",
+        "descricao": "Predador poderoso e imponente, capaz de ataques devastadores em combate corpo a corpo."
+    },
+    {
+        "nome": "Naomi Akechi",
+        "origem": "Panfleto",
+        "Vd": "100",
+        "Tipo": "Pessoa",
+        "descricao": "Naomi foi criada no bairro da Liberdade, em São Paulo. Como em um tragédia do teatro Kabuki, ambos os pais dela descobriram doenças terminais quase ao memso tempo. Em menos de um ano, Naomi estava órfã"
+    },
+    {
+        "nome": "Olivia Lefleur",
+        "origem": "Panfleto",
+        "Vd": "100",
+        "Tipo": "Pessoa",
+        "descricao": "Filha de Beatriz Lefleur, uma ex/campeã de boxe, Olivia era vista pela mãe como um projeto."
+    },
+    {
+        "nome": "Jiro Yukami",
+        "origem": "Panfleto",
+        "Vd": "100",
+        "Tipo": "Pessoa",
+        "descricao": "Jiro, ainda recém-nascido, perdeu seus pais em um acidente."
+    },
+    {
+        "nome": "Assecla",
+        "origem": "Arquivos Secretos",
+        "Vd": "40",
+        "Tipo": "Pessoa",
+        "descricao": "Acabaram de ter contato com o culto (Transtornados) ou com alguma manifestação intensa do Sangue.",
+        "tag":"Janeiro-2026"
+    },
+    {
+        "nome": "Investidos",
+        "origem": "Arquivos Secretos",
+        "Vd": "80",
+        "Tipo": "Pessoa",
+        "descricao": "Transtornados que já participaram de rituais, ouviram os chamados e sobreviveram, marcados permanentemente.",
+        "tag":"Janeiro-2026"
+    },
+    {
+        "nome": "Apóstolos do Sangue",
+        "origem": "Arquivos Secretos",
+        "Vd": "200",
+        "Tipo": "Pessoa",
+        "descricao": "Afirmam conversar diretamente ou já terem sido tocados fisicamente pelo Diabo e são vistos como intermediários dessa entidade.",
+        "tag":"Janeiro-2026"
+    },
+    {
+        "nome": "Giovanni Opspor",
+        "origem": "Arquivos Secretos",
+        "Vd": "80",
+        "Tipo": "Pessoa",
+        "descricao": "Um homem que faria tudo pela sua família, ou pelo menos, era isso que mentia para si mesmo.",
+        "tag":"Janeiro-2026"
+    },
+    {
+        "nome": "Mosto",
+        "origem": "Arquivos Secretos",
+        "Vd": "60",
+        "Tipo": "Pessoa",
+        "descricao": "Este brutamontes silencioso era um lutador, guarda-costas e membro dos Transtornados. Neste culto ele agiu principalmente como um cão fiel para o seu líder, Giovanni Opspor.",
+        "tag":"Janeiro-2026"
+    },
+    {
+        "nome": "Tarrafa",
+        "origem": "Arquivos Secretos",
+        "Vd": "60",
+        "Tipo": "Pessoa",
+        "descricao": "Um simples pescador que, como tantas pobres almas, foi arrastado para uma vida de sevícia e insanidade sob a liderança de Giovanni Opspor.",
+        "tag":"Janeiro-2026"
+    },
+    {
+        "nome": "Carrara",
+        "origem": "Arquivos Secretos",
+        "Vd": "60",
+        "Tipo": "Pessoa",
+        "descricao": "Um Transtornado de meia-idade com aparência marcante, ostentando pregos cravados ao redor do crânio, pescoço e braços, de onde o sangue ainda escorria.",
+        "tag":"Janeiro-2026"
+    },
+    {
+        "nome": "Nando Salles",
+        "origem": "Arquivos Secretos",
+        "Vd": "20",
+        "Tipo": "Pessoa",
+        "descricao": "Um 'criptobro' que vendia cursos picaretas e apostava em arenas de lutas ilegais, onde nutria grande admiração pelo lutador Colosso.",
+        "tag":"Janeiro-2026"
+    },
+    {
+        "nome": "Cleo Brisa",
+        "origem": "Arquivos Secretos",
+        "Vd": "60",
+        "Tipo": "Pessoa",
+        "descricao": "Profissional dedicada da Polícia Civil de Inquisidor do Vale, região no norte do Paraná, Cleo nutria uma profunda desconfiança sobre o delegado Jonas Aguiar.",
+        "tag":"Janeiro-2026"
+    },
+    {
+        "nome": "Cristino",
+        "origem": "Arquivos Secretos",
+        "Vd": "180",
+        "Tipo": "Pessoa",
+        "descricao": "Cristino, um homem enigmático, trajado como um verdadeiro cangaceiro de outras épocas.",
+        "tag":"Janeiro-2026"
+    },
+    {
+        "nome": "Turba de Seguidores da Noite",
+        "origem": "Casos Paranormais",
+        "Vd": "20",
+        "Tipo": "Pessoa (Enxame)",
+        "descricao": ""
+    },
+    {
+        "nome": "Cultista da Sanguis Orchid",
+        "origem": "Casos Paranormais",
+        "Vd": "5",
+        "Tipo": "Pessoa",
+        "descricao": ""
+    },
+    {
+        "nome": "Pessoa Dissociada",
+        "origem": "Missões Extras",
+        "Vd": "10",
+        "Tipo": "Pessoa",
+        "descricao": "Quando uma pessoa interage com manifestações do Outro Lado, pode ficar abalada a ponto de ter sua mente fragmentada. Porém, em ocasiões raras, esse processo pode ser ainda mais intenso. Nesses casos, a pessoa fica tão apavorada que passa a servir como um canal para o Medo que penetra na Realidade. Quando isso acontece, ela se torna um dissociado."
+    },
+    {
+        "nome": "Cão Dissociado",
+        "origem": "Missões Extras",
+        "Vd": "10",
+        "Tipo": "Animal",
+        "descricao": "Assim como humanos, animais também podem ser dissociados."
+    },
+    {
+        "nome": "Luiz Marzio",
+        "origem": "Vendenta Oculta",
+        "Vd": "20",
+        "Tipo": "Pessoa",
+        "descricao": "Luiz é um agente federal de estatura mediana que foi recentemente aprovado no concurso da polícia."
+    },
+    {
+        "nome": "Matheus Santavilla",
+        "origem": "Vendenta Oculta",
+        "Vd": "10",
+        "Tipo": "Pessoa",
+        "descricao": "Chefe da tripulação da Maria Fumaça de Gonçalino, ele é um lacaio de baixo escalão de Giordano Argento"
+    },
+    {
+        "nome": "Mathues, Cultista",
+        "origem": "Vendenta Oculta",
+        "Vd": "20",
+        "Tipo": "Pessoa",
+        "descricao": "Através da dor, Matheus alcançou um novo estágio em seu aprendizado como cultista."
+    },
+    {
+        "nome": "Capivara Sangrenta",
+        "origem": "Vendenta Oculta",
+        "Vd": "20",
+        "Tipo": "Animal",
+        "descricao": "Uma besta incontrolável de pelos vermelho-sangue, olhos inflamados e dentes protuberantes que gotejam Sangue."
+    },
+    {
+        "nome": "Guarda-Costas",
+        "origem": "Vendenta Oculta",
+        "Vd": "20",
+        "Tipo": "Pessoa",
+        "descricao": "Um profissional especializado em proteger a vida de seu empregador."
+    },
+    {
+        "nome": "Onça Sangrenta",
+        "origem": "Vendenta Oculta",
+        "Vd": "40",
+        "Tipo": "Pessoa",
+        "descricao": "O maior felino das Américas deformado e corrompido por Sangue."
+    },
+    {
+        "nome": "Ramiro Miranda",
+        "origem": "Vendenta Oculta",
+        "Vd": "20",
+        "Tipo": "Pessoa",
+        "descricao": "Um ecologista furioso com um facão nas mãos e o paranormal correndo nas veias concedendo-lhe uma sobrevida inexplicável."
+    },
+    {
+        "nome": "Giordano Argento Enfraquecido",
+        "origem": "Vendenta Oculta",
+        "Vd": "140",
+        "Tipo": "Pessoa",
+        "descricao": ""
+    }
+]

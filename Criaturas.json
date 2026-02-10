@@ -1,0 +1,658 @@
+[
+    {
+        "id":"aberracao_de_carne",
+        "nome":"Aberração de carne",
+        "origem":"Livro de Regras",
+        "Vd":"40",
+        "Elemento":"Sangue",
+        "tag":"",
+        "descricao":"Originalmente, foi um experimento fracassado para juntar dois corpos em um só. A dor agoniante das duas cobaias que se mantiveram conscientes durante todo o processo tormentoso se transformou numa  fúria desolada alimentada pelo sangue"
+    },
+    {
+        "id":"aniquilacao",
+        "nome":"Aniquilação",
+        "origem":"Livro de Regras",
+        "Vd":"380",
+        "Elemento":"Sangue",
+        "tag":"Enigma de Medo",
+        "descricao":"Uma aberração incomparável, uma monstruosidade com mais de dez metros de altura, esse ser é conhecido por diversos nomes, como 'A Besta do Apocalipse', 'O Dragão do Inferno' e 'A Aniquilação'"
+    },
+    {
+        "id":"carente",
+        "nome":"Carente",
+        "origem":"Livro de Regras",
+        "Vd":"300",
+        "Elemento":"Sangue",
+        "tag":"",
+        "descricao":"É uma criatura nascida da inveja de um ser que nunca sentiu amor e, por isso, busca devorar os órgãos de pessoas que já foram mães para consumir o amor que nunca recebeu"
+    },
+    {
+        "id":"dama_de_sangue",
+        "nome":"Dama de Sangue",
+        "origem":"Livro de Regras",
+        "Vd":"60",
+        "Elemento":"Sangue",
+        "tag":"Enigma de Medo",
+        "descricao":"Uma criatura grotesca que nasce a parir de um corpo humano partido no meio com os orgãos se misturando a plantas para dar ogiem a sete tentáculos com flores e espinhos"
+    },
+    {
+        "id":"enpap-x",
+        "nome":"Enpap-x",
+        "origem":"Livro de Regras",
+        "Vd":"180",
+        "Elemento":"Sangue",
+        "tag":"",
+        "descricao":"Originada de uma lenda perdida da antiga suméria, a aberração 'enpap-x' surgiu da dor e tortura de um prisioneiro de guerra que era obrigado a marcar em sua pele os feitos terriveis cometidos pelo seu soberano"
+    },
+    {
+        "id":"kerberos",
+        "nome":"Kerberos",
+        "origem":"Livro de Regras",
+        "Vd":"340",
+        "Elemento":"Sangue",
+        "tag":"",
+        "descricao":"O cão de três cabeças, o demônio do poco, o uardião do portão do infernos"
+    },
+    {
+        "id":"minotauro",
+        "nome":"Minotauro",
+        "origem":"Livro de Regras",
+        "Vd":"280",
+        "Elemento":"Sangue",
+        "tag":"",
+        "descricao":"A forma de um animal enorme, furioso e bípede com mais de três metros infectado com pústulas nojentas de Sangue e veias pulsantes por um lado inteiro do seu corpo, o minotauro é ori"
+    },
+    {
+        "id":"mulher_afogada",
+        "nome":"Mulher Afogada",
+        "origem":"Livro de Regras",
+        "Vd":"140",
+        "Elemento":"Sangue",
+        "tag":"Enigma de Medo",
+        "descricao":"Uma lenda urbana que se popularizou entre crianças graças a uma história usadsa por pais para evitar desperdício de água, mas que tomou proporções terríveis após um famoso escritor adaptar a lenda em um conto de terror"
+    },
+    {
+        "id":"tita_de_sangue",
+        "nome":"Titã de Sangue",
+        "origem":"Livro de Regras",
+        "Vd":"220",
+        "Elemento":"Sangue",
+        "tag":"",
+        "descricao":"Uma massa corpotal de carne e Sangue endurecida e musculosa, com veias saltadas ao redor de todo seu corpo e uma enorme boca com quatro gigantes quelíceras capazes de desfigurar para sempre qualquer alvo, isto se este conseguir sair vivo de um de seus ataques brutais"
+    },
+    {
+        "id":"zumbi_de_sangue",
+        "nome":"Zumbi de Sangue",
+        "origem":"Livro de Regras",
+        "Vd":"20",
+        "Elemento":"Sangue",
+        "tag":"",
+        "descricao":"Quando cadáveres que morreram de forma muito brutal ou dolorosa são abandonados em uma área, servem como uma passagerm para a entidade de Sangue devorá-los e tomar controle de sua forma física"
+    },
+    {
+        "id":"zumbi_de_sangue_bestial",
+        "nome":"Zumbi de Sangue Bestial",
+        "origem":"Livro de Regras",
+        "Vd":"100",
+        "Elemento":"Sangue",
+        "tag":"",
+        "descricao":"Uma versão maior, mais forte e brutal de um zumbi de Sangue, os bestiais costumam ser resultado de um cadáver que foi torturado brutalmente e sentiu dores ondescritíveis antes de morrer"
+    },
+    {
+        "id":"o_diabo",
+        "nome":"O Diabo",
+        "origem":"Livro de Regras",
+        "Vd":"400",
+        "Elemento":"Sangue",
+        "tag":"Enigma de Medo",
+        "descricao":"VOCÊ NÃO DEVE SE ENVOLVER COM O DIABO"
+    },
+    {
+        "id":"aracnasita",
+        "nome":"Aracnasita",
+        "origem":"Livro de Regras",
+        "Vd":"80",
+        "Elemento":"Morte",
+        "tag":"Enigma de Medo",
+        "descricao":"A distorção que a exposição paranormal pode causar a uma criatura da realidade é imensurável e resultados assustadores podem fazer um pequeno aracnídeo se deformar a uma entidade parasitária enorme"
+    },
+    {
+        "id":"carnical_preto_da_morte",
+        "nome":"Carniça Preto da Morte",
+        "origem":"Livro de Regras",
+        "Vd":"200",
+        "Elemento":"Morte",
+        "tag":"",
+        "descricao":"Originada de uma tentativa fracassada de dar consciência à entidade da Morte dentro da Realidade, o carniça~preto é uma criatura formada de Lodo entrelaçado a partir de um crânio humano apodrecido"
+    },
+    {
+        "id":"ceifador_espiral",
+        "nome":"Ceifador Espiral",
+        "origem":"Livro de Regras",
+        "Vd":"380",
+        "Elemento":"Morte",
+        "tag":"Enigma de Medo",
+        "descricao":"Todos os seus momentos sendo devorados por uma criatura, no fim de tudo. O rosto da Morte:o ceifador Espiral"
+    },
+    {
+        "id":"enraizado",
+        "nome":"Enraizado",
+        "origem":"Livro de Regras",
+        "Vd":"120",
+        "Elemento":"Morte",
+        "tag":"",
+        "descricao":"A Morte se espalha de maneiras misteriosas, mas parece infectar em especial áreas com alta biodiversidade e flora extensiva, como florestas, as corrompendo e consumindo vagarosamente"
+    },
+    {
+        "id":"escutado",
+        "nome":"Escutado",
+        "origem":"Livro de Regras",
+        "Vd":"160",
+        "Elemento":"Morte",
+        "tag":"Enigma de Medo",
+        "descricao":"Originado de alguém que escutou a 'Melodia Espiral' o escutado é um corpo humanoide retorcido e magro. Essa criatura anda de forma quadrúpede e invertida de forma bizarra, com uma cabeça capaz de se desprender do corpo original, deixando um rastro de Lodo vomitado"
+    },
+    {
+        "id":"esqueleto_de_lodo",
+        "nome":"Esqueleto de Lodo",
+        "origem":"Livro de Regras",
+        "Vd":"20",
+        "Elemento":"Morte",
+        "tag":"",
+        "descricao":"Um cadáver consumido pela Morte, tomando uma forma completamente esquelética e acinzentada"
+    },
+    {
+        "id":"marionete",
+        "nome":"Marionete",
+        "origem":"Livro de Regras",
+        "Vd":"280",
+        "Elemento":"Morte",
+        "tag":"",
+        "descricao":"A Marionete é o resquicio de uma memória distorcida por um acontecimento terrível, uma possibilidade roubada, o momento que nunca aconteceu"
+    },
+    {
+        "id":"múmia_xipófaga",
+        "nome":"Múmia Xipófaga",
+        "origem":"Livro de Regras",
+        "Vd":"240",
+        "Elemento":"Morte",
+        "tag":"",
+        "descricao":"Mesmo nos tempos do Antigo Egito, o ato de mumificação em busca da imortalidade possuía resultados macabros e indesejados"
+    },
+    {
+        "id":"nidere",
+        "nome":"Nidere",
+        "origem":"Livro de Regras",
+        "Vd":"320",
+        "Elemento":"Morte",
+        "tag":"Enigma de Medo",
+        "descricao":"Hoje, a história do nidere é famosa entre grupos de amigos que decidem acampar na floresta. Porém, não é apenas uma história..."
+    },
+    {
+        "id":"sempiternal",
+        "nome":"Sempiternal",
+        "origem":"Livro de Regras",
+        "Vd":"360",
+        "Elemento":"Morte",
+        "tag":"",
+        "descricao":"um Sempiternal é o resultado da manisfestação da Morte através de uma evolução gradual passada por inúmeras gerações de uma civilização isolada"
+    },
+    {
+        "id":"succ",
+        "nome":"Succ",
+        "origem":"Livro de Regras",
+        "Vd":"40",
+        "Elemento":"Morte",
+        "tag":"",
+        "descricao":"Impossível ser o Succ..."
+    },
+    {
+        "id":"deus_da_morte",
+        "nome":"Deus da Morte",
+        "origem":"Livro de Regras",
+        "Vd":"400",
+        "Elemento":"Morte",
+        "tag":"Enigma de Medo",
+        "descricao":"É POSSÍVEL DESTRUIR A PRÓPRIA MORTE?"
+    },
+    {
+        "id":"anjo",
+        "nome":"Anjo",
+        "origem":"Livro de Regras",
+        "Vd":"380",
+        "Elemento":"Conhecimento",
+        "tag":"Enigma de Medo",
+        "descricao":"Um anjo é uma criatura tão poderosa que é capaz de deamantelar a sanidade de uma pessoa apenas ao ser observado, derretendo os seus olhos, que escorrem como lágrimas douradas"
+    },
+    {
+        "id":"bicho-papão",
+        "nome":"Bicho Papão",
+        "origem":"Livro de Regras",
+        "Vd":"300",
+        "Elemento":"Conhecimento",
+        "tag":"",
+        "descricao":"Originado da história que pais contam para seus filhos não desobedecerem, o Medo gerado por tantas crianças se manifestou em uma aberração poderosíssima, que espreita em telhados de casas com crianças pequenas"
+    },
+    {
+        "id":"espreitador",
+        "nome":"Espreitador",
+        "origem":"Livro de Regras",
+        "Vd":"220",
+        "Elemento":"Conhecimento",
+        "tag":"Enigma de Medo",
+        "descricao":"Você verificou se fechou a porta?"
+    },
+    {
+        "id":"Estrangeiro",
+        "nome":"Estrangeiro",
+        "origem":"Livro de Regras",
+        "Vd":"340",
+        "Elemento":"Conhecimento",
+        "tag":"Enigma de Medo",
+        "descricao":"O ser nomeado Estrangeiro é uma manifestação paranormal muitíssimo inteligente, com motivações complexas e misteriosas"
+    },
+    {
+        "id":"existido",
+        "nome":"Existido",
+        "origem":"Livro de Regras",
+        "Vd":"20",
+        "Elemento":"Conhecimento",
+        "tag":"",
+        "descricao":"Saber tudo é perder tudo"
+    },
+    {
+        "id":"lembrado",
+        "nome":"Lembrado",
+        "origem":"Livro de Regras",
+        "Vd":"100",
+        "Elemento":"Conhecimento",
+        "tag":"",
+        "descricao":"Um ser amaldiçoado pelo desespero, que não se importa com a frivolidade da existência, o lembrado aspira apenas se tornar uma história memorável"
+    },
+    {
+        "id":"ocioso",
+        "nome":"Ocioso",
+        "origem":"Livro de Regras",
+        "Vd":"260",
+        "Elemento":"Conhecimento",
+        "tag":"",
+        "descricao":"O ocioso é uma manifestação paranormal que aterroriza e desestabiliza seus alvos aos poucos, as observando passivamente em todos os ambientes que estiverem"
+    },
+    {
+        "id":"parasita_de_culpa",
+        "nome":"Parasita de Culpa",
+        "origem":"Livro de Regras",
+        "Vd":"60",
+        "Elemento":"Conhecimento",
+        "tag":"Enigma de Medo",
+        "descricao":"Uma criatura disforme, que se alimenta da culpa despertada em suas vítimas através de pesadelos e ilusões terríveis"
+    },
+    {
+        "id":"rastejador_sombrio",
+        "nome":"Rasteijador Sombrio",
+        "origem":"Livro de Regras",
+        "Vd":"180",
+        "Elemento":"Conhecimento",
+        "tag":"",
+        "descricao":"O rastejador sombrio é uma entidade maligna que se aproxima lentamente de suas vítimas, se escondendo em sombras distorcidas"
+    },
+    {
+        "id":"silhueta",
+        "nome":"Silhueta",
+        "origem":"Livro de Regras",
+        "Vd":"360",
+        "Elemento":"Conhecimento",
+        "tag":"",
+        "descricao":"Ela é lenta, calma e vazia, mas emite um som constande que lembra o badalar de sinos distantes distorcidos por um eco sintético"
+    },
+    {
+        "id":"vulto",
+        "nome":"Vulto",
+        "origem":"Livro de Regras",
+        "Vd":"40",
+        "Elemento":"Conhecimento",
+        "tag":"",
+        "descricao":"Sons inexistentes, temperatura, inconstante e até mesmo vlots em movimento são relatos constante daqueles que se aventuram em ambientes com a conhecida neblina gerada pela fragilidade da Membrana. E é nessa paranoia que um vulto pode ser gerado"
+    },
+    {
+        "id":"máscara_do_desespero",
+        "nome":"Máscara do Desespero",
+        "origem":"Livro de Regras",
+        "Vd":"400",
+        "Elemento":"Conhecimento",
+        "tag":"Enigma de Medo",
+        "descricao":"A ETERNIDADE DO DESESPERO INFINITO DO CONHECIMENTO"
+    },
+    {
+        "id":"anarquico",
+        "nome":"Anárquico",
+        "origem":"Livro de Regras",
+        "Vd":"20",
+        "Elemento":"Energia",
+        "tag":"",
+        "descricao":"Quando uma pessoa morre em situações extrmamente inoportunas e azaradas em um ambiente com a Membrana danificada, o seu corpo logo é consumido pela entidade de Energia"
+    },
+    {
+        "id":"anarquico_descontrolado",
+        "nome":"Anárquico Descontrolado",
+        "origem":"Livro de Regras",
+        "Vd":"",
+        "Elemento":"Energia",
+        "tag":"",
+        "descricao":"Quando o corpo de alguém com alto nível de exposição paranormal é transformado pela Energia a intensidade das possibilidades se potencializam em uma forma ainda mais caótica e absurda"
+    },
+    {
+        "id":"anomalia",
+        "nome":"Anomalia",
+        "origem":"Livro de Regras",
+        "Vd":"380",
+        "Elemento":"Energia",
+        "tag":"Enigma de Medo",
+        "descricao":"Uma criatura com uma forma tão caótica que a Realidade tenta conter esscondida por trás da menor das possibilidades, para que sua falta lógica possa ser ignorada."
+    },
+    {
+        "id":"amoniatico",
+        "nome":"Anomiático",
+        "origem":"Livro de Regras",
+        "Vd":"240",
+        "Elemento":"Energia",
+        "tag":"",
+        "descricao":"Uma criatura originada de um corpo humano que foi completametente transdormado pela Energia"
+    },
+    {
+        "id":"ciborgue",
+        "nome":"Ciborgue",
+        "origem":"Livro de Regras",
+        "Vd":"80",
+        "Elemento":"Energia",
+        "tag":"Enigma de Medo",
+        "descricao":"O avanço da tecnologia e a obsessão com melhorias cibernéticas dentro da Realidade podem lever aos resultados mais bizarros"
+    },
+    {
+        "id":"infecticidio",
+        "nome":"Infecticídio",
+        "origem":"Livro de Regras",
+        "Vd":"280",
+        "Elemento":"Energia",
+        "tag":"",
+        "descricao":"Como uma doença paranormal, o infecticídio se origina como um vírus digital dentro de dispositivos eletrônicos."
+    },
+    {
+        "id":"perturbado_de_energia",
+        "nome":"Perturbado de Energia",
+        "origem":"Livro de Regras",
+        "Vd":"40",
+        "Elemento":"Energia",
+        "tag":"",
+        "descricao":"Quando uma alma é enlouquecida de forma brusca e agressiva, sua psique pode ser tão violentada que a percepção da Realidade se esvai antes mesmo de perceber que não está viva."
+    },
+    {
+        "id":"sukkalgir",
+        "nome":"Sukkalgir",
+        "origem":"Livro de Regras",
+        "Vd":"160",
+        "Elemento":"Energia",
+        "tag":"",
+        "descricao":"Uma alma torturada através do fogo, as sukkal se originaram na antiga Suméria como resultado de um processo enlouquecedor em que textos eram cravados com brasa ardente em na pele de vítimas, registrando os feitos e massacres de seu captor"
+    },
+    {
+        "id":"telopsia",
+        "nome":"Telopsia",
+        "origem":"Livro de Regras",
+        "Vd":"340",
+        "Elemento":"Energia",
+        "tag":"Enigma de Medo",
+        "descricao":"Uma fita VHS amaldiçoada que contém uma gravação misteriosa e terrível, causando a todos aqueles que a assistiram uma morte aterrorizante pouco tempo depois."
+    },
+    {
+        "id":"tempestuoso",
+        "nome":"Tempestuoso",
+        "origem":"Livro de Regras",
+        "Vd":"360",
+        "Elemento":"Energia",
+        "tag":"",
+        "descricao":"Uma tempestade do caos, essa criatura disforme se manifesta através de turbilhões descontrolados, causando transformação e estrago a todos os lugares que toca."
+    },
+    {
+        "id":"viajante",
+        "nome":"Viajante",
+        "origem":"Livro de Regras",
+        "Vd":"200",
+        "Elemento":"Energia",
+        "tag":"Enigma de Medo",
+        "descricao":"Uma criatura maligna e cruel, o viajante das Polaroids é um ser que distorce lentamente as memórias de um alvo, se transportando através de fotografias e consumindo o rosto de todos aqueles registrados nelas."
+    },
+    {
+        "id":"anfitriao",
+        "nome":"Anfitrião",
+        "origem":"Livro de Regras",
+        "Vd":"0413",
+        "Elemento":"Energia",
+        "tag":"Enigma de Medo",
+        "descricao":"O CAOS SEMPRE ESTARÁ AO SEU LADO É INEVITÁVEL"
+    },
+    {
+        "id":"degolificada",
+        "nome":"Degolificada",
+        "origem":"Livro de Regras",
+        "Vd":"320",
+        "Elemento":"Medo",
+        "tag":"Enigma de Medo",
+        "descricao":"Uma manifestação direta do Outro Lado, esta entidade é formada por todos os elementos paranormais conhecidos pela Realidade."
+    },
+    {
+        "id":"sepultado",
+        "nome":"Sepultado",
+        "origem":"Sobrevivendo ao Horror",
+        "Vd":"20",
+        "Elemento":"Morte",
+        "tag":"",
+        "descricao":"Um sarcófago selado e apodrecido, destruído pelo tempo, com rachaduras e aberturas em sua superfície decorada por pedras preciosas acrômicas e espirais amaldiçoadas"
+    },
+    {
+        "id":"mescla",
+        "nome":"Mescla",
+        "origem":"Sobrevivendo ao Horror",
+        "Vd":"60",
+        "Elemento":"Sangue",
+        "tag":"",
+        "descricao":"O resultado de um doentio experimento biológico, a Mescla é uma das manifestações mais asquerosas e repulsivas já identificadas na Realidade."
+    },
+    {
+        "id":"espectro_inesquecido",
+        "nome":"Espectro Inesquecido",
+        "origem":"Sobrevivendo ao Horror",
+        "Vd":"Varia",
+        "Elemento":"Energia",
+        "tag":"Enigma de Medo",
+        "descricao":""
+    },
+    {
+        "id":"derretido",
+        "nome":"Derretido",
+        "origem":"Sobrevivendo ao Horror",
+        "Vd":"80",
+        "Elemento":"Sangue",
+        "tag":"",
+        "descricao":"Se você for tolo o suficiente para seguir o rastro de carne derretida, coberta de chagas, úlceras e gosma púrpura ácida, você eventualmente irá encontrá-lo."
+    },
+    {
+        "id":"uivar",
+        "nome":"Uivar",
+        "origem":"Sobrevivendo ao Horror",
+        "Vd":"100",
+        "Elemento":"Energia",
+        "tag":"",
+        "descricao":"O frio congelante em um país tropical, uma nevasca incontrolável tomando uma praia paradisíaca e as ondas do oceano congelando em arcos pontiagudos: um presságio da chegada de algo que não deveria ser."
+    },
+    {
+        "id":"melancolia",
+        "nome":"Melancolia",
+        "origem":"Sobrevivendo ao Horror",
+        "Vd":"140",
+        "Elemento":"Conhecimento",
+        "tag":"Enigma de Medo",
+        "descricao":"A Melancolia é um parasita cruel que cresce devagar, como uma infecção, com sintomas lentos e gradativos…"
+    },
+    {
+        "id":"quibungo",
+        "nome":"Quibungo",
+        "origem":"Sobrevivendo ao Horror",
+        "Vd":"160",
+        "Elemento":"Sangue",
+        "tag":"",
+        "descricao":"Uma lenda que se originou no oeste do continente africano e cresceu no nordeste brasileiro através de contos para assustar crianças rebeldes, tomando uma forma distorcida e perturbadora através do Sangue, o Quibungo vaga por ambientes selvagens em busca de presas fáceis para devorar."
+    },
+    {
+        "id":"profundo",
+        "nome":"Profundo",
+        "origem":"Sobrevivendo ao Horror",
+        "Vd":"200",
+        "Elemento":"Energia",
+        "tag":"",
+        "descricao":"Mergulhadores das profundezas desaparecem com certa frequência."
+    },
+    {
+        "id":"memento_mori",
+        "nome":"Memento Mori",
+        "origem":"Sobrevivendo ao Horror",
+        "Vd":"260",
+        "Elemento":"Morte",
+        "tag":"Enigma de Medo",
+        "descricao":"Os momentos finais transcorrendo na superfície enevoada de sua ampulheta decorada como crânios deteriorados."
+    },
+    {
+        "id":"rascunho",
+        "nome":"Rascunho",
+        "origem":"Sobrevivendo ao Horror",
+        "Vd":"300",
+        "Elemento":"Conhecimento",
+        "tag":"",
+        "descricao":"Uma ideia abortada de algo que nunca foi, uma criatura cuja própria existência é um paradoxo."
+    },
+    {
+        "id":"medusa",
+        "nome":"Medusa",
+        "origem":"Sobrevivendo ao Horror",
+        "Vd":"320",
+        "Elemento":"Conhecimento",
+        "tag":"",
+        "descricao":"Um dos mitos mais populares na história humana, o conto da terrível criatura ctônica que transforma todos que a observam diretamente em pedra se distorce através do Outro Lado em uma manifestação ainda mais cruel e horripilante."
+    },
+    {
+        "id":"amigo_imaginario",
+        "nome":"Amigo Imaginário",
+        "origem":"Sobrevivendo ao Horror",
+        "Vd":"360",
+        "Elemento":"Obsessão",
+        "tag":"",
+        "descricao":"Quando o Sino tocar, a criatura vai retornar e todo mundo vai morrer."
+    },
+    {
+        "id":"anulado",
+        "nome":"Anulado",
+        "origem":"Arquivos Secretos",
+        "Vd":"100",
+        "Elemento":"Sangue",
+        "tag":"Janeiro-2026",
+        "descricao":"O corpo abandonado por tempo demais se torna a manifestação física do fracasso e da incompletude, uma criatura de Sangue que personifica o horror de um ser que nunca chegou a existir plenamente."
+    },
+    {
+        "id":"empecilho",
+        "nome":"Empecilho",
+        "origem":"Marca Página",
+        "Vd":"20",
+        "Elemento":"Energia",
+        "tag":"Reliquias",
+        "descricao":"Essas criaturinhas grotescas já reberam muitos nomes (imps, duendes, goblins, fadas), e se manisfestam quando um dispositivo tecnológico eletrônico ou não, vai gerar caos se falhar ou não funcinar de forma esperada"
+    },
+    {
+        "id":"cao_de_lodo",
+        "nome":"Cão de Lodo",
+        "origem":"Marca Página",
+        "Vd":"40",
+        "Elemento":"Morte",
+        "tag":"cão de lodo",
+        "descricao":"Um canídeo corrompido pelo Lodo, transformado em um demônio de olhos vermelhos, saliva grotesca e pelagem preta espiralada"
+    },
+    {
+        "id":"bicho-papão-enfraquecido",
+        "nome":"Bicho Papão Enfraquecido",
+        "origem":"Casos Paranormais",
+        "Vd":"20",
+        "Elemento":"Conhecimento",
+        "tag":"",
+        "descricao":"Originado da história que pais contam para seus filhos não desobedecerem, o Medo gerado por tantas crianças se manifestou em uma aberração poderosíssima, que espreita em telhados de casas com crianças pequenas"
+    },
+    {
+        "id":"amalgama_decadente",
+        "nome":"Amálgama Decadente",
+        "origem":"Casos Paranormais",
+        "Vd":"60",
+        "Elemento":"Morte",
+        "tag":"Enigma de Medo",
+        "descricao":"Esta horrenda criatura se assemelha a uma grande pilha de lodo preto e ossos, que parece fluir para formar uma espiral constante sobre si mesma."
+    },
+    {
+        "id":"enraizado_desperto",
+        "nome":"Enraizado Desperto",
+        "origem":"Missões Extras",
+        "Vd":"60",
+        "Elemento":"Morte",
+        "tag":"",
+        "descricao":"A Morte se espalha de maneiras misteriosas, mas parece infectar em especial áreas com alta biodiversidade e flora extensiva, como florestas, as corrompendo e consumindo vagarosamente"
+    },
+    {
+        "id":"xilosapien",
+        "nome":"Xilosapien",
+        "origem":"Missões Extras",
+        "Vd":"200",
+        "Elemento":"Morte",
+        "tag":"Enigma de Medo",
+        "descricao":"A Xilosapien é uma criatura de Morte, Conhecimento e Medo, formada quando uma pessoa morre após grande sofrimento (o que atrai a Morte) e tomada por desejos de vingança ou memórias de arrependimento (o que atrai o Conhecimento)."
+    },
+    {
+        "id":"bernado_existido_de_morte",
+        "nome":"Bernado, Existido de Morte",
+        "origem":"Vendeta Oculta",
+        "Vd":"20",
+        "Elemento":"Morte",
+        "tag":"",
+        "descricao":"Uma figura humanoide inchada, com olhos escuros, veias saltadas, musculoso e com pele sombria, lodosa, além de um crânio descarnado. Por toda a extensão de seu corpo, textos em espirais estão quase ilegíveis."
+    },
+    {
+        "id":"sereira_encarnada_de_morte",
+        "nome":"Sereia Encarnada de Morte",
+        "origem":"Sobrevivendo ao Horror",
+        "Vd":"60",
+        "Elemento":"Morte",
+        "tag":"Enigma de Medo",
+        "descricao":"Fruto de cultistas de Morte querendo espalhar o medo e ferir a Membrana há décadas, a Sereia Encarnada de Morte blasfema diante dos mitos marinhos."
+    },
+    {
+        "id":"ramiro_quimera_de_sangue",
+        "nome":"Ramiro, Quimera de Sangue",
+        "origem":"Vendeta Oculta",
+        "Vd":"60",
+        "Elemento":"Sangue",
+        "tag":"",
+        "descricao":"Um híbrido grotesco de carne e ossos expostos, com múltiplas cabeças: o bico de um tuiuiú, o crânio de uma onça e a bocarra de um jacaré esmagando a antiga face humana"
+    },
+    {
+        "id":"sussurro_enraizado",
+        "nome":"Sussuro Enraizado",
+        "origem":"Vendeta Oculta",
+        "Vd":"20",
+        "Elemento":"Morte",
+        "tag":"",
+        "descricao":""
+    },
+    {
+        "nome":"Joaquim/Nívea",
+        "origem":"Vendeta Oculta",
+        "Vd":"120",
+        "Elemento":"Conhecimento",
+        "tag":"",
+        "descricao":"Joaquim era empático e apaixonado pela profissão; Nívea sofria com a morte de seus pacientes."
+    }
+]

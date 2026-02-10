@@ -1,6 +1,17 @@
+:root {
+    /* Cores Principais (Tema) */
+    --cor-primaria: rgb(131, 49, 49);       /* O vermelho principal */
+    --cor-primaria-hover: rgb(105, 30, 30); /* Vermelho mais escuro */
+    --cor-primaria-clara: #8a0303;          /* Destaques de foco */
+    
+    /* Cores de Texto */
+    --cor-texto: rgb(180, 180, 180);
+    --cor-texto-claro: rgb(204, 204, 204);
+    --cor-texto-menu: #ccc;
+}
 .centralizar, h1 {
     text-align: center;
-    color: rgb(180, 180, 180);
+    color: var(--cor-texto);
 }
 #fundo {
     background-image: url('background.jpg');
@@ -27,8 +38,8 @@
     box-sizing: border-box;
 }
 button {
-    background-color: rgb(131, 49, 49);
-    color: rgb(180, 180, 180);
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto);
     border: none;
     padding: 10px 20px;
     text-align: center;
@@ -44,8 +55,8 @@ button {
         box-shadow 0.1s;
 }
 button:hover {
-    background-color: rgb(105, 30, 30);
-    color:rgb(204, 204, 204);
+    background-color: var(--cor-primaria-hover);
+    color:var(--cor-texto-claro);
     border: 1px solid rgb(70, 18, 18);
     transform: translateY(-2px);
     box-shadow: 0 5px 10px rgba(0,0,0,0.5);
@@ -69,11 +80,11 @@ button:hover {
   display: block;
 }
 footer {
-    color: rgb(180, 180, 180);
+    color: var(--cor-texto);
     font-size: 10px;
     margin-top: auto;
     border-top-width: 2px;
-    border-top-color: rgb(180, 180, 180);
+    border-top-color: var(--cor-texto);
     border-top-style: solid;
 }
 footer p {
@@ -82,9 +93,9 @@ footer p {
 footer .canto {
     text-align: right;
     font-size: 10px;
-    color: rgb(180, 180, 180);
+    color: var(--cor-texto);
 }
-#lista-classes, #lista-origens, #lista-trilhas-ocultista, #lista-trilhas-especialista, #lista-trilhas-combatente, #lista-poderes, #lista-poderes-ocultista, #lista-poderes-especialista, #lista-poderes-combatente, #lista-poderes-sangue, #lista-poderes-morte, #lista-poderes-conhecimento, #lista-poderes-energia, #lista-armas, #lista-modificacoes-armas, #lista-municoes, #lista-modificacoes-municao, #lista-protecoes, #lista-modificacoes-protecoes, #lista-acessorios, #lista-modificacoes-acessorios, #lista-explosivos, #lista-itens-operacionais, #lista-itens-paranormais, #lista-modificacoes-itens-paranormais, #lista-poderes-paranormais, #lista-maldicoes-armas, #lista-maldicoes-protecoes, #lista-maldicoes-acessorios, #lista-itens-amaldicoados-sangue, #lista-itens-amaldicoados-morte, #lista-itens-amaldicoados-conhecimento, #lista-itens-amaldicoados-energia, #lista-itens-amaldicoados-medo, #lista-itens-amaldicoados-varia, #lista-criaturas-realidade, #lista-criaturas-sangue, #lista-criaturas-morte, #lista-criaturas-conhecimento, #lista-criaturas-energia, #lista-criaturas-medo, #lista-rituais, #lista-regras, #lista-missoes {
+#lista-classes, #lista-origens, #lista-trilhas-ocultista, #lista-trilhas-especialista, #lista-trilhas-combatente, #lista-poderes, #lista-poderes-ocultista, #lista-poderes-especialista, #lista-poderes-combatente, #lista-poderes-sangue, #lista-poderes-morte, #lista-poderes-conhecimento, #lista-poderes-energia, #lista-armas, #lista-modificacoes-armas, #lista-municoes, #lista-modificacoes-municao, #lista-protecoes, #lista-modificacoes-protecoes, #lista-acessorios, #lista-modificacoes-acessorios, #lista-explosivos, #lista-itens-operacionais, #lista-itens-paranormais, #lista-modificacoes-itens-paranormais, #lista-poderes-paranormais, #lista-maldicoes-armas, #lista-maldicoes-protecoes, #lista-maldicoes-acessorios, #lista-itens-amaldicoados, #lista-criaturas-realidade,#lista-rituais, #lista-regras, #lista-missoes, #lista-criaturas {
     display: grid;
     margin: 10px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -95,9 +106,9 @@ footer .canto {
     width: 100%;
     max-width: 250px;
     min-height: 200px;
-    border: 1px solid rgb(180, 180, 180);
+    border: 1px solid var(--cor-texto);
     padding: 10px;
-    color: rgb(180, 180, 180);
+    color: var(--cor-texto);
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.144);
     border-radius: 8px;
@@ -121,7 +132,7 @@ footer .canto {
     flex: 2;
     padding: 12px;
     background-color: rgba(0, 0, 0, 0.4);
-    border: 1px solid rgb(131, 49, 49);
+    border: 1px solid var(--cor-primaria);
     border-radius: 5px;
     color: white;
     font-family: inherit;
@@ -130,7 +141,7 @@ footer .canto {
     height: 60px;
 }
 .input-busca:focus{
-    border-color: #8a0303;
+    border-color: var(--cor-primaria-clara);
     box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
 }
 .container-botao-filtro {
@@ -175,7 +186,7 @@ footer .canto {
     font-size: 0.9rem;
 }
 .item-filtro {
-    color: #ccc;
+    color: var(--cor-texto-menu);
     padding: 5px 10px;
     cursor: pointer;
     transition: background 0.2s;
@@ -190,6 +201,14 @@ footer .canto {
     font-style: italic;
     border-bottom: 1px solid #555;
     margin-bottom: 5px;
+}
+.item-filtro.selecionado {
+    background-color: #833131; /* Cor de destaque */
+    color: #fff;
+    font-weight: bold;
+}
+.item-filtro.selecionado::before {
+    content: "✓ ";
 }
 ::-webkit-scrollbar {
     width: 8px;
