@@ -5,12 +5,21 @@ import {
     addDoc, 
     query, 
     where, 
-    getDocs 
+    getDocs,
+    doc,        
+    updateDoc
 } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
 // Variáveis para armazenar as seleções feitas nas abas
 let escolhaOrigemId = null;
 let escolhaClasseId = null;
+let idFichaAberta = null;
+let fichaAtualDados = null;
+const TRILHAS = {
+    combatente: ["Aniquilador", "Guerreiro", "Operações Especiais", "Tropa de Choque", "Comandante de Campo", "Agente Secreto", "Caçador", "Monstruoso"],
+    especialista: ["Atirador de Elite", "Infiltrador", "Médico de Campo", "Negociador", "Técnico", "Bibliotecario", "Perseverante", "Muambeiro"],
+    ocultista: ["Conduíte", "Flagelador", "Graduado", "Lâmina Paranormal", "Intuitivo", "Exorcista", "Possuido", "Parapsicólogo", "Maledictólogo"]
+};
 const TODAS_PERICIAS = [
     "Acrobacia", "Adestramento", "Artes", "Atletismo", "Atualidades", "Ciências",
     "Crime", "Diplomacia", "Enganação", "Fortitude", "Furtividade", "Iniciativa",
@@ -319,6 +328,7 @@ async function carregarPersonagens() {
  * 6. Redireciona para a tela de visualização e preenche os dados completos
  */
 function abrirFichaCompleta(id, dados) {
+    idFichaAberta = id;
     console.log("Abrindo ficha completa de:", dados.nome);
 
     // 1. Esconde todas as telas e ativa a de visualização
@@ -344,8 +354,8 @@ function abrirFichaCompleta(id, dados) {
 
     // A. Cabeçalho e Informações Básicas
     document.getElementById('view-nome').innerText = dados.nome || "Agente Sem Nome";
+    document.getElementById('edit-jogador').value = dados.jogador || ""
     
-    // Se você seguiu o HTML sugerido anteriormente:
     const campoClasse = document.getElementById('view-classe');
     const campoOrigem = document.getElementById('view-origem');
     const campoNex = document.getElementById('view-nex');
@@ -353,36 +363,37 @@ function abrirFichaCompleta(id, dados) {
     if (campoClasse) campoClasse.innerText = formatar(dados.classe);
     if (campoOrigem) campoOrigem.innerText = formatar(dados.origem);
     if (campoNex) campoNex.innerText = (dados.nex || 5) + "%";
+    // Localize o select do NEX
+    const selectNex = document.getElementById('edit-nex');
+    if (selectNex) {
+        selectNex.value = dados.nex || 5; // Define o valor que veio do banco de dados
+    }
+
+    atualizarOpcoesTrilha(dados.classe, dados.nex, dados.trilha)
+
+    // Criar uma variável global ou acessível para os dados da ficha atual
+    // Isso ajuda a recalcular sem precisar ler do banco de novo
+    window.fichaAtualDados = dados;
 
     // B. Atributos (FOR, AGI, INT, VIG, PRE)
     if (dados.atributos) {
-        // Tenta preencher cada atributo se o ID existir no HTML
-        const listaAtrib = ['for', 'agi', 'int', 'vig', 'pre'];
-        listaAtrib.forEach(at => {
-            const el = document.getElementById(`view-${at}`);
-            if (el) el.innerText = dados.atributos[at.toUpperCase()] || 0;
-        });
+    document.getElementById('edit-for').value = dados.atributos.FOR || 0;
+    document.getElementById('edit-agi').value = dados.atributos.AGI || 0;
+    document.getElementById('edit-int').value = dados.atributos.INT || 0;
+    document.getElementById('edit-vig').value = dados.atributos.VIG || 0;
+    document.getElementById('edit-pre').value = dados.atributos.PRE || 0;
     }
 
     // C. Status (PV, PE, SAN)
     if (dados.status) {
-        const pvs = document.getElementById('view-pv');
-        const pes = document.getElementById('view-pe');
-        const sans = document.getElementById('view-san');
-
-        function atualizarBarra(idBarra, atual, max) {
-        const barra = document.getElementById(idBarra);
-            if (barra) {
-                barra.style.width = `${(atual / max) * 100}%`;
-                barra.innerText = `${atual} / ${max}`;
-            }
-        }
-
-        if (dados.status) {
-            atualizarBarra('barra-pv', dados.status.pvAtual, dados.status.pvMax);
-            atualizarBarra('barra-pe', dados.status.peAtual, dados.status.peMax);
-            atualizarBarra('barra-san', dados.status.sanAtual, dados.status.sanMax);
-        }
+        atualizarBarraVisual('pv', dados.status.pvAtual, dados.status.pvMax);
+        atualizarBarraVisual('pe', dados.status.peAtual, dados.status.peMax);
+        atualizarBarraVisual('san', dados.status.sanAtual, dados.status.sanMax);
+    } else if (dados.pvMax) { 
+        // Caso o banco tenha salvo fora do objeto 'status' em testes anteriores
+        atualizarBarraVisual('pv', dados.pvAtual, dados.pvMax);
+        atualizarBarraVisual('pe', dados.peAtual, dados.peMax);
+        atualizarBarraVisual('san', dados.sanAtual, dados.sanMax);
     }
 
     // D. LISTAGEM DE TODAS AS PERÍCIAS
@@ -392,49 +403,326 @@ function abrirFichaCompleta(id, dados) {
 
         // Criamos uma div ou ul para organizar em colunas no futuro se quiser
         TODAS_PERICIAS.forEach(pericia => {
-            // Verifica se essa perícia específica está no objeto 'pericias' do personagem
-            // Se estiver, pega o valor (5), se não, o bônus é 0
-            const bonus = (dados.pericias && dados.pericias[pericia]) ? dados.pericias[pericia] : 0;
-
-            const itemPericia = document.createElement('div');
-            itemPericia.className = 'item-pericia';
+            // Pega o valor de treino (+5, +10...)
+            const valorTreino = (dados.pericias && dados.pericias[pericia]) ? dados.pericias[pericia] : 0;
             
-            // Damos um estilo diferente (negrito ou cor) para quem é treinado (+5)
-            if (bonus > 0 && bonus < 9) {
-                itemPericia.style.color = "#165336"; // Verde para perícias treinadas
-                itemPericia.style.fontWeight = "bold";
-            } else if (bonus > 9 && bonus < 14){
-                itemPericia.style.color = "#113CA1"; // Azul para perícias treinadas
-                itemPericia.style.fontWeight = "bold";
-            } else if (bonus > 14){
-                itemPericia.style.color = "#B36B03"; // Amarelo para perícias treinadas
-                itemPericia.style.fontWeight = "bold";
-            } else {
-                itemPericia.style.color = "#ccc"; // Cinza para não treinadas
-            }
+            // Pega o valor de "outros" (se não existir no banco, começa com 0)
+            const valorOutros = (dados.outrosBonus && dados.outrosBonus[pericia]) ? dados.outrosBonus[pericia] : 0;
 
-            itemPericia.innerHTML = `<span>${pericia}</span> <span>+${bonus}</span>`;
-            listaPericiasContainer.appendChild(itemPericia);
+            const div = document.createElement('div');
+            div.className = `item-pericia-edit treino-${valorTreino}`;
+            div.innerHTML = `
+                <span class="nome-pericia">${pericia}</span>
+                <select class="select-treino" data-pericia="${pericia}">
+                    <option value="0" ${valorTreino == 0 ? 'selected' : ''}>+0</option>
+                    <option value="5" ${valorTreino == 5 ? 'selected' : ''}>+5</option>
+                    <option value="10" ${valorTreino == 10 ? 'selected' : ''}>+10</option>
+                    <option value="15" ${valorTreino == 15 ? 'selected' : ''}>+15</option>
+                </select>
+
+                <input type="number" class="input-outros" 
+                    data-pericia="${pericia}" 
+                    value="${valorOutros}" 
+                    placeholder="Outros">
+            `;
+            listaPericiasContainer.appendChild(div);
         });
     };
 
-    // E. DETALHES (Histórico, Aparência e Objetivo)
-    // Note que usamos o operador ?. (optional chaining) para evitar erro caso 'detalhes' não exista
-    const campoHistorico = document.getElementById('view-historico');
-    const campoAparencia = document.getElementById('view-aparencia');
-    const campoObjetivo = document.getElementById('view-objetivo');
+    // E. DETALHES (Campos Editáveis)
+    const campoHistorico = document.getElementById('edit-historico');
+    const campoAparencia = document.getElementById('edit-aparencia');
+    const campoObjetivo = document.getElementById('edit-objetivo');
 
     if (campoHistorico) {
-        campoHistorico.innerText = dados.detalhes?.historico || "Nenhum histórico registrado.";
+        campoHistorico.value = dados.detalhes?.historico || "";
     }
 
     if (campoAparencia) {
-        campoAparencia.innerText = dados.detalhes?.aparencia || "Nenhuma descrição física disponível.";
+        campoAparencia.value = dados.detalhes?.aparencia || "";
     }
 
     if (campoObjetivo) {
-        campoObjetivo.innerText = dados.detalhes?.objetivo || "O agente ainda não definiu seus planos na Ordem.";
+        campoObjetivo.value = dados.detalhes?.objetivo || "";
     }
+}
+
+document.addEventListener('change', (e) => {
+    if (e.target.id === 'edit-nex') {
+        const novoNex = parseInt(e.target.value);
+        const dados = window.fichaAtualDados;
+
+        if (dados) {
+            // Pegamos os atributos atuais da tela para o cálculo ser preciso
+            const atributosTela = {
+                FOR: parseInt(document.getElementById('edit-for').value) || 0,
+                AGI: parseInt(document.getElementById('edit-agi').value) || 0,
+                INT: parseInt(document.getElementById('edit-int').value) || 0,
+                VIG: parseInt(document.getElementById('edit-vig').value) || 0,
+                PRE: parseInt(document.getElementById('edit-pre').value) || 0
+            };
+
+            const novosStatus = calcularStatus(dados.classe, atributosTela, novoNex);
+            
+            // CORREÇÃO: Passar apenas 'pv', 'pe', 'san'
+            atualizarBarraVisual('pv', novosStatus.pvMax, novosStatus.pvMax);
+            atualizarBarraVisual('pe', novosStatus.peMax, novosStatus.peMax);
+            atualizarBarraVisual('san', novosStatus.sanMax, novosStatus.sanMax);
+            
+            // Atualiza a memória local
+            window.fichaAtualDados.atributos = atributosTela;
+            window.fichaAtualDados.nex = novoNex;
+        }
+        atualizarOpcoesTrilha(dados.classe, novoNex, document.getElementById('edit-trilha').value);
+    }
+});
+// Função auxiliar para atualizar a largura e o texto das barras
+function atualizarBarraVisual(tipo, atual, max) {
+    const barra = document.getElementById(`barra-${tipo}`);
+    const areaMorte = document.getElementById(`morte-${tipo}`);
+    
+    if (barra) {
+        const vAtual = parseInt(atual);
+        const vMax = parseInt(max);
+        const porcentagem = Math.max(0, Math.min((vAtual / vMax) * 100, 100));
+
+        // 1. Sempre atualiza a largura e o texto da barra
+        barra.style.width = `${porcentagem}%`;
+        barra.innerText = `${vAtual} / ${vMax}`;
+
+        const containerBarra = barra.parentElement;
+
+        // 2. LÓGICA DE EMERGÊNCIA (Apenas para PV e SAN)
+        if (tipo === 'pv' || tipo === 'san') {
+            if (vAtual <= 0) {
+                // Esconde a barra e mostra as bolinhas de morte/enlouquecendo
+                if (containerBarra) containerBarra.style.display = 'none';
+                areaMorte?.classList.remove('ocuta');
+            } else {
+                // Volta ao normal
+                if (containerBarra) containerBarra.style.display = 'block';
+                areaMorte?.classList.add('ocuta');
+                
+                // Limpa as bolinhas ao recuperar 1 ponto
+                areaMorte?.querySelectorAll('.check-morte').forEach(c => c.checked = false);
+            }
+        } else {
+            // Se for PE ou qualquer outro, garante que a barra sempre apareça
+            if (containerBarra) containerBarra.style.display = 'block';
+        }
+    }
+}
+document.addEventListener('change', async (e) => {
+    if (e.target.classList.contains('check-morte')) {
+        const tipo = e.target.closest('.status-emergencia').id.split('-')[1]; // 'pv' ou 'san'
+        const indice = e.target.getAttribute('data-indice');
+        
+        console.log(`Marcado teste ${indice} de ${tipo}`);
+        
+        // Opcional: Salvar no Firebase imediatamente
+        // const fichaRef = doc(db, "personagens", idFichaAberta);
+        // await updateDoc(fichaRef, { [`testesMorte.${tipo}${indice}`]: e.target.checked });
+    }
+});
+document.querySelectorAll('.input-atrib').forEach(input => {
+    input.addEventListener('change', () => {
+        // Monitora mudança nos Atributos
+        ['edit-for', 'edit-agi', 'edit-int', 'edit-vig', 'edit-pre'].forEach(id => {
+            document.getElementById(id)?.addEventListener('change', () => {
+                const dados = window.fichaAtualDados;
+                if (!dados) return;
+
+                const novosAtribs = {
+                    FOR: parseInt(document.getElementById('edit-for').value) || 0,
+                    AGI: parseInt(document.getElementById('edit-agi').value) || 0,
+                    INT: parseInt(document.getElementById('edit-int').value) || 0,
+                    VIG: parseInt(document.getElementById('edit-vig').value) || 0,
+                    PRE: parseInt(document.getElementById('edit-pre').value) || 0
+                };
+
+                const nex = parseInt(document.getElementById('edit-nex').value) || 5;
+                const novoCalculo = calcularStatus(dados.classe, novosAtribs, nex);
+
+                // Função interna para atualizar sem resetar o atual
+                const ajustarSemResetar = (tipo) => {
+                    const barra = document.getElementById(`barra-${tipo}`);
+                    const atual = parseInt(barra.innerText.split('/')[0]) || 0;
+                    const maxAntigo = parseInt(barra.innerText.split('/')[1]) || 1;
+                    const novoMax = novoCalculo[`${tipo}Max`];
+                    
+                    // Se o máximo aumentou (ex: de 20 para 24), o atual ganha essa diferença (+4)
+                    const diferenca = novoMax - maxAntigo;
+                    const novoAtual = Math.max(0, atual + diferenca);
+
+                    atualizarBarraVisual(tipo, novoAtual, novoMax);
+                };
+
+                ajustarSemResetar('pv');
+                ajustarSemResetar('pe');
+                ajustarSemResetar('san');
+
+                window.fichaAtualDados.atributos = novosAtribs;
+            });
+        });
+    });
+});
+function atualizarOpcoesTrilha(classe, nex, trilhaAtual = "") {
+    const selectTrilha = document.getElementById('edit-trilha');
+    if (!selectTrilha) return;
+
+    if (nex >= 10) {
+        selectTrilha.disabled = false;
+        const listaTrilhas = TRILHAS[classe] || [];
+        
+        // Limpa e preenche o select
+        selectTrilha.innerHTML = '<option value="">Escolha uma Trilha</option>';
+        listaTrilhas.forEach(trilha => {
+            const selected = trilha === trilhaAtual ? 'selected' : '';
+            selectTrilha.innerHTML += `<option value="${trilha}" ${selected}>${trilha}</option>`;
+        });
+    } else {
+        selectTrilha.disabled = true;
+        selectTrilha.innerHTML = '<option value="">Disponível em 10%</option>';
+    }
+}
+document.addEventListener('change', (e) => {
+    if (e.target.classList.contains('select-treino')) {
+        const novoValor = e.target.value;
+        const divPai = e.target.closest('.item-pericia-edit');
+        
+        // Remove classes de treino antigas
+        divPai.classList.remove('treino-0', 'treino-5', 'treino-10', 'treino-15');
+        
+        // Adiciona a nova classe
+        divPai.classList.add(`treino-${novoValor}`);
+    }
+});
+window.alterarStatus = function(tipo, mod) {
+    const barra = document.getElementById(`barra-${tipo}`);
+    if (!barra) return;
+
+    const partes = barra.innerText.split('/');
+    if (partes.length < 2) return;
+
+    let atual = parseInt(partes[0].trim());
+    let max = parseInt(partes[1].trim());
+
+    atual += mod;
+
+    // Travas
+    if (atual > max) atual = max;
+    if (atual < 0) atual = 0;
+
+    // AQUI ESTÁ O SEGREDO: 
+    // Em vez de só mudar o texto, chamamos a função que controla o visual completo
+    atualizarBarraVisual(tipo, atual, max);
+
+    // Atualiza a memória local para o botão Salvar
+    if (window.fichaAtualDados && window.fichaAtualDados.status) {
+        window.fichaAtualDados.status[`${tipo}Atual`] = atual;
+        window.fichaAtualDados.status[`${tipo}Max`] = max;
+    }
+};
+const btnSalvar = document.querySelector('.btn-salvar-alteracoes')
+if (btnSalvar) {
+    btnSalvar.addEventListener('click', async () => {
+        if (!idFichaAberta) return;
+
+        try {
+            // 1. Referência do documento no Firebase
+            const fichaRef = doc(db, "personagens", idFichaAberta);
+
+            // 2. Coleta os dados atuais da tela
+            const novoNex = parseInt(document.getElementById('edit-nex').value);
+            const novaAparencia = document.getElementById('edit-aparencia').value;
+            const novoHistorico = document.getElementById('edit-historico').value;
+            const novoObjetivo = document.getElementById('edit-objetivo').value;
+            const novoJogador = document.getElementById('edit-jogador').value;
+            const novaTrilha = document.getElementById('edit-trilha').value;
+            const atributosEditados = {
+                FOR: parseInt(document.getElementById('edit-for').value) || 0,
+                AGI: parseInt(document.getElementById('edit-agi').value) || 0,
+                INT: parseInt(document.getElementById('edit-int').value) || 0,
+                VIG: parseInt(document.getElementById('edit-vig').value) || 0,
+                PRE: parseInt(document.getElementById('edit-pre').value) || 0
+            };
+            const periciasAtualizadas = {};
+            const outrosBonusAtualizados = {};
+            const pegarValoresDaBarra = (id) => {
+                const barra = document.getElementById(id);
+                if (!barra) return { atual: 0, max: 0 };
+                const partes = barra.innerText.split('/');
+                return {
+                    atual: parseInt(partes[0].trim()) || 0,
+                    max: parseInt(partes[1].trim()) || 0
+                };
+            };
+            const dadosPV = pegarValoresDaBarra('barra-pv');
+            const dadosPE = pegarValoresDaBarra('barra-pe');
+            const dadosSAN = pegarValoresDaBarra('barra-san');
+                
+            // Aqui recalculamos os status máximos baseados no novo NEX para salvar certinho
+            const novosStatus = calcularStatus(
+                window.fichaAtualDados.classe, 
+                window.fichaAtualDados.atributos, 
+                novoNex
+            );
+            // Varre todos os selects de treino
+            document.querySelectorAll('.select-treino').forEach(sel => {
+                const nome = sel.getAttribute('data-pericia');
+                periciasAtualizadas[nome] = parseInt(sel.value);
+            });
+
+            // Varre todos os inputs de outros bônus
+            document.querySelectorAll('.input-outros').forEach(inp => {
+                const nome = inp.getAttribute('data-pericia');
+                outrosBonusAtualizados[nome] = parseInt(inp.value) || 0;
+            });
+
+            // 3. Atualiza apenas os campos necessários no Banco de Dados
+            await updateDoc(fichaRef, {
+                jogador: novoJogador,
+                trilha: novaTrilha,
+                nex: novoNex,
+                pericias: periciasAtualizadas,
+                outrosBonus: outrosBonusAtualizados,
+                atributos: atributosEditados,
+                status: {
+                    pvMax: dadosPV.max,
+                    pvAtual: dadosPV.atual,
+                    peMax: dadosPE.max,
+                    peAtual: dadosPE.atual,
+                    sanMax: dadosSAN.max,
+                    sanAtual: dadosSAN.atual
+                },
+                detalhes: {
+                    aparencia: novaAparencia,
+                    historico: novoHistorico,
+                    objetivo: novoObjetivo
+                }
+            });
+
+            alert("Alterações salvas com sucesso!");
+            
+            // Opcional: Atualiza a memória local para não dar conflito
+            window.fichaAtualDados.nex = novoNex;
+            window.fichaAtualDados.status = novosStatus;
+            window.fichaAtualDados.detalhes = {
+                aparencia: novaAparencia,
+                historico: novoHistorico,
+                objetivo: novoObjetivo
+            };
+            window.fichaAtualDados.pericias = periciasAtualizadas;
+            window.fichaAtualDados.outrosBonus = outrosBonusAtualizados;
+            window.fichaAtualDados.atributos = atributosEditados;
+            window.fichaAtualDados.jogador = novoJogador;
+            window.fichaAtualDados.trilha = novaTrilha;
+
+        } catch (error) {
+            console.error("Erro ao salvar:", error);
+            alert("Erro ao salvar alterações.");
+        }
+    });
 }
 
 // Expõe a função para o Window para que o auth.js possa chamá-la no login
