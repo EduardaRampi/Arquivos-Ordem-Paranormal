@@ -39,6 +39,18 @@ document.addEventListener('DOMContentLoaded', () => {
   criaturas: 'Criaturas.json',
   regras: 'Regras.json'
 };
+const registroBox = document.getElementById("registro-box");
+const loginBox = document.getElementById("login-box");
+const btnIrLogin = document.getElementById("btn-ir-login");
+const btnIrRegistro = document.getElementById("btn-ir-registro");
+const steps = document.querySelectorAll('.stepper-container .title');
+const sections = {
+    'Atributos': document.querySelector('.Atributos'),
+    'Origem': document.querySelector('.Origem'),
+    'Classe': document.querySelector('.Classe'),
+    'Toques Finais': document.querySelector('.Toques_Finais')
+};
+
 
 
   // Variável para salvar qual era a tela anterior (ajuda no botão voltar)
@@ -61,6 +73,43 @@ document.addEventListener('DOMContentLoaded', () => {
       }, Tempo); // Tempo para a transição de fade (ajuste conforme necessário)
     });
   });
+  btnIrLogin.addEventListener("click", () => {
+    registroBox.classList.add("oculta");
+    loginBox.classList.remove("oculta");
+  });
+
+  btnIrRegistro.addEventListener("click", () => {
+    loginBox.classList.add("oculta");
+    registroBox.classList.remove("oculta");
+  });
+
+  steps.forEach(step => {
+    step.addEventListener('click', () => {
+        // Remove active de todos os títulos
+        steps.forEach(s => s.classList.remove('active'));
+        // Adiciona active no clicado
+        step.classList.add('active');
+
+        // Oculta todas as seções
+        Object.values(sections).forEach(sec => sec.classList.remove('active'));
+
+        // Mostra a seção correspondente
+        const nome = step.textContent.trim();
+        if (sections[nome]) {
+            sections[nome].classList.add('active');
+        }
+
+        // Atualiza as linhas do stepper
+        document.querySelectorAll('.line').forEach((line, index) => {
+            if (index < Array.from(steps).indexOf(step)) {
+                line.classList.add('active');
+            } else {
+                line.classList.remove('active');
+            }
+        });
+    });
+  });
+
 
   // 2. Lógica para VOLTAR
   botoesVoltar.forEach(btn => {
@@ -69,6 +118,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const rotasVoltar = {
         // Tela Atual: Tela de Destino
+        "Criação_persona": "Arquivos",
+        "Equipamentos": "Arquivos",        
+        "Criaturas": "Arquivos",
+        "Rituais": "Arquivos",
+        "Itens Amaldiçoados": "Arquivos",
+        "Regras": "Arquivos",
+        "Missões": "Arquivos",
+
+        "Fichas": "Fichas_Campanhas",
+        "Campanhas": "Fichas_Campanhas",
+
+        "Personagem": "Fichas",
+        "Visualizar_Ficha":"Fichas",
+
         "Classes": "Criação_persona",
         "Origens": "Criação_persona",
         "Trilhas": "Criação_persona",
@@ -157,8 +220,8 @@ document.addEventListener('DOMContentLoaded', () => {
           ? `<p><strong>Tipo:</strong> ${item.Tipo}</p>` 
           : ''; 
 
-        htmlAcumulado = `
-          <div class="classe-card">
+        htmlAcumulado += `
+          <div class="classe-card" data-id="${item.id}">
             <h2>${item.nome}</h2>
             <p><strong>Origem:</strong> ${item.origem}</p>
             ${htmlVd}
@@ -171,17 +234,16 @@ document.addEventListener('DOMContentLoaded', () => {
             ${htmlPreR}
           </div>
         `;
-
-        container.innerHTML += htmlAcumulado;
       });
+      container.innerHTML = htmlAcumulado;
     })
     .catch(error => console.error(error.message));
   }
-  for (const [idContainer, arquivo] of Object.entries(listas)) {
-    const container = document.getElementById(`lista-${idContainer}`);
-    if (container) {
-      carregarCards({ arquivo, container, erroMsg: `Não foi possível carregar ${idContainer}` });
-    }
+  for (const [key, arquivo] of Object.entries(listas)) {
+    const container = document.querySelectorAll(`.lista-${key}`);
+    container.forEach(container => {
+      carregarCards({ arquivo, container, erroMsg: `Não foi possível carregar ${key}` });
+    })
   }
 
   // 4. Lógica para Busca e Filtros funcionarem juntos
@@ -204,27 +266,35 @@ document.addEventListener('DOMContentLoaded', () => {
         // Mostra apenas se atende ambos
         card.style.display = atendeBusca && atendeFiltros ? 'block' : 'none';
     });
-''}
+}
 
   // 5. Lógica de Busca Simples
   let timerBusca;
   document.addEventListener('input', (e) => {
-  if (e.target.classList.contains('input-busca')) {
-    clearTimeout(timerBusca);
-    const termo = e.target.value.toLowerCase();
-    const idContainer = e.target.getAttribute('data-container');
-    const container = document.getElementById(idContainer);
-    const cards = container.querySelectorAll('.classe-card');
-    timerBusca = setTimeout(() => {
-            const menu = container.closest('.tela').querySelector('.menu-filtros-flutuante');
-            const filtrosAtivos = Array.from(menu.querySelectorAll('.item-filtro.selecionado'))
-                                       .map(el => ({
-                                           valor: el.getAttribute('data-valor'),
-                                           categoria: el.getAttribute('data-categoria')
-                                       }));
-            
-            aplicarFiltros(container, termo, filtrosAtivos);
-    },Tempo);
+    if (e.target.classList.contains('input-busca')) {
+      clearTimeout(timerBusca);
+      
+      const termo = e.target.value.toLowerCase();
+      const nomeClasse = e.target.getAttribute('data-container'); // ex: "lista-itens-amaldicoados"
+      
+      // BUSCA PELA CLASSE (Ponto que estava dando erro)
+      const container = document.querySelector(`.${nomeClasse}`); 
+      
+      timerBusca = setTimeout(() => {
+        if (container) {
+          const telaAtiva = container.closest('.tela');
+          const menu = telaAtiva.querySelector('.menu-filtros-flutuante');
+          
+          // Captura filtros selecionados se existirem
+          const filtrosAtivos = menu ? Array.from(menu.querySelectorAll('.item-filtro.selecionado'))
+            .map(el => ({
+              valor: el.getAttribute('data-valor'),
+              categoria: el.getAttribute('data-categoria')
+            })) : [];
+          
+          aplicarFiltros(container, termo, filtrosAtivos);
+        }
+      }, Tempo);
     } 
   });
   
@@ -252,7 +322,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const menuDesteBotao = containerPai.querySelector('.menu-filtros-flutuante');
           
           const telaAtiva = botao.closest('.tela');
-          const containerLista = telaAtiva.querySelector('[id^="lista-"]');
+          const containerLista = telaAtiva.querySelector('[class*="lista-"]');
 
           if (containerLista && menuDesteBotao) {
               // MUDANÇA 1: Só gera o menu se ele estiver vazio. 
@@ -320,7 +390,7 @@ document.addEventListener('DOMContentLoaded', () => {
           e.stopPropagation();
           const menu = e.target.closest('.menu-filtros-flutuante');
           const telaAtiva = menu.closest('.tela');
-          const container = telaAtiva.querySelector('[id^="lista-"]');
+          const container = telaAtiva.querySelector('[class*="lista-"]');
 
           if (e.target.getAttribute('data-valor') === 'limpar') {
               menu.querySelectorAll('.item-filtro').forEach(el => el.classList.remove('selecionado'));

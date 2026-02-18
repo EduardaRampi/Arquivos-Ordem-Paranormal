@@ -18,6 +18,9 @@
         flex-direction: column;
     }
     </Style>
+    <script src="firebase-config.js" type="module"></script>     
+    <script src="auth.js" type="module"></script>
+    <script src="personagens.js" type="module"></script>       
 </head>
 <body id = "fundo">
     <div class ="caixa">
@@ -27,6 +30,69 @@
         <p class="centralizar">Aqui só terá informações oficiais de Ordem Paranormal RPG, publicadas pela Jambô, nada de Homebrews.</p>        
         <p class="centralizar">Clique nos botões abaixo para navegar entre as seções:</p>
         <div class="centralizar">
+            <button class="btn-navegar" data-destino="Fichas_Campanhas">Fichas e Campanhas</button>
+            <button class="btn-navegar" data-destino="Arquivos">Arquivos</button>
+        </div>
+        </div>
+
+        <div id="Fichas_Campanhas" class="tela oculta">
+        <h1>Fichas e campanhas</h1>
+        <!-- Seção de Autenticação (visível se não logado) -->
+        <div id="auth-section" class="centralizar">
+            <div id="registro-box">    
+                <h2>Registro</h2>
+                <form id="registro-form">
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="password" id="senha" placeholder="Senha" required>
+                    <button type="submit">Registrar</button>
+                </form>
+                <button id="btn-ir-login" type="button">
+                    Já tenho conta
+                </button>
+            </div> 
+            <div id="login-box" class="oculta">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <input type="email" id="email-login" placeholder="Email" required>
+                    <input type="password" id="senha-login" placeholder="Senha" required>
+                    <button type="submit">Entrar</button>
+                </form>
+                <button id="btn-ir-registro" type="button">
+                Criar conta
+                </button>
+            </div>    
+        </div>
+        <div class="centralizar">
+            <button class="btn-navegar" data-destino="Fichas">Fichas</button>
+            <button class="btn-navegar" data-destino="Campanhas">Campanhas</button>
+            <button class="btn-voltar">Voltar</button>
+        </div>
+        </div>
+
+        <div id="Fichas" class="tela oculta">
+        <h1>Fichas</h1>     
+        <!-- Seção de Personagens (visível se logado) -->
+        <div id="personagem-section" class="oculta">
+            <h2>Criar Novo Personagem</h2>
+            <div class="centralizar">
+            <button class="btn-navegar" data-destino="Personagem">Criar Personagem</button>
+            </div>
+            <h2>Seus Personagens</h2>
+            <div class="lista-personagens lista centralizar">
+                <!-- Personagens serão carregados aqui dinamicamente -->
+            </div>
+        </div>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+
+        <div id="Campanhas" class="tela oculta">
+        <h1>Campanhas</h1>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+
+        <div id="Arquivos" class="tela oculta">
+        <h1>Arquivos</h1>
+        <div class="centralizar">
             <button class="btn-navegar" data-destino="Criação_persona">Criação de Personagens</button>
             <button class="btn-navegar" data-destino="Equipamentos">Equipamentos</button>
             <button class="btn-navegar" data-destino="Itens Amaldiçoados">Itens Amaldiçoados</button>
@@ -34,6 +100,7 @@
             <button class="btn-navegar" data-destino="Regras">Regras</button>
             <button class="btn-navegar" data-destino="Criaturas">Criaturas</button>
             <button class="btn-navegar" data-destino="Missões">Missões</button>
+            <button class="btn-voltar">Voltar</button>
         </div>
         </div>
 
@@ -73,7 +140,7 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>
-        <div id="lista-itens-amaldicoados" class="lista"></div>
+        <div class="lista-itens-amaldicoados lista"></div>
         <button class="btn-voltar">Voltar</button> 
         </div>
         
@@ -88,7 +155,7 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>        
-        <div id="lista-rituais" class="lista"></div>
+        <div class="lista-rituais lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
@@ -104,7 +171,7 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>        
-        <div id="lista-regras" class="lista"></div>
+        <div class="lista-regras lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
@@ -122,7 +189,7 @@
         <div class="centralizar">
             <button class="btn-navegar" data-destino="Criaturas Realidade">Criaturas da Realidade</button>
         </div> 
-        <div id="lista-criaturas" class="lista"></div>
+        <div class="lista-criaturas lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
         
@@ -137,7 +204,7 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>        
-        <div id="lista-missoes" class="lista"></div>
+        <div class="lista-missoes lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
@@ -152,7 +219,7 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>
-        <div id="lista-classes" class="lista"></div>
+        <div class="lista-classes lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
@@ -167,7 +234,7 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>        
-        <div id="lista-origens" class="lista"></div>
+        <div class="lista-origens lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
@@ -197,7 +264,7 @@
             <button class="btn-navegar" data-destino="Poderes especialista">Poderes de Especialista</button>
             <button class="btn-navegar" data-destino="Poderes combatente">Poderes de Combatente</button>
         </div>
-        <div id="lista-poderes" class="lista"></div>
+        <div class="lista-poderes lista"></div>
         <button class="btn-voltar">Voltar</button> 
         </div>
 
@@ -217,7 +284,7 @@
             <button class="btn-navegar" data-destino="Maldições para Armas">Maldições para Armas</button>
             <button class="btn-navegar" data-destino="Munições">Munições</button>
         </div>
-        <div id="lista-armas" class="lista"></div>        
+        <div class="lista-armas lista"></div>        
         <button class="btn-voltar">Voltar</button>
         </div>
 
@@ -235,7 +302,7 @@
         <div class="centralizar">
             <button class="btn-navegar" data-destino="Modificações para Munições">Modificações para Munições</button>
         </div>
-        <div id="lista-municoes" class="lista"></div>
+        <div class="lista-municoes lista"></div>
         <button class="btn-voltar">Voltar</button> 
         </div>
 
@@ -245,7 +312,7 @@
             <button class="btn-navegar" data-destino="Modificações para Proteções">Modificações para Proteções</button>
             <button class="btn-navegar" data-destino="Maldições para Proteções">Maldições para Proteções</button>            
         </div> 
-        <div id="lista-protecoes" class="lista"></div>
+        <div class="lista-protecoes lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
@@ -264,7 +331,7 @@
             <button class="btn-navegar" data-destino="Modificações para Acessórios">Modificações para Acessórios</button>
             <button class="btn-navegar" data-destino="Maldições para Acessórios">Maldições para Acessórios</button>
         </div>
-        <div id="lista-acessorios" class="lista"></div>
+        <div class="lista-acessorios lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
@@ -279,7 +346,7 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>
-        <div id="lista-explosivos" class="lista"></div>
+        <div class="lista-explosivos lista"></div>
         <button class="btn-voltar">Voltar</button> 
         </div>
 
@@ -294,7 +361,7 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>
-        <div id="lista-itens-operacionais" class="lista"></div>
+        <div class="lista-itens-operacionais lista"></div>
         <button class="btn-voltar">Voltar</button> 
         </div>
 
@@ -312,7 +379,7 @@
         <div class="centralizar">
             <button class="btn-navegar" data-destino="Modificações para Itens Paranormais">Modificações para Itens Paranormais</button>
         </div>
-        <div id="lista-itens-paranormais" class="lista"></div>         
+        <div class="lista-itens-paranormais lista"></div>         
         <button class="btn-voltar">Voltar</button>
         </div>
 
@@ -324,7 +391,7 @@
             <button class="btn-navegar" data-destino="Poderes Conhecimento">Poderes de Conhecimento</button>
             <button class="btn-navegar" data-destino="Poderes Energia">Poderes de Energia</button>            
         </div>
-        <div id="lista-poderes-paranormais" class="lista"></div>
+        <div class="lista-poderes-paranormais lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
@@ -339,7 +406,7 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>
-        <div id="lista-poderes-ocultista" class="lista"></div>
+        <div class="lista-poderes-ocultista lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
@@ -354,7 +421,7 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>
-        <div id="lista-poderes-especialista" class="lista"></div>
+        <div class="lista-poderes-especialista lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
@@ -369,7 +436,7 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>
-        <div id="lista-poderes-combatente" class="lista"></div>
+        <div class="lista-poderes-combatente lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
@@ -384,7 +451,7 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>
-        <div id="lista-trilhas-ocultista" class="lista"></div>
+        <div class="lista-trilhas-ocultista lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
@@ -399,7 +466,7 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>
-        <div id="lista-trilhas-especialista" class="lista"></div>
+        <div class="lista-trilhas-especialista lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
@@ -414,7 +481,7 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>
-        <div id="lista-trilhas-combatente" class="lista"></div>
+        <div class="lista-trilhas-combatente lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
@@ -429,7 +496,7 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>
-        <div id="lista-poderes-sangue" class="lista"></div>
+        <div class="lista-poderes-sangue lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
@@ -444,7 +511,7 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>
-        <div id="lista-poderes-morte" class="lista"></div>
+        <div class="lista-poderes-morte lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
@@ -459,7 +526,7 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>
-        <div id="lista-poderes-conhecimento" class="lista"></div>
+        <div class="lista-poderes-conhecimento lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
@@ -474,7 +541,7 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>
-        <div id="lista-poderes-energia" class="lista"></div>
+        <div class="lista-poderes-energia lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
@@ -489,13 +556,13 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>
-        <div id="lista-modificacoes-armas" class="lista"></div>
+        <div class="lista-modificacoes-armas lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
         <div id="Modificações para Munições" class="tela oculta">
         <h1>Modificações de Munições</h1>
-        <div id="lista-modificacoes-municao" class="lista"></div>
+        <div class="lista-modificacoes-municao lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
@@ -510,7 +577,7 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>
-        <div id="lista-modificacoes-protecoes" class="lista"></div>
+        <div class="lista-modificacoes-protecoes lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
@@ -525,13 +592,13 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>
-        <div id="lista-modificacoes-acessorios" class="lista"></div>
+        <div class="lista-modificacoes-acessorios lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
         <div id="Modificações para Itens Paranormais" class="tela oculta">
         <h1>Modificações de Itens Paranormais</h1>
-        <div id="lista-modificacoes-itens-paranormais" class="lista"></div>
+        <div id="lista-modificacoes-itens-paranormais lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
@@ -546,7 +613,7 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>
-        <div id="lista-maldicoes-armas" class="lista"></div>
+        <div class="lista-maldicoes-armas lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>   
         
@@ -561,7 +628,7 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>
-        <div id="lista-maldicoes-protecoes" class="lista"></div>
+        <div class="lista-maldicoes-protecoes lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>        
 
@@ -576,7 +643,7 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>
-        <div id="lista-maldicoes-acessorios" class="lista"></div>
+        <div class="lista-maldicoes-acessorios lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
          
@@ -591,17 +658,187 @@
                 <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
             </div>     
         </div>
-        <div id="lista-criaturas-realidade" class="lista"></div>
+        <div class="lista-criaturas-realidade lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>         
 
+        <div id="Personagem" class="tela oculta">
+        <h1>Personagem</h1>
+        <div class="cent">
+            <div class="stepper-container">
+                <div class="step-wrapper">
+                    <div class="step-container">
+                        <h3  class="title active">Atributos</h3>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <div class="step-wrapper">
+                    <div class="step-container">
+                        <h3 class="title">Origem</h3>
+                    </div>
+                    <div data-v-e0f1eafc="" class="line"></div>
+                </div>
+                <div class="step-wrapper">
+                    <div class="step-container">
+                        <h3 class="title">Classe</h3>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <div class="step-wrapper">
+                    <div class="step-container">
+                        <h3 data-v-e0f1eafc="" class="title">Toques Finais</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Atributos">
+            <div class="grid">
+                <p class="centralizar size_m">
+                    Quando você cria um personagem, todos os seus atributos começam em 1 e você recebe 4 pontos para distribuir entre eles como quiser. Você também pode reduzir um atributo para 0 para receber 1 ponto adicional. O valor máximo inicial que você pode ter em cada atributo é 3.
+                </p>
+                <div class="img_atrib">
+                <input type="number" class="input for" value="1">
+                <input type="number" class="input agi" value="1">
+                <input type="number" class="input int" value="1">
+                <input type="number" class="input vig" value="1">
+                <input type="number" class="input pre" value="1">
+                </div>
+            </div>
+        </div>
+        <div class="Origem">
+            <p class="centralizar">
+                O que seu personagem fazia antes de se envolver com o paranormal e ingressar na Ordem da Realidade? A origem representa como a vida pregressa influencia sua carreira de investigador. Escolha uma origem que se encaixe com o conceito de seu personagem ou escolha uma aleatoriamente.
+            </p><p class="centralizar">
+                Ao escolher uma origem, você recebe duas perícias treinadas e um poder da origem.
+            </p><p class="centralizar">                
+                Cada origem apresentada a seguir é intencionalmente vaga, apenas uma ideia por onde começar. Você pode usá-la como está, para jogar rapidamente, ou colorir com quantos detalhes quiser, conforme o conceito de seu agente.
+            </p><p class="centralizar">
+                Perícias concedidas serão adicionadas automaticamente. Perícias opcionais podem ser adicionadas ao agente após sua criação.
+            </p>
+            <div class="search-box">
+            <input type="text" class="input-busca" data-container="lista-origens" placeholder="Pesquisar por palavra chave..."> 
+            <div class="container-botao-filtro">
+                <button class="btn-filtro-geral btn-abrir-filtros">
+                    <i class="fas fa-filter"></i> Filtros
+                </button>
+                <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
+            </div>     
+        </div>        
+        <div class="lista-origens lista lista-click"></div>
+        </div>
+        <div class="Classe">
+            <p class="centralizar">
+                Sua classe indica o treinamento que você recebeu na Ordem para enfrentar os perigos do Outro Lado.
+            </p><p class="centralizar">
+                Em termos de jogo, é a sua característica mais importante, pois define o que você faz e qual é o seu papel no grupo de investigadores.
+            </p><p class="centralizar">                
+                Perícias concedidas serão adicionadas automaticamente. Perícias opcionais podem ser adicionadas ao agente após sua criação.
+            </p><p class="centralizar">
+                Como uma alternativa, você pode não escolher uma classe e começar como uma pessoa comum.
+            </p>          
+        <div class="lista-classes lista lista-click"></div>
+        </div>
+        <div class="Toques_Finais">
+            <p class="centralizar">
+                Até aqui, você definiu as características mecânicas de sua ficha — mas um bom personagem é mais do que apenas números. Agora, vamos trabalhar na descrição de seu agente, definindo aspectos como nome, gênero e idade. Esses aspectos não possuem efeito em regras, mas deixam o jogo mais envolvente e divertido.
+            </p>
+            <div class="centralizar">
+                <button class="btn-finalizar">Finalizar</button>
+            </div>
+            <div class="per_jor">
+                <div class="input-container">
+                    <h3>Personagem</h3>
+                    <input type="text" class="input-primario" placeholder="Nome do personagem">
+                </div>
+                <div class="input-container">
+                    <h3>Jogador</h3>
+                    <input type="text" class="input-primario" placeholder="Nome do Jogador">
+                </div>
+            </div><div class="ap_his_obj">
+                <div class="text-container">
+                    <h3>Aparência</h3>
+                    <textarea class="textarea" rows="6" placeholder="Nome, gênero, idade, descrição física..."></textarea>
+                </div>
+                <div class="text-container">
+                    <h3>Histórico</h3>
+                    <textarea class="textarea" rows="6" placeholder="Infância, relação com a família, contato com o Paranormal, eventos bons e ruins..."></textarea>
+                </div>
+                <div class="text-container">
+                    <h3>Objetivo</h3>
+                    <textarea class="textarea" rows="6" placeholder="Por que ele faz parte da Ordem? Porque luta contra o Outro Lado?"></textarea>
+                </div>
+             </div>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+        </div>
+
+        <div id="Visualizar_Ficha" class="tela oculta">
+            <h1 id="view-nome"></h1>
+            <div class="ficha-grid">
+                <!-- COLUNA 1 - DADOS -->
+                <div class="ficha-card">
+                    <h3>Informações</h3>
+                    <p><strong>Classe:</strong> <span id="view-classe"></span></p>
+                    <p><strong>Origem:</strong> <span id="view-origem"></span></p>
+                    <p><strong>NEX:</strong> <span id="view-nex"></span></p>
+
+                    <h3>Atributos</h3>
+                    <div class="atributos-grid">
+                        <div>FOR <span id="view-for"></span></div>
+                        <div>AGI <span id="view-agi"></span></div>
+                        <div>INT <span id="view-int"></span></div>
+                        <div>PRE <span id="view-pre"></span></div>
+                        <div>VIG <span id="view-vig"></span></div>
+                    </div>
+
+                    <div class="status-box">
+                        <h3>Status</h3>
+                        <div class="barra-status-container">
+                            <label>PV</label>
+                            <div class="barra-status">
+                                <div id="barra-pv" class="barra-pv"></div>
+                            </div>
+                        </div>
+                        <div class="barra-status-container">
+                            <label>SAN</label>
+                            <div class="barra-status">
+                                <div id="barra-san" class="barra-san"></div>
+                            </div>
+                        </div>
+                        <div class="barra-status-container">
+                            <label>PE</label>
+                            <div class="barra-status">
+                                <div id="barra-pe" class="barra-pe"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- COLUNA 2 - PERÍCIAS -->
+                <div class="ficha-card">
+                    <h3>Perícias</h3>
+                    <div id="pericias-agente" class="pericias-grid"></div>
+                </div>
+                <!-- COLUNA 3 - HISTÓRICO -->
+                <div class="ficha-card">
+                    <h3>Aparência</h3>
+                    <p id="view-aparencia"></p>
+                    <h3>Histórico</h3>
+                    <p id="view-historico"></p>
+                    <h3>Objetivo</h3>
+                    <p id="view-objetivo"></p>
+                </div>
+            </div>
+            <div class="centralizar">
+                <button class="btn-voltar" data-destino="Fichas">Voltar</button>
+            </div>
+        </div>
+        
         <footer class="rodape">
             <p>Ordem Paranormal é um produto da Jambô Editora e seus respectivos criadores, todos os direitos reservados.</p>
             <p>Arquivos Ordem Paranormal is unofficial Fan Content permitted under the Fan Content Policy. </p>
         </footer>
     
     </div>
-        
     <script src="código.js"></script>
 </body>
 </html>
