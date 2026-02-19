@@ -617,7 +617,6 @@ input[type="number"]::-webkit-outer-spin-button {
 .btn-seta:active {
     transform: scale(0.9);
 }
-/* Ajuste do label para não ficar colado nas setas */
 .status-header-controle label {
     font-size: 0.85rem;
     text-transform: uppercase;
@@ -645,3 +644,134 @@ input[type="number"]::-webkit-outer-spin-button {
     box-shadow: 0 0 10px #ff0000;
 }
 .ocuta { display: none !important; }
+.defesa-container {
+    padding: 20px;
+    color: var(--cor-texto-claro);
+}
+.defesa-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.defesa-valor {
+    text-align: center;
+}
+.defesa-valor h2 {
+    font-size: 3.5rem;
+    margin: 0;
+    color: white;
+    text-shadow: 0 0 10px rgba(131, 49, 49, 0.7);
+}
+.defesa-valor span {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+.defesa-formula {
+    background: rgba(0,0,0,0.5);
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+.input-def {
+    width: 55px;
+    background: rgba(0,0,0,0.7);
+    border: 1px solid var(--cor-primaria);
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 3px;
+    margin: 0 3px;
+    transition: all 0.2s ease;
+}
+.input-def:focus {
+    border-color: var(--cor-primaria-clara);
+    box-shadow: 0 0 6px rgba(131, 49, 49, 0.7);
+    outline: none;
+}
+.defesa-detalhes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+}
+.item-detalhe {
+    background: rgba(0,0,0,0.4);
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+.item-detalhe:hover {
+    background: rgba(131, 49, 49, 0.4);
+    transform: translateY(-2px);
+}
+.item-detalhe label {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    opacity: 0.8;
+}
+.input-calculado span {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white;
+}
+.campo-pe-turno,
+.campo-deslocamento {
+    display: flex;
+    gap: 8px;
+    min-width: 180px;
+    transition: all 0.2s ease;
+}
+.campo-pe-turno label,
+.campo-deslocamento label {
+    color: var(--cor-texto-claro);
+}
+.input-pe-rodada {
+    width: 40px;
+    font-weight: bold;
+    text-align: center;
+    background: rgba(0,0,0,0.6);
+    border: 1px solid var(--cor-primaria);
+    border-radius: 6px;
+    color: white;
+    padding: 5px;
+    transition: all 0.2s ease;
+}
+.input-pe-rodada:focus {
+    border-color: var(--cor-primaria-clara);
+    box-shadow: 0 0 8px rgba(131,49,49,0.7);
+    outline: none;
+}
+.input-desloc {
+    display: flex;
+    gap: 6px;
+}
+.input-desloc input {
+    width: 55px;
+    text-align: center;
+    font-weight: bold;
+    background: rgba(0,0,0,0.6);
+    border: 1px solid var(--cor-primaria);
+    border-radius: 6px;
+    color: white;
+    padding: 4px;
+    transition: all 0.2s ease;
+}
+.input-desloc input:focus {
+    border-color: var(--cor-primaria-clara);
+    box-shadow: 0 0 6px rgba(131,49,49,0.7);
+    outline: none;
+}
+.input-desloc span {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    font-weight: bold;
+    color: var(--cor-texto-claro);
+}

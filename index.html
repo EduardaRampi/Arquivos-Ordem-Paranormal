@@ -787,6 +787,12 @@
                         </select>
                     </p>
                     <p><strong>Origem:</strong> <span id="view-origem"></span></p>
+                    <p id="container-afinidade">
+                        <strong>Afinidade:</strong> 
+                        <select id="edit-afinidade" class="input-inline" disabled>
+                            <option value="">Selecione o NEX 50%</option>
+                        </select>
+                    </p>
                     <p><strong>NEX:</strong> 
                         <select id="edit-nex" class="input-inline">
                             <option value="0">0%</option>
@@ -812,6 +818,19 @@
                             <option value="99">99%</option>
                         </select>
                     </p>
+                    <div class="campo-pe-turno">
+                        <label><strong>PE/Turno</strong></label>
+                        <input type="number" id="edit-pe-turno" class="input-pe-rodada" value="1">
+                    </div>
+                    <div class="campo-deslocamento">
+                        <label><strong>Deslocamento</strong></label>
+                        <div class="input-desloc">
+                            <input type="number" id="edit-deslocamento-metros" value="9">
+                            <span>m/</span>
+                            <input type="number" id="edit-deslocamento-grid" value="6">
+                            <span>q</span>
+                        </div>
+                    </div>
 
                     <h3>Atributos</h3>
                     <div class="atributos-grid">
@@ -889,6 +908,50 @@
                             </div>
                         </div>
                     </div>
+                    <h3>Defesa e Prof</h3>
+                    <div class="defesa-container">
+                        <div class="defesa-principal">
+                            <div class="defesa-valor">
+                                <h2 id="valor-defesa">10</h2>
+                                <span>DEFESA</span>
+                            </div>
+                            <div class="defesa-formula">
+                                = 10 + <span id="txt-agi">0</span> (AGI) + 
+                                <input type="number" id="def-equip" class="input-def" value="0"> (Equip.) + 
+                                <input type="number" id="def-outros" class="input-def" value="0"> (Outros)
+                            </div>
+                        </div>
+
+                        <div class="defesa-detalhes">
+                            <div class="item-detalhe">
+                                <label>BLOQUEIO (Luta)</label>
+                                <div class="input-calculado">
+                                    <span id="valor-bloqueio">0</span>
+                                </div>
+                            </div>
+                            <div class="item-detalhe">
+                                <label>ESQUIVA (Reflexos)</label>
+                                <div class="input-calculado">
+                                    <span id="valor-esquiva">10</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="resistencias-box">
+                            <div class="campo-longo">
+                                <label>PROTEÇÃO</label>
+                                <textarea id="protecao" rows="1"></textarea>
+                            </div>
+                            <div class="campo-longo">
+                                <label>RESISTÊNCIAS</label>
+                                <textarea id="resistencias" rows="2"></textarea>
+                            </div>
+                            <div class="campo-longo">
+                                <label>PROFICIÊNCIAS</label>
+                                <textarea id="proficiencias" rows="2"></textarea>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- COLUNA 2 - PERÍCIAS -->
                 <div class="ficha-card">
@@ -897,8 +960,12 @@
                 </div>
                 <!-- COLUNA 3 - HISTÓRICO -->
                 <div class="ficha-card">
+                    <h3>Notas</h3>
+                    <textarea id="edit-nota" class="textarea-ficha" rows="6"></textarea>
                     <h3>Aparência</h3>
                     <textarea id="edit-aparencia" class="textarea-ficha" rows="4"></textarea>
+                    <h3>Personalidade</h3>
+                    <textarea id="edit-personalidade" class="textarea-ficha" rows="4"></textarea>
                     <h3>Histórico</h3>
                     <textarea id="edit-historico" class="textarea-ficha" rows="6"></textarea>
                     <h3>Objetivo</h3>
