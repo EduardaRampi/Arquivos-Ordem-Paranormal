@@ -23,6 +23,18 @@
     <script src="personagens.js" type="module"></script>       
 </head>
 <body id = "fundo">
+    <input type="checkbox" id="close-menu" class="close-menu-checkbox" hidden>
+    <label for="close-menu" class="close-menu-label"></label>
+    <nav class="sidebar-rapida">
+        <button class="nav-item btn-navegar" data-destino="Perfil" title="Perfil">Seu Perfil</button>
+        <button class="nav-item btn-navegar" data-destino="Fichas" title="Minhas Fichas">👤 Minhas Fichas</button>
+        <button class="nav-item btn-navegar" data-destino="Dados" title="Dados">🎲 Dados</button>
+        <button class="nav-item btn-navegar" data-destino="Campanhas" title="Campanhas">👁️ Campanhas</button>
+        <button class="nav-item btn-navegar" data-destino="Equipamentos" title="Equipamentos">⚔️ Equipamentos</button>
+        <button class="nav-item btn-navegar" data-destino="Rituais" title="Rituais">🕯️Rituais</button>
+        <button class="nav-item btn-navegar" data-destino="Regras" title="Regras">📜 Regras</button>
+        <button class="nav-item btn-navegar" data-destino="Criaturas" title="Bestiário">💀 Bestiário</button>
+    </nav>
     <div class ="caixa">
         <div id="tela-inicial" class="tela ativa">
         <h1>Bem-vindo aos Arquivos de Ordem Paranormal</h1>
@@ -31,8 +43,56 @@
         <p class="centralizar">Clique nos botões abaixo para navegar entre as seções:</p>
         <div class="centralizar">
             <button class="btn-navegar" data-destino="Fichas_Campanhas">Fichas e Campanhas</button>
+            <button class="btn-navegar" data-destino="Dados">Dados</button>
             <button class="btn-navegar" data-destino="Arquivos">Arquivos</button>
         </div>
+        </div>
+
+        <div id="Perfil" class="tela oculta">
+            <h1>Seu Perfil</h1>
+            <div class="ficha-card" style="max-width: 500px; margin: 0 auto;">
+                <div class="perfil-info">
+                    <p><strong>E-mail:</strong> <span id="perfil-email">Carregando...</span></p>
+                    <p><strong>ID do Usuário:</strong> <span id="perfil-id" style="font-size: 0.7rem; opacity: 0.5;"></span></p>
+                </div>
+
+                <div class="cent" style="margin-top: 20px;">
+                    <button id="btn-redefinir-senha" class="btn-perfil">Redefinir Senha</button>
+                    <button id="btn-excluir-conta" class="btn-perfil" style="background-color: #444;">Excluir Conta</button>
+                </div>
+            </div>
+
+            <div class="centralizar" style="margin-top: 20px;">
+                <button class="btn-voltar">Voltar</button>
+            </div>
+        </div>
+        
+        <div id="Dados" class="tela oculta">
+            <h1>Dados</h1>
+                <div class="caixa-dados">
+                <div id="resultado-dado" class="resultado-display">
+                    <span id="valor-dado">?</span>
+                    <small id="tipo-dado">Role um dado</small>
+                </div>
+
+                <div class="grid-dados">
+                    <button class="btn-dado" onclick="rolarDado(20)"><span>d20</span></button>
+                    <button class="btn-dado" onclick="rolarDado(12)"><span>d12</span></button>
+                    <button class="btn-dado" onclick="rolarDado(10)"><span>d10</span></button>
+                    <button class="btn-dado" onclick="rolarDado(8)"><span>d8</span></button>
+                    <button class="btn-dado" onclick="rolarDado(6)"><span>d6</span></button>
+                    <button class="btn-dado" onclick="rolarDado(4)"><span>d4</span></button>
+                </div>
+
+                <div class="historico-dados">
+                    <h3>Histórico Recente</h3>
+                    <ul id="lista-historico"></ul>
+                </div>
+            </div>
+
+            <div class="centralizar">
+                <button class="btn-voltar">Voltar</button>
+            </div>
         </div>
 
         <div id="Fichas_Campanhas" class="tela oculta">
@@ -793,31 +853,57 @@
                             <option value="">Selecione o NEX 50%</option>
                         </select>
                     </p>
-                    <p><strong>NEX:</strong> 
-                        <select id="edit-nex" class="input-inline">
-                            <option value="0">0%</option>
-                            <option value="5">5%</option>
-                            <option value="10">10%</option>
-                            <option value="15">15%</option>
-                            <option value="20">20%</option>
-                            <option value="25">25%</option>
-                            <option value="30">30%</option>
-                            <option value="35">35%</option>
-                            <option value="40">40%</option>
-                            <option value="45">45%</option>
-                            <option value="50">50%</option>
-                            <option value="55">55%</option>
-                            <option value="60">60%</option>
-                            <option value="65">65%</option>
-                            <option value="70">70%</option>
-                            <option value="75">75%</option>
-                            <option value="80">80%</option>
-                            <option value="85">85%</option>
-                            <option value="90">90%</option>
-                            <option value="95">95%</option>
-                            <option value="99">99%</option>
-                        </select>
-                    </p>
+                    <div id="container-nex-normal">
+                        <p><strong>NEX:</strong> 
+                            <select id="edit-nex" class="input-inline">
+                                <option value="0">0%</option>
+                                <option value="5">5%</option>
+                                <option value="10">10%</option>
+                                <option value="15">15%</option>
+                                <option value="20">20%</option>
+                                <option value="25">25%</option>
+                                <option value="30">30%</option>
+                                <option value="35">35%</option>
+                                <option value="40">40%</option>
+                                <option value="45">45%</option>
+                                <option value="50">50%</option>
+                                <option value="55">55%</option>
+                                <option value="60">60%</option>
+                                <option value="65">65%</option>
+                                <option value="70">70%</option>
+                                <option value="75">75%</option>
+                                <option value="80">80%</option>
+                                <option value="85">85%</option>
+                                <option value="90">90%</option>
+                                <option value="95">95%</option>
+                                <option value="99">99%</option>
+                            </select>
+                        </p>
+                        <p id="container-nivel" class="oculta"><strong>Nível:</strong>
+                            <select id="edit-nivel" class="input-inline">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </p>
+                    </div>
                     <div class="campo-pe-turno">
                         <label><strong>PE/Turno</strong></label>
                         <input type="number" id="edit-pe-turno" class="input-pe-rodada" value="1">
@@ -867,7 +953,7 @@
                                 <button class="btn-curar" onclick="alterarStatus('pv', 1)">CURAR</button>
                             </div>
                         </div>
-                        <div class="barra-status-container">
+                        <div id="container-sanidade" class="barra-status-container">
                             <div class="status-header-controle">
                                 <div class="setas-grupo">
                                     <button class="btn-seta" onclick="alterarStatus('san', -5)">«</button>
@@ -891,7 +977,7 @@
                                 <button class="btn-curar" onclick="alterarStatus('san', 1)">CURAR</button>
                             </div>
                         </div>
-                        <div class="barra-status-container">
+                        <div id="container-pe" class="barra-status-container">
                             <div class="status-header-controle">
                                 <div class="setas-grupo">
                                     <button class="btn-seta" onclick="alterarStatus('pe', -5)">«</button>
@@ -905,6 +991,30 @@
                             </div>
                             <div class="barra-status">
                                 <div id="barra-pe" class="barra-pe">0 / 0</div>
+                            </div>
+                        </div>
+                        <div id="container-pd" class="barra-status-container ocuta">
+                            <div class="status-header-controle">
+                                <div class="setas-grupo">
+                                    <button class="btn-seta" onclick="alterarStatus('pd', -5)">«</button>
+                                    <button class="btn-seta" onclick="alterarStatus('pd', -1)">‹</button>
+                                </div>
+                                <label>Pontos de Determinação</label>
+                                <div class="setas-grupo">
+                                    <button class="btn-seta" onclick="alterarStatus('pd', 1)">›</button>
+                                    <button class="btn-seta" onclick="alterarStatus('pd', 5)">»</button>
+                                </div>
+                            </div>
+                            <div class="barra-status">
+                                <div id="barra-pd" class="barra-pd">0 / 0</div>
+                            </div>
+                            <div id="morte-pd" class="status-emergencia ocuta">
+                                <div class="bolinhas">
+                                    <input type="checkbox" class="check-morte" data-indice="1">
+                                    <input type="checkbox" class="check-morte" data-indice="2">
+                                    <input type="checkbox" class="check-morte" data-indice="3">
+                                </div>
+                                <button class="btn-curar" onclick="alterarStatus('pd', 1)">CURAR</button>
                             </div>
                         </div>
                     </div>
@@ -958,7 +1068,19 @@
                     <h3>Perícias</h3>
                     <div id="pericias-agente" class="pericias-grid"></div>
                 </div>
-                <!-- COLUNA 3 - HISTÓRICO -->
+                <!-- COLUNA 3 - Habilidades -->
+                <div class="ficha-card">
+                    <h3>Habilidades</h3>
+                </div>
+                <!-- COLUNA 4 - Rituais -->
+                <div class="ficha-card">
+                    <h3>Rituais</h3>
+                </div>
+                <!-- COLUNA 5 - Inventário -->
+                <div class="ficha-card">
+                    <h3>Inventário</h3>
+                </div>
+                <!-- COLUNA 6 - HISTÓRICO -->
                 <div class="ficha-card">
                     <h3>Notas</h3>
                     <textarea id="edit-nota" class="textarea-ficha" rows="6"></textarea>
@@ -971,6 +1093,31 @@
                     <h3>Objetivo</h3>
                     <textarea id="edit-objetivo" class="textarea-ficha" rows="4"></textarea>
                 </div>
+                <div class = "ficha-card">
+                    <h3>Regras da Campanha</h3>
+                    <div class="config-card">
+                        <div class="config-info">
+                            <span class="config-titulo">NEX & Experiência</span>
+                            <p class="config-desc">Substitui NEX por Nível e NEX separados.</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="opt-nex-exp" onchange="toggleRegra('nex-exp')">
+                            <span class="slider"></span>
+                        </label>
+                        <span id="status-nex-exp" class="status-label">DESLIGADO</span>
+                    </div>
+                    <div class="config-card">
+                        <div class="config-info">
+                            <span class="config-titulo">Jogando sem Sanidade</span>
+                            <p class="config-desc">Substitui Sanidade e Esforço por Determinação.</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="opt-sem-sanidade" onchange="toggleRegra('sanidade')">
+                            <span class="slider"></span>
+                        </label>
+                        <span id="status-sanidade" class="status-label">DESLIGADO</span>
+                    </div>
+                </div>
             </div>
             <div class="centralizar">
                 <button class="btn-salvar-alteracoes">
@@ -981,8 +1128,14 @@
         </div>
         
         <footer class="rodape">
-            <p>Ordem Paranormal é um produto da Jambô Editora e seus respectivos criadores, todos os direitos reservados.</p>
-            <p>Arquivos Ordem Paranormal is unofficial Fan Content permitted under the Fan Content Policy. </p>
+            <div class="coluna">
+                <p>Ordem Paranormal é um produto da Jambô Editora e seus respectivos criadores, todos os direitos reservados.</p>
+                <p>Arquivos Ordem Paranormal is unofficial Fan Content permitted under the Fan Content Policy.</p>
+            </div>
+            <div class="coluna">
+                <p>Site desenvolvido e Design gráfico por Eduarda Rampi.</p>
+                <p>Email para contato: eduardadnrampi@gamil.com</p>
+            </div>
         </footer>
     
     </div>

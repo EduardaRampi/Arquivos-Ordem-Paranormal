@@ -51,8 +51,6 @@ const sections = {
     'Toques Finais': document.querySelector('.Toques_Finais')
 };
 
-
-
   // Variável para salvar qual era a tela anterior (ajuda no botão voltar)
   let telaAnterior = null;
 
@@ -61,9 +59,14 @@ const sections = {
     btn.addEventListener('click', () => {
       const idDestino = btn.getAttribute('data-destino');
       const telaDestino = document.getElementById(idDestino);
-      const telaAtual = btn.closest('.tela');
+      const telaAtual = btn.closest('.tela' ) || document.querySelector('.tela.ativa');
+      const checkboxMenu = document.getElementById('close-menu');
+      if (checkboxMenu) checkboxMenu.checked = false;
 
       if (!telaDestino || telaDestino === telaAtual) return;
+      if (idDestino === "Perfil") {
+        carregarDadosPerfil();
+      }
       telaAtual.classList.remove('ativa');
       setTimeout(() => {
         telaAtual.classList.add('oculta');
@@ -73,6 +76,7 @@ const sections = {
       }, Tempo); // Tempo para a transição de fade (ajuste conforme necessário)
     });
   });
+
   btnIrLogin.addEventListener("click", () => {
     registroBox.classList.add("oculta");
     loginBox.classList.remove("oculta");
@@ -115,7 +119,7 @@ const sections = {
   botoesVoltar.forEach(btn => {
     btn.addEventListener('click', () => {
       const telaAtual = btn.closest('.tela');
-
+      
       const rotasVoltar = {
         // Tela Atual: Tela de Destino
         "Criação_persona": "Arquivos",
@@ -419,4 +423,45 @@ const sections = {
           });
       }
   });
+
+  // 7. Rolagem de dados
+  function rolarDado(lados) {
+    const display = document.getElementById('valor-dado');
+    const tipo = document.getElementById('tipo-dado');
+    const container = document.getElementById('resultado-dado');
+    const historico = document.getElementById('lista-historico');
+
+    // Inicia animação de "tremer"
+    container.classList.add('animar-dado');
+    display.style.opacity = "0.5";
+
+    // Simula o tempo de rolagem (500ms)
+    setTimeout(() => {
+        container.classList.remove('animar-dado');
+        
+        // Cálculo do dado: 1 até 'lados'
+        const resultado = Math.floor(Math.random() * lados) + 1;
+        
+        // Atualiza a tela
+        display.innerText = resultado;
+        display.style.opacity = "1";
+        tipo.innerText = `d${lados}`;
+
+        // Efeito visual de Crítico (20 no d20) ou Desastre (1 no d20)
+        if (lados === 20 && resultado === 20) display.style.color = "#ffdf00";
+        else if (lados === 20 && resultado === 1) display.style.color = "#ff0000";
+        else display.style.color = "#fff";
+
+        // Adiciona ao histórico
+        const item = document.createElement('li');
+        item.innerText = `Rolou d${lados}: ${resultado}`;
+        historico.prepend(item); // Adiciona no topo da lista
+
+        // Limita o histórico a 5 itens
+        if (historico.children.length > 5) {
+            historico.removeChild(historico.lastChild);
+        }
+    }, 500);
+  }
+  window.rolarDado = rolarDado;
 });

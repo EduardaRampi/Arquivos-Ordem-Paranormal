@@ -225,9 +225,10 @@ if (btnFinalizar) {
  * 3. Nex
  */
 const PROGRESSAO_CLASSE = {
-    combatente: { pv: 4, san: 3, pe: 2 },   // Ganha 4 PV + VIG a cada 5% NEX
-    especialista: { pv: 3, san: 4, pe: 3 }, // Ganha 3 PV + VIG a cada 5% NEX
-    ocultista: { pv: 2, san: 5, pe: 4 }    // Ganha 2 PV + VIG a cada 5% NEX
+    combatente: { pv: 4, san: 3, pe: 2, pd: 3 },   
+    especialista: { pv: 3, san: 4, pe: 3, pd: 4 }, 
+    ocultista: { pv: 2, san: 5, pe: 4, pd: 5 },
+    sobrevivente: { pv: 2, san: 2, pe: 1, pd: 2 } 
 };
 /**
  * 4. outros atributos
@@ -240,29 +241,40 @@ function calcularStatus(classe, atributos, nex = 5) {
     // Ex: NEX 5% -> 0 aumentos | NEX 10% -> 1 aumento | NEX 15% -> 2 aumentos
     const aumentos = (nex - 5) / 5;
 
-    let base = { pv: 0, san: 0, pe: 0 };
-    let ganho = PROGRESSAO_CLASSE[classe] || { pv: 2, san: 2, pe: 1 };
+    let base = { pv: 0, san: 0, pe: 0, pd: 0 };
+    let ganho = PROGRESSAO_CLASSE[classe] || { pv: 2, san: 2, pe: 1, pd: 2 };
 
     // Valores Iniciais (NEX 5%)
     if (classe === 'combatente') {
-        base = { pv: 20 + vig, san: 12, pe: 2 + pre };
+        base = { pv: 20 + vig, san: 12, pe: 2 + pre, pd: 6 + pre };
     } else if (classe === 'especialista') {
-        base = { pv: 16 + vig, san: 16, pe: 3 + pre };
+        base = { pv: 16 + vig, san: 16, pe: 3 + pre, pd: 8 + pre };
     } else if (classe === 'ocultista') {
-        base = { pv: 12 + vig, san: 20, pe: 4 + pre };
+        base = { pv: 12 + vig, san: 20, pe: 4 + pre, pd: 10 + pre };
+    } else if (classe === 'sobrevivente') {
+        base = { pv: 8 + vig, san: 8, pe: 1 + pre, pd: 4 + pre };
     }
 
+    let pdtotal;
+    if (classe === 'sobrevivente') {
+        pdtotal = base.pd + (aumentos * ganho.pd); 
+    } else {
+        pdtotal = base.pd + (aumentos * (ganho.pd + pre));
+    }
+    
     // Soma os ganhos por nível
     // Regra: PV ganha (valor da classe + VIG), PE ganha (valor da classe + PRE)
     const pvTotal = base.pv + (aumentos * (ganho.pv + vig));
     const peTotal = base.pe + (aumentos * (ganho.pe + pre));
     const sanTotal = base.san + (aumentos * ganho.san);
+    const pdTotal = pdtotal
 
     return {
         nex: nex,
         pvMax: pvTotal, pvAtual: pvTotal,
         peMax: peTotal, peAtual: peTotal,
-        sanMax: sanTotal, sanAtual: sanTotal
+        sanMax: sanTotal, sanAtual: sanTotal,
+        pdMax: pdTotal, pdAtual: pdTotal
     };
 }
 /**
@@ -399,16 +411,19 @@ function abrirFichaCompleta(id, dados) {
     document.getElementById('edit-pre').value = dados.atributos.PRE || 0;
     }
 
-    // C. Status (PV, PE, SAN)
+    // C. Status (PV, PE, SAN, PD)
     if (dados.status) {
         atualizarBarraVisual('pv', dados.status.pvAtual, dados.status.pvMax);
         atualizarBarraVisual('pe', dados.status.peAtual, dados.status.peMax);
         atualizarBarraVisual('san', dados.status.sanAtual, dados.status.sanMax);
+        atualizarBarraVisual('pd', dados.status.pdAtual, dados.status.pdMax);
+
     } else if (dados.pvMax) { 
         // Caso o banco tenha salvo fora do objeto 'status' em testes anteriores
         atualizarBarraVisual('pv', dados.pvAtual, dados.pvMax);
         atualizarBarraVisual('pe', dados.peAtual, dados.peMax);
         atualizarBarraVisual('san', dados.sanAtual, dados.sanMax);
+        atualizarBarraVisual('pd', dados.status.pdAtual, dados.status.pdMax);
     }
 
     // D. LISTAGEM DE TODAS AS PERÍCIAS
@@ -485,8 +500,61 @@ function abrirFichaCompleta(id, dados) {
     setTimeout(() => {
         calcularDefesaEReacoes();
     }, 90);
+    // H. Carregar estado das regras
+    if (dados.regras) {
+        const optSan = document.getElementById('opt-sem-sanidade');
+        const optNex = document.getElementById('opt-nex-exp');
+        
+        if (optSan) {
+            optSan.checked = dados.regras.semSanidade;
+            toggleRegra('sanidade'); // Isso vai esconder SAN/PE e mostrar PD automaticamente
+        }
+        if (optNex) {
+            optNex.checked = dados.regras.nexExp;
+            toggleRegra('nex-exp');
+        }
+    }
 }
+function toggleRegra(regra) {
+    if (regra === 'nex-exp') {
+        const isChecked = document.getElementById('opt-nex-exp').checked;
+        const statusText = document.getElementById('status-nex-exp');
+        const containerNivel = document.getElementById('container-nivel');
 
+        statusText.innerText = isChecked ? "LIGADO" : "DESLIGADO";
+        
+        // Se ligado, mostra o campo de Nível (não remove o NEX, apenas adiciona o Nível)
+        if (isChecked) {
+            containerNivel.classList.remove('oculta');
+        } else {
+            containerNivel.classList.add('oculta');
+        }
+    } 
+    
+    else if (regra === 'sanidade') {
+        const isChecked = document.getElementById('opt-sem-sanidade').checked;
+        const statusText = document.getElementById('status-sanidade');
+        
+        const contSanidade = document.getElementById('container-sanidade');
+        const contPE = document.getElementById('container-pe');
+        const contPD = document.getElementById('container-pd');
+
+        statusText.innerText = isChecked ? "LIGADO" : "DESLIGADO";
+
+        if (isChecked) {
+            // LIGADO: Esconde Sanidade e PE, Mostra Determinação
+            contSanidade.classList.add('ocuta');
+            contPE.classList.add('ocuta');
+            contPD.classList.remove('ocuta');
+        } else {
+            // DESLIGADO: Volta ao padrão
+            contSanidade.classList.remove('ocuta');
+            contPE.classList.remove('ocuta');
+            contPD.classList.add('ocuta');
+        }
+    }
+}
+window.toggleRegra = toggleRegra;
 document.addEventListener('change', (e) => {
     if (e.target.id === 'edit-nex') {
         const novoNex = parseInt(e.target.value);
@@ -504,10 +572,11 @@ document.addEventListener('change', (e) => {
 
             const novosStatus = calcularStatus(dados.classe, atributosTela, novoNex);
             
-            // CORREÇÃO: Passar apenas 'pv', 'pe', 'san'
+            // CORREÇÃO: Passar apenas 'pv', 'pe', 'san', 'pd'
             atualizarBarraVisual('pv', novosStatus.pvMax, novosStatus.pvMax);
             atualizarBarraVisual('pe', novosStatus.peMax, novosStatus.peMax);
             atualizarBarraVisual('san', novosStatus.sanMax, novosStatus.sanMax);
+            atualizarBarraVisual('pd', novosStatus.pdMax, novosStatus.pdMax);
             
             // Atualiza a memória local
             window.fichaAtualDados.atributos = atributosTela;
@@ -546,7 +615,7 @@ function atualizarBarraVisual(tipo, atual, max) {
         const containerBarra = barra.parentElement;
 
         // 2. LÓGICA DE EMERGÊNCIA (Apenas para PV e SAN)
-        if (tipo === 'pv' || tipo === 'san') {
+        if (tipo === 'pv' || tipo === 'san' || tipo == 'pd') {
             if (vAtual <= 0) {
                 // Esconde a barra e mostra as bolinhas de morte/enlouquecendo
                 if (containerBarra) containerBarra.style.display = 'none';
@@ -613,6 +682,7 @@ document.querySelectorAll('.input-atrib').forEach(input => {
                 ajustarSemResetar('pv');
                 ajustarSemResetar('pe');
                 ajustarSemResetar('san');
+                ajustarSemResetar('pd');
 
                 window.fichaAtualDados.atributos = novosAtribs;
             });
@@ -680,7 +750,7 @@ window.alterarStatus = function(tipo, mod) {
     let max = parseInt(partes[1].trim());
 
     atual += mod;
-
+    console.log(`Alterando ${tipo} em ${valor} pontos.`);
     // Travas
     if (atual > max) atual = max;
     if (atual < 0) atual = 0;
@@ -838,7 +908,9 @@ if (btnSalvar) {
                 peMax: pegarStatusBarra('barra-pe').max,
                 peAtual: pegarStatusBarra('barra-pe').atual,
                 sanMax: pegarStatusBarra('barra-san').max,
-                sanAtual: pegarStatusBarra('barra-san').atual
+                sanAtual: pegarStatusBarra('barra-san').atual,
+                pdMax: pegarStatusBarra('barra-pd').max,
+                pdAtual: pegarStatusBarra('barra-pd').atual,
             };
 
             // Perícias
@@ -853,6 +925,12 @@ if (btnSalvar) {
 
             dadosParaSalvar.pericias = pericias;
             dadosParaSalvar.outrosBonus = outrosBonus;
+
+            //Regras
+            dadosParaSalvar.regras = {
+                semSanidade: document.getElementById('opt-sem-sanidade').checked,
+                nexExp: document.getElementById('opt-nex-exp').checked
+            },
 
             // Executa o update
             await updateDoc(fichaRef, dadosParaSalvar);
