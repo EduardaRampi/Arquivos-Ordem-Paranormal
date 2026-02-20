@@ -92,10 +92,10 @@ const DADOS_ORIGENS = {
     transtornado_arrependido: ["Luta", "Ocultismo"]
 };
 
-/**
- * 1. GERENCIAMENTO DE SELEÇÃO (ORIGEM E CLASSE)
- * Escuta cliques nos cards gerados dinamicamente para salvar a escolha do usuário.
- */
+/* ============================================================
+   1. GERENCIAMENTO DE SELEÇÃO DE ORIGEM E CLASSE
+   - Marca a escolha do usuário e garante que apenas um card esteja selecionado
+============================================================ */
 document.addEventListener('click', (e) => {
     // 1. Verifica se clicou num card ou dentro dele
     const card = e.target.closest('.classe-card');
@@ -126,12 +126,11 @@ document.addEventListener('click', (e) => {
         console.log("Classe definida:", escolhaClasseId);
     }
 });
-/**
- * 2. FUNÇÃO PARA SALVAR PERSONAGEM
- * Captura todos os dados das 4 abas e envia para o Firestore.
- */
+/* ============================================================
+   2. FUNÇÃO PARA SALVAR NOVO PERSONAGEM
+   - Coleta atributos, dados de abas e envia para Firestore
+============================================================ */
 const btnFinalizar = document.querySelector('.btn-finalizar');
-
 if (btnFinalizar) {
     btnFinalizar.addEventListener('click', async () => {
         const user = auth.currentUser;
@@ -221,18 +220,25 @@ if (btnFinalizar) {
         }
     });
 }
-/**
- * 3. Nex
- */
+/* ============================================================
+   3. PROGRESSÃO DE CLASSE E TABELA DE PATENTES
+============================================================ */
 const PROGRESSAO_CLASSE = {
     combatente: { pv: 4, san: 3, pe: 2, pd: 3 },   
     especialista: { pv: 3, san: 4, pe: 3, pd: 4 }, 
     ocultista: { pv: 2, san: 5, pe: 4, pd: 5 },
     sobrevivente: { pv: 2, san: 2, pe: 1, pd: 2 } 
 };
-/**
- * 4. outros atributos
- */
+const TABELA_PATENTES = [
+    { pontos: 200, nome: "Agente de Elite", credito: "Ilimitado", limites: [3, 3, 3, 2], limitePD: 15, recuperacao: 5 },
+    { pontos: 100, nome: "Oficial de Operações", credito: "Alto", limites: [3, 3, 2, 1], limitePD: 10, recuperacao: 4 },
+    { pontos: 50, nome: "Agente Especial", credito: "Médio", limites: [3, 2, 1, 0], limitePD: 6, recuperacao: 3 },
+    { pontos: 20, nome: "Operador", credito: "Médio", limites: [3, 1, 0, 0], limitePD: 3, recuperacao: 2 },
+    { pontos: 0, nome: "Recruta", credito: "Baixo", limites: [2, 0, 0, 0], limitePD: 1, recuperacao: 1 }
+];
+/* ============================================================
+   4. CÁLCULO DE STATUS (PV, PE, SAN, PD) CONFORME NEX E ATRIBUTOS
+============================================================ */
 function calcularStatus(classe, atributos, nex = 5) {
     const vig = parseInt(atributos.VIG) || 0;
     const pre = parseInt(atributos.PRE) || 0;
@@ -277,10 +283,9 @@ function calcularStatus(classe, atributos, nex = 5) {
         pdMax: pdTotal, pdAtual: pdTotal
     };
 }
-/**
- * 5. CARREGAR PERSONAGENS DO USUÁRIO
- * Busca as fichas salvas no Firebase e as exibe na tela "Fichas".
- */
+/* ============================================================
+   5. CARREGAR PERSONAGENS DO USUÁRIO (TELA FICHAS)
+============================================================ */
 async function carregarPersonagens() {
     const user = auth.currentUser;
     if (!user) return;
@@ -338,10 +343,45 @@ async function carregarPersonagens() {
         listaContainer.innerHTML = '<p>Erro ao carregar personagens.</p>';
     }
 }
+/* ============================================================
+   6. FUNÇÕES DE PATENTE
+============================================================ */
+function atualizarPatente() {
+    const campoPrestigio = document.getElementById('edit-prestigio');
+    if (!campoPrestigio) return;
 
-/**
- * 6. Redireciona para a tela de visualização e preenche os dados completos
- */
+    const pontos = parseInt(campoPrestigio.value) || 0;
+    
+    // Encontra a patente mais alta que o jogador alcançou
+    const patenteAtual = TABELA_PATENTES.find(p => pontos >= p.pontos);
+
+    if (patenteAtual) {
+        // Atualiza textos
+        document.getElementById('val-patente').innerText = patenteAtual.nome;
+        document.getElementById('val-credito').innerText = patenteAtual.credito;
+
+        // Atualiza os limites na tabela
+        document.getElementById('lim-cat1').innerText = patenteAtual.limites[0];
+        document.getElementById('lim-cat2').innerText = patenteAtual.limites[1] > 0 ? patenteAtual.limites[1] : "—";
+        document.getElementById('lim-cat3').innerText = patenteAtual.limites[2] > 0 ? patenteAtual.limites[2] : "—";
+        document.getElementById('lim-cat4').innerText = patenteAtual.limites[3] > 0 ? patenteAtual.limites[3] : "—";
+        
+        // Salva na memória global para uso posterior no inventário
+        if (window.fichaAtualDados) {
+            window.fichaAtualDados.prestigio = pontos;
+            window.fichaAtualDados.patenteNome = patenteAtual.nome;
+        }
+
+        const inputPDLimite = document.getElementById('edit-pd-limite');
+        if (inputPDLimite) {
+            inputPDLimite.value = patenteAtual.limitePD;
+        }
+    }
+}
+window.atualizarPatente = atualizarPatente;
+/* ============================================================
+   7. FUNÇÕES DE VISUALIZAÇÃO
+============================================================ */
 function abrirFichaCompleta(id, dados) {
     idFichaAberta = id;
     console.log("Abrindo ficha completa de:", dados.nome);
@@ -491,7 +531,7 @@ function abrirFichaCompleta(id, dados) {
 
         if (campoProtecao) campoProtecao.value = dados.defesa.protecao || "";
         if (campoResistencias) campoResistencias.value = dados.defesa.resistencia || "";
-        if (campoProficiencias) campoProficiencias.value = dados.defesa.proficiencia || "";
+        if (campoProficiencias) campoProficiencias.value = dados.defesa.proficiencia || "Armas Simples e proteções leves";
         
         // Chama o cálculo para atualizar o número 10 + AGI...
         calcularDefesaEReacoes();
@@ -514,7 +554,27 @@ function abrirFichaCompleta(id, dados) {
             toggleRegra('nex-exp');
         }
     }
+    // I. Patentes
+    if (document.getElementById('edit-prestigio')) {
+        document.getElementById('edit-prestigio').value = dados.prestigio || 0;
+        atualizarPatente(); // Chama a função para preencher os nomes e limites
+    }
+    // J. Inventário
+    if (dados.inventarioConfig) {
+        document.getElementById('carga-atual').value = dados.inventarioConfig.cargaAtual || 0;
+        document.getElementById('carga-max').value = dados.inventarioConfig.cargaMax || 5;
+        atualizarBarraCarga();
+    } else {
+        // Se for ficha nova, calcula a base pela Força
+        calcularCargaBase();
+    }
+    window.fichaAtualDados = dados;
+    if (!window.fichaAtualDados.inventario) window.fichaAtualDados.inventario = [];
+    renderizarInventarioFicha();
 }
+/* ============================================================
+   8. REGRAS ADICIONAIS
+============================================================ */
 function toggleRegra(regra) {
     if (regra === 'nex-exp') {
         const isChecked = document.getElementById('opt-nex-exp').checked;
@@ -538,6 +598,8 @@ function toggleRegra(regra) {
         const contSanidade = document.getElementById('container-sanidade');
         const contPE = document.getElementById('container-pe');
         const contPD = document.getElementById('container-pd');
+        const contPETURNO = document.getElementById('campo-pe-turno');
+        const contPDLIMITE = document.getElementById('campo-pd-limite');
 
         statusText.innerText = isChecked ? "LIGADO" : "DESLIGADO";
 
@@ -545,16 +607,24 @@ function toggleRegra(regra) {
             // LIGADO: Esconde Sanidade e PE, Mostra Determinação
             contSanidade.classList.add('ocuta');
             contPE.classList.add('ocuta');
+            contPETURNO.classList.add('ocuta');
             contPD.classList.remove('ocuta');
+            contPDLIMITE.classList.remove('ocuta');
         } else {
             // DESLIGADO: Volta ao padrão
             contSanidade.classList.remove('ocuta');
+            contPETURNO.classList.remove('ocuta');
             contPE.classList.remove('ocuta');
             contPD.classList.add('ocuta');
+            contPDLIMITE.classList.add('ocuta');
         }
     }
 }
 window.toggleRegra = toggleRegra;
+/* ============================================================
+   9. ESCUTADORES DE EVENTOS GERAIS
+   - change para atributos, NEX
+============================================================ */
 document.addEventListener('change', (e) => {
     if (e.target.id === 'edit-nex') {
         const novoNex = parseInt(e.target.value);
@@ -598,7 +668,9 @@ document.addEventListener('change', (e) => {
         }
     }
 });
-// Função auxiliar para atualizar a largura e o texto das barras
+/* ============================================================
+   10. Função auxiliar para atualizar a largura e o texto das barras
+============================================================ */ 
 function atualizarBarraVisual(tipo, atual, max) {
     const barra = document.getElementById(`barra-${tipo}`);
     const areaMorte = document.getElementById(`morte-${tipo}`);
@@ -634,18 +706,20 @@ function atualizarBarraVisual(tipo, atual, max) {
         }
     }
 }
+/* ============================================================
+   11. Morte
+============================================================ */
 document.addEventListener('change', async (e) => {
     if (e.target.classList.contains('check-morte')) {
         const tipo = e.target.closest('.status-emergencia').id.split('-')[1]; // 'pv' ou 'san'
         const indice = e.target.getAttribute('data-indice');
         
         console.log(`Marcado teste ${indice} de ${tipo}`);
-        
-        // Opcional: Salvar no Firebase imediatamente
-        // const fichaRef = doc(db, "personagens", idFichaAberta);
-        // await updateDoc(fichaRef, { [`testesMorte.${tipo}${indice}`]: e.target.checked });
     }
 });
+/* ============================================================
+   12. Mudou atributos
+============================================================ */
 document.querySelectorAll('.input-atrib').forEach(input => {
     input.addEventListener('change', () => {
         // Monitora mudança nos Atributos
@@ -686,9 +760,15 @@ document.querySelectorAll('.input-atrib').forEach(input => {
 
                 window.fichaAtualDados.atributos = novosAtribs;
             });
+            document.getElementById('edit-for')?.addEventListener('change', () => {
+                calcularCargaBase();
+            });
         });
     });
 });
+/* ============================================================
+   13. Trilha e Afinidade
+============================================================ */
 function atualizarOpcoesTrilha(classe, nex, trilhaAtual = "") {
     const selectTrilha = document.getElementById('edit-trilha');
     if (!selectTrilha) return;
@@ -727,6 +807,9 @@ function atualizarOpcoesAfinidade(nex, afinidadeAtual = "") {
         selectAfinidade.innerHTML = '<option value="">Disponível em NEX 50%</option>';
     }
 }
+/* ============================================================
+   14. Pericias
+============================================================ */
 document.addEventListener('change', (e) => {
     if (e.target.classList.contains('select-treino')) {
         const novoValor = e.target.value;
@@ -739,6 +822,9 @@ document.addEventListener('change', (e) => {
         divPai.classList.add(`treino-${novoValor}`);
     }
 });
+/* ============================================================
+   15. Barras
+============================================================ */
 window.alterarStatus = function(tipo, mod) {
     const barra = document.getElementById(`barra-${tipo}`);
     if (!barra) return;
@@ -750,7 +836,7 @@ window.alterarStatus = function(tipo, mod) {
     let max = parseInt(partes[1].trim());
 
     atual += mod;
-    console.log(`Alterando ${tipo} em ${valor} pontos.`);
+    console.log(`Alterando ${tipo} em ${mod} pontos.`);
     // Travas
     if (atual > max) atual = max;
     if (atual < 0) atual = 0;
@@ -765,7 +851,9 @@ window.alterarStatus = function(tipo, mod) {
         window.fichaAtualDados.status[`${tipo}Max`] = max;
     }
 };
-// Função para calcular a defesa total
+/* ============================================================
+   16. Defesa
+============================================================ */
 function calcularDefesaEReacoes() {
     // 1. Pegar valores base para Defesa
     const agi = parseInt(document.getElementById('edit-agi').value) || 0;
@@ -802,8 +890,9 @@ function calcularDefesaEReacoes() {
     const txtAgi = document.getElementById('txt-agi');
     if (txtAgi) txtAgi.innerText = agi;
 }
-
-// Escutadores de eventos para atualizar sempre que algo mudar
+/* ============================================================
+   17. Escutadores para quando mudar algo
+============================================================ */
 document.addEventListener('change', (e) => {
     // Se mudar atributo, bónus de defesa ou valores de perícia, recalcula tudo
     const classesParaRecalcular = ['input-def', 'select-treino', 'input-outros', 'input-atrib'];
@@ -816,18 +905,321 @@ document.addEventListener('change', (e) => {
 });
 const inputMetros = document.getElementById('edit-deslocamento-metros');
 const inputGrid = document.getElementById('edit-deslocamento-grid');
-
-// Quando mudar os metros, calcula os quadrados
+/* ============================================================
+   18. Mudo metros, calcula quadrados
+============================================================ */
 inputMetros.addEventListener('input', () => {
     const metros = parseFloat(inputMetros.value) || 0;
     inputGrid.value = Math.floor(metros / 1.5);
 });
-
-// Quando mudar os quadrados, calcula os metros
+/* ============================================================
+   19. Mudo quadrados, calcula metros
+============================================================ */
 inputGrid.addEventListener('input', () => {
     const quadrados = parseFloat(inputGrid.value) || 0;
     inputMetros.value = quadrados * 1.5;
 });
+/* ============================================================
+   20. Carga
+============================================================ */
+function calcularCargaBase() {
+    const forca = parseInt(document.getElementById('edit-for').value) || 0;
+    const campoCargaMax = document.getElementById('carga-max');
+    
+    let cargaCalculada;
+    if (forca <= 0) {
+        cargaCalculada = 2;
+    } else {
+        cargaCalculada = forca * 5;
+    }
+
+    // Só atualiza automaticamente se o valor atual for menor ou igual ao cálculo 
+    // (para não resetar bônus manuais que o player colocou)
+    campoCargaMax.value = cargaCalculada;
+    atualizarBarraCarga();
+}
+// Função visual para a barrinha de carga
+function atualizarBarraCarga() {
+    const atual = parseInt(document.getElementById('carga-atual').value) || 0;
+    const max = parseInt(document.getElementById('carga-max').value) || 1;
+    const barra = document.getElementById('barra-carga-interna');
+    const aviso = document.getElementById('aviso-carga');
+
+    let porcentagem = (atual / max) * 100;
+    if (porcentagem > 100) porcentagem = 100;
+
+    if (barra) {
+        barra.style.width = `${porcentagem}%`;
+        // Muda a cor se estiver pesado
+        barra.style.backgroundColor = atual > max ? "#ff4444" : "#44ff44";
+    }
+
+    if (aviso) {
+        aviso.style.display = atual > max ? "block" : "none";
+    }
+}
+window.atualizarBarraCarga = atualizarBarraCarga;
+/* ============================================================
+   21. Inventario
+============================================================ */
+let bancoDeDadosItens = null;
+async function carregarBancoItens() {
+    if (bancoDeDadosItens) return bancoDeDadosItens; // Já carregou antes
+
+    try {
+        const resposta = await fetch('equipamentos.json');
+        bancoDeDadosItens = await resposta.json();
+        console.log("Banco de itens carregado com sucesso!");
+        return bancoDeDadosItens;
+    } catch (erro) {
+        console.error("Erro ao carregar o JSON de itens:", erro);
+    }
+}
+// Funções de controle do Modal
+function abrirModalEquip() {
+    const modal = document.getElementById('modal-equipamentos');
+    if (modal) {
+        modal.classList.remove('modal-oculto');
+        renderizarItensModal();
+    }
+}
+function fecharModalEquip() {
+    const modal = document.getElementById('modal-equipamentos');
+    if (modal) {
+        modal.classList.add('modal-oculto');
+    }
+}
+// Expõe globalmente para o HTML achar
+window.abrirModalEquip = abrirModalEquip;
+window.fecharModalEquip = fecharModalEquip;
+window.renderizarItensModal = renderizarItensModal;
+window.adicionarAoInventario = adicionarAoInventario;
+// Na sua função adicionarAoInventario, a linha 33 estava com o nome errado:
+function adicionarAoInventario(item) {
+    const itemInstanciado = { 
+        ...item, 
+        idUnico: Date.now() + Math.random().toString(36).substr(2, 9) 
+    };
+
+    if (!window.fichaAtualDados) window.fichaAtualDados = {}; // Proteção caso esteja vazio
+    if (!window.fichaAtualDados.inventario) {
+        window.fichaAtualDados.inventario = [];
+    }
+    window.fichaAtualDados.inventario.push(itemInstanciado);
+
+    const campoCarga = document.getElementById('carga-atual');
+    let cargaNova = (parseInt(campoCarga.value) || 0) + (parseInt(item.espaco) || 0);
+    campoCarga.value = cargaNova;
+
+    atualizarBarraCarga();
+    sincronizarDefesaComInventario();
+    renderizarInventarioFicha(); 
+    fecharModalEquip();
+}
+async function renderizarItensModal() {
+    const dados = await carregarBancoItens();
+    const container = document.getElementById('lista-itens-catalogo');
+    const filtroCat = document.getElementById('filtro-categoria');
+    const buscaInput = document.getElementById('busca-item');
+
+    if (!container || !dados) return;
+
+    const categoriaSelecionada = filtroCat.value;
+    const busca = buscaInput.value.toLowerCase();
+
+    container.innerHTML = "";
+
+    for (const categoria in dados) {
+        if (categoriaSelecionada === "todos" || categoriaSelecionada === categoria) {
+            
+            dados[categoria].forEach(item => {
+                if (item.nome.toLowerCase().includes(busca)) {
+                    const card = document.createElement('div');
+                    card.className = 'card-item-catalogo';
+                    
+                    // Lógica de detalhes técnicos
+                    let detalhesTecnicos = "";
+                    if (item.dano) detalhesTecnicos += `<strong>Dano:</strong> ${item.dano} | `;
+                    if (item.defesa) detalhesTecnicos += `<strong>Defesa:</strong> ${item.defesa} | `;
+                    if (item.espaco) detalhesTecnicos += `<strong>Peso:</strong> ${item.espaco} | `;
+                    if (item.categoria) detalhesTecnicos += `<strong>Categoria:</strong> ${item.categoria}`;
+
+                    card.innerHTML = `
+                        <div class="item-header-modal">
+                            <strong>${item.nome}</strong>
+                            <span class="setinha">▼</span>
+                        </div>
+                        <div class="detalhes-item-modal">
+                            <p>${item.descricao || "Sem descrição."}</p>
+                            <p><small>${detalhesTecnicos}</small></p>
+                            <button class="btn-adicionar">Adicionar</button>
+                        </div>
+                    `;
+
+                    // Evento da Flechinha (Abre/Fecha)
+                    card.querySelector('.item-header-modal').onclick = (e) => {
+                        e.stopPropagation();
+                        card.classList.toggle('aberto');
+                    };
+
+                    // Evento do Botão Adicionar
+                    card.querySelector('.btn-adicionar').onclick = () => {
+                        adicionarAoInventario(item);
+                    };
+
+                    container.appendChild(card);
+                }
+            });
+        }
+    }
+}
+// Função simples para abrir/fechar o card no modal
+window.toggleCardModal = function(elemento) {
+    // Busca o pai .card-item-catalogo e alterna a classe aberto
+    const card = elemento.closest('.card-item-catalogo');
+    if (card) card.classList.toggle('aberto');
+};
+// Função de Filtro (Certifique-se que o HTML chama exatamente este nome)
+window.filtrarItensModal = function() {
+    console.log("Filtrando itens...");
+    renderizarItensModal();
+};
+let draggingIndex = null;
+function renderizarInventarioFicha() {
+    const container = document.getElementById('lista-inventario');
+    container.innerHTML = "";
+
+    // Zerar contadores de categoria antes de somar
+    let contagem = { 1: 0, 2: 0, 3: 0, 4: 0 };
+    let pesoTotal = 0;
+
+    const itens = window.fichaAtualDados.inventario || [];
+
+    itens.forEach((item, index) => {
+        // Soma Categoria e Peso
+        if (item.categoria > 0) contagem[item.categoria]++;
+        pesoTotal += (parseInt(item.espaco) || 0);
+
+        // Criar o Card
+        const card = document.createElement('div');
+        card.className = 'card-item';
+        card.setAttribute('draggable', 'true'); // Permite arrastar
+        card.setAttribute('data-index', index); // Salva a posição original
+        // Eventos de Drag and Drop
+        card.ondragstart = (e) => draggingIndex = index;
+        card.ondragover = (e) => e.preventDefault();
+        card.ondrop = (e) => handleDrop(index);
+        card.addEventListener('dragstart', (e) => {
+            draggingIndex = index;
+            card.classList.add('arrastando');
+            e.dataTransfer.effectAllowed = 'move';
+        });
+        // Quando termina de arrastar
+        card.addEventListener('dragend', () => {
+            card.classList.remove('arrastando');
+            document.querySelectorAll('.card-item').forEach(c => c.classList.remove('drag-over'));
+        });
+        // Quando o item arrastado passa por cima deste card
+        card.addEventListener('dragover', (e) => {
+            e.preventDefault(); // Necessário para permitir o drop
+            card.classList.add('drag-over');
+        });
+        // Quando o item sai de cima deste card
+        card.addEventListener('dragleave', () => {
+            card.classList.remove('drag-over');
+        });
+        // Quando solta o item aqui
+        card.addEventListener('drop', (e) => {
+            e.preventDefault();
+            handleDrop(index);
+        });
+        card.innerHTML = `
+            <div class="item-principal" onclick="this.parentElement.classList.toggle('aberto')">
+                <span><strong>${item.nome}</strong> (${item.espaco} Esp. | Categoria ${item.categoria})</span>
+                <span class="setinha">▼</span>
+            </div>
+            <div class="detalhes-item">
+                <p>${item.descricao}</p>
+                ${item.dano ? `<p>⚔️ Dano: ${item.dano} | Crítico: ${item.critico}</p>` : ''}
+                ${item.defesa ? `<p>🛡️ Defesa: ${item.defesa}</p>` : ''}
+                ${item.Elemento ? `<p>🌀 Elemento: ${item.Elemento}</p>` : ''}
+                <button class="btn-remover" onclick="removerItem(${index})">Remover</button>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+
+    // Atualizar os números na tabela de limites
+    document.getElementById('atual-cat1').innerText = contagem[1];
+    document.getElementById('atual-cat2').innerText = contagem[2];
+    document.getElementById('atual-cat3').innerText = contagem[3];
+    document.getElementById('atual-cat4').innerText = contagem[4];
+
+    // Atualizar o peso atual no input
+    document.getElementById('carga-atual').value = pesoTotal;
+    atualizarBarraCarga();
+}
+window.removerItem = function(index) {
+    if (!window.fichaAtualDados.inventario) return;
+    
+    // Remove do array
+    window.fichaAtualDados.inventario.splice(index, 1);
+    
+    // Atualiza a tela
+    renderizarInventarioFicha();
+    sincronizarDefesaComInventario();
+    
+    // Opcional: Salva no Firebase
+    if (typeof salvarFicha === 'function') salvarFicha();
+};
+function sincronizarDefesaComInventario() {
+    const itens = window.fichaAtualDados?.inventario || [];
+    let bonusTotalDefesa = 0;
+    let nomesProtecoes = [];
+
+    // Filtramos o que é proteção (itens que possuem o atributo defesa)
+    itens.forEach(item => {
+        if (item.defesa && item.defesa > 0) {
+            bonusTotalDefesa += parseInt(item.defesa);
+            nomesProtecoes.push(`${item.nome} (${item.defesa})`);
+        }
+    });
+
+    // Atualiza o campo "Equipamentos" na Defesa
+    const campoDefEquip = document.getElementById('def-equip');
+    if (campoDefEquip) campoDefEquip.value = bonusTotalDefesa;
+
+    // Atualiza a lista de texto "Proteção"
+    const campoProtecaoTexto = document.getElementById('protecao');
+    if (campoProtecaoTexto) campoProtecaoTexto.value = nomesProtecoes.join(", ");
+
+    // Recalcula o total (10 + AGI + Equipamentos...)
+    if (typeof calcularDefesaEReacoes === "function") {
+        calcularDefesaEReacoes();
+    }
+}
+/* ============================================================
+   22. Arrastar
+============================================================ */
+function handleDrop(targetIndex) {
+    if (draggingIndex === null || draggingIndex === targetIndex) return;
+
+    const inventario = window.fichaAtualDados.inventario;
+    
+    // Pega o item que estava sendo arrastado
+    const itemMovido = inventario.splice(draggingIndex, 1)[0];
+    
+    // Insere ele na nova posição
+    inventario.splice(targetIndex, 0, itemMovido);
+
+    draggingIndex = null;
+    
+    // Redesenha a lista na ordem nova
+    renderizarInventarioFicha();
+}
+/* ============================================================
+   23. Salva
+============================================================ */
 const btnSalvar = document.querySelector('.btn-salvar-alteracoes');
 if (btnSalvar) {
     btnSalvar.addEventListener('click', async () => {
@@ -862,6 +1254,7 @@ if (btnSalvar) {
                 trilha: getVal('edit-trilha'),
                 afinidade: getVal('edit-afinidade'),
                 peTurno: getNum('edit-pe-turno', 1),
+                pdLimite: getNum('edit-pd-limite', 1),
                 deslocamento: {
                     metros: parseFloat(getVal('edit-deslocamento-metros', 9)) || 9,
                     grid: getNum('edit-deslocamento-grid', 6)
@@ -888,7 +1281,13 @@ if (btnSalvar) {
                     protecao: getVal('protecao'),
                     resistencia: getVal('resistencias'),
                     proficiencia: getVal('proficiencias')
-                }
+                },
+                prestigio: parseInt(document.getElementById('edit-prestigio').value) || 0,
+                inventarioConfig:{
+                    cargaAtual: getNum('carga-atual'),
+                    cargaMax: getNum('carga-max')
+                },
+                inventario: window.fichaAtualDados.inventario || []
             };
 
             // Coleta das barras (PV, PE, SAN)

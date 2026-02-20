@@ -1,0 +1,1921 @@
+{
+    "armas": [
+        {
+            "nome": "Acha",
+            "origem": "Livro de Regras",
+            "descricao": "Um machado grande e pesado, usado no corte de árvores largas.",
+            "espaco": 2,
+            "categoria": 1,
+            "tipo": "Arma Tática - Corpo a Corpo - Duas Mãos",
+            "tag": "",
+            "dano": "1d12",
+            "critico": "x3",
+            "tipoDano": "Corte",
+            "alcance": "—",
+            "habilidade": ""
+        },
+        {
+            "nome": "Arco",
+            "origem": "Livro de Regras",
+            "descricao": "Um arco e flecha comum, próprio para tiro ao alvo.",
+            "espaco": 2,
+            "categoria": 0,
+            "tipo": "Arma Simples - Arma de Disparo - Duas Mãos",
+            "tag": "",
+            "dano": "1d6",
+            "critico": "x3",
+            "tipoDano": "Perfuração",
+            "alcance": "Médio",
+            "habilidade": ""
+        },
+        {
+            "nome": "Arco Composto",
+            "origem": "Livro de Regras",
+            "descricao": "Este arco moderno usa materiais de alta tensão e um sistema de roldanas para gerar mais pressão. Ao contrário de outras armas de disparo, permite que você aplique seu valor de Força às rolagens de dano.",
+            "espaco": 2,
+            "categoria": 1,
+            "tipo": "Arma Tática - Arma de Disparo - Duas Mãos",
+            "tag": "",
+            "dano": "1d10",
+            "critico": "x3",
+            "tipoDano": "Perfuração",
+            "alcance": "Médio",
+            "habilidade": ""
+        },
+        {
+            "nome": "Balestra",
+            "origem": "Livro de Regras",
+            "descricao": "Uma besta pesada, capaz de disparos poderosos. Exige uma ação de movimento para ser recarregada a cada disparo.",
+            "espaco": 2,
+            "categoria": 1,
+            "tipo": "Arma Tática - Arma de Disparo - Duas Mãos",
+            "tag": "",
+            "dano": "1d12",
+            "critico": "19",
+            "tipoDano": "Perfuração",
+            "alcance": "Médio",
+            "habilidade": ""
+        },
+        {
+            "nome": "Bastão",
+            "origem": "Livro de Regras",
+            "descricao": "Um cilindro de madeira maciça. Pode ser um taco de beisebol, um cassetete da polícia, uma tonfa ou apenas uma clava envolta em pregos ou arame farpado. Você pode empunhar um bastão com uma mão (dano 1d6) ou com as duas (dano 1d8).",
+            "espaco": 1,
+            "categoria": 0,
+            "tipo": "Arma Simples - Corpo a Corpo - Uma Mão",
+            "tag": "",
+            "dano": "1d6/1d8",
+            "critico": "x2",
+            "tipoDano": "Impacto",
+            "alcance": "—",
+            "habilidade": ""
+        },
+        {
+            "nome": "Bazuca",
+            "origem": "Livro de Regras",
+            "descricao": "Este lança-foguetes foi concebido como uma arma anti-tanques, mas também se mostrou eficaz contra criaturas. A bazuca causa seu dano no alvo atingido e em todos os seres num raio de 3m; esses seres (mas não o alvo atingido diretamente) têm direito a um teste de Reflexos (DT Agi) para reduzir o dano à metade. Você pode disparar o foguete num ponto qualquer em alcance médio, em vez de num ser específico; nesse caso, não precisa rolar ataque e não tem chance de errar (mas também não acerta nenhum ser diretamente). A bazuca exige uma ação de movimento para ser recarregada a cada disparo.",
+            "espaco": 2,
+            "categoria": 3,
+            "tipo": "Arma Pesada - Arma de Fogo - Duas Mãos",
+            "tag": "",
+            "dano": "10d8",
+            "critico": "x2",
+            "tipoDano": "Impacto",
+            "alcance": "Médio",
+            "habilidade": ""
+        },
+        {
+            "nome": "Besta",
+            "origem": "Livro de Regras",
+            "descricao": "Esta arma da antiguidade exige uma ação de movimento para ser recarregada a cada disparo.",
+            "espaco": 2,
+            "categoria": 0,
+            "tipo": "Arma Simples - Arma de Disparo - Duas Mãos",
+            "tag": "",
+            "dano": "1d8",
+            "critico": "19",
+            "tipoDano": "Perfuração",
+            "alcance": "Médio",
+            "habilidade": ""
+        },
+        {
+            "nome": "Cajado",
+            "origem": "Livro de Regras",
+            "descricao": "Um cabo de madeira ou barra de ferro longos. Inclui o bo usado em artes marciais. É uma arma ágil. Além disso, pode ser usado com Combater com Duas Armas (e poderes similares) para fazer ataques adicionais, como se fosse uma arma de uma mão e uma arma leve.",
+            "espaco": 2,
+            "categoria": 0,
+            "tipo": "Arma Simples - Corpo a Corpo - Duas Mãos",
+            "tag": "",
+            "dano": "1d6/1d6",
+            "critico": "x2",
+            "tipoDano": "Impacto",
+            "alcance": "—",
+            "habilidade": "Ágil"
+        },
+        {
+            "nome": "Corrente",
+            "origem": "Livro de Regras",
+            "descricao": "Um pedaço de corrente grossa pode ser usado como uma arma bastante efetiva. A corrente fornece +2 em testes para desarmar e derrubar.",
+            "espaco": 1,
+            "categoria": 0,
+            "tipo": "Arma Tática - Corpo a Corpo - Uma Mão",
+            "tag": "",
+            "dano": "1d8",
+            "critico": "x2",
+            "tipoDano": "Impacto",
+            "alcance": "—",
+            "habilidade": ""
+        },
+        {
+            "nome": "Espada",
+            "origem": "Livro de Regras",
+            "descricao": "Uma arma medieval, como uma espada longa dos cavaleiros europeus ou uma cimitarra sarracena. Você pode empunhar uma espada com uma mão (dano 1d8) ou com as duas (dano 1d10).",
+            "espaco": 1,
+            "categoria": 1,
+            "tipo": "Arma Tática - Corpo a Corpo - Uma Mão",
+            "tag": "",
+            "dano": "1d8/1d10",
+            "critico": "19",
+            "tipoDano": "Corte",
+            "alcance": "—",
+            "habilidade": ""
+        },
+        {
+            "nome": "Espingarda",
+            "origem": "Livro de Regras",
+            "descricao": "Arma de fogo longa e com cano liso. A espingarda causa apenas metade do dano em alcance médio ou maior.",
+            "espaco": 2,
+            "categoria": 1,
+            "tipo": "Arma Tática - Arma de Fogo - Duas Mãos",
+            "tag": "",
+            "dano": "4d6",
+            "critico": "x3",
+            "tipoDano": "Balístico",
+            "alcance": "Curto",
+            "habilidade": "Coronhada"
+        },
+        {
+            "nome": "Faca",
+            "origem": "Livro de Regras",
+            "descricao": "Uma lâmina afiada, como uma navalha, uma faca de churrasco ou uma faca militar (facas de cozinha pequenas causam apenas 1d3 pontos de dano). É uma arma ágil e pode ser arremessada.",
+            "espaco": 1,
+            "categoria": 0,
+            "tipo": "Arma Simples - Corpo a Corpo - Leve",
+            "tag": "",
+            "dano": "1d4",
+            "critico": "19",
+            "tipoDano": "Corte",
+            "alcance": "Curto",
+            "habilidade": "Ágil"
+        },
+        {
+            "nome": "Florete",
+            "origem": "Livro de Regras",
+            "descricao": "Esta espada de lâmina fina e comprida é usada por esgrimistas. É uma arma ágil.",
+            "espaco": 1,
+            "categoria": 1,
+            "tipo": "Arma Tática - Corpo a Corpo - Uma Mão",
+            "tag": "",
+            "dano": "1d6",
+            "critico": "18",
+            "tipoDano": "Corte",
+            "alcance": "—",
+            "habilidade": "Ágil"
+        },
+        {
+            "nome": "Fuzil de Assalto",
+            "origem": "Livro de Regras",
+            "descricao": "A arma de fogo padrão da maioria dos exércitos modernos. É uma arma automática.",
+            "espaco": 2,
+            "categoria": 2,
+            "tipo": "Arma Tática - Arma de Fogo - Duas Mãos",
+            "tag": "",
+            "dano": "2d10",
+            "critico": "19/x3",
+            "tipoDano": "Balístico",
+            "alcance": "Médio",
+            "habilidade": "Automática, Coronhada"
+        },
+        {
+            "nome": "Fuzil de Caça",
+            "origem": "Livro de Regras",
+            "descricao": "Esta arma de fogo é bastante popular entre fazendeiros, caçadores e atiradores esportistas.",
+            "espaco": 2,
+            "categoria": 1,
+            "tipo": "Arma Simples - Arma de Fogo - Duas Mãos",
+            "tag": "",
+            "dano": "2d8",
+            "critico": "19/x3",
+            "tipoDano": "Balístico",
+            "alcance": "Médio",
+            "habilidade": "Coronhada"
+        },
+        {
+            "nome": "Fuzil de Precisão",
+            "origem": "Livro de Regras",
+            "descricao": "Esta arma de fogo de uso militar é projetada para disparos longos e precisos. Se for veterano em Pontaria e mirar com um fuzil de precisão (veja a página 87), você recebe +5 na margem de ameaça de seu ataque.",
+            "espaco": 2,
+            "categoria": 3,
+            "tipo": "Arma Tática - Arma de Fogo - Duas Mãos",
+            "tag": "",
+            "dano": "2d10",
+            "critico": "19/x3",
+            "tipoDano": "Balístico",
+            "alcance": "Longo",
+            "habilidade": "Coronhada"
+        },
+        {
+            "nome": "Gadanho",
+            "origem": "Livro de Regras",
+            "descricao": "Uma ferramenta agrícola, o gadanho é uma versão maior da foice, para uso com as duas mãos. Foi criada para ceifar cereais, mas também pode ceifar vidas.",
+            "espaco": 2,
+            "categoria": 1,
+            "tipo": "Arma Tática - Corpo a Corpo - Duas Mãos",
+            "tag": "",
+            "dano": "2d4",
+            "critico": "x4",
+            "tipoDano": "Corte",
+            "alcance": "—",
+            "habilidade": ""
+        },
+        {
+            "nome": "Katana",
+            "origem": "Livro de Regras",
+            "descricao": "Originária do Japão, esta espada longa e levemente curvada transcendeu os séculos. É uma arma ágil. Se você for veterano em Luta pode usá-la como uma arma de uma mão.",
+            "espaco": 2,
+            "categoria": 1,
+            "tipo": "Arma Tática - Corpo a Corpo - Duas Mãos",
+            "tag": "",
+            "dano": "1d10",
+            "critico": "19",
+            "tipoDano": "Corte",
+            "alcance": "—",
+            "habilidade": "Ágil"
+        },
+        {
+            "nome": "Lança",
+            "origem": "Livro de Regras",
+            "descricao": "Uma haste de madeira com uma ponta metálica afiada, a lança é uma arma arcaica, mas usada ainda hoje por artistas marciais. Pode ser arremessada.",
+            "espaco": 1,
+            "categoria": 0,
+            "tipo": "Arma Simples - Corpo a Corpo - Uma Mão",
+            "tag": "",
+            "dano": "1d6",
+            "critico": "x2",
+            "tipoDano": "Perfuração",
+            "alcance": "Curto",
+            "habilidade": ""
+        },
+        {
+            "nome": "Lança-chamas",
+            "origem": "Livro de Regras",
+            "descricao": "Equipamento militar que esguicha líquido inflamável incandescente. Um lança-chamas atinge todos os seres em uma linha de 1,5m de largura com alcance curto, mas não alcança além disso. Faça um único teste de ataque e compare o resultado com a Defesa de todos os seres na área. Além de sofrer dano, seres atingidos ficam em chamas.",
+            "espaco": 2,
+            "categoria": 3,
+            "tipo": "Arma Pesada - Arma de Fogo - Duas Mãos",
+            "tag": "",
+            "dano": "6d6",
+            "critico": "x2",
+            "tipoDano": "Fogo",
+            "alcance": "Curto",
+            "habilidade": "Coronhada"
+        },
+        {
+            "nome": "Machadinha",
+            "origem": "Livro de Regras",
+            "descricao": "Ferramenta útil para cortar madeira, muito comum em fazendas e canteiros de obras. Pode ser arremessada.",
+            "espaco": 1,
+            "categoria": 0,
+            "tipo": "Arma Tática - Corpo a Corpo - Leve",
+            "tag": "",
+            "dano": "1d6",
+            "critico": "x3",
+            "tipoDano": "Corte",
+            "alcance": "Curto",
+            "habilidade": ""
+        },
+        {
+            "nome": "Machado",
+            "origem": "Livro de Regras",
+            "descricao": "Uma ferramenta importante para lenhadores e bombeiros, um machado pode causar ferimentos terríveis.",
+            "espaco": 1,
+            "categoria": 1,
+            "tipo": "Arma Tática - Corpo a Corpo - Uma Mão",
+            "tag": "",
+            "dano": "1d8",
+            "critico": "x3",
+            "tipoDano": "Corte",
+            "alcance": "—",
+            "habilidade": ""
+        },
+        {
+            "nome": "Maça",
+            "origem": "Livro de Regras",
+            "descricao": "Bastão com uma cabeça metálica cheia de protuberâncias.",
+            "espaco": 1,
+            "categoria": 1,
+            "tipo": "Arma Tática - Corpo a Corpo - Uma Mão",
+            "tag": "",
+            "dano": "2d4",
+            "critico": "x2",
+            "tipoDano": "Impacto",
+            "alcance": "—",
+            "habilidade": ""
+        },
+        {
+            "nome": "Machete",
+            "origem": "Livro de Regras",
+            "descricao": "Uma lâmina longa e larga, muito usada como ferramenta para abrir trilhas.",
+            "espaco": 1,
+            "categoria": 0,
+            "tipo": "Arma Simples - Corpo a Corpo - Uma Mão",
+            "tag": "",
+            "dano": "1d6",
+            "critico": "19",
+            "tipoDano": "Corte",
+            "alcance": "—",
+            "habilidade": ""
+        },
+        {
+            "nome": "Marreta",
+            "origem": "Livro de Regras",
+            "descricao": "Normalmente usada para demolir paredes, também pode ser usada para demolir pessoas. Use estas estatísticas para outras ferramentas de construção civil, como picaretas.",
+            "espaco": 2,
+            "categoria": 1,
+            "tipo": "Arma Tática - Corpo a Corpo - Duas Mãos",
+            "tag": "",
+            "dano": "3d4",
+            "critico": "x2",
+            "tipoDano": "Impacto",
+            "alcance": "—",
+            "habilidade": ""
+        },
+        {
+            "nome": "Martelo",
+            "origem": "Livro de Regras",
+            "descricao": "Esta ferramenta comum pode ser usada como arma na falta de opções melhores.",
+            "espaco": 1,
+            "categoria": 0,
+            "tipo": "Arma Simples - Corpo a Corpo - Leve",
+            "tag": "",
+            "dano": "1d6",
+            "critico": "x2",
+            "tipoDano": "Impacto",
+            "alcance": "—",
+            "habilidade": ""
+        },
+        {
+            "nome": "Metralhadora",
+            "origem": "Livro de Regras",
+            "descricao": "Uma arma de fogo pesada, de uso militar. Para atacar com uma metralhadora, você precisa ter Força 4 ou maior ou gastar uma ação de movimento para apoiá-la em seu tripé ou suporte apropriado; caso contrário, sofre –5 em seus ataques. Uma metralhadora é uma arma automática.",
+            "espaco": 2,
+            "categoria": 2,
+            "tipo": "Arma Pesada - Arma de Fogo - Duas Mãos",
+            "tag": "",
+            "dano": "2d12",
+            "critico": "19/x3",
+            "tipoDano": "Balístico",
+            "alcance": "Médio",
+            "habilidade": "Automática, Coronhada"
+        },
+        {
+            "nome": "Montante",
+            "origem": "Livro de Regras",
+            "descricao": "Enorme e pesada, esta espada de 1,5m de comprimento foi uma das armas mais poderosas em seu tempo.",
+            "espaco": 2,
+            "categoria": 1,
+            "tipo": "Arma Tática - Corpo a Corpo - Duas Mãos",
+            "tag": "",
+            "dano": "2d6",
+            "critico": "19",
+            "tipoDano": "Corte",
+            "alcance": "—",
+            "habilidade": ""
+        },
+        {
+            "nome": "Motoserra",
+            "origem": "Livro de Regras",
+            "descricao": "Uma ferramenta capaz de causar ferimentos profundos; sempre que rolar um 6 em um dado de dano com uma motosserra, role um dado de dano adicional. Apesar de potente, esta arma é desajeitada e impõe -1d20 nos seus testes de ataque. Ligar uma motosserra gasta uma ação de movimento.",
+            "espaco": 2,
+            "categoria": 1,
+            "tipo": "Arma Tática - Corpo a Corpo - Duas Mãos",
+            "tag": "",
+            "dano": "3d6",
+            "critico": "x2",
+            "tipoDano": "Corte",
+            "alcance": "—",
+            "habilidade": ""
+        },
+        {
+            "nome": "Nunchaku",
+            "origem": "Livro de Regras",
+            "descricao": "Dois bastões curtos de madeira ligados por uma corrente. É uma arma ágil.",
+            "espaco": 1,
+            "categoria": 0,
+            "tipo": "Arma Tática - Corpo a Corpo - Leve",
+            "tag": "",
+            "dano": "1d8",
+            "critico": "x2",
+            "tipoDano": "Impacto",
+            "alcance": "—",
+            "habilidade": "Ágil"
+        },
+        {
+            "nome": "Pistola",
+            "origem": "Livro de Regras",
+            "descricao": "Uma arma de mão comum entre policiais e militares por ser facilmente recarregável.",
+            "espaco": 1,
+            "categoria": 1,
+            "tipo": "Arma Simples - Arma de Fogo - Leve",
+            "tag": "",
+            "dano": "1d12",
+            "critico": "18",
+            "tipoDano": "Balístico",
+            "alcance": "Curto",
+            "habilidade": "Coronhada"
+        },
+        {
+            "nome": "Punhal",
+            "origem": "Livro de Regras",
+            "descricao": "Uma faca de lâmina longa e pontiaguda, usada por cultistas em seus rituais. É uma arma ágil.",
+            "espaco": 1,
+            "categoria": 0,
+            "tipo": "Arma Simples - Corpo a Corpo - Leve",
+            "tag": "",
+            "dano": "1d4",
+            "critico": "x3",
+            "tipoDano": "Perfuração",
+            "alcance": "—",
+            "habilidade": "Ágil"
+        },
+        {
+            "nome": "Revólver",
+            "origem": "Livro de Regras",
+            "descricao": "A arma de fogo mais comum, e uma das mais confiáveis.",
+            "espaco": 1,
+            "categoria": 1,
+            "tipo": "Arma Simples - Arma de Fogo - Leve",
+            "tag": "",
+            "dano": "2d6",
+            "critico": "19/x3",
+            "tipoDano": "Balístico",
+            "alcance": "Curto",
+            "habilidade": "Coronhada"
+        },
+        {
+            "nome": "Submetralhadora",
+            "origem": "Livro de Regras",
+            "descricao": "Esta arma de fogo automática pode ser empunhada com apenas uma mão.",
+            "espaco": 1,
+            "categoria": 1,
+            "tipo": "Arma Tática - Arma de Fogo - Uma Mão",
+            "tag": "",
+            "dano": "2d6",
+            "critico": "19/x3",
+            "tipoDano": "Balístico",
+            "alcance": "Curto",
+            "habilidade": "Automática, Coronhada"
+        },
+        {
+            "nome": "Baioneta",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Uma lâmina projetada para ser fixada em um fuzil ou arma similar. Você pode gastar uma ação de movimento para fixar a baioneta em uma arma de fogo de duas mãos. Se fizer isso, a baioneta se torna uma arma de duas mãos ágil e seu dano aumenta para 1d6. Você ainda pode atacar com a arma de fogo, mas sofre -1d20 em ataques à distância com ela.",
+            "espaco": 1,
+            "categoria": 0,
+            "tipo": "Arma Tática - Corpo a Corpo - Leve",
+            "tag": "",
+            "dano": "1d4",
+            "critico": "19",
+            "tipoDano": "Perfuração",
+            "alcance": "—",
+            "habilidade": "Ágil"
+        },
+        {
+            "nome": "Bastão Policial",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Essencialmente um bastão com uma guarda lateral, esta é a arma branca de uso padrão da maioria das forças policiais. Além de desferir golpes contundentes, pode ser usada para aparar ataques; quando usa a ação especial esquiva com um bastão policial, o bônus que você recebe na Defesa aumenta em +1. Um bastão policial é uma arma ágil.",
+            "espaco": 1,
+            "categoria": 1,
+            "tipo": "Arma Tática - Corpo a Corpo - Uma Mão",
+            "tag": "",
+            "dano": "1d6",
+            "critico": "x2",
+            "tipoDano": "Impacto",
+            "alcance": "Curto",
+            "habilidade": "Ágil"
+        },
+        {
+            "nome": "Espingarda de Cano Duplo",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Geralmente usada para caça, essa versão da espingarda conta com dois canos paralelos, cada um com um gatilho e capacidade para um cartucho. Ao contrário de outras armas de fogo, você precisa gastar uma ação de movimento para recarregar a espingarda de cano duplo após disparar seus dois cartuchos. Quando ataca com essa arma, você pode disparar os dois canos no mesmo alvo; se fizer isso, sofre -1d20 no teste de ataque, mas o dano da arma aumenta para 6d6.",
+            "espaco": 2,
+            "categoria": 2,
+            "tipo": "Arma Tática - Arma de Fogo - Duas Mãos",
+            "tag": "",
+            "dano": "4d6",
+            "critico": "x3",
+            "tipoDano": "Balístico",
+            "alcance": "Curto",
+            "habilidade": "Coronhada"
+        },
+        {
+            "nome": "Estilingue",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Originalmente usado para caçar passarinhos, estilingues evoluíram em formato e composição. Ao contrário de outras armas de disparo, permite que você aplique seu valor de Força às rolagens de dano. Um estilingue dispara bolinhas que podem ser reaproveitadas e, na falta destas, você pode usar pedrinhas como munição; um pacote de bolinhas dura uma missão inteira, tem categoria 0 e ocupa o mesmo espaço do estilingue. Um estilingue também pode lançar granadas; fazer isso permite arremessar uma granada em alcance longo.",
+            "espaco": 1,
+            "categoria": 0,
+            "tipo": "Arma Simples - Arma de Disparo - Duas Mãos",
+            "tag": "",
+            "dano": "1d4",
+            "critico": "x2",
+            "tipoDano": "Impacto",
+            "alcance": "Curto",
+            "habilidade": ""
+        },
+        {
+            "nome": "Faca Tática",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Uma faca balanceada para contra-ataques rápidos e bloqueios. Se usada na ação especial contra-ataque, fornece +2 no teste de ataque para contra-atacar. Se usada na ação especial bloqueio, você pode gastar 2 PE e sacrificar a faca tática para aumentar a RD do bloqueio em +20. A faca tática é uma arma ágil e pode ser arremessada.",
+            "espaco": 1,
+            "categoria": 1,
+            "tipo": "Arma Tática - Corpo a Corpo - Leve",
+            "tag": "",
+            "dano": "1d6",
+            "critico": "19",
+            "tipoDano": "Corte",
+            "alcance": "Curto",
+            "habilidade": "Ágil"
+        },
+        {
+            "nome": "Gancho de Carne",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Usado para pendurar carne em frigoríficos, este gancho metálico pode servir como arma. Também pode ser amarrado a um pedaço de corda ou corrente; isso aumenta seu alcance para 4,5m e o transforma em um item de espaço 2.",
+            "espaco": 1,
+            "categoria": 0,
+            "tipo": "Arma Tática - Corpo a Corpo - Leve",
+            "tag": "",
+            "dano": "1d4",
+            "critico": "x4",
+            "tipoDano": "Perfuração",
+            "alcance": "—",
+            "habilidade": ""
+        },
+        {
+            "nome": "Picareta",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Essencialmente uma ferramenta de mineração e demolição, uma picareta pode ser empregada em combate na falta de armas apropriadas.",
+            "espaco": 1,
+            "categoria": 0,
+            "tipo": "Arma Tática - Corpo a Corpo - Uma Mão",
+            "tag": "",
+            "dano": "1d6",
+            "critico": "x4",
+            "tipoDano": "Perfuração",
+            "alcance": "—",
+            "habilidade": ""
+        },
+        {
+            "nome": "Pistola Pesada",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Uma versão de calibre superior da tradicional pistola. Sua potência e recuo impõem uma penalidade de -1d20 em testes de ataque; empunhá-la com as duas mãos anula essa penalidade.",
+            "espaco": 1,
+            "categoria": 1,
+            "tipo": "Arma Tática - Arma de Fogo - Uma Mão",
+            "tag": "",
+            "dano": "2d8",
+            "critico": "18",
+            "tipoDano": "Balístico",
+            "alcance": "Curto",
+            "habilidade": "Coronhada"
+        },
+        {
+            "nome": "Pregador Pneumático",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Outra ferramenta que pode ser empregada como arma em uma situação extrema, um pregador pneumático é um aparelho semelhante a uma pistola que dispara pregos sob pressão. Embora seja um dispositivo mecânico, ele conta como uma arma de fogo para seus poderes que afetam armas deste tipo. Um pregador armazena 300 pregos em rolo, o suficiente para durar uma missão inteira.",
+            "espaco": 1,
+            "categoria": 0,
+            "tipo": "Arma Simples - Arma de Disparo - Uma Mão",
+            "tag": "",
+            "dano": "1d4",
+            "critico": "x4",
+            "tipoDano": "Perfuração",
+            "alcance": "Curto",
+            "habilidade": "Coronhada"
+        },
+        {
+            "nome": "Revolver Compacto",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Uma arma de baixo calibre, projetada para ser facilmente escondida no corpo. Se for treinado em Crime, você consegue carregar uma dessas armas sem que ela ocupe um espaço.",
+            "espaco": 1,
+            "categoria": 1,
+            "tipo": "Arma Simples - Arma de Fogo - Leve",
+            "tag": "",
+            "dano": "2d4",
+            "critico": "19/x3",
+            "tipoDano": "Perfuração",
+            "alcance": "Curto",
+            "habilidade": "Coronhada"
+        },
+        {
+            "nome": "Shuriken",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Pequenos projéteis metálicos em forma de estrelas ou dardos, usados por artistas marciais (e fãs de ninjas). Se for veterano em Pontaria, uma vez por rodada, quando ataca com uma shuriken, você poderá gastar 1 PE para fazer um ataque adicional de shuriken contra o mesmo alvo. Uma única shuriken representa um \"pacote\" suficiente para duas cenas (ou 10 shurikens, se estiver usando a regra opcional de contagem de munição).",
+            "espaco": 0.5,
+            "categoria": 1,
+            "tipo": "Arma Tática - Arma de Arremesso",
+            "tag": "",
+            "dano": "1d4",
+            "critico": "x2",
+            "tipoDano": "Perfuração",
+            "alcance": "Curto",
+            "habilidade": ""
+        }
+    ],
+    "municoes":[
+        {
+            "nome": "Balas Curtas",
+            "origem": "Livro de Regras",
+            "descricao": "Munição básica, usada em pistolas, revólveres e submetralhadoras. Um pacote de balas curtas dura duas cenas.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 0,
+            "duracao": "Duas cenas"
+        },
+        {
+            "nome": "Balas Longas",
+            "origem": "Livro de Regras",
+            "descricao": "Maior e mais potente, esta munição é usada em fuzis e metralhadoras. Um pacote de balas longas dura uma cena.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1,
+            "duracao": "Uma cena"
+        },
+        {
+            "nome": "Cartuchos",
+            "origem": "Livro de Regras",
+            "descricao": "Usados em espingardas, esses cartuchos são carregados com esferas de chumbo. Um pacote de cartuchos dura uma cena.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1,
+            "duracao": "Uma cena"
+        },
+        {
+            "nome": "Combustível",
+            "origem": "Livro de Regras",
+            "descricao": "Um tanque de combustível para lança-chamas. Dura uma cena.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1,
+            "duracao": "Uma cena"
+        },
+        {
+            "nome": "Flechas",
+            "origem": "Livro de Regras",
+            "descricao": "Usadas em arcos e bestas, flechas podem ser reaproveitadas após cada combate. Por isso, um pacote de flechas dura uma missão inteira.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 0,
+            "duracao": "Uma missão inteira"
+        },
+        {
+            "nome": "Foguete",
+            "origem": "Livro de Regras",
+            "descricao": "Disparado por bazucas. Ao contrário de outras munições, cada foguete dura um único disparo, não uma cena. Para fazer vários ataques, você precisará carregar vários foguetes.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1,
+            "duracao": "Um disparo"
+        }
+    ],
+    "protecoes": [
+        {
+            "nome": "Proteção Leve",
+            "origem": "Livro de Regras",
+            "descricao": "Jaqueta de couro pesada ou um colete de kevlar. Essa proteção é tipicamente usada por seguranças e policiais.",
+            "tag": "",
+            "espaco": 2,
+            "categoria": 1,
+            "defesa": "+5"
+        },
+        {
+            "nome": "Proteção Pesada",
+            "origem": "Livro de Regras",
+            "descricao": "Equipamento usado por forças especiais da polícia e pelo exército. Consiste de capacete, ombreiras, joelheiras e caneleiras, além de um colete com várias camadas de kevlar. Fornece resistência a balístico, corte, impacto e perfuração 2. No entanto, por ser desconfortável e volumosa, impõe –5 em testes de perícias que sofrem penalidade de carga.",
+            "tag": "",
+            "espaco": 5,
+            "categoria": 2,
+            "defesa": "+10"
+        },
+        {
+            "nome": "Escudo",
+            "origem": "Livro de Regras",
+            "descricao": "Um escudo medieval ou moderno, como aqueles usados por tropas de choque. Precisa ser empunhado em uma mão e fornece Defesa +2. Bônus na Defesa fornecido por um escudo acumula com o de uma proteção. Para efeitos de proficiência e penalidade por não proficiência, escudos contam como proteção pesada.",
+            "tag": "",
+            "espaco": 2,
+            "categoria": 1,
+            "defesa": "+2"
+        }
+    ],
+    "acessorios":[
+        {
+            "nome": "Kit de Perícia",
+            "origem": "Livro de Regras",
+            "descricao": "Um conjunto de ferramentas necessárias para algumas perícias ou usos de perícias. Sem o kit, você sofre –5 no teste. Existe um kit de perícia para cada perícia que exige este item.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 0
+        },
+        {
+            "nome": "Utensílio",
+            "origem": "Livro de Regras",
+            "descricao": "Um item comum que tenha uma utilidade específica, como um canivete, uma lupa, um smartphone ou um notebook. Um utensílio fornece +2 em uma perícia (exceto Luta e Pontaria). Por exemplo, um smartphone pode ser usado para acessar a internet e fornecer bônus em Ciências, enquanto um notebook pode ser preparado para invadir sistemas e fornecer bônus em Tecnologia. Você pode inventar itens menos realistas, como um “detector de mentiras portátil” que fornece +2 em Intuição, mas o mestre tem a palavra final se o utensílio é apropriado ou não. Utensílios sempre ocupam 1 espaço e precisam ser empunhados para que o bônus seja aplicado.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome": "Vestimenta",
+            "origem": "Livro de Regras",
+            "descricao": "Uma peça de vestuário que fornece +2 em uma perícia (exceto Luta ou Pontaria). Por exemplo, um par de botas militares pode fornecer +2 em Atletismo, um terno ou vestido elegante pode fornecer +2 em Diplomacia e um manto com glifos pode fornecer +2 em Ocultismo. Assim como utensílios, o benefício de cada vestimenta deve ser aprovado pelo mestre. Você pode receber os bônus de no máximo duas vestimentas ao mesmo tempo. Vestir ou despir uma vestimenta é uma ação completa.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome": "Amuleto Sagrado",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Um utensílio especial na forma de shimenawa, rosário, fio de contas, contas de oração ou qualquer outro objeto que reforce sua fé e ajude a blindá-lo das desgraças do dia a dia. Ocupa o espaço de um item vestido e fornece +2 em Religião e Vontade.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 0
+        },
+        {
+            "nome": "Celular",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Um utensílio especial (embora comum hoje em dia). Serve para tirar fotos, gravar áudios e vídeos, acessar a internet e até, veja só, ligar para outras pessoas. Se tiver acesso a internet, fornece +2 em testes de perícia que envolvam adquirir informações. Por fim, possui uma lanterna fraca, mas útil na falta de um equipamento melhor, que ilumina em um cone de 4,5m.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 0
+        },
+        {
+            "nome": "Chave de Fenda Universal",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Esta ferramenta pode ser considerada um milagre da engenharia humana. Com ela em mãos, você é capaz de resolver quase qualquer problema. Fornece +2 em testes de perícia para criar ou reparar objetos, desde panelas de cozinha até motores de avião. Também fornece o bônus se usada como item de apoio em situações especiais, como lidar com cabos para hackear um servidor.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 0
+        },
+        {
+            "nome": "Chaves",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Molhos de chaves (de casa, veículo, cadeados etc.) são itens comuns. Usar o barulho de um molho de chaves para distrair alguém (jogando as chaves, por exemplo) fornece +2 em testes de Furtividade feitos na mesma rodada.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 0
+        },
+        {
+            "nome": "Documentos Falsos",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Um conjunto de documentos (identidade funcional, carteira de habilitação, cartões de crédito etc.) em nome de uma identidade falsa. Você recebe +2 em testes de Diplomacia, Enganação e Intimidação para se passar pela pessoa representada pelos documentos.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome": "Manual Operacional",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Um livro com lições práticas sobre um assunto. Existe um manual operacional para cada perícia; gastar uma ação de interlúdio lendo um manual permite que você use essa perícia como se fosse treinado nela até o próximo interlúdio. Um manual operacional aprimorado (veja OPRPG, p. 64) também fornece +5 na perícia.Você só pode receber o benefício de um manual operacional por vez.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome": "Notebook",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Um utensílio especial. Como um celular, se tiver acesso a internet fornece +2 em testes de perícia que envolvem adquirir informações. Além disso, por sua tela maior, pode ser usado para entretenimento de forma mais agradável; ao relaxar em cenas de interlúdio, você recupera 1 ponto adicional de Sanidade. A luz do monitor ilumina em um cone de 4,5m. Tablets estão inclusos como uma variação de notebook.",
+            "tag": "",
+            "espaco": 2,
+            "categoria": 0
+        }
+    ],
+    "explosivos":[
+        {
+            "nome": "Granada de Atordoamento",
+            "origem": "Livro de Regras",
+            "descricao": "Também chamadas de flash-bang, por criarem um estouro barulhento e luminoso. Seres na área ficam atordoados por 1 rodada (Fortitude DT Agi reduz para ofuscado e surdo por uma rodada).",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 0
+        },
+        {
+            "nome": "Granada de Fragmentação",
+            "origem": "Livro de Regras",
+            "descricao": "Espalha fragmentos perfurantes. Seres na área sofrem 8d6 pontos de dano de perfuração (Reflexos DT Agi reduz à metade).",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome": "Granada de Fumaça",
+            "origem": "Livro de Regras",
+            "descricao": "Produz uma fumaça espessa e escura. Seres na área ficam cegos e sob camuflagem total. A fumaça dura 2 rodadas.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 0
+        },
+        {
+            "nome": "Granada Incendiária",
+            "origem": "Livro de Regras",
+            "descricao": "Espalha labaredas incandescentes. Seres na área sofrem 6d6 pontos de dano de fogo e ficam em chamas (Reflexos DT Agi reduz o dano à metade e evita a condição em chamas).",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome": "Mina Antipessoal",
+            "origem": "Livro de Regras",
+            "descricao": "Esta mina é ativada por controle remoto. Se você estiver a até alcance longo dela, pode gastar uma ação padrão para detoná-la. Ao explodir, a mina dispara centenas de bolas de aço em um cone de 6m, causando 12d6 pontos de dano de perfuração em todos os seres na área (Reflexos DT Int reduz à metade). Você define a direção do cone quando posiciona a mina no chão. Instalar a mina exige uma ação completa e um teste de Tática contra DT 15. Caso falhe, você gasta a mina, mas ela não funciona. Encontrar uma mina instalada exige um teste de Percepção (DT igual ao resultado do seu teste para instalá-la).",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome": "Dinamite",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Dinamite é um artefato explosivo à base de nitroglicerina, ajeitado em um bastão com 20 cm de comprimento. Com a mesma ação padrão é possível acender seu pavio com uma das mãos e arremessá-la com a outra em um ponto à sua escolha em alcance médio. A dinamite afeta um raio de 6m a partir do ponto de impacto; seres e objetos soltos na área sofrem 4d6 pontos de dano de impacto e 4d6 pontos de dano de fogo e ficam em chamas (Reflexos DT Agi reduz à metade e evita condição em chamas).",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome": "Explosivo Plástico",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Essa massa adesiva do tamanho de uma esponja é acompanhada de pinos de ignição e um detonador remoto. Para utilizá-la, você precisa gastar duas rodadas para preparar os pinos e grudar o explosivo em uma superfície. Por fim, você pode detonar o explosivo acionando um detonador (uma ação livre que pode ser feita de alcance longo) ou causando pelo menos 1 ponto de dano de fogo ou eletricidade nele. Quando detonado, o explosivo plástico causa 16d6 pontos de dano de impacto em todos os seres e objetos em um raio de 3m (Reflexos DT Int reduz à metade). Se usado por um especialista em explosivos (alguém treinado em Crime ou uma Profissão adequada, a critério do mestre), causa o dobro de dano em objetos e estruturas e ignora sua RD.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome": "Galão Vermelho",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Galões vermelhos, ou marcados com um símbolo de chama, carregam substâncias inflamáveis. Apesar de serem mais frequentes em ambientes industriais, também são encontrados em ambientes inusitados quando menos se espera. Ao sofrer dano de fogo ou balístico, um galão vermelho explode, atingindo uma esfera de 6m de raio. Seres na área sofrem 12d6 pontos de dano de fogo e ficam em chamas (Reflexos DT 25 reduz à metade e evita a condição). A área afetada pelo raio da explosão fica em chamas (1d6 pontos de dano de fogo por rodada em seres e objetos) até ser apagada ou a cena acabar. Veja mais sobre as consequências de um galão vermelho em Fogo e Fumaça (OPRPG, p. 292).",
+            "tag": "",
+            "espaco": 2,
+            "categoria": 0
+        },
+        {
+            "nome": "Granada de Gás Sonífero",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Esta granada libera uma fumaça branca que preenche um raio de 6m a partir do ponto de impacto. Seres que comecem seus turnos na área ficam inconscientes e caídos ou, se estiverem envolvidos em atividade física intensa (como combate), ficam exaustos por 1 rodada, depois fatigados (em ambos os casos, Fortitude DT Agi reduz para fatigado por 1d4 rodadas). O gás permanece na área por 2 rodadas.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome": "Granada de PEM",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Esta granada emite um poderoso pulso eletromagnético que desativa todos os equipamentos elétricos em um raio de 18m até o fim da cena. Criaturas de Energia na área sofrem 6d6 pontos de dano de impacto e ficam paralisadas por 1 rodada (apenas uma vez por cena, Fortitude DT Agi reduz à metade e evita a condição).",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        }
+    ],
+    "operacionais":[
+        {
+            "nome": "Algemas",
+            "origem": "Livro de Regras",
+            "descricao": "Um par de algemas de aço. Para prender uma pessoa que não esteja indefesa você precisa empunhar a algema, agarrar a pessoa (veja “Manobras de Combate”, no Capítulo 4) e então vencer um novo teste de agarrar contra ela. Você pode prender os dois pulsos da pessoa (-1d20 em testes que exijam o uso das mãos, impede conjuração) ou um dos pulsos dela em um objeto imóvel adjacente, caso haja, para impedir que ela se mova. Escapar das algemas exige um teste de Acrobacia contra DT 30 (ou ter as chaves…).",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome": "Arpéu",
+            "origem": "Livro de Regras",
+            "descricao": "Um gancho de aço que pode ser amarrado na ponta de uma corda para se fixar em muros, janelas, parapeitos de prédios… Prender um arpéu exige um teste de Pontaria (DT 15). Subir um muro com a ajuda de uma corda fornece +5 no teste de Atletismo.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 0
+        },
+        {
+            "nome": "Bandoleira",
+            "origem": "Livro de Regras",
+            "descricao": "Um cinto com bolsos e alças. Uma vez por rodada, você pode sacar ou guardar um item em seu inventário como uma ação livre.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome": "Binóculos",
+            "origem": "Livro de Regras",
+            "descricao": "Estes binóculos militares fornecem +5 em testes de Percepção para observar coisas distantes.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 0
+        },
+        {
+            "nome": "Bloqueador de Sinal",
+            "origem": "Livro de Regras",
+            "descricao": "Este dispositivo compacto emite ondas que “poluem” a frequência de rádio usada por celulares, impedindo que qualquer aparelho desse tipo em alcance médio se conecte.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome": "Cicatrizante",
+            "origem": "Livro de Regras",
+            "descricao": "Um spray contendo um remédio com potente efeito cicatrizante. Você pode gastar uma ação padrão e este item para curar 2d8+2 PV em você ou em um ser adjacente.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome": "Corda",
+            "origem": "Livro de Regras",
+            "descricao": "Um rolo com 10 metros de corda resistente. Possui diversas utilidades: pode ajudar a descer um buraco ou prédio (+5 em testes de Atletismo nessas situações), amarrar pessoas inconscientes etc.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 0
+        },
+        {
+            "nome": "Equipamento de Sobrevivência",
+            "origem": "Livro de Regras",
+            "descricao": "Uma mochila com saco de dormir, panelas, GPS e outros itens úteis para sobreviver no mato. Fornece +5 em testes de Sobrevivência para acampar e orientar-se e permite que você faça esses testes sem treinamento.",
+            "tag": "",
+            "espaco": 2,
+            "categoria": 0
+        },
+        {
+            "nome": "Lanterna Tática",
+            "origem": "Livro de Regras",
+            "descricao": "Ilumina um cone de 9m. Além disso, você pode gastar uma ação de movimento para mirar a luz nos olhos de um ser em alcance curto. Ele fica ofuscado por 1 rodada, mas imune à lanterna pelo resto da cena.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome": "Máscara de Gás",
+            "origem": "Livro de Regras",
+            "descricao": "Uma máscara com filtro que cobre o rosto inteiro. Fornece +10 em testes de Fortitude contra efeitos que dependam de respiração.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 0
+        },
+        {
+            "nome": "Mochila Militar",
+            "origem": "Livro de Regras",
+            "descricao": "Uma mochila leve e de alta qualidade. Ela não usa nenhum espaço e aumenta sua capacidade de carga em 2 espaços.",
+            "tag": "",
+            "espaco": 0,
+            "categoria": 1
+        },
+        {
+            "nome": "Óculos de Visão Térmica",
+            "origem": "Livro de Regras",
+            "descricao": "Estes óculos eliminam a penalidade em testes por camuflagem.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome": "Pé de Cabra",
+            "origem": "Livro de Regras",
+            "descricao": "Esta barra de ferro fornece +5 em testes de Força para arrombar portas. Pode ser usada em combate como um bastão.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 0
+        },
+        {
+            "nome": "Pistola de Dardos",
+            "origem": "Livro de Regras",
+            "descricao": "Esta arma leve dispara dardos com um sonífero em alcance curto. Para disparar em um ser, faça um ataque à distância contra ele. Se acertá-lo, ele fica inconsciente até o fim da cena (Fortitude DT Agi reduz para desprevenido e lento por uma rodada). A pistola vem com 2 dardos. Uma caixa adicional com 2 dardos é um item de categoria 0 que ocupa 1 espaço.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome": "Pistola Sinalizadora",
+            "origem": "Livro de Regras",
+            "descricao": "Esta pistola dispara um sinalizador luminoso, útil para chamar outras pessoas para sua localização. Pode ser usada como uma arma de disparo leve com alcance curto que causa 2d6 pontos de dano de fogo. A pistola vem com 2 cargas. Uma caixa adicional com 2 cargas é um item de categoria 0 que ocupa 1 espaço.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 0
+        },
+        {
+            "nome": "Soqueira",
+            "origem": "Livro de Regras",
+            "descricao": "Esta peça de metal é usada entre os dedos e permite socos mais perigosos — fornece +1 em rolagens de dano desarmado e os torna letal. Uma soqueira pode receber modificações e maldições de armas corpo a corpo e aplica os efeitos delas em seus ataques desarmados.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 0
+        },
+        {
+            "nome": "Spray de Pimenta",
+            "origem": "Livro de Regras",
+            "descricao": "Este spray dispara um composto químico que causa dor e lacrimação. Você pode gastar uma ação padrão para atingir um ser adjacente. O ser fica cego por 1d4 rodadas (Fortitude DT Agi evita). A carga do spray dura dois usos.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome": "Taser",
+            "origem": "Livro de Regras",
+            "descricao": "Um dispositivo de eletrochoque capaz de atordoar ou até incapacitar um alvo. Você pode gastar uma ação padrão para atingir um ser adjacente. O alvo sofre 1d6 pontos de dano de eletricidade e fica atordoado por uma rodada (Fortitude DT Agi evita). A bateria do taser dura dois usos.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome": "Traje Hazmat",
+            "origem": "Livro de Regras",
+            "descricao": "Uma roupa impermeável e que cobre o corpo inteiro, usada para impedir o contato do usuário com materiais tóxicos. Fornece +5 em testes de resistência contra efeitos ambientais e resistência a químico 10.",
+            "tag": "",
+            "espaco": 2,
+            "categoria": 1
+        },
+        {
+            "nome": "Alarme de Movimento",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Este pequeno objeto de fácil aquisição pode ser controlado por um dispositivo móvel específico ou um aplicativo de celular. Você pode gastar uma ação completa para posicionar e ativar o alarme; após isso, sempre que houver movimento significativo em um cone de 30m para onde ele foi apontado, ele irá sinalizar o dispositivo de controle. Ao acionar o alarme você pode regular sua sensibilidade ao movimento (como padrão, ele é acionado sempre que um ser Pequeno ou maior se move na área). A sinalização pode ser discreta, apenas no dispositivo, ou barulhenta, acionando um alarme sonoro alto e agudo.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 0
+        },
+        {
+            "nome": "Alimento Energético",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Existem diversos alimentos e suplementos de alta tecnologia capazes de recuperar as energias mentais de um agente. Você pode gastar uma ação padrão para consumir este item e recuperar 1d4 PE.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome": "Aplicador de Medicamentos",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Essa adaptação portátil de bombas injetoras hospitalares pode ser presa ao redor do braço ou perna para aplicar uma substância, como um cicatrizante ou medicamento, com uma ação de movimento. O aplicador tem espaço para três doses de substâncias (já contabilizadas no espaço do item). Carregar uma dose de uma substância no aplicador é uma ação padrão.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome": "Braçadeira Reforçada",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Semelhante às proteções usadas em artes marciais e outros esportes de contato, estas braçadeiras ajudam a absorver o impacto ao bloquear golpes com o braço. Elas aumentam em +2 a RD que você recebe por usar um bloqueio.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome": "Cão Adestrado",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Um cachorro pode ser um parceiro (e amigo!) valioso para um agente. Um personagem treinado em Adestramento pode usar um cão adestrado como um aliado. Bônus: Você recebe +2 em Investigação e Percepção. Ladrar e Morder: Você pode gastar 1 PE para fazer o cão assumir uma postura defensiva ao seu redor. Você recebe +2 na Defesa por 1 rodada.",
+            "tag": "",
+            "espaco": 0,
+            "categoria": 1
+        },
+        {
+            "nome": "Coldre Saque Rápido",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Este coldre é projetado para que a arma possa ser sacada ou armazenada com um movimento mínimo. Uma vez por rodada, você pode sacar ou guardar uma arma de fogo leve como uma ação livre.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome": "Equipamento de Escuta",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Este conjunto contém um receptor, com alcance de 90m, e três minúsculos transmissores capazes de captar conversas e outros sons em um raio de 9m. Instalar um transmissor demora alguns minutos e exige um teste de Crime contra DT 20 (uma falha indica que a escuta não irá transmitir). O resultado desse teste é também a DT para outras pessoas encontrarem o transmissor. É possível instalar um transmissor discretamente com outras pessoas presentes; fazer isso é uma ação completa, requer um teste de Furtividade oposto à Percepção dos presentes e aumenta a DT do teste de Crime em +5.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome": "Estrepes (saco)",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Uma ferramenta medieval cuja utilidade a manteve ativa até os dias de hoje, um estrepe é uma peça de metal com quatro pontas afiadas, construída de modo que uma ponta sempre fique voltada para cima. Usar um saco de estrepes em combate exige uma ação padrão para cobrir um quadrado de 1,5m de lado. Um ser que pise numa área coberta de estrepes sofre 1d4 pontos de dano de perfuração e fica lento por um dia. Em uma cena de perseguição, você pode aplicar os estrepes como parte de sua ação, mas sofre -1d20 em seu teste nessa rodada. Um perseguidor que pise nos estrepes sofre -1d20 em testes de perseguição até o fim da cena. Tanto em combate quanto em perseguição, passar em um teste de Reflexos (DT Agi) evita os estrepes. Os estrepes não afetam seres capazes de resistir a todo o seu dano.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 0
+        },
+        {
+            "nome": "Faixa de Pregos",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Este aparato compacto é uma trilha de hastes metálicas sanfonadas with pregos em toda sua extensão. Utilizado primariamente para parar veículos, pode ser empregado contra outros oponentes. Uma faixa de pregos funciona como estrepes, exceto que ocupa uma linha de 9m. Além disso, veículos com pneus de borracha que passem pela faixa têm seus pneus automaticamente perfurados, o que reduz seu deslocamento pela metade.",
+            "tag": "",
+            "espaco": 2,
+            "categoria": 1
+        },
+        {
+            "nome": "Isqueiro",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Existem isqueiros de vários tipos, desde os sofisticados de metal até os descartáveis de plástico. Todos seguem o mesmo princípio; você pode gastar uma ação de movimento para produzir uma pequena chama. Além de incendiar objetos inflamáveis, emite luz em um raio de 3m.",
+            "tag": "",
+            "espaco": 0.5,
+            "categoria": 0
+        },
+        {
+            "nome": "Antibiótico",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Fortalece a imunidade contra vírus e bactérias. Fornece +5 no próximo teste de Fortitude contra efeitos de uma doença feito até o fim do dia.",
+            "tag": "",
+            "espaco": 0.5,
+            "categoria": 1
+        },
+        {
+            "nome": "Antídoto",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Ajuda o corpo a lidar com venenos. Fornece +5 no próximo teste de Fortitude contra efeitos de um veneno até o fim do dia. Um antídoto feito para um veneno específico, em vez disso, remove completamente o veneno.",
+            "tag": "",
+            "espaco": 0.5,
+            "categoria": 1
+        },
+        {
+            "nome": "Antiemético",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Remove a condição enjoado e fornece +5 em testes para evitar essa condição até o fim da cena. A critério do mestre, pode funcionar contra outras condições causadas por náuseas e vômitos.",
+            "tag": "",
+            "espaco": 0.5,
+            "categoria": 1
+        },
+        {
+            "nome": "Antihistamínico",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Reduz reações alérgicas perigosas. Fornece +5 no próximo teste contra efeitos de uma alergia feito até o fim do dia.",
+            "tag": "",
+            "espaco": 0.5,
+            "categoria": 1
+        },
+        {
+            "nome": "Anti-inflamatório",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Reduz reações inflamatórias, diminuindo dor e inchaço. Fornece 1d8+2 PV temporários.",
+            "tag": "",
+            "espaco": 0.5,
+            "categoria": 1
+        },
+        {
+            "nome": "Antitérmico",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Reduz reações febris perigosas e alivia dores de cabeça, permitindo um novo teste contra uma condição mental que o usuário esteja sofrendo. Só funciona uma vez por cena.",
+            "tag": "",
+            "espaco": 0.5,
+            "categoria": 1
+        },
+        {
+            "nome": "Broncodilatador",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Auxilia na respiração. Fornece +5 em testes para evitar as condições asfixiado ou fatigado feitos até o fim do dia.",
+            "tag": "",
+            "espaco": 0.5,
+            "categoria": 1
+        },
+        {
+            "nome": "Coagulante",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Aumenta a capacidade de coagulação, fornecendo +5 em testes para se estabilizar da condição sangrando feitos até o fim do dia. Se usado em conjunto com um teste de Medicina para remover a condição morrendo, também fornece +5 nesse teste.",
+            "tag": "",
+            "espaco": 0.5,
+            "categoria": 1
+        },
+        {
+            "nome": "Óculos de Visão Noturna",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Alimentados por uma bateria, estes óculos permitem enxergar no escuro, como se o personagem tivesse visão no escuro. Entretanto, o usuário recebe -1d20 em testes de resistência contra a condição ofuscado e efeitos baseados em luz (como uma granada de atordoamento).",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome": "Óculos Escuros",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Um personagem vestindo óculos escuros não pode ser ofuscado.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 0
+        },
+        {
+            "nome": "Pá",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Esta pesada ferramenta fornece +5 em testes de Força para cavar buracos e mover detritos. Pode ser usada em combate como um bastão.",
+            "tag": "",
+            "espaco": 2,
+            "categoria": 0
+        },
+        {
+            "nome": "Paraquedas",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Anula o dano de queda. Personagens com grau de treinamento veterano em Acrobacia, Pilotagem, Reflexos, Tática ou uma Profissão específica sabem usar paraquedas. Caso contrário, ou em quedas muito curtas, usar o paraquedas requer um teste de Reflexos (DT 20). Se falhar, o paraquedas não funciona adequadamente, reduzindo o dano de queda apenas à metade.",
+            "tag": "",
+            "espaco": 2,
+            "categoria": 1
+        },
+        {
+            "nome": "Traje de Mergulho",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Uma roupa impermeável e que cobre quase o corpo inteiro, usada para garantir a segurança do mergulhador debaixo d’água. Vem acompanhado de tanque e máscara que garantem 1 hora de oxigênio. Fornece +5 em testes de resistência contra efeitos ambientais e resistência a dano químico 5. Ocupa o espaço de uma vestimenta e vesti-lo ou despi-lo é uma ação completa.",
+            "tag": "",
+            "espaco": 2,
+            "categoria": 1
+        },
+        {
+            "nome": "Traje Espacial",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Uma roupa impermeável e que cobre o corpo inteiro, usada para garantir a segurança do astronauta no vácuo do espaço. Possui um suprimento de água e oxigênio de oito horas, e protege contra os raios cósmicos e de minúsculas rochas errantes no espaço. Fornece +10 em testes de resistência contra efeitos ambientais e resistência a dano químico 20. Ocupa o espaço de uma vestimenta e vesti-lo, ou despi-lo, demora duas rodadas.",
+            "tag": "",
+            "espaco": 5,
+            "categoria": 2
+        }
+    ], 
+    "paranormais": [
+        {
+            "nome": "Amarras de (Elemento)",
+            "origem": "Livro de Regras",
+            "descricao": "Cordas ou correntes feitas de um elemento paranormal específico. As amarras são preparadas para imobilizar criaturas do Outro Lado que sejam vulneráveis ao elemento que as compõem e podem ser usadas de duas formas. I Armadilha: Você gasta as amarras, uma ação completa e 2 PE para preparar uma armadilha de 3x3m. Uma criatura que atravesse o espaço pela primeira vez em seu turno precisa fazer um teste de Reflexos (DT Int); se falhar, fica imóvel até o final da cena. Mesmo se passar, considera o espaço ocupado pela armadilha como terreno difícil. I Laçar: Você gasta uma ação padrão e 1 PE e escolhe uma criatura em alcance curto. Se falhar num teste de Vontade (DT Agi), a criatura fica paralisada até o início de seu próximo turno, quando pode repetir o teste. Manter a criatura enlaçada requer o gasto de 1 PE por rodada.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome": "Câmera de Aura Paranormal",
+            "origem": "Livro de Regras",
+            "descricao": "Esta câmera amaldiçoada with Energia possui sigilos de Conhecimento para capturar auras paranormais. Tirar uma foto gasta uma ação padrão e 1 PE. As fotos são instantâneas e revelam a presença de auras paranormais em pessoas e objetos. As auras são da cor associada ao elemento.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome": "Componentes Ritualísticos de Energia",
+            "origem": "Livro de Regras",
+            "descricao": "Um conjunto de objetos utilizados em rituais de Energia. Componentes ritualísticos são necessários para a conjuração de rituais do elemento em questão. Energia: eletricidade, dispositivos tecnológicos (celulares, computadores etc.), circuitos eletrônicos, fontes de calor e luz, pilhas, baterias, cabos de cobre e prata, pólvora, moedas, dados, ímãs…",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 0
+        },
+        {
+            "nome": "Componentes Ritualísticos de Morte",
+            "origem": "Livro de Regras",
+            "descricao": "Um conjunto de objetos utilizados em rituais de Morte. Componentes ritualísticos são necessários para a conjuração de rituais do elemento em questão. Morte: ossos, dentes, cinzas, fios de cabelo, cristais pretos, relógios, galhos secos, folhas secas, plantas mortas, raízes, areia, poeira, Lodo…",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 0
+        },
+        {
+            "nome": "Componentes Ritualísticos de Sangue",
+            "origem": "Livro de Regras",
+            "descricao": "Um conjunto de objetos utilizados em rituais de Sangue. Componentes ritualísticos são necessários para a conjuração de rituais do elemento em questão. Sangue: órgãos, carne, sangue, animais vivos (para sacrifício), navalhas, agulhas, arame farpado, correntes, metal enferrujado, fluidos corporais…",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 0
+        },
+        {
+            "nome": "Componentes Ritualísticos de Conhecimento",
+            "origem": "Livro de Regras",
+            "descricao": "Um conjunto de objetos utilizados em rituais de Conhecimento. Componentes ritualísticos são necessários para a conjuração de rituais do elemento em questão. Conhecimento: escrituras, papéis, livros, pergaminhos, instrumentos de escrita (lápis, caneta, tinta, giz etc.), pedras preciosas, ouro, cordas, tecido, cristais brancos, vidro, máscaras…",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 0
+        },
+        {
+            "nome": "Emissor de Pulsos Paranormais",
+            "origem": "Livro de Regras",
+            "descricao": "Esta pequena caixa coberta de sigilos foi desenvolvida para servir como uma “isca” de criaturas paranormais. Ativar a caixa gasta uma ação completa e 1 PE. A caixa emite um pulso de um elemento definido pelo ativador, que atrai criaturas do mesmo elemento e afasta criaturas do elemento oposto. As criaturas afetadas têm direito a um teste de Vontade (DT Pre) para evitar o efeito.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome": "Escuta de Ruídos Paranormais",
+            "origem": "Livro de Regras",
+            "descricao": "Este microfone funciona como um aparato espião, com a diferença que consegue captar ruídos paranormais. Ativar a escuta gasta uma ação completa e 2 PE e faz com que ela grave ruídos por até 24 horas. Ouvir a escuta fornece +5 em testes de Ocultismo para identificar criatura.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome": "Medidor de Estabilidade da Membrana",
+            "origem": "Livro de Regras",
+            "descricao": "Um dispositivo complexo, composto por diversos medidores — de temperatura, campo magnético, dilatação temporal… Um agente treinado em Ocultismo pode usar o medidor para avaliar o estado da Membrana em uma área (veja a página 97), o que indica a chance de uma entidade se manifestar nela. Um ambiente com valores racionais e constantes ao longo de algumas horas dificilmente originará uma criatura ou manifestação perigosa. Porém, se as leituras apresentarem dados inexplicáveis ou com grandes variações, o lugar poderá conter uma entidade. Apesar de ser um bom indicativo, o medidor não fornece respostas definitivas, já que um ambiente com a Membrana danificada ainda pode não ter sido afetado por manifestações, assim como um lugar com a Membrana protegida por conter uma criatura poderosa vinda de outro lugar.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome": "Scanner de Manifestação Paranormal de (Elemento)",
+            "origem": "Livro de Regras",
+            "descricao": "Este item é composto por um dispositivo conectado a pequenos objetos amaldiçoados de uma entidade específica e adornado com uma série de sigilos. Ativar o scanner é uma ação padrão. Quando ativado, o scanner consome 1 PE por rodada do usuário, que sempre sabe a direção de todas as manifestações paranormais ativas (rituais, criaturas, itens amaldiçoados etc.) do elemento escolhido em alcance longo. Se o elemento principal de uma criatura for outro, mas ela tiver como complemento o elemento escolhido do scanner, também será detectada.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome": "Catalisador Ritualístico: Ampliador",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Componentes ritualísticos que já foram alterados através de exposição paranormal e por isso são mais eficientes. Ao contrário de componentes comuns, um catalisador é consumido ao ser usado. Você precisa estar empunhando um catalisador para usá-lo e só pode usar um catalisador por ritual. O Ampliador aumenta o alcance do ritual em um passo (apenas de curto para médio, de médio para longo ou de longo para extremo) ou dobra a área de efeito. Por exemplo, uma Dissonância Acústica ampliada tem seu alcance aumentado para longo ou sua área aumentada para 12m de raio.",
+            "tag": "",
+            "espaco": 0.5,
+            "categoria": 1
+        },
+        {
+            "nome": "Catalisador Ritualístico: Perturbador",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Componentes ritualísticos que já foram alterados através de exposição paranormal e por isso são mais eficientes. Ao contrário de componentes comuns, um catalisador é consumido ao ser usado. Você precisa estar empunhando um catalisador para usá-lo e só pode usar um catalisador por ritual. Com o Perturbador, a DT para resistir ao ritual aumenta em +2.",
+            "tag": "",
+            "espaco": 0.5,
+            "categoria": 1
+        },
+        {
+            "nome": "Catalisador Ritualístico: Potencializador",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Componentes ritualísticos que já foram alterados através de exposição paranormal e por isso são mais eficientes. Ao contrário de componentes comuns, um catalisador é consumido ao ser usado. Você precisa estar empunhando um catalisador para usá-lo e só pode usar um catalisador por ritual. Com o Potencializador, o dano do ritual aumenta em um dado do mesmo tipo.",
+            "tag": "",
+            "espaco": 0.5,
+            "categoria": 1
+        },
+        {
+            "nome": "Catalisador Ritualístico: Prolongador",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Componentes ritualísticos que já foram alterados através de exposição paranormal e por isso são mais eficientes. Ao contrário de componentes comuns, um catalisador é consumido ao ser usado. Você precisa estar empunhando um catalisador para usá-lo e só pode usar um catalisador por ritual. Com o Prolongador, a duração do ritual dobra. Por exemplo, um Distorcer Aparência prolongado tem sua duração aumentada para duas cenas. Não funciona para rituais instantâneos ou sustentados.",
+            "tag": "",
+            "espaco": 0.5,
+            "categoria": 1
+        },
+        {
+            "nome": "Ligação Direta Infernal",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Um amontoado de fios de cobre contaminados com Sangue e Energia. Você pode gastar uma ação completa para usar os fios para ligar um veículo automaticamente. Isso faz os fios invadirem os controles do veículo animando-o de forma paranormal; o veículo recebe resistência a dano 20 (cumulativa com qualquer RD que já possua) e imunidade a Sangue, e você recebe +5 em testes de Pilotagem para conduzi-lo. Entretanto, nesse estado o veículo tentará causar o máximo de confusão possível; as consequências de qualquer falha nos testes de Pilotagem são amplificadas a critério do mestre (de forma geral, qualquer dano ou penalidade causado por uma falha é dobrado). Remover a ligação direta infernal de um veículo é uma ação completa.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome": "Medidor de Condição Vertebral",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Este item grotesco é uma coluna vertebral sustentada por Lodo de Morte e revestida com cabos e fios de Energia. Para ser usado, deve ser conectado à coluna vertebral, em um procedimento que exige uma ação completa e causa profunda dor e agonia, deixando o usuário atordoado por uma rodada. O medidor conta como uma vestimenta que fornece +2 em Fortitude. Além disso, uma vez conectado ele se ilumina em cores que vão do vermelho, na base, passando por amarelo no centro até verde no topo. Essas cores indicam a saúde do usuário, sendo verde a melhor condição. Além disso, se o usuário estiver sob um efeito paranormal, o item emitirá pulsos de luz lilás. Por fim, as informações fornecidas pelo item concedem um bônus de +5 em testes de Medicina feitos para auxiliar o usuário.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome": "Pé de Morto",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Estas botas macabras foram costuradas com a pele de cadáveres amaldiçoados pela Morte. Com essa matéria grotesca, a bota mantém os passos do usuário leves e quase inaudíveis, como se ele fosse um fantasma se aproximando sem fazer barulho. Você recebe +5 em Furtividade e, em cenas de furtividade (p. 92), qualquer ação chamativa que envolva apenas se mover (como correr ou saltar) aumenta a visibilidade em apenas +1.",
+            "tag": "",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome": "Pen Drive Selado",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Este dispositivo está gravado com sigilos dourados de Conhecimento. Graças à proteção desses sigilos, o pen drive não pode ser invadido ou afetado por rituais, seres e efeitos de Energia. Isso mantém seus arquivos protegidos, e permite que ele seja usado para invadir outros dispositivos sem ser contaminado pela entidade. Existem outros modelos de dispositivos selados, como HDs externos e celulares.",
+            "tag": "",
+            "espaco": 0.5,
+            "categoria": 2
+        },
+        {
+            "nome": "Valete da Salvação",
+            "origem": "Sobrevivendo ao Horror",
+            "descricao": "Assim como um valete servia a seus senhores, esta carta — um valete de ouros pintada de dourado e coberta com sigilos de Conhecimento — serve para salvá-lo de uma situação complicada. Para usá-la, você deve gastar uma ação padrão para atirá-la ao ar. Ela então irá voar em alcance médio, apontando para a melhor rota de fuga dentro deste alcance, e deixará de existir. Se a carta for gasta em uma cena de perseguição (p. 90), você é bem-sucedido em uma ação de cortar caminho.",
+            "tag": "",
+            "espaco": 0.5,
+            "categoria": 1
+        },
+        {
+            "nome": "Agrupador Ritualístico",
+            "origem": "Arquivos Secretos",
+            "descricao": "Um item pequeno — não maior que uma faca — e de aparência variada. Você pode gastar uma ação padrão para prender um componente ou um catalisador nele, e pode ter até quatro desses itens presos nele. Componentes e catalisadores presos no agrupador contam como empunhados, desde que o agrupador esteja sendo empunhado. Se você estiver empunhando o agrupador ritualístico, todos os componentes e catalisadores presos nele também contam como empunhados. Ocultistas usam este item para segurar vários componentes e catalisadores com uma só mão.",
+            "tag": "Janeiro-2026",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome": "Amuleto Sinalizador de (Elemento)",
+            "origem": "Arquivos Secretos",
+            "descricao": "Ao adquirir este amuleto preso a um cordão ou corrente, escolha um elemento (exceto Medo). Este item vestido emite um tênue sinal — pinga gotas vermelhas para Sangue, larga um rastro de fumaça para Morte (como um incenso), emite luz dourada para Conhecimento e muda de cor bruscamente para Energia — quando uma criatura do elemento respectivo entra em alcance longo dele, mesmo tendo paredes ou outros objetos no caminho.",
+            "tag": "Janeiro-2026",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome": "Rubra",
+            "origem": "Arquivos Secretos",
+            "descricao": "Esta droga paranormal tem a aparência de um pó viscoso vermelho amarronzado. Você pode gastar uma ação de movimento para esfregar uma dose de rubra em uma ferida aberta (precisa estar com pelo menos 1 ponto de dano). Se fizer isso, a droga é absorvida e você recebe +5 em testes baseados em Força, Agilidade e Vigor e 10 pontos de vida temporários. No fim da cena, os bônus terminam e, a menos que consuma outra dose de rubra, você perde 1d3 pontos de atributos físicos (role 1d6 para cada ponto perdido; 1 - 2 Força, 3 - 4 Agilidade, 5 - 6 Vigor). Os pontos retornam após dormir em uma cena de interlúdio. Sempre que usa a droga, você deve fazer um teste de Vontade (DT 15 +2 para cada vez além da primeira que tiver usado a droga). Se falhar, fica insano por 1d3 rodadas, durante as quais vai tentar atacar os seres mais próximos de você, independente de quem sejam. Se falhar no teste de Vontade por 10 ou mais, sua mente é destruída pela droga. Seu personagem passa a tentar atacar de forma animalesca qualquer pessoa próxima a ele, sem esperanças de voltar ao que era, e, se estiver em um local no qual a Membrana esteja fragilizada, pode até mesmo se tornar uma criatura do Outro Lado.",
+            "tag": "Janeiro-2026",
+            "espaco": 1,
+            "categoria": 2
+        }
+    ],
+    "amaldicoados":[
+        {
+            "nome":"Coração Pulsante",
+            "origem":"Livro de Regras",
+            "descricao":"Um coração humano banhado em Sangue, pulsando como se ainda estivesse dentro de um corpo. Se estiver empunhando o coração pulsante e sofrer dano, você pode gastar uma reação para espremer o item e reduzir esse dano pela metade. Sempre que usa o coração, você deve fazer um teste de Fortitude (DT 15 + 5 por uso adicional no mesmo dia). Se falhar, o item é destruído. Compartimentos com o coração devem ser drenados uma vez por dia.",
+            "Elemento":"Sangue",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+            
+        },
+        {
+            "nome":"Coroa de Espinhos",
+            "origem":"Livro de Regras",
+            "descricao":"Uma coroa, colar ou pulseira feita de espinhos banhados em Sangue. Uma vez por rodada, você pode usar uma reação para transformar dano mental em dano de Sangue, mas não consegue recuperar sanidade por descanso enquanto estiver vestindo o item. Requer uma semana de uso para ativar.",
+            "Elemento":"Sangue",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Frasco de Vitalidade",
+            "origem":"Livro de Regras",
+            "descricao":"Pequeno frasco de vidro com tampa de metal gravada com um selo de Sangue. Você pode sofrer até 20 pontos de dano para encher o frasco com seu próprio sangue. Beber o conteúdo recupera a mesma quantidade de PV armazenada, mas exige teste de Fortitude (DT 20) para não ficar enjoado por uma rodada.",
+            "Elemento":"Sangue",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Pérola de Sangue",
+            "origem":"Livro de Regras",
+            "descricao":"Esfera vermelha de 2cm que pode ser absorvida na pele, fornecendo +5 em Agilidade, Força e Vigor até o final da cena. Ao final, teste de Fortitude (DT 20) para evitar fadiga; falha grave causa parada cardíaca e transformação em criatura de Sangue de VD similar ao NEX.",
+            "Elemento":"Sangue",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Punhos Enraivecidos",
+            "origem":"Livro de Regras",
+            "descricao":"Soqueiras de metal vermelho gravadas com símbolos de Sangue. Ataques desarmados causam +1d8 de dano de Sangue letal. Sempre que acerta, pode realizar ataques extras pagando 2 PE adicionais por ataque já realizado no turno.",
+            "Elemento":"Sangue",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Seringa de Transfiguração",
+            "origem":"Livro de Regras",
+            "descricao":"Seringa orgânica com veias pulsantes. Pode sugar sangue de um alvo e injetá-lo em outro, transfigurando sua aparência como o ritual Distorcer Aparência por 1 dia. Ao final, teste 1d6 para possíveis danos permanentes (1 PV) se resultado for 1.",
+            "Elemento":"Sangue",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Amarras Mortais",
+            "origem":"Livro de Regras",
+            "descricao":"Correntes de ferro negro que se enrolam nos antebraços. Uma vez por rodada, pode gastar ação padrão e 2 PE para usar a manobra agarrar contra um alvo.",
+            "Elemento":"Morte",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Casaco de Lodo",
+            "origem":"Livro de Regras",
+            "descricao":"Sobretudo preto feito de Lodo ativo. Protege contra corte, impacto, Morte e perfuração 5, mas é vulnerável a dano balístico e de Energia.",
+            "Elemento":"Morte",
+            "tag":""
+        },
+        {
+            "nome":"Coletora",
+            "origem":"Livro de Regras",
+            "descricao":"Punhal negro que absorve PE da vítima morta (1d8 PE, máximo 20). Quem o porta sofre pesadelos e condições de descanso ruins.",
+            "Elemento":"Morte",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Crânio Espiral",
+            "origem":"Livro de Regras",
+            "descricao":"Crânio apodrecido em formato espiral. Uma vez por rodada, pode gastar ação livre para obter uma ação padrão adicional. Cada uso exige teste de Vontade (DT 15 + 5 por uso adicional), falha envelhece 1d4 anos e impede uso no dia.",
+            "Elemento":"Morte",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Frasco de Lodo",
+            "origem":"Livro de Regras",
+            "descricao":"Frasco com Lodo da Morte. Aplicar em ferimento recente recupera 6d8+20 PV; se ferimento antigo, 50% chance de curar 3d8+10 PV ou causar 3d8+10 de dano de Morte.",
+            "Elemento":"Morte",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Vislumbre do Fim",
+            "origem":"Livro de Regras",
+            "descricao":"Óculos escuros com símbolos e espirais. Uma ação de movimento permite obter informações sobre a morte de uma criatura ou seu ponto de vulnerabilidade, dependendo do alvo.",
+            "Elemento":"Morte",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Anéis do Elo Mental",
+            "origem":"Livro de Regras",
+            "descricao":"Par de anéis dourados conectando duas pessoas por 24h. Após ativação, permite ligação telepática permanente enquanto usados. Dano mental ou condição de medo sofrida por uma pessoa afeta a outra igualmente.",
+            "Elemento":"Conhecimento",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Lanterna Reveladora",
+            "origem":"Livro de Regras",
+            "descricao":"Lanterna dourada com sigilos do Outro Lado. Ativar gasta 1 ação padrão e 1 PE, emitindo luz com propriedades do ritual Terceiro Olho. Incomoda criaturas de Sangue, que atacarão o usuário se iluminadas.",
+            "Elemento":"Conhecimento",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Máscara das Pessoas nas Sombras",
+            "origem":"Livro de Regras",
+            "descricao":"Máscara da Seita das Máscaras. Usuário recebe resistência a Conhecimento 10 e pode gastar ação de movimento + 2 PE para se teletransportar entre sombras adjacentes. Vestir o item pode ter consequências se despertar atenção da mente única das Máscaras.",
+            "Elemento":"Conhecimento",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Munição Jurada",
+            "origem":"Livro de Regras",
+            "descricao":"Bala com sigilo gravado. Ritual de 1h vincula a bala a um ser conhecido. Ataque contra ele fornece +10 no teste, dobra margem de ameaça e causa +6d12 de dano de Conhecimento. Obsessão pelo alvo impõe –2 em Defesa e ataque contra outros alvos.",
+            "Elemento":"Conhecimento",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Pergaminho da Pertinácia",
+            "origem":"Livro de Regras",
+            "descricao":"Pergaminho antigo com sigilos dourados. Gasta 1 ação padrão para encarar os sigilos e receber 5 PE temporários. Cada uso exige teste de Ocultismo (DT 15 + 5 por uso adicional), falha destrói o pergaminho.",
+            "Elemento":"Conhecimento",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Arcabuz dos Moretti",
+            "origem":"Livro de Regras",
+            "descricao":"Arma de fogo antiga que ainda funciona. +2 em testes de ataque, causa dano de Energia. Dano básico do disparo é definido por 1d6 (1-6 variando de 2d4 a 2d20). Alcance curto, crítico x3, sem necessidade de munição.",
+            "Elemento":"Energia",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Bateria Reversa",
+            "origem":"Livro de Regras",
+            "descricao":"Bateria elétrica com sigilos paranormais. Pode absorver carga de dispositivos em alcance curto gastando ação padrão e 2 PE. Se cheia, pode transferir carga. Cada uso exige teste de Ocultismo (DT 15 + 5), falha causa explosão de 12d6 de dano de Energia em 3m.",
+            "Elemento":"Energia",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Peitoral da Segunda Chance",
+            "origem":"Livro de Regras",
+            "descricao":"Colete eletrônico sobre o peito. Ao ser reduzido a 0 PV, gasta 5 PE para reanimar com 4d10 PV por surto de Energia. Falha se PE insuficiente. Existe chance (1 em 1d10) de descarga letal transformando corpo em plasma de Energia.",
+            "Elemento":"Energia",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Relógio de Arnaldo",
+            "origem":"Livro de Regras",
+            "descricao":"Relógio de ouro antigo. Uma vez por rodada, pode gastar 1 PE para rolar novamente qualquer dado com resultado 1. Custo aumenta +1 para cada uso no mesmo dia. Item único.",
+            "Elemento":"Energia",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Talismã da Sorte",
+            "origem":"Livro de Regras",
+            "descricao":"Moeda ou amuleto ritualístico. Quando sofre dano, pode gastar reação + 3 PE para rolar 1d4: 2-3 evita dano, 4 evita mas queima o talismã, 1 sofre dano dobrado e talismã queima.",
+            "Elemento":"Energia",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Teclado de Conexão Neural",
+            "origem":"Livro de Regras",
+            "descricao":"Teclado USB coberto de glifos de Energia. Ao plugar no computador, conecta sua mente à máquina. Permite uso sem impedimentos tecnológicos e +10 em testes relacionados.",
+            "Elemento":"Energia",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Tela do Pesadelo",
+            "origem":"Livro de Regras",
+            "descricao":"Dispositivo com tela e sigilos minúsculos. Ativar (ação padrão + 2 PE) faz a próxima pessoa que tocar na tela ver imagem horrível causando teste de Vontade (DT +5). Falha resulta em atordoamento, 4d6 de dano mental e repetição do teste. Até passar ou ser destruída.",
+            "Elemento":"Energia",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Veículo Energizado",
+            "origem":"Livro de Regras",
+            "descricao":"Veículo modificado para não precisar de combustível. Motorista pode gastar reação + teste de Pilotagem (DT 25) para transformar carro e ocupantes em energia pura por um instante, evitando colisões como se fossem incorpóreos.",
+            "Elemento":"Energia",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Jaqueta de Veríssimo",
+            "origem":"Livro de Regras",
+            "descricao":"Jaqueta de couro estilo aviador. Recebe resistência a dano paranormal 15. Pode gastar reação + 2 PE para se tornar alvo de dano no lugar de aliado adjacente. Item único, categoria IV.",
+            "Elemento":"Medo",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Dedo Decepado",
+            "origem":"Livro de Regras",
+            "descricao":"Dedo decepado de alguém com exposição paranormal. Concede poder paranormal do dono, elemento do poder define a maldição. Durante descanso, 1d4: resultado 1 causa assombração e não recupera PV, PE ou sanidade. Visível, penalidade –10 em Diplomacia.",
+            "Elemento":"Varía",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Selos Paranormais - 1° Cirulo",
+            "origem":"Livro de Regras",
+            "descricao":"Conjunto de sigilos em objetos pequenos. Para ativar, empunhar e ler os sigilos em voz alta. Requer ação padrão ou equivalente a ritual, além de conhecimento do ritual ou teste de Ocultismo (DT 20 + custo em PE). Selo se desfaz após uso; efeitos de “O Custo do Paranormal” e “Invocando o Medo” se aplicam. Categoria igual ao círculo do ritual.",
+            "Elemento":"Varía",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome":"Selos Paranormais - 2° Cirulo",
+            "origem":"Livro de Regras",
+            "descricao":"Conjunto de sigilos em objetos pequenos. Para ativar, empunhar e ler os sigilos em voz alta. Requer ação padrão ou equivalente a ritual, além de conhecimento do ritual ou teste de Ocultismo (DT 20 + custo em PE). Selo se desfaz após uso; efeitos de “O Custo do Paranormal” e “Invocando o Medo” se aplicam. Categoria igual ao círculo do ritual.",
+            "Elemento":"Varía",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Selos Paranormais - 3° Cirulo",
+            "origem":"Livro de Regras",
+            "descricao":"Conjunto de sigilos em objetos pequenos. Para ativar, empunhar e ler os sigilos em voz alta. Requer ação padrão ou equivalente a ritual, além de conhecimento do ritual ou teste de Ocultismo (DT 20 + custo em PE). Selo se desfaz após uso; efeitos de “O Custo do Paranormal” e “Invocando o Medo” se aplicam. Categoria igual ao círculo do ritual.",
+            "Elemento":"Varía",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 3
+        },
+        {
+            "nome":"Selos Paranormais - 4° Cirulo",
+            "origem":"Livro de Regras",
+            "descricao":"Conjunto de sigilos em objetos pequenos. Para ativar, empunhar e ler os sigilos em voz alta. Requer ação padrão ou equivalente a ritual, além de conhecimento do ritual ou teste de Ocultismo (DT 20 + custo em PE). Selo se desfaz após uso; efeitos de “O Custo do Paranormal” e “Invocando o Medo” se aplicam. Categoria igual ao círculo do ritual.",
+            "Elemento":"Varía",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 4
+        },
+        {
+            "nome":"Conector de Membros",
+            "origem":"Sobrevivendo ao Horror",
+            "descricao":"Aparato composto por dois anéis metálicos ajustáveis, banhados em símbolos de Sangue e conectados por uma sanfona de tecido humano. Com uma ação padrão, permite reconectar um braço, perna ou cabeça decepados de uma pessoa ou animal, desde que o ferimento tenha ocorrido em até três rodadas. Reconectar não cura PV, mas remove as condições morrendo ou morto, deixando o alvo inconsciente com 1 PV. Se removido, a parte é novamente decepada e não pode ser reconectada por este item. Ao usar, há 25% de chance de a parte ganhar vida própria, causando efeitos negativos dependendo do membro reconectado.",
+            "Elemento":"Sangue",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 3
+        },
+        {
+            "nome":"Dose d’A Praga",
+            "origem":"Sobrevivendo ao Horror",
+            "descricao":"Pequeno frasco de vidro reforçado contendo um líquido espesso vermelho. Com uma ação padrão, você ou um ser adjacente fica sob efeito dos poderes Arma de Sangue, Sangue de Ferro e Sangue Vivo até o fim da cena. Ao término, o alvo deve passar em um teste de Fortitude (DT 20 + 5 por dose anterior desde o último interlúdio) ou sofre 2d4 de dano mental, mantém os poderes até o fim da próxima cena e fica sob efeito do ritual Ódio Incontrolável.",
+            "Elemento":"Sangue",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 3
+        },
+        {
+            "nome":"Mandíbula Agonizante",
+            "origem":"Sobrevivendo ao Horror",
+            "descricao":"Parte inferior de um crânio com músculos e símbolos pintados com sangue, emitindo sons perturbadores. Com uma ação padrão, pode ser pressionada e arremessada em alcance médio, passando a gritar alto e abafando outros sons em um raio de 30 metros até o fim da cena. Em cenas de furtividade, permite passar automaticamente em um teste para distrair. Criaturas de Sangue são atraídas pelos gritos e devem passar em um teste de Vontade (DT 35) para evitar ir até ela e comê-la. Após a cena, só pode ser usada novamente após descansar por uma cena.",
+            "Elemento":"Sangue",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Retalho Tenebroso",
+            "origem":"Sobrevivendo ao Horror",
+            "descricao":"Pedaço de carne retangular com pele e pelos bestiais esparsos, impregnado de instintos primais. Você pode gastar uma ação padrão para aplicá-lo sobre seu rosto como se fosse uma máscara. Se fizer isso, recebe faro e",
+            "Elemento":"Sangue",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Ampulheta do Tempo Sofrido",
+            "origem":"Sobrevivendo ao Horror",
+            "descricao":"Ampulheta de madeira trabalhada com areia negra que assume formas humanoides em desespero quando girada. Enquanto estiver empunhando, você pode gastar 5 PE para receber imediatamente os benefícios de uma ação de interlúdio à sua escolha. Após usar, não pode utilizá-la novamente até gastar uma ação de interlúdio para devolver o tempo emprestado pela Morte.",
+            "Elemento":"Morte",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Injeção de Lodo",
+            "origem":"Sobrevivendo ao Horror",
+            "descricao":"Seringa de bronze enferrujado preenchida com Lodo da Morte. Com uma ação padrão, pode ser injetada em você ou em um ser adjacente voluntário. Até o fim da cena, o alvo recebe vulnerabilidade a dano balístico e de Energia, mas na próxima vez que for reduzido a 0 PV nessa cena, é reduzido a 1 PV.",
+            "Elemento":"Morte",
+            "tag":"",
+            "espaco": 0.5,
+            "categoria": 2
+        },
+        {
+            "nome":"Instantâneo Mortal",
+            "origem":"Sobrevivendo ao Horror",
+            "descricao":"Fotografia retratando um dos últimos momentos de uma pessoa antes de sua morte. Ao fazer um teste de perícia para procurar pistas, você pode gastar 1 PE para olhar fixamente para a imagem. Se a perícia estiver relacionada às circunstâncias da morte retratada, a imagem se move discretamente e concede um bônus no teste. O mestre decide quais perícias se aplicam.",
+            "Elemento":"Morte",
+            "tag":"",
+            "espaco": 0.5,
+            "categoria": 2
+        },
+        {
+            "nome":"Projétil de Lodo, curto",
+            "origem":"Sobrevivendo ao Horror",
+            "descricao":"Projétil forjado com Lodo da Morte. Ao ser usado, todo o dano da arma se torna dano de Morte. Ao fim da cena, a arma utilizada se degrada completamente, sendo consumida pelo tempo.",
+            "Elemento":"Morte",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome":"Projétil de Lodo, longo",
+            "origem":"Sobrevivendo ao Horror",
+            "descricao":"Projétil forjado com Lodo da Morte. Ao ser usado, todo o dano da arma se torna dano de Morte. Ao fim da cena, a arma utilizada se degrada completamente, sendo consumida pelo tempo.",
+            "Elemento":"Morte",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Rádio Chiador",
+            "origem":"Sobrevivendo ao Horror",
+            "descricao":"Pequeno rádio gravador de bolso que emite um chiado constante. Enquanto ligado, o chiado indica a presença de criaturas Paranormais em alcance extremo, tornando-se mais intenso conforme a proximidade. Criaturas Paranormais tendem a ser atraídas pelo som. Funciona com pilhas que duram 12 horas antes de se tornarem Lodo preto.",
+            "Elemento":"Morte",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Câmera Obscura",
+            "origem":"Sobrevivendo ao Horror",
+            "descricao":"Câmera Polaroid Model 95 usada para capturar auras paranormais. Possui lente de revelação paranormal, com DT aumentada em +10. Se a criatura falhar no teste, além do efeito normal, sofre 6d6 de dano de frio. Apenas criaturas com invisibilidade, incorporeidade ou camuflagem sofrem esse dano.",
+            "Elemento":"Conhecimento",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 3
+        },
+        {
+            "nome":"Enxame Fantasmagórico",
+            "origem":"Sobrevivendo ao Horror",
+            "descricao":"Manto quase invisível feito de traças e mariposas esbranquiçadas. Enquanto estiver vestindo, o usuário fica invisível, mas sofre 1 ponto de dano mental no início de cada turno. Esse dano ignora resistências.",
+            "Elemento":"Conhecimento",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 3
+        },
+        {
+            "nome":"Repositório do Fracasso",
+            "origem":"Sobrevivendo ao Horror",
+            "descricao":"Pequena caixa de madeira decorada com figuras espectrais. Sempre que uma criatura Paranormal em alcance médio obtém resultados 1 em testes, o item recebe cargas (máximo 6). Uma vez por rodada, você pode consumir uma carga para recuperar 1d4 PE, sofrendo –1 cumulativo em Vontade até o próximo interlúdio.",
+            "Elemento":"Conhecimento",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Tábula do Saber Custoso",
+            "origem":"Sobrevivendo ao Horror",
+            "descricao":"Tábula marcada com sigilos de Conhecimento. Enquanto empunhada, pode conceder os benefícios de ser treinado em uma perícia por um único teste. Ao fazer isso, você perde uma quantidade de Sanidade igual ao valor do atributo-chave da perícia.",
+            "Elemento":"Conhecimento",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Arreio Neural",
+            "origem":"Sobrevivendo ao Horror",
+            "descricao":"Conjunto de correias e fivelas que fixa a cabeça do usuário, mantendo olhos abertos e dentes expostos. Sempre que sofre 5 ou mais pontos de dano de eletricidade ou Energia, você recupera 1 PE, até um máximo diário igual ao dobro do seu Vigor.",
+            "Elemento":"Energia",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Centrifugador Existencial",
+            "origem":"Sobrevivendo ao Horror",
+            "descricao":"Dispositivo com dois círculos de cobre concêntricos. Com uma ação padrão e 3 PE, você recebe um turno adicional na última contagem de iniciativa da rodada, existindo brevemente em duas possibilidades de futuro ao mesmo tempo. Ao final da rodada, uma das versões se dissipa, mas todos os efeitos sofridos permanecem.",
+            "Elemento":"Energia",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 3
+        },
+        {
+            "nome":"Espelho Refletor",
+            "origem":"Sobrevivendo ao Horror",
+            "descricao":"Placa metálica ritualisticamente polida. Pode ser usada para observar pontos fora do campo de visão em alcance médio, concedendo bônus em Percepção e permitindo enxergar objetos com cobertura total. Pode ser sacrificada para evitar dano de Energia e refletir esse dano à origem.",
+            "Elemento":"Energia",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Fuzil Alheio",
+            "origem":"Sobrevivendo ao Horror",
+            "descricao":"Fuzil de precisão alienígena com mira telescópica e laser. Causa dano de Energia e não necessita de munição.",
+            "Elemento":"Energia",
+            "tag":"",
+            "espaco": 2,
+            "categoria": 4
+        },
+        {
+            "nome":"A Primeira Adaga",
+            "origem":"Sobrevivendo ao Horror",
+            "descricao":"A primeira adaga já usada em um ritual. Pode ser usada como componente ritualístico, concedendo os efeitos dos catalisadores ampliador, perturbador, potencializador e prolongador, além de reduzir o tempo de conjuração para 1 rodada. O conjurador perde PV igual à metade de seus PV totais. É possível pagar esse custo com uma vítima de sacrifício.",
+            "Elemento":"Medo",
+            "tag":"",
+            "espaco": 1,
+            "categoria": 3
+        },
+        {
+            "nome":"Faixas da Vidência",
+            "origem":"Marca Página",
+            "descricao":"Uma faixa de tecido, geralmente preto, com pequenos símbolos de Morte gravados em suas bordas O usuário é considerado cego para alvos além de alcance médio. No entando, a faixa distorce a percepção temporal do usuário dentro do alcance, fazendo com que enxergue os eventos fora da linha do tempo. Contra efeitos em alcance médio, o usuário nunca fica desprevinido, recebe +10 em testes de resistência e recebe +10 em na Defesa quando esquiva. Além disso, uma vez por cena de investigação, pode gastar 2 PE para ter um vislumbre do passado que auxilia a ação de procurar pistas fornecendo +5 para o teste",
+            "Elemento":"Morte",
+            "tag":"Degolificada",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Óculos Que Viram Morte Demais",
+            "origem":"Marca Página",
+            "descricao":"Um par de óculos de armação quadrada e preta corrompido pela entidade de Morte por ter testemunhado horrores do Paranormal em excesso. Se estiver vestindo esse item, você pode conjurar os seguintes rituais como se os tivesse aprendido: Cicatrização, Decadência, Eco Espiral, Paradoxo e Tentáculos de Lodo. Se já aprendeu o ritual, em vez disso, o custo em pontos de esforço para conjurá-lo diminui em -1 PE. Essa redução se acumula com reduções fornecidas por outras fontes. Esse é um item único (apenas um agente pode escolhê-lo).",
+            "Elemento":"Morte",
+            "tag":"Dante",
+            "espaco": 1,
+            "categoria": 4
+        },
+        {
+            "nome":"Pigente da Lua Dourada",
+            "origem":"Marca Página",
+            "descricao":"Um pequeno pingente dourado com uma lua crescente que, aós ter contato com o Paranormal, se tornou amaldiçoado com Conhecimento. Se estiver vestindo esse item, você recebe resistência a dano de Conhecimento 10 e +2 em testes de resistência contra efeitos de Conhecimento. Além disso, você pode gastar 4 PE para se cobrir com uam tênue luz dourada, recebendo camuflagem total (OPRPG, p. 89) e -10 em testes de Furtividade por uma rodada. Esse é um item único (apenas um agente pode escolhê-lo).",
+            "Elemento":"Conhecimento",
+            "tag":"Beatriz",
+            "espaco": 0.5,
+            "categoria": 4
+        },
+        {
+            "nome":"Colar Banhado em Sangue",
+            "origem":"Marca Página",
+            "descricao":"Um colar simples de cordão preto e pingente metálico que já presenciou rituais de Sangue suficientes para ser distorcido pela entidade. Se estiver vestindo esse item você recebe resistência a dano de Sangue 15. Além disso, seus rituais de Sangue recebem +2 na DT para resistir e causam um dado adicional de dano do mesmo tipo. Em adição, quando conjura m ritual de Sangue, você pode gastar 3 PE para considerar qualquer dado de dano com resultado 2 ou 1 como 3. Esse é um item único (apenas um agente pode escolhê-lo).",
+            "Elemento":"Sangue",
+            "tag":"Agatha",
+            "espaco": 0.5,
+            "categoria": 4
+        },
+        {
+            "nome":"Arpão do Pescador",
+            "origem":"Arquivos Secretos",
+            "descricao":"Um arpão de pesca rústico, sujo de sangue originado de um pacto com o Diabo. É uma arma simples corpo a corpo e de uma mão, que pode ser arremessada em alcance curto. Elsa causa 1d8 pontos de dano de perfuração mais 1d12 pontos de dano de Sangue e tem crítico 20/x3. Se acertar um atque de arremesso com o arpão, você dificulta a movimentação do alvo. Ele dica lento até remover o arpão de seu corpo, o que exige gastar uma ação padrão e passar em um teste de Atletismo (DT For)",
+            "Elemento":"Sangue",
+            "tag":"Janeiro-2026",
+            "espaco": 1,
+            "categoria": 3
+        },
+        {
+            "nome":"Combustivel de Sangue",
+            "origem":"Arquivos Secretos",
+            "descricao":"Um tanque com combustível inflamável misturado com Sangue. Fabricar um combustível é uma ferramenta poderosa contra criaturas de Conhecimento. Você pode gastar o Combustível de Sangue como munição para o lança-chamas ou para encher galões. Fazer isso troca todo o dano do lança-chamas ou do galão (veja SaH, p.41) para Sangue e aumenta todos os dados de dano em uma categoria (d6 vira d8, por exemplo).",
+            "Elemento":"Sangue",
+            "tag":"Janeiro-2026",
+            "espaco": 1,
+            "categoria": 3
+        },
+        {
+            "nome":"Marreta Transtornada",
+            "origem":"Arquivos Secretos",
+            "descricao":"Uma marreta banhada em fluidos humanos e enrolada em espinhos foi amaldiçoada 6 vezes, através de 6 sacrifícios humanos, ao longo de 6 rituais de Sangue. Ela foi adorada, admirada e alimentada como um bebê do inferno. Uma arma tática corpo a corpo e de duas mãos. Ela causa 2d10 ponntos de dano de impacto mais 2d12 pontos de dano de Sangue e tem crítico 20/x4, mas sempre que você empunha ou ataca com a arma, perde 1d6 PV. Quando faz um acerto crítico com essa arma, o alvo deve fazer um teste de Fortitude (DT For). Se falhar, algum pssp a parte atingida quebra deixando o alvo fraco até receber cuidados prolongados em uma cena de interludio. Se ficar fraco novamente por causa desta arma, em vez disso, o alvo fica debilitado.",
+            "Elemento":"Sangue",
+            "tag":"Janeiro-2026",
+            "espaco": 2,
+            "categoria": 4
+        }
+    ]      
+}

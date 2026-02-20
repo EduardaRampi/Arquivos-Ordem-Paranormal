@@ -904,9 +904,13 @@
                             </select>
                         </p>
                     </div>
-                    <div class="campo-pe-turno">
+                    <div id="campo-pe-turno" class="campo-pe-turno">
                         <label><strong>PE/Turno</strong></label>
                         <input type="number" id="edit-pe-turno" class="input-pe-rodada" value="1">
+                    </div>
+                    <div id="campo-pd-limite" class="campo-pd-limite ocuta">
+                        <label><strong>Limite PD</strong></label>
+                        <input type="number" id="edit-pd-limite" class="input-pd-limite" value="1">
                     </div>
                     <div class="campo-deslocamento">
                         <label><strong>Deslocamento</strong></label>
@@ -1078,7 +1082,58 @@
                 </div>
                 <!-- COLUNA 5 - Inventário -->
                 <div class="ficha-card">
+                    <h3>Patente & Prestígio</h3>
+                    <div class="campo-prestigio">
+                        <label>Pontos de Prestígio:</label>
+                        <input class="input-inline" type="number" id="edit-prestigio" value="0" onchange="atualizarPatente()">
+                    </div>
+                    <div class="info-patente">
+                        <p>Patente: <strong id="val-patente">Recruta</strong></p>
+                        <p>Crédito: <strong id="val-credito">Baixo</strong></p>
+                    </div>
+                    <table class="tabela-limites">
+                        <thead>
+                            <tr>
+                                <th>I</th>
+                                <th>II</th>
+                                <th>III</th>
+                                <th>IV</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="linha-limite">
+                                <td id="lim-cat1">2</td>
+                                <td id="lim-cat2">—</td>
+                                <td id="lim-cat3">—</td>
+                                <td id="lim-cat4">—</td>
+                            </tr>
+                            <tr class="linha-atual">
+                                <td id="atual-cat1">0</td>
+                                <td id="atual-cat2">0</td>
+                                <td id="atual-cat3">0</td>
+                                <td id="atual-cat4">0</td>
+                            </tr>
+                        </tbody>
+                    </table>
                     <h3>Inventário</h3>
+                    <div class="carga-container">
+                        <div class="carga-topo">
+                            <label><strong>CARGA (Espaços)</strong></label>
+                            <div class="carga-inputs">
+                                <input class="input-inline" type="number" id="carga-atual" value="0" readonly> 
+                                <span>/</span>
+                                <input class="input-inline" type="number" id="carga-max" value="5" oninput="atualizarBarraCarga()">
+                            </div>
+                        </div>
+                        <div class="barra-progresso-carga">
+                            <div id="barra-carga-interna"></div>
+                        </div>
+                        <small id="aviso-carga">Peso Excedido!</small>
+                    </div>
+                    <div class="centralizar">
+                        <button type="button" onclick="abrirModalEquip()" class="btn-adicionar-item">+ Adicionar Item</button>
+                    </div>
+                    <div id="lista-inventario" class="lista-inventario"></div>
                 </div>
                 <!-- COLUNA 6 - HISTÓRICO -->
                 <div class="ficha-card">
@@ -1138,6 +1193,30 @@
             </div>
         </footer>
     
+    </div>
+    <div id="modal-equipamentos" class="modal-oculto">
+        <div class="modal-conteudo">
+            <div class="modal-cabecalho">
+                <h2>Arsenal da Ordem</h2>
+                <button onclick="fecharModalEquip()">X</button>
+            </div>
+            <div class="modal-filtros">
+                <input type="text" id="busca-item" placeholder="Procurar item..." oninput="filtrarItensModal()">
+                <select id="filtro-categoria" onchange="filtrarItensModal()">
+                    <option value="todos">Todos os Itens</option>
+                    <option value="armas">Armas</option>
+                    <option value="municoes">Munições</option>
+                    <option value="protecoes">Proteções</option>
+                    <option value="acessorios">Acessórios</option>
+                    <option value="explosivos">Explosivos</option>
+                    <option value="operacionais">Itens Operacionais</option>
+                    <option value="paranormais">Itens Paranormais</option>
+                    <option value="amaldicoados">Itens Amaldiçoados</option>
+                </select>
+            </div>
+            <div id="lista-itens-catalogo" class="grid-itens">
+            </div>
+        </div>
     </div>
     <script src="código.js"></script>
 </body>
