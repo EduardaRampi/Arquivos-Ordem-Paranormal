@@ -389,6 +389,7 @@ input[type="number"]::-webkit-outer-spin-button {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     min-width: 0;
     max-height: 1350px;
+    overflow: hidden;
 }
 .ficha-card:hover {
     transform: translateY(-5px);
@@ -981,7 +982,7 @@ input:checked ~ .status-label { color: var(--cor-primaria-clara); }
     display: flex;
     max-width: 30px;
 }
-#modal-equipamentos {
+#modal-equipamentos, #modal-habilidades, #modal-rituais, #modal-melhorias {
     position: fixed;
     inset: 0;
     z-index: 5000;
@@ -991,7 +992,7 @@ input:checked ~ .status-label { color: var(--cor-primaria-clara); }
     background: rgba(10, 2, 2, 0.85);
     backdrop-filter: blur(6px);
 }
-#modal-equipamentos:not(.modal-oculto) {
+#modal-equipamentos:not(.modal-oculto), #modal-habilidades:not(.modal-oculto), #modal-rituais:not(.modal-oculto), #modal-melhorias:not(.modal-oculto) {
     display: flex;
 }
 .modal-conteudo {
@@ -1060,6 +1061,8 @@ input:checked ~ .status-label { color: var(--cor-primaria-clara); }
     gap: 15px;
     background: rgba(0,0,0,0.35);
     border-bottom: 1px solid rgba(255,255,255,0.05);
+    box-sizing: border-box;
+    flex-wrap: wrap;
 }
 .modal-filtros input,
 .modal-filtros select {
@@ -1085,6 +1088,14 @@ input:checked ~ .status-label { color: var(--cor-primaria-clara); }
     flex: 1;
     overflow-y: auto;
     padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.grid-itens-2 {
+    max-height: 300px; 
+    overflow-y: auto;
+    padding: 10px 0;
     display: flex;
     flex-direction: column;
     gap: 14px;
@@ -1160,12 +1171,12 @@ input:checked ~ .status-label { color: var(--cor-primaria-clara); }
     background: var(--cor-primaria);
     border-radius: 6px;
 }
-.btn-remover {
+.btn-remover, .btn-melhorar {
     background: transparent;
     border: 1px solid var(--cor-primaria);
     border-radius: 6px;
 }
-.btn-remover:hover {
+.btn-remover:hover, .btn-melhorar:hover {
     background: var(--cor-primaria);
 }
 .tabela-limites {
@@ -1191,6 +1202,66 @@ input:checked ~ .status-label { color: var(--cor-primaria-clara); }
 .linha-atual td {
     color: var(--cor-primaria-clara);
     font-weight: bold;
+}
+#modal-melhorias .modal-conteudo {
+    width: 95%;
+    max-width: 900px;
+    max-height: 85vh; 
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(
+        180deg,
+        rgba(40, 10, 10, 0.95),
+        rgba(20, 5, 5, 0.95)
+    );
+    border: 1px solid var(--cor-primaria);
+    border-radius: 12px;
+    box-shadow:
+        0 0 25px rgba(131, 49, 49, 0.4),
+        0 20px 40px rgba(0, 0, 0, 0.8);
+    overflow-y: auto; 
+}
+.listas-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 25px;
+}
+.listas-container h3 {
+    color: var(--cor-texto-claro);
+    margin: 5px 0;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(131,49,49,0.4);
+    padding-bottom: 4px;
+}
+.footer-modal {
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,0.35);
+    border-top: 1px solid rgba(131,49,49,0.4);
+    color: var(--cor-texto-claro);
+}
+.footer-modal button {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s, box-shadow 0.1s;
+}
+.footer-modal button:hover {
+    background-color: var(--cor-primaria-hover);
+    color: var(--cor-texto-claro);
+    border: 1px solid rgb(70, 18, 18);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+}
+.nao_vaza{
+    max-height: 500px;
+    overflow-y: auto; 
 }
 @keyframes tremer {
     0% { transform: translate(1px, 1px) rotate(0deg); }
@@ -1218,13 +1289,8 @@ input:checked ~ .status-label { color: var(--cor-primaria-clara); }
     .img_atrib .input {
         font-size: 5vw;
     }
-    .pericias-grid {
-        max-height: 300px;    /* altura limitada no celular */
-        overflow-y: auto;     /* scroll aparece se exceder */
-        padding-right: 5px;   /* espaço para a barra de scroll */
-    }
     .ficha-grid {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        grid-template-columns: repeat(2, minmax(180px, 1fr));
     }
     .ficha-card {
         max-height: none;
@@ -1285,5 +1351,10 @@ input:checked ~ .status-label { color: var(--cor-primaria-clara); }
     }
     .caixa {
         margin-top: 80px; 
+    }
+}
+@media (max-width: 590px) {
+    .ficha-grid {
+        grid-template-columns: repeat(1, minmax(180px, 1fr));
     }
 }

@@ -995,21 +995,32 @@ window.fecharModalEquip = fecharModalEquip;
 window.renderizarItensModal = renderizarItensModal;
 window.adicionarAoInventario = adicionarAoInventario;
 // Na sua função adicionarAoInventario, a linha 33 estava com o nome errado:
-function adicionarAoInventario(item) {
+// Altere a assinatura da função para receber a categoria
+function adicionarAoInventario(item, categoriaOrigem) {
+    let origem = categoriaOrigem;
+    if (!origem) {
+        const tipo = (item.tipo || "").toLowerCase();
+        if (tipo.includes("arma")) origem = "armas";
+        else if (item.defesa) origem = "protecoes";
+        else if (tipo.includes("muni") || tipo.includes("bala")) origem = "municoes";
+        else if (tipo.includes("paranormal") || tipo.includes("maldi")) origem = "paranormais";
+        else origem = "acessorios";
+    }
     const itemInstanciado = { 
         ...item, 
-        idUnico: Date.now() + Math.random().toString(36).substr(2, 9) 
+        origemEquipamento: origem,
+        idUnico: Date.now() + Math.random().toString(36).substr(2, 9),
+        melhorias: []
     };
 
-    if (!window.fichaAtualDados) window.fichaAtualDados = {}; // Proteção caso esteja vazio
-    if (!window.fichaAtualDados.inventario) {
-        window.fichaAtualDados.inventario = [];
-    }
+    if (!window.fichaAtualDados) window.fichaAtualDados = {}; 
+    if (!window.fichaAtualDados.inventario) window.fichaAtualDados.inventario = [];
+    
     window.fichaAtualDados.inventario.push(itemInstanciado);
 
     const campoCarga = document.getElementById('carga-atual');
     let cargaNova = (parseInt(campoCarga.value) || 0) + (parseInt(item.espaco) || 0);
-    campoCarga.value = cargaNova;
+    if(campoCarga) campoCarga.value = cargaNova;
 
     atualizarBarraCarga();
     sincronizarDefesaComInventario();
@@ -1042,7 +1053,7 @@ async function renderizarItensModal() {
                     if (item.dano) detalhesTecnicos += `<strong>Dano:</strong> ${item.dano} | `;
                     if (item.defesa) detalhesTecnicos += `<strong>Defesa:</strong> ${item.defesa} | `;
                     if (item.espaco) detalhesTecnicos += `<strong>Peso:</strong> ${item.espaco} | `;
-                    if (item.categoria) detalhesTecnicos += `<strong>Categoria:</strong> ${item.categoria}`;
+                    if (item.categoria != null) detalhesTecnicos += `<strong>Categoria:</strong> ${item.categoria}`;
 
                     card.innerHTML = `
                         <div class="item-header-modal">
@@ -1050,6 +1061,7 @@ async function renderizarItensModal() {
                             <span class="setinha">▼</span>
                         </div>
                         <div class="detalhes-item-modal">
+                            <p>${item.tipo || ""}</p>
                             <p>${item.descricao || "Sem descrição."}</p>
                             <p><small>${detalhesTecnicos}</small></p>
                             <button class="btn-adicionar">Adicionar</button>
@@ -1064,7 +1076,7 @@ async function renderizarItensModal() {
 
                     // Evento do Botão Adicionar
                     card.querySelector('.btn-adicionar').onclick = () => {
-                        adicionarAoInventario(item);
+                        adicionarAoInventario(item, categoria);
                     };
 
                     container.appendChild(card);
@@ -1097,8 +1109,24 @@ function renderizarInventarioFicha() {
 
     itens.forEach((item, index) => {
         // Soma Categoria e Peso
-        if (item.categoria > 0) contagem[item.categoria]++;
+        const catParaExibir = item.categoriaTotal !== undefined ? item.categoriaTotal : (parseInt(item.categoria) || 0);
+        if (catParaExibir > 0 && catParaExibir <= 4) {
+            contagem[catParaExibir]++;
+        }
         pesoTotal += (parseInt(item.espaco) || 0);
+
+        let htmlMelhorias = "";
+        if (item.melhorias && item.melhorias.length > 0) {
+            htmlMelhorias = `<div class="container-melhorias-lista">`;
+            item.melhorias.forEach(mod => {
+                htmlMelhorias += `
+                    <div class="melhoria-item-ficha">
+                        <strong>Melhoria: ${mod.nome.toUpperCase()}</strong>
+                        <p>${mod.descricao || "Sem descrição."}</p>
+                    </div>`;
+            });
+            htmlMelhorias += `</div>`;
+        }
 
         // Criar o Card
         const card = document.createElement('div');
@@ -1133,28 +1161,35 @@ function renderizarInventarioFicha() {
             e.preventDefault();
             handleDrop(index);
         });
+        if (item.melhorias && item.melhorias.length > 0) card.classList.add('item-melhorado');
         card.innerHTML = `
             <div class="item-principal" onclick="this.parentElement.classList.toggle('aberto')">
-                <span><strong>${item.nome}</strong> (${item.espaco} Esp. | Categoria ${item.categoria})</span>
+                <span><strong>${item.nome}</strong> (${item.espaco} Esp. | Categoria ${catParaExibir})</span>
                 <span class="setinha">▼</span>
             </div>
             <div class="detalhes-item">
-                <p>${item.descricao}</p>
+                ${item.tipo ? `<p>${item.tipo}</p>` : ''}
+                <p>${item.descricao || ""}</p>
                 ${item.dano ? `<p>⚔️ Dano: ${item.dano} | Crítico: ${item.critico}</p>` : ''}
+                ${item.tipoDano ? `<p>⚔️ Tipo de Dano: ${item.tipoDano} | Alcance: ${item.alcance}</p>` : ''}
                 ${item.defesa ? `<p>🛡️ Defesa: ${item.defesa}</p>` : ''}
                 ${item.Elemento ? `<p>🌀 Elemento: ${item.Elemento}</p>` : ''}
+                ${item.habilidade ? `<p>🌀 Habilidade: ${item.habilidade}</p>` : ''}
+                ${htmlMelhorias}
                 <button class="btn-remover" onclick="removerItem(${index})">Remover</button>
+                <button class="btn-melhorar" onclick="abrirModalMelhorias(${index})">
+                    <span>⚙️</span> Melhorar
+                </button>
             </div>
         `;
         container.appendChild(card);
     });
 
     // Atualizar os números na tabela de limites
-    document.getElementById('atual-cat1').innerText = contagem[1];
-    document.getElementById('atual-cat2').innerText = contagem[2];
-    document.getElementById('atual-cat3').innerText = contagem[3];
-    document.getElementById('atual-cat4').innerText = contagem[4];
-
+    for (let i = 1; i <= 4; i++) {
+        const elemento = document.getElementById(`atual-cat${i}`);
+        if (elemento) elemento.innerText = contagem[i];
+    }
     // Atualizar o peso atual no input
     document.getElementById('carga-atual').value = pesoTotal;
     atualizarBarraCarga();
@@ -1218,7 +1253,212 @@ function handleDrop(targetIndex) {
     renderizarInventarioFicha();
 }
 /* ============================================================
-   23. Salva
+   23. Maldições e Modificações
+============================================================ */
+let dadosMelhoriasCache = null;
+let itemSendoMelhoradoIndex = null;
+let melhoriasSelecionadas = [];
+async function carregarMelhorias() {
+    try {
+        const response = await fetch('melhorias.json'); // Caminho do seu arquivo
+        const dados = await response.json();
+        return dados;
+    } catch (erro) {
+        console.error("Erro ao carregar o arquivo melhorias.json:", erro);
+        return { maldicoes: [], modificacoes: [] };
+    }
+}
+function renderizarMelhoriasFiltradas() {
+    const busca = document.getElementById('busca-melhoria').value.toLowerCase();
+    const listaMod = document.getElementById('lista-modificacoes');
+    const listaMal = document.getElementById('lista-maldicoes');
+
+    listaMod.innerHTML = "";
+    listaMal.innerHTML = "";
+
+    // Função interna para criar o card estilo catálogo
+    const criarCardMelhoria = (m) => {
+        const jaPossui = melhoriasSelecionadas.some(jaTem => jaTem.id === m.id);
+        const card = document.createElement('div');
+        card.className = `card-item-catalogo ${jaPossui ? 'selecionado' : ''}`;
+        
+        card.innerHTML = `
+            <div class="item-header-modal" onclick="this.parentElement.classList.toggle('aberto')">
+                <div class="check-e-nome">
+                    <input type="checkbox" ${jaPossui ? 'checked' : ''} 
+                        onclick="event.stopPropagation();" 
+                        onchange="toggleMelhoria('${m.id}', '${m.nome}', ${m.categoriaMod}, '${m.elemento || 'Nenhum'}', this)">
+                    <strong>${m.nome}</strong>
+                </div>
+                <span class="setinha">▼</span>
+            </div>
+            <div class="detalhes-item-modal">
+                <p><strong>Categoria:</strong> +${m.categoriaMod}</p>
+                ${m.elemento ? `<p><strong>Elemento:</strong> ${m.elemento}</p>` : ''}
+                <p>${m.descricao || "Sem descrição disponível."}</p>
+            </div>
+        `;
+        return card;
+    };
+
+    // Renderizar Modificações
+    dadosMelhoriasCache.modificacoes.forEach(mod => {
+        if (mod.nome.toLowerCase().includes(busca)) {
+            listaMod.appendChild(criarCardMelhoria(mod));
+        }
+    });
+
+    // Renderizar Maldições
+    dadosMelhoriasCache.maldicoes.forEach(mal => {
+        if (mal.nome.toLowerCase().includes(busca)) {
+            listaMal.appendChild(criarCardMelhoria(mal));
+        }
+    });
+
+    atualizarPreviewCategoria();
+}
+window.filtrarMelhorias = function() {
+    renderizarMelhoriasFiltradas();
+};
+// 2. Filtra as melhorias baseadas no tipo do item
+async function obterMelhoriasDisponiveis(tipoBusca) {
+    const dados = await carregarMelhorias();
+    
+    console.log("--- DEBUG MELHORIAS ---");
+    console.log("O que o sistema pediu:", tipoBusca);
+    console.log("O que tem no JSON (Maldicoes):", dados.maldicoes);
+
+    const maldicoesFiltradas = (dados.maldicoes || []).filter(m => {
+        console.log(`Comparando: ${m.tipo} === ${tipoBusca}`);
+        return m.tipo === tipoBusca;
+    });
+
+    const modificacoesFiltradas = (dados.modificacoes || []).filter(m => m.tipo === tipoBusca);
+
+    console.log("Resultado do filtro:", maldicoesFiltradas.length, "itens encontrados.");
+    console.log("-----------------------");
+
+    return { 
+        maldicoes: maldicoesFiltradas, 
+        modificacoes: modificacoesFiltradas 
+    };
+}
+async function abrirModalMelhorias(index) {
+    itemSendoMelhoradoIndex = index;
+    const item = window.fichaAtualDados.inventario[index];
+    
+    const dePara = {
+        "armas": "armas",
+        "acessorios": "acessorios",
+        "protecoes": "protecoes",
+        "municoes": "municoes",
+        "paranormais": "paranormais"
+    };
+
+    let tipoParaBusca = dePara[item.origemEquipamento] || "acessorios";
+    
+    // Carrega e armazena no cache para a busca em tempo real funcionar
+    dadosMelhoriasCache = await obterMelhoriasDisponiveis(tipoParaBusca);
+    melhoriasSelecionadas = item.melhorias ? [...item.melhorias] : [];
+
+    document.getElementById('titulo-melhoria-item').innerText = `Melhorar: ${item.nome}`;
+    document.getElementById('modal-melhorias').classList.remove('modal-oculto');
+    
+    renderizarMelhoriasFiltradas();
+}
+function toggleMelhoria(id, nome, categoriaMod, elemento, checkbox) {
+    if (checkbox.checked) {
+        // Vamos buscar a descrição direto do cache (memória) ao invés do HTML
+        let descricao = "Sem descrição disponível.";
+        
+        // Procura a melhoria na lista de modificações
+        let melhoriaEncontrada = dadosMelhoriasCache.modificacoes.find(m => m.id === id);
+        
+        // Se não achou nas modificações, procura nas maldições
+        if (!melhoriaEncontrada) {
+            melhoriaEncontrada = dadosMelhoriasCache.maldicoes.find(m => m.id === id);
+        }
+        
+        // Se achou, pega a descrição verdadeira dela
+        if (melhoriaEncontrada && melhoriaEncontrada.descricao) {
+            descricao = melhoriaEncontrada.descricao;
+        }
+
+        melhoriasSelecionadas.push({ 
+            id: id, 
+            nome: nome, 
+            categoriaMod: categoriaMod, 
+            elemento: elemento,
+            descricao: descricao // Descrição puxada com segurança!
+        });
+
+        // Adiciona a bordinha vermelha (opcional visual)
+        const card = checkbox.closest('.card-item-catalogo');
+        if (card) card.classList.add('selecionado');
+
+    } else {
+        // Remove da lista se desmarcar
+        melhoriasSelecionadas = melhoriasSelecionadas.filter(m => m.id !== id);
+        
+        const card = checkbox.closest('.card-item-catalogo');
+        if (card) card.classList.remove('selecionado');
+    }
+    
+    // Atualiza o cálculo matemático lá embaixo no modal
+    atualizarPreviewCategoria();
+}
+function atualizarPreviewCategoria() {
+    const item = window.fichaAtualDados.inventario[itemSendoMelhoradoIndex];
+    const base = parseInt(item.categoria) || 0;
+    const adicional = melhoriasSelecionadas.reduce((acc, curr) => acc + curr.categoriaMod, 0);
+    document.getElementById('categoria-preview').innerText = base + adicional;
+}
+function salvarMelhoriasItem() {
+    const item = window.fichaAtualDados.inventario[itemSendoMelhoradoIndex];
+    
+    // Salva o array completo de melhorias selecionadas
+    item.melhorias = [...melhoriasSelecionadas];
+    
+    // Calcula a Categoria Total (Base + Melhorias)
+    const categoriaBase = parseInt(item.categoria) || 0;
+    const adicional = melhoriasSelecionadas.reduce((acc, curr) => acc + curr.categoriaMod, 0);
+    item.categoriaTotal = categoriaBase + adicional;
+    
+    // Criamos uma string formatada para exibir no card
+    item.textoMelhorias = melhoriasSelecionadas.map(m => m.nome).join(", ");
+
+    fecharModalMelhorias();
+    renderizarInventarioFicha(); // Re-renderiza para mostrar as mudanças
+    
+    // Opcional: Salvar no banco de dados
+    if (typeof salvarFicha === 'function') salvarFicha();
+}
+function fecharModalMelhorias() {
+    const modal = document.getElementById('modal-melhorias');
+    
+    if (modal) {
+        // 1. Adiciona a classe que esconde o modal (CSS: .modal-oculto { display: none; })
+        modal.classList.add('modal-oculto');
+        
+        // 2. Reseta as variáveis de controle para o próximo item
+        itemSendoMelhoradoIndex = null;
+        melhoriasSelecionadas = [];
+        
+        // 3. Opcional: Limpa o campo de busca para não abrir filtrado na próxima vez
+        const campoBusca = document.getElementById('busca-melhoria');
+        if (campoBusca) campoBusca.value = "";
+        
+        console.log("Modal de melhorias fechado e variáveis resetadas.");
+    } else {
+        console.error("Erro: Elemento 'modal-melhorias' não encontrado no HTML.");
+    }
+}
+window.abrirModalMelhorias = abrirModalMelhorias;
+window.toggleMelhoria = toggleMelhoria;
+window.salvarMelhoriasItem = salvarMelhoriasItem;
+window.fecharModalMelhorias = fecharModalMelhorias;
+/* ============================================================
+   24. Salva
 ============================================================ */
 const btnSalvar = document.querySelector('.btn-salvar-alteracoes');
 if (btnSalvar) {

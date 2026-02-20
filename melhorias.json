@@ -1,0 +1,485 @@
+{
+  "modificacoes": [
+    {
+      "id":"alongada",
+      "nome": "Alongada",
+      "tipo": "armas",
+      "descricao":"Com um cano mais longo, que aumenta a precisão dos disparos, a arma fornece +2 nos testes de ataque.",
+      "categoriaMod": 1
+    },
+    {
+      "id":"calibre_grosso",
+      "nome": "Calibre Grosso",
+      "tipo": "armas",
+      "descricao":"A arma é modificada para disparar munição de maior calibre, aumentando seu dano em mais um dado do mesmo tipo. Por exemplo, um revolver de calibre grosso causa 3d6 pontos de dano, enquanto um fuzil de precisão causa 3d10. Armas com esta modificação precisam usar munição específica de calibre grosso. Munição de calibre grosso possui o mesmo custo em categoria de munição normal, mas não pode ser usada em armas normais.",
+      "categoriaMod": 1
+    },
+    {
+      "id":"certeira",
+      "nome": "Certeira",
+      "tipo": "armas",
+      "descricao":"Fabricada para ser mais precisa e balanceada, a arma fornece +2 nos testes de ataque.",
+      "categoriaMod": 1
+    },
+    {
+      "id":"compensador",
+      "nome": "Compesador",
+      "tipo": "armas",
+      "descricao":"Apenas para armas automáticas. Um sistema de amortecimento reduz o coice da arma, anulando a penalidade em testes de ataque por disparar rajadas.",
+      "categoriaMod": 1
+    },
+    {
+      "id":"cruel",
+      "nome": "Cruel",
+      "tipo": "armas",
+      "descricao":"A arma possui a lâmina especialmente afiada ou foi fabricada com materiais mais densos. Fornece +2 nas rolagens de dano.",
+      "categoriaMod": 1
+    },
+    {
+      "id":"discreta",
+      "nome": "Discreta",
+      "tipo": "armas",
+      "descricao":"A arma possui modificações para chamar menos atenção e ocupar menos espaço. Se for uma arma de fogo, pode ser desmontável, se for um bastão pode ser retrátil e assim por diante. Fornece +5 em testes de Crime para ser ocultada (e permite que você faça esse teste mesmo que não seja treinado na perícia) e reduz o número de espaços ocupados em 1.",
+      "categoriaMod": 1
+    },
+    {
+      "id":"dum_dum",
+      "nome": "Dum Dum",
+      "tipo": "municoes",
+      "descricao":"Estas balas são feitas para se expandir durante o impacto, produzindo ferimentos terríveis. Esta modificação só pode ser aplicada em balas curtas e longas e aumenta o multiplicador de crítico em +1.",
+      "categoriaMod": 1
+    },
+    {
+      "id":"explosiva",
+      "nome": "Explosiva",
+      "tipo": "municoes",
+      "descricao":"Estas munições possuem uma gota de mercúrio ou glicerina, que fazem a bala explodir ao atingir o alvo. Esta modificação só pode ser aplicada em balas curtas e longas e aumenta o dano causado em +2d6.",
+      "categoriaMod": 1
+    },
+    {
+      "id":"ferrolho_automatico",
+      "nome": "Ferrolho Automático",
+      "tipo": "armas",
+      "descricao":"O mecanismo de ação da arma é modificado para disparar várias vezes em sequência. A arma se torna automática (OPRPG p. 59).",
+      "categoriaMod": 1
+    },
+    {
+      "id":"mira_laser",
+      "nome": "Mira Laser",
+      "tipo": "armas",
+      "descricao":"Um laser interno cria um reflexo vermelho num retículo luminoso, que é visto pelo atirador e ajuda-o a realizar disparos mais letais. Aumenta a margem de ameaça em +2.",
+      "categoriaMod": 1
+    },
+    {
+      "id":"mira_telescopia",
+      "nome": "Mira Telescópia",
+      "tipo": "armas",
+      "descricao":"A arma possui uma luneta com marcações de medidas, ideal para disparos precisos de longa distância. Aumenta o alcance da arma em uma categoria (de curto para médio, de médio para longo, de longo para extremo) e permite que a habilidade Ataque Furtivo seja usada em qualquer alcance.",
+      "categoriaMod": 1
+    },
+    {
+      "id":"perigosa",
+      "nome": "Perigosa",
+      "tipo": "armas",
+      "descricao":"A arma possui a lâmina afiada como uma navalha ou foi fabricada com materiais maciços. Seja como for, seus golpes possuem impacto terrível. Aumenta a margem de ameaça em +2.",
+      "categoriaMod": 1
+    },
+    {
+      "id":"silenciador",
+      "nome": "Silenciador",
+      "tipo": "armas",
+      "descricao":"Um silenciador reduz em –2d20 a penalidade em Furtividade para se esconder no mesmo turno em que atacou com a arma de fogo.",
+      "categoriaMod": 1
+    },
+    {
+      "id":"tatica",
+      "nome": "Tática",
+      "tipo": "armas",
+      "descricao":"A arma possui cabo texturizado, bandoleira e outros acessórios que facilitam seu manuseio. Você pode sacar a arma como uma ação livre.",
+      "categoriaMod": 1
+    },
+    {
+      "id":"visao_de_calor",
+      "nome": "Visão de Calor",
+      "tipo": "armas",
+      "descricao":"A mira tem um sistema eletrônico que sobrepõe imagens visíveis e imagens em infravermelho, criando um contraste entre zonas frias e quentes. Ao disparar com a arma, você ignora qualquer camuflagem do alvo.",
+      "categoriaMod": 1
+    },
+    {
+      "id":"antibombas",
+      "nome": "Amtibombas",
+      "tipo": "protecoes",
+      "descricao":"Quimicamente tratada para resistir ao calor e revestida de preenchimentos para amortecer estilhaços. Acompanha um capacete com viseira para proteger da luz e barulho de explosões. Fornece +5 em testes de resistência contra efeitos de área. Só pode ser aplicada em proteções pesadas.",
+      "categoriaMod": 1
+    },
+    {
+      "id":"blindada",
+      "nome": "Blindada",
+      "tipo": "protecoes",
+      "descricao":"Reforçada com placas de aço e cerâmica costuradas dentro das camadas de kevlar. Aumenta a resistência a dano para 5 e o espaço ocupado em +1. Só pode ser aplicada em proteções pesadas.",
+      "categoriaMod": 1
+    },
+    {
+      "id":"discreta",
+      "nome": "Discreta",
+      "tipo": "protecoes",
+      "descricao":"Colete compacto feito com kevlar denso para reduzir o volume. Reduz o número de espaços ocupados em 1, fornece +5 em testes de Crime para ser ocultada e permite que você faça esse teste mesmo que não seja treinado na perícia. Só pode ser aplicada em proteções leves.",
+      "categoriaMod": 1
+    },
+    {
+      "id":"reforcada",
+      "nome": "Reforçada",
+      "tipo": "protecoes",
+      "descricao":"Aumenta a Defesa fornecida em +2 e o espaço ocupado em +1. Uma proteção não pode ser reforçada e discreta ao mesmo tempo.",
+      "categoriaMod": 1
+    },
+    {
+      "id":"aprimorado",
+      "nome": "Mira Telescópia",
+      "tipo": "acessorios",
+      "descricao":"",
+      "categoriaMod": 1
+    },
+    {
+      "id":"discreto",
+      "nome": "Discreto",
+      "tipo": "acessorios",
+      "descricao":"O item é miniaturizado ou disfarçado como outro item inócuo (como um relógio). Reduz o número de espaços ocupados em 1, fornece +5 em testes de Crime para ser ocultado e permite que você faça esse teste mesmo que não seja treinado na perícia.",
+      "categoriaMod": 1
+    },
+    {
+      "id":"funcao_adicional",
+      "nome": "Função Adicional",
+      "tipo": "acessorios",
+      "descricao":"O acessório fornece +2 em uma perícia adicional à sua escolha, sujeita à aprovação do mestre.",
+      "categoriaMod": 1
+    },
+    {
+      "id":"instrumento",
+      "nome": "Instrumento",
+      "tipo": "acessorios",
+      "descricao":"O acessório pode ser usado como um kit de perícia específico (escolhido ao aplicar esta modificação).",
+      "categoriaMod": 1
+    },
+    {
+      "id":"bateria_potente",
+      "nome": "Bateria Potente",
+      "tipo": "acessorios",
+      "descricao":"Essa modificação para objetos elétricos aumenta sua eficiência e duração. Se usada em lanternas, celulares e notebooks, dobra a duração da bateria e o alcance da luz projetada. Se usada em um taser, dobra seus usos, aumenta o dano para 1d8 e a DT para resistir a ele em +5. Pode afetar outros objetos, conforme proposta dos jogadores, a critério do mestre.",
+      "categoriaMod": 1
+    },
+    {
+      "id":"lente_de_revelação",
+      "nome": "Mira Telescópia",
+      "tipo": "paranormais",
+      "descricao":"Esta é uma modificação para câmeras de aura paranormal. Uma câmera de aura modificada com esta lente permite ver seres invisíveis e incorpóreos e ignorar a camuflagem deles. Além disso, você pode gastar uma ação padrão e 1 PE para fotografar uma criatura em alcance curto. Até o fim da cena, a criatura fotografada perde camuflagem e invisibilidade e se torna corpórea (Von DT Pre evita).",
+      "categoriaMod": 1
+    }
+  ],
+  "maldicoes": [
+    {
+      "id":"antielemento",
+      "nome": "Antielemento",
+      "tipo": "armas",
+      "descricao":"A arma é letal contra criaturas de um elemento. Quando ataca uma criatura desse elemento, você pode gastar 2 PE. Se fizer isso e acertar o ataque, causa +4d8 pontos de dano. Para determinar o elemento aleatoriamente, role 1d4: 1) Conhecimento; 2) Energia; 3) Morte; 4) Sangue.",
+      "elemento":"Conhecimento",
+      "categoriaMod": 1
+    },
+    {
+      "id":"ritualistica",
+      "nome": "Ritualística",
+      "tipo": "armas",
+      "descricao":"Você pode armazenar na arma um ritual que tenha como alvo um ser ou que afete uma área, gastando os PE como se tivesse conjurado o ritual normalmente. O ritual não gera efeito na hora; em vez disso, fica guardado no item. Quando acerta um ataque com a arma, você pode descarregar o ritual armazenado como uma ação livre. O alvo do ritual, ou o centro da área dele, é o ser atingido. Uma vez que o ritual seja descarregado, outro pode ser armazenado.",
+      "elemento":"Conhecimento",
+      "categoriaMod": 1
+    },
+    {
+      "id":"senciente",
+      "nome": "Senciente",
+      "tipo": "armas",
+      "descricao":"Você pode gastar uma ação de movimento e 2 PE para imbuir a arma com uma fagulha de sua consciência. A arma flutua ao seu lado e, uma vez por rodada, ataca um ser em alcance curto (ou no alcance da arma, o que for maior) a sua escolha, com as mesmas estatísticas que teria se você a estivesse empunhando. Você pode gastar 1 PE no início de cada um de seus turnos para manter esse efeito. Se não o fizer, a arma cai no chão. Você pode usar uma ação de movimento para apanhar a arma no ar caso precise. Soltar a arma para que volte a flutuar para ativar a maldição é uma ação livre.",
+      "elemento":"Conhecimento",
+      "categoriaMod": 1
+    },
+    {
+      "id":"empuxo",
+      "nome": "Empuxo",
+      "tipo": "armas",
+      "descricao":"Com a capacidade de gerar uma descarga momentânea de Energia, a arma ganha a capacidade de ser arremessada em alcance curto (se já podia ser arremessada, seu alcance aumenta em uma categoria) e causa mais um dado de dano do mesmo tipo quando usada dessa forma. Após efetuar um ataque à distância com a arma, ela volta voando para você no mesmo turno. Pegar a arma é uma reação. Somente armas corpo a corpo podem receber essa maldição.",
+      "elemento":"Energia",
+      "categoriaMod": 1
+    },
+    {
+      "id":"energetica",
+      "nome": "Energética",
+      "tipo": "armas",
+      "descricao":"Você pode gastar 2 PE por ataque para transformar a arma (exceto seu cabo ou empunhadura) ou a munição disparada pela arma em Energia pura. Durante este ataque, a arma fornece +5 em testes de ataque, ignora resistência a dano e converte todo o dano causado para Energia. Armas corpo a corpo emanam luz como uma lâmpada; munição toma uma forma plasmática iluminada como feixes de luz.",
+      "elemento":"Energia",
+      "categoriaMod": 1
+    },
+    {
+      "id":"vibrante",
+      "nome": "Vibrante",
+      "tipo": "armas",
+      "descricao":"A arma vibra constantemente com um fluxo de Energia. Você recebe a habilidade Ataque Extra da trilha operações especiais do combatente. Se já a possui, em vez disso o custo para usá-la diminui em –1 PE.",
+      "elemento":"Energia",
+      "categoriaMod": 1
+    },
+    {
+      "id":"consumidora",
+      "nome": "Consumidora",
+      "tipo": "armas",
+      "descricao":"A arma drena a entropia de seres, deixando alvos atingidos lentos até o final da cena. Quando ataca, você pode gastar 2 PE. Se fizer isso e acertar o ataque, o alvo fica imóvel por uma rodada.",
+      "elemento":"Morte",
+      "categoriaMod": 1
+    },
+    {
+      "id":"erosiva",
+      "nome": "Erosiva",
+      "tipo": "armas",
+      "descricao":"A arma acelera o envelhecimento dos alvos, causando +1d8 pontos de dano de Morte. Quando ataca, você pode gastar 2 PE. Se fizer isso e acertar o ataque, a vítima sofre 2d4 pontos de dano de Morte no início de seus turnos pelas próximas duas rodadas.",
+      "elemento":"Morte",
+      "categoriaMod": 1
+    },
+    {
+      "id":"repulsora",
+      "nome": "Repulsara",
+      "tipo": "armas",
+      "descricao":"A arma gera uma aura similar a uma fumaça espiralada que desacelera ataques vindos em sua direção, fornecendo +2 de Defesa enquanto estiver empunhada. Quando você faz um bloqueio, pode gastar 2 PE. Se fizer isso, recebe um bônus adicional de +5 na Defesa.",
+      "elemento":"Morte",
+      "categoriaMod": 1
+    },
+    {
+      "id":"lancinante",
+      "nome": "Lancinante",
+      "tipo": "armas",
+      "descricao":"A arma inflige ferimentos terríveis, causando +1d8 de dano de Sangue. Este dado é multiplicado em acertos críticos. Por exemplo, se a arma possuir crítico x3, em um acerto crítico o dano adicional de lancinante vira +3d8.",
+      "elemento":"Sangue",
+      "categoriaMod": 1
+    },
+    {
+      "id":"predadora",
+      "nome": "Predadora",
+      "tipo": "armas",
+      "descricao":"A arma tem sede de sangue e persegue seus alvos, anulando penalidades por camuflagem e cobertura leves. Caso a arma seja de ataque à distância, seu alcance também aumenta em uma categoria. Além disso, a margem de ameaça da arma duplica. Por exemplo, um fuzil de caça predador tem margem de ameaça 17. Efeitos que duplicam a margemde ameaça são aplicados antes de quaisquer efeitos que a aumentem.",
+      "elemento":"Sangue",
+      "categoriaMod": 1
+    },
+    {
+      "id":"sanguinaria",
+      "nome": "Sanguinária",
+      "tipo": "armas",
+      "descricao":"Os ferimentos causados pela arma se rasgam além da área acertada. Um ser atingido fica sangrando. Sangramento causado pela arma é cumulativo — um ser atingido duas vezes perde 2d6 pontos de dano de sangramento por rodada. Além disso, quando você faz um acerto crítico com a arma ela drena o sangue derramado, o que deixa o alvo fraco e concede a você 2d10 pontos de vida temporários.",
+      "elemento":"Sangue",
+      "categoriaMod": 1
+    },
+    {
+      "id":"arascanta",
+      "nome": "Arascanta",
+      "tipo": "protecoes",
+      "descricao":"Você recebe +5 em testes de resistência contra rituais. Uma vez por cena, quando você é alvo de um ritual, pode gastar uma reação e PE igual ao custo dele para refleti-lo de volta ao conjurador. As características do ritual (efeitos, DT…) se mantêm, mas você toma quaisquer decisões exigidas por ele.",
+      "elemento":"Conhecimento",
+      "categoriaMod": 1
+    },
+    {
+      "id":"profetica",
+      "nome": "Profética",
+      "tipo": "protecoes",
+      "descricao":"A proteção concede vislumbres de um possível futuro imediato. Você recebe resistência a Conhecimento 10 e, quando faz um teste de resistência, pode gastar 2 PE para rolá-lo novamente.",
+      "elemento":"Conhecimento",
+      "categoriaMod": 1
+    },
+    {
+      "id":"sombria",
+      "nome": "Sombria",
+      "tipo": "protecoes",
+      "descricao":"A proteção confunde os sentidos. Você recebe +5 em Furtividade e ignora a penalidade de carga em testes dessa perícia. Além disso, você pode gastar uma ação de movimento e 1 PE para fazer o item adquirir a aparência de uma roupa comum, mas mantendo suas propriedades (bônus na Defesa, espaço ocupado, penalidade em perícias…).",
+      "elemento":"Conhecimento",
+      "categoriaMod": 1
+    },
+    {
+      "id":"cinetica",
+      "nome": "Cinética",
+      "tipo": "protecoes",
+      "descricao":"A proteção produz uma barreira invisível que desvia ataques, concedendo +2 em Defesa e resistência a dano 2 (para proteção leve ou escudo) ou 5 (para proteção pesada).",
+      "elemento":"Energia",
+      "categoriaMod": 1
+    },
+    {
+      "id":"lepida",
+      "nome": "Lépida",
+      "tipo": "protecoes",
+      "descricao":"A proteção amplifica sua mobilidade, concedendo +10 em testes de Atletismo e +3m de deslocamento. Você pode gastar 2 PE para se mover de forma sobrenatural. Até o final do turno, você ignora terreno difícil, recebe deslocamento de escalada igual a seu deslocamento terrestre e fica imune a dano por queda de até 9m.",
+      "elemento":"Energia",
+      "categoriaMod": 1
+    },
+    {
+      "id":"voltaica",
+      "nome": "Voltaica",
+      "tipo": "protecoes",
+      "descricao":"Você recebe resistência a Energia 10 e pode gastar uma ação de movimento e 2 PE para fazer a proteção emitir arcos de Energia até o fim da cena. Se fizer isso, no fim de cada um de seus turnos você causa 2d6 pontos de dano de Energia em todos os seres adjacentes.",
+      "elemento":"Energia",
+      "categoriaMod": 1
+    },
+    {
+      "id":"letargica",
+      "nome": "Letárgica",
+      "tipo": "protecoes",
+      "descricao":"A proteção desacelera ataques perigosos, concedendo +2 em Defesa. Além disso, você recebe 25% de chance (para proteção leve ou escudo) e 50% de chance (para pesada) de ignorar o dano extra de acertos críticos e ataques furtivos.",
+      "elemento":"Morte",
+      "categoriaMod": 1
+    },
+    {
+      "id":"repulsiva",
+      "nome": "Repulsiva",
+      "tipo": "protecoes",
+      "descricao":"Você recebe resistência a Morte 10 e pode gastar uma ação de movimento e 2 PE para cobrir seu corpo com uma camada de Lodo preto até o final da cena. Se fizer isso, qualquer ser que o ataque em corpo a corpo sofre 2d8 pontos de dano de Morte.",
+      "elemento":"Morte",
+      "categoriaMod": 1
+    },
+    {
+      "id":"regenerativa",
+      "nome": "Regenerativa",
+      "tipo": "protecoes",
+      "descricao":"A proteção melhora sua capacidade de resistência e regeneração. Você recebe resistência a Sangue 10 e pode gastar uma ação de movimento e 1 PE para recuperar 1d12 pontos de vida.",
+      "elemento":"Sangue",
+      "categoriaMod": 1
+    },
+    {
+      "id":"sadica",
+      "nome": "Sádica",
+      "tipo": "protecoes",
+      "descricao":"No início de seu turno, você recebe +1 em testes de ataque e rolagens de dano para cada 10 pontos de dano que sofreu desde o fim de seu último turno. Por exemplo, se tiver sofrido 45 pontos de dano, recebe +4 em testes de ataque e rolagens de dano.",
+      "elemento":"Sangue",
+      "categoriaMod": 1
+    },
+    {
+      "id":"carisma",
+      "nome": "Carisma",
+      "tipo": "acessorios",
+      "descricao":"O acessório gera uma aura que torna você mais carismático e autoconfiante. Você recebe +1 em Presença (este aumento não fornece PE adicionais).",
+      "elemento":"Conhecimento",
+      "categoriaMod": 1
+    },
+    {
+      "id":"conjuracao",
+      "nome": "Conjuração",
+      "tipo": "acessorios",
+      "descricao":"O acessório tem um ritual de 1º círculo. Se estiver empunhando o item, você pode conjurar o ritual como se o conhecesse. Caso conheça o ritual, seu custo diminui em –1 PE.",
+      "elemento":"Conhecimento",
+      "categoriaMod": 1
+    },
+    {
+      "id":"escudo_mental",
+      "nome": "Escudo Mental",
+      "tipo": "acessorios",
+      "descricao":"O acessório gera uma barreira psíquica. Você recebe resistência mental 10.",
+      "elemento":"Conhecimento",
+      "categoriaMod": 1
+    },
+    {
+      "id":"reflexao",
+      "nome": "Reflexão",
+      "tipo": "acessorios",
+      "descricao":"Uma vez por rodada, quando você é alvo de um ritual, pode gastar PE igual ao custo dele para refleti-lo de volta ao seu conjurador. As características do ritual (efeitos, DT…) se mantêm, mas você toma quaisquer decisões exigidas por ele.",
+      "elemento":"Conhecimento",
+      "categoriaMod": 1
+    },
+    {
+      "id":"sagacidade",
+      "nome": "Sagacidade",
+      "tipo": "acessorios",
+      "descricao":"Sua mente é acelerada pelo Conhecimento, fornecendo a você +1 em Intelecto (este aumento não fornece perícias e graus de treinamento).",
+      "elemento":"Conhecimento",
+      "categoriaMod": 1
+    },
+    {
+      "id":"defesa",
+      "nome": "Defesa",
+      "tipo": "acessorios",
+      "descricao":"Uma barreira de energia invisível gerada por este acessório fornece +5 de Defesa.",
+      "elemento":"Energia",
+      "categoriaMod": 1
+    },
+    {
+      "id":"destreza",
+      "nome": "Destreza",
+      "tipo": "acessorios",
+      "descricao":"Este acessório aprimora sua coordenação e velocidade, fornecendo +1 em Agilidade.",
+      "elemento":"Energia",
+      "categoriaMod": 1
+    },
+    {
+      "id":"potencia",
+      "nome": "Potência",
+      "tipo": "acessorios",
+      "descricao":"Este acessório aumenta a DT contra suas habilidades, poderes e rituais em +1.",
+      "elemento":"Energia",
+      "categoriaMod": 1
+    },
+    {
+      "id":"esforço_adicional",
+      "nome": "Esforço Adicional",
+      "tipo": "acessorios",
+      "descricao":"Este acessório fornece +5 PE. Este efeito só se ativa após um dia de uso.",
+      "elemento":"Morte",
+      "categoriaMod": 1
+    },
+    {
+      "id":"disposicao",
+      "nome": "Disposição",
+      "tipo": "acessorios",
+      "descricao":"Valendo-se do poder do Sangue, você recebe +1 em Vigor.",
+      "elemento":"Sangue",
+      "categoriaMod": 1
+    },
+    {
+      "id":"pujanca",
+      "nome": "Pujança",
+      "tipo": "acessorios",
+      "descricao":"O acessório aumenta sua potência muscular, fornecendo +1 em Força.",
+      "elemento":"Sangue",
+      "categoriaMod": 1
+    },
+    {
+      "id":"vitalidade",
+      "nome": "Vitalidade",
+      "tipo": "acessorios",
+      "descricao":"Este acessório fornece +15 PV. Este efeito só se ativa após um dia de uso.",
+      "elemento":"Sangue",
+      "categoriaMod": 1
+    },
+    {
+      "id":"protecao_elemental_morte",
+      "nome": "Proteção Elemental de Morte",
+      "tipo": "acessorios",
+      "descricao":"Você recebe resistência 10 contra Morte",
+      "elemento":"Morte",
+      "categoriaMod": 1
+    },
+    {
+      "id":"protecao_elemental_sangue",
+      "nome": "Proteção Elemental de Sangue",
+      "tipo": "acessorios",
+      "descricao":"Você recebe resistência 10 contra Sangue",
+      "elemento":"Sangue",
+      "categoriaMod": 1
+    },
+    {
+      "id":"protecao_elemental_conhecimento",
+      "nome": "Proteção Elemental de Conhecimento",
+      "tipo": "acessorios",
+      "descricao":"Você recebe resistência 10 contra Conhecimento",
+      "elemento":"Conhecimento",
+      "categoriaMod": 1
+    },
+    {
+      "id":"protecao_elemental_energia",
+      "nome": "Proteção Elemental de Energia",
+      "tipo": "acessorios",
+      "descricao":"Você recebe resistência 10 contra Energia",
+      "elemento":"Energia",
+      "categoriaMod": 1
+    }
+  ]
+}

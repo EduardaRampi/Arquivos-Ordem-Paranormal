@@ -1133,7 +1133,9 @@
                     <div class="centralizar">
                         <button type="button" onclick="abrirModalEquip()" class="btn-adicionar-item">+ Adicionar Item</button>
                     </div>
-                    <div id="lista-inventario" class="lista-inventario"></div>
+                    <div class="nao_vaza">
+                        <div id="lista-inventario" class="lista-inventario"></div>
+                    </div>
                 </div>
                 <!-- COLUNA 6 - HISTÓRICO -->
                 <div class="ficha-card">
@@ -1215,6 +1217,62 @@
                 </select>
             </div>
             <div id="lista-itens-catalogo" class="grid-itens">
+            </div>
+        </div>
+    </div>
+    <div id="modal-melhorias" class="modal modal-oculto">
+        <div class="modal-conteudo">
+            <div class="modal-cabecalho">
+                <h2 id="titulo-melhoria-item">Melhoria item</h2>
+                <button onclick="fecharModalMelhorias()">X</button>
+            </div>
+            <div class="modal-filtros">
+                <input type="text" id="busca-melhoria" placeholder="Buscar modificação ou maldição..." oninput="filtrarMelhorias()">
+            </div>
+
+            <div class="listas-container">
+                <h3>Modificações</h3>
+                <div id="lista-modificacoes" class="grid-itens-2"></div>
+                
+                <h3>Maldições</h3>
+                <div id="lista-maldicoes" class="grid-itens-2"></div>
+            </div>
+
+            <div class="footer-modal">
+                <p>Categoria Final: <span id="categoria-preview">0</span></p>
+                <button class="btn-salvar" onclick="salvarMelhoriasItem()">Salvar Alterações</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal-habilidades" class="modal-oculto">
+        <div class="modal-conteudo">
+            <div class="modal-cabecalho">
+                <h2>XXXXX</h2>
+                <button onclick="fecharModalHabilidades()">X</button>
+            </div>
+            <div class="modal-filtros">
+                <input type="text" id="busca-item" placeholder="Procurar item..." oninput="filtrarItensModal()">
+                <select id="filtro-categoria" onchange="filtrarItensModal()">
+                    <option value="todos">Todos os Itens</option>
+                </select>
+            </div>
+            <div id="lista-habilidades-catalogo" class="grid-itens">
+            </div>
+        </div>
+    </div>
+    <div id="modal-rituais" class="modal-oculto">
+        <div class="modal-conteudo">
+            <div class="modal-cabecalho">
+                <h2>Arsenal da Ordem</h2>
+                <button onclick="fecharModalRituais()">X</button>
+            </div>
+            <div class="modal-filtros">
+                <input type="text" id="busca-item" placeholder="Procurar item..." oninput="filtrarItensModal()">
+                <select id="filtro-categoria" onchange="filtrarItensModal()">
+                    <option value="todos">Todos os Itens</option>
+                </select>
+            </div>
+            <div id="lista-rituais-catalogo" class="grid-itens">
             </div>
         </div>
     </div>
