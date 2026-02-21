@@ -833,7 +833,7 @@
         </div>
 
         <div id="Visualizar_Ficha" class="tela oculta">
-            <h1 id="view-nome"></h1>
+            <h1 contenteditable="true" onblur="salvarCampoSimples('nome', this.innerText)" id="view-nome">Sem nome</h1>
             <div class="ficha-grid">
                 <!-- COLUNA 1 - DADOS -->
                 <div class="ficha-card">
@@ -946,7 +946,7 @@
                                 </div>
                             </div>
                             <div class="barra-status">
-                                <div id="barra-pv" class="barra-pv">0 / 0</div>
+                                <div id="barra-pv" class="barra-texto" contenteditable="true" onblur="salvarStatusBarra('pv', this.innerText)">0 / 0</div>
                             </div>
                             <div id="morte-pv" class="status-emergencia ocuta">
                                 <div class="bolinhas-morte">
@@ -970,7 +970,7 @@
                                 </div>
                             </div>
                             <div class="barra-status">
-                                <div id="barra-san" class="barra-san">0 / 0</div>
+                                <div id="barra-san" class="barra-texto" contenteditable="true" onblur="salvarStatusBarra('san', this.innerText)" >0 / 0</div>
                             </div>
                             <div id="morte-san" class="status-emergencia ocuta">
                                 <div class="bolinhas">
@@ -994,7 +994,7 @@
                                 </div>
                             </div>
                             <div class="barra-status">
-                                <div id="barra-pe" class="barra-pe">0 / 0</div>
+                                <div id="barra-pe" class="barra-texto" contenteditable="true" onblur="salvarStatusBarra('pe', this.innerText)">0 / 0</div>
                             </div>
                         </div>
                         <div id="container-pd" class="barra-status-container ocuta">
@@ -1010,7 +1010,7 @@
                                 </div>
                             </div>
                             <div class="barra-status">
-                                <div id="barra-pd" class="barra-pd">0 / 0</div>
+                                <div id="barra-pd" class="barra-texto" contenteditable="true" onblur="salvarStatusBarra('pd', this.innerText)">0 / 0</div>
                             </div>
                             <div id="morte-pd" class="status-emergencia ocuta">
                                 <div class="bolinhas">
@@ -1137,8 +1137,17 @@
                         <div id="lista-inventario" class="lista-inventario"></div>
                     </div>
                 </div>
-                <!-- COLUNA 6 - HISTÓRICO -->
+                <!-- COLUNA 6 - DETALHES -->
                 <div class="ficha-card">
+                    <h3>Foto</h3>
+                    <div class="container-avatar">
+                        <div class="avatar-wrapper" onclick="abrirModalFoto()">
+                            <img id="foto-personagem" src="https://placehold.co/400" alt="Avatar">
+                            <div class="overlay-foto">
+                                <span>✦ Trocar Foto</span>
+                            </div>
+                        </div>
+                    </div>
                     <h3>Notas</h3>
                     <textarea id="edit-nota" class="textarea-ficha" rows="6"></textarea>
                     <h3>Aparência</h3>
@@ -1150,6 +1159,7 @@
                     <h3>Objetivo</h3>
                     <textarea id="edit-objetivo" class="textarea-ficha" rows="4"></textarea>
                 </div>
+                <!-- COLUNA 7 - REGRAS EXTRAS -->
                 <div class = "ficha-card">
                     <h3>Regras da Campanha</h3>
                     <div class="config-card">
@@ -1180,6 +1190,9 @@
                 <button class="btn-salvar-alteracoes">
                     Salvar Alterações
                 </button>
+                <button class="btn-excluir-ficha">
+                    Excluir Ficha
+                </button>
                 <button class="btn-voltar" data-destino="Fichas">Voltar</button>
             </div>
         </div>
@@ -1196,7 +1209,7 @@
         </footer>
     
     </div>
-    <div id="modal-equipamentos" class="modal-oculto">
+    <div id="modal-equipamentos" class="modal modal-oculto">
         <div class="modal-conteudo">
             <div class="modal-cabecalho">
                 <h2>Arsenal da Ordem</h2>
@@ -1244,7 +1257,106 @@
             </div>
         </div>
     </div>
-    <div id="modal-habilidades" class="modal-oculto">
+    <div id="modal-editar-item" class="modal modal-oculto">
+        <div class="modal-conteudo modal-editar-conteudo">
+            <div class="modal-cabecalho">
+                <h2>Editar Item</h2>
+                <button onclick="fecharModalEditar()">X</button>
+            </div>
+            <div class="modal-corpo-editar">
+                <div class="grid-editar">
+
+                    <div class="campo">
+                        <label>Nome</label>
+                        <input type="text" id="edit-item-nome">
+                    </div>
+
+                    <div class="campo pequeno">
+                        <label>Espaço</label>
+                        <input type="number" id="edit-item-espaco">
+                    </div>
+
+                    <div class="campo pequeno">
+                        <label>Categoria</label>
+                        <input type="number" id="edit-item-categoria">
+                    </div>
+
+                    <div class="campo">
+                        <label>Tipo</label>
+                        <input type="text" id="edit-item-tipo" placeholder="Ex: Arma Leve">
+                    </div>
+
+                    <div class="campo">
+                        <label>Dano</label>
+                        <input type="text" id="edit-item-dano" placeholder="Ex: 1d10">
+                    </div>
+
+                    <div class="campo">
+                        <label>Crítico</label>
+                        <input type="text" id="edit-item-critico" placeholder="Ex: 19/x3">
+                    </div>
+
+                    <div class="campo">
+                        <label>Tipo de Dano</label>
+                        <input type="text" id="edit-item-tipoDano" placeholder="Perfuração">
+                    </div>
+
+                    <div class="campo">
+                        <label>Alcance</label>
+                        <input type="text" id="edit-item-alcance" placeholder="Curto">
+                    </div>
+
+                    <div class="campo">
+                        <label>Habilidade</label>
+                        <input type="text" id="edit-item-habilidade" placeholder="Ágil">
+                    </div>
+
+                    <div class="campo pequeno">
+                        <label>Defesa</label>
+                        <input type="number" id="edit-item-defesa" placeholder="3">
+                    </div>
+
+                    <div class="campo campo-longo">
+                        <label>Descrição</label>
+                        <textarea id="edit-item-desc" rows="4"></textarea>
+                    </div>
+
+                    <div class="campo campo-longo">
+                        <label>Melhorias aplicadas</label>
+                        <input type="text" id="edit-item-melhorias-nome">
+                        <textarea id="edit-item-melhorias" rows="4"></textarea>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="footer-modal">
+                <button class="btn-salvar" onclick="salvarMudancasItem()">Salvar</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal-foto" class="modal modal-oculto">
+        <div class="modal-conteudo modal-foto-conteudo">
+            <div class="modal-cabecalho">
+                <h2>Alterar Avatar</h2>
+                <button onclick="fecharModalFoto()">X</button>
+            </div>
+
+            <div class="modal-corpo-foto">
+                <label>URL da Imagem</label>
+                <input type="text" id="input-url-foto" placeholder="Cole o link da imagem aqui...">
+
+                <div class="preview-avatar">
+                    <img id="preview-foto" src="https://placehold.co/400">
+                </div>
+            </div>
+
+            <div class="footer-modal">
+                <button class="btn-salvar" onclick="salvarFoto()">Confirmar</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal-habilidades" class="modal modal-oculto">
         <div class="modal-conteudo">
             <div class="modal-cabecalho">
                 <h2>XXXXX</h2>
@@ -1260,7 +1372,7 @@
             </div>
         </div>
     </div>
-    <div id="modal-rituais" class="modal-oculto">
+    <div id="modal-rituais" class="modal modal-oculto">
         <div class="modal-conteudo">
             <div class="modal-cabecalho">
                 <h2>Arsenal da Ordem</h2>

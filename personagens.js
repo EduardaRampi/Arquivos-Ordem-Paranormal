@@ -7,7 +7,8 @@ import {
     where, 
     getDocs,
     doc,        
-    updateDoc
+    updateDoc,
+    deleteDoc
 } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
 // Variáveis para armazenar as seleções feitas nas abas
@@ -559,6 +560,7 @@ function abrirFichaCompleta(id, dados) {
         document.getElementById('edit-prestigio').value = dados.prestigio || 0;
         atualizarPatente(); // Chama a função para preencher os nomes e limites
     }
+
     // J. Inventário
     if (dados.inventarioConfig) {
         document.getElementById('carga-atual').value = dados.inventarioConfig.cargaAtual || 0;
@@ -571,6 +573,13 @@ function abrirFichaCompleta(id, dados) {
     window.fichaAtualDados = dados;
     if (!window.fichaAtualDados.inventario) window.fichaAtualDados.inventario = [];
     renderizarInventarioFicha();
+
+    // K. Foto
+    if (dados.fotoUrl) {
+        document.getElementById('foto-personagem').src = dados.fotoUrl;
+    } else {
+        document.getElementById('foto-personagem').src = "https://placehold.co/400";
+    }
 }
 /* ============================================================
    8. REGRAS ADICIONAIS
@@ -586,8 +595,11 @@ function toggleRegra(regra) {
         // Se ligado, mostra o campo de Nível (não remove o NEX, apenas adiciona o Nível)
         if (isChecked) {
             containerNivel.classList.remove('oculta');
+            if (typeof salvarFicha === 'function') salvarFicha();
+
         } else {
             containerNivel.classList.add('oculta');
+            if (typeof salvarFicha === 'function') salvarFicha();
         }
     } 
     
@@ -610,6 +622,7 @@ function toggleRegra(regra) {
             contPETURNO.classList.add('ocuta');
             contPD.classList.remove('ocuta');
             contPDLIMITE.classList.remove('ocuta');
+            if (typeof salvarFicha === 'function') salvarFicha();
         } else {
             // DESLIGADO: Volta ao padrão
             contSanidade.classList.remove('ocuta');
@@ -617,6 +630,7 @@ function toggleRegra(regra) {
             contPE.classList.remove('ocuta');
             contPD.classList.add('ocuta');
             contPDLIMITE.classList.add('ocuta');
+            if (typeof salvarFicha === 'function') salvarFicha();
         }
     }
 }
@@ -1177,9 +1191,8 @@ function renderizarInventarioFicha() {
                 ${item.habilidade ? `<p>🌀 Habilidade: ${item.habilidade}</p>` : ''}
                 ${htmlMelhorias}
                 <button class="btn-remover" onclick="removerItem(${index})">Remover</button>
-                <button class="btn-melhorar" onclick="abrirModalMelhorias(${index})">
-                    <span>⚙️</span> Melhorar
-                </button>
+                <button class="btn-melhorar" onclick="abrirModalMelhorias(${index})"> ⚙️ Melhorar </button>
+                <button class="btn-editar" onclick="abrirEdicaoItem(${index})">✏️ Editar</button>
             </div>
         `;
         container.appendChild(card);
@@ -1234,7 +1247,102 @@ function sincronizarDefesaComInventario() {
     }
 }
 /* ============================================================
-   22. Arrastar
+   22. editar item
+============================================================ */
+let itemIndexSendoEditado = null;
+window.abrirEdicaoItem = function(index) {
+    itemIndexSendoEditado = index;
+    const item = window.fichaAtualDados.inventario[index];
+
+    let defesaLimpa = 0;
+    if (item.defesa) {
+        // Remove o "+" se existir e converte para número
+        defesaLimpa = parseInt(String(item.defesa).replace('+', '')) || 0;
+    }
+
+    // Preenche todos os campos com o que já existe (ou vazio)
+    document.getElementById('edit-item-nome').value = item.nome || "";
+    document.getElementById('edit-item-espaco').value = item.espaco || 0;
+    document.getElementById('edit-item-categoria').value = item.categoria || 0;
+    document.getElementById('edit-item-tipo').value = item.tipo || "";
+    document.getElementById('edit-item-dano').value = item.dano || "";
+    document.getElementById('edit-item-critico').value = item.critico || "";
+    document.getElementById('edit-item-tipoDano').value = item.tipoDano || "";
+    document.getElementById('edit-item-alcance').value = item.alcance || "";
+    document.getElementById('edit-item-defesa').value = defesaLimpa || 0;
+    document.getElementById('edit-item-desc').value = item.descricao || "";
+    document.getElementById('edit-item-habilidade').value = item.habilidade || "";
+
+    document.getElementById('modal-editar-item').classList.remove('modal-oculto');
+
+    const campoNomes = document.getElementById('edit-item-melhorias-nome');
+    const campoDescs = document.getElementById('edit-item-melhorias');
+
+    if (item.melhorias && item.melhorias.length > 0) {
+        // Junta os nomes separados por vírgula
+        campoNomes.value = item.melhorias.map(m => m.nome).join(", ");
+        
+        // Junta as descrições em linhas diferentes
+        campoDescs.value = item.melhorias.map(m => `${m.nome}: ${m.descricao}`).join("\n");
+    } else {
+        campoNomes.value = "";
+        campoDescs.value = "";
+    }
+
+};
+window.salvarMudancasItem = function() {
+    if (itemIndexSendoEditado === null) return;
+
+    const item = window.fichaAtualDados.inventario[itemIndexSendoEditado];
+
+    // Atualiza o objeto com os novos valores dos inputs
+    item.nome = document.getElementById('edit-item-nome').value;
+    item.espaco = parseInt(document.getElementById('edit-item-espaco').value) || 0;
+    item.categoria = parseInt(document.getElementById('edit-item-categoria').value) || 0;
+    item.tipo = document.getElementById('edit-item-tipo').value;
+    item.dano = document.getElementById('edit-item-dano').value;
+    item.critico = document.getElementById('edit-item-critico').value;
+    item.tipoDano = document.getElementById('edit-item-tipoDano').value;
+    item.alcance = document.getElementById('edit-item-alcance').value;
+    item.defesa = parseInt(document.getElementById('edit-item-defesa').value) || 0;
+    item.descricao = document.getElementById('edit-item-desc').value;
+    item.habilidade = document.getElementById('edit-item-habilidade').value;
+    const textoNomes = document.getElementById('edit-item-melhorias-nome').value;
+    const textoDescs = document.getElementById('edit-item-melhorias').value;
+
+    // Criamos listas a partir do que foi digitado
+    const listaNomes = textoNomes.split(',').map(n => n.trim()).filter(n => n !== "");
+    // Divide as descrições por linha
+    const listaDescs = textoDescs.split('\n').map(d => d.trim()).filter(d => d !== "");
+
+    // Reconstruímos o array de melhorias
+    // Nota: isso manterá os nomes e descrições novos que você digitou
+    item.melhorias = listaNomes.map((nome, i) => {
+        // Tenta pegar a descrição correspondente à linha, ou usa uma padrão
+        let descLimpa = listaDescs[i] || "";
+        // Se a descrição começar com "Nome: ", removemos para não duplicar
+        descLimpa = descLimpa.replace(new RegExp(`^${nome}:?\\s*`, 'i'), '');
+
+        return {
+            nome: nome,
+            descricao: descLimpa,
+            categoriaMod: item.melhorias && item.melhorias[i] ? item.melhorias[i].categoriaMod : 0
+        };
+    });
+
+    // Se o item tem defesa, precisamos sincronizar a defesa total da ficha
+    if (item.defesa > 0) sincronizarDefesaComInventario();
+
+    fecharModalEditar();
+    renderizarInventarioFicha(); // Re-gera os cards com os novos dados
+    salvarFicha(); // Envia para o Firebase
+};
+window.fecharModalEditar = function() {
+    document.getElementById('modal-editar-item').classList.add('modal-oculto');
+    itemIndexSendoEditado = null;
+};
+/* ============================================================
+   23. Arrastar
 ============================================================ */
 function handleDrop(targetIndex) {
     if (draggingIndex === null || draggingIndex === targetIndex) return;
@@ -1253,7 +1361,7 @@ function handleDrop(targetIndex) {
     renderizarInventarioFicha();
 }
 /* ============================================================
-   23. Maldições e Modificações
+   24. Maldições e Modificações
 ============================================================ */
 let dadosMelhoriasCache = null;
 let itemSendoMelhoradoIndex = null;
@@ -1458,131 +1566,273 @@ window.toggleMelhoria = toggleMelhoria;
 window.salvarMelhoriasItem = salvarMelhoriasItem;
 window.fecharModalMelhorias = fecharModalMelhorias;
 /* ============================================================
-   24. Salva
+   25. Pulo de linha
 ============================================================ */
-const btnSalvar = document.querySelector('.btn-salvar-alteracoes');
-if (btnSalvar) {
-    btnSalvar.addEventListener('click', async () => {
-        if (!idFichaAberta || !window.fichaAtualDados) {
-            alert("Erro: Carregue a ficha antes de salvar.");
+// Impede que o usuário pule linha no nome do personagem
+document.getElementById('view-nome').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault(); // Cancela o Enter
+        e.target.blur();    // Tira o foco para disparar o onblur e salvar
+    }
+});
+// Adicione isso junto aos seus Event Listeners
+document.querySelectorAll('[id^="barra-"]').forEach(barra => {
+    barra.addEventListener('keydown', (e) => {
+        // Se apertar Enter, salva e sai da edição
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            barra.blur();
+        }
+    });
+});
+/* ============================================================
+   26. Foto
+============================================================ */
+window.abrirModalFoto = function() {
+    const urlAtual = document.getElementById('foto-personagem').src;
+    document.getElementById('input-url-foto').value = urlAtual.includes('placeholder') ? "" : urlAtual;
+    document.getElementById('modal-foto').classList.remove('modal-oculto');
+};
+window.fecharModalFoto = function() {
+    document.getElementById('modal-foto').classList.add('modal-oculto');
+};
+window.salvarFoto = function() {
+    const novaUrl = document.getElementById('input-url-foto').value;
+    
+    if (novaUrl) {
+        // 1. Atualiza visualmente na hora
+        document.getElementById('foto-personagem').src = novaUrl;
+        
+        // 2. Salva no objeto da ficha
+        if (!window.fichaAtualDados) window.fichaAtualDados = {};
+        window.fichaAtualDados.fotoUrl = novaUrl;
+        
+        // 3. Envia para o Firebase
+        salvarFicha();
+        fecharModalFoto();
+    }
+};
+/* ============================================================
+   27. Excluir Ficha
+============================================================ */
+// Localize o botão no seu código
+const btnExcluir = document.querySelector('.btn-excluir-ficha');
+if (btnExcluir) {
+    btnExcluir.addEventListener('click', async () => {
+        // 1. Verificação de segurança
+        if (!idFichaAberta) {
+            alert("Erro: Nenhuma ficha selecionada para exclusão.");
             return;
         }
 
-        // Função auxiliar para capturar valor sem quebrar o código
-        const getVal = (id, padrao = "") => {
-            const el = document.getElementById(id);
-            if (!el) {
-                console.warn(`Atenção: Elemento com ID '${id}' não encontrado no HTML.`);
-                return padrao;
+        const confirmacao = confirm("⚠️ TEM CERTEZA? Isso excluirá o personagem permanentemente e não pode ser desfeito!");
+
+        if (confirmacao) {
+            try {
+                // 2. Referência do documento no Firebase
+                const fichaRef = doc(db, "personagens", idFichaAberta);
+
+                // 3. Deleta o documento
+                await deleteDoc(fichaRef);
+
+                alert("Personagem eliminado dos registros.");
+
+                // 4. Volta para a tela de seleção de personagens
+                voltarParaLista();
+
+            } catch (error) {
+                console.error("Erro ao excluir ficha:", error);
+                alert("Erro ao excluir: " + error.message);
             }
-            return el.value;
-        };
-
-        // Função para capturar números com segurança
-        const getNum = (id, padrao = 0) => {
-            const val = getVal(id, padrao);
-            return parseInt(val) || padrao;
-        };
-
-        try {
-            const fichaRef = doc(db, "personagens", idFichaAberta);
-
-            // Coletando dados com a função de segurança
-            const dadosParaSalvar = {
-                nex: getNum('edit-nex', 5),
-                jogador: getVal('edit-jogador'),
-                trilha: getVal('edit-trilha'),
-                afinidade: getVal('edit-afinidade'),
-                peTurno: getNum('edit-pe-turno', 1),
-                pdLimite: getNum('edit-pd-limite', 1),
-                deslocamento: {
-                    metros: parseFloat(getVal('edit-deslocamento-metros', 9)) || 9,
-                    grid: getNum('edit-deslocamento-grid', 6)
-                },
-                atributos: {
-                    FOR: getNum('edit-for'),
-                    AGI: getNum('edit-agi'),
-                    INT: getNum('edit-int'),
-                    VIG: getNum('edit-vig'),
-                    PRE: getNum('edit-pre')
-                },
-                detalhes: {
-                    aparencia: getVal('edit-aparencia'),
-                    historico: getVal('edit-historico'),
-                    objetivo: getVal('edit-objetivo'),
-                    nota: getVal('edit-nota'),
-                    personalidade: getVal('edit-personalidade')
-                },
-                defesa: {
-                    equip: getNum('def-equip'),
-                    outros: getNum('def-outros'),
-                    bloqueio: getVal('bloqueio'),
-                    esquiva: getVal('esquiva'),
-                    protecao: getVal('protecao'),
-                    resistencia: getVal('resistencias'),
-                    proficiencia: getVal('proficiencias')
-                },
-                prestigio: parseInt(document.getElementById('edit-prestigio').value) || 0,
-                inventarioConfig:{
-                    cargaAtual: getNum('carga-atual'),
-                    cargaMax: getNum('carga-max')
-                },
-                inventario: window.fichaAtualDados.inventario || []
-            };
-
-            // Coleta das barras (PV, PE, SAN)
-            const pegarStatusBarra = (id) => {
-                const barra = document.getElementById(id);
-                if (!barra) return { atual: 0, max: 0 };
-                const partes = barra.innerText.split('/');
-                return {
-                    atual: parseInt(partes[0]) || 0,
-                    max: parseInt(partes[1]) || 0
-                };
-            };
-
-            dadosParaSalvar.status = {
-                pvMax: pegarStatusBarra('barra-pv').max,
-                pvAtual: pegarStatusBarra('barra-pv').atual,
-                peMax: pegarStatusBarra('barra-pe').max,
-                peAtual: pegarStatusBarra('barra-pe').atual,
-                sanMax: pegarStatusBarra('barra-san').max,
-                sanAtual: pegarStatusBarra('barra-san').atual,
-                pdMax: pegarStatusBarra('barra-pd').max,
-                pdAtual: pegarStatusBarra('barra-pd').atual,
-            };
-
-            // Perícias
-            const pericias = {};
-            const outrosBonus = {};
-            document.querySelectorAll('.select-treino').forEach(sel => {
-                pericias[sel.getAttribute('data-pericia')] = parseInt(sel.value) || 0;
-            });
-            document.querySelectorAll('.input-outros').forEach(inp => {
-                outrosBonus[inp.getAttribute('data-pericia')] = parseInt(inp.value) || 0;
-            });
-
-            dadosParaSalvar.pericias = pericias;
-            dadosParaSalvar.outrosBonus = outrosBonus;
-
-            //Regras
-            dadosParaSalvar.regras = {
-                semSanidade: document.getElementById('opt-sem-sanidade').checked,
-                nexExp: document.getElementById('opt-nex-exp').checked
-            },
-
-            // Executa o update
-            await updateDoc(fichaRef, dadosParaSalvar);
-            alert("Alterações salvas com sucesso!");
-            
-            window.fichaAtualDados = { ...window.fichaAtualDados, ...dadosParaSalvar };
-
-        } catch (error) {
-            console.error("Erro completo:", error);
-            alert("Erro ao salvar: " + error.message);
         }
     });
 }
+// Função auxiliar para resetar a tela após a exclusão
+function voltarParaLista() {
+    // Esconde a tela de visualização
+    document.getElementById('Visualizar_Ficha').classList.add('oculta');
+    document.getElementById('Visualizar_Ficha').classList.remove('ativa');
 
+    // Mostra a tela de seleção/lista (ajuste o ID conforme seu HTML)
+    const telaLista = document.getElementById('Fichas')
+    if (telaLista) {
+        telaLista.classList.remove('oculta');
+        telaLista.classList.add('ativa');
+    }
+
+    // Limpa os dados da memória
+    idFichaAberta = null;
+    window.fichaAtualDados = null;
+
+    // Recarrega a lista de cards para não mostrar a ficha que acabou de ser deletada
+    if (typeof carregarPersonagens === 'function') {
+        carregarPersonagens();
+    }
+}
+/* ============================================================
+   28. Salva
+============================================================ */
+async function salvarFicha() {
+    if (!idFichaAberta || !window.fichaAtualDados) {
+        console.warn("Tentativa de salvar sem ficha aberta.");
+        return;
+    }
+
+    // Funções auxiliares internas (mantidas do seu original)
+    const getVal = (id, padrao = "") => {
+        const el = document.getElementById(id);
+        if (!el) {
+            console.warn(`Atenção: Elemento com ID '${id}' não encontrado no HTML.`);
+            return padrao;
+        }
+        return el.value;
+    };
+
+    // Função para capturar números com segurança
+    const getNum = (id, padrao = 0) => {
+        const val = getVal(id, padrao);
+        return parseInt(val) || padrao;
+    };
+
+    try {
+        const fichaRef = doc(db, "personagens", idFichaAberta);
+
+        // Coletando dados (Aqui incluímos o NOME que vem do innerText do h1)
+        const dadosParaSalvar = {
+            nome: document.getElementById('view-nome').innerText,
+            fotoUrl: document.getElementById('foto-personagem').src,
+            nex: getNum('edit-nex', 5),
+            jogador: getVal('edit-jogador'),
+            trilha: getVal('edit-trilha'),
+            afinidade: getVal('edit-afinidade'),
+            peTurno: getNum('edit-pe-turno', 1),
+            pdLimite: getNum('edit-pd-limite', 1),
+            deslocamento: {
+                metros: parseFloat(getVal('edit-deslocamento-metros', 9)) || 9,
+                grid: getNum('edit-deslocamento-grid', 6)
+            },
+            atributos: {
+                FOR: getNum('edit-for'),
+                AGI: getNum('edit-agi'),
+                INT: getNum('edit-int'),
+                VIG: getNum('edit-vig'),
+                PRE: getNum('edit-pre')
+            },
+            detalhes: {
+                aparencia: getVal('edit-aparencia'),
+                historico: getVal('edit-historico'),
+                objetivo: getVal('edit-objetivo'),
+                nota: getVal('edit-nota'),
+                personalidade: getVal('edit-personalidade')
+            },
+            defesa: {
+                equip: getNum('def-equip'),
+                outros: getNum('def-outros'),
+                bloqueio: getVal('bloqueio'),
+                esquiva: getVal('esquiva'),
+                protecao: getVal('protecao'),
+                resistencia: getVal('resistencias'),
+                proficiencia: getVal('proficiencias')
+            },
+            prestigio: parseInt(getVal('edit-prestigio')) || 0,
+            inventarioConfig:{
+                cargaAtual: getNum('carga-atual'),
+                cargaMax: getNum('carga-max')
+            },
+            inventario: window.fichaAtualDados.inventario || []
+        };
+
+        // Coleta das barras (PV, PE, SAN, PD)
+        const pegarStatusBarra = (id) => {
+            const barra = document.getElementById(id);
+            if (!barra) return { atual: 0, max: 0 };
+            const partes = barra.innerText.split('/');
+            return {
+                atual: parseInt(partes[0]) || 0,
+                max: parseInt(partes[1]) || 0
+            };
+        };
+
+        dadosParaSalvar.status = {
+            pvMax: pegarStatusBarra('barra-pv').max,
+            pvAtual: pegarStatusBarra('barra-pv').atual,
+            peMax: pegarStatusBarra('barra-pe').max,
+            peAtual: pegarStatusBarra('barra-pe').atual,
+            sanMax: pegarStatusBarra('barra-san').max,
+            sanAtual: pegarStatusBarra('barra-san').atual,
+            pdMax: pegarStatusBarra('barra-pd').max,
+            pdAtual: pegarStatusBarra('barra-pd').atual,
+        };
+
+        // Perícias
+        const pericias = {};
+        const outrosBonus = {};
+        document.querySelectorAll('.select-treino').forEach(sel => {
+            pericias[sel.getAttribute('data-pericia')] = parseInt(sel.value) || 0;
+        });
+        document.querySelectorAll('.input-outros').forEach(inp => {
+            outrosBonus[inp.getAttribute('data-pericia')] = parseInt(inp.value) || 0;
+        });
+
+        dadosParaSalvar.pericias = pericias;
+        dadosParaSalvar.outrosBonus = outrosBonus;
+
+        //Regras
+        dadosParaSalvar.regras = {
+            semSanidade: document.getElementById('opt-sem-sanidade').checked,
+            nexExp: document.getElementById('opt-nex-exp').checked
+        },
+
+        // Executa o update
+        await updateDoc(fichaRef, dadosParaSalvar);
+        console.log("Ficha sincronizada com Firebase!");
+        
+        window.fichaAtualDados = { ...window.fichaAtualDados, ...dadosParaSalvar };
+
+    } catch (error) {
+        console.error("Erro ao salvar:", error);
+        alert("Erro ao salvar: " + error.message);
+    }
+}
+const btnSalvar = document.querySelector('.btn-salvar-alteracoes');
+if (btnSalvar) {
+    btnSalvar.addEventListener('click', () => {
+        salvarFicha();
+        alert("Alterações salvas!");
+    });
+}
+window.salvarCampoSimples = function(campo, valor) {
+    if (!window.fichaAtualDados) return;
+
+    // Atualiza o valor na memória local primeiro
+    window.fichaAtualDados[campo] = valor.trim();
+    
+    // Chama a função de salvamento que acabamos de criar
+    salvarFicha();
+};
+window.salvarStatusBarra = function(tipo, textoCompleto) {
+    if (!window.fichaAtualDados) return;
+
+    // 1. Divide o texto pela barra "/"
+    const partes = textoCompleto.split('/');
+    
+    // 2. Limpa os valores e transforma em números
+    const atual = parseInt(partes[0]) || 0;
+    const max = partes[1] ? parseInt(partes[1]) : atual; // Se não digitar o max, assume que é igual ao atual
+
+    // 3. Atualiza o objeto na memória (seguindo a estrutura do seu Firebase)
+    if (!window.fichaAtualDados.status) window.fichaAtualDados.status = {};
+    
+    // Mapeia os nomes das propriedades conforme seu código de salvamento
+    window.fichaAtualDados.status[`${tipo}Atual`] = atual;
+    window.fichaAtualDados.status[`${tipo}Max`] = max;
+
+    console.log(`📊 Status ${tipo.toUpperCase()} atualizado: ${atual}/${max}`);
+
+    // 4. Dispara o salvamento automático
+    salvarFicha();
+};
+// Tornamos a função global para que o 'onblur' do HTML consiga achar ela
+window.salvarFicha = salvarFicha;
 // Expõe a função para o Window para que o auth.js possa chamá-la no login
 window.carregarPersonagens = carregarPersonagens;

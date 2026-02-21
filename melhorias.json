@@ -243,7 +243,7 @@
     },
     {
       "id":"repulsora",
-      "nome": "Repulsara",
+      "nome": "Repulsora",
       "tipo": "armas",
       "descricao":"A arma gera uma aura similar a uma fumaça espiralada que desacelera ataques vindos em sua direção, fornecendo +2 de Defesa enquanto estiver empunhada. Quando você faz um bloqueio, pode gastar 2 PE. Se fizer isso, recebe um bônus adicional de +5 na Defesa.",
       "elemento":"Morte",
