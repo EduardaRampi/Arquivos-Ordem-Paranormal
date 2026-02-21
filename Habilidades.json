@@ -1,0 +1,3011 @@
+{ 
+    "origem": [
+        {
+            "nome": "Saber é Poder",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Quando faz um teste usando Intelecto, você pode gastar 2 PE para receber +5 nesse teste.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":"Acadêmico"
+        },
+        {
+            "nome": "Técnica Medicinal",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Sempre que cura um personagem, você adiciona seu Intelecto no total de PV curados.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":"Agente de Saúde"
+        },
+        {
+            "nome": "Vislumbres do Passado",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Uma vez por sessão, você pode fazer um teste de Intelecto (DT 10) para reconhecer pessoas ou lugares familiares que tenha encontrado antes de perder a memória. Se passar, recebe 1d4 PE temporários e, a critério do mestre, uma informação útil.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Amnésico"
+        },
+        {
+            "nome": "Magnum Opus",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você é famoso por uma de suas obras. Uma vez por missão, pode determinar que uma pessoa envolvida em uma cena de interação o reconheça. Você recebe +5 em testes de Presença e de perícias baseadas em Presença contra aquela pessoa. A critério do mestre, pode receber esse bônus em outras situações nas quais seria reconhecido.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Artista"
+        },
+        {
+            "nome": "110%",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Quando faz um teste de perícia usando Força ou Agilidade (exceto Luta e Pontaria), você pode gastar 2 PE para receber +5 nesse teste.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Atleta"
+        },
+        {
+            "nome": "Ingrediente Secreto",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Em cenas de interlúdio, você pode fazer a ação alimentar-se para cozinhar um prato especial. Você e todos os membros do grupo que fizeram a ação alimentar-se recebem o benefício de dois pratos (caso o mesmo benefício seja escolhido duas vezes, seus efeitos se acumulam).",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Chef"
+        },
+        {
+            "nome": "O Crime Compensa",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "No final de uma missão, escolha um item encontrado na missão. Em sua próxima missão, você pode incluir esse item em seu inventário sem que ele conte em seu limite de itens por patente.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Criminoso"
+        },
+        {
+            "nome": "Traços do Outro Lado",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você possui um poder paranormal à sua escolha. Porém, começa o jogo com metade da Sanidade normal para sua classe.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Cultista Arrependido"
+        },
+        {
+            "nome": "Calejado",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você recebe +1 PV para cada 5% de NEX.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Desgarrado"
+        },
+        {
+            "nome": "Ferramenta Favorita",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Um item a sua escolha (exceto armas) conta como uma categoria abaixo para você (por exemplo, um item de categoria II conta como categoria I para você)..",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Engenheiro"
+        },
+        {
+            "nome": "Processo Otimizado",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Sempre que faz um teste de perícia durante um teste estendido, ou uma ação para revisar documentos (físicos ou digitais), pode pagar 2 PE para receber +5 nesse teste.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Executivo"
+        },
+        {
+            "nome": "Faro para Pistas",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Uma vez por cena, quando fizer um teste para procurar pistas, você pode gastar 1 PE para receber +5 nesse teste.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Investigador"
+        },
+        {
+            "nome": "Mão Pesada",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você recebe +2 em rolagens de dano com ataques corpo a corpo.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Lutador"
+        },
+        {
+            "nome": "Patrocinador da Ordem",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Seu limite de crédito é sempre considerado um acima do atual.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Magnata"
+        },
+        {
+            "nome": "Posição de Combate",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "No primeiro turno de cada cena de ação, você pode gastar 2 PE para receber uma ação de movimento adicional.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Mercenário"
+        },
+        {
+            "nome": "Para Bellum",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você recebe +2 em rolagens de dano com armas de fogo.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Militar"
+        },
+        {
+            "nome": "Ferramenta de Trabalho",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Escolha uma arma simples ou tática que possa ser usada como ferramenta em sua profissão (como uma marreta para um pedreiro). Você sabe usá-la e recebe +1 em testes de ataque, rolagens de dano e margem de ameaça com ela.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Operário"
+        },
+        {
+            "nome": "Patrulha",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você recebe +2 em Defesa.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Policial"
+        },
+        {
+            "nome": "Acalentar",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você recebe +5 em testes de Religião para acalmar. Além disso, quando acalma uma pessoa, ela recebe 1d6 + sua Presença em pontos de Sanidade.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Religioso"
+        },
+        {
+            "nome": "Espírito Cívico",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Sempre que faz um teste para ajudar, você pode gastar 1 PE para aumentar o bônus concedido em +2.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Servidor Público"
+        },
+        {
+            "nome": "Eu Já Sabia",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você não se abala tanto com entidades ou anomalias. Afinal, sempre soube que isso tudo existia. Você recebe resistência a dano mental igual ao seu Intelecto.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Teórico da Conspiração"
+        },
+        {
+            "nome": "Motor de Busca",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "A critério do mestre, sempre que tiver acesso à internet, você pode gastar 2 PE para substituir um teste de perícia qualquer por um teste de Tecnologia.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "T.I."
+        },
+        {
+            "nome": "Desbravador",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Quando faz um teste de Adestramento ou Sobrevivência, pode gastar 2 PE para receber +5 nesse teste. Além disso, não sofre penalidade de deslocamento por terreno difícil.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Trabalhador Rural"
+        },
+        {
+            "nome": "Impostor",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Uma vez por cena, você pode gastar 2 PE para substituir um teste de perícia qualquer por um teste de Enganação.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Trambiqueiro"
+        },
+        {
+            "nome": "Dedicação",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você recebe +1 PE, e mais 1 PE adicional a cada NEX ímpar (15%, 25%...). Além disso, seu limite de PE por turno aumenta em 1 (em NEX 5% seu limite é 2, em NEX 10% é 3 e assim por diante; isso não afeta a DT de seus efeitos).",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Universitário"
+        },
+        {
+            "nome": "Cicatrizes Psicológicas",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você recebe +1 de Sanidade para cada 5% de NEX.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Vítima"
+        },
+        {
+            "nome": "Acostumado ao Extremo",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Quando sofre dano de fogo, de frio ou mental, você pode gastar 1 PE para reduzir esse dano em 5. A cada vez que usa esta habilidade novamente na mesma cena, seu custo aumenta em +1 PE.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Astronauta"
+        },
+        {
+            "nome": "Fome do Outro Lado",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você pode usar partes de criaturas do Outro Lado como ingredientes culinários. No início de cada missão você pode solicitar essas partes como itens de Categoria I que ocupam 0,5 espaço, e pode obtê-las de criaturas derrotadas (cada criatura Pequena ou maior fornece 1 ingrediente paranormal). Você pode gastar uma ação de interlúdio e 1 ingrediente para preparar um prato especial; faça um teste de Profissão (cozinheiro) com DT 15 + 1d20 (o mestre oculta o resultado do teste até alguém comer o prato). Se você passar no teste, o prato fornece RD 10 contra o tipo de dano do elemento da criatura cujo ingrediente foi usado. Caso contrário, o prato causa vulnerabilidade a esse tipo de dano. Os efeitos duram até o fim da próxima cena. Independentemente do resultado, se alimentar do paranormal, por menor que seja a porção, gera consequências brutais e permanentes em seu organismo, sendo uma das formas mais rápidas de destruir sua mente. A cada refeição consumida, você perde 1 ponto permanente de Sanidade. Além disso, se estiver usando a regra opcional Nível de Experiência e Nível de Exposição (p. 98), o NEX do personagem aumenta em 3% para cada parte de criatura diferente que ingerir (mesmo que não esteja usando essa regra, use as alterações descritas na regra para personagens que ingerem partes de criaturas dessa forma). A coragem para se beneficiar desses pratos é algo muito mais presente em grupos de cultistas e, por todas essas razões, não é uma ação apoiada pela Ordo Realitas.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Chef do Outro Lado"
+        },
+        {
+            "nome": "Poder da Amizade",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Escolha um personagem como melhor amigo. Se estiver em alcance médio dele e puderem trocar olhares, você recebe +2 em todos os testes de perícia. Entretanto, se ele morrer, seu total de PE é reduzido em –1 para cada 5% de NEX até o fim da missão. Se perder seu melhor amigo, você pode escolher outro entre os demais personagens no início da próxima missão.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Colegial"
+        },
+        {
+            "nome": "Não É Fantasia, É Cosplay!",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você pode fazer testes de disfarce usando Artes em vez de Enganação. Além disso, ao fazer um teste de perícia, se estiver usando um cosplay que tem relação com ele, você recebe +2. Por exemplo, se estiver vestido de James Bones, o gato agente secreto do famoso videogame arcade dos anos 90, você recebe +2 em testes para ser furtivo, se equilibrar e outras coisas nas quais um gato seria considerado eficiente.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Cosplayer"
+        },
+        {
+            "nome": "Conexões",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você recebe +2 em Diplomacia. Além disso, se puder contatar um NPC que possa auxiliar, pode gastar 10 minutos e 2 PE para substituir um teste de perícia relacionado ao conhecimento desse NPC por um teste de Diplomacia.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Diplomata"
+        },
+        {
+            "nome": "Manual do Sobrevivente",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Ao fazer um teste para resistir a armadilhas, clima, doenças, fome, sede, fumaça, sono, sufocamento ou veneno (inclusive paranormais), você pode gastar 2 PE para receber +5 nesse teste. Além disso, em cenas de interlúdio, você considera condições de sono precárias como normais.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Explorador"
+        },
+        {
+            "nome": "Mutação",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você recebe resistência a dano 2 e +2 em uma perícia que seja originalmente baseada em Força, Agilidade ou Vigor. Entretanto, sofre −2d20 em Diplomacia.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Experimento"
+        },
+        {
+            "nome": "Conhecimento Oculto",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você pode fazer testes de Ocultismo para identificar criatura a partir de informações como uma imagem, rastros, indícios de sua presença ou outras pistas que o mestre considere suficientes. Se passar, você descobre as características da criatura (conforme descrito na perícia), mas não sua identidade ou tipo específico. Além disso, quando passa em um teste de Ocultismo para identificar criatura, você recebe também +2 em todos os testes contra a criatura até o fim da missão.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Fanático por Criaturas"
+        },
+        {
+            "nome": "Através da Lente",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Quando faz um teste de Investigação ou de Percepção ou para adquirir pistas olhando através de uma câmera ou analisando fotos, você pode gastar 2 PE para receber +5 nesse teste (um personagem que se move olhando através de uma lente anda à metade de seu deslocamento).",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Fotógrafo"
+        },
+        {
+            "nome": "Invenção Paranormal",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Quando faz um teste de Investigação ou de Percepção ou para adquirir pistas olhando através de uma câmera ou analisando fotos, você pode gastar 2 PE para receber +5 nesse teste (um personagem que se move olhando através de uma lente anda à metade de seu deslocamento).",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Inventor Paranormal"
+        },
+        {
+            "nome": "A Culpa é das Estrelas",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Escolha um número da sorte entre 1 e 6. No início de cada cena, pode gastar 1 PE e rolar 1d6. Se cair no número escolhido, recebe +2 em testes de perícia até o fim da cena. Caso contrário, na próxima vez que usar esta habilidade, escolha mais um número como número da sorte. Quando rolar um de seus números da sorte, a quantidade de números volta a 1.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Jovem Místico"
+        },
+        {
+            "nome": "Luto Habitual",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você sofre apenas a metade do dano mental por presenciar uma cena que, a critério do mestre, esteja relacionada à rotina de um legista (como presenciar uma morte, ver um cadáver ou encontrar órgãos humanos). Além disso, quando faz um teste de Medicina para primeiros socorros ou necropsia, você pode gastar 2 PE para receber +5 nesse teste.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Legista do Turno da Noite"
+        },
+        {
+            "nome": "Mapa Celeste",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Desde que possa ver o céu, você sempre sabe as direções dos pontos cardeais e consegue chegar sem se perder em qualquer lugar que já tenha visitado ao menos uma vez. Quando faz um teste de Sobrevivência, você pode gastar 2 PE para rolar o teste novamente e escolher o melhor entre os dois resultados. Além disso, em cenas de interlúdio, você considera condições de sono precárias como normais.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Mateiro"
+        },
+        {
+            "nome": "Fôlego de Nadador",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você recebe +5 PV e pode prender a respiração por rodadas iguais ao dobro do Vigor. Além disso, quando passa em um teste de Atletismo para natação, você avança seu deslocamento normal (em vez da metade).",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Mergulhador"
+        },
+        {
+            "nome": "Mãos no Volante",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você não sofre penalidades em testes de ataque por estar em veículo em movimento e, sempre que estiver pilotando e tiver que fazer um teste de Pilotagem ou resistência, pode gastar 2 PE para receber +5 nesse teste.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Motorista"
+        },
+        {
+            "nome": "O Inteligentão",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "O bônus que você recebe ao utilizar a ação de interlúdio ler aumenta em +1 dado (de +1d6 para +2d6).",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Nerd Entusiasta"
+        },
+        {
+            "nome": "Terapia",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você pode usar Profissão (psicólogo) como Diplomacia. Além disso, uma vez por rodada, quando você ou um aliado em alcance curto falha em um teste de resistência contra um efeito que causa dano mental, você pode gastar 2 PE para fazer um teste de Profissão (psicólogo) e usar o resultado desse teste no lugar do teste de resistência falho.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Psicólogo"
+        },
+        {
+            "nome": "Luta ou Fuga",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Conhecer os sinais de sua morte o deixa mais confiante, principalmente quando eles não estão presentes. Você recebe +2 em Vontade. Quando surge uma referência a sua premonição (um objeto semelhante a um gancho, por exemplo, para alguém cuja morte está ligada a morrer em um gancho de carne), uma onda de adrenalina toma seu corpo e seus instintos de luta ou fuga se intensificam. Além do bônus em Vontade, você recebe +2 PE temporários que duram até o fim da cena.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Profetizado"
+        },
+        {
+            "nome": "Encontrar a Verdade",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você pode usar Investigação no lugar de Diplomacia ao fazer testes para persuadir e mudar atitude e, quando faz um teste de Investigação, pode gastar 2 PE para receber +5 nesse teste.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Repórter Investigativo"
+        },
+        {
+            "nome": "Aula de Campo",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você sabe extrair o melhor das pessoas. Uma vez por cena, pode gastar uma ação padão e 2 PE para fornecer +1 em um atributo de outro personagem em alcance curto até o fim da cena. ",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Professor"
+        },
+        {
+            "nome": "Investigação Científica",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Uma vez por cena de investigação, você pode gastar uma ação livre para procurar pistas, usando Ci~encias no lugar da perícia que seria usada para tentar encontrar a pista em questão",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Cientista Forense"
+        },
+        {
+            "nome": "Fontes Confiáveis",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Uma vez por sessão de jogo, você pode gastar 1 PE para contatar suas fontes - pessoas com acesso a informações, nas quais você confia. Isso  permite que você role novamente um teste já realizado para encontrar uma pista, com +5 de bõnus, ou receba outra informação relevante (a critério do mestre).",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Jornalista"
+        },
+        {
+            "nome": "Bagagem de Leitura",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Por seu trabalho, você já leu - e aprendeu - de tudo um pouco. Uma vez por cena, pode gastar 2 PE para se tornar treinado em uma perícia qualquer até o fim da cena",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Escritor"
+        },
+        {
+            "nome": "Mobilidade Acrobática",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você recebe +2 na Defesa e seu deslocamento aumenta em +3 m",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Ginasta"
+        },
+        {
+            "nome": "Fraternidade Gaudéria",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Uma vez por rodada, quando um aliado adjacente é alvo de um ataque ou efeito, você pode gastar 1 PE para trocar de lugar com este aliado e se tornar o alvo deste ataque ou efeito. Se fizer isso, em seu próximo turno você recebe +2 em testes de ataque contra o agressor.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Gaudério Abutre"
+        },
+        {
+            "nome": "Destemido",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Quando faz um teste de perícia para o qual uma falha terá como conseguência direta dano ou uma condição negativa, você recebe +5 nesse teste.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Dublê"
+        },
+        {
+            "nome": "Antes só...",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você recebe +1 na Defesa, em testes de perícias e em seu limite de PE por turno se estiver sem nenhum aliado em alcance curto.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Revoltado"
+        },
+        {
+            "nome": "Explosão Solidária",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Seus explosivos que provocam dano causam +2d6 pontos de dano. Além disso, você pode gastar 2Pe e uma ação de interlúdio para melhorar um explosivo aumentando a CD para resistir a ele em +5. Só é possível melhorar o mesmo explosivo uma vez.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Blaster"
+        },
+        {
+            "nome": "Todo Mundo Pagando 10",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você pode gastar uma ação de movimento e 2 PE para motivar sua equipe. Enquanto você estiver consciente, você e seus aliados em alcance curto recebem +2 em testes de perícia que usam Força ou Agilidade (exceto Luta e Pontaria) até o fim da cena.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Personal Trainer"
+        },
+        {
+            "nome": "Saindo da Jaula",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "O êxtase de ir além dos limites do seu corpo é inebriante. Quando faz um teste uusando Força ou Vigor (exceto Luta) você pode gastar 2 PE para receber +5 nesse teste.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Body Builder"
+        },
+        {
+            "nome": "Mácula Ritualistica",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "A entidade marcou você com um ritual de 1º círculo a sua escolha do elemento correspondente. Você aprende a conjurar o ritual. Além disso, uma vez por cena, pode conjurá-lo sem gastar PE (mas ainda precisa gastar PE para qualquer efeito adicional, como formas avançadas). Esse ritual não conta no seu limite de rituais conhecidos. Em contrapartida, sofre –1d20 em testes de resistência contra efeitos (como rituais ou poderes paranormais) desse elemento.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Ferido por Ritual"
+        },
+        {
+            "nome": "Sofrimento de Sangue",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Eles podem tentar… mas já não dói mais. Você recebe RD 2/mental. Para cada dois rituais de Sangue ou poderes paranormais de Sangue que possua, a RD aumenta em +1. Contudo, a lembrança das desgraças que você viveu causa pesadelos horríveis, que o impedem de repousar tranquilamente. Sua condição de descanso é sempre uma categoria pior (luxuosa se torna confortável, confortável se torna normal e normal se torna precária).",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "Transtornado Arrependido"
+        }
+    ],
+    "poder-combatente":[
+        {
+            "nome": "Armamento Pesado",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Você recebe proficiência com armas pesadas.",
+            "requisito": "For 2",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Artista Marcial",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Seus ataques desarmados causam 1d6 pontos de dano, podem causar dano letal e se tornam ágeis (veja p. 59). Em NEX 35%, o dano aumenta para 1d8 e, em NEX 70%, para 1d10.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Ataque de Oportunidade",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Sempre que um ser sair voluntariamente de um espaço adjacente ao seu, você pode gastar uma reação e 1 PE para fazer um ataque corpo a corpo contra ele.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Combater com Duas Armas",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Se estiver empunhando duas armas (e pelo menos uma for leve) e fizer a ação agredir, você pode fazer dois ataques, um com cada arma. Se fizer isso, sofre –1d20 em todos os testes de ataque até o seu próximo turno.",
+            "requisito": "Agi 3, treinado em Luta ou Pontaria",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Combate Defensivo",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Quando usa a ação agredir, você pode combater defensivamente. Se fizer isso, até seu próximo turno, sofre –1d20 em todos os testes de ataque, mas recebe +5 na Defesa.",
+            "requisito": "Int 2",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Golpe Demolidor",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Quando usa a manobra quebrar ou ataca um objeto, você pode gastar 1 PE para causar dois dados de dano extra do mesmo tipo de sua arma.",
+            "requisito": "For 2, treinado em Luta",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Golpe Pesado",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Enquanto estiver empunhando uma arma corpo a corpo, o dano dela aumenta em mais um dado do mesmo tipo.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Incansável",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Uma vez por cena, você pode gastar 2 PE para fazer uma ação de investigação adicional, mas deve usar Força ou Agilidade como atributo-base do teste.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Presteza Atlética",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Quando faz um teste de facilitar a investigação, você pode gastar 1 PE para usar Força ou Agilidade no lugar do atributo-base da perícia. Se passar no teste, o próximo aliado que usar seu bônus também recebe +1d20 no teste.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Proteção PEsada",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Você recebe proficiência com Proteções Pesadas.",
+            "requisito": "Nex 30%",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Reflexos Defensivos",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Você recebe +2 em Defesa e em testes de resistência.",
+            "requisito": "Agi 2",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Saque Rápido",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Você pode sacar ou guardar itens como uma ação livre (em vez de ação de movimento). Além disso, caso esteja usando a regra opcional de contagem de munição, uma vez por rodada pode recarregar uma arma de disparo como uma ação livre.",
+            "requisito": "Treinado em Iniciativa",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Segurar o Gatilho",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Sempre que acerta um ataque com uma arma de fogo, pode fazer outro ataque com a mesma arma contra o mesmo alvo, pagando 2 PE por cada ataque já realizado no turno. Ou seja, pode fazer o primeiro ataque extra gastando 2 PE e, se acertar, pode fazer um segundo ataque extra gastando mais 4 PE e assim por diante, até errar um ataque ou atingir o limite de seus PE por rodada.",
+            "requisito": "Nex 60%",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Sentido Tático",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Você pode gastar uma ação de movimento e 2 PE para analisar o ambiente. Se fizer isso, recebe um bônus em Defesa e em testes de resistência igual ao seu Intelecto até o final da cena.",
+            "requisito": "Int 2, treinado em Percepção e Tática.",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Tanque de Guerra",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Se estiver usando uma proteção pesada, a Defesa e a resistência a dano que ela fornece aumentam em +2.",
+            "requisito": "Proteção Pesada",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Tiro Certeiro",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Se estiver usando uma arma de disparo, você soma sua Agilidade nas rolagens de dano e ignora a penalidade contra alvos envolvidos em combate corpo a corpo (mesmo se não usar a ação mirar).",
+            "requisito": "Treinado em Ponaria",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Tiro de Cobertura",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Você pode gastar uma ação padrão e 1 PE para disparar uma arma de fogo na direção de um ser no alcance da arma para forçá-lo a se proteger. Faça um teste de Pontaria contra a Vontade do alvo. Se vencer, até o início do seu próximo turno o alvo não pode sair do lugar onde está e sofre –5 em testes de ataque. A critério do mestre, o alvo recebe +5 no teste de Vontade se estiver em um lugar extremamente perigoso, como uma casa em chamas ou um barco afundando. Este é um efeito de medo.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Transcender",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Escolha um poder paranormal (veja a página 114). Você recebe o poder escolhido, mas não ganha Sanidade neste aumento de NEX. Você pode escolher este poder várias vezes.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Treinamento em Perícia",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Escolha duas perícias. Você se torna treinado nessas perícias. A partir de NEX 35%, você pode escolher perícias nas quais já é treinado para se tornar veterano. A partir de NEX 70%, pode escolher perícias nas quais já é veterano para se tornar expert. Você pode escolher este poder várias vezes.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Apego Angustiado",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Não importa o quão profundos sejam seus ferimentos, você escolhe a agonia enlouquecedora da dor a perder a consciência diante da própria morte. Você não fica inconsciente por estar morrendo, mas sempre que terminar uma rodada nesta condição e consciente, perde 2 pontos de Sanidade.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "CAminho para Forca",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Se for para alguém do seu grupo ser pego, que seja você. Quando usa a ação sacrifício em uma cena de perseguição (p. 90), você pode gastar 1 PE para fornecer +1d20 extra (para um total de +2d20) nos testes dos outros personagens e, quando usa a ação chamar atenção em uma cena de furtividade (p. 92), você pode gastar 1 PE para diminuir a visibilidade de todos os seus aliados próximos em –2 (em vez de –1).",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Ciente das Cicatrizes",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Acostumado a manusear armas, você aprendeu também a identificar as marcas que elas deixam. Quando faz um teste para encontrar uma pista relacionada a armas ou ferimentos (como um teste para necropsia ou para identificar uma arma amaldiçoada), você pode usar Luta ou Pontaria no lugar da perícia original.",
+            "requisito": "Treinado em Luta ou Pontaria",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Correria Desesperada",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Você já esteve diante de coisas que não podem ser derrotadas e aprendeu da forma mais trágica que às vezes fugir é a única chance de vitória. Você recebe +3m em seu deslocamento e +1d20 em testes de perícia para fugir em uma perseguição (veja p. 90).",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Engolir o Choro",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Mesmo ferido, você não vai emitir um pio até que a ameaça se afaste. Você não sofre penalidades por condições em testes de perícia para fugir e em testes de Furtividade.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Instinto de Fuga",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Sabendo que nem toda batalha pode ser vencida, você desenvolveu um sexto sentido para prever quando é hora de fugir. Quando uma cena de perseguição (ou semelhante) tem início, você recebe +2 em todos os testes de perícia que fizer durante a cena.",
+            "requisito": "Treinado em Intuição",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Mochileiro",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você já precisou pegar a estrada para escapar de perseguidores o suficiente para saber como carregar tudo que precisa. Seu limite de carga aumenta em 5 espaços e você pode se beneficiar de uma vestimenta adicional.",
+            "requisito": "Vig 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Paranoia Defensiva",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você sabe que eles estão lá fora, e fará tudo ao seu alcance para mantê-los assim. Uma vez por cena, você pode gastar uma rodada e 3 PE. Se fizer isso, você e cada aliado presente escolhe entre receber +5 na Defesa contra o próximo ataque que sofrer na cena ou receber um bônus de +5 em um único teste de perícia feito até o fim da cena.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Sacrificar os Joelhos",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Diante de algo que não pode ser vencido, você abre mão da autopreservação para superar seus limites de fuga. Uma vez por cena de perseguição, quando faz a ação esforço extra, você pode gastar 2 PE para passar automaticamente no teste de perícia.",
+            "requisito": "Treinado em Atletismo",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Sem Tempo, Irmão",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você sabe que pistas são importantes, mas com o paranormal podendo surgir a qualquer momento, cada segundo conta. Uma vez por cena de investigação, quando usa a ação facilitar investigação, você pode prestar ajuda de forma apressada e descuidada. Você passa automaticamente no teste para auxiliar seus aliados, mas faz uma rolagem adicional na tabela de eventos de investigação.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Valentão",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Em algum momento, a vida lhe ensinou que a brutalidade pode ser amedrontadora, e agora esse é seu principal idioma. Você pode usar Força no lugar de Presença para Intimidação. Além disso, uma vez por cena, pode gastar 1 PE para fazer um teste de Intimidação para assustar como uma ação livre.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        }
+    ],
+    "poder-ocultista":[
+        {
+            "nome": "Camuflar Ocultismo",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você pode gastar uma ação livre para esconder símbolos e sigilos que estejam desenhados ou gravados em objetos ou em sua pele, tornando-os invisíveis para outras pessoas além de você mesmo. Além disso, quando lança um ritual, pode gastar +2 PE para lançá-lo sem usar componentes ritualísticos e sem gesticular (o que permite conjurar um ritual com as mãos presas), usando apenas concentração. Outros seres só perceberão que você lançou um ritual se passarem num teste de Ocultismo (DT 25).",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Criar Selo",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você sabe fabricar selos paranormais de rituais que conheça. Fabricar um selo gasta uma ação de interlúdio e um número de PE iguais ao custo de conjurar o ritual. Você pode ter um número máximo de selos criados ao mesmo tempo igual à sua Presença.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Envolto em Mistério",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Sua aparência e postura assombrosas o permitem manipular e assustar pessoas ignorantes ou supersticiosas. O mestre define o que exatamente você pode fazer e quem se encaixa nessa descrição. Como regra geral, você recebe +5 em Enganação e Intimidação contra pessoas não treinadas em Ocultismo.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Especialista em Elemento",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Escolha um elemento. A DT para resistir aos seus rituais desse elemento aumenta em +2.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Ferramentas Paranormais",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você reduz a categoria de um item paranormal em I e pode ativar itens paranormais sem pagar seu custo em PE.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Fluxo de Poder",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você pode manter dois efeitos sustentados de rituais ativos ao mesmo tempo com apenas uma ação livre, pagando o custo de cada efeito separadamente.",
+            "requisito": "NEX 60%",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Guiado pelo Paranormal",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Uma vez por cena, você pode gastar 2 PE para fazer uma ação de investigação adicional.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Identificação Paranormal",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você recebe +10 em testes de Ocultismo para identificar criaturas, objetos ou rituais.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Improvisar Componentes",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Uma vez por cena, você pode gastar uma ação completa para fazer um teste de Investigação (DT 15). Se passar, encontra objetos que podem servir como componentes ritualísticos de um elemento à sua escolha. O mestre define se é possível usar esse poder na cena atual.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Intuição Paranormal",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Sempre que usa a ação facilitar investigação, você soma seu Intelecto ou Presença no teste (à sua escolha).",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Mestre em Elemento",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Escolha um elemento. O custo para lançar rituais desse elemento diminui em –1 PE.",
+            "requisito": "Especialista em Elemento no elemento escolhido, NEX 45%",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Ritual Potente",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você soma seu Intelecto nas rolagens de dano ou nos efeitos de cura de seus rituais.",
+            "requisito": "Int 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Ritual Predileto",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Escolha um ritual que você conhece. Você reduz em –1 PE o custo do ritual. Essa redução se acumula com reduções fornecidas por outras fontes.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Tatuagem Ritualística",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Símbolos marcados em sua pele reduzem em –1 PE o custo de rituais de alcance pessoal que têm você como alvo.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Transcender",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Escolha um poder paranormal. Você recebe o poder escolhido, mas não ganha Sanidade neste aumento de NEX. Você pode escolher este poder várias vezes.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Treinamento em Perícia",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Escolha duas perícias. Você se torna treinado nessas perícias. A partir de NEX 35%, você pode escolher perícias nas quais já é treinado para se tornar veterano. A partir de NEX 70%, pode escolher perícias nas quais já é veterano para se tornar expert. Você pode escolher este poder várias vezes.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Deixe os Sussurros Guiarem",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você sabe abrir sua mente para os sussurros do Paranormal, vozes que lhe guiam às custas de sua Sanidade. Uma vez por cena, você pode gastar 2 PE e uma rodada para receber +2 em testes de perícia para investigação até o fim da cena. Entretanto, enquanto este poder estiver ativo, sempre que falha em um teste de perícia, você perde 1 ponto de Sanidade.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Domínio Esotérico",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você estudou a fundo a complexidade de catalisadores esotéricos e aprendeu a combinar suas propriedades paranormais. Ao lançar um ritual, você pode combinar os efeitos de até dois catalisadores ritualísticos diferentes ao mesmo tempo.",
+            "requisito": "Int 3",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Estalos Macabros",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você sabe colidir pequenos objetos amaldiçoados para gerar distrações fortuitas em momentos de necessidade. Quando faz uma ação para atrapalhar a atenção de outro ser (como distrair em uma cena de furtividade ou fintar em combate), você pode gastar 1 PE para usar Ocultismo em vez da perícia original. Se o alvo da sua distração for uma pessoa ou animal, você recebe +5 no teste.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Minha Dor me Impulsiona",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você está acostumado com sacrifícios dolorosos e aprendeu a transformar sua dor em impulso físico. Quando faz um teste de Acrobacia, Atletismo ou Furtividade, você pode gastar 1 PE para receber +1d6 no teste. Você só pode usar este poder se estiver com pelo menos 5 pontos de dano em seus PV.",
+            "requisito": "Vig 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Nos Olhos do Monstro",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Por mais assustador que seja encarar o paranormal, fazer isso pode fornecer a chave para escapar dele com vida. Se estiver em uma cena envolvendo uma criatura paranormal, você pode gastar uma rodada e 3 PE para encarar essa criatura (você precisa ser capaz de ver os olhos ou o mais próximo de um “rosto” da criatura, definido pelo mestre). Se fizer isso, você recebe +5 em testes contra a criatura (exceto testes de ataque) até o fim da cena.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Olhar Sinistro",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Aquilo que para outros é quase uma ciência, para você é a imposição da própria vontade. Você pode usar Presença no lugar de Intelecto para Ocultismo e pode usar esta perícia para coagir (veja Intimidação).",
+            "requisito": "Pre 1",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Sentido Premonitório",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Sua exposição paranormal dá outros significados para arrepios e calafrios. Você pode gastar 3 PE para ativar um sentido premonitório. Enquanto seu sentido estiver ativo, você tem um déjà vu do futuro próximo (equivalente a uma rodada). Entre outras coisas, você sabe com uma rodada de antecedência quando a urgência de uma investigação vai acabar, se irá ocorrer um evento na investigação e qual será ele (o mestre rola antecipadamente o evento) e sabe quais ações seus inimigos irão tomar em cenas de furtividade e perseguição (essencialmente, você pode decidir suas próprias ações após ver o resultado das rolagens dos demais envolvidos na cena). O mestre pode aprovar outros usos criativos deste poder. Devido à natureza acelerada e caótica de um combate, este poder não tem efeito nestas cenas. Para manter seu sentido ativado, você deve gastar 1 PE no início de cada rodada.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Sincronia Paranormal",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "A exposição Paranormal de momentos terríveis que você compartilhou com seus aliados criou uma conexão invisível de Medo entre vocês, como uma linha entrelaçada dos seus destinos. Você pode gastar uma ação padrão e 2 PE para estabelecer uma sincronia mental com qualquer número de personagens, em alcance médio, com os quais você já tenha sobrevivido a pelo menos um encontro com o Paranormal. Essa sincronia é uma conexão inconsciente, e não permite uma troca clara de informações; em termos de regras, no início de cada rodada em que a sincronia estiver em efeito você pode distribuir uma quantidade de 1d20 de bônus igual à sua Presença entre os demais participantes. Estes dados podem ser usados em testes de perícias baseadas em Intelecto ou Presença e desaparecem no final de cada rodada. Manter a sincronia custa 1 PE no início de cada rodada.",
+            "requisito": "Pre 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Traçado Conjuratório",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você conhece versões de proteção e fortalecimento de vários símbolos paranormais, e pode usá-los para reforçar seus rituais. Você pode gastar 1 PE e uma ação completa traçando um símbolo paranormal no chão que ocupa um quadrado de 1,5m. Enquanto estiver dentro desse símbolo, você recebe +2 em testes de Ocultismo e de resistência e a DT para resistir aos seus rituais aumenta em +2. O símbolo dura até o fim da cena.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Acostumado a Maldição de <Elemento>",
+            "elemento": "Variável",
+            "trilha": "",
+            "descricao": "Escolha um elemento (exceto Medo). Por já interagir ritualísticamente com esta entidade, quando falha em um teste relacionado ao preço da maldição de itens amaldiçoados do elemento escolhido, você não perde pontos de sanidade. Você ainda sofre quaisquer outros efeitos negativos de itens amaldiçoados.",
+            "requisito": "Int 2, conjurar ritual de 2° círculo do elemento escolhido",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Reter Ritual de Combate",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Quando um ritual com duração retida está afetando negativamente um alvo, você pode mudar a duração para cena, como reação, no instante em que ele sai da linha de efeito. Além disso, quando sofre uma condição que o faz deixar de reter rituais, você pode gastar uma reação e 1 PE por ritual para mudar a duração dos rituais para cena, evitando perder seus efeitos. O custo é de 1 PE por ritual. Este poder só pode ser escolhido se estiver usando a regra opcional de Reter Ritual.",
+            "requisito": "Int 2, conjurar ritual de 1° círculo",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Ritual Intenso",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você soma sua Presença nas rolagens de dano e de cura de seus rituais.",
+            "requisito": "Pre 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Saúde Sobrenatural",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Uma vez por cena, você pode gastar uma ação de movimento e 3 PE para receber pontos de vida temporários igual a sua Presença x 10. Por exemplo, se tem Pre 3, recebe 30 PV temporários. Esses pontos temporários desaparecem no fim da cena e não são cumulativos com eles mesmos.",
+            "requisito": "Int 2, Pre 2, conjurar ritual de 1° círculo",
+            "afinidade": "",
+            "origem": ""
+        }
+    ],
+    "poder-especialista":[
+        {
+            "nome": "Artista Marcial",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Seus ataques desarmados causam 1d6 pontos de dano, podem causar dano letal e contam como armas ágeis. Em NEX 35%, o dano aumenta para 1d8 e, em NEX 70%, para 1d10.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Balística Avançada",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você recebe proficiência com armas táticas de fogo e +2 em rolagens de dano com armas de fogo.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Conhecimento Aplicado",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Quando faz um teste de perícia (exceto Luta e Pontaria), você pode gastar 2 PE para mudar o atributo-base da perícia para Int.",
+            "requisito": "Int 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Hacker",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você recebe +5 em testes de Tecnologia para invadir sistemas e diminui o tempo necessário para hackear qualquer sistema para uma ação completa.",
+            "requisito": "Treinado em Tecnologia",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Mãos Rápidas",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Ao fazer um teste de Crime, você pode pagar 1 PE para fazê-lo como uma ação livre.",
+            "requisito": "Agi 3, treinado em Crime",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Mochila de Utilidades",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Um item a sua escolha (exceto armas) conta como uma categoria abaixo e ocupa 1 espaço a menos.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Movimento Tático",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você pode gastar 1 PE para ignorar a penalidade em deslocamento por terreno difícil e por escalar até o final do turno.",
+            "requisito": "Treinado em Atletismo",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Na Trilha Certa",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Sempre que tiver sucesso em um teste para procurar pistas, você pode gastar 1 PE para receber +1d20 no próximo teste. Os custos e os bônus são cumulativos (se passar num segundo teste, pode pagar 2 PE para receber um total de +2d20 no próximo teste, e assim por diante).",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Nerd",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você é um repositório de conhecimento útil (e inútil). Uma vez por cena, pode gastar 2 PE para fazer um teste de Atualidades (DT 20). Se passar, recebe uma informação útil para essa cena (se for uma investigação, uma dica para uma pista; se for um combate, uma fraqueza de um inimigo, e assim por diante). A fonte da informação pode ser desde um livro antigo que você leu na biblioteca até um episódio de sua série de ficção favorita.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Ninja Urbano",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você recebe proficiência com armas táticas de ataque corpo a corpo e de disparo (exceto de fogo) e +2 em rolagens de dano com armas de corpo a corpo e de disparo.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Pensamento Ágil",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Uma vez por rodada, durante uma cena de investigação, você pode gastar 2 PE para fazer uma ação de procurar pistas adicional.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Perito em Explosivos",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você soma seu Intelecto na DT para resistir aos seus explosivos e pode excluir dos efeitos da explosão um número de alvos igual ao seu valor de Intelecto.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Primeira Impressão",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você recebe +2d20 no primeiro teste de Diplomacia, Enganação, Intimidação ou Intuição que fizer em uma cena.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Transcender",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Escolha um poder paranormal. Você recebe o poder escolhido, mas não ganha Sanidade neste aumento de NEX. Você pode escolher este poder várias vezes.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Treinamento em Perícia",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Escolha duas perícias. Você se torna treinado nessas perícias. A partir de NEX 35%, você pode escolher perícias nas quais já é treinado para se tornar veterano. A partir de NEX 70%, pode escolher perícias nas quais já é veterano para se tornar expert. Você pode escolher este poder várias vezes.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Acolher o Terror",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você já sofreu tanto medo que às vezes aceitar o terror é como voltar para casa. Você pode se entregar para o medo uma vez por sessão de jogo adicional.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Contatos Oportunos",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Ao longo de sua vida, você fez amizades úteis com pessoas de vários tipos em muitos lugares. Você pode usar uma ação de interlúdio para acionar seus contatos locais. Você recebe um aliado de um tipo à sua escolha, que lhe acompanha até o fim da missão ou até ser dispensado. Você só pode ter um desses aliados por vez, e o mestre tem a palavra final sobre a disponibilidade de cada aliado.",
+            "requisito": "Treinado em Crime",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Disfarce Sutil",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você sabe como se disfarçar rapidamente, usando pequenos detalhes para alterar sua aparência. Quando faz um disfarce em si mesmo usando Enganação, você pode gastar 1 PE para se disfarçar como uma ação completa e sem necessidade de um kit de disfarces (se usar um kit, recebe +5 no teste).",
+            "requisito": "Pre 2, treinado em Enganação",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Esconderijo Desesperado",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você já esteve diante de coisas que não podem ser derrotadas e aprendeu da forma mais trágiga que às vezes se esconder é a única chance de vitória. Você não sofre –1d20 em testes de Furtividade por se mover ao seu deslocamento normal. Além disso, em cenas de furtividade, sempre que passa em um teste para esconder-se, sua visibilidade diminui em –2 (em vez de apenas –1).",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Especialista Diletante",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "A vida lhe ensinou que todo tipo de conhecimento pode ser útil. Você aprende um poder que não pertença à sua classe (exceto poderes de trilha ou paranormais), à sua escolha, cujos pré-requisitos possa cumprir.",
+            "requisito": "NEX 30%",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Flashback",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Um novo trauma recente desbloqueia um conhecimento adormecido. Talvez fosse uma memória enterrada fundo em sua mente, ou uma habilidade desenvolvida por seu cérebro como um mecanismo de defesa. Escolha uma origem que não seja a sua. Você recebe o poder dessa origem.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Leitura Fria",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você estudou técnicas de “leitura fria”, a capacidade de analisar e compreender uma pessoa através de suas mais sutis reações. Uma vez em cada interlúdio, se passar alguns minutos interagindo com uma pessoa, ou mesmo observando-a no mesmo ambiente, você pode fazer três perguntas pessoais sobre ela, tais como “Qual seu filme favorito?”, “Qual sua profissão?” “Tem algum animal de estimação?”. O mestre pode responder com a verdade ou se negar a responder, mas, para cada pergunta não respondida, você recebe 2 PE temporários que duram até o fim da missão. Esse poder só pode ser usado uma vez em cada pessoa, e apenas em NPCs.",
+            "requisito": "Treinado em Intuição",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Mãos Firmes",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Quando há um caçador à espreita, derrubar sequer uma agulha pode ser o suficiente para revelar sua localização. E você não quer que isso aconteça. Quando faz um teste de Furtividade para esconder-se ou para executar uma ação discreta que envolva manipular um objeto (como em uma cena de furtividade), você pode gastar 2 PE para receber +1d20 nesse teste.",
+            "requisito": "Treinado em Furtividade",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Plano de Fuga",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "A todo momento você está criando cenários imaginários e possibilidades na sua mente, pensando em estratégias que usaria para escapar de perseguidores. Você pode usar Intelecto no lugar de Força para a ação criar obstáculos em uma perseguição. Além disso, uma vez por cena, pode gastar 2 PE para dispensar o teste e ser bem-sucedido nesta ação.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Remoer Memórias",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Sua mente está constantemente revivendo memórias do passado, sejam elas boas ou ruins. Uma vez por cena, quando faz um teste de perícia baseada em Intelecto ou Presença, você pode gastar 2 PE para substituir esse teste por um teste de Intelecto com DT 15.",
+            "requisito": "Int 1",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Resistir à Pressão",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "A ansiedade de correr contra o relógio o deixa mais eficiente. Uma vez por cena de investigação, você pode gastar 5 PE para coordenar os esforços de seus companheiros. A urgência da investigação aumenta em 1 rodada, e durante esta rodada adicional todos os personagens (incluindo você) recebem +2 em testes de perícia.",
+            "requisito": "Treinado em Investigação",
+            "afinidade": "",
+            "origem": ""
+        }
+    ],
+    "habilidade-sobrevivente":[
+        {
+            "nome": "Empenho",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você pode não ter treinamento especial, mas compensa com dedicação e esforço. Quando faz um teste de perícia, você pode gastar 1 PE para receber +2 nesse teste.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Cicatrizado",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "No 5º estágio, você já viu — e sobreviveu — a sua cota de horrores. Isso deixou marcas em seu corpo e sua mente, mas também o deixou mais forte. Escolha um tipo de perigo paranormal que seu personagem já enfrentou, de um elemento específico (Sangue, Morte…). Você possui algum trauma em relação a esse perigo e sofre –1d20 em testes de resistência contra ele. Contudo, uma vez por sessão de jogo você pode se esforçar ao máximo para não se deixar cair ou se abater. Como uma reação, você pode sacrificar 1 PV permanentemente para ignorar um dano mental ou gasto de PE, ou pode sacrificar permanentemente 1 PE para reduzir um dano físico à metade.",
+            "requisito": "Estágio 5",
+            "afinidade": "",
+            "origem": ""
+        }
+    ],
+    "poder-geral":[
+        {
+            "nome": "Artista Marcial",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Seus ataques desarmados causam 1d6 pontos de dano, podem causar dano letal e se tornam ágeis (veja p. 59). Em NEX 35%, o dano aumenta para 1d8 e, em NEX 70%, para 1d10.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Combater com Duas Armas",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Se estiver empunhando duas armas (e pelo menos uma for leve) e fizer a ação agredir, você pode fazer dois ataques, um com cada arma. Se fizer isso, sofre –1d20 em todos os testes de ataque até o seu próximo turno.",
+            "requisito": "Agi 3, treinado em Luta ou Pontaria",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Saque Rápido",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Você pode sacar ou guardar itens como uma ação livre (em vez de ação de movimento). Além disso, caso esteja usando a regra opcional de contagem de munição, uma vez por rodada pode recarregar uma arma de disparo como uma ação livre.",
+            "requisito": "Treinado em Iniciativa",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Tiro Certeiro",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Se estiver usando uma arma de disparo, você soma sua Agilidade nas rolagens de dano e ignora a penalidade contra alvos envolvidos em combate corpo a corpo (mesmo se não usar a ação mirar).",
+            "requisito": "Treinado em Ponaria",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Acrobático",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você possui um talento natural para piruetas, cambalhotas e outras acrobacias complexas. Você recebe treinamento em Acrobacia ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, terreno difícil não reduz seu deslocamento nem o impede de realizar investidas.",
+            "requisito": "Agi 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Ás do Volante",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você é um apaixonado por velocidade, e tem a coragem (ou falta de juízo) necessária para executar qualquer manobra. Você recebe treinamento em Pilotagem ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, uma vez por rodada, quando um veículo que você está pilotando sofre dano, você pode fazer um teste de Pilotagem (DT igual ao resultado do teste de ataque ou à DT do efeito que causou o dano). Se passar, evita esse dano.",
+            "requisito": "Agi 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Atlético",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você possui um corpo atlético, resultado de uma fortuita disposição genética ou árduo treinamento. Você recebe treinamento em Atletismo ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, recebe +3m em seu deslocamento.",
+            "requisito": "For 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Atraente",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Seja por pura beleza física ou por sua postura e atitude, você atrai olhares por onde passa. Você recebe +5 em testes de Artes, Diplomacia, Enganação, e Intimidação contra pessoas que possam se sentir fisicamente atraídas por você.",
+            "requisito": "Pre 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Dedos Ágeis",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você possui uma motricidade fina precisa, particularmente útil para manipular ferramentas delicadas. Você recebe treinamento em Crime ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, pode arrombar com uma ação padrão, furtar com uma ação livre (apenas uma vez por rodada) e sabotar com uma ação completa.",
+            "requisito": "Agi 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Detector de Mentiras",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você possui uma aptidão para perceber os sutis sinais de alguém que está mentindo. Você recebe treinamento em Intuição ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, outros seres sofrem uma penalidade de –10 em testes de Enganação para mentir para você.",
+            "requisito": "Pre 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Especialista em Emergências",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você recebeu treinamento como socorrista de emergência, e sabe como tratar um paciente em situações de urgência. Você recebe treinamento em Medicina ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, pode aplicar cicatrizantes e medicamentos como uma ação de movimento e, uma vez por rodada, pode sacar um desses itens como uma ação livre.",
+            "requisito": "Int 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Estigma do Medo",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "A adrenalina causada pela dor faz você se manter focado no que está acontecendo. Sempre que sofre dano mental de efeitos de medo, você pode converter esse dano em perda de pontos de vida (se sofre 5 pontos de dano mental de medo você pode, em vez disso, perder 5 pontos de vida).",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Foco em Perícia",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você se dedicou a estudar e treinar os vários pormenores de uma área de conhecimento específica. Escolha uma perícia (exceto Luta e Pontaria). Quando faz um teste dessa perícia, você rola +1d20. Você pode escolher este poder outras vezes para perícias diferentes.",
+            "requisito": "Treinado na perícia escolhida",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Inventário Organizado",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você sabe como organizar sua mochila e seu equipamento de forma organizada e racional. Você soma seu Intelecto no limite de espaços que pode carregar. Para você, itens muito leves ou pequenos, que normalmente ocupam meio espaço (0,5), em vez disso ocupam 1/4 de espaço (0,25).",
+            "requisito": "Int 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Informado",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você passa bastante tempo consumindo fofocas… bem, notícias sobre o mundo ao seu redor. Você recebe treinamento em Atualidades ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, pode usar Atualidades no lugar de qualquer outra perícia para testes envolvendo informações, desde que aprovado pelo mestre.",
+            "requisito": "Int 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Interrogador",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você sabe como usar o medo para extrair todo tipo de informação das outras pessoas. Você recebe treinamento em Intimidação ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, pode fazer testes de Intimidação para coagir como uma ação padrão, mas apenas uma vez por cena contra a mesma pessoa.",
+            "requisito": "For 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Mentiroso Nato",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você é um cara de pau, capaz de mentir descaradamente sem que ninguém perceba. Você recebe treinamento em Enganação ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, a penalidade que você sofre por mentiras muito implausíveis diminui para –1d20.",
+            "requisito": "Pre 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Observador",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você possui uma combinação de sentidos apurados para perceber pistas e intelecto afiado para processá-las. Você recebe treinamento em Investigação ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, soma seu Intelecto em Intuição.",
+            "requisito": "Int 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Pai de Pet",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você adora animais, e cuida de seus pets como se fossem seus filhos. Você recebe treinamento em Adestramento ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, possui um animal de estimação que o auxilia e o acompanha em suas aventuras. Em termos de jogo, é um aliado que fornece +2 em duas perícias a sua escolha (exceto Luta ou Pontaria e aprovadas pelo mestre).",
+            "requisito": "Pre 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Palavras de Devoção",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você combina uma fé verdadeira com o conhecimento dos ritos e tradições de sua religião. Você recebe treinamento em Religião ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, uma vez por cena, pode gastar 3 PE e uma ação completa para executar uma oração para um número de pessoas até o dobro de sua Presença. Até o fim da cena, todos os participantes dessa oração recebem resistência a dano mental 5.",
+            "requisito": "Pre 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Parceiro",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Em algum momento da sua vida, você conquistou uma amizade fiel e verdadeira; alguém disposto a até mesmo a se arriscar para lhe ajudar. Você possui um parceiro, uma pessoa que o acompanha e o auxilia em suas missões. Escolha os detalhes dele, como nome, aparência e personalidade. Em termos de jogo, é um aliado de um tipo à sua escolha. O parceiro obedece às suas ordens e se arrisca para ajudá-lo, mas, se for maltratado, pode parar de segui-lo (de acordo com o mestre). Se perder seu aliado, você precisa gastar uma folga da Ordem para receber outro.",
+            "requisito": "Treinado em Diplomacia, NEX 30%",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Pensamento Tático",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você possui uma mente voltada para análises táticas e pensamento estratégico. Você recebe treinamento em Tática ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, quando você passa em um teste de Tática para analisar terreno, você e seus aliados em alcance médio recebem uma ação de movimento adicional na primeira rodada do próximo combate neste terreno (desde que ele ocorra até o fim do dia).",
+            "requisito": "Int 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Personalidade Esotérica",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você sempre teve uma afinidade com assuntos esotéricos. Você recebe +3 PE e recebe treinamento em Ocultismo. Se já for treinado nesta perícia, recebe +2 nela.",
+            "requisito": "Int 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Persuasivo",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você possui uma personalidade diplomática e sabe obter o que deseja por meio de argumentação e conversa. Você recebe treinamento em Diplomacia ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, ao fazer um teste para persuasão, a penalidade que você sofre por perguntar ou pedir coisas custosas ou perigosas diminui em –5.",
+            "requisito": "Pre 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Pesquisador Científico",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você possui um profundo respeito pela ciência e acredita que ela é a resposta para muitos de seus questionamentos. Você recebe treinamento em Ciências ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, você pode usar Ciências no lugar de Ocultismo e Sobrevivência para identificar criaturas e animais, respectivamente.",
+            "requisito": "Int 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Proativo",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Seu negócio é fazer as coisas, e não deixar para depois. Você recebe treinamento em Iniciativa ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, ao rolar um 19 ou 20 em pelo menos um dos dados de um teste de Iniciativa, você recebe uma ação padrão adicional em seu primeiro turno.",
+            "requisito": "Agi 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Provisões de Emergência",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você é um sujeito precavido e mantém uma reserva secreta para quando as coisas ficarem ruins. Você possui um esconderijo com equipamentos e suprimentos escondidos para uma situação de emergência. Uma vez por missão, você pode usar uma ação de interlúdio para recuperar o conteúdo de seu esconderijo (pessoalmente ou através de algum contato). Você recebe novos equipamentos a sua escolha equivalente à sua patente no início desta missão (como se tivesse uma nova fase de preparação de missão).",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Racionalidade Inflexível",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Suas convicções e sua visão de mundo são baseadas em argumentos racionais e lógicos. Você pode usar Intelecto no lugar de Presença como atributo-chave de Vontade e para calcular seus pontos de esforço.",
+            "requisito": "Int 3",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Rato de Computador",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você adora computadores e outros dispositivos tecnológicos. Você recebe treinamento em Tecnologia ou, se já for treinado nesta perícia, recebe +2 nela. Você pode hackear, localizar arquivo ou operar dispositivo como uma ação completa e, uma vez por cena de investigação, se tiver acesso a um computador, pode fazer um teste de Tecnologia para procurar pistas sem gastar uma rodada de investigação.",
+            "requisito": "Int 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Resposta Rápida",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Seus reflexos são tão apurados que o permitem agir antes mesmo de você perceber as ameaças de forma consciente. Você recebe treinamento em Reflexos ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, ao falhar em um teste de Percepção para evitar ficar desprevenido, você pode gastar 2 PE para rolar novamente o teste usando Reflexos.",
+            "requisito": "Agi 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Talentoso",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você possui inclinação para todas as formas de expressão artística. Você recebe treinamento em Artes ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, quando faz um teste de Artes para impressionar, o bônus em perícias que você recebe aumenta em +1 para cada 5 pontos adicionais em que o resultado de seu teste passar a DT.",
+            "requisito": "Pre 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Teimosia Obstinada",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "As pessoas chamam você de teimoso. Mas elas estão erradas! Você recebe treinamento em Vontade ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, quando faz um teste de Vontade contra um efeito que cause uma condição mental ou tente modificar sua categoria de atitude (como o ritual Enfeitiçar), você pode gastar 2 PE para receber +5 neste teste.",
+            "requisito": "Pre 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Tenacidade",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Seu corpo desenvolveu a capacidade de suportar rigores extremos. Você recebe treinamento em Fortitude ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, ao estar morrendo, mas consciente (com pelo menos 1 PV), você pode fazer um teste de Fortitude (DT 20 + 10 por teste anterior na mesma cena) como ação livre. Se for bem-sucedido, encerra a condição morrendo.",
+            "requisito": "Vig 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Sentidos Aguçados",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Todos os seus sentidos são mais aguçados que o normal. Você recebe treinamento em Percepção ou, se já for treinado nessa perícia, recebe +2 nela. Além disso, não fica desprevenido contra inimigos que não possa ver e, sempre que erra um ataque devido a camuflagem, pode rolar mais uma vez o dado da chance de falha.",
+            "requisito": "Pre 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Sobrevivencialista",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você aprecia — ou aprecia enfrentar — a natureza. Você recebe treinamento em Sobrevivência ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, você recebe +2 em testes para resistir a efeitos de clima e terreno difícil natural não reduz seu deslocamento nem impede que você execute investidas.",
+            "requisito": "Int 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Sorrateiro",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você sabe ser discreto em qualquer situação. Você recebe treinamento em Furtividade ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, você não sofre penalidades por se mover normalmente enquanto está furtivo, nem por seguir alguém em ambientes sem esconderijos ou sem movimento.",
+            "requisito": "Agi 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Vitalidade Reforçada",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você possui uma capacidade superior de suportar ferimentos. Você recebe +1 PV para cada 5% de NEX (ou para cada nível, se estiver usando a regra de nível de experiência) e +2 em Fortitude.",
+            "requisito": "Vig 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Vontade Inabalável",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Sua mente é preparada para suportar os mais rigorosos traumas. Você recebe +1 PE para cada 10% de NEX (ou para cada 2 níveis, se estiver usando a regra de nível de experiência) e +2 em Vontade.",
+            "requisito": "Pre 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Cicatrizes Expostas",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você tem cicatrizes graves, físicas ou psicológicas, que podem deixá-lo em um estado de ira caso sejam expostas. Você pode gastar uma ação de movimento para expor sua cicatriz. Se fizer isso, sempre que causar dano, você causa +1d8 pontos de dano do mesmo tipo, mas sofre –1d20 em testes de Vontade e testes que exijam calma, como ficar furtivo ou traduzir um idioma. Caso outro ser exponha sua cicatriz, ainda que contra sua vontade, os mesmos efeitos se aplicam. Os efeitos duram até o fim da cena.",
+            "requisito": "Ter cicatrizes",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Curiosidade Oculta",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Seu gosto bizarro pelo oculto abriu sua mente. Você recebe treinamento em Ocultismo ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, quando faz um teste de Vontade, você pode gastar 2 PE para trocar a perícia por Ocultismo.",
+            "requisito": "Int 2",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Especialista Esotérico",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Poucos compreendem o uso de catalisadores ritualísticos como você. Ao conjurar um ritual, você pode combinar os efeitos de até três catalisadores ritualísticos diferentes ao mesmo tempo.",
+            "requisito": "Int 3, conjurar ritual de 2° círculo, Domínio Esotérico",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "<Habilidade> Aprimorada",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Escolha uma habilidade ou um ritual que tenha DT. A DT para resistir a essa habilidade ou ritual aumenta em +2. Você pode escolher este poder outras vezes para habilidades e rituais diferentes, e até duas vezes para uma mesma habilidade ou ritual (neste caso, a DT aumenta em um total de +5).",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Instintos Urbanos",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você não confia na “sociedade civilizada” e está pronto para sobreviver na selva de concreto. Você recebe treinamento em Crime ou, se já for treinado nesta perícia, receba +2 nela. Além disso, quando entra em um ambiente fechado, pode fazer um teste de Crime (DT 20) para identificar as melhores saídas. Se passar, você identifica uma rota de fuga. Em termos de regras, se decidir escapar do lugar, você recebe uma ação de movimento extra no primeiro turno da fuga e +2 na Defesa até fugir. Se o lugar não tiver rotas de fuga identificáveis, você recebe +2 na Defesa enquanto estiver nele.",
+            "requisito": "Agi 2",
+            "afinidade": "",
+            "origem": ""
+        }     
+    ],
+    "poder-morte":[
+        {
+            "nome": "Encarar a Morte",
+            "elemento": "Morte",
+            "trilha": "",
+            "descricao": "Sua conexão com a Morte faz com que você não hesite em situações de perigo. Durante cenas de ação, seu limite de gasto de PE aumenta em +1 (isso não afeta a DT de seus efeitos).",
+            "requisito": "",
+            "afinidade": "Durante cenas de ação, seu limite de gasto de PE aumenta em +2 (para um total de +3).",
+            "origem": ""
+        },
+        {
+            "nome": "Escapar da Morte",
+            "elemento": "Morte",
+            "trilha": "",
+            "descricao": "A Morte tem um interesse especial em sua caminhada. Uma vez por cena, quando receber dano que o deixaria com 0 PV, você fica com 1 PV. Não funciona em caso de dano massivo.",
+            "requisito": "Morte 1",
+            "afinidade": "Em vez do normal, você evita completamente o dano. Em caso de dano massivo, você fica com 1 PV.",
+            "origem": ""
+        },
+        {
+            "nome": "Potencial Aprimorado",
+            "elemento": "Morte",
+            "trilha": "",
+            "descricao": "A Morte lhe concede potencial latente de momentos roubados de outro lugar. Você recebe +1 ponto de esforço por NEX. Quando sobe de NEX, os PE que recebe por este poder aumentam de acordo. Por exemplo, se escolher este poder em NEX 30%, recebe 6 PE. Quando subir para NEX 35%, recebe +1 PE adicional, e assim por diante.",
+            "requisito": "",
+            "afinidade": "Você recebe +1 PE adicional por NEX (para um total de +2 PE por NEX).",
+            "origem": ""
+        },
+        {
+            "nome": "Potencial Reaproveitado",
+            "elemento": "Morte",
+            "trilha": "",
+            "descricao": "Você absorve os momentos desperdiçados de outros seres. Uma vez por rodada, quando passa num teste de resistência, você ganha 2 PE temporários cumulativos. Os pontos desaparecem no final da cena.",
+            "requisito": "",
+            "afinidade": "Você ganha 3 PE temporários, em vez de 2.",
+            "origem": ""
+        },
+        {
+            "nome": "Surto Temporal",
+            "elemento": "Morte",
+            "trilha": "",
+            "descricao": "A sua percepção temporal se torna distorcida e espiralizada, fazendo com que a noção de passagem do tempo nunca mais seja a mesma para você. Uma vez por cena, durante seu turno, você pode gastar 3 PE para realizar uma ação padrão adicional.",
+            "requisito": "Morte 2",
+            "afinidade": "Em vez de uma vez por cena, você pode usar este poder uma vez por turno.",
+            "origem": ""
+        },
+        {
+            "nome": "Antecipar Vitalidade",
+            "elemento": "Morte",
+            "trilha": "",
+            "descricao": "Sua ligação com a Morte permite que você sacrifique sua vitalidade futura para auxiliar seu presente. Quando faz um teste, você pode acumular uma carga de antecipação para adicionar +1d20 a esse teste. Você pode acumular um máximo de cargas de antecipação igual ao seu Vigor. Enquanto tiver uma carga de antecipação, em sua próxima ação de interlúdio dormir em vez de recuperar pontos de vida você perde uma dessas cargas.",
+            "requisito": "",
+            "afinidade": "Você amplia sua capacidade de sacrificar o presente pelo futuro. O limite de cargas de antecipação que você pode acumular aumenta em +2 e você passa a perder 2 cargas por ação dormir.",
+            "origem": ""
+        },
+        {
+            "nome": "Aura de Pavor",
+            "elemento": "Morte",
+            "trilha": "",
+            "descricao": "Ao receber esse poder, você é tomado por uma aura de Morte que nunca mais o abandona. Do ponto de vista dos outros, é como se o mundo ao seu redor perdesse as cores e se tornasse mais opressor. Você pode gastar 2 PE e uma ação de movimento para deixar uma pessoa ou animal em alcance médio apavorado (Vontade DT Pre reduz para abalado). O alvo não precisa ser capaz de ver você. Esta condição termina ao fim da cena, se o alvo se afastar de você além de alcance médio ou se você usar este efeito em outro alvo. Uma mesma pessoa ou animal só pode sofrer o efeito deste poder uma vez por dia.",
+            "requisito": "",
+            "afinidade": "A DT para resistir ao poder aumenta em +5 e o número de alvos muda para quaisquer pessoas ou animais escolhidos no alcance.",
+            "origem": ""
+        }
+    ],
+    "poder-sangue":[
+        {
+            "nome": "Anatomia Insana",
+            "elemento": "Sangue",
+            "trilha": "",
+            "descricao": "O seu corpo é transfigurado e parece desenvolver um instinto próprio separado da sua consciência. Você tem 50% de chance (resultado par em 1d4) de ignorar o dano adicional de um acerto crítico ou ataque furtivo.",
+            "requisito": "Sangue 2",
+            "afinidade": "Você é imune aos efeitos de acertos críticos e ataques furtivos.",
+            "origem": ""
+        },
+        {
+            "nome": "Arma de Sangue",
+            "elemento": "Sangue",
+            "trilha": "",
+            "descricao": "O Sangue devora parte de seu corpo e se manifesta como parte de você. Você pode gastar uma ação de movimento e 2 PE para produzir garras, chifres ou uma lâmina de sangue cristalizado que brota de seu antebraço. Qualquer que seja sua escolha, é considerada uma arma simples, corpo a corpo e leve, que você não precisa empunhar e causa 1d6 pontos de dano de Sangue. Uma vez por turno, quando você usa a ação agredir, pode gastar 1 PE para fazer um ataque adicional com essa arma. A arma dura até o final da cena, e então se desfaz numa poça de sangue coagulado.",
+            "requisito": "",
+            "afinidade": "A arma se torna parte permanente de você e causa 1d10 pontos de dano de Sangue.",
+            "origem": ""
+        },
+        {
+            "nome": "Sangue de Ferro",
+            "elemento": "Sangue",
+            "trilha": "",
+            "descricao": "O seu sangue flui de forma paranormal e agressiva, concedendo vigor não natural. Você recebe +2 pontos de vida por NEX. Quando sobe de NEX, os PV que recebe por este poder aumentam de acordo. Por exemplo, se escolher este poder em NEX 50%, recebe 20 PV. Quando subir para NEX 55%, recebe +2 PV, e assim por diante.",
+            "requisito": "",
+            "afinidade": "Você recebe +5 em Fortitude e se torna imune a venenos e doenças.",
+            "origem": ""
+        },
+        {
+            "nome": "Sangue Fervente",
+            "elemento": "Sangue",
+            "trilha": "",
+            "descricao": "A intensidade da dor desperta em você sentimentos bestiais e prazerosos que você nem imaginava que existiam. Enquanto estiver machucado, você recebe +1 em Agilidade ou Força, à sua escolha (escolha sempre que este efeito for ativado).",
+            "requisito": "Sangue 2",
+            "afinidade": "O bônus que você recebe em Agilidade ou Força aumenta para +2.",
+            "origem": ""
+        },
+        {
+            "nome": "Sangue Vivo",
+            "elemento": "Sangue",
+            "trilha": "",
+            "descricao": "A carnificina não pode parar, o Sangue precisa continuar fluindo. Na primeira vez que ficar machucado durante uma cena, você recebe cura acelerada 2. Esse efeito nunca cura você acima da metade dos PV máximos (ou seja, você nunca deixa de estar machucado) e termina no fim da cena ou caso você perca a condição machucado.",
+            "requisito": "Sangue 1",
+            "afinidade": "A cura acelerada aumenta para 5.",
+            "origem": ""
+        },
+        {
+            "nome": "Espreitar da Besta",
+            "elemento": "Sangue",
+            "trilha": "",
+            "descricao": "O Sangue do Outro Lado deu a você o poder de controlar seu corpo e se mover exatamente como as bestas predadoras fazem. Você recebe +5 em Furtividade. Em cenas de perseguição, se for o caçador, pode usar Furtividade em vez de Atletismo. Em cenas de furtividade, seus movimentos são calculados pelos seus instintos, o que permite que faça ações discretas sem sofrer –1d20 de penalidade.",
+            "requisito": "",
+            "afinidade": "O bônus em Furtividade aumenta para +10.",
+            "origem": ""
+        },
+        {
+            "nome": "Instintos Sanguinários",
+            "elemento": "Sangue",
+            "trilha": "",
+            "descricao": "Ao se conectar com o Sangue do Outro Lado, você desperta instintos animalescos paranormais. Você recebe visão no escuro e faro.",
+            "requisito": "",
+            "afinidade": "Seus instintos aguçados transformam o terror da perseguição em uma tempestade viciante de adrenalina. Você não pode mais ser flanqueado, não fica desprevenido e recebe +5 em testes de resistência contra armadilhas da realidade ou paranormais.",
+            "origem": ""
+        },
+        {
+            "nome": "Ferro Maculado",
+            "elemento": "Sangue",
+            "trilha": "",
+            "descricao": "Acostumado a usar munições especiais contra ameaças, sua relação com armas que disparam projéteis se intensifica conforme você é corrompido pelo Sangue. Quando faz um ataque com uma arma de disparo, você pode gastar 2 PV para amaldiçoar a munição a ser disparada. Até o fim do turno, essa munição é considerada amaldiçoada e causa +1d6 pontos de dano de Sangue. Este dano é multiplicado em caso de acerto crítico.",
+            "requisito": "",
+            "afinidade": "O dano muda para +1d8 pontos de dano de Sangue.",
+            "origem": ""
+        },
+        {
+            "nome": "Placas Sanguinolentas",
+            "elemento": "Sangue",
+            "trilha": "",
+            "descricao": "Você consegue manipular parte do Sangue presente em um ritual para criar placas rubras que o protegem. Quando você conjura um ritual de Sangue, recebe um bônus na Defesa equivalente ao círculo do ritual até o início do seu próximo turno (se for de 3º círculo, por exemplo, recebe +3 na Defesa).",
+            "requisito": "Conjurar ritual de Sangue",
+            "afinidade": "O bônus na Defesa passa a ser igual ao círculo do ritual +2 (+3 para um ritual de 1º círculo, +4 para um ritual de 2º círculo e assim por diante).",
+            "origem": ""
+        },
+        {
+            "nome": "Sangue Corrosivo",
+            "elemento": "Sangue",
+            "trilha": "",
+            "descricao": "A maldade do Sangue borbulha nas suas veias como um ácido extraído do inferno. Você pode gastar uma ação de movimento e 1 PE para transformar seu sangue em uma substância corrosiva até o fim da cena. Quando você sofre dano causado por um ser que está adjacente, você também causa 1d10 pontos de dano de Sangue nele.",
+            "requisito": "",
+            "afinidade": "O dano muda para +2d10 pontos de dano de Sangue.",
+            "origem": ""
+        },
+        {
+            "nome": "Sangue Prazeroso",
+            "elemento": "Sangue",
+            "trilha": "",
+            "descricao": "Sua conexão com o Sangue permite que você resista a dor apenas para que consiga sentir ela por mais tempo. Enquanto estiver machucado, você recebe resistência a dano 5.",
+            "requisito": "Sangue 1",
+            "afinidade": "Enquanto estiver machucado, você também recebe +20 PV temporários, mas apenas uma vez por cena.",
+            "origem": ""
+        }
+    ],
+    "poder-conhecimento":[
+        {
+            "nome": "Expansão de Conhecimento",
+            "elemento": "Conhecimento",
+            "trilha": "",
+            "descricao": "Você se conecta com o Conhecimento do Outro Lado, rompendo os limites de sua compreensão. Você aprende um poder de classe que não pertença à sua classe (caso o poder possua pré-requisitos, você precisa preenchê-los).",
+            "requisito": "Conhecimento 1",
+            "afinidade": "Você aprende um segundo poder de classe que não pertença à sua classe.",
+            "origem": ""
+        },
+        {
+            "nome": "Percepção Paranormal",
+            "elemento": "Conhecimento",
+            "trilha": "",
+            "descricao": "O Conhecimento sussurra em sua mente. Em cenas de investigação, sempre que fizer um teste para procurar pistas, você pode rolar novamente um dado com resultado menor que 10. Você deve aceitar a segunda rolagem, mesmo que seja menor que a primeira.",
+            "requisito": "",
+            "afinidade": "Você pode rolar novamente até dois dados com resultado menor que 10.",
+            "origem": ""
+        },
+        {
+            "nome": "Precognição",
+            "elemento": "Conhecimento",
+            "trilha": "",
+            "descricao": "Você possui um “sexto sentido” que o avisa do perigo antes que ele aconteça. Você recebe +2 em Defesa e em testes de resistência.",
+            "requisito": "Conhecimento 1",
+            "afinidade": "Você fica imune à condição desprevenido.",
+            "origem": ""
+        },
+        {
+            "nome": "Sensitivo",
+            "elemento": "Conhecimento",
+            "trilha": "",
+            "descricao": "Você consegue sentir as emoções e intenções de outros seres, como medo, raiva ou malícia, recebendo +5 em testes de Diplomacia, Intimidação e Intuição.",
+            "requisito": "",
+            "afinidade": "Quando você faz um teste oposto usando uma dessas perícias, o oponente sofre –1d20.",
+            "origem": ""
+        },
+        {
+            "nome": "Visão do Oculto",
+            "elemento": "Conhecimento",
+            "trilha": "",
+            "descricao": "Você não enxerga mais pelos olhos, mas sim pela percepção do Conhecimento em sua mente. Você recebe +5 em testes de Percepção e enxerga no escuro.",
+            "requisito": "",
+            "afinidade": "Você ignora camuflagem.",
+            "origem": ""
+        },
+        {
+            "nome": "Absorver Conhecimento",
+            "elemento": "Conhecimento",
+            "trilha": "",
+            "descricao": "Você se conecta com o Conhecimento do Outro Lado para adquirir informação de forma paranormal, sem precisar gastar tempo de pesquisa. Se estiver empunhando uma fonte de conhecimento escrito (como um livro, um texto aberto em um celular ou uma pedra de runas), você pode gastar 1 PE e uma ação completa para fazer uma pergunta a esta fonte. Se a resposta estiver armazenada na fonte, você a obtém automaticamente. Se usar este poder em conjunto com a ação de interlúdio ler, você aumenta o dado de bônus recebido por esta ação em um passo (de d6 para 1d8, por exemplo).",
+            "requisito": "",
+            "afinidade": "Quando usa um ritual de Conhecimento que tenha como alvo 1 pessoa (exceto você), se puder tocar o alvo o custo desse ritual é reduzido em –1 PE.",
+            "origem": ""
+        },
+        {
+            "nome": "Apatia Herege",
+            "elemento": "Conhecimento",
+            "trilha": "",
+            "descricao": "Saber tudo é perder tudo. Contudo, não se deve subestimar a capacidade de adaptação humana. Ao se conectar com o Conhecimento do Outro Lado, você usa as experiências grotescas que já viveu para desligar suas emoções e blindar sua mente. Quando faz um teste contra uma condição de medo, você pode gastar 2 PE para rolar o teste novamente. Você deve aceitar o resultado da segunda rolagem, mesmo que seja menor que a primeira.",
+            "requisito": "Conhecimento 1",
+            "afinidade": "Você pode usar esse poder depois de saber se passou no teste, além de poder escolher a melhor rolagem entre as duas.",
+            "origem": ""
+        }
+    ],
+    "poder-energia":[
+        {
+            "nome": "Afortunado",
+            "elemento": "Energia",
+            "trilha": "",
+            "descricao": "A Energia considera resultados medíocres entediantes. Uma vez por rolagem, você pode rolar novamente um resultado 1 em qualquer dado que não seja d20.",
+            "requisito": "",
+            "afinidade": "Além disso, uma vez por teste, você pode rolar novamente um resultado 1 em d20.",
+            "origem": ""
+        },
+        {
+            "nome": "Campo Protetor",
+            "elemento": "Energia",
+            "trilha": "",
+            "descricao": "Você consegue gerar um campo de Energia que o protege de perigos. Quando usa a ação esquiva, você pode gastar 1 PE para receber +5 em Defesa.",
+            "requisito": "Energia 1",
+            "afinidade": "Quando usa este poder, você também recebe +5 em Reflexo e, até o início de seu próximo turno, se passar em um teste de Reflexo que reduziria o dano à metade, em vez disso não sofre nenhum dano.",
+            "origem": ""
+        },
+        {
+            "nome": "Causalidade Fortuita",
+            "elemento": "Energia",
+            "trilha": "",
+            "descricao": "A Energia o conduz rumo a descobertas. Em cenas de investigação, a DT para procurar pistas diminui em –5 para você até você encontrar uma pista.",
+            "requisito": "",
+            "afinidade": "A DT para procurar pistas sempre diminui em –5 para você.",
+            "origem": ""
+        },
+        {
+            "nome": "Golpe de Sorte",
+            "elemento": "Energia",
+            "trilha": "",
+            "descricao": "Seus ataques recebem +1 na margem de ameaça.",
+            "requisito": "Energia 1",
+            "afinidade": "Seus ataques recebem +1 no multiplicador de crítico.",
+            "origem": ""
+        },
+        {
+            "nome": "Manipular Entropia",
+            "elemento": "Energia",
+            "trilha": "",
+            "descricao": "Nada diverte mais a Energia do que a possibilidade de um desastre ainda maior. Quando outro ser em alcance curto faz um teste de perícia, você pode gastar 2 PE para fazê-lo rolar novamente um dos dados desse teste.",
+            "requisito": "Energia 1",
+            "afinidade": "O alvo rola novamente todos os dados que você escolher.",
+            "origem": ""
+        },
+        {
+            "nome": "Conexão Empática",
+            "elemento": "Energia",
+            "trilha": "",
+            "descricao": "Você consegue usar a Energia do Outro Lado para se conectar com objetos tecnológicos energizados. Você pode gastar uma ação completa e 2 PE para tocar um objeto elétrico que esteja ligado, como um celular, uma batedeira ou uma máquina de lavar roupa. Até o fim da cena, ou até deixar de tocá-lo, você pode conversar com o objeto como se ele fosse um ser senciente, e de algum jeito consegue escutar respostas. Um objeto tem percepção limitada de seus arredores, e sua personalidade e memórias são definidas apenas pelos arquivos ou programas que contém registrado em si; um objeto não tem lembranças do que ocorreu em seus arredores a não ser que tenha uma câmera e arquivos de vídeo em seu sistema, por exemplo. O objeto possui uma atitude inicial indiferente, mas pode ser persuadido com testes de Diplomacia (objetos normalmente têm Vontade 1, mas objetos particularmente sofisticados ou protegidos podem ter Vontade 2 ou 3, a critério do mestre). Apenas você é capaz de “ouvir” o objeto e precisa falar em voz alta para que ele te “escute”. Quando o efeito termina, o item emite um lamento enquanto experimenta uma sensação traumática de morte; se você tentar falar novamente com ele, sua atitude será hostil devido ao sofrimento ao qual foi exposto.",
+            "requisito": "Energia 1",
+            "afinidade": "Você recebe +5 em testes de perícias baseadas em Intelecto ou Presença com o item.",
+            "origem": ""
+        },
+        {
+            "nome": "Valer-se do Caos",
+            "elemento": "Energia",
+            "trilha": "",
+            "descricao": "Você pode tentar manipular o caos do mundo ao seu redor, um ato que fornece grande poder às custas da ordem de sua mente. Quando faz um teste, você pode escolher tentar controlar o caos. Se fizer isso, você recebe +1d20 nesse teste. Entretanto, se o teste for uma falha, ou se o resultado desse d20 adicional (use um dado de cor diferente para identificá-lo) for igual ou menor que 5, você perde 1d4 pontos de Sanidade.",
+            "requisito": "",
+            "afinidade": "Você perde Sanidade se o teste for uma falha ou se o resultado do 1d20 extra for 1 ou 2.",
+            "origem": ""
+        }
+    ],
+    "trilha-combatente":[
+        {
+            "nome": "NEX 10% - A Favorita",
+            "elemento":"",
+            "trilha":"Aniquilador",
+            "descricao": "Escolha uma arma para ser sua favorita, como katana ou fuzil de assalto. A categoria da arma escolhida é reduzida em I.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "NEX 40% - Técnica Secreta",
+            "elemento":"",
+            "trilha":"Aniquilador",
+            "descricao": "A categoria da arma favorita passa a ser reduzida em II. Quando faz um ataque com ela, você pode gastar 2 PE para executar um dos efeitos abaixo como parte do ataque. Você pode adicionar mais efeitos gastando +2 PE por efeito adicional. * Amplo. O ataque pode atingir um alvo adicional em seu alcance e adjacente ao original (use o mesmo teste de ataque para ambos). * Destruidor. Aumenta o multiplicador de crítico da arma em +1.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "NEX 65% - Técnica Sublime",
+            "elemento":"",
+            "trilha":"Aniquilador",
+            "descricao": "Você adiciona os seguintes efeitos à lista de sua Técnica Secreta: * Letal. Aumenta a margem de ameaça em +2. Você pode escolher este efeito duas vezes para aumentar a margem de ameaça em +5. * Perfurante. Ignora até 5 pontos de resistência a dano de qualquer tipo do alvo.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "NEX 99% - Máquina de Matar",
+            "elemento":"",
+            "trilha":"Aniquilador",
+            "descricao": "A categoria da arma favorita passa a ser reduzida em III, ela recebe +2 na margem de ameaça e seu dano aumenta em um dado do mesmo tipo.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "NEX 10% - Inspirar Confiança",
+            "elemento":"",
+            "trilha":"Comandante de Campo",
+            "descricao": "Sua liderança inspira seus aliados. Você pode gastar uma reação e 2 PE para fazer um aliado em alcance curto rolar novamente um teste recém realizado.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "NEX 40% - Estrategista",
+            "elemento":"",
+            "trilha":"Comandante de Campo",
+            "descricao": "Você pode direcionar aliados em alcance curto. Gaste uma ação padrão e 1 PE por aliado que quiser direcionar (limitado pelo seu Intelecto). No próximo turno dos aliados afetados, eles ganham uma ação de movimento adicional.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "NEX 65% - Brecha na Guarda",
+            "elemento":"",
+            "trilha":"Comandante de Campo",
+            "descricao": "Uma vez por rodada, quando um aliado causar dano em um inimigo que esteja em seu alcance curto, você pode gastar uma reação e 2 PE para que você ou outro aliado em alcance curto faça um ataque adicional contra o mesmo inimigo. Além disso, o alcance de inspirar confiança e estrategista aumenta para médio.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "NEX 99% - Oficial Comandante",
+            "elemento":"",
+            "trilha":"Comandante de Campo",
+            "descricao": "Você pode gastar uma ação padrão e 5 PE para que cada aliado que você possa ver em alcance médio receba uma ação padrão adicional no próximo turno dele.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "NEX 10% - Técnica Letal",
+            "elemento":"",
+            "trilha":"Guerreiro",
+            "descricao": "Você recebe um aumento de +2 na margem de ameaça com todos os seus ataques corpo a corpo.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "NEX 40% - Revidar",
+            "elemento":"",
+            "trilha":"Guerreiro",
+            "descricao": "Sempre que bloquear um ataque, você pode gastar uma reação e 2 PE para fazer um ataque corpo a corpo no inimigo que o atacou.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "NEX 65% - Força Opressora",
+            "elemento":"",
+            "trilha":"Guerreiro",
+            "descricao": "Quando acerta um ataque corpo a corpo, você pode gastar 1 PE para realizar uma manobra derrubar ou empurrar contra o alvo do ataque como ação livre. Se escolher empurrar, recebe um bônus de +5 para cada 10 pontos de dano que causou no alvo. Se escolher derrubar e vencer no teste oposto, você pode gastar 1 PE para fazer um ataque adicional contra o alvo caído.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "NEX 99% - Potência Máxima",
+            "elemento":"",
+            "trilha":"Guerreiro",
+            "descricao": "Quando usa seu Ataque Especial com armas corpo a corpo, todos os bônus numéricos são dobrados. Por exemplo, se usar 5 PE para receber +5 no ataque e +15 no dano, você recebe +10 no ataque e +30 no dano.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "NEX 10% - Iniciativa Aprimorada",
+            "elemento":"",
+            "trilha":"Operações Especiais",
+            "descricao": "Você recebe +5 em Iniciativa e uma ação de movimento adicional na primeira rodada.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "NEX 40% - Ataque Extra",
+            "elemento":"",
+            "trilha":"Operações Especiais",
+            "descricao": "Uma vez por rodada, quando faz um ataque, você pode gastar 2 PE para fazer um ataque adicional.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "NEX 65% - Surto de Adrenalina",
+            "elemento":"",
+            "trilha":"Operações Especiais",
+            "descricao": "Uma vez por rodada, você pode gastar 5 PE para realizar uma ação padrão ou de movimento adicional.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "NEX 99% - Sempre Alerta",
+            "elemento":"",
+            "trilha":"Operações Especiais",
+            "descricao": "Você recebe uma ação padrão adicional no início de cada cena de combate.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "NEX 10% - Casca Grossa",
+            "elemento":"",
+            "trilha":"Tropa de Choque",
+            "descricao": "Você recebe +1 PV para cada 5% de NEX e, quando faz um bloqueio, soma seu Vigor na resistência a dano recebida.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "NEX 40% - Cai Dentro",
+            "elemento":"",
+            "trilha":"Tropa de Choque",
+            "descricao": "Sempre que um oponente em alcance curto ataca um de seus aliados, você pode gastar uma reação e 1 PE para fazer com que esse oponente faça um teste de Vontade (DT Vig). Se falhar, o oponente deve atacar você em vez de seu aliado. Este poder só funciona se você puder ser efetivamente atacado e estiver no alcance do ataque (por exemplo, adjacente a um oponente atacando em corpo a corpo ou dentro do alcance de uma arma de ataque à distância). Um oponente que passe no teste de Vontade não pode ser afetado por seu poder Cai Dentro até o final da cena.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "NEX 65% - Duro de Matar",
+            "elemento":"",
+            "trilha":"Tropa de Choque",
+            "descricao": "Ao sofrer dano não paranormal, você pode gastar uma reação e 2 PE para reduzir esse dano à metade. Em NEX 85%, você pode usar esta habilidade para reduzir dano paranormal.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "NEX 99% - Inquebrável",
+            "elemento":"",
+            "trilha":"Tropa de Choque",
+            "descricao": "Enquanto estiver machucado, você recebe +5 na Defesa e resistência a dano 5. Enquanto estiver morrendo, em vez do normal, você não fica indefeso e ainda pode realizar ações. Você ainda segue as regras de morte normalmente.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "NEX 10% - Carteirada",
+            "elemento": "",
+            "trilha": "Agente Secreto",
+            "descricao": "Escolha uma perícia entre Diplomacia ou Enganação. Você recebe treinamento na perícia escolhida ou, se já for treinado, recebe +2 nela. Como parte do esforço conjunto da sua agência e da Ordem, no início de cada missão você recebe documentos que lhe fornecem privilégios jurídicos especiais. Esses documentos podem incluir a sua identidade verdadeira ou não, e podem ser individuais ou incluir os demais membros da sua equipe (conforme apropriado à missão). Os benefícios específicos desses documentos ficam a critério do mestre, mas em geral incluem acesso a locais restritos ou proibidos, permissão para portar armas de fogo e autoridade para assumir a jurisdição de investigações da polícia. Pessoas comuns não conseguem perceber que seus documentos são falsos, mas membros de agências de segurança ou indivíduos veteranos em Crime podem desconfiar de sua veracidade. Os documentos contam como itens operacionais que não ocupam espaço — mas cuidado para não perdê-los em locais onde novos não podem ser fornecidos!",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 40% - O Sorriso",
+            "elemento": "",
+            "trilha": "Agente Secreto",
+            "descricao": "Em seu trabalho como agente, você aprendeu que se manter contido com um sorriso “sincero” e palavras gentis são ferramentas muito eficientes em uma investigação. Você recebe +2 em Diplomacia e Enganação e, quando falha em um teste de uma dessas perícias, pode gastar 2 PE para repetir a rolagem (apenas uma vez por teste), mas deve aceitar o novo resultado, mesmo que seja pior que o primeiro. Por fim, uma vez por cena, você pode fazer um teste de Diplomacia para acalmar a si mesmo.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 65% - Método Investigativo",
+            "elemento": "",
+            "trilha": "Agente Secreto",
+            "descricao": "Acostumado a vasculhar locais em segredo, você aprendeu a ser rápido ou “controlar a situação” antes que coisas ruins aconteçam. A urgência de qualquer cena de investigação em que você esteja presente aumenta em 1 rodada. Além disso, quando o mestre faz uma rolagem na tabela de eventos de investigação, você pode gastar 2 PE para transformar o resultado em “sem evento”. Você pode usar este efeito mais de uma vez na mesma cena, mas a cada uso adicional seu custo aumenta em +2 PE.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 99% - Multifacetado",
+            "elemento": "",
+            "trilha": "Agente Secreto",
+            "descricao": "Viver sob vários disfarces tem sido útil, mas você faz isso há tanto tempo que talvez nem se lembre mais quem é de verdade. Essas habilidades que surgem quando você precisa foram aprendidas em disfarces anteriores, ou são apenas sua mente buscando uma saída? Uma vez por cena, você pode gastar 5 pontos de Sanidade para receber todas as habilidades de até NEX 65% de uma trilha de combatente ou especialista à sua escolha (você deve cumprir quaisquer pré-requisitos específicos da trilha). Você pode usar essas habilidades até o fim da cena, mas não pode escolher a mesma trilha mais de uma vez na mesma missão. Os pontos de Sanidade gastos para ativar essa habilidade só podem ser recuperados ao fim da missão.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 10% - Rastrear o Paranormal",
+            "elemento": "",
+            "trilha": "Caçador",
+            "descricao": "Você estudou criaturas paranormais o suficiente para saber como identificar seus sinais e seguir seus rastros. Você recebe treinamento em Sobrevivência ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, pode usar essa perícia no lugar de Ocultismo para identificar criaturas e no lugar de Investigação e Percepção para perceber e encontrar rastros, pistas e criaturas que tenham traços paranormais.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 40% - Estudar Fraquezas",
+            "elemento": "",
+            "trilha": "Caçador",
+            "descricao": "Você acredita que todo ser, mesmo aqueles do Outro Lado, tem uma fraqueza. E você vai encontrá-la… você precisa! Você pode gastar uma ação de interlúdio estudando as fraquezas de um ser específico, como uma criatura paranormal ou um membro de um culto. Para isso, você precisa de uma pista diretamente ligada ao ser, como uma parte do seu corpo ou de suas vestes. Ao fim dos estudos, você recebe uma informação útil sobre o ser. Isso pode ser uma característica relevante (“a criatura é do elemento Sangue”) ou uma informação sobre seus hábitos (“apesar de matar qualquer coisa, ela parece preferir idosos”). Além das informações, para cada pista você recebe +1 em testes de perícia contra a criatura até o fim da missão. Cada pista fornece apenas uma informação e, a critério do mestre, informações diferentes podem exigir pistas específicas.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 65% - Atacar das Sombras",
+            "elemento": "",
+            "trilha": "Caçador",
+            "descricao": "Você aprende a usar as sombras contra o Paranormal. Você não sofre a penalidade de –1d20 em testes de Furtividade por se mover ao seu deslocamento normal e, se estiver usando uma arma que não faça barulho (como uma faca ou um arco), a penalidade que você sofre em Furtividade por atacar na mesma rodada é reduzida para –1d20. Além disso, sua visibilidade inicial em cenas de furtividade é sempre 1 ponto abaixo da inicial (podendo ser negativa).",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 99% - Estudar a Presa",
+            "elemento": "",
+            "trilha": "Caçador",
+            "descricao": "Você sabe que eles são mais fortes e que para derrotá-los precisará revelar todos os seus segredos. Quando usa Estudar Fraquezas contra uma criatura paranormal ou um cultista, você pode transformar o tipo desse ser em sua “presa”. Contra seres desse tipo, você recebe +1d20 em testes de perícia, +1 na margem de ameaça e no multiplicador de crítico e resistência a dano 5. Você só pode ter um tipo de ser como presa ao mesmo tempo.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 10% - Ser Amaldiçoado",
+            "elemento": "Variável",
+            "trilha": "Monstruoso",
+            "descricao": "Em suas veias corre uma maldição paranormal que aos poucos o está transformando em um monstro. Você se torna treinado em Ocultismo (se já for treinado, em vez disso recebe +2 nessa perícia). Escolha um elemento paranormal entre Sangue, Morte, Conhecimento ou Energia. Uma vez por dia, você precisa executar uma etapa ritualística desse elemento (por exemplo, beber sangue humano para Sangue, inalar cinzas de mortos para Morte, tatuar palavras que causam medo para Conhecimento ou receber choques de cabos elétricos para Energia). Se fizer isso, até o fim do dia você recebe os efeitos descritos a seguir, conforme o elemento escolhido. Caso contrário, você sofre de fome e sede nesse dia. Por fim, se adquirir afinidade com um elemento, deverá escolher aquele selecionado para esta habilidade.\nSANGUE: Suas presas ficam protuberantes e seus olhos se tornam vermelhos. Você recebe resistência a balístico e Sangue 5 e faro e, quando faz um contra-ataque bem-sucedido, soma seu Vigor na rolagem de dano, mas sofre –1d20 em Ciências e Intuição.\nMORTE: Você fica pálido e seu metabolismo se torna bem mais lento. Você recebe resistência a perfuração e Morte 5 e imunidade a fadiga e soma sua Força em seu total de pontos de vida, mas sofre –1d20 em Diplomacia e Enganação.\nCONHECIMENTO: Seus olhos são banhados em um dourado sobrenatural. Você recebe resistência a balístico e Conhecimento 5 e visão no escuro e soma seu Intelecto na Defesa, mas sofre –1d20 em Atletismo e Acrobacia.\nENERGIA: Sua pele ganha cicatrizes de queimaduras elétricas com múltiplas cores. Você recebe resistência a corte, eletricidade, fogo e Energia 5 e soma sua Agilidade na RD recebida por um bloqueio bem-sucedido, mas sofre –1d20 em Investigação e Percepção.",
+            "requisito": "Regra opcional Nível de Exposição",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 40% - Ser Macabro",
+            "elemento": "Variável",
+            "trilha": "Monstruoso",
+            "descricao": "Conforme sua humanidade é substituída pela Entidade, as mudanças em seu corpo e mente se intensificam. A resistência a dano que você recebe por executar a etapa ritualística de seu elemento aumenta para 10, enquanto a penalidade em perícias aumenta para –2d20. Por fim, quando executa sua etapa ritualística, você recebe os efeitos adicionais incluídos na descrição de seu elemento, a seguir.\nSANGUE: Você veste poucas roupas, expondo o máximo de sua pele sensível ao ambiente que puder. Seu corpo já está repleto de cicatrizes e feridas, muitas causadas por você mesmo para saborear a dor. Devorar qualquer coisa que não seja carne ou sangue não é capaz de conter sua fome. Você pode usar Força para calcular seus pontos de esforço (em vez de Presença). Além disso, pode gastar uma ação de movimento e 1 ou mais PE (limitado por sua Força) para recuperar 1d8 PV por PE gasto.\nMORTE: Roupas modernas e complexas não parecem fazer sentido pra você. Seus trajes são anacrônicos e simples, às vezes adornado de cristais, esqueletos de pequenas criaturas pendurados, pedras, raízes e plantas mortas. Você recebe +1d20 em Intimidação e pode usar Vigor para calcular seus pontos de esforço (em vez de Presença). Além disso, morre se iniciar quatro turnos morrendo na mesma cena (e não apenas três) e não precisa mais comer ou beber para viver, mas ainda sofre da fome paranormal causada por essa trilha.\nCONHECIMENTO: Você está sempre vestindo joias de ouro puro ou roupas com ouro em suas linhas. Seu corpo está quase inteiramente coberto de palavras que evocam medo, como famosas últimas frases ou pedidos de socorro. Você já sabe que é superior a todos eles. Seu Intelecto aumenta em +1. Além disso, você pode usar Intelecto como atributo-chave para Enganação e para calcular seus pontos de esforço (em vez de Presença).\nENERGIA: Você está sempre vestindo roupas complexas e modernas, com luzes brilhantes e dispositivos conectados a baterias e à sua pele para receber pequenos choques estimulantes. Você pode usar Agilidade como atributo-chave para calcular seus pontos de esforço (em vez de Presença). Além disso, quando acerta um ataque corpo a corpo, pode gastar 1 ou mais PE (limitado por sua Agilidade). Se fizer isso, seu ataque causa +1d6 pontos de dano de Energia para cada 1 PE gasto.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 65% - Ser Assustador",
+            "elemento": "Variável",
+            "trilha": "Monstruoso",
+            "descricao": "Como um parasita, você sente a Entidade andar por todo o seu corpo, fazendo de você uma morada. A resistência a dano que você recebe por executar a etapa ritualística de seu elemento aumenta para 15, mas sua Presença é reduzida permanentemente em 1. Por fim, quando executa sua etapa ritualística, você recebe os seguintes efeitos adicionais associados ao seu elemento.\nSANGUE: Você dilacerou seus próprios órgãos sensitivos, como olhos, nariz e orelhas, para que possa sentir com total intensidade o sabor e a dor da sua existência. Arames farpados e lâminas enroladas em seu corpo permitem que você não pare de sentir. A esse ponto, a palavra “não” já parece ser um conceito inútil para suas decisões: você está disposto a aceitar tudo, provar de tudo, sofrer tudo. Você tem 50% de chance de ignorar o dano adicional de um acerto crítico ou ataque furtivo. Além disso, recebe uma arma natural de mordida (dano 1d8, crítico x2, perfuração). Uma vez por rodada, quando usa a ação agredir para atacar com outra arma, você pode gastar 1 PE para fazer um ataque corpo a corpo extra com a mordida.\nMORTE: O Lodo preto da Morte faz parte do seu consumo diário, ele se espalha pelo seu organismo apodrecendo seu sistema, mantendo-o vivo através da morte. Não é incomum você ser considerado um “acumulador de lixo”: é difícil diferenciar um animal vivo de um galho morto, pois perante a Morte todas as coisas são iguais. No início de cada turno em que estiver morrendo, você pode fazer um teste de Vigor (DT 15). Se passar, encerra a condição morrendo e acorda com 1 PV. Além disso, sempre que faz um acerto crítico em combate ou reduz um inimigo a 0 PV, você recupera 2 PE.\nCONHECIMENTO: Você injeta e ingere ouro líquido esporadicamente e não há mais espaço para tatuagens. Ler, reler e escrever novos registros faz parte da sua rotina extremamente organizada e metódica. Você pode deixar de ser treinado em uma de suas perícias para receber um número de dados de bônus igual ao seu Intelecto. Até o fim da cena, sempre que fizer um teste, você pode gastar um desses dados de bônus para receber +1d20 nesse teste. Você recupera todas as perícias treinadas perdidas dessa forma ao final de seu próximo interlúdio.\nENERGIA: A intensidade dos choques aumenta, além de ter conectado em suas veias pequenos tubos para gotejamento de ácido. Respirar através de uma máscara de gás para inalar alucinógenos a todo momento deixa tudo mais divertido, colorido e caótico. Sua resistência a dano passa a se aplicar também a dano químico. Além disso, você pode extrair energia de fontes elétricas; para isso, deve gastar uma ação de movimento e tocar uma fonte de eletricidade. Você recupera uma quantidade de PE conforme o tipo de fonte: 1d4 PE para um dispositivo portátil, como um tablet ou celular, 2d4 PE para um dispositivo grande, como uma moto ou um carro elétrico, e 4d4 para uma fonte do tamanho de uma casa. Usar este efeito descarrega completamente a fonte e sobrecarrega seus circuitos, que se tornam incapazes de transmitir energia.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 99% - Ser Aterrorizante",
+            "elemento": "Variável",
+            "trilha": "Monstruoso",
+            "descricao": "Você foi transformado no habitat perfeito para a entidade que reside no interior de seu corpo e mente. Os efeitos por executar sua etapa ritualística se tornam permanentes (mas você ainda precisa executá-la para evitar sentir fome e sede) e você passa a ser considerado uma criatura paranormal para efeitos de habilidades e itens. Além disso, a resistência a dano que você recebe por essa trilha aumenta para 20 e você recebe os seguintes efeitos adicionais associados ao seu elemento.\nSANGUE: Você se move como uma criatura bestial; não existe sensibilidade ou empatia. Apenas o instinto e a necessidade de consumir mais. Se o resultado é devorar, essa é a decisão correta. Pensamentos são esporádicos e raros, como pequenos sustos de humanidade que são engolidos pelo fluxo que banha o Outro Lado. Seu Intelecto diminui em –1 e sua Força aumenta em +1. Sempre que causa dano com sua mordida em um ser, você recupera 5 PV (esse ganho também é multiplicado em um acerto crítico). Além disso, você aprende o ritual Forma Monstruosa. Entretanto, seu desejo de assumir essa forma pode sobrepujar sua própria vontade; sempre que sofre dano, você deve fazer um teste de Vontade (DT 10 + o dano sofrido). Se falhar e não estiver sob efeito de Forma Monstruosa, sua próxima ação padrão deve ser conjurar esse ritual (se não puder, você perde a ação).\nMORTE: Você está morto, mas ainda é forçado a existir. Sua aparência é a de um cadáver apodrecido, todos os seus órgãos foram consumidos pela Morte e, por dedicar sua existência inteira à entidade, você se tornou imortal. Preso na eternidade de cada segundo, você ainda é arrastado pela Realidade pela percepção alheia, pois mesmo que sua mente tenha se tornado o próprio tempo, todas as coisas precisam de um fim. Sua Presença diminui em –1 e seu Vigor aumenta em +1. Você recebe imunidade a dano de Morte e se torna imortal (se morrer, você volta à vida no dia seguinte, sendo “restaurado” pelo Lodo). Entretanto, se for reduzido a 0 PV por dano de fogo ou Energia, seu Lodo é destruído e você não retorna à vida. Por fim, você aprende o ritual Fim Inevitável.\nCONHECIMENTO: Sua boca desapareceu após você costurá-la com fios dourados, pois ninguém é digno do seu ensinamento. Seus olhos aumentaram e ficaram mais profundos, com escleras negras. Todos os seus membros se alongaram e ficaram mais finos. Suas tatuagens e textos se converteram em sigilos do Outro Lado. A verdade que você deve esquecer está atrás de uma porta dourada, e você consegue enxergá-la, mas sabe que ao abri-la, irá perder tudo. Sua Força diminui em –1 e seu Intelecto aumenta em +1. Além disso, você recebe Percepção às Cegas e aprende um ritual de Conhecimento de 4º círculo a sua escolha. Entretanto, sempre que conjura esse ritual, você perde a memória de tudo que vivenciou desde o início da cena.\nENERGIA: Tudo faz parte de você e você é tudo. Você se tornou uma metamorfose ambulante, assumindo uma forma plasmática que não pode ser descrita nem como líquida, sólida ou gasosa. Seu corpo flutua alguns centímetros acima do chão e não é mais possível segurar objetos, afinal tudo que você toca também se torna parte de você enquanto está em contato. Seus traços físicos mudam constantemente e você não pode ser mais descrito com apenas uma aparência definitiva. Decisões lógicas não fazem mais parte da sua vida, o Caos é inevitável. Sua Força diminui em –1 e sua Agilidade aumenta em +1. Você pode pairar a 1,5m do chão com deslocamento 12m (o que permite que ignore terreno difícil e o torna imune a dano por queda), pode passar por qualquer espaço por onde uma criatura Minúscula poderia passar e se torna imune a condições de paralisia de origem física (como ser agarrado ou enredado). Por fim, você aprende o ritual Deflagração de Energia. Entretanto, você não pode mais se beneficiar de itens vestidos e, por não ter corpo físico, só consegue manipular objetos com sua mente; você pode manipular um objeto dessa forma por vez, e apenas objetos que poderia manipular com suas duas mãos.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        }
+    ],
+    "trilha-ocultista":[
+        {
+            "nome": "NEX 10% - Ampliar Ritual",
+            "elemento": "",
+            "trilha": "Conduíte",
+            "descricao": "Quando lança um ritual, você pode gastar +2 PE para aumentar seu alcance em um passo (de curto para médio, de médio para longo ou de longo para extremo) ou dobrar sua área de efeito.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 40% - Acelerar Ritual",
+            "elemento": "",
+            "trilha": "Conduíte",
+            "descricao": "Uma vez por rodada, você pode aumentar o custo de um ritual em 4 PE para conjurá-lo como uma ação livre.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 65% - Anular Ritual",
+            "elemento": "",
+            "trilha": "Conduíte",
+            "descricao": "Quando for alvo de um ritual, você pode gastar uma quantidade de PE igual ao custo pago por esse ritual e fazer um teste oposto de Ocultismo contra o conjurador. Se vencer, você anula o ritual, cancelando todos os seus efeitos.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 99% - Canalizar o Medo",
+            "elemento": "",
+            "trilha": "Conduíte",
+            "descricao": "Você aprende o ritual Canalizar o Medo.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 10% - Poder do Flagelo",
+            "elemento": "",
+            "trilha": "Flagelador",
+            "descricao": "Ao conjurar um ritual, você pode gastar seus próprios pontos de vida para pagar o custo em pontos de esforço, à taxa de 2 PV por PE pago. Pontos de vida gastos dessa forma só podem ser recuperados com descanso.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 40% - Abraçar a Dor",
+            "elemento": "",
+            "trilha": "Flagelador",
+            "descricao": "Sempre que sofrer dano não paranormal, você pode gastar uma reação e 2 PE para reduzir esse dano à metade.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 65% - Absorver Agonia",
+            "elemento": "",
+            "trilha": "Flagelador",
+            "descricao": "Sempre que reduz um ou mais inimigos a 0 PV com um ritual, você recebe uma quantidade de PE temporários igual ao círculo do ritual utilizado. Por exemplo, se ativar esse poder com um ritual de 2º círculo, receberá 2 PE.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 99% - Medo Tangível",
+            "elemento": "",
+            "trilha": "Flagelador",
+            "descricao": "Você aprende o ritual Medo Tangível.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 10% - Saber Ampliado",
+            "elemento": "",
+            "trilha": "Graduado",
+            "descricao": "Você aprende um ritual de 1º círculo. Toda vez que ganha acesso a um novo círculo, aprende um ritual adicional daquele círculo. Esses rituais não contam no seu limite de rituais.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 40% - Grimório Ritualístico",
+            "elemento": "",
+            "trilha": "Graduado",
+            "descricao": "Você cria um grimório especial, que armazena rituais que sua mente não seria capaz de guardar. Você aprende uma quantidade de rituais de 1º ou 2º círculos igual ao seu Intelecto. Quando ganha acesso a um novo círculo, pode incluir um novo ritual desse círculo em seu grimório. Esses rituais não contam em seu limite de rituais conhecidos. Para conjurar um ritual armazenado em seu grimório, você precisa antes empunhar o grimório e gastar uma ação completa o folheando para relembrar o ritual. O grimório ocupa 1 espaço em seu inventário. Se perdê-lo, você pode replicá-lo com duas ações de interlúdio.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 65% - Rituais Eficientes",
+            "elemento": "",
+            "trilha": "Graduado",
+            "descricao": "A DT para resistir a todos os seus rituais aumenta em +5.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 99% - Conhecendo o Medo",
+            "elemento": "",
+            "trilha": "Graduado",
+            "descricao": "Você aprende o ritual Conhecendo o Medo.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 10% - Mente Sã",
+            "elemento": "",
+            "trilha": "Intuitivo",
+            "descricao": "Você compreende melhor as entidades do Outro Lado, e passa a ser menos abalado por seus efeitos. Você recebe resistência paranormal +5 (+5 em testes de resistência contra efeitos paranormais).",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 40% - Presença Poderosa",
+            "elemento": "",
+            "trilha": "Intuitivo",
+            "descricao": "Sua resiliência mental faz com que você possa extrair mais do Outro Lado. Você adiciona sua Presença ao seu limite de PE por turno, mas apenas para conjurar rituais (não para DT).",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 65% - Inabalável",
+            "elemento": "",
+            "trilha": "Intuitivo",
+            "descricao": "Você recebe resistência a dano mental e paranormal 10. Além disso, quando é alvo de um efeito paranormal que permite um teste de Vontade para reduzir o dano à metade, você não sofre dano algum se passar.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 99% - Presença do Medo",
+            "elemento": "",
+            "trilha": "Intuitivo",
+            "descricao": "Você aprende o ritual Presença do Medo.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 10% - Lâmina Maldita",
+            "elemento": "",
+            "trilha": "Lâmina Paranormal",
+            "descricao": "Você aprende o ritual Amaldiçoar Arma. Se já o conhece, pode gastar +1 PE quando o lança para reduzir seu tempo de conjuração para movimento. Além disso, quando conjura esse ritual, você pode usar Ocultismo, em vez de Luta ou Pontaria, para testes de ataque com a arma amaldiçoada.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 40% - Gladiador Paranormal",
+            "elemento": "",
+            "trilha": "Lâmina Paranormal",
+            "descricao": "Sempre que acerta um ataque corpo a corpo em um inimigo, você recebe 2 PE temporários. Você pode ganhar um máximo de PE temporários por cena igual ao seu limite de PE. PE temporários desaparecem no final da cena.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 65% - Conjuração Marcial",
+            "elemento": "",
+            "trilha": "Lâmina Paranormal",
+            "descricao": "Uma vez por rodada, quando você lança um ritual com execução de uma ação padrão, pode gastar 2 PE para fazer um ataque corpo a corpo como uma ação livre.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 99% - Lâmina do Medo",
+            "elemento": "",
+            "trilha": "Lâmina Paranormal",
+            "descricao": "Você aprende o ritual Lâmina do Medo.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 10% - Revelação do Mal",
+            "elemento": "",
+            "trilha": "Exorcista",
+            "descricao": "Qualquer que seja sua fé, seus estudos teológicos o prepararam para perceber os sinais do paranormal. Você recebe treinamento em Religião ou, se já for treinado nesta perícia, recebe +2 nela. Além disso, pode usar essa perícia no lugar de Investigação e Percepção para notar e encontrar seres, rastros ou pistas que tenham traços paranormais e no lugar de Ocultismo.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 40% - Poder da Fé",
+            "elemento": "",
+            "trilha": "Exorcista",
+            "descricao": "Sua fé e o estudo de suas doutrinas religiosas alimentam suas defesas mentais e espirituais. Você se torna veterano em Religião ou, se já for veterano, recebe +1d20 nessa perícia. Quando falha em um teste de resistência, você pode gastar 2 PE para repetir o teste usando Religião, mas deve aceitar o resultado da segunda rolagem, mesmo que seja menor que a primeira.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 65% - Parareligiosidade",
+            "elemento": "",
+            "trilha": "Exorcista",
+            "descricao": "Você conjura rituais com uma intensidade tão fervorosa que potencializa seus efeitos. Quando conjura um ritual, você pode gastar +2 PE para adicionar a ele um efeito equivalente ao de um catalisador ritualístico a sua escolha.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 99% - Chagas da Resistência",
+            "elemento": "",
+            "trilha": "Exorcista",
+            "descricao": "Por meio de sua fé, sua mente consegue extrair forças de seu corpo para suportar qualquer agressão. Quando sua Sanidade é reduzida a 0, você pode gastar 10 PV para, em vez disso, ficar com SAN 1.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 10% - Poder Não Desejado",
+            "elemento": "",
+            "trilha": "Possuído",
+            "descricao": "Você sente o paranormal tomando forma em seu interior. Ele oferece um poder assustador, mas ao mesmo tempo exige que você siga o caminho que ele escolheu. Sempre que receber um novo poder de ocultista, em vez disso você recebe o poder Transcender. Entretanto, você possui uma reserva paranormal alimentada pela presença em seu interior. Essa reserva é representada por pontos de possessão (PP); seu total de PP é igual a 3, mais 2 pontos para cada poder Transcender que possui. O limite de PP que você pode gastar por turno é igual à sua Presença; para cada PP gasto, você recupera 10 PV ou 2 PE. Você recupera 1 PP a cada ação de interlúdio dormir.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 40% - As Sombras Dentro de Mim",
+            "elemento": "",
+            "trilha": "Possuído",
+            "descricao": "Cada vez mais a Entidade cresce dentro de você, tomando seus músculos e guiando seus movimentos. Sua recuperação de PP aumenta para 2 por ação dormir. Além disso, você pode gastar 2 PE para permitir que sua Entidade controle temporariamente seus músculos. Você assume uma postura desnatural que permite movimentos bizarros e silenciosos; você recebe +1d20 em Acrobacia, Atletismo e Furtividade por uma rodada e, se estiver em uma cena de furtividade, nesta rodada o aumento em sua visibilidade por qualquer ação é reduzido em –1.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 65% - Ele Me Ensina",
+            "elemento": "",
+            "trilha": "Possuído",
+            "descricao": "Mais do que apenas uma força, o paranormal lentamente se torna uma voz, sussurrando segredos em sua mente. Escolha entre transcender ou receber o primeiro poder de uma trilha de ocultista que não a sua. Você precisa atender os pré-requisitos do poder.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 99% - Tornamo-nos Um",
+            "elemento": "Variável",
+            "trilha": "Possuído",
+            "descricao": "Desabrochando em seu interior, o paranormal se manifesta como uma dádiva poderosa. Baseado no elemento com que tem afinidade, você recebe um dos poderes a seguir.\nPresente da Obsessão (Sangue): Uma vez por rodada, você pode gastar 6 PE para recuperar 50 PV. Quando faz isso, até o início do seu próximo turno, os bônus por treinamento em suas perícias baseadas em Força e Vigor, e em Intimidação, mudam para +35. As demais perícias baseadas em Presença mudam para –10. Você pode ativar esse poder mesmo inconsciente.\nPresente do Tempo (Morte): Uma vez por rodada, você pode gastar 6 PE para receber um turno adicional na última contagem de iniciativa da rodada. Você pode ativar essa habilidade mesmo inconsciente.\nPresente do Saber (Conhecimento): Uma vez por cena, você pode gastar 6 PE para reescrever uma fração de seu próprio ser. Você recebe um poder qualquer até o fim da cena. Você deve cumprir os pré-requisitos do poder escolhido, e não pode escolher poderes de trilha de NEX 99%. A cada vez que usa este poder, você deve fazer um teste de Vontade (DT 15 + 5 para cada vez que usou este poder na mesma missão). Se falhar, perde 1d6 pontos de Sanidade para cada vez que usou esse poder nesta missão.\nPresente do Espaço (Energia): Uma vez por rodada, você pode gastar 6 PE para se teletransportar para outro ponto em alcance médio. Você não precisa conhecer o local para onde vai nem precisa vê-lo, mas se teletransportar-se para um espaço ocupado vai ser arremessado para o espaço disponível mais próximo.",
+            "requisito": "Afinidade com um elemento",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 10% - Terapia",
+            "elemento": "",
+            "trilha": "Parapsicólogo",
+            "descricao": "Por meio de seus estudos parapsicológicos, você começa a compreender os efeitos do paranormal sobre a mente humana. Você pode usar Profissão (psicólogo) como Diplomacia. Além disso, uma vez por rodada, quando você ou um aliado em alcance curto falha em um teste de resistência contra um efeito que causa dano mental, você pode gastar 2 PE para fazer um teste de Profissão (psicólogo) e usar o resultado desse teste no lugar do teste de resistência falho. Se já possuir esta habilidade, em vez disso seu custo é reduzido em –1 PE e você recebe +2 em Profissão (psicólogo).",
+            "requisito": "Treinado em Profissão (psicólogo)",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 40% - Palavras-chave",
+            "elemento": "",
+            "trilha": "Parapsicólogo",
+            "descricao": "Combinando psicologia e estudos do Outro Lado, você desenvolveu técnicas e sabe o que dizer para restaurar a sanidade de seus pacientes. Quando passa em um teste de perícia para acalmar, você pode gastar uma quantidade de pontos de esforço até seu limite de PE. Para cada 1 PE gasto desta forma, a pessoa que está sendo tratada recupera 1 ponto de Sanidade (ou 1 PD, se estiver usando a regra “Jogando sem Sanidade”).",
+            "requisito": "Treinado em Profissão (psicólogo)",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 65% - Reprogramação Mental",
+            "elemento": "",
+            "trilha": "Parapsicólogo",
+            "descricao": "Ignorando os avisos de cautela de seus pares, você descobriu como hipnotizar e manipular a mente humana para reprogramar suas capacidades. Você pode gastar 5 PE e uma ação de interlúdio para manipular o cérebro de outra pessoa voluntária em alcance curto (essa pessoa também gasta sua ação de interlúdio). Até o próximo interlúdio, a pessoa recebe, à escolha dela, um poder geral, um poder da própria classe ou o primeiro poder de uma trilha que não a dela, acreditando que isso sempre fez parte de sua vida. A pessoa precisa cumprir os pré-requisitos do poder escolhido.",
+            "requisito": "Treinado em Profissão (psicólogo)",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 99% - A Sanidade Está Lá Fora",
+            "elemento": "",
+            "trilha": "Parapsicólogo",
+            "descricao": "Graças aos seus estudos, a capacidade de curar a mente humana de (quase) todas as mazelas está ao seu alcance. Você pode gastar uma ação de movimento e 5 PE para remover todas as condições de medo ou mentais de uma pessoa adjacente (incluindo você mesmo).",
+            "requisito": "Treinado em Profissão (psicólogo)",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 10% - Identificação Macabra",
+            "elemento": "",
+            "trilha": "Maledictólogo",
+            "descricao": "Compreender o paranormal fica cada vez mais prático com o tempo. Quando faz um teste para identificar item amaldiçoado ou identificar ritual, você pode gastar 1 PE para receber +1d10 neste teste. Além disso, sofre apenas –1d20 para identificar itens amaldiçoados como uma ação completa.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 40% - Compreensão de Maldições",
+            "elemento": "",
+            "trilha": "Maledictólogo",
+            "descricao": "Você pode gastar uma ação de interlúdio e 3 PE para fazer leituras e rituais de identificação em um item amaldiçoado. Após isso, faça um teste de Ocultismo (DT 10 +5 por categoria do item). Se falhar, você perde 2d4+2 SAN e não pode tentar novamente com o mesmo item. Se passar e o item amaldiçoado contiver um ritual, você perde 1d4+1 SAN, aprende o ritual e o item é consumido. Esse ritual não conta no seu limite de rituais. Se passar e o item amaldiçoado não contiver um ritual, você perde 1d4+1 SAN e pode transferir as maldições para outro item ou para um símbolo marcado em seu corpo ou no corpo de um aliado adjacente, como uma tatuagem, e o item amaldiçoado original é consumido. A pessoa tatuada pode usufruir das maldições como se estivesse usando o item, mas a mesma pessoa não pode ter mais do que uma tatuagem desse tipo. Você pode destruir esse símbolo em seu corpo gastando uma ação de interlúdio.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 65% - Reproduzir Maldição",
+            "elemento": "",
+            "trilha": "Maledictólogo",
+            "descricao": "Sua determinação em usar o Outro Lado contra ele mesmo é maior do que seu medo de enlouquecer. Você pode gastar uma ação de interlúdio e 3 PE para memorizar uma maldição de item com a qual já tenha lidado (por exemplo, um item que já estudou ou usou, ou mesmo um do qual já foi alvo). Uma vez que tenha memorizado uma maldição, pode gastar uma ação de interlúdio e 3 PE para aplicá-la a um novo item. Para isso, faça um teste de Ocultismo (DT 10 +5 por categoria do item). Se falhar, você perde 2d8+2 SAN. Se passar, você perde 1d8+1 SAN e o novo item recebe a maldição que você havia memorizado até o fim da missão. Maldições aumentam categorias de itens, e nenhum item pode ter categoria maior do que IV.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 99% - Maldição Suprema",
+            "elemento": "",
+            "trilha": "Maledictólogo",
+            "descricao": "A loucura não o impede de fazer o impensável. Ao usar a habilidade Reproduzir Maldição, você considera o item três categorias efetivas a menos. Por exemplo, um item de categoria IV é considerado de categoria I, permitindo que você aplique maldições até ele voltar à categoria IV.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        }
+    ],
+    "trilha-especialista":[
+        {
+            "nome": "NEX 10% - Mira de Elite",
+            "elemento": "",
+            "trilha": "Atirador de Elite",
+            "descricao": "Você recebe proficiência com armas de fogo que usam balas longas e soma seu Intelecto em rolagens de dano com essas armas.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 40% - Disparo Letal",
+            "elemento": "",
+            "trilha": "Atirador de Elite",
+            "descricao": "Quando faz a ação mirar você pode gastar 1 PE para aumentar em +2 a margem de ameaça do próximo ataque que fizer até o final de seu próximo turno.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 65% - Disparo Impactante",
+            "elemento": "",
+            "trilha": "Atirador de Elite",
+            "descricao": "Quando ataca com uma arma de fogo, você pode gastar 2 PE e, em vez de causar dano, fazer uma manobra entre derrubar, desarmar, empurrar ou quebrar.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 99% - Atirar para Matar",
+            "elemento": "",
+            "trilha": "Atirador de Elite",
+            "descricao": "Quando faz um acerto crítico com uma arma de fogo, você causa dano máximo, sem precisar rolar dados.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 10% - Ataque Furtivo",
+            "elemento": "",
+            "trilha": "Infiltrador",
+            "descricao": "Você sabe atingir os pontos vitais de um inimigo distraído. Uma vez por rodada, quando atinge um alvo desprevenido com um ataque corpo a corpo ou em alcance curto, ou um alvo que você esteja flanqueando, você pode gastar 1 PE para causar +1d6 pontos de dano do mesmo tipo da arma. Em NEX 40% o dano adicional aumenta para +2d6, em NEX 65% aumenta para +3d6 e em NEX 99% aumenta para +4d6.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 40% - Gatuno",
+            "elemento": "",
+            "trilha": "Infiltrador",
+            "descricao": "Você recebe +5 em Atletismo e Crime e pode percorrer seu deslocamento normal quando se esconder sem penalidade.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 65% - Assassinar",
+            "elemento": "",
+            "trilha": "Infiltrador",
+            "descricao": "Você pode gastar uma ação de movimento e 3 PE para analisar um alvo em alcance curto. Até o fim de seu próximo turno, seu primeiro Ataque Furtivo que causar dano a ele tem seus dados de dano extras dessa habilidade dobrados. Além disso, se sofrer dano de seu ataque, o alvo fica inconsciente ou morrendo, à sua escolha (Fortitude DT Agi evita).",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 99% - Sombra Fugaz",
+            "elemento": "",
+            "trilha": "Infiltrador",
+            "descricao": "Quando faz um teste de Furtividade após atacar ou fazer outra ação chamativa, você pode gastar 3 PE para não sofrer a penalidade de –3d20 no teste.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 10% - Paramédico",
+            "elemento": "",
+            "trilha": "Médico de Campo",
+            "descricao": "Você pode usar uma ação padrão e 2 PE para curar 2d10 pontos de vida de si mesmo ou de um aliado adjacente. Você pode curar +1d10 PV respectivamente em NEX 40%, 65% e 99%, gastando +1 PE por dado adicional de cura.",
+            "requisito": "Treinado em Medicina, Kit de Medicina",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 40% - Equipe de Trauma",
+            "elemento": "",
+            "trilha": "Médico de Campo",
+            "descricao": "Você pode usar uma ação padrão e 2 PE para remover uma condição negativa (exceto morrendo) de um aliado adjacente.",
+            "requisito": "Kit de Medicina",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 65% - Resgate",
+            "elemento": "",
+            "trilha": "Médico de Campo",
+            "descricao": "Uma vez por rodada, se estiver em alcance curto de um aliado machucado ou morrendo, você pode se aproximar do aliado com uma ação livre (desde que seja capaz de fazê-lo usando seu deslocamento normal). Além disso, sempre que curar PV ou remover condições do aliado, você e o aliado recebem +5 na Defesa até o início de seu próximo turno. Por fim, para você, o total de espaços ocupados por carregar um personagem é reduzido pela metade.",
+            "requisito": "Kit de Medicina",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 99% - Reanimação",
+            "elemento": "",
+            "trilha": "Médico de Campo",
+            "descricao": "Uma vez por cena, você pode gastar uma ação completa e 10 PE para trazer de volta à vida um personagem que tenha morrido na mesma cena (exceto morte por dano massivo).",
+            "requisito": "Kit de Medicina",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 10% - Eloquência",
+            "elemento": "",
+            "trilha": "Negociador",
+            "descricao": "Você pode usar uma ação completa e 1 PE por alvo em alcance curto para afetar outras pessoas com sua fala. Faça um teste de Diplomacia, Enganação ou Intimidação contra a Vontade dos alvos. Se você vencer, os alvos ficam fascinados enquanto você se concentrar (uma ação padrão por rodada). Um alvo hostil ou que esteja envolvido em combate recebe +5 em seu teste de resistência e tem direito a um novo teste por rodada, sempre que você se concentrar. Uma pessoa que passar no teste fica imune a este efeito por um dia.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 40% - Discurso Motivador",
+            "elemento": "",
+            "trilha": "Negociador",
+            "descricao": "Você pode gastar uma ação padrão e 4 PE para inspirar seus aliados com suas palavras. Você e todos os seus aliados em alcance curto ganham +1d20 em testes de perícia até o fim da cena. A partir de NEX 65%, você pode gastar 8 PE para fornecer um bônus total de +2d20.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 65% - Eu Conheço um Cara",
+            "elemento": "",
+            "trilha": "Negociador",
+            "descricao": "Uma vez por missão, você pode ativar sua rede de contatos para pedir um favor, como por exemplo trocar todo o equipamento do seu grupo (como se tivesse uma segunda fase de preparação de missão), conseguir um local de descanso ou mesmo ser resgatado de uma cena. O mestre tem a palavra final de quando é possível usar essa habilidade e quais favores podem ser obtidos.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 99% - Truque de Mestre",
+            "elemento": "",
+            "trilha": "Negociador",
+            "descricao": "Acostumado a uma vida de fingimento e manipulação, você pode gastar 5 PE para simular o efeito de qualquer habilidade que você tenha visto um de seus aliados usar durante a cena. Você ignora os pré-requisitos da habilidade, mas ainda precisa pagar todos os seus custos, incluindo ações, PE e materiais, e ela usa os seus parâmetros de jogo, como se você estivesse usando a habilidade em questão.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 10% - Inventário Otimizado",
+            "elemento": "",
+            "trilha": "Técnico",
+            "descricao": "Você soma seu Intelecto à sua Força para calcular sua capacidade de carga. Por exemplo, se você tem Força 1 e Intelecto 3, seu inventário tem 20 espaços.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 40% - Remendão",
+            "elemento": "",
+            "trilha": "Técnico",
+            "descricao": "Você pode gastar uma ação completa e 1 PE para remover a condição quebrado de um equipamento adjacente até o final da cena. Além disso, qualquer equipamento geral tem sua categoria reduzida em I para você.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 65% - Improvisar",
+            "elemento": "",
+            "trilha": "Técnico",
+            "descricao": "Você pode improvisar equipamentos com materiais ao seu redor. Escolha um equipamento geral e gaste uma ação completa e 2 PE, mais 2 PE por categoria do item escolhido. Você cria uma versão funcional do equipamento, que segue suas regras de espaço e categoria como normal. Ao final da cena, seu equipamento improvisado se torna inútil.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 99% - Preparado para Tudo",
+            "elemento": "",
+            "trilha": "Técnico",
+            "descricao": "Você sempre tem o que precisa para qualquer situação. Sempre que precisar de um item qualquer (exceto armas), pode gastar uma ação de movimento e 3 PE por categoria do item para lembrar que colocou ele no fundo da bolsa! Depois de encontrado, o item segue normalmente as regras de inventário.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 10% - Conhecimento Prático",
+            "elemento": "",
+            "trilha": "Bibliotecário",
+            "descricao": "Você pode se lembrar de muitas informações úteis de suas leituras. Quando faz um teste de perícia (exceto Luta e Pontaria), você pode gastar 2 PE para mudar o atributo-base da perícia para Int. Se possuir o poder Conhecimento Aplicado, em vez disso seu custo é reduzido em –1 PE.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 40% - Leitor Contumaz",
+            "elemento": "",
+            "trilha": "Bibliotecário",
+            "descricao": "Você consome livros de forma obstinada. Cada dado de bônus que você recebe pela ação de interlúdio ler aumenta para 1d8 e você pode aplicar esse bônus em testes de qualquer perícia. Além disso, quando usa este bônus em um teste, você pode gastar 2 PE para aumentá-lo em +1 dado (de 1d8 para 2d8).",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 65% - Rato de Biblioteca",
+            "elemento": "",
+            "trilha": "Bibliotecário",
+            "descricao": "Acostumado com bibliotecas, você sabe como extrair informações de qualquer lugar repleto de livros. Se estiver em um ambiente com muitos livros (como uma livraria, uma biblioteca ou um antiquário), você pode gastar alguns minutos (ou, se estiver em uma cena de investigação, uma rodada) para receber os benefícios de uma ação de interlúdio à sua escolha entre ler e revisar caso. Você só pode usar essa habilidade uma vez por cena.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 99% - A Força do Saber",
+            "elemento": "",
+            "trilha": "Bibliotecário",
+            "descricao": "Tanto tempo passado entre livros e textos fortaleceu sua mente. Seu Intelecto aumenta em +1 e você soma o valor desse atributo em seu total de PE. Além disso, escolha uma perícia qualquer. Você troca o atributo-base dessa perícia para Intelecto.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 10% - Soluções Improvisadas",
+            "elemento": "",
+            "trilha": "Perseverante",
+            "descricao": "Você não é um sobrevivente à toa. Quando as coisas dão errado, você consegue pensar em alguma solução inusitada. Você pode gastar 2 PE para rolar novamente 1 dos dados de um teste recém-realizado (apenas uma vez por teste) e ficar com o melhor resultado entre as duas rolagens.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 40% - Fuga Obstinada",
+            "elemento": "",
+            "trilha": "Perseverante",
+            "descricao": "Seu instinto de sobrevivência lhe impulsiona para desprender as mais desesperadas fugas. Você recebe +1d20 em testes de perícia para fugir de um inimigo (seja em uma perseguição ou não). Além disso, em cenas de perseguição, se você for a presa, pode acumular até 4 falhas antes de ser pego.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 65% - Determinação Inquestionável",
+            "elemento": "",
+            "trilha": "Perseverante",
+            "descricao": "Nos momentos mais sombrios, você consegue encontrar em seu interior a força para perseverar. Uma vez por cena, você pode gastar 5 PE e uma ação padrão para remover uma condição de medo, mental ou de paralisia que esteja lhe afligindo. A critério do mestre, certas condições, como paralisia causada por uma doença, não podem ser removidas por essa habilidade.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 99% - Só Mais um Passo...",
+            "elemento": "",
+            "trilha": "Perseverante",
+            "descricao": "Você não chegou até aqui para morrer, e fará qualquer coisa para escapar com vida. Uma vez por rodada, quando sofre dano que reduziria seus PV a 0, você pode gastar 5 PE para, em vez disso, ficar com 1 PV. Esta habilidade não funciona contra dano massivo.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 10% - Mascate",
+            "elemento": "",
+            "trilha": "Muambeiro",
+            "descricao": "Você aprendeu um ofício útil e desenvolveu métodos para ter sempre à mão o que precisa para praticá-lo. Você recebe treinamento em uma Profissão à sua escolha entre armeiro, engenheiro ou químico, e recebe +5 em sua capacidade de carga. Além disso, quando fabrica um item improvisado a DT é reduzida em –10 (em vez de –5).",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 40% - Fabricação Própria",
+            "elemento": "",
+            "trilha": "Muambeiro",
+            "descricao": "Você desenvolveu suas próprias técnicas para fabricar equipamentos rapidamente. Você leva apenas metade do tempo para fabricar itens mundanos. Ou seja, com uma ação de manutenção pode fabricar duas munições, explosivos e demais consumíveis, e precisa de apenas uma ação de manutenção para armas, proteções e demais equipamentos gerais (itens modificados ou paranormais não são afetados por esta habilidade).",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 65% - Laboratório de Campo",
+            "elemento": "",
+            "trilha": "Muambeiro",
+            "descricao": "Sua habilidade em reparar e fabricar itens permite que você lide com a complexidade de dispositivos paranormais. Você recebe treinamento em uma Profissão à sua escolha entre armeiro, engenheiro ou químico ou, se já for treinado em uma dessas perícias, recebe +5 nela. Além disso, você pode usar fabricação em campo para fabricar e consertar itens paranormais (fabricar um item paranormal exige três ações de interlúdio que não precisam ser consecutivas).",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 99% - Achado Conveniente",
+            "elemento": "",
+            "trilha": "Muambeiro",
+            "descricao": "Entre protótipos e itens encontrados durante a missão, sua mochila sempre pode ter a ferramenta certa para a ocasião. Você pode gastar uma ação completa e 5 PE para “produzir” um item de até categoria III (exceto itens paranormais). O item pode ser um protótipo em que você estava trabalhando, um item encontrado anteriormente na missão ou qualquer outra justificativa aprovada pelo mestre. O item permanece em funcionamento até o fim da cena, quando então deixa de funcionar permanentemente (fica sem energia ou munição, uma peça fundamental se gasta ou quebra etc).",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        }
+    ],
+    "trilha-sobrevivente":[
+        {
+            "nome": "Estágio 2 – Durão",
+            "elemento": "",
+            "trilha": "Durão",
+            "descricao": "Você recebe +4 PV. Quando subir para o 3º estágio, recebe +2 PV.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Estágio 4 – Pancada Forte",
+            "elemento": "",
+            "trilha": "Durão",
+            "descricao": "Quando faz um ataque, você pode gastar 1 PE para receber +1d20 no teste de ataque. Se você se tornar um combatente, perde esta habilidade, mas reduz o custo de ativação de Ataque Especial em –1 PE.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Estágio 2 – Esperto",
+            "elemento": "",
+            "trilha": "Esperto",
+            "descricao": "Você se torna treinado em uma perícia adicional a sua escolha.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Estágio 4 – Entendido",
+            "elemento": "",
+            "trilha": "Esperto",
+            "descricao": "Escolha duas perícias nas quais você é treinado (exceto Luta e Pontaria). Quando faz um teste de uma dessas perícias, você pode gastar 1 PE para somar +1d4 no resultado do teste. Se você se tornar um especialista, perde esta habilidade, mas reduz o custo de ativação de Perito em –1 PE.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Estágio 2 – Esotérico",
+            "elemento": "",
+            "trilha": "Esotérico",
+            "descricao": "Você pode gastar uma ação padrão e 1 PE para sentir energias paranormais em alcance curto. Isso pode dar alguma pista em uma investigação ou alertá-lo de algum perigo iminente. O mestre dirá quais informações você consegue obter, se houver.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Estágio 4 – Iniciado",
+            "elemento": "",
+            "trilha": "Esotérico",
+            "descricao": "Você aprende e pode conjurar um ritual de 1º círculo a sua escolha. Se você se tornar um ocultista, soma este ritual aos três rituais que aprende com Escolhido pelo Outro Lado.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        }
+    ],
+    "outras":[
+        {
+            "nome": "Ataque Especial",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Quando faz um ataque, você pode gastar 2 PE para receber +5 no teste de ataque ou na rolagem de dano. Conforme avança de NEX, você pode gastar +1 PE para receber mais bônus de +5 (veja a Tabela 1.3). Você pode aplicar cada bônus de +5 em ataque ou dano. Por exemplo, em NEX 55%, você pode gastar 4 PE para receber +5 no teste de ataque e +10 na rolagem de dano.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Eclético",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Quando faz um teste de uma perícia, você pode gastar 2 PE para receber os benefícios de ser treinado nesta perícia.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Perito",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Escolha duas perícias nas quais você é treinado (exceto Luta e Pontaria). Quando faz um teste de uma dessas perícias, você pode gastar 2 PE para somar +1d6 no resultado do teste. Conforme avança de NEX, você pode gastar +1 PE para aumentar o dado de bônus (veja a Tabela 1.4). Por exemplo, em NEX 55%, pode gastar 4 PE para receber +1d10 no teste.",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Escolhido pelo Outro lado",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Você teve uma experiência paranormal e foi marcado pelo Outro Lado, absorvendo o conhecimento e poder necessários para realizar rituais. Você pode lançar rituais de 1º círculo. À medida que aumenta seu NEX, pode lançar rituais de círculos maiores (2º círculo em NEX 25%, 3º círculo em NEX 55% e 4º círculo em NEX 85%). Você começa com três rituais de 1º círculo. Sempre que avança de NEX, aprende um ritual de qualquer círculo que possa lançar. Esses rituais não contam no seu limite de rituais conhecidos",
+            "requisito": "",
+            "afinidade":"",
+            "origem":""
+        },
+        {
+            "nome": "Resistir a <Elemento>",
+            "elemento":"",
+            "trilha":"",
+            "descricao": "Escolha entre Conhecimento, Energia, Morte ou Sangue. Você recebe resistência 10 contra esse elemento. Este poder conta como um poder do elemento escolhido.",
+            "requisito": "",
+            "afinidade":"aumenta a resistência para 20.",
+            "origem":""
+        }
+    ]
+}

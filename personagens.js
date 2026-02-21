@@ -19,7 +19,8 @@ let fichaAtualDados = null;
 const TRILHAS = {
     combatente: ["Aniquilador", "Guerreiro", "Operações Especiais", "Tropa de Choque", "Comandante de Campo", "Agente Secreto", "Caçador", "Monstruoso"],
     especialista: ["Atirador de Elite", "Infiltrador", "Médico de Campo", "Negociador", "Técnico", "Bibliotecario", "Perseverante", "Muambeiro"],
-    ocultista: ["Conduíte", "Flagelador", "Graduado", "Lâmina Paranormal", "Intuitivo", "Exorcista", "Possuido", "Parapsicólogo", "Maledictólogo"]
+    ocultista: ["Conduíte", "Flagelador", "Graduado", "Lâmina Paranormal", "Intuitivo", "Exorcista", "Possuido", "Parapsicólogo", "Maledictólogo"], 
+    sobrevivente: ["Durão", "Esperto", "Esotérico"]
 };
 const AFINIDADE = [
     "Energia", "Sangue", "Morte", "Conhecimento"
@@ -120,6 +121,17 @@ document.addEventListener('click', (e) => {
     if (listaPai.classList.contains('lista-origens')) {
         escolhaOrigemId = idSelecionado;
         console.log("Origem definida:", escolhaOrigemId);
+        const nexCont = document.getElementById('container-nex');
+        const estCont = document.getElementById('container-estagio');
+
+        if (idSelecionado === 'sobrevivente') {
+            if (nexCont) nexCont.classList.add('oculta');
+            if (estCont) estCont.classList.remove('oculta');
+            escolhaClasseId = 'sobrevivente'; // Sobrevivente também define a classe!
+        } else {
+            if (nexCont) nexCont.classList.remove('oculta');
+            if (estCont) estCont.classList.add('oculta');
+        }
     } 
     // Verifica tanto singular quanto plural para garantir
     else if (listaPai.classList.contains('lista-classe') || listaPai.classList.contains('lista-classes')) {
@@ -156,8 +168,15 @@ if (btnFinalizar) {
             PRE: parseInt(document.querySelector('.input.pre').value) || 0
         };
 
+        const proficienciasIniciais = {
+            combatente: "Armas simples, armas táticas e proteções leves.",
+            especialista: "Armas simples e proteções leves.",
+            ocultista: "Armas simples.",
+            sobrevivente: "Armas simples."
+        };
+
         // Outras informações definidas automaticamente
-        const nexInicial = 5; // Ou pegue de um input se você criar um
+        const nexInicial = (escolhaClasseId === 'sobrevivente') ? 1 : 5; 
         const statusComNex = calcularStatus(escolhaClasseId, atributos, nexInicial);
         const periciasIniciais = {};
 
@@ -189,6 +208,13 @@ if (btnFinalizar) {
                 jogador: nomeJogador,
                 origem: escolhaOrigemId,
                 classe: escolhaClasseId,
+                defesa: {
+                    equip: 0,
+                    outros: 0,
+                    protecao: "",
+                    resistencia: "",
+                    proficiencia: proficienciasIniciais[escolhaClasseId]
+                },
                 atributos: atributos,
                 nex: nexInicial,
                 pericias: periciasIniciais,
@@ -240,44 +266,49 @@ const TABELA_PATENTES = [
 /* ============================================================
    4. CÁLCULO DE STATUS (PV, PE, SAN, PD) CONFORME NEX E ATRIBUTOS
 ============================================================ */
-function calcularStatus(classe, atributos, nex = 5) {
+function calcularStatus(classe, atributos, nexOuEstagio = 5) {
     const vig = parseInt(atributos.VIG) || 0;
     const pre = parseInt(atributos.PRE) || 0;
     
-    // Nível de aumento (Quantas vezes ele subiu 5% após o 5% inicial)
-    // Ex: NEX 5% -> 0 aumentos | NEX 10% -> 1 aumento | NEX 15% -> 2 aumentos
-    const aumentos = (nex - 5) / 5;
+    let aumentos = 0;
+    const isSobrevivente = (classe === 'sobrevivente');
+
+    // Define os aumentos dependendo do sistema
+    if (isSobrevivente) {
+        aumentos = (parseInt(nexOuEstagio) || 1) - 1; // Estágio 1 = 0 aumentos, Estágio 2 = 1 aumento...
+    } else {
+        aumentos = (parseInt(nexOuEstagio) - 5) / 5; // 5% = 0 aumentos, 10% = 1 aumento...
+    }
 
     let base = { pv: 0, san: 0, pe: 0, pd: 0 };
-    let ganho = PROGRESSAO_CLASSE[classe] || { pv: 2, san: 2, pe: 1, pd: 2 };
+    let ganho = isSobrevivente 
+        ? { pv: 2, san: 2, pe: 1, pd: 2 } 
+        : (PROGRESSAO_CLASSE[classe] || { pv: 2, san: 2, pe: 1, pd: 2 });
 
-    // Valores Iniciais (NEX 5%)
+    // Valores Iniciais
     if (classe === 'combatente') {
         base = { pv: 20 + vig, san: 12, pe: 2 + pre, pd: 6 + pre };
     } else if (classe === 'especialista') {
         base = { pv: 16 + vig, san: 16, pe: 3 + pre, pd: 8 + pre };
     } else if (classe === 'ocultista') {
         base = { pv: 12 + vig, san: 20, pe: 4 + pre, pd: 10 + pre };
-    } else if (classe === 'sobrevivente') {
-        base = { pv: 8 + vig, san: 8, pe: 1 + pre, pd: 4 + pre };
+    } else if (isSobrevivente) {
+        // Correção aplicada: PE Iniciais 2 + Pre
+        base = { pv: 8 + vig, san: 8, pe: 2 + pre, pd: 4 + pre };
     }
 
-    let pdtotal;
-    if (classe === 'sobrevivente') {
-        pdtotal = base.pd + (aumentos * ganho.pd); 
-    } else {
-        pdtotal = base.pd + (aumentos * (ganho.pd + pre));
-    }
-    
-    // Soma os ganhos por nível
-    // Regra: PV ganha (valor da classe + VIG), PE ganha (valor da classe + PRE)
-    const pvTotal = base.pv + (aumentos * (ganho.pv + vig));
-    const peTotal = base.pe + (aumentos * (ganho.pe + pre));
+    // Soma os ganhos
+    const pvTotal = base.pv + (aumentos * (isSobrevivente ? ganho.pv : (ganho.pv + vig)));
+    const peTotal = base.pe + (aumentos * (isSobrevivente ? ganho.pe : (ganho.pe + pre)));
     const sanTotal = base.san + (aumentos * ganho.san);
-    const pdTotal = pdtotal
+    
+    // Sobrevivente não soma PRE aos PDs ganhos por estágio
+    const pdTotal = isSobrevivente 
+        ? base.pd + (aumentos * ganho.pd)
+        : base.pd + (aumentos * (ganho.pd + pre));
 
     return {
-        nex: nex,
+        nex: nexOuEstagio,
         pvMax: pvTotal, pvAtual: pvTotal,
         peMax: peTotal, peAtual: peTotal,
         sanMax: sanTotal, sanAtual: sanTotal,
@@ -411,6 +442,7 @@ function abrirFichaCompleta(id, dados) {
     // A. Cabeçalho e Informações Básicas
     document.getElementById('view-nome').innerText = dados.nome || "Agente Sem Nome";
     document.getElementById('edit-jogador').value = dados.jogador || ""
+    document.getElementById('edit-profissão').value = dados.profissão || ""
     document.getElementById('edit-pe-turno').value = dados.peTurno || 1;
     document.getElementById('edit-deslocamento-metros').value = dados.deslocamento?.metros || 9;
     document.getElementById('edit-deslocamento-grid').value = dados.deslocamento?.grid || 6;
@@ -418,26 +450,38 @@ function abrirFichaCompleta(id, dados) {
     const campoClasse = document.getElementById('view-classe');
     const campoOrigem = document.getElementById('view-origem');
     const campoNex = document.getElementById('view-nex');
-    const nexAtual = parseInt(dados.nex) || 5;
-    let limiteCalculado;
-    if (nexAtual === 99) {
-        limiteCalculado = 20;
-    } else {
-        limiteCalculado = Math.floor(nexAtual / 5);
-    }
-    document.getElementById('edit-pe-turno').value = dados.peTurno || limiteCalculado;
 
     if (campoClasse) campoClasse.innerText = formatar(dados.classe);
     if (campoOrigem) campoOrigem.innerText = formatar(dados.origem);
     if (campoNex) campoNex.innerText = (dados.nex || 5) + "%";
-    // Localize o select do NEX
+    const isSobrevivente = (dados.classe === 'sobrevivente');
+    const valorNivel = parseInt(dados.nex) || (isSobrevivente ? 1 : 5);
+    const contNex = document.getElementById('container-nex');
+    const contEstagio = document.getElementById('container-estagio');
     const selectNex = document.getElementById('edit-nex');
-    if (selectNex) {
-        selectNex.value = dados.nex || 5; // Define o valor que veio do banco de dados
+    const selectEstagio = document.getElementById('edit-estagio');
+
+    if (isSobrevivente) {
+        if (contNex) contNex.classList.add('ocuta');
+        if (contEstagio) contEstagio.classList.remove('oculta');
+        if (selectEstagio) selectEstagio.value = valorNivel;
+    } else {
+        if (contNex) contNex.classList.remove('ocuta');
+        if (contEstagio) contEstagio.classList.add('oculta');
+        if (selectNex) selectNex.value = valorNivel;
     }
 
-    atualizarOpcoesTrilha(dados.classe, dados.nex, dados.trilha)
-    atualizarOpcoesAfinidade(dados.nex, dados.afinidade)
+    // Limite calculado para exibir
+    let limiteCalculado;
+    if (isSobrevivente) {
+        limiteCalculado = valorNivel; // O limite do sobrevivente é igual ao Estágio
+    } else {
+        limiteCalculado = (valorNivel === 99) ? 20 : Math.floor(valorNivel / 5);
+    }
+    document.getElementById('edit-pe-turno').value = dados.peTurno || limiteCalculado;
+
+    atualizarOpcoesTrilha(dados.classe, valorNivel, dados.trilha);
+    atualizarOpcoesAfinidade(valorNivel, dados.afinidade);
 
     // Criar uma variável global ou acessível para os dados da ficha atual
     // Isso ajuda a recalcular sem precisar ler do banco de novo
@@ -532,7 +576,19 @@ function abrirFichaCompleta(id, dados) {
 
         if (campoProtecao) campoProtecao.value = dados.defesa.protecao || "";
         if (campoResistencias) campoResistencias.value = dados.defesa.resistencia || "";
-        if (campoProficiencias) campoProficiencias.value = dados.defesa.proficiencia || "Armas Simples e proteções leves";
+            if (campoProficiencias) {
+            const PROFICIENCIAS_MAP = {
+                combatente: "Armas simples, armas táticas e proteções leves.",
+                especialista: "Armas simples e proteções leves.",
+                ocultista: "Armas simples.",
+                sobrevivente: "Armas simples."
+            };
+            if (!dados.defesa?.proficiencia || dados.defesa.proficiencia === "") {
+                campoProficiencias.value = PROFICIENCIAS_MAP[dados.classe] || "Armas simples.";
+            } else {
+                campoProficiencias.value = dados.defesa.proficiencia;
+            }
+        }
         
         // Chama o cálculo para atualizar o número 10 + AGI...
         calcularDefesaEReacoes();
@@ -561,7 +617,7 @@ function abrirFichaCompleta(id, dados) {
         atualizarPatente(); // Chama a função para preencher os nomes e limites
     }
 
-    // J. Inventário
+    // J. Inventário / Habilidades
     if (dados.inventarioConfig) {
         document.getElementById('carga-atual').value = dados.inventarioConfig.cargaAtual || 0;
         document.getElementById('carga-max').value = dados.inventarioConfig.cargaMax || 5;
@@ -573,6 +629,7 @@ function abrirFichaCompleta(id, dados) {
     window.fichaAtualDados = dados;
     if (!window.fichaAtualDados.inventario) window.fichaAtualDados.inventario = [];
     renderizarInventarioFicha();
+    renderizarHabilidadesFicha();
 
     // K. Foto
     if (dados.fotoUrl) {
@@ -637,15 +694,14 @@ function toggleRegra(regra) {
 window.toggleRegra = toggleRegra;
 /* ============================================================
    9. ESCUTADORES DE EVENTOS GERAIS
-   - change para atributos, NEX
 ============================================================ */
 document.addEventListener('change', (e) => {
-    if (e.target.id === 'edit-nex') {
-        const novoNex = parseInt(e.target.value);
+    // Reage se for tanto NEX quanto ESTÁGIO
+    if (e.target.id === 'edit-nex' || e.target.id === 'edit-estagio') {
+        const novoValor = parseInt(e.target.value);
         const dados = window.fichaAtualDados;
 
         if (dados) {
-            // Pegamos os atributos atuais da tela para o cálculo ser preciso
             const atributosTela = {
                 FOR: parseInt(document.getElementById('edit-for').value) || 0,
                 AGI: parseInt(document.getElementById('edit-agi').value) || 0,
@@ -654,30 +710,26 @@ document.addEventListener('change', (e) => {
                 PRE: parseInt(document.getElementById('edit-pre').value) || 0
             };
 
-            const novosStatus = calcularStatus(dados.classe, atributosTela, novoNex);
+            const novosStatus = calcularStatus(dados.classe, atributosTela, novoValor);
             
-            // CORREÇÃO: Passar apenas 'pv', 'pe', 'san', 'pd'
             atualizarBarraVisual('pv', novosStatus.pvMax, novosStatus.pvMax);
             atualizarBarraVisual('pe', novosStatus.peMax, novosStatus.peMax);
             atualizarBarraVisual('san', novosStatus.sanMax, novosStatus.sanMax);
             atualizarBarraVisual('pd', novosStatus.pdMax, novosStatus.pdMax);
             
-            // Atualiza a memória local
             window.fichaAtualDados.atributos = atributosTela;
-            window.fichaAtualDados.nex = novoNex;
-        }
-        atualizarOpcoesTrilha(dados.classe, novoNex, document.getElementById('edit-trilha').value);
-        atualizarOpcoesAfinidade(novoNex, document.getElementById('edit-afinidade').value);
-    
-        // Lógica Automática: Limite de PE = NEX
-        const campoPeTurno = document.getElementById('edit-pe-turno');
-        if (campoPeTurno) {
-            // Caso especial: 99% NEX é igual a 20 PE
-            if (novoNex === 99) {
-                campoPeTurno.value = 20;
-            } else {
-                // Para todos os outros, segue a conta normal
-                campoPeTurno.value = Math.floor(novoNex / 5);
+            window.fichaAtualDados.nex = novoValor;
+            
+            atualizarOpcoesTrilha(dados.classe, novoValor, document.getElementById('edit-trilha').value);
+            atualizarOpcoesAfinidade(novoValor, document.getElementById('edit-afinidade').value);
+        
+            const campoPeTurno = document.getElementById('edit-pe-turno');
+            if (campoPeTurno) {
+                if (dados.classe === 'sobrevivente') {
+                    campoPeTurno.value = novoValor;
+                } else {
+                    campoPeTurno.value = (novoValor === 99) ? 20 : Math.floor(novoValor / 5);
+                }
             }
         }
     }
@@ -783,15 +835,20 @@ document.querySelectorAll('.input-atrib').forEach(input => {
 /* ============================================================
    13. Trilha e Afinidade
 ============================================================ */
-function atualizarOpcoesTrilha(classe, nex, trilhaAtual = "") {
+function atualizarOpcoesTrilha(classe, nexOuEstagio, trilhaAtual = "") {
     const selectTrilha = document.getElementById('edit-trilha');
     if (!selectTrilha) return;
 
-    if (nex >= 10) {
+    const isSobrevivente = (classe === 'sobrevivente');
+    const valorNivel = parseInt(nexOuEstagio) || (isSobrevivente ? 1 : 5);
+    
+    // Regra de Ouro: Sobrevivente libera no 2. Outras classes no 10.
+    const desbloqueado = isSobrevivente ? (valorNivel >= 2) : (valorNivel >= 10);
+
+    if (desbloqueado) {
         selectTrilha.disabled = false;
         const listaTrilhas = TRILHAS[classe] || [];
         
-        // Limpa e preenche o select
         selectTrilha.innerHTML = '<option value="">Escolha uma Trilha</option>';
         listaTrilhas.forEach(trilha => {
             const selected = trilha === trilhaAtual ? 'selected' : '';
@@ -799,7 +856,7 @@ function atualizarOpcoesTrilha(classe, nex, trilhaAtual = "") {
         });
     } else {
         selectTrilha.disabled = true;
-        selectTrilha.innerHTML = '<option value="">Disponível em  NEX 10%</option>';
+        selectTrilha.innerHTML = `<option value="">Disponível em ${isSobrevivente ? 'Estágio 2' : 'NEX 10%'}</option>`;
     }
 }
 function atualizarOpcoesAfinidade(nex, afinidadeAtual = "") {
@@ -1092,7 +1149,7 @@ async function renderizarItensModal() {
                     card.querySelector('.btn-adicionar').onclick = () => {
                         adicionarAoInventario(item, categoria);
                     };
-
+                    
                     container.appendChild(card);
                 }
             });
@@ -1110,7 +1167,6 @@ window.filtrarItensModal = function() {
     console.log("Filtrando itens...");
     renderizarItensModal();
 };
-let draggingIndex = null;
 function renderizarInventarioFicha() {
     const container = document.getElementById('lista-inventario');
     container.innerHTML = "";
@@ -1344,22 +1400,23 @@ window.fecharModalEditar = function() {
 /* ============================================================
    23. Arrastar
 ============================================================ */
-function handleDrop(targetIndex) {
-    if (draggingIndex === null || draggingIndex === targetIndex) return;
+let draggingIndex = null;
+let draggingType = null; // Para saber se estamos arrastando item ou habilidade
+window.handleDropGeneric = function(targetIndex, tipo) {
+    if (draggingIndex === null || draggingIndex === targetIndex || draggingType !== tipo) return;
 
-    const inventario = window.fichaAtualDados.inventario;
-    
-    // Pega o item que estava sendo arrastado
-    const itemMovido = inventario.splice(draggingIndex, 1)[0];
-    
-    // Insere ele na nova posição
-    inventario.splice(targetIndex, 0, itemMovido);
+    const lista = window.fichaAtualDados[tipo];
+    const movido = lista.splice(draggingIndex, 1)[0];
+    lista.splice(targetIndex, 0, movido);
 
     draggingIndex = null;
+    draggingType = null;
+
+    if (tipo === 'inventario') renderizarInventarioFicha();
+    if (tipo === 'habilidades') renderizarHabilidadesFicha();
     
-    // Redesenha a lista na ordem nova
-    renderizarInventarioFicha();
-}
+    salvarFicha();
+};
 /* ============================================================
    24. Maldições e Modificações
 ============================================================ */
@@ -1670,7 +1727,232 @@ function voltarParaLista() {
     }
 }
 /* ============================================================
-   28. Salva
+   28. Habilidades
+============================================================ */
+let bancoDeDadosHabilidades = null;
+async function carregarBancoHabilidades() {
+    if (bancoDeDadosHabilidades) return bancoDeDadosHabilidades; 
+
+    try {
+        const resposta = await fetch('Habilidades.json');
+        bancoDeDadosHabilidades = await resposta.json();
+        console.log("Banco de habilidades carregado com sucesso!");
+        return bancoDeDadosHabilidades;
+    } catch (erro) {
+        console.error("Erro ao carregar o JSON de habilidades:", erro);
+    }
+}
+window.abrirModalHabilidades = function() {
+    const modal = document.getElementById('modal-habilidades');
+    if (modal) {
+        modal.classList.remove('modal-oculto');
+        renderizarHabilidadesModal();
+    }
+};
+window.fecharModalHabilidades = function() {
+    const modal = document.getElementById('modal-habilidades');
+    if (modal) {
+        modal.classList.add('modal-oculto');
+    }
+};
+async function renderizarHabilidadesModal() {
+    const dados = await carregarBancoHabilidades();
+    const container = document.getElementById('lista-habilidades-catalogo');
+    
+    // MUDANÇA AQUI: Agora buscando os IDs corretos do HTML de Habilidades
+    const filtroCat = document.getElementById('filtro-categoria-hab');
+    const buscaInput = document.getElementById('busca-hab');
+
+    // Segurança: se não achar os elementos, ele para para não dar erro invisível
+    if (!container || !dados || !filtroCat || !buscaInput) return;
+
+    const categoriaSelecionada = filtroCat.value;
+    const busca = buscaInput.value.toLowerCase();
+
+    container.innerHTML = "";
+
+    // Itera sobre as chaves do objeto (origem, poder-combatente, etc)
+    for (const categoria in dados) {
+        if (categoriaSelecionada === "todos" || categoriaSelecionada === categoria) {
+            
+            dados[categoria].forEach(hab => {
+                // Filtro de busca por nome
+                if (hab.nome.toLowerCase().includes(busca)) {
+                    const card = document.createElement('div');
+                    card.className = 'card-item-catalogo';
+                    
+                    card.innerHTML = `
+                        <div class="item-header-modal" onclick="window.toggleCardModal(this)">
+                            <strong>${hab.nome}</strong>
+                            <span class="setinha">▼</span>
+                        </div>
+                        <div class="detalhes-item-modal">
+                            <p><strong>Tipo:</strong> ${categoria.replace('-', ' ').toUpperCase()}</p>
+                            ${hab.trilhas ? `<p><strong>Trilha:</strong> ${hab.trilha}</p>` : ''}
+                            ${hab.requisito ? `<p><strong>Requisito:</strong> ${hab.requisito}</p>` : ''}
+                            ${hab.origem ? `<p><strong>Origem:</strong> ${hab.origem}</p>` : ''}
+                            <p>${hab.descricao || "Sem descrição."}</p>
+                            ${hab.afinidade ? `<p><strong>Afinidade:</strong> ${hab.afinidade}</p>` : ''}
+                            <button class="btn-adicionar-hab">Aprender</button>
+                        </div>
+                    `;
+
+                    // Pega o botão específico deste card e adiciona o evento
+                    card.querySelector('.btn-adicionar-hab').onclick = () => {
+                        window.adicionarHabilidadeAFicha(hab);
+                    };
+
+                    container.appendChild(card);
+                }
+            });
+        }
+    }
+}
+window.filtrarHabilidadesModal = function() {
+    renderizarHabilidadesModal();
+};
+window.adicionarHabilidadeAFicha = function(hab) {
+    console.log("Função adicionar chamada para:", hab);
+
+    if (!window.fichaAtualDados) {
+        console.error("Erro: fichaAtualDados não encontrada!");
+        return;
+    }
+
+    if (!window.fichaAtualDados.habilidades) {
+        window.fichaAtualDados.habilidades = [];
+    }
+
+    // Criamos a cópia para a ficha
+    const novaHab = { 
+        ...hab, 
+        idUnico: Date.now() + Math.random().toString(36).substr(2, 9) 
+    };
+    
+    window.fichaAtualDados.habilidades.push(novaHab);
+
+    // Atualiza a tela da ficha
+    if (typeof renderizarHabilidadesFicha === "function") {
+        renderizarHabilidadesFicha();
+    }
+    
+    // Fecha o modal
+    fecharModalHabilidades();
+
+    // Salva os dados
+    if (typeof salvarFicha === 'function') {
+        salvarFicha();
+    }
+};
+window.renderizarHabilidadesFicha = function() {
+    const container = document.getElementById('lista-habilidades-ficha');
+    if (!container) return;
+    container.innerHTML = "";
+
+    const habilidades = window.fichaAtualDados.habilidades || [];
+
+    habilidades.forEach((hab, index) => {
+        const card = document.createElement('div');
+        card.className = 'card-item'; // Usando a mesma classe dos itens de inventário
+        card.setAttribute('draggable', 'true');
+
+        // Mesma lógica de Drag and Drop do Inventário
+        card.ondragstart = (e) => {
+            draggingIndex = index;
+            draggingType = 'habilidades';
+            card.classList.add('arrastando');
+        };
+        card.ondragover = (e) => {
+            e.preventDefault();
+            card.classList.add('drag-over');
+        };
+        card.ondragleave = () => card.classList.remove('drag-over');
+        card.ondrop = (e) => {
+            e.preventDefault();
+            handleDropGeneric(index, 'habilidades');
+        };
+        card.ondragend = () => card.classList.remove('arrastando');
+
+        card.innerHTML = `
+            <div class="item-principal" onclick="this.parentElement.classList.toggle('aberto')">
+                <span><strong>${hab.nome}</strong> ${hab.elemento ? `[${hab.elemento}]` : ''}</span>
+                <span class="setinha">▼</span>
+            </div>
+            <div class="detalhes-item">
+                ${hab.origem ? `<p><strong>Origem:</strong> ${hab.origem}</p>` : ''}
+                ${hab.trilhas ? `<p><strong>Trilha:</strong> ${hab.trilha}</p>` : ''}
+                ${hab.requisito ? `<p><small><strong>Requisito:</strong> ${hab.requisito}</small></p>` : ''}
+                <p>${hab.descricao}</p>
+                ${hab.afinidade ? `<p><small><strong>Afinidade:</strong> ${hab.afinidade}</small></p>` : ''}
+                <div class="acoes-hab">
+                    <button class="btn-remover" onclick="removerHabilidade(${index})">Remover</button>
+                    <button class="btn-editar" onclick="abrirEdicaoHabilidade(${index})">✏️ Editar</button>
+                </div>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+window.removerHabilidade = function(index) {
+    window.fichaAtualDados.habilidades.splice(index, 1);
+    renderizarHabilidadesFicha();
+    if (typeof salvarFicha === 'function') salvarFicha();
+};
+/* ============================================================
+   29. Editar Habilidade
+============================================================ */
+let indexHabEditando = null;
+window.abrirEdicaoHabilidade = function(index) {
+    const hab = window.fichaAtualDados.habilidades[index];
+    if (!hab) return;
+
+    indexHabEditando = index;
+
+    // Preenche os campos do modal com os dados atuais
+    document.getElementById('edit-hab-nome').value = hab.nome || "";
+    document.getElementById('edit-hab-elemento').value = hab.elemento || "";
+    document.getElementById('edit-hab-trilha').value = hab.trilha || "";
+    document.getElementById('edit-hab-requisitos').value = hab.requisito || ""; // Note se o JSON é 'requisito' ou 'requisitos'
+    document.getElementById('edit-hab-origem').value = hab.origem || "";
+    document.getElementById('edit-hab-afinidade').value = hab.afinidade || "";
+    document.getElementById('edit-hab-desc').value = hab.descricao || "";
+
+    // Abre o modal
+    const modal = document.getElementById('modal-editar-hab');
+    if (modal) modal.classList.remove('modal-oculto');
+};
+window.fecharModalEditarHab = function() {
+    const modal = document.getElementById('modal-editar-hab');
+    if (modal) modal.classList.add('modal-oculto');
+    indexHabEditando = null;
+};
+window.salvarMudancasHab = function() {
+    if (indexHabEditando === null) return;
+
+    // Captura os novos valores do modal
+    const novosDados = {
+        ...window.fichaAtualDados.habilidades[indexHabEditando], // Mantém IDs e outras props
+        nome: document.getElementById('edit-hab-nome').value,
+        elemento: document.getElementById('edit-hab-elemento').value,
+        trilha: document.getElementById('edit-hab-trilha').value,
+        requisito: document.getElementById('edit-hab-requisitos').value,
+        origem: document.getElementById('edit-hab-origem').value,
+        afinidade: document.getElementById('edit-hab-afinidade').value,
+        descricao: document.getElementById('edit-hab-desc').value
+    };
+
+    // Atualiza o array oficial
+    window.fichaAtualDados.habilidades[indexHabEditando] = novosDados;
+
+    // Atualiza a UI e fecha
+    renderizarHabilidadesFicha();
+    fecharModalEditarHab();
+
+    // Salva no banco (Firebase/LocalStorage)
+    if (typeof salvarFicha === 'function') salvarFicha();
+};
+/* ============================================================
+   30. Salva
 ============================================================ */
 async function salvarFicha() {
     if (!idFichaAberta || !window.fichaAtualDados) {
@@ -1701,8 +1983,11 @@ async function salvarFicha() {
         const dadosParaSalvar = {
             nome: document.getElementById('view-nome').innerText,
             fotoUrl: document.getElementById('foto-personagem').src,
-            nex: getNum('edit-nex', 5),
+            nex: (window.fichaAtualDados?.classe === 'sobrevivente') 
+                 ? getNum('edit-estagio', 1) 
+                 : getNum('edit-nex', 5),
             jogador: getVal('edit-jogador'),
+            profissão: getVal('edit-profissão'),
             trilha: getVal('edit-trilha'),
             afinidade: getVal('edit-afinidade'),
             peTurno: getNum('edit-pe-turno', 1),
@@ -1739,7 +2024,8 @@ async function salvarFicha() {
                 cargaAtual: getNum('carga-atual'),
                 cargaMax: getNum('carga-max')
             },
-            inventario: window.fichaAtualDados.inventario || []
+            inventario: window.fichaAtualDados.inventario || [],
+            habilidades: window.fichaAtualDados.habilidades || []
         };
 
         // Coleta das barras (PV, PE, SAN, PD)

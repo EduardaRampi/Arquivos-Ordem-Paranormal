@@ -1,0 +1,20 @@
+[
+    {
+        "nome":"Durão",
+        "origem":"Sobrevivento ao Horror",
+        "tag":"",
+        "descricao":"Você é um indivíduo resistente, que consegue defender a si mesmo ou aos outros em situações de perigo."
+    },
+    {
+        "nome":"Esperto",
+        "origem":"Sobrevivento ao Horror",
+        "tag":"",
+        "descricao":"Você é um estudante, técnico, engenheiro ou outra pessoa equipada com conhecimento, inteligência e persuasão."
+    },
+    {
+        "nome":"Esotérico",
+        "origem":"Sobrevivento ao Horror",
+        "tag":"",
+        "descricao":"Você é uma pessoa ligada a aspectos espirituais do mundo, como religiões, astrologia e cartomancia, ou apenas possui um sexto sentido em relação ao paranormal e ao Outro Lado."
+    }
+]

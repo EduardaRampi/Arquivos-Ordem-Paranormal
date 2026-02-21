@@ -129,3 +129,15 @@ if (btnExcluir) {
         }
     });
 }
+
+window.toggleSenha = function(idInput, icone) {
+    const input = document.getElementById(idInput);
+    
+    if (input.type === 'password') {
+        input.type = 'text';
+        icone.innerText = '🔒'; // Muda o ícone para indicar "esconder"
+    } else {
+        input.type = 'password';
+        icone.innerText = '👁️'; // Muda o ícone para indicar "mostrar"
+    }
+}

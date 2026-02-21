@@ -103,7 +103,10 @@
                 <h2>Registro</h2>
                 <form id="registro-form">
                     <input type="email" id="email" placeholder="Email" required>
-                    <input type="password" id="senha" placeholder="Senha" required>
+                    <div class="password-container">
+                        <input type="password" id="senha" placeholder="Senha" required>
+                        <button type="button"  class="toggle-password" onclick="toggleSenha('senha', this)">👁️</button>
+                    </div>
                     <button type="submit">Registrar</button>
                 </form>
                 <button id="btn-ir-login" type="button">
@@ -114,7 +117,10 @@
                 <h2>Login</h2>
                 <form id="login-form">
                     <input type="email" id="email-login" placeholder="Email" required>
-                    <input type="password" id="senha-login" placeholder="Senha" required>
+                    <div class="password-container">
+                        <input type="password" id="senha-login" placeholder="Senha" required>
+                        <button type="button" class="toggle-password" onclick="toggleSenha('senha-login', this)">👁️</button>
+                    </div>
                     <button type="submit">Entrar</button>
                 </form>
                 <button id="btn-ir-registro" type="button">
@@ -304,6 +310,7 @@
             <button class="btn-navegar" data-destino="Trilhas ocultista">Trilhas de Ocultista</button>
             <button class="btn-navegar" data-destino="Trilhas especialista">Trilhas de Especialista</button>
             <button class="btn-navegar" data-destino="Trilhas combatente">Trilhas de Combatente</button>
+            <button class="btn-navegar" data-destino="Trilhas sobrevivente">Trilhas de Sobrevivente</button>
             <button class="btn-voltar">Voltar</button>
         </div> 
         </div>
@@ -323,6 +330,7 @@
             <button class="btn-navegar" data-destino="Poderes ocultista">Poderes de Ocultista</button>
             <button class="btn-navegar" data-destino="Poderes especialista">Poderes de Especialista</button>
             <button class="btn-navegar" data-destino="Poderes combatente">Poderes de Combatente</button>
+            <button class="btn-navegar" data-destino="Habilidade sobrevivente">Habilidade de Sobrevivente</button>
         </div>
         <div class="lista-poderes lista"></div>
         <button class="btn-voltar">Voltar</button> 
@@ -500,6 +508,12 @@
         <button class="btn-voltar">Voltar</button>
         </div>
 
+        <div id="Habilidade sobrevivente" class="tela oculta">
+        <h1>Habilidades de Sobrevivente</h1>
+        <div class="lista-habilidade-sobrevivente lista"></div>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+
         <div id="Trilhas ocultista" class="tela oculta">
         <h1>Trilhas de Ocultista</h1>
         <div class="search-box">
@@ -542,6 +556,12 @@
             </div>     
         </div>
         <div class="lista-trilhas-combatente lista"></div>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+
+        <div id="Trilhas sobrevivente" class="tela oculta">
+        <h1>Trilhas de Sobrevivente</h1>
+        <div class="lista-trilhas-sobrevivente lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
@@ -847,6 +867,7 @@
                         </select>
                     </p>
                     <p><strong>Origem:</strong> <span id="view-origem"></span></p>
+                    <p><strong>Profissão:</strong> <input type="text" id="edit-profissão" class="input-inline" placeholder="Pericia"></p>
                     <p id="container-afinidade">
                         <strong>Afinidade:</strong> 
                         <select id="edit-afinidade" class="input-inline" disabled>
@@ -854,7 +875,7 @@
                         </select>
                     </p>
                     <div id="container-nex-normal">
-                        <p><strong>NEX:</strong> 
+                        <p id="container-nex"><strong>NEX:</strong> 
                             <select id="edit-nex" class="input-inline">
                                 <option value="0">0%</option>
                                 <option value="5">5%</option>
@@ -901,6 +922,15 @@
                                 <option value="18">18</option>
                                 <option value="19">19</option>
                                 <option value="20">20</option>
+                            </select>
+                        </p>
+                        <p id="container-estagio" class="oculta"><strong>Estágio:</strong>
+                            <select id="edit-estagio" class="input-inline">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
                             </select>
                         </p>
                     </div>
@@ -1075,6 +1105,12 @@
                 <!-- COLUNA 3 - Habilidades -->
                 <div class="ficha-card">
                     <h3>Habilidades</h3>
+                    <div class="centralizar">
+                        <button type="button" onclick="abrirModalHabilidades()" class="btn-adicionar-item">+ Adicionar Habilidade</button>
+                    </div>
+                    <div class="nao_vaza">
+                        <div id="lista-habilidades-ficha" class="lista-inventario"></div>
+                    </div>
                 </div>
                 <!-- COLUNA 4 - Rituais -->
                 <div class="ficha-card">
@@ -1133,7 +1169,7 @@
                     <div class="centralizar">
                         <button type="button" onclick="abrirModalEquip()" class="btn-adicionar-item">+ Adicionar Item</button>
                     </div>
-                    <div class="nao_vaza">
+                    <div class="nao_vaza_invent">
                         <div id="lista-inventario" class="lista-inventario"></div>
                     </div>
                 </div>
@@ -1184,6 +1220,10 @@
                         </label>
                         <span id="status-sanidade" class="status-label">DESLIGADO</span>
                     </div>
+                </div>
+                <!-- COLUNA 8 - Evolução -->
+                <div class="ficha-card">
+                    <h3>?</h3>
                 </div>
             </div>
             <div class="centralizar">
@@ -1298,17 +1338,17 @@
 
                     <div class="campo">
                         <label>Tipo de Dano</label>
-                        <input type="text" id="edit-item-tipoDano" placeholder="Perfuração">
+                        <input type="text" id="edit-item-tipoDano" placeholder="Ex: Perfuração">
                     </div>
 
                     <div class="campo">
                         <label>Alcance</label>
-                        <input type="text" id="edit-item-alcance" placeholder="Curto">
+                        <input type="text" id="edit-item-alcance" placeholder="Ex: Curto">
                     </div>
 
                     <div class="campo">
                         <label>Habilidade</label>
-                        <input type="text" id="edit-item-habilidade" placeholder="Ágil">
+                        <input type="text" id="edit-item-habilidade" placeholder="Ex: Ágil">
                     </div>
 
                     <div class="campo pequeno">
@@ -1359,16 +1399,83 @@
     <div id="modal-habilidades" class="modal modal-oculto">
         <div class="modal-conteudo">
             <div class="modal-cabecalho">
-                <h2>XXXXX</h2>
+                <h2>Aprender Habilidade</h2>
                 <button onclick="fecharModalHabilidades()">X</button>
             </div>
             <div class="modal-filtros">
-                <input type="text" id="busca-item" placeholder="Procurar item..." oninput="filtrarItensModal()">
-                <select id="filtro-categoria" onchange="filtrarItensModal()">
+                <input type="text" id="busca-hab" placeholder="Procurar habilidade..." oninput="filtrarHabilidadesModal()">
+                <select id="filtro-categoria-hab" onchange="filtrarHabilidadesModal()">
                     <option value="todos">Todos os Itens</option>
+                    <option value="origem">Origem</option>
+                    <option value="poder-combatente">Poder Combatente</option>
+                    <option value="poder-ocultista">Poder Ocultista</option>
+                    <option value="poder-especialista">Poder Especialista</option>
+                    <option value="habilidade-sobrevivente">Habilidade Sobrevivente</option>
+                    <option value="poder-geral">Poder Geral</option>
+                    <option value="poder-morte">Poder Morte</option>
+                    <option value="poder-sangue">Poder Sangue</option>
+                    <option value="poder-conhecimento">Poder Conhecimento</option>
+                    <option value="poder-energia">Poder Energia</option>
+                    <option value="trilha-combatente">Trilha Combatente</option>
+                    <option value="trilha-ocultista">Trilha Ocultista</option>
+                    <option value="trilha-especialista">Trilha Especialista</option>
+                    <option value="trilha-sobrevivente">Trilha Sobrevivente</option>
+                    <option value="outras">Outras</option>
                 </select>
             </div>
             <div id="lista-habilidades-catalogo" class="grid-itens">
+            </div>
+        </div>
+    </div>
+    <div id="modal-editar-hab" class="modal modal-oculto">
+        <div class="modal-conteudo modal-editar-conteudo">
+            <div class="modal-cabecalho">
+                <h2>Editar Item</h2>
+                <button onclick="fecharModalEditarHab()">X</button>
+            </div>
+            <div class="modal-corpo-editar">
+                <div class="grid-editar">
+
+                    <div class="campo">
+                        <label>Nome</label>
+                        <input type="text" id="edit-hab-nome">
+                    </div>
+
+                    <div class="campo">
+                        <label>Elemento</label>
+                        <input type="text" id="edit-hab-elemento" placeholder="Ex: Sangue">
+                    </div>
+
+                    <div class="campo">
+                        <label>Trilha</label>
+                        <input type="text" id="edit-hab-trilha" placeholder="Ex: Médico de Campo">
+                    </div>
+
+                    <div class="campo">
+                        <label>Requisitos</label>
+                        <input type="text" id="edit-hab-requisitos" placeholder="Ex: For 2">
+                    </div>
+
+                    <div class="campo">
+                        <label>Origem</label>
+                        <input type="text" id="edit-hab-origem" placeholder="Ex: Professor">
+                    </div>
+
+                    <div class="campo campo-longo">
+                        <label>Afinidade</label>
+                        <textarea id="edit-hab-afinidade" rows="4"></textarea>
+                    </div>
+
+                    <div class="campo campo-longo">
+                        <label>Descrição</label>
+                        <textarea id="edit-hab-desc" rows="4"></textarea>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="footer-modal">
+                <button class="btn-salvar" onclick="salvarMudancasHab()">Salvar</button>
             </div>
         </div>
     </div>
