@@ -2999,7 +2999,7 @@
             "origem":""
         },
         {
-            "nome": "Resistir a <Elemento>",
+            "nome": "Resistir a Elemento",
             "elemento":"",
             "trilha":"",
             "descricao": "Escolha entre Conhecimento, Energia, Morte ou Sangue. Você recebe resistência 10 contra esse elemento. Este poder conta como um poder do elemento escolhido.",

@@ -4,55 +4,55 @@
         "nome":"Aniquilador",
         "origem":"Livro de Regras",
         "tag":"",
-        "descricao":"Você é treinado para abater alvos com eficiência evelocidade."
+        "descricao":"Você é treinado para abater alvos com eficiência e velocidade. Suas armas são suas melhores amigas e você cuida tão bem delas quanto de seus companheiros de equipe. Talvez até melhor."
     },
     {
         "id":"comandante_de_campo",
         "nome":"Comandante de Campo",
         "origem":"Livro de Regras",
         "tag":"",
-        "descricao":"Você é treinado para coordenar e auxiliar seus companheiros em combate, tomando decisões rápidas e tirando melhor proveito da situação e do talento de seus aliados."
+        "descricao":"Sem um oficial uma batalha não passa de uma briga de bar. Você é treinado para coordenar e auxiliar seus companheiros em combate, tomando decisões rápidas e tirando melhor proveito da situação e do talento de seus aliados."
     },
     {
         "id":"guerreiro",
         "nome":"Guerreiro",
         "origem":"Livro de Regras",
         "tag":"",
-        "descricao":"Você treinou sua musculatura e movimentos a ponto de transformar seu corpo em uma verdadeira arma."
+        "descricao":"Você treinou sua musculatura e movimentos a ponto de transformar seu corpo em uma verdadeira arma. Com golpes corpo a corpo tão poderosos quanto uma bala, você enfrenta inimigos sem medo."
     },
     {
         "id":"operacoes_especiais",
         "nome":"Operações Especiais",
         "origem":"Livro de Regras",
         "tag":"",
-        "descricao":"Você é um combatente eficaz."
+        "descricao":"Você é um combatente eficaz. Suas ações são calculadas e otimizadas, sempre antevendo os movimentos inimigos e se posicionando da maneira mais inteligente no campo de batalha."
     },
     {
         "id":"tropa_de_choque",
         "nome":"Tropa de Choque",
         "origem":"Livro de Regras",
         "tag":"",
-        "descricao":"Você é duro na queda."
+        "descricao":"Você é duro na queda. Treinou seu corpo para resistir a traumas físicos, tornando-o praticamente inquebrável, e por isso não teme se colocar entre seus aliados e o perigo."
     },
     {
         "id":"agente_secreto",
         "nome":"Agente Secreto",
         "origem":"Sobrivivendo ao Horror",
         "tag":"",
-        "descricao":"Às vezes, um governo precisa lidar com um problema de forma discreta — por precisar operar fora de sua jurisdição, para não assustar a população ou por vários outros motivos."
+        "descricao":"Às vezes, um governo precisa lidar com um problema de forma discreta — por precisar operar fora de sua jurisdição, para não assustar a população ou por vários outros motivos. Quando esse é o caso, usam-se agentes secretos, indivíduos treinados para trabalhar sozinhos ou em pequenos grupos, que contam apenas com suas próprias habilidades, determinação e sorrisos carismáticos. Você se tornou um desses agentes e, por suas capacidades, foi escolhido para a missão mais confidencial de todas — trabalhar com a Ordo Realitas para proteger a humanidade contra o Outro Lado."
     },
     {
         "id":"cacador",
         "nome":"Caçador",
         "origem":"Sobrivivendo ao Horror",
         "tag":"",
-        "descricao":"Em um mundo cheio de predadores sobrenaturais, você decidiu não ser mais uma presa."
+        "descricao":"Em um mundo cheio de predadores sobrenaturais, você decidiu não ser mais uma presa. Valendo-se de relatos de segunda mão, notícias de jornais e relatórios de incidentes inexplicáveis, você reúne informações sobre como caçar as coisas que espreitam na escuridão."
     }, 
     {
         "id":"monstruoso",
         "nome":"Monstruoso",
         "origem":"Sobrivivendo ao Horror",
         "tag":"",
-        "descricao":"Você propositalmente desfigura e altera seu corpo para que as Entidades o invadam com maior intensidade"
+        "descricao":"Muito se fala sobre os ocultistas escolherem o caminho de tornarem sua mente uma porta para o paranormal, na tentativa de usá-lo contra ele mesmo, mas de vez em quando, um combatente é corajoso ou insano o bastante para fazer o mesmo com seu corpo. Você propositalmente desfigura e altera seu corpo para que as Entidades o invadam com maior intensidade; contudo, para sua infelicidade, os métodos para isso costumam ser brutais. Combatentes dessa trilha que chegam aos níveis mais altos de exposição inevitavelmente perdem o controle e se tornam inimigos da Ordem. Especial: esta trilha usa a “Progressão de NEX” apresentada na regra opcional Nível de Experiência e Nível de Exposição (p. 98)"
     }
 ]

@@ -205,6 +205,10 @@ const sections = {
     })
     .then(dados => {
       let htmlAcumulado = '';
+      const estaNoGerador = container.closest('#Personagem') !== null;
+      // É a lista de origens?
+      const ehListaOrigem = container.classList.contains('lista-origens')|| 
+                           container.classList.contains('lista-classes');
       dados.forEach(item => {
         const htmlTag = item.tag 
           ? `<p><strong>Tag:</strong> ${item.tag}</p>` 
@@ -228,6 +232,20 @@ const sections = {
           ? `<p><strong>Tipo:</strong> ${item.Tipo}</p>` 
           : ''; 
 
+        let botaoDetalhes = '';
+        if (estaNoGerador && ehListaOrigem) {
+          const sufixoRandom = Math.random().toString(36).substr(2, 5);
+          const idUnico = `extra-${item.id}-${sufixoRandom}`;
+            botaoDetalhes = `
+                <button class="btn-ver-mais" data-target="${idUnico}">
+                    Ver Detalhes
+                </button>
+                <div class="detalhes-extra oculta" id="${idUnico}">
+                    <hr>
+                    <p>${item.detalhes || "Detalhes não disponíveis."}</p>
+                </div>`;
+        }
+
         htmlAcumulado += `
           <div class="classe-card" data-id="${item.id}">
             <h2>${item.nome}</h2>
@@ -237,6 +255,7 @@ const sections = {
             ${htmlCirculo}
             ${htmlElemento}
             <p><strong>${tituloDescricao}:</strong> ${item.descricao}</p>
+            ${botaoDetalhes}
             ${htmlTag}
             ${htmlComp}            
             ${htmlPreR}
@@ -250,7 +269,7 @@ const sections = {
   for (const [key, arquivo] of Object.entries(listas)) {
     const container = document.querySelectorAll(`.lista-${key}`);
     container.forEach(container => {
-      carregarCards({ arquivo, container, erroMsg: `Não foi possível carregar ${key}` });
+      carregarCards({ arquivo, container, erroMsg: `Não foi possível carregar ${key}`});
     })
   }
 
@@ -468,4 +487,33 @@ const sections = {
     }, 500);
   }
   window.rolarDado = rolarDado;
+});
+
+//8. ver detalhes origens e classes
+// Adicione este ouvinte de eventos ao seu documento
+document.addEventListener('click', (e) => {
+    // Verifica se o que foi clicado é o nosso botão "Ver Detalhes"
+    if (e.target.classList.contains('btn-ver-mais')) {
+        
+        // MUITO IMPORTANTE: Impede que o clique "suba" para o card
+        // Assim o card não é selecionado quando você só quer ler o texto
+        e.stopPropagation(); 
+        e.preventDefault();
+
+        // Pega o ID que está no atributo data-target do botão
+        const targetId = e.target.getAttribute('data-target');
+        const painelDetalhes = document.getElementById(targetId);
+
+        if (painelDetalhes) {
+            // Alterna a classe 'oculta'
+            const estaOculto = painelDetalhes.classList.toggle('oculta');
+            
+            // Muda o texto do botão para o usuário saber que pode fechar
+            e.target.innerText = estaOculto ? 'Ver Detalhes' : 'Fechar';
+            
+            console.log("Painel alternado:", targetId);
+        } else {
+            console.error("Não encontrei o painel com ID:", targetId);
+        }
+    }
 });

@@ -4,27 +4,31 @@
         "nome":"Ocultista",
         "origem":"Livro de Regras",
         "tag":"",
-        "descricao":"O ocultista é um indivíduo que se dedica ao estudo e prática do paranormal."
+        "descricao":"O ocultista é um indivíduo que se dedica ao estudo e prática do paranormal.",
+        "detalhes":"O Outro Lado é misterioso, perigoso e, de certa forma, cativante. Muitos estudiosos das entidades se perdem em seus reinos obscuros em busca de poder, mas existem aqueles que visam compreender e dominar os mistérios paranormais para usá-los para combater o próprio Outro Lado. Esse tipo de agente não é apenas um conhecedor do oculto, como também possui talento para se conectar com elementos paranormais. Ao contrário da crendice popular, ocultistas não são intrinsecamente malignos. Seria como dizer que o cientista que inventou a pólvora é culpado pelo assassino que disparou o revólver. Para a Ordem, o paranormal é uma força que pode ser usada para os mais diversos propósitos, de acordo com a intenção de seu usuário. Ocultistas aplicam seu conhecimento acadêmico e suas capacidades de conjuração de rituais em missões para investigar e combater o paranormal em todas as suas formas, principalmente quando munição convencional não é o suficiente para lidar com a tarefa."
     },
     {
         "id":"combatente",
         "nome":"Combatente",
         "origem":"Livro de Regras",
         "tag":"",
-        "descricao":"O combatente é um indivíduo que se dedica ao combate, é o tank do grupo."
+        "descricao":"O combatente é um indivíduo que se dedica ao combate, é o tank do grupo.",
+        "detalhes":"Treinado para lutar com todo tipo de armas, e com a força e a coragem para encarar os perigos de frente. É o tipo de agente que prefere abordagens mais diretas e costuma atirar primeiro e perguntar depois. Do mercenário especialista em armas de fogo até o perito em espadas, combatentes apresentam uma gama enorme de habilidades e técnicas especiais que aprimoram sua eficiência no campo de batalha, tornando-os membros essenciais em qualquer missão de extermínio. Além de treinar seu corpo, o combatente também é perito em liderar seus aliados em batalha e em cuidar de seu equipamento de combate, sempre preparado para assumir a linha de frente quando a coisa fica feia."
     },
     {
         "id":"especialista",
         "nome":"Especialista",
         "origem":"Livro de Regras",
         "tag":"",
-        "descricao":"O especialista é um indivíduo que se dedica ao aprimoramento de habilidades específicas, trazendo versatilidade ao grupo."
+        "descricao":"O especialista é um indivíduo que se dedica ao aprimoramento de habilidades específicas, trazendo versatilidade ao grupo.",
+        "detalhes":"Um agente que confia mais em esperteza do que em força bruta. Um especialista se vale de conhecimento técnico, raciocínio rápido ou mesmo lábia para resolver mistérios e enfrentar o paranormal. Cientistas, inventores, pesquisadores e técnicos de vários tipos são exemplos de especialistas, que são tão variados quanto as áreas do conhecimento e da tecnologia. Alguns ainda preferem estudar engenharia social e se tornam excelentes espiões infiltrados, ou mesmo estudam técnicas especiais de combate como artes marciais e tiro a distância, aliando conhecimento técnico e habilidade. O que une todos os especialistas é sua incrível capacidade de aprender e improvisar usando seu intelecto e conhecimento avançado, que pode tirar o grupo todo dos mais diversos tipos de enrascadas."
     },
     {
         "id":"sobrevivente",
         "nome":"Sobrevivente",
         "origem":"Sobrevivendo ao Horror",
         "tag":"",
-        "descricao":"O sobrevivente é um indivíduo que ainda não teve contato com o paranormal, uma pessoa comum."
+        "descricao":"O sobrevivente é um indivíduo que ainda não teve contato com o paranormal, uma pessoa comum.",
+        "detalhes":"Esta classe representa pessoas comuns que se veem em meio a ameaças terríveis, como assassinos psicopatas, mansões amaldiçoadas, cultos macabros ou mesmo criaturas do Outro Lado. Como indivíduos normais, sobreviventes são muito mais fracos que combatentes, especialistas ou ocultistas, que possuem treinamento especial. Em outras palavras, esta nova classe não é equilibrada com as três classes originais! Isso é de propósito, para oferecer uma experiência de jogo diferente. Usando o sobrevivente, os jogadores se sentirão na pele de pessoas comuns que, frente à ameaças de terror, precisam tentar fugir ou se esconder."
     }
 ]

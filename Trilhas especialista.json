@@ -4,55 +4,55 @@
         "nome":"Atirador de Elite",
         "origem":"Livro de Regras",
         "tag":"",
-        "descricao":"Você trata sua arma como uma ferramenta de precisão, sendo capaz de executar façanhas incríveis."
+        "descricao":"Um tiro, uma morte. Ao contrário dos combatentes, você é perito em neutralizar ameaças de longe, terminando uma briga antes mesmo que ela comece. Você trata sua arma como uma ferramenta de precisão, sendo capaz de executar façanhas incríveis."
     },
     {
         "id":"infiltrador",
         "nome":"Infiltrador",
         "origem":"Livro de Regras",
         "tag":"",
-        "descricao":"Você é um perito em infiltração e sabe neutralizar alvos desprevenidos sem causar alarde."
+        "descricao":"Você é um perito em infiltração e sabe neutralizar alvos desprevenidos sem causar alarde. Combinando talento acrobático, destreza manual e conhecimento técnico você é capaz de superar qualquer barreira de defesa, mesmo quando a missão parece impossível."
     },
     {
         "id":"medico_de_campo",
         "nome":"Médico de Campo",
         "origem":"Livro de Regras",
         "tag":"",
-        "descricao":"Você é treinado em técnicas de primeiros socorros e tratamento de emergência, o que torna você um membro valioso para qualquer grupo de agentes."
+        "descricao":"Você é treinado em técnicas de primeiros socorros e tratamento de emergência, o que torna você um membro valioso para qualquer grupo de agentes. Ao contrário dos profissionais de saúde convencionais, você está acostumado com o campo de batalha e sabe tomar decisões rápidas no meio do caos. Especial: para escolher esta trilha, você precisa ser treinado em Medicina. Para usar as habilidades desta trilha, você precisa possuir um kit de medicina."
     },
     {
         "id":"negociador",
         "nome":"Negociador",
         "origem":"Livro de Regras",
         "tag":"",
-        "descricao":"Você é um diplomata habilidoso e consegue influenciar outras pessoas, seja por lábia ou intimidação."
+        "descricao":"Você é um diplomata habilidoso e consegue influenciar outras pessoas, seja por lábia ou intimidação. Sua capacidade de avaliar situações com rapidez e eficiência pode tirar o grupo de apuros que nem a mais poderosa das armas poderia resolver."
     },
     {
         "id":"tecnico",
         "nome":"Técnico",
         "origem":"Livro de Regras",
         "tag":"",
-        "descricao":"Sua principal habilidade é a manutenção e reparo do valioso equipamento que seu time carrega em missão."
+        "descricao":"Sua principal habilidade é a manutenção e reparo do valioso equipamento que seu time carrega em missão. Seu conhecimento técnico também permite que improvise ferramentas com o que tiver à disposição e sabote os itens usados por seus inimigos."
     },
     {
         "id":"bibliotecario",
         "nome":"Bibliotecário",
         "origem":"Sobrivivendo ao Horror",
         "tag":"",
-        "descricao":"Poucas pessoas lêem tanto quanto você, mas diferente do que imaginam, passar a vida cercado de conhecimento não o torna menos apto."
+        "descricao":"Poucas pessoas lêem tanto quanto você, mas diferente do que imaginam, passar a vida cercado de conhecimento não o torna menos apto. Na verdade, seu vasto conhecimento é muitas vezes a única solução para situações desesperadoras. Alguém precisa ser a chave dos segredos. Alguém precisa saber, mesmo que isso signifique perder."
     }, 
     {
         "id":"perseverante",
         "nome":"Perseverante",
         "origem":"Sobrivivendo ao Horror",
         "tag":"",
-        "descricao":"Você sabe que é um sobrevivente"
+        "descricao":"Você sabe que é um sobrevivente. Talvez tenha sido o único a escapar com vida de uma grande tragédia, ou simplesmente possua o espírito necessário para perseverar onde todos os outros caíram. Em filmes de terror, os monstros e assassinos costumam pegar suas vítimas isoladas uma a uma com facilidade, até se depararem com uma protagonista resiliente e que parece nunca desistir. Seja por experiência ou instinto, você tem certeza que se estivesse em um desses filmes, seria o último sobrevivente a sair vivo no final."
     },
     {
         "id":"muambeiro",
         "nome":"Muambeiro",
         "origem":"Sobrivivendo ao Horror",
         "tag":"",
-        "descricao":"Você sempre foi bom em lidar com equipamentos, e aprendeu como produzir ou encontrar, os itens certos em qualquer ocasião."
+        "descricao":"Você sempre foi bom em lidar com equipamentos, e aprendeu como produzir ou encontrar, os itens certos em qualquer ocasião. Esse talento pode ser fundamental para manter todos em sua equipe vivos."
     }
 ]

@@ -4,56 +4,56 @@
         "nome":"Conduíte",
         "origem":"Livro de Regras",
         "tag":"",
-        "descricao":"Você domina os aspectos fundamentais da conjuração de rituais e é capaz de aumentar o alcance e velocidade de suas conjurações."
+        "descricao":"Você domina os aspectos fundamentais da conjuração de rituais e é capaz de aumentar o alcance e velocidade de suas conjurações. Conforme sua conexão com as entidades paranormais aumenta você se torna capaz de interferir com os rituais de outros ocultistas."
     },
     {
         "id":"flagelador",
         "nome":"Flagelador",
         "origem":"Livro de Regras",
         "tag":"",
-        "descricao":"Dor é um poderoso catalisador paranormal e você aprendeu a transformá-la em poder para seus rituais."
+        "descricao":"Dor é um poderoso catalisador paranormal e você aprendeu a transformá-la em poder para seus rituais. Quando se torna especialmente poderoso, consegue usar a dor e o sofrimento de seus inimigos como instrumento de seus rituais ocultistas."
     },
     {
         "id":"graduado",
         "nome":"Graduado",
         "origem":"Livro de Regras",
         "tag":"",
-        "descricao":"Você foca seus estudos em se tornar um conjurador versátil e poderoso, conhecendo mais rituais que os outros ocultistas e sendo capaz de torná-los mais difíceis de serem resistidos."
+        "descricao":"Você foca seus estudos em se tornar um conjurador versátil e poderoso, conhecendo mais rituais que os outros ocultistas e sendo capaz de torná-los mais difíceis de serem resistidos. Seu objetivo é desvendar e dominar os segredos do Outro Lado, custe o que custar."
     },
     {
         "id":"intuitivo",
         "nome":"Intuitivo",
         "origem":"Livro de Regras",
         "tag":"",
-        "descricao":"Seu foco e força de vontade fazem com que você expanda os limites de suas capacidades paranormais."
+        "descricao":"Assim como combatentes treinam seus corpos para resistir a traumas físicos, você preparou sua mente para resistir aos efeitos do Outro Lado. Seu foco e força de vontade fazem com que você expanda os limites de suas capacidades paranormais"
     },
     {
         "id":"lamina_paranormal",
         "nome":"Lâmina Paranormal",
         "origem":"Livro de Regras",
         "tag":"",
-        "descricao":"Você, prefere usar o paranormal como uma arma."
+        "descricao":"Alguns ocultistas preferem ficar fechados em suas bibliotecas estudando livros e rituais. Outros preferem investigar fenômenos paranormais em sua fonte. Já você, prefere usar o paranormal como uma arma. Você aprendeu e dominou técnicas de luta mesclando suas habilidades de conjuração com suas capacidades de combate."
     },
     {
         "id":"exorcista",
         "nome":"Exorcista",
         "origem":"Sobrivivendo ao Horror",
         "tag":"",
-        "descricao":"Com sua fé como escudo e suas palavras como espada, independente de sua religião ou crença, você mergulha na escuridão, onde a Realidade e o Outro Lado travam uma batalha pelo medo humano."
+        "descricao":"Da escuridão da noite, quando as sombras se tornam mais densas, emerge um chamado desesperado. Um grito sufocado pela presença maligna que assola uma alma atormentada. É então que o exorcista se ergue para enfrentar o paranormal. Com sua fé como escudo e suas palavras como espada, independente de sua religião ou crença, você mergulha na escuridão, onde a Realidade e o Outro Lado travam uma batalha pelo medo humano."
     }, 
     {
         "id":"possuido",
         "nome":"Possuído",
         "origem":"Sobrivivendo ao Horror",
         "tag":"",
-        "descricao":"Você nunca quis contato com o Outro Lado, mas ele parece ter especialmente escolhido você para perseguir."
+        "descricao":"Você nunca quis contato com o Outro Lado, mas ele parece ter especialmente escolhido você para perseguir. Desde que consegue lembrar, você estava predestinado a essa maldição, como se o paranormal estivesse crescendo em seu interior antes mesmo de seu nascimento… E assim, você foi empurrado para uma batalha sem fim… Sem opção, só lhe resta lutar, enquanto o paranormal dentro de você aflora cada vez mais."
     },
     {
         "id":"parapsicologo",
         "nome":"Parapsicólogo",
         "origem":"Sobrivivendo ao Horror",
         "tag":"",
-        "descricao":"Se o paranormal pode ser usado para perturbar, também pode ser usado para sanar."
+        "descricao":"Você esteve em um meio de pessoas dedicadas a cuidar da mente humana… Mas, quando descobriu a maior ameaça para a nossa psique, descobriu também que seus colegas não passavam de tolos céticos. Quando você falou sobre o paranormal, eles apenas riram. Desprezado pela academia, você decidiu perseguir a verdade sozinho. Afinal, a diferença entre o remédio e o veneno é a dosagem. Se o paranormal pode ser usado para perturbar, também pode ser usado para sanar. Ele só precisa ser estudado, analisado e aplicado por alguém competente como você, mesmo que isso custe sua vida. Especial: para escolher esta trilha, você precisa ser treinado em Profissão (psicólogo)."
     },
     {
         "id":"maledictologo",
