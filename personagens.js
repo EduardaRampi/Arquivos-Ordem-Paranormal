@@ -266,7 +266,7 @@ const TABELA_PATENTES = [
 /* ============================================================
    4. CÁLCULO DE STATUS (PV, PE, SAN, PD) CONFORME NEX E ATRIBUTOS
 ============================================================ */
-function calcularStatus(classe, atributos, nexOuEstagio = 5) {
+function calcularStatus(classe, atributos, nexOuEstagio = 5, ficha = null) {
     const vig = parseInt(atributos.VIG) || 0;
     const pre = parseInt(atributos.PRE) || 0;
     
@@ -298,7 +298,7 @@ function calcularStatus(classe, atributos, nexOuEstagio = 5) {
     }
 
     // Soma os ganhos
-    const pvTotal = base.pv + (aumentos * (isSobrevivente ? ganho.pv : (ganho.pv + vig)));
+    let pvTotal = base.pv + (aumentos * (isSobrevivente ? ganho.pv : (ganho.pv + vig)));
     const peTotal = base.pe + (aumentos * (isSobrevivente ? ganho.pe : (ganho.pe + pre)));
     const sanTotal = base.san + (aumentos * ganho.san);
     
@@ -307,9 +307,21 @@ function calcularStatus(classe, atributos, nexOuEstagio = 5) {
         ? base.pd + (aumentos * ganho.pd)
         : base.pd + (aumentos * (ganho.pd + pre));
 
+    // --- ÁREA DE AUTOMAÇÕES ---
+    const habilidades = ficha?.habilidades || window.fichaAtualDados?.habilidades || [];
+    const temCalejado = habilidades.some(h => h.nome === "Calejado");
+
+    if (temCalejado && !isSobrevivente) {
+        const bonusCalejado = Math.floor(parseInt(nexOuEstagio) / 5);
+        pvTotal += bonusCalejado; // Agora funciona porque usamos let lá em cima!
+        console.log("🤖 Calejado Ativado! Bónus:", bonusCalejado);
+    }
+
+    // Aplicando os bônus no total calculado
+    const pvFinal = pvTotal;
     return {
         nex: nexOuEstagio,
-        pvMax: pvTotal, pvAtual: pvTotal,
+        pvMax: pvFinal, pvAtual: pvFinal,
         peMax: peTotal, peAtual: peTotal,
         sanMax: sanTotal, sanAtual: sanTotal,
         pdMax: pdTotal, pdAtual: pdTotal
@@ -385,28 +397,50 @@ function atualizarPatente() {
     const pontos = parseInt(campoPrestigio.value) || 0;
     
     // Encontra a patente mais alta que o jogador alcançou
-    const patenteAtual = TABELA_PATENTES.find(p => pontos >= p.pontos);
+    const indexReal = TABELA_PATENTES.findIndex(p => pontos >= p.pontos);
+    const patenteReal = TABELA_PATENTES[indexReal];
 
-    if (patenteAtual) {
+    if (patenteReal) {
         // Atualiza textos
-        document.getElementById('val-patente').innerText = patenteAtual.nome;
-        document.getElementById('val-credito').innerText = patenteAtual.credito;
+        document.getElementById('val-patente').innerText = patenteReal.nome;
 
         // Atualiza os limites na tabela
-        document.getElementById('lim-cat1').innerText = patenteAtual.limites[0];
-        document.getElementById('lim-cat2').innerText = patenteAtual.limites[1] > 0 ? patenteAtual.limites[1] : "—";
-        document.getElementById('lim-cat3').innerText = patenteAtual.limites[2] > 0 ? patenteAtual.limites[2] : "—";
-        document.getElementById('lim-cat4').innerText = patenteAtual.limites[3] > 0 ? patenteAtual.limites[3] : "—";
+        document.getElementById('lim-cat1').innerText = patenteReal.limites[0];
+        document.getElementById('lim-cat2').innerText = patenteReal.limites[1] > 0 ? patenteReal.limites[1] : "—";
+        document.getElementById('lim-cat3').innerText = patenteReal.limites[2] > 0 ? patenteReal.limites[2] : "—";
+        document.getElementById('lim-cat4').innerText = patenteReal.limites[3] > 0 ? patenteReal.limites[3] : "—";
         
         // Salva na memória global para uso posterior no inventário
         if (window.fichaAtualDados) {
             window.fichaAtualDados.prestigio = pontos;
-            window.fichaAtualDados.patenteNome = patenteAtual.nome;
+            window.fichaAtualDados.patenteNome = patenteReal.nome;
         }
 
         const inputPDLimite = document.getElementById('edit-pd-limite');
         if (inputPDLimite) {
-            inputPDLimite.value = patenteAtual.limitePD;
+            inputPDLimite.value = patenteReal.limitePD;
+        }
+
+        let creditoExibido = patenteReal.credito;
+        const temPatrocinador = window.fichaAtualDados?.habilidades?.some(h => h.nome === "Patrocinador da Ordem");
+
+        if (temPatrocinador) {
+            // Pegamos o crédito da PRÓXIMA patente na tabela
+            const progressaoCredito = ["Baixo", "Médio", "Alto", "Ilimitado"];
+            const degrauAtual = progressaoCredito.indexOf(patenteReal.credito);
+            if (degrauAtual !== -1 && degrauAtual < progressaoCredito.length - 1) {
+                creditoExibido = progressaoCredito[degrauAtual + 1];
+                console.log(`🤖 Patrocinador: Crédito subiu de ${patenteReal.credito} para ${creditoExibido}`);
+            }
+        }
+
+        // Atualiza apenas o texto do crédito na tela
+        document.getElementById('val-credito').innerText = creditoExibido;
+
+        // Salva os dados reais na ficha
+        if (window.fichaAtualDados) {
+            window.fichaAtualDados.prestigio = pontos;
+            window.fichaAtualDados.patenteNome = patenteReal.nome;
         }
     }
 }
@@ -710,7 +744,7 @@ document.addEventListener('change', (e) => {
                 PRE: parseInt(document.getElementById('edit-pre').value) || 0
             };
 
-            const novosStatus = calcularStatus(dados.classe, atributosTela, novoValor);
+            const novosStatus = calcularStatus(dados.classe, atributosTela, novoValor, window.fichaAtualDados);
             
             atualizarBarraVisual('pv', novosStatus.pvMax, novosStatus.pvMax);
             atualizarBarraVisual('pe', novosStatus.peMax, novosStatus.peMax);
@@ -777,7 +811,7 @@ function atualizarBarraVisual(tipo, atual, max) {
 ============================================================ */
 document.addEventListener('change', async (e) => {
     if (e.target.classList.contains('check-morte')) {
-        const tipo = e.target.closest('.status-emergencia').id.split('-')[1]; // 'pv' ou 'san'
+        const tipo = e.target.closest('.status-emergencia').id.split('-')[1];
         const indice = e.target.getAttribute('data-indice');
         
         console.log(`Marcado teste ${indice} de ${tipo}`);
@@ -1176,7 +1210,8 @@ function renderizarInventarioFicha() {
     let pesoTotal = 0;
 
     const itens = window.fichaAtualDados.inventario || [];
-
+    const temMaoPesada = window.fichaAtualDados?.habilidades?.some(h => h.nome === "Mão Pesada");
+    
     itens.forEach((item, index) => {
         // Soma Categoria e Peso
         const catParaExibir = item.categoriaTotal !== undefined ? item.categoriaTotal : (parseInt(item.categoria) || 0);
@@ -1184,6 +1219,11 @@ function renderizarInventarioFicha() {
             contagem[catParaExibir]++;
         }
         pesoTotal += (parseInt(item.espaco) || 0);
+
+        let exibicaoDano = item.dano || "";
+        if (exibicaoDano && item.tipo?.includes("Corpo a Corpo") && temMaoPesada) {
+            exibicaoDano += " + 2";
+        }
 
         let htmlMelhorias = "";
         if (item.melhorias && item.melhorias.length > 0) {
@@ -1240,7 +1280,7 @@ function renderizarInventarioFicha() {
             <div class="detalhes-item">
                 ${item.tipo ? `<p>${item.tipo}</p>` : ''}
                 <p>${item.descricao || ""}</p>
-                ${item.dano ? `<p>⚔️ Dano: ${item.dano} | Crítico: ${item.critico}</p>` : ''}
+                ${item.dano ? `<p>⚔️ Dano: ${exibicaoDano} | Crítico: ${item.critico}</p>` : ''}
                 ${item.tipoDano ? `<p>⚔️ Tipo de Dano: ${item.tipoDano} | Alcance: ${item.alcance}</p>` : ''}
                 ${item.defesa ? `<p>🛡️ Defesa: ${item.defesa}</p>` : ''}
                 ${item.Elemento ? `<p>🌀 Elemento: ${item.Elemento}</p>` : ''}
@@ -1262,6 +1302,7 @@ function renderizarInventarioFicha() {
     // Atualizar o peso atual no input
     document.getElementById('carga-atual').value = pesoTotal;
     atualizarBarraCarga();
+    
 }
 window.removerItem = function(index) {
     if (!window.fichaAtualDados.inventario) return;
@@ -1595,7 +1636,11 @@ function salvarMelhoriasItem() {
     fecharModalMelhorias();
     renderizarInventarioFicha(); // Re-renderiza para mostrar as mudanças
     
-    // Opcional: Salvar no banco de dados
+    if (typeof window.executarAutomacao === 'function') {
+        melhoriasSelecionadas.forEach(m => {
+            window.executarAutomacao(m.nome);
+        });
+    }
     if (typeof salvarFicha === 'function') salvarFicha();
 }
 function fecharModalMelhorias() {
@@ -1839,7 +1884,9 @@ window.adicionarHabilidadeAFicha = function(hab) {
     // Fecha o modal
     fecharModalHabilidades();
 
-    // Salva os dados
+    if (typeof window.executarAutomacao === 'function') {
+        window.executarAutomacao(hab.nome);
+    }
     if (typeof salvarFicha === 'function') {
         salvarFicha();
     }

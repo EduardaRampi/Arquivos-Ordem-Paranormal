@@ -810,5 +810,37 @@
         "Circulo":"4º",
         "Elemento":"Sangue/Conhecimento",
         "tag":"Janeiro-2026"
+    },
+    {
+        "nome":"Mapa Sanguíneo",
+        "origem":"Arquivos Secretos",
+        "descricao":"Você toca em uma superfície e desenha um mapa com gotas de sangue que sinalizam em tempo real a localização de todos os seres",
+        "Circulo":"2º",
+        "Elemento":"Sangue",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome":"Capturar Momento",
+        "origem":"Arquivos Secretos",
+        "descricao":"TEXTO INCORRETO NOS ARQUIVOS SECRETOS, ESPERANDO A JAMBO CONSERTAR",
+        "Circulo":"2º",
+        "Elemento":"Morte",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome":"Labirinto Mental",
+        "origem":"Arquivos Secretos",
+        "descricao":"Você prende a mente de uma pessoa em um labirinto",
+        "Circulo":"2º",
+        "Elemento":"Conhecimento",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome":"Rajada Caótica",
+        "origem":"Arquivos Secretos",
+        "descricao":"Você concentra a estática caótica da Energia e a projeta contra o alvo",
+        "Circulo":"2º",
+        "Elemento":"Energia",
+        "tag":"Fevereiro-2026"
     }
 ]

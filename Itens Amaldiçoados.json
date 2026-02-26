@@ -369,5 +369,54 @@
         "descricao":"Uma marreta banhada em fluidos humanos e enrolada em espinhos foi amaldiçoada 6 vezes, através de 6 sacrifícios humanos, ao longo de 6 rituais de Sangue.",
         "Elemento":"Sangue",
         "tag":"Janeiro-2026"
+    },
+    {
+        "nome":"Machado Mutilador",
+        "origem":"Arquivos Secretos",
+        "descricao":"Uma arma com cabo de madeira e lâmina vermelha que já deu fim a diversas vítimas, ela anseia por mais sangue.",
+        "Elemento":"Sangue",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome":"Elmo do Colosso",
+        "origem":"Arquivos Secretos",
+        "descricao":"Um elmo de escafandro trabalhado em metal e imbuído com uma forte pressão eletrostática criada a partir da Energia.",
+        "Elemento":"Energia",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome":"Manoplas do Colosso",
+        "origem":"Arquivos Secretos",
+        "descricao":"Um par de manoplas trabalhadas em metal e imbuídas com uma violenta onda de Energia.",
+        "Elemento":"Energia",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome":"Punhal X",
+        "origem":"Arquivos Secretos",
+        "descricao":"Uma grande faca de cabo sombrio e guarda dourada.",
+        "Elemento":"Conhecimento",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome":"Sniper Fantasma",
+        "origem":"Arquivos Secretos",
+        "descricao":"Um fuzil de precisão sombrio enrolado em bandagens que o tornaram amaldiçoado.",
+        "Elemento":"Morte",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome":"A Antena",
+        "origem":"Arquivos Secretos",
+        "descricao":"Uma antena parabólica encaixada em uma das extremidades de um bastão de ferro. Apesar da aparência estranha, este item maldito transmite medo primal.",
+        "Elemento":"Medo",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome":"Faca Predadora",
+        "origem":"Arquivos Secretos",
+        "descricao":"Uma faca de cabo escuro ornamentada com várias ondas em sua lâmina.",
+        "Elemento":"Sangue",
+        "tag":"Fevereiro-2026"
     }
 ]

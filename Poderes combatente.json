@@ -223,5 +223,26 @@
         "origem":"Sobrevivendo ao Horror",
         "tag":"",
         "descricao":"Você aprendeu que a brutalidade amedronta."
+    },
+    {
+        "nome":"Predador Perfeito",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Você praticou técnicas de caça até ficar assustadoramente ágil.",
+        "PreR":"Veterano em Luta ou Pontaria e Sobrevivência"
+    },
+    {
+        "nome":"Golpes de Arena",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Você aprendeu como se briga dentro das grades.",
+        "PreR":"Treinado em Luta"
+    },
+    {
+        "nome":"Marteladas",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Suas pancadas são como golpes de marreta.",
+        "PreR":"For 2, treinado em Luta, Artista Marcial."
     }
 ]

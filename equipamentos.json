@@ -1224,6 +1224,62 @@
             "tag": "",
             "espaco": 5,
             "categoria": 2
+        },
+        {
+            "nome":"Bandagem",
+            "origem":"Arquivos Secretos",
+            "descricao":"Tecido eficiente para estancar sangramentos. Você pode gastar uma ação padrão e este item para curar 2d4+2 PV e remover a condição sangrando em você ou em um ser adjacente.",
+            "tag":"Fevereiro-2026",
+            "espaco": 0.5,
+            "categoria": 1
+        },
+        {
+            "nome":"Bússola",
+            "origem":"Arquivos Secretos",
+            "descricao":"Instrumento de navegação e orientação baseado em propriedades magnéticas.",
+            "tag":"Fevereiro-2026",
+            "espaco": 1,
+            "categoria": 1
+        },
+        {
+            "nome":"Caixa de Ferramentas",
+            "origem":"Arquivos Secretos",
+            "descricao":"Caixa metálica com ferramentas mecânicas diversas.",
+            "tag":"Fevereiro-2026",
+            "espaco": 2,
+            "categoria": 1
+        },
+        {
+            "nome":"Dose de Álcool",
+            "origem":"Arquivos Secretos",
+            "descricao":"Substância antisséptica útil para limpar feridas ou causar incêndios",
+            "tag":"Fevereiro-2026",
+            "espaco": 0.5,
+            "categoria": 1
+        },
+        {
+            "nome":"Incenso",
+            "origem":"Arquivos Secretos",
+            "descricao":"Substância aromática de origem vegetal, queimada para liberar fumaça perfumada em rituais religiosos, meditação, aromaterapia ou purificação.",
+            "tag":"Fevereiro-2026",
+            "espaco": 0.5,
+            "categoria": 1
+        },
+        {
+            "nome":"Kit de Escalada",
+            "origem":"Arquivos Secretos",
+            "descricao":"Corda dinâmica e equipamentos de segurança essenciais como sapatilhas, cadeirinha, capacete, freio, mosquetões, fitas e saco de magnésio para melhorar a aderência.",
+            "tag":"Fevereiro-2026",
+            "espaco": 2,
+            "categoria": 1
+        },
+        {
+            "nome":"Pedra de Amolar",
+            "origem":"Arquivos Secretos",
+            "descricao":"Ferramenta abrasiva, natural ou sintética, usada para restaurar o fio de lâminas.",
+            "tag":"Fevereiro-2026",
+            "espaco": 0.5,
+            "categoria": 1
         }
     ], 
     "paranormais": [
@@ -1402,6 +1458,14 @@
             "tag": "Janeiro-2026",
             "espaco": 1,
             "categoria": 2
+        },
+        {
+            "nome": "Catalisador Sofisticado e Horrorizado",
+            "origem": "Arquivos Secretos",
+            "descricao": "Este tipo de catalisador ritualístico (SaH, p. 44) foi intensamente horrorizado pelo Outro Lado e pode ser usado como uma vestimenta semelhante a uma bijuteria ou acessório, não sendo necessário empunhá-lo. Além disso, ele não é consumido quando usado. Uma vez por cena, você recebe 3d6. Você pode gastar 1d6, como ação livre, para: * Aumentar o dano de um ritual em +1d6. * Aumentar a recuperação de PV de um ritual em +1d6. * Aumentar a DT de um ritual em +1d6. Você só pode gastar 1d6 no mesmo ritual, e apenas no momento em que conjurá-lo. No fim da cena, d6 não gastos são perdidos.",
+            "tag": "Fevereiro-2026",
+            "espaco": 1,
+            "categoria": 3
         }
     ],
     "amaldicoados":[
@@ -1915,6 +1979,69 @@
             "Elemento":"Sangue",
             "tag":"Janeiro-2026",
             "espaco": 2,
+            "categoria": 4
+        },
+        {
+            "nome":"Machado Mutilador",
+            "origem":"Arquivos Secretos",
+            "descricao":"Uma arma com cabo de madeira e lâmina vermelha que já deu fim a diversas vítimas, ela anseia por mais sangue. É uma arma tática corpo a corpo e de uma mão. Ela causa 1d8 pontos de dano de corte mais 1d8 pontos de dano de Sangue, multiplicado em caso de acerto crítico, e tem crítico 20/x3. Além disso, quando atinge uma vítima, você pode gastar 1 PE para deixá-la sangrando; esse efeito é cumulativo, ou seja, ela pode ficar sangrando várias vezes simultaneamente (perdendo 1d6 PV para cada sangramento).",
+            "Elemento":"Sangue",
+            "tag":"Fevereiro-2026",
+            "espaco": 1,
+            "categoria": 4
+        },
+        {
+            "nome":"Elmo do Colosso",
+            "origem":"Arquivos Secretos",
+            "descricao":"Um elmo de escafandro trabalhado em metal e imbuído com uma forte pressão eletrostática criada a partir da Energia. O Elmo é uma vestimenta que fornece resistência a dano 5. Se usado em conjunto com o resto do equipamento de escafandro, conta como um traje de mergulho (SaH, p. 44).",
+            "Elemento":"Energia",
+            "tag":"Fevereiro-2026",
+            "espaco": 2,
+            "categoria": 3
+        },
+        {
+            "nome":"Manoplas do Colosso",
+            "origem":"Arquivos Secretos",
+            "descricao":"Um par de manoplas trabalhadas em metal e imbuídas com uma violenta onda de Energia. Cada Manopla é uma arma tática corpo a corpo e de uma mão, mas elas só funcionam se usadas em par. Cada uma causa 1d6 pontos de dano de impacto mais 1d10 pontos de dano de Energia e tem crítico 20/x2. Além disso, todas as regras e efeitos de ataque desarmado se aplicam às Manoplas —, mas efeitos que aumentam o dado de dano desarmado como o poder Artista Marcial não modificam o dano delas.",
+            "Elemento":"Energia",
+            "tag":"Fevereiro-2026",
+            "espaco": 2,
+            "categoria": 4
+        },
+        {
+            "nome":"Punhal X",
+            "origem":"Arquivos Secretos",
+            "descricao":"Uma grande faca de cabo sombrio e guarda dourada. É uma arma simples corpo a corpo, de uma mão e ágil, que pode ser arremessada em alcance curto. Ela causa 1d4 pontos de dano de perfuração mais 1d6 pontos de dano de Conhecimento e tem crítico 19/x2. Além disso, quando ataca com esta arma, você pode gastar 2 PE para deixar o alvo desprevenido contra o ataque e, se acertar, o alvo fica cego por 1 rodada. Um mesmo alvo só pode ficar cego por esta arma uma vez por cena.",
+            "Elemento":"Conhecimento",
+            "tag":"Fevereiro-2026",
+            "espaco": 1,
+            "categoria": 4
+        },
+        {
+            "nome":"Sniper Fantasma",
+            "origem":"Arquivos Secretos",
+            "descricao":"Um fuzil de precisão sombrio enrolado em bandagens que o tornaram amaldiçoado. É uma arma de fogo tática, de duas mãos e alcance longo. Ela causa 2d10 pontos de dano balístico mais 2d4 pontos de dano de Morte e tem crítico 19/x3. Se for veterano em Pontaria e mirar com esta arma (OPRPG, p. 87), você recebe +5 na margem de ameaça de seu ataque. Além disso, um ser reduzido a 0 PV por dano desta arma morre se iniciar 2 turnos morrendo (em vez de 3).",
+            "Elemento":"Morte",
+            "tag":"Fevereiro-2026",
+            "espaco": 2,
+            "categoria": 4
+        },
+        {
+            "nome":"A Antena",
+            "origem":"Arquivos Secretos",
+            "descricao":"Uma antena parabólica encaixada em uma das extremidades de um bastão de ferro. Apesar da aparência estranha, este item maldito transmite medo primal. É uma arma simples corpo a corpo, de duas mãos, que conta como uma arma improvisada (–1d20 em testes de ataque). Ela causa 1d6 pontos de dano de impacto e tem crítico 20/x2. Seu verdadeiro potencial só se revela nas mãos de um conjurador de rituais. A DT de seus rituais aumenta em +3. Além disso, você pode conjurar um ritual n’A Antena. O ritual não faz efeito na hora; em vez disso, fica contido nela. Você pode gastar uma ação padrão para libertar o ritual e gerar o efeito dele (sem precisar gastar ações de conjuração ou PE). A Antena só pode conter um ritual por vez.",
+            "Elemento":"Medo",
+            "tag":"Fevereiro-2026",
+            "espaco": 2,
+            "categoria": 4
+        },
+        {
+            "nome":"Faca Predadora",
+            "origem":"Arquivos Secretos",
+            "descricao":"Uma faca de cabo escuro ornamentada com várias ondas em sua lâmina. É uma arma simples corpo a corpo, de uma mão e ágil, que pode ser arremessada em alcance curto. Ela causa 1d4 pontos de dano de perfuração mais 2d10 pontos de dano de Sangue e tem crítico 19/x3. Quando ataca com esta arma, você pode gastar 2 PE. Se fizer isso e acertar o ataque, você recupera 2d10 PV. Qualquer ponto de vida recuperado que exceda seus PV máximos se torna pontos de vida temporários.",
+            "Elemento":"Sangue",
+            "tag":"Fevereiro-2026",
+            "espaco": 1,
             "categoria": 4
         }
     ]      

@@ -54,5 +54,12 @@
     "tag": "",
     "descricao": "Saber tudo é perder tudo. Contudo, não se deve subestimar a capacidade de adaptação humana.",
     "PreR": "Conhecimento 1"
+    },
+    {
+    "nome": "Zona dos Sussurros",
+    "origem": "Arquivos Secretos",
+    "tag": "Fevereiro-2026",
+    "descricao": "Você amaldiçoa uma área para que o Conhecimento influencie a percepção dos seres dentro dela.",
+    "PreR": ""
     }
 ]

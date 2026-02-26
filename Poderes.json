@@ -342,5 +342,110 @@
         "tag":"Janeiro-2026",
         "descricao":"Você não confia na sociedade civilizada e está pronto para sobreviver na selva de concreto.",
         "PreR":"Agi 2"
+    },
+    {
+        "nome":"Revidar Violento",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Seu treinamento com contra-ataques deu resultados.",
+        "PreR":"For 2 ou Agi 2"
+    },
+    {
+        "nome":"Corpo Fechado",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Seu treinamento com bloqueios deu resultados.",
+        "PreR":"Vig 2"
+    },
+    {
+        "nome":"Esquiva Tática",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Seu treinamento com esquivas deu resultados.",
+        "PreR":"Agi 2"
+    },
+    {
+        "nome":"Palpite Confiante",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Há momentos em que você tem certeza de algo mesmo não sabendo como.",
+        "PreR":"Int 2"
+    },
+    {
+        "nome":"Especialista em Correntes",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Você aprendeu a manipular correntes ou semelhantes como cordas para manter itens seguros.",
+        "PreR":"Agi 2"
+    },
+    {
+        "nome":"Especialista em Correntes",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Você aprendeu a manter seus inimigos perto.",
+        "PreR":"For 2 ou Agi 2, treinado em luta"
+    },
+    {
+        "nome":"Prática com Materiais Ritualisticos",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Você domina materiais usados em rituais com precisão",
+        "PreR":"Int 2, treinado em Ocultismo, capacidade de conjurar rituais"
+    },
+    {
+        "nome":"Estágio Terminal",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"A proximidade da morte acelera seu coração e incendeia seus músculos",
+        "PreR":"Agi 2"
+    },
+    {
+        "nome":"Kian Vai Nos Salvar",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Você acredita fielmente nas palavras de Kian; ele vai te salvar.",
+        "PreR":"Pre 2, capacidade de conjurar rituais"
+    },
+    {
+        "nome":"Tratamento de Emergência",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Existem aplicações medicinais arriscadas que você ousou aprender para manter seus aliados em ação.",
+        "PreR":"Int 2, treinado em Medicina"
+    },
+    {
+        "nome":"Arte da Música Macabra",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Você é capaz de influenciar sutilmente a Realidade permitindo que sua música suplique efeitos para o Outro Lado.",
+        "PreR":""
+    },
+    {
+        "nome":"Sintonização Mental com Arma",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Você suplica ao Outro Lado para que o paranormal crie uma sintonização entre você e uma arma.",
+        "PreR":"Int 2 ou Pre 2, treinado em Ocultismo, capacidade de conjurar rituais."
+    },
+    {
+        "nome":"Sintonização Mental com Proteção",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Você suplica ao Outro Lado para que o paranormal crie uma sintonização entre você e uma proteção.",
+        "PreR":"Int 2 ou Pre 2, treinado em Ocultismo, capacidade de conjurar rituais."
+    },
+    {
+        "nome":"Movimentação Tática",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Se mover em combate é instintivo para você.",
+        "PreR":"For 2, treinado em Atletismo e Tática."
+    },
+    {
+        "nome":"Sentido Tático",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Seu treinamento militar mantém seus sentidos alertas.",
+        "PreR":"Pre 2, treinado em Percepção e Tática."
     }
 ]

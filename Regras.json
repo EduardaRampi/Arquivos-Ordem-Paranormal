@@ -47,5 +47,12 @@
         "descricao": "Nesta regra opcional, a duração dos rituais sofre uma transformação intensa.",
         "tag": "Janeiro-2026",
         "Comp": "Livro de regras - pg.117"
+    },
+    {
+        "nome": "Máscaras",
+        "origem": "Arquivos Secretos",
+        "descricao": "Em Hexatombe, as máscaras usadas pelos Mascarados são mais do que objetos que ocultam sua aparência.",
+        "tag": "Fevereiro-2026",
+        "Comp": ""
     }
 ]

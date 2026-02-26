@@ -189,5 +189,19 @@
         "tag":"",
         "descricao":"Uma vez por cena de investigação, você pode gastar 5 PE para coordenar esforços dos companheiros. A urgência aumenta em 1 rodada, e todos recebem +2 em testes de perícia durante essa rodada.",
         "PreR":"Treinado em Investigação"
+    },
+    {
+        "nome":"Assassinato Furtivo",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Você sabe ferir os pontos vitais com ainda mais letalidade.",
+        "PreR":"Ataque Furtivo"
+    },
+    {
+        "nome":"Especialista em Matar",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Ferir é fácil; você sabe matar",
+        "PreR":"Agi 2 ou For 2, treinado em Luta ou Pontaria"
     }
 ]

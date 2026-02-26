@@ -428,5 +428,157 @@
         "Vd": "140",
         "Tipo": "Pessoa",
         "descricao": ""
+    },
+    {
+        "nome": "Arara-Vermelha",
+        "origem": "Arquivos Secretos",
+        "Vd": "10",
+        "Tipo": "Animal",
+        "descricao": "A arara-vermelha apresenta uma plumagem predominantemente em um tom de vermelho vivo e intenso, que recobre toda a sua cabeça, peito e a parte superior do dorso.",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome": "Jaguatirica",
+        "origem": "Arquivos Secretos",
+        "Vd": "10",
+        "Tipo": "Animal",
+        "descricao": "Este felino tem porte pequeno e esguio, como um gato doméstico, mas com uma silhueta mais alongada e elegante.",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome": "Jonas Aguiar",
+        "origem": "Arquivos Secretos",
+        "Vd": "80",
+        "Tipo": "Pessoa",
+        "descricao": "",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome": "Mutilador Noturno",
+        "origem": "Arquivos Secretos",
+        "Vd": "140",
+        "Tipo": "Pessoa",
+        "descricao": "Ninguém era mais digno de buscar a verdadeira justiça do que o Mutilador Noturno.",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome": "Dalmo",
+        "origem": "Arquivos Secretos",
+        "Vd": "80",
+        "Tipo": "Pessoa",
+        "descricao": "",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome": "Colosso",
+        "origem": "Arquivos Secretos",
+        "Vd": "140",
+        "Tipo": "Pessoa",
+        "descricao": "Talvez essa fosse a resposta que Dalmo procurava.",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome": "Jae-Yoon",
+        "origem": "Arquivos Secretos",
+        "Vd": "80",
+        "Tipo": "Pessoa",
+        "descricao": "",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome": "X",
+        "origem": "Arquivos Secretos",
+        "Vd": "140",
+        "Tipo": "Pessoa",
+        "descricao": "A noite foi divertida, mas Aguiar não fazia seu tipo. Já a proposta que ele trazia caiu como uma luva.",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome": "Kemi",
+        "origem": "Arquivos Secretos",
+        "Vd": "80",
+        "Tipo": "Pessoa",
+        "descricao": "",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome": "Fantasma",
+        "origem": "Arquivos Secretos",
+        "Vd": "140",
+        "Tipo": "Pessoa",
+        "descricao": "Nada. O vazio nunca iria embora. Bastava seguir.",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome": "Labirinto",
+        "origem": "Arquivos Secretos",
+        "Vd": "80",
+        "Tipo": "Pessoa",
+        "descricao": "",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome": "???",
+        "origem": "Arquivos Secretos",
+        "Vd": "140",
+        "Tipo": "Pessoa",
+        "descricao": "",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome": "Jasper",
+        "origem": "Arquivos Secretos",
+        "Vd": "80",
+        "Tipo": "Pessoa",
+        "descricao": "Eu era uma vítima.  É impossível, para mim, recordar um tempo em que não me sentia usado.",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome": "Lena",
+        "origem": "Arquivos Secretos",
+        "Vd": "80",
+        "Tipo": "Pessoa",
+        "descricao": "Nunca senti que minha vida tinha sentido.",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome": "Maria",
+        "origem": "Arquivos Secretos",
+        "Vd": "80",
+        "Tipo": "Pessoa",
+        "descricao": "A vida pode ser um saco. A minha era relativamente mundana.",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome": "Remi",
+        "origem": "Arquivos Secretos",
+        "Vd": "80",
+        "Tipo": "Pessoa",
+        "descricao": "A vida é como uma pauta musical, coberta de altos e baixos, graves e agudos. Uma composição que precisa ter um fim.",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome": "Tuco",
+        "origem": "Arquivos Secretos",
+        "Vd": "80",
+        "Tipo": "Pessoa",
+        "descricao": "Maneiras de se comunicar com nossos ancestrais e guiar as futuras gerações no caminho que eles desenharam para nós.",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome": "Juan",
+        "origem": "Arquivos Secretos",
+        "Vd": "80",
+        "Tipo": "Pessoa",
+        "descricao": "",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome": "Juan Diabolico",
+        "origem": "Arquivos Secretos",
+        "Vd": "140",
+        "Tipo": "Pessoa",
+        "descricao": "Uma proposta. Um pacto. 'Quebre as minhas correntes.' Você esperou tanto tempo por isso.",
+        "tag":"Fevereiro-2026"
     }
 ]

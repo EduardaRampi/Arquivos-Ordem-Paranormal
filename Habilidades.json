@@ -793,6 +793,21 @@
             "requisito": "",
             "afinidade": "",
             "origem": ""
+        },
+        {
+            "nome":"Predador Perfeito",
+            "descricao":"Você praticou técnicas de caça até ficar assustadoramente ágil.Uma vez por rodada, você pode gastar 5 PE para fazer uma ação padrão adicional. Essa ação precisa ser com intenção de causar dano (dar um soco, disparar uma arma, armar uma armadilha, conjurar um ritual que cause dano etc.).",
+            "requisito":"Veterano em Luta ou Pontaria e Sobrevivência"
+        },
+        {
+            "nome":"Golpes de Arena",
+            "descricao":"Você aprendeu como se briga dentro das grades. Quando acerta um ataque corpo a corpo, você pode gastar 2 PE para fazer um ataque corpo a corpo adicional ou uma manobra de combate contra o mesmo alvo.",
+            "requisito":"Treinado em Luta"
+        },
+        {
+            "nome":"Marteladas",
+            "descricao":"Suas pancadas são como golpes de marreta. Você pode gastar 3 PE e uma ação completa para desferir três ataques desarmados contra o mesmo alvo. Só role o teste para determinar se acontece um acerto crítico ou não (não precisa compará-los a Defesa do alvo); depois disso, role o dano dos três ataques, some e cause tudo no alvo como se fosse uma única fonte de dano (Fortitude DT For reduz à metade).",
+            "requisito":"For 2, treinado em Luta, Artista Marcial."
         }
     ],
     "poder-ocultista":[
@@ -1056,6 +1071,24 @@
             "requisito": "Int 2, Pre 2, conjurar ritual de 1° círculo",
             "afinidade": "",
             "origem": ""
+        },
+        {
+            "nome": "Dominar Habilidade Ritualística",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Seus estudos são amplos e não serão interrompidos por barreiras burocráticas. Quando adquire este poder, você pode escolher uma habilidade de trilha de Ocultista e aprendê-la, mas precisa ter o NEX necessário para usá-la. Por exemplo, se você tiver NEX 65%, pode escolher a habilidade Anular Ritual (OPRPG, p. 34). Habilidades que dependem de outra anterior para funcionar continuam tendo essa dependência. Este poder pode ser adquirido até três vezes.",
+            "requisito": "Int 3, treinado em Ocultismo, capacidade de conjurar rituais",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Liturgia de Fortalecimento Ritualístico",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você conhece práticas ritualísticas longas que fortalecem seus rituais. Em uma cena de interlúdio, você pode gastar 2 PE e uma ação de interlúdio para fortalecer um ritual que conheça. A DT do ritual escolhido aumenta em +2 até o início da próxima cena de interlúdio.",
+            "requisito": "Int e Pre 2",
+            "afinidade": "",
+            "origem": ""
         }
     ],
     "poder-especialista":[
@@ -1290,6 +1323,24 @@
             "trilha": "",
             "descricao": "A ansiedade de correr contra o relógio o deixa mais eficiente. Uma vez por cena de investigação, você pode gastar 5 PE para coordenar os esforços de seus companheiros. A urgência da investigação aumenta em 1 rodada, e durante esta rodada adicional todos os personagens (incluindo você) recebem +2 em testes de perícia.",
             "requisito": "Treinado em Investigação",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Assassinato Furtivo",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Você sabe ferir os pontos vitais com ainda mais letalidade. O dano que você causa com a habilidade de trilha Ataque Furtivo aumenta em +1d6. Além disso, quando acerta um ataque furtivo, você pode gastar 2 PE para mudar o tipo dos dados de dano furtivo de d6 para d8.",
+            "requisito": "Ataque Furtivo",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "Especialista em Matar",
+            "elemento": "",
+            "trilha": "",
+            "descricao": "Ferir é fácil; você sabe matar. Quando faz um ataque, você pode gastar 2 PE para receber +4 no teste de ataque ou na rolagem de dano. Conforme avança de NEX, você pode gastar +1 PE para receber mais bônus de +4 (25%: 3 PE, +8; 55%: 4PE, +12; 85%: 5 PE, +16). Você pode aplicar cada bônus de +4 em ataque ou dano. Por exemplo, em NEX 55%, você pode gastar 4 PE para receber +4 no teste de ataque e +8 na rolagem de dano.",
+            "requisito": "Agi 2 ou For 2, treinado em Luta ou Pontaria",
             "afinidade": "",
             "origem": ""
         }
@@ -1685,7 +1736,7 @@
             "origem": ""
         },
         {
-            "nome": "<Habilidade> Aprimorada",
+            "nome": "'Habilidade' Aprimorada",
             "elemento": "",
             "trilha": "",
             "descricao": "Escolha uma habilidade ou um ritual que tenha DT. A DT para resistir a essa habilidade ou ritual aumenta em +2. Você pode escolher este poder outras vezes para habilidades e rituais diferentes, e até duas vezes para uma mesma habilidade ou ritual (neste caso, a DT aumenta em um total de +5).",
@@ -1701,7 +1752,112 @@
             "requisito": "Agi 2",
             "afinidade": "",
             "origem": ""
-        }     
+        },
+        {
+            "nome":"Revidar Violento",
+            "origem":"",
+            "tag":"",
+            "descricao":"Seu treinamento com contra-ataques deu resultados. Você pode fazer um segunda reação especial de defesa na mesma rodada, desde que ela seja um contra-ataque.",
+            "requisito":"For 2 ou Agi 2"
+        },
+        {
+            "nome":"Corpo Fechado",
+            "origem":"",
+            "tag":"",
+            "descricao":"Seu treinamento com bloqueios deu resultados. Você pode fazer um segunda reação especial de defesa na mesma rodada, desde que ela seja um bloqueio.",
+            "requisito":"Vig 2"
+        },
+        {
+            "nome":"Esquiva Tática",
+            "origem":"",
+            "tag":"",
+            "descricao":"Seu treinamento com esquivas deu resultados. Você pode fazer um segunda reação especial de defesa na mesma rodada, desde que ela seja uma esquiva.",
+            "requisito":"Agi 2"
+        },
+        {
+            "nome":"Palpite Confiante",
+            "origem":"",
+            "tag":"",
+            "descricao":"Há momentos em que você tem certeza de algo mesmo não sabendo como. Quando faz um teste de perícia baseado em Intelecto ou Presença, você pode gastar 1 PE para somar seu Intelecto no teste.",
+            "requisito":"Int 2"
+        },
+        {
+            "nome":"Especialista em Correntes",
+            "origem":"",
+            "tag":"",
+            "descricao":"Você aprendeu a manipular correntes ou semelhantes como cordas para manter itens seguros. Você pode gastar uma ação completa para prender um item qualquer em uma corrente bem amarrada ao seu corpo (ou ao corpo de outra pessoa, se quiser usar essa técnica em um aliado em alcance de toque, por exemplo). O item preso não pode ser desarmado ou retirado, sendo necessário quebrar a corrente em que o objeto está preso para soltá-lo. Além disso, você recebe +2 em testes de manobras feitos com correntes, chicotes e armas presas em você por essa habilidade. Andar com vários itens presos assim é desconfortável: cada item além do primeiro causa –1 em testes de perícias afetadas por carga.",
+            "requisito":"Agi 2"
+        },
+        {
+            "nome":"Especialista em Correntes",
+            "origem":"",
+            "tag":"",
+            "descricao":"Você aprendeu a manter seus inimigos perto. Quando você acerta um ataque com uma corrente ou semelhante (chicote, corda etc.), pode gastar 2 PE para puxar o alvo para um espaço vazio adjacente à você. Se o alvo se afastar voluntariamente de você, ele sofre –1d20 em testes de ataque contra outros alvos que não sejam você por 1 rodada",
+            "requisito":"For 2 ou Agi 2, treinado em luta"
+        },
+        {
+            "nome":"Prática com Materiais Ritualisticos",
+            "origem":"",
+            "tag":"",
+            "descricao":"Você domina materiais usados em rituais com precisão. Quando executa uma conjuração complexa (SaH, p. 115), você não sofre –1d20 para empregar materiais específicos de uma Entidade durante a 1ª etapa",
+            "requisito":"Int 2, treinado em Ocultismo, capacidade de conjurar rituais"
+        },
+        {
+            "nome":"Estágio Terminal",
+            "origem":"",
+            "tag":"",
+            "descricao":"A proximidade da morte acelera seu coração e incendeia seus músculos. Uma vez por rodada, quando está machucado, você pode gastar 2 PE para fazer uma ação de movimento extra.",
+            "requisito":"Agi 2"
+        },
+        {
+            "nome":"Kian Vai Nos Salvar",
+            "origem":"",
+            "tag":"",
+            "descricao":"Você acredita fielmente nas palavras de Kian; ele vai te salvar. A critério do mestre, se você estiver enfrentando um desafio (uma ameaça, um perigo, um enigma etc.) e sua fé em Kian estiver envolvida e motivando- o de alguma forma, você aprende a conjurar um único ritual de Conhecimento de até 3º círculo como se o conhecesse (ele não conta para o limite de rituais). Uma vez escolhido o ritual, ele permanece disponível até o fim da cena. Você não pode ter dois rituais disponíveis na mesma cena, simultaneamente ou não.",
+            "requisito":"Pre 2, capacidade de conjurar rituais"
+        },
+        {
+            "nome":"Tratamento de Emergência",
+            "origem":"",
+            "tag":"",
+            "descricao":"Existem aplicações medicinais arriscadas que você ousou aprender para manter seus aliados em ação. Você pode gastar 2 PE e uma ação padrão para fornecer 2d10+10 PV temporários a um ser em alcance de toque. Quando todos os pontos forem perdidos, o ser fica fraco até o fim da cena. O mesmo alvo não pode ser beneficiado novamente por essa habilidade na mesma cena.",
+            "requisito":"Int 2, treinado em Medicina"
+        },
+        {
+            "nome":"Arte da Música Macabra",
+            "origem":"",
+            "tag":"",
+            "descricao":"Você é capaz de influenciar sutilmente a Realidade permitindo que sua música suplique efeitos para o Outro Lado. Você pode gastar uma ação padrão e 2 PE para causar um dos efeitos a seguir em 1 ser em alcance curto que possa ouvi-lo: * O próximo dano que o alvo causar aumenta em +5. * O próximo ataque do alvo recebe +2 na margem de ameaça. * O próximo teste de ataque do alvo recebe bônus de +5. * O alcance do próximo ataque ou habilidade que o alvo usar recebe +9m de alcance. Você só pode gastar 1d6 no mesmo ritual, e apenas no momento em que conjurá-lo. No fim da cena",
+            "requisito":""
+        },
+        {
+            "nome":"Sintonização Mental com Arma",
+            "origem":"",
+            "tag":"",
+            "descricao":"Você suplica ao Outro Lado para que o paranormal crie uma sintonização entre você e uma arma. Em uma cena de interlúdio, você pode gastar uma ação de interlúdio de 3 PE para se sintonizar paranormalmente com uma arma que esteja empunhando. Até o início da próxima cena de interlúdio, a arma sintonizada passa a usar um atributo a sua escolha para testes de ataque e dano, em vez do padrão. Esse efeito só funciona se a arma estiver sendo empunhada por você",
+            "requisito":"Int 2 ou Pre 2, treinado em Ocultismo, capacidade de conjurar rituais."
+        },
+        {
+            "nome":"Sintonização Mental com Proteção",
+            "origem":"",
+            "tag":"",
+            "descricao":"Você suplica ao Outro Lado para que o paranormal crie uma sintonização entre você e uma proteção. Em uma cena de interlúdio, você pode gastar uma ação de interlúdio de 3 PE para se sintonizar paranormalmente com uma proteção que esteja vestindo. Até o início da próxima cena de interlúdio, a proteção sintonizada passa a usar um atributo a sua escolha para Defesa, em vez de Agilidade. Esse efeito só funciona se a proteção estiver sendo vestida por você.",
+            "requisito":"Int 2 ou Pre 2, treinado em Ocultismo, capacidade de conjurar rituais."
+        },
+        {
+            "nome":"Movimentação Tática",
+            "origem":"",
+            "tag":"",
+            "descricao":"Se mover em combate é instintivo para você. Se você se mover em direção a uma cobertura ou um inimigo, pode gastar 1 PE para percorrer o dobro do seu deslocamento.",
+            "requisito":"For 2, treinado em Atletismo e Tática"
+        },
+        {
+            "nome":"Sentido Tático",
+            "origem":"",
+            "tag":"",
+            "descricao":"Seu treinamento militar mantém seus sentidos alertas. Você fica imune a condição desprevenido e, quando causar dano em um alvo, pode gastar 2 PE para que ele falhe automaticamente em testes de Furtividade contra você por 1 rodada.",
+            "requisito":"Pre 2, treinado em Percepção e Tática"
+        }       
     ],
     "poder-morte":[
         {
@@ -1765,6 +1921,15 @@
             "descricao": "Ao receber esse poder, você é tomado por uma aura de Morte que nunca mais o abandona. Do ponto de vista dos outros, é como se o mundo ao seu redor perdesse as cores e se tornasse mais opressor. Você pode gastar 2 PE e uma ação de movimento para deixar uma pessoa ou animal em alcance médio apavorado (Vontade DT Pre reduz para abalado). O alvo não precisa ser capaz de ver você. Esta condição termina ao fim da cena, se o alvo se afastar de você além de alcance médio ou se você usar este efeito em outro alvo. Uma mesma pessoa ou animal só pode sofrer o efeito deste poder uma vez por dia.",
             "requisito": "",
             "afinidade": "A DT para resistir ao poder aumenta em +5 e o número de alvos muda para quaisquer pessoas ou animais escolhidos no alcance.",
+            "origem": ""
+        },
+        {
+            "nome": "Disparo de Morte",
+            "elemento": "Morte",
+            "trilha": "",
+            "descricao": "Ao fazer um ataque com uma arma de fogo ou de disparo, você pode se conectar com a Morte para fazer o tempo desacelerar momentaneamente. Antes de fazer o teste de ataque, você pode gastar 3 PE para receber +2 na margem de ameaça dele.",
+            "requisito": "",
+            "afinidade": "O ataque ignora cobertura e 10 pontos de resistência a dano do alvo.",
             "origem": ""
         }
     ],
@@ -1867,6 +2032,18 @@
             "requisito": "Sangue 1",
             "afinidade": "Enquanto estiver machucado, você também recebe +20 PV temporários, mas apenas uma vez por cena.",
             "origem": ""
+        },
+        {
+            "nome": "Predador de Sangue",
+            "descricao": "O prazer da caçada está no seu sangue. Você pode gastar uma ação padrão e 3 PE para memorizar o odor de uma vítima, recebendo +1d20 em testes para rastreá-la, percebê-la e atacá-la. Você precisa de uma fonte do odor da vítima (como um pedaço rasgado da roupa) para usar este poder e só pode memorizar uma vítima por vez. O efeito dura até você memorizar outra vítima.",
+            "elemento": "Sangue",
+            "afinidade":"Você pode memorizar até três vítimas simultaneamente."
+        },
+        {
+            "nome": "Engolir Sangue",
+            "descricao": "Sua conexão com o Sangue abriu o apetite para algo macabro. Você pode gastar uma ação completa para consumir uma porção de carne humana e recuperar 2d8+2 PV, mas perde 1d4 SAN, pois fazer isso é monstruoso. 1 porção de carne humana equivale a 1 espaço (uma mão, uma coxa, um cérebro etc.).",
+            "elemento": "Sangue",
+            "afinidade":"A cura muda para 4d8+4 PV."
         }
     ],
     "poder-conhecimento":[
@@ -1932,6 +2109,15 @@
             "requisito": "Conhecimento 1",
             "afinidade": "Você pode usar esse poder depois de saber se passou no teste, além de poder escolher a melhor rolagem entre as duas.",
             "origem": ""
+        },
+        {
+            "nome": "Zona dos Sussuros",
+            "elemento": "Conhecimento",
+            "trilha": "",
+            "descricao": "Você amaldiçoa uma área para que o Conhecimento influencie a percepção dos seres dentro dela. Com o gasto de uma ação completa e 3 PE, você marca uma área equivalente a um cômodo pequeno com vários. Para áreas maiores, podem ser necessários mais usos dessa habilidade, à critério do mestre. Nessa área, você recebe +5 em testes de ataque e não sofre penalidade por fazer testes de Furtividade após atacar ou fazer outras ações chamativas. Você pode ter no máximo três áreas criadas; se criar uma quarta, uma das anteriores desaparece.",
+            "requisito": "",
+            "afinidade": "Se causar dano em um alvo desprevenido com um ataque corpo a corpo ou em alcance curto, ou um alvo que você esteja flanqueando, você pode rolar novamente quaisquer dados de dano com resultado 1 ou 2 e escolher ficar com os melhores resultados.",
+            "origem": ""
         }
     ],
     "poder-energia":[
@@ -1996,6 +2182,15 @@
             "descricao": "Você pode tentar manipular o caos do mundo ao seu redor, um ato que fornece grande poder às custas da ordem de sua mente. Quando faz um teste, você pode escolher tentar controlar o caos. Se fizer isso, você recebe +1d20 nesse teste. Entretanto, se o teste for uma falha, ou se o resultado desse d20 adicional (use um dado de cor diferente para identificá-lo) for igual ou menor que 5, você perde 1d4 pontos de Sanidade.",
             "requisito": "",
             "afinidade": "Você perde Sanidade se o teste for uma falha ou se o resultado do 1d20 extra for 1 ou 2.",
+            "origem": ""
+        },
+        {
+            "nome": "Pressão Atmosférica",
+            "elemento": "Energia",
+            "trilha": "",
+            "descricao": "Você sabe transmitir a Energia através de seus punhos. Quando acerta um ataque corpo a corpo em um alvo agarrado, você pode gastar 3 PE para gerar uma pressão destruidora. Você causa +1d10 pontos de dano de Energia e o alvo fica atordoado por uma rodada (Fort DT For evita a condição). Um mesmo ser só pode ser atordoado por esta habilidade uma vez por cena.",
+            "requisito": "",
+            "afinidade": "O alvo também fica caído e sangrando (o teste de resistência não evita essas condições).",
             "origem": ""
         }
     ],

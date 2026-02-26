@@ -38,19 +38,26 @@
         "PreR":"Energia 1"
     },
     {
-    "id": "conexao_empatica",
-    "nome": "Conexão Empática",
-    "origem": "Sobrevivendo ao Horror",
-    "tag": "",
-    "descricao": "Você consegue usar a Energia do Outro Lado para se conectar com objetos tecnológicos energizados. ",
-    "PreR": "Energia 1"
+        "id": "conexao_empatica",
+        "nome": "Conexão Empática",
+        "origem": "Sobrevivendo ao Horror",
+        "tag": "",
+        "descricao": "Você consegue usar a Energia do Outro Lado para se conectar com objetos tecnológicos energizados. ",
+        "PreR": "Energia 1"
     },
     {
-    "id": "valerse_do_caos",
-    "nome": "Valer-se do Caos",
-    "origem": "Sobrevivendo ao Horror",
-    "tag": "",
-    "descricao": "Você pode tentar manipular o caos do mundo ao seu redor, um ato que fornece grande poder às custas da ordem de sua mente.",
-    "PreR": ""
+        "id": "valerse_do_caos",
+        "nome": "Valer-se do Caos",
+        "origem": "Sobrevivendo ao Horror",
+        "tag": "",
+        "descricao": "Você pode tentar manipular o caos do mundo ao seu redor, um ato que fornece grande poder às custas da ordem de sua mente.",
+        "PreR": ""
+    },
+    {
+        "nome": "Pressão Atmosférica",
+        "origem": "Arquivos Secretos",
+        "tag": "Fevereiro-2026",
+        "descricao": "Você sabe transmitir a Energia através de seus punhos.",
+        "PreR": ""
     }
 ]

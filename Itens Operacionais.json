@@ -178,5 +178,47 @@
         "nome":"Traje Espacial",
         "origem":"Sobrevivendo ao Horror",
         "descricao":"Protege no vácuo, água/oxigênio 8h, +10 resistência ambiental e dano químico 20. Ocupa vestimenta, vesti-lo demora duas rodadas."
+    },
+    {
+        "nome":"Bandagem",
+        "origem":"Arquivos Secretos",
+        "descricao":"Tecido eficiente para estancar sangramentos.",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome":"Bússola",
+        "origem":"Arquivos Secretos",
+        "descricao":"Instrumento de navegação e orientação baseado em propriedades magnéticas.",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome":"Caixa de Ferramentas",
+        "origem":"Arquivos Secretos",
+        "descricao":"Caixa metálica com ferramentas mecânicas diversas.",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome":"Dose de Álcool",
+        "origem":"Arquivos Secretos",
+        "descricao":"Substância antisséptica útil para limpar feridas ou causar incêndios",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome":"Incenso",
+        "origem":"Arquivos Secretos",
+        "descricao":"Substância aromática de origem vegetal, queimada para liberar fumaça perfumada em rituais religiosos, meditação, aromaterapia ou purificação.",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome":"Kit de Escalada",
+        "origem":"Arquivos Secretos",
+        "descricao":"Corda dinâmica e equipamentos de segurança essenciais como sapatilhas, cadeirinha, capacete, freio, mosquetões, fitas e saco de magnésio para melhorar a aderência.",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome":"Pedra de Amolar",
+        "origem":"Arquivos Secretos",
+        "descricao":"Ferramenta abrasiva, natural ou sintética, usada para restaurar o fio de lâminas.",
+        "tag":"Fevereiro-2026"
     }
 ]

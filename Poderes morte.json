@@ -1,58 +1,65 @@
 [
     {
-    "id": "encarar_a_morte",
-    "nome": "Encarar a Morte",
-    "origem": "Livro de Regras",
-    "tag": "",
-    "descricao": "Sua conexão com a Morte faz com que você não hesite em situações de perigo.",
-    "PreR": ""
+        "id": "encarar_a_morte",
+        "nome": "Encarar a Morte",
+        "origem": "Livro de Regras",
+        "tag": "",
+        "descricao": "Sua conexão com a Morte faz com que você não hesite em situações de perigo.",
+        "PreR": ""
     },
     {
-    "id": "escapar_da_morte",
-    "nome": "Escapar da Morte",
-    "origem": "Livro de Regras",
-    "tag": "",
-    "descricao": "A Morte tem um interesse especial em sua caminhada.",
-    "PreR": "Morte 1"
+        "id": "escapar_da_morte",
+        "nome": "Escapar da Morte",
+        "origem": "Livro de Regras",
+        "tag": "",
+        "descricao": "A Morte tem um interesse especial em sua caminhada.",
+        "PreR": "Morte 1"
     },
     {
-    "id": "potencial_aprimorado",
-    "nome": "Potencial Aprimorado",
-    "origem": "Livro de Regras",
-    "tag": "",
-    "descricao": "A Morte lhe concede potencial latente de momentos roubados de outro lugar.",
-    "PreR": ""
+        "id": "potencial_aprimorado",
+        "nome": "Potencial Aprimorado",
+        "origem": "Livro de Regras",
+        "tag": "",
+        "descricao": "A Morte lhe concede potencial latente de momentos roubados de outro lugar.",
+        "PreR": ""
     },
     {
-    "id": "potencial_reaproveitado",
-    "nome": "Potencial Reaproveitado",
-    "origem": "Livro de Regras",
-    "tag": "",
-    "descricao": "Você absorve os momentos desperdiçados de outros seres.",
-    "PreR": ""
+        "id": "potencial_reaproveitado",
+        "nome": "Potencial Reaproveitado",
+        "origem": "Livro de Regras",
+        "tag": "",
+        "descricao": "Você absorve os momentos desperdiçados de outros seres.",
+        "PreR": ""
     },
     {
-    "id": "surto_temporal",
-    "nome": "Surto Temporal",
-    "origem": "Livro de Regras",
-    "tag": "",
-    "descricao": "A sua percepção temporal se torna distorcida e espiralizada, fazendo com que a noção de passagem do tempo nunca mais seja a mesma para você.",
-    "PreR": "Morte 2"
+        "id": "surto_temporal",
+        "nome": "Surto Temporal",
+        "origem": "Livro de Regras",
+        "tag": "",
+        "descricao": "A sua percepção temporal se torna distorcida e espiralizada, fazendo com que a noção de passagem do tempo nunca mais seja a mesma para você.",
+        "PreR": "Morte 2"
     },
     {
-    "id": "antecipar_vitalidade",
-    "nome": "Antecipar Vitalidade",
-    "origem": "Sobrevivendo ao Horror",
-    "tag": "",
-    "descricao": "Sua ligação com a Morte permite que você sacrifique sua vitalidade futura para auxiliar seu presente.",
-    "PreR": ""
+        "id": "antecipar_vitalidade",
+        "nome": "Antecipar Vitalidade",
+        "origem": "Sobrevivendo ao Horror",
+        "tag": "",
+        "descricao": "Sua ligação com a Morte permite que você sacrifique sua vitalidade futura para auxiliar seu presente.",
+        "PreR": ""
     },
     {
-    "id": "aura_de_pavor",
-    "nome": "Aura de Pavor",
-    "origem": "Sobrevivendo ao Horror",
-    "tag": "",
-    "descricao": "Ao receber esse poder, você é tomado por uma aura de Morte que nunca mais o abandona.",
-    "PreR": ""
+        "id": "aura_de_pavor",
+        "nome": "Aura de Pavor",
+        "origem": "Sobrevivendo ao Horror",
+        "tag": "",
+        "descricao": "Ao receber esse poder, você é tomado por uma aura de Morte que nunca mais o abandona.",
+        "PreR": ""
+    },
+    {
+        "nome": "Aura de Pavor",
+        "origem": "Arquivos Secretos",
+        "tag": "Fevereiro-2026",
+        "descricao": "Ao fazer um ataque com uma arma de fogo ou de disparo, você pode se conectar com a Morte para fazer o tempo desacelerar momentaneamente.",
+        "PreR": ""
     }
 ]

@@ -230,5 +230,19 @@
         "tag":"Janeiro-2026",
         "descricao":"Uma vez por cena, você pode gastar uma ação de movimento e 3 PE para receber pontos de vida temporários igual a sua Presença x 10.",
         "PreR":"Int 2, Pre 2, conjurar ritual de 1° círculo"
+    },
+    {
+        "nome":"Dominar Habilidade Ritualística",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Seus estudos são amplos e não serão interrompidos por barreiras burocráticas.",
+        "PreR":"Int 3, treinado em Ocultismo, capacidade de conjurar rituais"
+    },
+    {
+        "nome":"Liturgia de Fortalecimento",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Você conhece práticas ritualísticas longas que fortalecem seus rituais.",
+        "PreR":"Int e Pre 2"
     }
 ]

@@ -654,5 +654,37 @@
         "Elemento":"Conhecimento",
         "tag":"",
         "descricao":"Joaquim era empático e apaixonado pela profissão; Nívea sofria com a morte de seus pacientes."
+    },
+    {
+        "nome": "Arara-devorada",
+        "origem": "Arquivos Secretos",
+        "Vd": "80",
+        "Elemento":"Sangue",
+        "descricao": "Esta variação da arara-vermelha foi tomada pelo Sangue e terrivelmente corrompida.",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome": "Arara-infernal",
+        "origem": "Arquivos Secretos",
+        "Vd": "120",
+        "Elemento":"Sangue",
+        "descricao": "Uma das mais belas criaturas do Brasil, transformada em uma atrocidade sanguinolenta.",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome": "Felino-devorado",
+        "origem": "Arquivos Secretos",
+        "Vd": "80",
+        "Elemento":"Sangue",
+        "descricao": "O que foi uma fofa jaguatirica agora não passa de uma monstruosidade felina de Sangue.",
+        "tag":"Fevereiro-2026"
+    },
+    {
+        "nome": "Felino-infernal",
+        "origem": "Arquivos Secretos",
+        "Vd": "120",
+        "Elemento":"Sangue",
+        "descricao": "Esta é a forma mais aterrorizante do felino-devorado.",
+        "tag":"Fevereiro-2026"
     }
 ]
