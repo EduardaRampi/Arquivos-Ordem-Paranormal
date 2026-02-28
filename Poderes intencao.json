@@ -1,0 +1,37 @@
+[
+    {
+        "nome":"Desejo Diabolico",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Prove-se digno",
+        "gatilho":"Obedecer à Ele"
+    },
+    {
+        "nome":"Filho da Dor",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"“Você foi torturado, mas a dor não o derrotou. Pelo contrário, tornou-se sua amiga.",
+        "gatilho":"Ser ferido três vezes, sendo que cada ferimento precisa causar,pelo menos 5 pontos de dano."
+    },
+    {
+        "nome":"Sabor do Silêncio",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"O silêncio que te atormentou agora assombra o pesadelo dos outros.",
+        "gatilho":"Você precisa gastar uma ação padrão para provar o sangue de um ser adjacente que esteja machucado."
+    },
+    {
+        "nome":"Novo Caminho",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Testemunhar a morte de uma pessoa.",
+        "gatilho":"A Intenção dos mortos é a matéria-prima do labirinto da sua própria criação."
+    },
+    {
+        "nome":"Sede de Vingança",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Uma vez, você cuidou de alguém, mas a perdeu. É hora de fazer os responsáveis pagarem.",
+        "gatilho":"Ouvir o grito de morte de alguém que você tentou proteger. Em termos de regras, um aliado deve estar morrendo e você deve escutar o grito dele ou conseguir enxergá-lo.."
+    }
+]

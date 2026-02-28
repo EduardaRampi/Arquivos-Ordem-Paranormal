@@ -2120,6 +2120,58 @@
             "origem": ""
         }
     ],
+    "poder-intencao":[
+        {
+            "nome": "Desejo Diabolico",
+            "elemento": "Intenção",
+            "trilha": "",
+            "descricao": "Ao fazer um teste, em vez de rolar os dados, você pode gastar uma reação para determinar que seja um sucesso automático (como se tivesse rolado 20 natural). Você pode fazer isso apenas uma vez por cena e precisa fazê-lo na mesma cena em que obedeceu uma vontade d’Ele.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "",
+            "gatilho":"Obedecer à Ele"
+        },
+        {
+            "nome": "Filho da Dor",
+            "elemento": "Intenção",
+            "trilha": "",
+            "descricao": "Você pode gastar uma reação para receber resistência a dano 25. Entretanto, enquanto receber a RD, você perde 5 PV no início de seus turnos. Você pode gastar uma reação para desativar o efeito, não sendo mais afetado pelo poder.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "",
+            "gatilho":"Ser ferido três vezes, sendo que cada ferimento precisa causar,pelo menos 5 pontos de dano."
+        },
+        {
+            "nome": "Sabor do Silêncio",
+            "elemento": "Intenção",
+            "trilha": "",
+            "descricao": "Seus ataques causam +1d8 pontos de dano e recebem +2 na margem de ameaça. Além disso, se fizer um acerto crítico, você corta a boca do alvo, o silenciando, impedindo de se comunicar e utilizar qualquer poder ou ritual por 1d4 rodadas. Os efeitos duram até o fim da cena.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "",
+            "gatilho":"Você precisa gastar uma ação padrão para provar o sangue de um ser adjacente que esteja machucado."
+        },
+        {
+            "nome": "Novo Caminho",
+            "elemento": "Intenção",
+            "trilha": "",
+            "descricao": "Você pode gastar uma ação padrão para absorver as intenções de uma pessoa morta em alcance curto. Então, recupera pontos de vida de um ser em alcance curto equivalentes à metade dos PV máximos do cadáver.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "",
+            "gatilho":"Testemunhar a morte de uma pessoa."
+        },
+        {
+            "nome": "Sede de Vingança",
+            "elemento": "Intenção",
+            "trilha": "",
+            "descricao": "Como reação, você pode fazer um ataque contra quem deixou seu aliado morrendo. Você também pode usar essa habilidade para fazer um ataque como reação, antes de ficar inconsciente, contra um inimigo que te deixou morrendo.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": "",
+            "gatilho":"Ouvir o grito de morte de alguém que você tentou proteger. Em termos de regras, um aliado deve estar morrendo e você deve escutar o grito dele ou conseguir enxergá-lo.."
+        }
+    ],
     "poder-energia":[
         {
             "nome": "Afortunado",

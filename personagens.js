@@ -33,65 +33,65 @@ const TODAS_PERICIAS = [
     "Sobrevivência", "Tática", "Tecnologia", "Vontade"
 ];
 const DADOS_ORIGENS = {
-    academico: ["Ciências", "Investigação"],
-    agente_de_saude: ["Medicina", "Intuição"],
-    amnesico: [], // Escolhe duas perícias depois
-    artista: ["Artes", "Enganação"],
-    atleta: ["Atletismo", "Acrobacia"],
-    chef: ["Fortitude", "Profissão"],
-    criminoso: ["Crime", "Furtividade"],
-    cultista_arrependido: ["Ocultismo", "Religião"],
-    desgarrado: ["Fortitude", "Sobrevivência"],
-    engenheiro: ["Profissão", "Tecnologia"],
-    executivo: ["Diplomacia", "Profissão"],
-    investigador: ["Investigação", "Percepção"],
-    lutador: ["Luta", "Reflexos"],
-    magnata: ["Diplomacia", "Pilotagem"],
-    mercenario: ["Iniciativa", "Intimidação"],
-    militar: ["Pontaria", "Tática"],
-    operario: ["Fortitude", "Profissão"],
-    policial: ["Percepção", "Pontaria"],
-    religioso: ["Religião", "Vontade"],
-    servidor_publico: ["Intuição", "Vontade"],
-    teorico_da_conspiracao: ["Investigação", "Ocultismo"],
-    ti: ["Investigação", "Tecnologia"],
-    trabalhador_rural: ["Adestramento", "Sobrevivência"],
-    trambiqueiro: ["Crime", "Enganação"],
-    universitario: ["Atualidades", "Investigação"],
-    vitima: ["Reflexos", "Vontade"],
-    amigo_dos_animais: ["Adestramento", "Percepção"],
-    astronauta: ["Ciências", "Fortitude"],
-    chef_do_outro_lado: ["Ocultismo", "Profissão"],
-    colegial: ["Atualidades", "Tecnologia"],
-    cosplayer: ["Artes", "Vontade"],
-    diplomata: ["Atualidades", "Diplomacia"],
-    explorador: ["Fortitude", "Sobrevivência"],
-    experimento: ["Atletismo", "Fortitude"],
-    fanatico_por_criaturas: ["Investigação", "Ocultismo"],
-    fotografo: ["Artes", "Percepção"],
-    inventor_paranormal: ["Profissão", "Vontade"],
-    jovem_mistico: ["Ocultismo", "Religião"],
-    legista_do_turno_da_noite: ["Ciências", "Medicina"],
-    mateiro: ["Percepção", "Sobrevivência"],
-    mergulhador: ["Atletismo", "Fortitude"],
-    motorista: ["Pilotagem", "Reflexos"],
-    nerd_entusiasta: ["Ciências", "Tecnologia"],
-    profetizado: ["Vontade"], // +1 perícia: Luta ou Fuga
-    psicologo: ["Intuição", "Profissão"],
-    reporter_investigativo: ["Atualidades", "Investigação"],
-    body_builder: ["Atletismo", "Fortitude"],
-    personal_trainer: ["Atletismo", "Ciências"],
-    blaster: ["Ciências", "Profissão"],
-    revoltado: ["Furtividade", "Vontade"],
-    duble: ["Pilotagem", "Reflexos"],
-    gauderio_abutre: ["Luta", "Pilotagem"],
-    ginasta: ["Acrobacia", "Reflexos"],
-    escritor: ["Artes", "Atualidades"],
-    jornalista: ["Atualidades", "Investigação"], 
-    cientista_forense: ["Ciências", "Investigação"],
-    professor: ["Ciências", "Intuição"],
-    ferido_por_ritual: ["Ocultismo"], // +1 perícia: definida pelo elemento do ritual
-    transtornado_arrependido: ["Luta", "Ocultismo"]
+    academico: { pericias: ["Ciências", "Investigação"], poder: "Saber é Poder" }, 
+    agente_de_saude: { pericias: ["Intuição", "Medicina"], poder: "Técnica Medicinal" }, 
+    amnesico: { pericias: [], poder: "Vislumbres do Passado" }, 
+    artista: { pericias: ["Artes", "Enganação"], poder: "Magnum Opus" }, 
+    atleta: { pericias: ["Acrobacia", "Atletismo"], poder: "110%" }, 
+    chef: { pericias: ["Fortitude", "Profissão"], poder: "Ingrediente Secreto", profissao: "Cozinheiro" }, 
+    criminoso: { pericias: ["Crime", "Furtividade"], poder: "O Crime Compensa" }, 
+    cultista_arrependido: { pericias: ["Ocultismo", "Religião"], poder: "Traços do Outro Lado" }, 
+    desgarrado: { pericias: ["Fortitude", "Sobrevivência"], poder: "Calejado" }, 
+    engenheiro: { pericias: ["Profissão", "Tecnologia"], poder: "Ferramenta Favorita", profissao: "Engenheiro" }, 
+    executivo: { pericias: ["Diplomacia", "Profissão"], poder: "Processo Otimizado", profissao: "Executivo" }, 
+    investigador: { pericias: ["Investigação", "Percepção"], poder: "Faro para Pistas" }, 
+    lutador: { pericias: ["Luta", "Reflexos"], poder: "Mão Pesada" }, 
+    magnata: { pericias: ["Diplomacia", "Pilotagem"], poder: "Patrocinador da Ordem" }, 
+    mercenario: { pericias: ["Iniciativa", "Intimidação"], poder: "Posição de Combate" }, 
+    militar: { pericias: ["Pontaria", "Tática"], poder: "Para Bellum" }, 
+    operario: { pericias: ["Fortitude", "Profissão"], poder: "Ferramenta de Trabalho", profissao: "Operário" }, 
+    policial: { pericias: ["Percepção", "Pontaria"], poder: "Patrulha" }, 
+    religioso: { pericias: ["Religião", "Vontade"], poder: "Acalentar" }, 
+    servidor_publico: { pericias: ["Intuição", "Vontade"], poder: "Espírito Cívico" }, 
+    teorico_da_conspiracao: { pericias: ["Investigação", "Ocultismo"], poder: "Eu Já Sabia" }, 
+    ti: { pericias: ["Investigação", "Tecnologia"], poder: "Motor de Busca" }, 
+    trabalhador_rural: { pericias: ["Adestramento", "Sobrevivência"], poder: "Desbravador" }, 
+    trambiqueiro: { pericias: ["Crime", "Enganação"], poder: "Impostor" }, 
+    universitario: { pericias: ["Atualidades", "Investigação"], poder: "Dedicação" }, 
+    vitima: { pericias: ["Reflexos", "Vontade"], poder: "Cicatrizes Psicológicas" }, 
+    amigo_dos_animais: { pericias: ["Adestramento", "Percepção"], poder: "Companheiro Animal" }, 
+    astronauta: { pericias: ["Ciências", "Fortitude"], poder: "Acostumado ao Extremo" }, 
+    chef_do_outro_lado: { pericias: ["Ocultismo", "Profissão"], poder: "Fome do Outro Lado", profissao: "Cozinheiro" }, 
+    colegial: { pericias: ["Atualidades", "Tecnologia"], poder: "Poder da Amizade" }, 
+    cosplayer: { pericias: ["Artes", "Vontade"], poder: "Não é fantasia, é cosplay!" }, 
+    diplomata: { pericias: ["Atualidades", "Diplomacia"], poder: "Conexões" }, 
+    explorador: { pericias: ["Fortitude", "Sobrevivência"], poder: "Manual do Sobrevivente" }, 
+    experimento: { pericias: ["Atletismo", "Fortitude"], poder: "Mutação" }, 
+    fanatico_por_criaturas: { pericias: ["Investigação", "Ocultismo"], poder: "Conhecimento Oculto" }, 
+    fotografo: { pericias: ["Artes", "Percepção"], poder: "Através da Lente" }, 
+    inventor_paranormal: { pericias: ["Profissão", "Vontade"], poder: "Invenção Paranormal", profissao: "Engenheiro" }, 
+    jovem_mistico: { pericias: ["Ocultismo", "Religião"], poder: "A Culpa é das Estrelas" }, 
+    legista_do_turno_da_noite: { pericias: ["Ciências", "Medicina"], poder: "Luto Habitual" }, 
+    mateiro: { pericias: ["Percepção", "Sobrevivência"], poder: "Mapa Celeste" }, 
+    mergulhador: { pericias: ["Atletismo", "Fortitude"], poder: "Fôlego de Nadador" }, 
+    motorista: { pericias: ["Pilotagem", "Reflexos"], poder: "Mãos no Volante" }, 
+    nerd_entusiasta: { pericias: ["Ciências", "Tecnologia"], poder: "O Inteligentão" }, 
+    profetizado: { pericias: ["Vontade"], poder: "Luta ou Fuga" }, 
+    psicologo: { pericias: ["Intuição", "Profissão"], poder: "Terapia", profissao: "Psicólogo" }, 
+    reporter_investigativo: { pericias: ["Atualidades", "Investigação"], poder: "Encontrar a Verdade" },
+    body_builder: { pericias: ["Atletismo", "Fortitude"], poder: "Saindo da Jaula" }, 
+    personal_trainer: { pericias: ["Atletismo", "Ciências"], poder: "Todo Mundo Pagando 10" }, 
+    blaster: { pericias: ["Ciências", "Profissão"], poder: "Explosão Solidária", profissao: "Químico" }, 
+    revoltado: { pericias: ["Furtividade", "Vontade"], poder: "Antes Só..." }, 
+    duble: { pericias: ["Pilotagem", "Reflexos"], poder: "Destemido" }, 
+    gauderio_abutre: { pericias: ["Luta", "Pilotagem"], poder: "Fraternidade Gaudéria" }, 
+    ginasta: { pericias: ["Acrobacia", "Reflexos"], poder: "Mobilidade Acrobática" }, 
+    escritor: { pericias: ["Artes", "Atualidades"], poder: "Bagagem de Leitura" }, 
+    jornalista: { pericias: ["Atualidades", "Investigação"], poder: "Fontes Confiáveis" }, 
+    cientista_forense: { pericias: ["Ciências", "Investigação"], poder: "Investigação Científica" }, 
+    professor: { pericias: ["Ciências", "Intuição"], poder: "Aula de Campo" }, 
+    ferido_por_ritual: { pericias: ["Ocultismo"], poder: "Mácula Ritualística" }, 
+    transtornado_arrependido: { pericias: ["Luta", "Ocultismo"], poder: "Sofrimento de Sangue" }
 };
 
 /* ============================================================
@@ -178,7 +178,9 @@ if (btnFinalizar) {
         // Outras informações definidas automaticamente
         const nexInicial = (escolhaClasseId === 'sobrevivente') ? 1 : 5; 
         const statusComNex = calcularStatus(escolhaClasseId, atributos, nexInicial);
-        const periciasIniciais = {};
+        let periciasIniciais = {};
+        let habilidadesIniciais = [];
+        let profissaoDefinida = "";
 
         // Coleta de Dados da aba Toques Finais
         const nomePersonagem = document.querySelector('input[placeholder="Nome do personagem"]').value;
@@ -192,12 +194,29 @@ if (btnFinalizar) {
             return;
         }
 
+        const dadosOrigem = DADOS_ORIGENS[escolhaOrigemId];
         // Se a origem escolhida estiver no nosso dicionário...
-        if (DADOS_ORIGENS[escolhaOrigemId]) {
-            DADOS_ORIGENS[escolhaOrigemId].forEach(pericia => {
-                // Marcamos que essa perícia tem bônus de +5
+        if (dadosOrigem) {
+            // 1. Salva as Perícias
+            dadosOrigem.pericias.forEach(pericia => {
                 periciasIniciais[pericia] = 5;
             });
+
+            // 2. Adiciona a Habilidade de Origem automaticamente
+            if (dadosOrigem.poder) {
+                const descReal = await buscarDescricaoHabilidade(dadosOrigem.poder);
+                habilidadesIniciais.push({
+                    nome: dadosOrigem.poder,
+                    origem: formatarTextoID(escolhaOrigemId), // Define a origem correta (ex: "Academico")
+                    descricao: descReal // Puxa a descrição do JSON
+                });
+                console.log("Habilidade de origem adicionada:", dadosOrigem.poder);
+            }
+
+            // 3. Define a profissão automática
+            if (dadosOrigem.profissao) {
+                profissaoDefinida = dadosOrigem.profissao;
+            }
         }
 
         try {
@@ -208,6 +227,7 @@ if (btnFinalizar) {
                 jogador: nomeJogador,
                 origem: escolhaOrigemId,
                 classe: escolhaClasseId,
+                profissao: profissaoDefinida,
                 defesa: {
                     equip: 0,
                     outros: 0,
@@ -218,6 +238,7 @@ if (btnFinalizar) {
                 atributos: atributos,
                 nex: nexInicial,
                 pericias: periciasIniciais,
+                habilidades: habilidadesIniciais,
                 status: statusComNex,
                 detalhes: {
                     aparencia,
@@ -247,6 +268,25 @@ if (btnFinalizar) {
         }
     });
 }
+async function buscarDescricaoHabilidade(nomePoder) {
+    try {
+        const resposta = await fetch('habilidades.json');
+        const dados = await resposta.json();
+        
+        // Procura em todas as categorias do JSON (Origens, Classe, Geral, etc)
+        for (let categoria in dados) {
+            const lista = dados[categoria];
+            if (Array.isArray(lista)) {
+                const encontrou = lista.find(h => h.nome.toLowerCase() === nomePoder.toLowerCase());
+                if (encontrou) return encontrou.descricao;
+            }
+        }
+    } catch (e) {
+        console.error("Erro ao ler habilidades.json", e);
+    }
+    return "Descrição não encontrada no arquivo de habilidades.";
+}
+const formatarTextoID = (t) => t ? t.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) : "Origem";
 /* ============================================================
    3. PROGRESSÃO DE CLASSE E TABELA DE PATENTES
 ============================================================ */
@@ -476,7 +516,7 @@ function abrirFichaCompleta(id, dados) {
     // A. Cabeçalho e Informações Básicas
     document.getElementById('view-nome').innerText = dados.nome || "Agente Sem Nome";
     document.getElementById('edit-jogador').value = dados.jogador || ""
-    document.getElementById('edit-profissão').value = dados.profissão || ""
+    document.getElementById('edit-profissão').value = dados.profissao || ""
     document.getElementById('edit-pe-turno').value = dados.peTurno || 1;
     document.getElementById('edit-deslocamento-metros').value = dados.deslocamento?.metros || 9;
     document.getElementById('edit-deslocamento-grid').value = dados.deslocamento?.grid || 6;
@@ -664,6 +704,9 @@ function abrirFichaCompleta(id, dados) {
     if (!window.fichaAtualDados.inventario) window.fichaAtualDados.inventario = [];
     renderizarInventarioFicha();
     renderizarHabilidadesFicha();
+    if (typeof window.renderizarRituaisFicha === 'function') {
+        window.renderizarRituaisFicha();
+    }
 
     // K. Foto
     if (dados.fotoUrl) {
@@ -765,6 +808,12 @@ document.addEventListener('change', (e) => {
                     campoPeTurno.value = (novoValor === 99) ? 20 : Math.floor(novoValor / 5);
                 }
             }
+        }
+    }
+
+    if (e.target.id === 'edit-pre' || e.target.id === 'edit-nex' || e.target.id === 'edit-pe-turno') {
+        if (typeof window.atualizarDTRitual === 'function') {
+            window.atualizarDTRitual();
         }
     }
 });
@@ -1045,8 +1094,8 @@ function calcularCargaBase() {
 }
 // Função visual para a barrinha de carga
 function atualizarBarraCarga() {
-    const atual = parseInt(document.getElementById('carga-atual').value) || 0;
-    const max = parseInt(document.getElementById('carga-max').value) || 1;
+    const atual = parseFloat(document.getElementById('carga-atual').value) || 0;
+    const max = parseFloat(document.getElementById('carga-max').value) || 1;
     const barra = document.getElementById('barra-carga-interna');
     const aviso = document.getElementById('aviso-carga');
 
@@ -1124,7 +1173,8 @@ function adicionarAoInventario(item, categoriaOrigem) {
     window.fichaAtualDados.inventario.push(itemInstanciado);
 
     const campoCarga = document.getElementById('carga-atual');
-    let cargaNova = (parseInt(campoCarga.value) || 0) + (parseInt(item.espaco) || 0);
+    let pesoItem = parseFloat(String(item.espaco).replace(',', '.')) || 0;
+    let cargaNova = (parseFloat(campoCarga.value) || 0) + pesoItem;
     if(campoCarga) campoCarga.value = cargaNova;
 
     atualizarBarraCarga();
@@ -1218,7 +1268,8 @@ function renderizarInventarioFicha() {
         if (catParaExibir > 0 && catParaExibir <= 4) {
             contagem[catParaExibir]++;
         }
-        pesoTotal += (parseInt(item.espaco) || 0);
+        const peso = parseFloat(String(item.espaco).replace(',', '.')) || 0;
+        pesoTotal += peso;
 
         let exibicaoDano = item.dano || "";
         if (exibicaoDano && item.tipo?.includes("Corpo a Corpo") && temMaoPesada) {
@@ -1300,9 +1351,11 @@ function renderizarInventarioFicha() {
         if (elemento) elemento.innerText = contagem[i];
     }
     // Atualizar o peso atual no input
-    document.getElementById('carga-atual').value = pesoTotal;
-    atualizarBarraCarga();
-    
+    const campoAtual = document.getElementById('carga-atual');
+    if (campoAtual) {
+        campoAtual.value = pesoTotal; // Aqui ele vai colocar 0.5, 1.0, etc.
+        atualizarBarraCarga();
+    } 
 }
 window.removerItem = function(index) {
     if (!window.fichaAtualDados.inventario) return;
@@ -1455,6 +1508,7 @@ window.handleDropGeneric = function(targetIndex, tipo) {
 
     if (tipo === 'inventario') renderizarInventarioFicha();
     if (tipo === 'habilidades') renderizarHabilidadesFicha();
+    if (tipo === 'rituais') renderizarRituaisFicha();
     
     salvarFicha();
 };
@@ -1929,6 +1983,7 @@ window.renderizarHabilidadesFicha = function() {
                 ${hab.origem ? `<p><strong>Origem:</strong> ${hab.origem}</p>` : ''}
                 ${hab.trilhas ? `<p><strong>Trilha:</strong> ${hab.trilha}</p>` : ''}
                 ${hab.requisito ? `<p><small><strong>Requisito:</strong> ${hab.requisito}</small></p>` : ''}
+                ${hab.gatilho ? `<p><small><strong>Gatilho:</strong> ${hab.gatilho}</small></p>` : ''}
                 <p>${hab.descricao}</p>
                 ${hab.afinidade ? `<p><small><strong>Afinidade:</strong> ${hab.afinidade}</small></p>` : ''}
                 <div class="acoes-hab">
@@ -1985,7 +2040,8 @@ window.salvarMudancasHab = function() {
         requisito: document.getElementById('edit-hab-requisitos').value,
         origem: document.getElementById('edit-hab-origem').value,
         afinidade: document.getElementById('edit-hab-afinidade').value,
-        descricao: document.getElementById('edit-hab-desc').value
+        descricao: document.getElementById('edit-hab-desc').value,
+        gatilho: document.getElementById('edit-hab-gatilho').value
     };
 
     // Atualiza o array oficial
@@ -1999,7 +2055,241 @@ window.salvarMudancasHab = function() {
     if (typeof salvarFicha === 'function') salvarFicha();
 };
 /* ============================================================
-   30. Salva
+   30. Rituais
+============================================================ */
+let bancoDeDadosRituais = null;
+window.carregarBancoRituais = async function() {
+    if (bancoDeDadosRituais) return bancoDeDadosRituais; 
+    try {
+        const resposta = await fetch('Ritual.json');
+        bancoDeDadosRituais = await resposta.json();
+        return bancoDeDadosRituais;
+    } catch (erro) {
+        console.error("Erro ao carregar o JSON de rituais:", erro);
+    }
+};
+window.renderizarRituaisFicha = function() {
+    const container = document.getElementById('lista-ritual-ficha');
+    if (!container) return;
+    container.innerHTML = "";
+
+    const rituais = window.fichaAtualDados?.rituais || [];
+
+    rituais.forEach((ritual, index) => {
+        const card = document.createElement('div');
+        const caminhoFoto = window.gerarCaminhoImagem(ritual.nome);
+        card.className = 'card-item';
+        card.setAttribute('draggable', 'true'); 
+
+        // Mesma lógica de Drag and Drop do Inventário
+        card.ondragstart = (e) => {
+            draggingIndex = index;
+            draggingType = 'rituais';
+            card.classList.add('arrastando');
+        };
+        card.ondragover = (e) => {
+            e.preventDefault();
+            card.classList.add('drag-over');
+        };
+        card.ondragleave = () => card.classList.remove('drag-over');
+        card.ondrop = (e) => {
+            e.preventDefault();
+            handleDropGeneric(index, 'rituais');
+        };
+        card.ondragend = () => card.classList.remove('arrastando');
+        
+        card.innerHTML = `
+            <div class="item-principal" onclick="this.parentElement.classList.toggle('aberto')">
+                <span><strong>${ritual.nome}</strong></span>
+                <span class="setinha">▼</span>
+            </div>
+            <div class="detalhes-item">
+                <img src="${caminhoFoto}" alt="${ritual.nome}" class="img-ritual-miniatura" onerror="this.src='imagens/padrao.png'">
+                <p><small><strong>Círculo:</strong> ${ritual.circulo}º | <strong>Elemento:</strong> ${ritual.elemento}</p>
+                <p><small><strong>Alcance:</strong> ${ritual.alcance} | <strong>Execução:</strong> ${ritual.execucao}</small></p>
+                <p><small><strong>Alvo:</strong> ${ritual.alvo} | <strong>Duração:</strong> ${ritual.duracao}</small></p>
+                ${ritual.resistencia ? `<p><strong>Resistencia:</strong> ${ritual.resistencia}</p>` : ''}
+                <p>${ritual.descricao || "Sem descrição."}</p>
+                ${ritual.discente ? `<p><strong>Discente:</strong> ${ritual.discente}</p>` : ''}
+                ${ritual.verdadeiro ? `<p><strong>Verdadeiro:</strong> ${ritual.verdadeiro}</p>` : ''}
+                <div class="acoes-hab">
+                    <button class="btn-remover" onclick="removerRitual(${index})">Remover</button>
+                    <button class="btn-editar" onclick="abrirEdicaoRitual(${index})">✏️ Editar</button>
+                </div>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+
+    if (typeof window.atualizarDTRitual === 'function') window.atualizarDTRitual();
+};
+window.renderizarRituaisModal = async function() {
+    const dados = await window.carregarBancoRituais();
+    const container = document.getElementById('lista-rituais-catalogo');
+    const filtroCat = document.getElementById('filtro-categoria-ritual');
+    const buscaInput = document.getElementById('busca-ritual');
+
+    if (!container || !dados || !filtroCat || !buscaInput) return;
+
+    const categoriaSelecionada = filtroCat.value;
+    const busca = buscaInput.value.toLowerCase();
+    container.innerHTML = "";
+
+    for (const circulo in dados) {
+        if (categoriaSelecionada === "todos" || categoriaSelecionada === circulo) {
+            dados[circulo].forEach(ritual => {
+                if (ritual.nome.toLowerCase().includes(busca)) {
+                    const card = document.createElement('div');
+                    card.className = 'card-item-catalogo';
+                    
+                    card.innerHTML = `
+                        <div class="item-header-modal" onclick="window.toggleCardModal(this)">
+                            <strong>${ritual.nome}</strong>
+                            <span class="setinha">▼</span>
+                        </div>
+                        <div class="detalhes-item-modal">
+                            <p><strong>Círculo:</strong> ${ritual.circulo}º | <strong>Elemento:</strong> ${ritual.elemento}</p>
+                            <p>${ritual.descricao}</p>
+                            <button class="btn-adicionar-hab">Aprender Ritual</button>
+                        </div>
+                    `;
+
+                    card.querySelector('.btn-adicionar-hab').onclick = () => {
+                        window.adicionarRitualAFicha(ritual);
+                    };
+
+                    container.appendChild(card);
+                }
+            });
+        }
+    }
+};
+window.abrirModalRituais = function() {
+    const modal = document.getElementById('modal-rituais');
+    if (modal) {
+        modal.classList.remove('modal-oculto');
+        window.renderizarRituaisModal();
+    }
+};
+window.fecharModalRituais = function() {
+    document.getElementById('modal-rituais')?.classList.add('modal-oculto');
+};
+window.filtrarRitualModal = function() {
+    if (typeof window.renderizarRituaisModal === 'function') {
+        window.renderizarRituaisModal();
+    }
+};
+window.adicionarRitualAFicha = function(ritual) {
+    if (!window.fichaAtualDados) return;
+    if (!window.fichaAtualDados.rituais) window.fichaAtualDados.rituais = [];
+
+    window.fichaAtualDados.rituais.push({ ...ritual });
+    
+    window.renderizarRituaisFicha();
+    window.fecharModalRituais();
+    if (typeof salvarFicha === 'function') salvarFicha();
+};
+window.removerRitual = function(index) {
+    window.fichaAtualDados.rituais.splice(index, 1);
+    window.renderizarRituaisFicha();
+    if (typeof salvarFicha === 'function') salvarFicha();
+};
+window.atualizarDTRitual = function() {
+    if (!window.fichaAtualDados) return;
+
+    // Pega o valor do input de Presença diretamente da tela para ser em tempo real
+    const presenca = parseInt(document.getElementById('edit-pre')?.value) || 0;
+    const limitePE = parseInt(document.getElementById('edit-pe-turno')?.value) || 0;
+
+    const dtFinal = 10 + limitePE + presenca;
+
+    const campoDT = document.getElementById('DT');
+    if (campoDT) {
+        campoDT.value = dtFinal;
+        
+        // Salva na memória para não perder ao fechar
+        if(!window.fichaAtualDados.status) window.fichaAtualDados.status = {};
+        window.fichaAtualDados.status.dtRitual = dtFinal; 
+    }
+}
+window.gerarCaminhoImagem = function(nomeRitual) {
+    // Transforma "Chamas do Caos" em "chamas-do-caos"
+    const nomeArquivo = nomeRitual
+        .toLowerCase()
+        .normalize("NFD") // Remove acentos
+        .replace(/[\u0300-\u036f]/g, "") 
+        .replace(/\s+/g, '-'); // Troca espaço por -
+
+    return `imagens/${nomeArquivo}.png`; 
+};
+/* ============================================================
+   31. Editar Rituais
+============================================================ */
+let indexRitualEditando = null;
+window.abrirEdicaoRitual = function(index) {
+    const ritual = window.fichaAtualDados.rituais[index];
+    if (!ritual) return;
+
+    indexRitualEditando = index;
+
+    // Preenche os campos do modal com os dados atuais do banco
+    document.getElementById('edit-ritual-nome').value = ritual.nome || "";
+    document.getElementById('edit-ritual-elemento').value = ritual.elemento || "";
+    document.getElementById('edit-ritual-circulo').value = ritual.circulo || "";
+    document.getElementById('edit-ritual-execucao').value = ritual.execucao || "";
+    document.getElementById('edit-ritual-alcance').value = ritual.alcance || "";
+    document.getElementById('edit-ritual-alvo').value = ritual.alvo || "";
+    document.getElementById('edit-ritual-duração').value = ritual.duracao || ""; // Lembre do çã no HTML
+    document.getElementById('edit-ritual-resistencia').value = ritual.resistencia || "";
+    
+    // ATENÇÃO: Lembre-se de mudar o ID no HTML para 'edit-ritual-desc' como combinamos!
+    document.getElementById('edit-ritual-desc').value = ritual.descricao || ""; 
+    
+    document.getElementById('edit-ritual-discente').value = ritual.discente || "";
+    document.getElementById('edit-ritual-verdadeiro').value = ritual.verdadeiro || "";
+
+    // Abre o modal
+    const modal = document.getElementById('modal-editar-rituais');
+    if (modal) modal.classList.remove('modal-oculto');
+};
+window.fecharModalEditarRituais = function() {
+    const modal = document.getElementById('modal-editar-rituais');
+    if (modal) modal.classList.add('modal-oculto');
+    indexRitualEditando = null;
+};
+window.salvarMudancasRituais = function() {
+    if (indexRitualEditando === null) return;
+
+    // Captura os novos valores que o usuário digitou no modal
+    const novosDados = {
+        ...window.fichaAtualDados.rituais[indexRitualEditando], // Mantém IDs únicos da versão original
+        nome: document.getElementById('edit-ritual-nome').value,
+        elemento: document.getElementById('edit-ritual-elemento').value,
+        circulo: parseInt(document.getElementById('edit-ritual-circulo').value) || 1, // Salva como número
+        execucao: document.getElementById('edit-ritual-execucao').value,
+        alcance: document.getElementById('edit-ritual-alcance').value,
+        alvo: document.getElementById('edit-ritual-alvo').value,
+        duracao: document.getElementById('edit-ritual-duração').value,
+        resistencia: document.getElementById('edit-ritual-resistencia').value,
+        descricao: document.getElementById('edit-ritual-desc').value, // ID novo que alteramos
+        discente: document.getElementById('edit-ritual-discente').value,
+        verdadeiro: document.getElementById('edit-ritual-verdadeiro').value
+    };
+
+    // Atualiza o array oficial de rituais
+    window.fichaAtualDados.rituais[indexRitualEditando] = novosDados;
+
+    // Atualiza a visualização na ficha e fecha a janelinha
+    if (typeof window.renderizarRituaisFicha === 'function') {
+        window.renderizarRituaisFicha();
+    }
+    window.fecharModalEditarRituais();
+
+    // Salva no banco Firebase
+    if (typeof salvarFicha === 'function') salvarFicha();
+};
+/* ============================================================
+   32. Salva
 ============================================================ */
 async function salvarFicha() {
     if (!idFichaAberta || !window.fichaAtualDados) {
@@ -2072,7 +2362,8 @@ async function salvarFicha() {
                 cargaMax: getNum('carga-max')
             },
             inventario: window.fichaAtualDados.inventario || [],
-            habilidades: window.fichaAtualDados.habilidades || []
+            habilidades: window.fichaAtualDados.habilidades || [],
+            rituais: window.fichaAtualDados.rituais || []
         };
 
         // Coleta das barras (PV, PE, SAN, PD)

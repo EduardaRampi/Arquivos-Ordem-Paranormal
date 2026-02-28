@@ -6,6 +6,7 @@ um site feito para organizar as informações de ordem paranormal
 Um guia interativo e responsivo para organizar as informações do livro de regras, suplementos e materiais oficiais do RPG **Ordem Paranormal**. Ele ainda está em produção, então no futuro teremos atualizações
 
 ## 🚀 Funcionalidades
+* **Criação de Personagem:** Você pode criar seu proprio persongem
 * **Consulta Criação de Personagem:** As principais informações necessárias para você criar seu personagem
 * **Consulta dos Rituais:** Todos os rituais de ordem paranormal, agora estão nos arquivos
 * **Consulta de Regras Novas:** Todas as regras extras presentes na Dragão Brasil e Arquivos Secretos estão listadas

@@ -1,0 +1,26 @@
+[
+    {
+        "nome":"Ágil",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Facas, punhais, cajados, nunchakus, floretes e katanas permitem que você aplique sua Agilidade em vez de sua Força em testes de ataque e rolagens de dano realizadas com elas."
+    },
+    {
+        "nome":"Automática",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Fuzis de assalto, submetralhadoras e metralhadoras podem disparar tiros únicos, usando a regra normal, ou rajadas. Quando dispara uma rajada, você sofre –1d20 no teste de ataque, mas causa 1 dado de dano adicional do mesmo tipo."
+    },
+    {
+        "nome":"Coronhada",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "descricao":"Você pode usar uma arma de fogo como uma arma corpo a corpo. O dano é 1d4 de impacto para armas de fogo leves e de uma mão (como pistolas) e 1d6 para armas de fogo de duas mãos (como fuzis)."
+    },
+    {
+        "nome":"Acoplável",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "descricao":"Uma arma acoplável é a fusão de duas armas de uma mão que, quando unidas através do gasto de uma ação de movimento, se tornam uma arma de duas mãos. Apenas armas corpo a corpo podem ser acopláveis. Toda arma acoplável é considerada uma arma tática, mesmo que suas formas separadas não sejam. Quando as formas separadas são acopláveis, a arma sobre as seguintes modificações: * Muda para duas mãos. * Aumenta a categoria em +1. * O dano da forma separada aumenta em +1 dado do mesmo tipo. * A margem de crítico ou o multiplicador de crítico aumenta em +1 (escolha no momento da criação da arma). * Os espaços dobram. * Pode ser usada com Combater com Duas Armas (e habilidades similares) para fazer ataques adicionais, como se fosse uma arma de uma mão e uma arma leve. Por exemplo, um personagem pode terduas espadas (arma tática corpo a corpo de uma mão; categoria I; dano 1d8/1d10; crítico 19; tipo corte; 1 espaço) com a habilidade acoplável. Quando ele gastar uma ação de movimento para acoplar as duas espadas, obtém uma espada de lâmina dupla (arma tática corpo a corpo de duas mãos; categoria II; dano 2d10; crítico 19/ x3; tipo corte; 2 espaços)."
+    }
+]

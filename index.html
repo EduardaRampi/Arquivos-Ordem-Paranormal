@@ -350,6 +350,7 @@
         <div class="centralizar">
             <button class="btn-navegar" data-destino="Modificações para Armas">Modificações para Armas</button>
             <button class="btn-navegar" data-destino="Maldições para Armas">Maldições para Armas</button>
+            <button class="btn-navegar" data-destino="Habilidades Armas">Habilidades das Armas</button>
             <button class="btn-navegar" data-destino="Munições">Munições</button>
         </div>
         <div class="lista-armas lista"></div>        
@@ -457,7 +458,8 @@
             <button class="btn-navegar" data-destino="Poderes Sangue">Poderes de Sangue</button>
             <button class="btn-navegar" data-destino="Poderes Morte">Poderes de Morte</button>
             <button class="btn-navegar" data-destino="Poderes Conhecimento">Poderes de Conhecimento</button>
-            <button class="btn-navegar" data-destino="Poderes Energia">Poderes de Energia</button>            
+            <button class="btn-navegar" data-destino="Poderes Energia">Poderes de Energia</button>
+            <button class="btn-navegar" data-destino="Poderes Intenção">Poderes de Intenção</button>                   
         </div>
         <div class="lista-poderes-paranormais lista"></div>
         <button class="btn-voltar">Voltar</button>
@@ -625,6 +627,21 @@
         <button class="btn-voltar">Voltar</button>
         </div>
 
+        <div id="Poderes Intenção" class="tela oculta">
+        <h1>Poderes de Intenção</h1>
+        <div class="search-box">
+            <input type="text" class="input-busca" data-container="lista-poderes-intencao" placeholder="Pesquisar por palavra chave..."> 
+            <div class="container-botao-filtro">
+                <button class="btn-filtro-geral btn-abrir-filtros">
+                    <i class="fas fa-filter"></i> Filtros
+                </button>
+                <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
+            </div>     
+        </div>
+        <div class="lista-poderes-intencao lista"></div>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+
         <div id="Modificações para Armas" class="tela oculta">
         <h1>Modificações de Armas</h1>
         <div class="search-box">
@@ -727,6 +744,21 @@
         <button class="btn-voltar">Voltar</button>
         </div>
          
+        <div id="Habilidades Armas" class="tela oculta">
+        <h1>Habilidades Armas</h1>
+        <div class="search-box">
+            <input type="text" class="input-busca" data-container="lista-habilidades-armas" placeholder="Pesquisar por palavra chave..."> 
+            <div class="container-botao-filtro">
+                <button class="btn-filtro-geral btn-abrir-filtros">
+                    <i class="fas fa-filter"></i> Filtros
+                </button>
+                <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
+            </div>     
+        </div>
+        <div class="lista-habilidades-armas lista"></div>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+
         <div id="Criaturas Realidade" class="tela oculta">
         <h1>Criaturas da Realidade</h1>
         <div class="search-box">
@@ -1115,6 +1147,16 @@
                 <!-- COLUNA 4 - Rituais -->
                 <div class="ficha-card">
                     <h3>Rituais</h3>
+                    <div class="campo-dt">
+                        <label for="DT">DT:</label>
+                        <input id="DT" class="input-primario" placeholder="0">
+                    </div>
+                    <div class="centralizar">
+                        <button type="button" onclick="abrirModalRituais()" class="btn-adicionar-item">+ Adicionar Ritual</button>
+                    </div>
+                    <div class="nao_vaza">
+                        <div id="lista-ritual-ficha" class="lista-inventario"></div>
+                    </div>
                 </div>
                 <!-- COLUNA 5 - Inventário -->
                 <div class="ficha-card">
@@ -1156,9 +1198,9 @@
                         <div class="carga-topo">
                             <label><strong>CARGA (Espaços)</strong></label>
                             <div class="carga-inputs">
-                                <input class="input-inline" type="number" id="carga-atual" value="0" readonly> 
+                                <input class="input-inline" type="number" id="carga-atual" value="0" step="0.1" readonly> 
                                 <span>/</span>
-                                <input class="input-inline" type="number" id="carga-max" value="5" oninput="atualizarBarraCarga()">
+                                <input class="input-inline" type="number" id="carga-max" value="5" step="1" oninput="atualizarBarraCarga()">
                             </div>
                         </div>
                         <div class="barra-progresso-carga">
@@ -1405,7 +1447,7 @@
             <div class="modal-filtros">
                 <input type="text" id="busca-hab" placeholder="Procurar habilidade..." oninput="filtrarHabilidadesModal()">
                 <select id="filtro-categoria-hab" onchange="filtrarHabilidadesModal()">
-                    <option value="todos">Todos os Itens</option>
+                    <option value="todos">Todos as Habilidades</option>
                     <option value="origem">Origem</option>
                     <option value="poder-combatente">Poder Combatente</option>
                     <option value="poder-ocultista">Poder Ocultista</option>
@@ -1416,6 +1458,7 @@
                     <option value="poder-sangue">Poder Sangue</option>
                     <option value="poder-conhecimento">Poder Conhecimento</option>
                     <option value="poder-energia">Poder Energia</option>
+                    <option value="poder-intencao">Poder Intenção</option>
                     <option value="trilha-combatente">Trilha Combatente</option>
                     <option value="trilha-ocultista">Trilha Ocultista</option>
                     <option value="trilha-especialista">Trilha Especialista</option>
@@ -1462,6 +1505,11 @@
                     </div>
 
                     <div class="campo campo-longo">
+                        <label>Gatilho</label>
+                        <textarea id="edit-hab-gatilho" rows="4"></textarea>
+                    </div>
+
+                    <div class="campo campo-longo">
                         <label>Afinidade</label>
                         <textarea id="edit-hab-afinidade" rows="4"></textarea>
                     </div>
@@ -1482,16 +1530,92 @@
     <div id="modal-rituais" class="modal modal-oculto">
         <div class="modal-conteudo">
             <div class="modal-cabecalho">
-                <h2>Arsenal da Ordem</h2>
+                <h2>Rituais</h2>
                 <button onclick="fecharModalRituais()">X</button>
             </div>
             <div class="modal-filtros">
-                <input type="text" id="busca-item" placeholder="Procurar item..." oninput="filtrarItensModal()">
-                <select id="filtro-categoria" onchange="filtrarItensModal()">
-                    <option value="todos">Todos os Itens</option>
+                <input type="text" id="busca-ritual" placeholder="Procurar ritual..." oninput="filtrarRitualModal()">
+                <select id="filtro-categoria-ritual" onchange="filtrarRitualModal()">
+                    <option value="todos">Todos os Rituais</option>
+                    <option value="primeiro">1º Circulo</option>
+                    <option value="segundo">2º Circulo</option>
+                    <option value="terceiro">3º Circulo</option>
+                    <option value="quarto">4º Circulo</option>
                 </select>
             </div>
             <div id="lista-rituais-catalogo" class="grid-itens">
+            </div>
+        </div>
+    </div>
+    <div id="modal-editar-rituais" class="modal modal-oculto">
+        <div class="modal-conteudo modal-editar-conteudo">
+            <div class="modal-cabecalho">
+                <h2>Editar Item</h2>
+                <button onclick="fecharModalEditarRituais()">X</button>
+            </div>
+            <div class="modal-corpo-editar">
+                <div class="grid-editar">
+
+                    <div class="campo">
+                        <label>Nome</label>
+                        <input type="text" id="edit-ritual-nome">
+                    </div>
+
+                    <div class="campo">
+                        <label>Elemento</label>
+                        <input type="text" id="edit-ritual-elemento" placeholder="Ex: Sangue">
+                    </div>
+
+                    <div class="campo">
+                        <label>Circulo</label>
+                        <input type="number" id="edit-ritual-circulo" placeholder="Ex: 1">
+                    </div>
+
+                    <div class="campo">
+                        <label>Execução</label>
+                        <input type="text" id="edit-ritual-execucao" placeholder="Ex: Completa">
+                    </div>
+
+                    <div class="campo">
+                        <label>Alcance</label>
+                        <input type="text" id="edit-ritual-alcance" placeholder="Ex: Pessoal">
+                    </div>
+
+                    <div class="campo">
+                        <label>Alvo</label>
+                        <input type="text" id="edit-ritual-alvo" placeholder="Ex: Você">
+                    </div>
+
+                    <div class="campo">
+                        <label>Duração</label>
+                        <input type="text" id="edit-ritual-duração" placeholder="Ex: Instantânea">
+                    </div>
+
+                    <div class="campo">
+                        <label>Resistencia</label>
+                        <input type="text" id="edit-ritual-resistencia" placeholder="Ex: Vontade parcial">
+                    </div>
+
+                    <div class="campo campo-longo">
+                        <label>Descrição</label>
+                        <textarea id="edit-ritual-desc" rows="4"></textarea>
+                    </div>
+
+                    <div class="campo campo-longo">
+                        <label>Discente</label>
+                        <textarea id="edit-ritual-discente" rows="4"></textarea>
+                    </div>
+
+                    <div class="campo campo-longo">
+                        <label>Verdadeiro</label>
+                        <textarea id="edit-ritual-verdadeiro" rows="4"></textarea>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="footer-modal">
+                <button class="btn-salvar" onclick="salvarMudancasRituais()">Salvar</button>
             </div>
         </div>
     </div>

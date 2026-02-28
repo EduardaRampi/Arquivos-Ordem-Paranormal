@@ -1459,6 +1459,22 @@ input:checked ~ .status-label { color: var(--cor-primaria-clara); }
 .password-container {
     position: relative;
 }
+#DT {
+    border-radius: 50px;
+    width: 15px;
+}
+.header-foto-nome {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.img-ritual-miniatura {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    object-fit: cover;
+    border: 1px solid #444;
+}
 @keyframes tremer {
     0% { transform: translate(1px, 1px) rotate(0deg); }
     50% { transform: translate(-1px, -2px) rotate(-1deg); }

@@ -19,8 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
   'poderes-morte': 'Poderes morte.json',
   'poderes-conhecimento': 'Poderes conhecimento.json',
   'poderes-energia': 'Poderes energia.json',
+  'poderes-intencao': 'Poderes intencao.json',
   armas: 'Armas.json',
   'modificacoes-armas': 'Modificações de Armas.json',
+  'habilidades-armas': 'Habilidades Armas.json',
   municoes: 'Munições.json',
   'modificacoes-municoes': 'Modificações de Munições.json',
   protecoes: 'Proteções.json',
@@ -158,6 +160,7 @@ const sections = {
         "Poderes Morte": "Poderes Paranormais",
         "Poderes Conhecimento": "Poderes Paranormais",
         "Poderes Energia": "Poderes Paranormais",
+        "Poderes Intenção": "Poderes Paranormais",
         
         "Armas": "Equipamentos",
         "Proteções": "Equipamentos",
@@ -168,6 +171,7 @@ const sections = {
         
         "Modificações para Armas": "Armas",
         "Maldições para Armas": "Armas",
+        "Habilidades Armas": "Armas",
         "Munições": "Armas",
         
         "Modificações para Munições": "Munições",
@@ -231,6 +235,9 @@ const sections = {
         const htmlTipo = item.Tipo
           ? `<p><strong>Tipo:</strong> ${item.Tipo}</p>` 
           : ''; 
+        const htmlGatilho = item.gatilho
+          ? `<p><strong>Gatilho:</strong> ${item.gatilho}</p>` 
+          : '';
 
         let botaoDetalhes = '';
         if (estaNoGerador && ehListaOrigem) {
@@ -254,6 +261,7 @@ const sections = {
             ${htmlTipo}            
             ${htmlCirculo}
             ${htmlElemento}
+            ${htmlGatilho}
             <p><strong>${tituloDescricao}:</strong> ${item.descricao}</p>
             ${botaoDetalhes}
             ${htmlTag}
