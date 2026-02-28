@@ -10,12 +10,10 @@ import {
     updateDoc,
     deleteDoc
 } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-
 // Variáveis para armazenar as seleções feitas nas abas
 let escolhaOrigemId = null;
 let escolhaClasseId = null;
 let idFichaAberta = null;
-let fichaAtualDados = null;
 const TRILHAS = {
     combatente: ["Aniquilador", "Guerreiro", "Operações Especiais", "Tropa de Choque", "Comandante de Campo", "Agente Secreto", "Caçador", "Monstruoso"],
     especialista: ["Atirador de Elite", "Infiltrador", "Médico de Campo", "Negociador", "Técnico", "Bibliotecario", "Perseverante", "Muambeiro"],
@@ -217,6 +215,31 @@ if (btnFinalizar) {
             if (dadosOrigem.profissao) {
                 profissaoDefinida = dadosOrigem.profissao;
             }
+
+            // 4. Adiciona a Habilidade de Classe automaticamente
+            const alvoClasse = HABILIDADES_INICIAIS_CLASSE[escolhaClasseId];
+            if (alvoClasse) {
+                // Se for um array (Especialista: Perito e Eclético)
+                if (Array.isArray(alvoClasse)) {
+                    for (const nomePoder of alvoClasse) {
+                        const desc = await buscarDescricaoHabilidade(nomePoder);
+                        habilidadesIniciais.push({
+                            nome: nomePoder,
+                            origem: formatarTextoID(escolhaClasseId),
+                            descricao: desc
+                        });
+                    }
+                } 
+                // Se for apenas uma string (Combatente ou Sobrevivente)
+                else {
+                    const desc = await buscarDescricaoHabilidade(alvoClasse);
+                    habilidadesIniciais.push({
+                        nome: alvoClasse,
+                        origem: formatarTextoID(escolhaClasseId),
+                        descricao: desc
+                    });
+                }
+            }
         }
 
         try {
@@ -303,6 +326,12 @@ const TABELA_PATENTES = [
     { pontos: 20, nome: "Operador", credito: "Médio", limites: [3, 1, 0, 0], limitePD: 3, recuperacao: 2 },
     { pontos: 0, nome: "Recruta", credito: "Baixo", limites: [2, 0, 0, 0], limitePD: 1, recuperacao: 1 }
 ];
+const HABILIDADES_INICIAIS_CLASSE = {
+    combatente: "Ataque Especial",
+    especialista: ["Perito", "Eclético"],
+    sobrevivente: "Empenho",
+    ocultista: null
+};
 /* ============================================================
    4. CÁLCULO DE STATUS (PV, PE, SAN, PD) CONFORME NEX E ATRIBUTOS
 ============================================================ */
@@ -1129,7 +1158,6 @@ async function carregarBancoItens() {
         console.error("Erro ao carregar o JSON de itens:", erro);
     }
 }
-// Funções de controle do Modal
 function abrirModalEquip() {
     const modal = document.getElementById('modal-equipamentos');
     if (modal) {
@@ -1143,13 +1171,10 @@ function fecharModalEquip() {
         modal.classList.add('modal-oculto');
     }
 }
-// Expõe globalmente para o HTML achar
 window.abrirModalEquip = abrirModalEquip;
 window.fecharModalEquip = fecharModalEquip;
 window.renderizarItensModal = renderizarItensModal;
 window.adicionarAoInventario = adicionarAoInventario;
-// Na sua função adicionarAoInventario, a linha 33 estava com o nome errado:
-// Altere a assinatura da função para receber a categoria
 function adicionarAoInventario(item, categoriaOrigem) {
     let origem = categoriaOrigem;
     if (!origem) {
@@ -1240,13 +1265,11 @@ async function renderizarItensModal() {
         }
     }
 }
-// Função simples para abrir/fechar o card no modal
 window.toggleCardModal = function(elemento) {
     // Busca o pai .card-item-catalogo e alterna a classe aberto
     const card = elemento.closest('.card-item-catalogo');
     if (card) card.classList.toggle('aberto');
 };
-// Função de Filtro (Certifique-se que o HTML chama exatamente este nome)
 window.filtrarItensModal = function() {
     console.log("Filtrando itens...");
     renderizarItensModal();
@@ -1580,7 +1603,6 @@ function renderizarMelhoriasFiltradas() {
 window.filtrarMelhorias = function() {
     renderizarMelhoriasFiltradas();
 };
-// 2. Filtra as melhorias baseadas no tipo do item
 async function obterMelhoriasDisponiveis(tipoBusca) {
     const dados = await carregarMelhorias();
     
@@ -1724,14 +1746,12 @@ window.fecharModalMelhorias = fecharModalMelhorias;
 /* ============================================================
    25. Pulo de linha
 ============================================================ */
-// Impede que o usuário pule linha no nome do personagem
 document.getElementById('view-nome').addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         e.preventDefault(); // Cancela o Enter
         e.target.blur();    // Tira o foco para disparar o onblur e salvar
     }
 });
-// Adicione isso junto aos seus Event Listeners
 document.querySelectorAll('[id^="barra-"]').forEach(barra => {
     barra.addEventListener('keydown', (e) => {
         // Se apertar Enter, salva e sai da edição
@@ -1803,7 +1823,6 @@ if (btnExcluir) {
         }
     });
 }
-// Função auxiliar para resetar a tela após a exclusão
 function voltarParaLista() {
     // Esconde a tela de visualização
     document.getElementById('Visualizar_Ficha').classList.add('oculta');
@@ -2460,3 +2479,442 @@ window.salvarStatusBarra = function(tipo, textoCompleto) {
 window.salvarFicha = salvarFicha;
 // Expõe a função para o Window para que o auth.js possa chamá-la no login
 window.carregarPersonagens = carregarPersonagens;
+/* ============================================================
+   33. Ajuda
+============================================================ */
+const CONTEUDO_AJUDA = {
+    condicoes: {
+        titulo: "🤢 Condições e Estados",
+        html: `
+            <div class="grid-itens">
+                <div class="card-ajuda">
+                    <h4>Abalado</h4>
+                    <p>O personagem sofre –1d20 em testes. Se ficar abalado novamente, em vez disso fica apavorado. Condição de medo.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Agarrado</h4>
+                    <p>O personagem fica desprevenido e imóvel, sofre –1d20 em testes de ataque e só pode atacar com armas leves. Um personagem fazendo um ataque à distância contra um alvo envolvido na manobra agarrar tem 50% de chance de acertar o alvo errado. Condição de paralisia.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Alquebrado</h4>
+                    <p>O custo em pontos de esforço das habilidades e dos rituais do personagem aumenta em +1. Condição mental.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Apavorado</h4>
+                    <p>O personagem sofre –2d20 em testes de perícia e deve fugir da fonte do medo da maneira mais eficiente possível (mas pode parar de fazê-lo assim que a perder de vista ou se afastar mais do que alcance médio). Se não puder, poderá agir, mas não poderá se aproximar voluntariamente da fonte do medo. Condição de medo.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Asfixiado</h4>
+                    <p>O personagem não pode respirar. Um personagem asfixiado pode prender a respiração por um número de rodadas igual ao seu Vigor. Depois disso, deve fazer um teste de Fortitude por rodada (DT 5 + 5 por teste anterior). Se falhar, cai inconsciente e perde 1d6 PV por rodada até respirar novamente ou morrer.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Atordoado</h4>
+                    <p>O personagem fica desprevenido e não pode fazer ações. Condição mental.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Caído</h4>
+                    <p>Deitado no chão. O personagem sofre –2d20 em ataques corpo a corpo e seu deslocamento é reduzido a 1,5m. Além disso, sofre –5 na Defesa contra ataques corpo a corpo, mas recebe +5 na Defesa contra ataques à distância.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Cego</h4>
+                    <p>O personagem fica desprevenido e lento, não pode fazer testes de Percepção para observar e sofre –2d20 em testes de perícias baseadas em Agilidade ou Força. Todos os alvos de seus ataques recebem camuflagem total. Você é considerado cego enquanto estiver em uma área de escuridão total, a menos que algo lhe permita perceber no escuro. Condição de sentidos.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Confuso</h4>
+                    <p>O personagem comporta-se de modo aleatório. Role 1d6 no início de seus turnos: 1) Movimenta-se em uma direção escolhida por uma rolagem de 1d8; 2-3) Não pode fazer ações e fica balbuciando de forma incoerente; 4-5) Usa a arma que estiver empunhando para atacar o ser mais próximo, ou a si mesmo se estiver sozinho (nesse caso, apenas role o dano); 6) A condição termina e pode agir normalmente. Condição mental.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Debilitado</h4>
+                    <p>O personagem sofre –2d20 em testes de Agilidade, Força e Vigor. Se o personagem ficar debilitado novamente, em vez disso fica inconsciente.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Desprevenido</h4>
+                    <p>Despreparado para reagir. O personagem sofre –5 na Defesa e –1d20 em Reflexos. Você fica desprevenido contra inimigos que não possa perceber.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Doente</h4>
+                    <p>Sob efeito de uma doença.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Em Chamas</h4>
+                    <p>O personagem está pegando fogo. No início de seus turnos, sofre 1d6 pontos de dano de fogo. O personagem pode gastar uma ação padrão para apagar o fogo com as mãos. Imersão em água também apaga as chamas.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Enjoado</h4>
+                    <p>O personagem só pode realizar uma ação padrão ou de movimento (não ambas) por rodada.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Enlouquecendo</h4>
+                    <p>Se iniciar três turnos enlouquecendo na mesma cena (não necessariamente consecutivos), você fica insano — seu personagem se torna um NPC. A condição pode ser encerrada com um teste de Diplomacia (DT 20 +5 por vez que já tiver sido acalmado na cena) ou por qualquer efeito que cure pelo menos 1 de Sanidade.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Enredado</h4>
+                    <p>O personagem fica lento, vulnerável e sofre –1d20 em testes de ataque. Condição de paralisia.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Envenenado</h4>
+                    <p>Varia de acordo com o veneno. Pode ser outra condição (por exemplo, fraco ou enjoado) ou dano recorrente (por exemplo, 1d12 pontos de dano de veneno por rodada). A descrição do veneno determina a duração dele (caso nada seja dito, a condição dura pela cena). Dano recorrente de condições envenenado sempre se acumula (mesmo se as condições ou fontes que as causam forem iguais).</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Esmorecido</h4>
+                    <p>O personagem sofre –2d20 em testes de Intelecto e Presença. Condição mental.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Exausto</h4>
+                    <p>O personagem fica debilitado, lento e vulnerável. Se ficar exausto novamente, em vez disso fica inconsciente. Condição de fadiga.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Fascinado</h4>
+                    <p>Com a atenção presa em alguma coisa. O personagem sofre –2d20 em Percepção e não pode fazer ações, exceto observar aquilo que o fascinou. Qualquer ação hostil contra o personagem anula esta condição. Balançar um ser fascinado para tirá-lo desse estado gasta uma ação padrão. Condição mental.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Fatigado</h4>
+                    <p>O personagem fica fraco e vulnerável. Se o personagem ficar fatigado novamente, em vez disso fica exausto. Condição de fadiga.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Fraco</h4>
+                    <p>O personagem sofre –1d20 em testes de Agilidade, Força e Vigor. Se ficar fraco novamente, em vez disso fica debilitado.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Frustrado</h4>
+                    <p>O personagem sofre –1d20 em testes de Intelecto e Presença. Se ficar frustrado novamente, em vez disso fica esmorecido. Condição mental.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Imóvel</h4>
+                    <p>Todas as formas de deslocamento do personagem são reduzidas a 0m. Condição de paralisia.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Inconsciente</h4>
+                    <p>O personagem fica indefeso e não pode fazer ações, incluindo reações. Balançar um ser para acordá-lo gasta uma ação padrão.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Indefeso</h4>
+                    <p>O personagem é considerado desprevenido, mas sofre –10 na Defesa, falha automaticamente em testes de Reflexos e pode sofrer golpes de misericórdia.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Lento</h4>
+                    <p>Todas as formas de deslocamento do personagem são reduzidas à metade (arredonde para baixo para o primeiro incremento de 1,5m) e ele não pode correr ou fazer investidas. Condição de paralisia.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Machucado</h4>
+                    <p>O personagem tem metade ou menos de seus pontos de vida totais.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Morrendo</h4>
+                    <p>Com 0 pontos de vida. Se iniciar três turnos morrendo na mesma cena (não necessariamente consecutivos), você morre. A condição pode ser encerrada com um teste de Medicina (DT 20 +5 por vez que já tiver sido estabilizado na cena) ou por efeitos específicos.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Ofuscado</h4>
+                    <p>O personagem sofre –1d20 em testes de ataque e de Percepção. Condição de sentidos.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Paralisado</h4>
+                    <p>O personagem fica imóvel e indefeso e só pode realizar ações puramente mentais. Condição de paralisia.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Pasmo</h4>
+                    <p>O personagem não pode fazer ações. Condição mental.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Perturbado</h4>
+                    <p>Na primeira vez que isso acontece em uma cena, você recebe um efeito de insanidade (veja a p. 111).</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Petrificado</h4>
+                    <p>O personagem fica inconsciente e recebe resistência a dano 10.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Sangrando</h4>
+                    <p>Com um ferimento aberto. No início de seus turnos, o personagem deve fazer um teste de Vigor (DT 20). Se passar, estabiliza e remove essa condição. Se falhar, perde 1d6 pontos de vida e continua sangrando. Também é possível estabilizar alguém com uma ação completa e um teste de Medicina (DT 20).</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Surdo</h4>
+                    <p>O personagem não pode fazer testes de Percepção para ouvir e sofre –2d20 em testes de Iniciativa. Além disso, é considerado em condição ruim para lançar rituais. Condição de sentidos.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Surpreendido</h4>
+                    <p>Não ciente de seus inimigos. O personagem fica desprevenido e não pode fazer ações.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Vulnerável</h4>
+                    <p>O personagem sofre –2 na Defesa.</p>
+                </div>
+            </div>
+        `
+    },
+    evolucao: {
+        titulo: "📈 Progressão de Classe",
+        html: `
+            <div class="abas-evolucao">
+                <button class="aba-btn active" onclick="mostrarTabelaEvolucao('combatente')">Combatente</button>
+                <button class="aba-btn" onclick="mostrarTabelaEvolucao('especialista')">Especialista</button>
+                <button class="aba-btn" onclick="mostrarTabelaEvolucao('ocultista')">Ocultista</button>
+                <button class="aba-btn" onclick="mostrarTabelaEvolucao('sobrevivente')">Sobrevivente</button>
+            </div>
+            
+            <div id="tab-combatente" class="tabela-classe">
+                <table class="tabela-ajuda">
+                    <tr><th>NEX</th><th>Habilidades</th></tr>
+                    <tr><td>5%</td><td>Ataque Especial (2 PE, +5)</td></tr>
+                    <tr><td>10%</td><td>Habilidade de trilha</td></tr>
+                    <tr><td>15%</td><td>Poder de combatente</td></tr>
+                    <tr><td>20%</td><td>Aumento de atributo</td></tr>
+                    <tr><td>25%</td><td>Ataque Especial (3 PE, +10)</td></tr>
+                    <tr><td>30%</td><td>Poder de combatente</td></tr>
+                    <tr><td>35%</td><td>Grau de treinamento</td></tr>
+                    <tr><td>40%</td><td>Habilidade de trilha</td></tr>
+                    <tr><td>45%</td><td>Poder de combatente</td></tr>
+                    <tr><td>50%</td><td>Aumento de atributo, versatilidade</td></tr>
+                    <tr><td>55%</td><td>Ataque Especial (4 PE, +15)</td></tr>
+                    <tr><td>60%</td><td>Poder de combatente</td></tr>
+                    <tr><td>65%</td><td>Habilidade de trilha</td></tr>
+                    <tr><td>70%</td><td>Grau de treinamento</td></tr>
+                    <tr><td>75%</td><td>Poder de combatente</td></tr>
+                    <tr><td>80%</td><td>Aumento de atributo</td></tr>
+                    <tr><td>85%</td><td>Ataque Especial (5 PE, +20)</td></tr>
+                    <tr><td>90%</td><td>Poder de combatente</td></tr>
+                    <tr><td>95%</td><td>Aumento de atributo</td></tr>
+                    <tr><td>99%</td><td>Habilidade de trilha</td></tr>
+                </table>
+            </div>
+
+            <div id="tab-especialista" class="tabela-classe" style="display:none">
+                <table class="tabela-ajuda">
+                    <tr><th>NEX</th><th>Habilidades</th></tr>
+                    <tr><td>5%</td><td>Eclético, Perito (2 PE, +1d6)</td></tr>
+                    <tr><td>10%</td><td>Habilidade de trilha</td></tr>
+                    <tr><td>15%</td><td>Poder de especialista</td></tr>
+                    <tr><td>20%</td><td>Aumento de atributo</td></tr>
+                    <tr><td>25%</td><td>Perito (3 PE, +1d8)</td></tr>
+                    <tr><td>30%</td><td>Poder de especialista</td></tr>
+                    <tr><td>35%</td><td>Grau de treinamento</td></tr>
+                    <tr><td>40%</td><td>Engenhosidade (veterano), Habilidade de trilha</td></tr>
+                    <tr><td>45%</td><td>Poder de especialista</td></tr>
+                    <tr><td>50%</td><td>Aumento de atributo, Versatilidade</td></tr>
+                    <tr><td>55%</td><td>Perito (4 PE, +1d10)</td></tr>
+                    <tr><td>60%</td><td>Poder de especialista</td></tr>
+                    <tr><td>65%</td><td>Habilidade de trilha</td></tr>
+                    <tr><td>70%</td><td>Grau de treinamento</td></tr>
+                    <tr><td>75%</td><td>Engenhosidade (expert), Poder de especialista</td></tr>
+                    <tr><td>80%</td><td>Aumento de atributo</td></tr>
+                    <tr><td>85%</td><td>Perito (5 PE, +1d12)</td></tr>
+                    <tr><td>90%</td><td>Poder de especialista</td></tr>
+                    <tr><td>95%</td><td>Aumento de atributo</td></tr>
+                    <tr><td>99%</td><td>Habilidade de trilha</td></tr>
+                </table>
+                <div class="card-ajuda">
+                    <h4>Engenhosidade</h4>
+                    <p>Em NEX 40%, quando usa sua habilidade Eclético, você pode gastar 2 PE adicionais para receber os benefícios de ser veterano na perícia. Em NEX 75%, pode gastar 4 PE adicionais para receber os benefícios de ser expert na perícia.</p>
+                </div>
+            </div>
+
+            <div id="tab-ocultista" class="tabela-classe" style="display:none">
+                <table class="tabela-ajuda">
+                    <tr><th>NEX</th><th>Habilidades</th></tr>
+                    <tr><td>5%</td><td>Escolhido pelo Outro Lado (1º círculo)</td></tr>
+                    <tr><td>10%</td><td>Habilidade de trilha</td></tr>
+                    <tr><td>15%</td><td>Poder de ocultista</td></tr>
+                    <tr><td>20%</td><td>Aumento de atributo</td></tr>
+                    <tr><td>25%</td><td>Escolhido pelo Outro Lado (2º círculo)</td></tr>
+                    <tr><td>30%</td><td>Poder de ocultista</td></tr>
+                    <tr><td>35%</td><td>Grau de treinamento</td></tr>
+                    <tr><td>40%</td><td>Habilidade de trilha</td></tr>
+                    <tr><td>45%</td><td>Poder de ocultista</td></tr>
+                    <tr><td>50%</td><td>Aumento de atributo, Versatilidade</td></tr>
+                    <tr><td>55%</td><td>Escolhido pelo Outro Lado (3º círculo)</td></tr>
+                    <tr><td>60%</td><td>Poder de ocultista</td></tr>
+                    <tr><td>65%</td><td>Habilidade de trilha</td></tr>
+                    <tr><td>70%</td><td>Grau de treinamento</td></tr>
+                    <tr><td>75%</td><td>Poder de ocultista</td></tr>
+                    <tr><td>80%</td><td>Aumento de atributo</td></tr>
+                    <tr><td>85%</td><td>Escolhido pelo Outro Lado (4º círculo)</td></tr>
+                    <tr><td>90%</td><td>Poder de ocultista</td></tr>
+                    <tr><td>95%</td><td>Aumento de atributo</td></tr>
+                    <tr><td>99%</td><td>Habilidade de trilha</td></tr>
+                </table>
+                <div class="card-ajuda">
+                    <h4>Escolhido pelo Outro Lado</h4>
+                    <p>Você teve uma experiência paranormal e foi marcado pelo Outro Lado, absorvendo o conhecimento e poder necessários para realizar rituais. Você pode lançar rituais de 1º círculo. À medida que aumenta seu NEX, pode lançar rituais de círculos maiores (2º círculo em NEX 25%, 3º círculo em NEX 55% e 4º círculo em NEX 85%). Você começa com três rituais de 1º círculo. Sempre que avança de NEX, aprende um ritual de qualquer círculo que possa lançar. Esses rituais não contam no seu limite de rituais conhecidos.</p>
+                </div>
+            </div>
+
+            <div id="tab-sobrevivente" class="tabela-classe" style="display:none">
+                <table class="tabela-ajuda">
+                    <tr><th>Estágio</th><th>Habilidades</th></tr>
+                    <tr><td>1</td><td>Empenho</td></tr>
+                    <tr><td>2</td><td>Trilha (1º habilidade)</td></tr>
+                    <tr><td>3</td><td>Aumento de atributo</td></tr>
+                    <tr><td>4</td><td>Trilha (2º habilidade)</td></tr>
+                    <tr><td>5</td><td>Cicatrizado</td></tr>
+                </table>
+            </div>
+
+            <div class="card-ajuda">
+                <h4>Habilidade de Trilha</h4>
+                <p>Em NEX 10% você escolhe uma das trilhas da sua classe e recebe o primeiro poder da trilha escolhida. Você recebe um novo poder da trilha escolhida em NEX 40%, 65% e 99%.</p>
+            </div>
+            <div class="card-ajuda">
+                <h4>Poder de Classe</h4>
+                <p>Em NEX 15%, você recebe um poder de classe à sua escolha. Você recebe um novo poder de classe em NEX 30% e a cada 15% de NEX subsequentes, conforme indicado na tabela.</p>
+            </div>
+            <div class="card-ajuda">
+                <h4>Aumento de Atributo</h4>
+                <p>Em NEX 20%, e novamente em NEX 50%, 80% e 95%, aumente um atributo a sua escolha em +1. Você não pode aumentar um atributo além de 5 desta forma.</p>
+            </div>
+            <div class="card-ajuda">
+                <h4>Grau de Treinamento</h4>
+                <p>Em NEX 35%, e novamente em NEX 70%, escolha um número de perícias treinadas igual a 2 + Int. Seu grau de treinamento nessas perícias aumenta em um (de treinado para veterano ou de veterano para expert).</p>
+            </div>
+            <div class="card-ajuda">
+                <h4>Versatilidade</h4>
+                <p>Em NEX 50%, escolha entre receber um poder de classe ou o primeiro poder de uma trilha que não a sua.</p>
+            </div>
+        `
+    },
+    acoes: {
+        titulo: "⚔️ Guia de Ações em Combate",
+        html: `
+            <div class="grid-itens">
+                <div class="card-ajuda">
+                    <h4>🔴 Ação Padrão (1 por turno)</h4>
+                    <ul>
+                        <li><strong>Atacar:</strong> Realiza um teste de ataque com sua arma.</li>
+                        <li><strong>Lançar Ritual:</strong> Executa um ritual (gasta PE).</li>
+                        <li><strong>Usar Habilidade:</strong> Ativa uma habilidade de classe ou origem.</li>
+                        <li><strong>Preparar:</strong> Escolhe uma ação para gatilho posterior.</li>
+                    </ul>
+                </div>
+                <div class="card-ajuda">
+                    <h4>🔵 Ação de Movimento (1 por turno)</h4>
+                    <ul>
+                        <li><strong>Deslocar:</strong> Movimenta-se até seu limite de metros.</li>
+                        <li><strong>Sacar/Guardar:</strong> Pega ou guarda um item/arma.</li>
+                        <li><strong>Levantar-se:</strong> Caso esteja caído.</li>
+                        <li><strong>Manipular Item:</strong> Abrir porta, pegar algo do chão.</li>
+                    </ul>
+                </div>
+                <div class="card-ajuda">
+                    <h4>🟡 Reações (1 por rodada*)</h4>
+                    <p><small>*Você só pode usar reações especiais de defesa, as listas a baixo, uma vez por rodada, porém qualquer outro tipo de reação é ilimitada.</small></p>
+                    <ul>
+                        <li><strong>Esquiva:</strong> Soma sua Agilidade na Defesa.</li>
+                        <li><strong>Bloqueio:</strong> Soma sua Luta/Fortitude na Resistência a Dano.</li>
+                        <li><strong>Contra-Ataque:</strong> Se o inimigo errar, você pode atacar.</li>
+                    </ul>
+                </div>
+                <div class="card-ajuda">
+                    <h4>⚪ Ações Livres (Ilimitada)</h4>
+                    <ul>
+                        <li><strong>Falar:</strong> Frases curtas.</li>
+                        <li><strong>Soltar Item:</strong> Deixar cair no chão.</li>
+                        <li><strong>Gastar PE:</strong> Algumas habilidades são livres.</li>
+                    </ul>
+                </div>
+            </div>
+        `
+    },
+    glossario: {
+        titulo: "📖 Glossário de Termos Técnicos",
+        html: `
+            <div class="ajuda-secao">
+                <div class="card-ajuda">
+                    <h4>🛡️ Defesa e Resistência</h4>
+                    <ul>
+                        <li><strong>RD (Resistência a Dano):</strong> Valor subtraído de cada dano que recebes. Ex: RD Sangue 5 reduz 5 de dano de Sangue.</li>
+                        <li><strong>Bloqueio:</strong> Uma reação. Se bloqueares, somas a tua perícia (Luta ou Fortitude) à tua RD para aquele ataque.</li>
+                        <li><strong>Esquiva:</strong> Uma reação. Somas a tua perícia Reflexos na Defesa contra aquele ataque.</li>
+                    </ul>
+                </div>
+                <div class="card-ajuda">
+                    <h4>🎲 Testes e Dados</h4>
+                    <ul>
+                        <li><strong>DT (Dificuldade de Teste):</strong> O valor que precisas de igualar ou superar no dado. Geralmente é 10 + NEX/5 + Atributo.</li>
+                        <li><strong>Margem de Ameaça:</strong> O número no dado para um Crítico. Ex: Margem 19 significa que 19 ou 20 no dado é crítico.</li>
+                        <li><strong>Multiplicador de Crítico:</strong> Quantas vezes o dano da arma é multiplicado. Ex: x3 significa triplicar os dados de dano.</li>
+                        <li><strong>Penalidade de Carga:</strong> Se excederes o peso máximo, ficas com a condição <i>Sobrecarregado</i> (-2d20 em testes de perícia baseados em AGI e FOR).</li>
+                    </ul>
+                </div>
+                <div class="card-ajuda">
+                    <h4>🌀 Paranormal</h4>
+                    <ul>
+                        <li><strong>Afinidade:</strong> Quando um Ocultista ou Agente se conecta a um Elemento. Garante bónus em rituais e poderes desse elemento.</li>
+                        <li><strong>Custo do Paranormal:</strong> Perda de Sanidade ao falhar num teste de resistência contra rituais ou criaturas.</li>
+                        <li><strong>PE por Turno:</strong> O limite máximo de Pontos de Esforço que podes gastar numa única ação ou reação.</li>
+                    </ul>
+                </div>
+            </div>
+        `
+    }
+};
+window.abrirModalGuia = function(tipo) {
+    const modal = document.getElementById('modal-guia-ajuda');
+    const titulo = document.getElementById('titulo-guia');
+    const corpo = document.getElementById('corpo-guia');
+    const dados = CONTEUDO_AJUDA[tipo];
+
+    if (modal && dados) {
+        titulo.innerText = dados.titulo;
+        corpo.innerHTML = dados.html;
+        modal.classList.remove('modal-oculto');
+
+        // Se for evolução, tenta abrir na aba da classe atual do personagem
+        if (tipo === 'evolucao' && window.fichaAtualDados) {
+            const classeAtual = window.fichaAtualDados.classe; // 'combatente', 'especialista' ou 'ocultista'
+            if (classeAtual) {
+                mostrarTabelaEvolucao(classeAtual);
+            }
+        }
+    }
+};
+window.fecharModalGuia = function() {
+    document.getElementById('modal-guia-ajuda').classList.add('modal-oculto');
+};
+window.mostrarTabelaEvolucao = function(classe) {
+    // Esconde todas as tabelas
+    document.querySelectorAll('.tabela-classe').forEach(div => div.style.display = 'none');
+    // Remove a classe 'active' de todos os botões de aba
+    document.querySelectorAll('.aba-btn').forEach(btn => btn.classList.remove('active'));
+    
+    // Mostra a selecionada
+    document.getElementById(`tab-${classe}`).style.display = 'block';
+    
+    // Marca o botão clicado como ativo (para o CSS destacar)
+    event.currentTarget.classList.add('active');
+};

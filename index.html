@@ -1263,9 +1263,15 @@
                         <span id="status-sanidade" class="status-label">DESLIGADO</span>
                     </div>
                 </div>
-                <!-- COLUNA 8 - Evolução -->
+                <!-- COLUNA 8 - AJUDA -->
                 <div class="ficha-card">
-                    <h3>?</h3>
+                    <h3>Ajuda</h3>
+                    <div class="ajuda-sidebar">
+                        <button onclick="abrirModalGuia('evolucao')">📈 Evolução</button>
+                        <button onclick="abrirModalGuia('glossario')">📖 Glossário</button>
+                        <button onclick="abrirModalGuia('acoes')">⚔️ Ações</button>
+                        <button onclick="abrirModalGuia('condicoes')">🤢 Condições</button>
+                    </div>
                 </div>
             </div>
             <div class="centralizar">
@@ -1619,6 +1625,15 @@
             </div>
         </div>
     </div>
+    <div id="modal-guia-ajuda" class="modal modal-oculto">
+    <div class="modal-conteudo">
+        <div class="modal-cabecalho">
+            <h2 id="titulo-guia">Ajuda</h2>
+            <button onclick="fecharModalGuia()">X</button>
+        </div>
+        <div id="corpo-guia" class="grid-itens"></div>
+    </div>
+</div>
     <script src="código.js"></script>
     <script src="automacoes.js"></script>
 </body>

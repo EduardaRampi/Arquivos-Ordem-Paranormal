@@ -1260,7 +1260,7 @@ input:checked ~ .status-label { color: var(--cor-primaria-clara); }
     box-shadow: 0 5px 10px rgba(0,0,0,0.5);
 }
 .nao_vaza_invent{
-    max-height: 500px;
+    max-height: 800px;
     overflow-y: auto; 
 }
 .nao_vaza{
@@ -1461,7 +1461,7 @@ input:checked ~ .status-label { color: var(--cor-primaria-clara); }
 }
 #DT {
     border-radius: 50px;
-    width: 15px;
+    width: 18px;
 }
 .header-foto-nome {
     display: flex;
@@ -1474,6 +1474,116 @@ input:checked ~ .status-label { color: var(--cor-primaria-clara); }
     border-radius: 5px;
     object-fit: cover;
     border: 1px solid #444;
+}
+.card-ajuda {
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-left: 4px solid var(--cor-primaria);
+    border-radius: 8px;
+    padding: 18px;
+    transition: all 0.2s ease;
+}
+.card-ajuda:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    background: rgba(131,49,49,0.15);
+}
+.card-ajuda h4 {
+    margin: 0 0 8px 0;
+    color: var(--cor-texto-claro);
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+}
+.card-ajuda p, .card-ajuda li {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--cor-texto);
+}
+.tabela-ajuda {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    border: 1px solid rgba(131,49,49,0.4);
+}
+.tabela-ajuda th {
+    background: linear-gradient(
+        90deg,
+        rgba(131,49,49,0.8),
+        rgba(90,25,25,0.8)
+    );
+    padding: 12px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.tabela-ajuda td {
+    padding: 12px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--cor-texto-claro);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+.tabela-ajuda tr:hover td {
+    background: rgba(131,49,49,0.25);
+}
+.abas-evolucao {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0 10px 0;
+    flex-wrap: wrap;
+}
+.aba-btn {
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(131,49,49,0.4);
+    border-bottom: 2px solid transparent;
+    padding: 10px 18px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--cor-texto-claro);
+    border-radius: 6px 6px 0 0;
+    margin: 0;
+    transition: all 0.2s ease;
+}
+.aba-btn:hover {
+    background: rgba(131,49,49,0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+}
+.aba-btn.active {
+    background: linear-gradient(
+        180deg,
+        rgba(131,49,49,0.9),
+        rgba(90,25,25,0.9)
+    );
+    border: 1px solid var(--cor-primaria);
+    border-bottom: 2px solid var(--cor-primaria-clara);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(131,49,49,0.6);
+}
+.tabela-classe {
+    animation: fadeInTabela 0.2s ease;
+}
+@keyframes fadeInTabela {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 @keyframes tremer {
     0% { transform: translate(1px, 1px) rotate(0deg); }
