@@ -20,7 +20,8 @@
     </Style>
     <script src="firebase-config.js" type="module"></script>     
     <script src="auth.js" type="module"></script>
-    <script src="personagens.js" type="module"></script>       
+    <script src="personagens.js" type="module"></script>
+    <script src="campanhas.js" type="module"></script>       
 </head>
 <body id = "fundo">
     <input type="checkbox" id="close-menu" class="close-menu-checkbox" hidden>
@@ -153,19 +154,39 @@
 
         <div id="Campanhas" class="tela oculta">
         <h1>Campanhas</h1>
+        <div id="campanhas-section" class="oculta">
+            <h2>Criar Nova Campanha</h2>
+            <div class="centralizar">
+            <button class="btn-navegar" data-destino="Criar-Campanha">Criar Campanha</button>
+            </div>
+            <div id="entrar-campanha-section">
+                <h2>Entrar numa Missão</h2>
+                <div class="centralizar">
+                    <input type="text" id="codigo-entrada" class="input-inline" placeholder="Código (Ex: A1B2C3)" maxlength="6">
+                    <button class="btn-navegar" onclick="entrarNaCampanha()">Entrar na Campanha</button>
+                </div>
+            </div>
+            <h2>Suas Campanhas</h2>
+            <div class="lista-campanhas lista centralizar"></div>
+            <div class="lista-campanhas-participando lista centralizar"></div>
+        </div>
         <button class="btn-voltar">Voltar</button>
         </div>
 
         <div id="Arquivos" class="tela oculta">
         <h1>Arquivos</h1>
         <div class="centralizar">
+            <h2>Player</h2>
             <button class="btn-navegar" data-destino="Criação_persona">Criação de Personagens</button>
             <button class="btn-navegar" data-destino="Equipamentos">Equipamentos</button>
             <button class="btn-navegar" data-destino="Itens Amaldiçoados">Itens Amaldiçoados</button>
             <button class="btn-navegar" data-destino="Rituais">Rituais</button>
+            <h2>Mestre</h2>
             <button class="btn-navegar" data-destino="Regras">Regras</button>
             <button class="btn-navegar" data-destino="Criaturas">Criaturas</button>
+            <button class="btn-navegar" data-destino="Aliados">Aliados</button>
             <button class="btn-navegar" data-destino="Missões">Missões</button>
+            <br>
             <button class="btn-voltar">Voltar</button>
         </div>
         </div>
@@ -258,7 +279,22 @@
         <div class="lista-criaturas lista"></div>
         <button class="btn-voltar">Voltar</button>
         </div>
-        
+
+        <div id="Aliados" class="tela oculta">
+        <h1>Aliados</h1>
+        <div class="search-box">
+            <input type="text" class="input-busca" data-container="lista-aliados" placeholder="Pesquisar por palavra chave..."> 
+            <div class="container-botao-filtro">
+                <button class="btn-filtro-geral btn-abrir-filtros">
+                    <i class="fas fa-filter"></i> Filtros
+                </button>
+                <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
+            </div>     
+        </div>        
+        <div class="lista-aliados lista"></div>
+        <button class="btn-voltar">Voltar</button>
+        </div>
+
         <div id="Missões" class="tela oculta">
         <h1>Missões</h1>
         <div class="search-box">
@@ -1284,7 +1320,54 @@
                 <button class="btn-voltar" data-destino="Fichas">Voltar</button>
             </div>
         </div>
-        
+
+        <div id="Criar-Campanha" class="tela oculta">
+            <h2>Nova Jornada Paranormal</h2>
+            <div class="centralizar">
+                <div class="input-container">
+                    <h3>Nome</h3>
+                    <input type="text" id="nome-campanha" class="input-primario" placeholder="Nome da Campanha (Ex: Calamidade)">
+                </div>
+                <div class="text-container">
+                    <h3>Descrição</h3>
+                    <textarea id="desc-campanha"  rows="6" class="textarea"  placeholder="Breve descrição..."></textarea>
+                </div>
+            </div>
+            <div class="centralizar">
+                <button id="btn-confirmar-campanha">Criar Campanha</button>
+                <button class="btn-voltar">Cancelar</button>
+            </div>
+        </div>
+
+        <div id="Visualizar_Campanha" class="tela oculta">
+            <div class="cabecalho-campanha">
+                <h1 id="view-campanha-nome">Nome da Campanha</h1>
+                <p id="view-campanha-desc">Descrição da campanha...</p>
+                
+                <div class="codigo-badge">
+                    <span>Código de Convite:</span>
+                    <strong id="view-campanha-codigo">------</strong>
+                </div>
+            </div>
+
+            <div class="painel-grid">
+                <section class="sessao-jogadores">
+                    <h2>Agentes na Missão</h2>
+                    <div id="lista-jogadores-campanha" class="lista-mini">
+                        </div>
+                </section>
+            </div>
+            <div class="centralizar">
+                <button class="btn-salvar-alteracoes">
+                    Salvar Alterações
+                </button>
+                <button class="btn-excluir-campanha">
+                    Excluir Ficha
+                </button>
+                <button class="btn-voltar" data-destino="Campanhas">Voltar</button>
+            </div>
+        </div>
+
         <footer class="rodape">
             <div class="coluna">
                 <p>Ordem Paranormal é um produto da Jambô Editora e seus respectivos criadores, todos os direitos reservados.</p>

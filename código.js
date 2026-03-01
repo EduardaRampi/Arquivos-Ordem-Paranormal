@@ -41,7 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
   'itens-amaldicoados': 'Itens Amaldiçoados.json',
   'criaturas-realidade': 'Criaturas Realidade.json',
   criaturas: 'Criaturas.json',
-  regras: 'Regras.json'
+  regras: 'Regras.json',
+  aliados: 'Aliados.json'
 };
 const registroBox = document.getElementById("registro-box");
 const loginBox = document.getElementById("login-box");
@@ -133,12 +134,16 @@ const sections = {
         "Itens Amaldiçoados": "Arquivos",
         "Regras": "Arquivos",
         "Missões": "Arquivos",
+        "Aliados": "Arquivos",
 
         "Fichas": "Fichas_Campanhas",
         "Campanhas": "Fichas_Campanhas",
 
         "Personagem": "Fichas",
         "Visualizar_Ficha":"Fichas",
+
+        "Criar-Campanha": "Campanhas",
+        "Visualizar_Campanha":"Campanhas",
 
         "Classes": "Criação_persona",
         "Origens": "Criação_persona",
@@ -238,6 +243,12 @@ const sections = {
         const htmlGatilho = item.gatilho
           ? `<p><strong>Gatilho:</strong> ${item.gatilho}</p>` 
           : '';
+        const htmlBonus = item.Bônus
+          ? `<p><strong>Bônus:</strong> ${item.Bônus}</p>` 
+          : '';
+        const htmlPoder = item.Poder
+          ? `<p><strong>Poder:</strong> ${item.Poder}</p>` 
+          : '';
 
         let botaoDetalhes = '';
         if (estaNoGerador && ehListaOrigem) {
@@ -257,6 +268,7 @@ const sections = {
           <div class="classe-card" data-id="${item.id}">
             <h2>${item.nome}</h2>
             <p><strong>Origem:</strong> ${item.origem}</p>
+            ${htmlTag}
             ${htmlVd}
             ${htmlTipo}            
             ${htmlCirculo}
@@ -264,7 +276,8 @@ const sections = {
             ${htmlGatilho}
             <p><strong>${tituloDescricao}:</strong> ${item.descricao}</p>
             ${botaoDetalhes}
-            ${htmlTag}
+            ${htmlBonus}
+            ${htmlPoder}
             ${htmlComp}            
             ${htmlPreR}
           </div>

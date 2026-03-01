@@ -19,6 +19,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: "Space Grotesk", sans-serif;
+    color: var(--cor-texto-claro);
 }
 .caixa {
     background: linear-gradient(
@@ -972,7 +973,6 @@ input:checked ~ .status-label { color: var(--cor-primaria-clara); }
     background: var(--cor-primaria);
     transition: width 0.3s ease;
 }
-
 #aviso-carga {
     color: #ff4444;
     display: none;
@@ -1574,6 +1574,50 @@ input:checked ~ .status-label { color: var(--cor-primaria-clara); }
 }
 .tabela-classe {
     animation: fadeInTabela 0.2s ease;
+}
+.cabecalho-campanha {
+    text-align: center;
+    margin-bottom: 25px;
+}
+.cabecalho-campanha h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: var(--cor-texto-claro);
+}
+.cabecalho-campanha p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+.codigo-badge {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    color: var(--cor-texto-claro);
+}
+.codigo-badge strong {
+    color: rgb(255, 0, 0);
+}
+.painel-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.sessao-jogadores h2 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: var(--cor-texto-claro);
+    border-bottom: 1px solid rgba(131,49,49,0.4);
+    padding-bottom: 4px;
+}
+.lista-mini {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 10px 0;
 }
 @keyframes fadeInTabela {
     from {

@@ -53,26 +53,30 @@ onAuthStateChanged(auth, (user) => {
         // Verifica se os elementos existem antes de tentar acessar o estilo
         const authSection = document.getElementById('auth-section');
         const charSection = document.getElementById('personagem-section');
+        const campSection = document.getElementById('campanhas-section');
         
         if(authSection) authSection.style.display = 'none';
         if(charSection) charSection.style.display = 'block';
+        if(campSection) campSection.style.display = 'block';
         
         // Verifique se a função existe antes de chamar
         if (typeof carregarPersonagens === 'function') {
             carregarPersonagens(); 
         }
+        if (typeof carregarCampanhas === 'function') {
+            carregarCampanhas(); 
+            carregarCampanhasParticipando();
+        }
     } else {
         const authSection = document.getElementById('auth-section');
         const charSection = document.getElementById('personagem-section');
+        const campSection = document.getElementById('campanhas-section');
 
         if(authSection) authSection.style.display = 'block';
         if(charSection) charSection.style.display = 'none';
+        if(campSection) campSection.style.display = 'none';
     }
 });
-
-function mostrarSecaoPersonagens() {
-    // Função auxiliar
-}
 
 // Função para carregar dados do perfil
 function carregarDadosPerfil() {
@@ -90,7 +94,7 @@ function carregarDadosPerfil() {
 // Torna global para que o codigo.js consiga chamar
 window.carregarDadosPerfil = carregarDadosPerfil;
 
-// Redefinir Senha CORRIGIDO
+// Redefinir Senha 
 const btnRedefinir = document.getElementById('btn-redefinir-senha');
 if (btnRedefinir) {
     btnRedefinir.addEventListener('click', () => {
@@ -105,7 +109,7 @@ if (btnRedefinir) {
     });
 }
 
-// Excluir Conta CORRIGIDO
+// Excluir Conta 
 const btnExcluir = document.getElementById('btn-excluir-conta');
 if (btnExcluir) {
     btnExcluir.addEventListener('click', () => {

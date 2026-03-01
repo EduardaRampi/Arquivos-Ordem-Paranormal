@@ -1,0 +1,90 @@
+[
+    {
+        "nome":"Acólito",
+        "descricao":"Uma pessoa envolvida com o paranormal, com conhecimento suficiente para auxiliar em rituais.",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "Bônus":"Você recebe +1d20 em testes de Ocultismo e não precisa manipular componentes ritualísticos para conjurar rituais (o aliado faz isso por você).",
+        "Poder":"Conjuração Conjunta. Quando conjura um ritual, você pode gastar 1 PE para aumentar a DT contra esse ritual em +2."
+    },
+    {
+        "nome":"Faz-Tudo",
+        "descricao":"O faz-tudo é uma pessoa treinada em uma ou mais perícias e possui bastante prática com elas.",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "Bônus":"Escolha duas perícias exceto Luta e Pontaria. Você é considerado treinado nessas perícias.",
+        "Poder":"Dica Valiosa. Você pode gastar 1 PE para receber +1d6 em um teste de uma das perícias escolhidas."
+    },
+    {
+        "nome":"Guerrilheiro",
+        "descricao":"Um soldado, policial ou outro indivíduo treinado para o combate armado.",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "Bônus":"Você recebe +1d20 em testes de ataque.",
+        "Poder":"Ataque Conjunto. Quando ataca, você pode gastar 1 PE. Se acertar o ataque, causa +1d8 pontos de dano."
+    },
+    {
+        "nome":"Socorrista",
+        "descricao":"Um médico, enfermeiro ou outro indivíduo treinado em primeiros socorros e no uso de remédios.",
+        "origem":"Livro de Regras",
+        "tag":"",
+        "Bônus":"Você é considerado treinado em Medicina.",
+        "Poder":"Bolsa de Remédios. Você pode gastar 1 PE para recuperar 1d8+1 PV de si mesmo ou de um aliado adjacente."
+    },
+    {
+        "nome":"Cão Adestrado",
+        "descricao":"Um cão corajoso, grande — como um pastor alemão, dobermann, fila brasileiro ou caramelo — e treinado para ajudar em investigação e combate.",
+        "origem":"Sobrevivendo ao Horror",
+        "tag":"",
+        "Bônus":"Você recebe +2 em Investigação e Percepção.",
+        "Poder":"Ladrar e Morder. Você pode gastar 1 PE para fazer o cão assumir uma postura defensiva ao seu redor. Você recebe +2 na Defesa por 1 rodada."
+    },
+    {
+        "nome":"Jonas Aguiar",
+        "descricao":"Aguiar mistura as habilidades de um policial com as de um serial killer.",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "Bônus":"Você recebe +1d20 em testes de ataque.",
+        "Poder":"Investigador e Caçador. Quando faz um teste de Investigação ou Sobrevivência para encontrar pistas ou rastros, você pode gastar 1 PE para receber +1d8 no teste."
+    },
+    {
+        "nome":"Dalmo Magno",
+        "descricao":"Dalmo mistura as habilidades de um motorista com as de um lutador de arena.",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "Bônus":"Sempre que causar dano, você causa +1d10 pontos de dano de Energia.",
+        "Poder":"Motorista Veterano. Você pode gastar 2 PE para receber treinamento em Pilotagem até o fim da cena. Se já for treinado, em vez disso recebe +1d20 em testes de Pilotagem."
+    },
+    {
+        "nome":"Park Jae-Yoon",
+        "descricao":"Jae-Yoon mistura as habilidades de influencer com as de serial killer.",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "Bônus":"Você pode fazer uso da habilidade de trilha Ataque Furtivo. Se já a tiver, em vez disso seu dano furtivo causa +1d6.",
+        "Poder":"Figura Influente. Quando faz um teste de Diplomacia, Enganação ou Intimidação, você pode gastar 3 PE para rolar o teste novamente e ficar com o melhor resultado."
+    },
+    {
+        "nome":"Kemi",
+        "descricao":"Kemi é uma atiradora de elite com habilidades inquestionáveis.",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "Bônus":"Sempre que causar dano, você causa +3d4 pontos de dano de Morte. Esse dano ignora 10 pontos de resistência a dano do alvo.",
+        "Poder":"Figura Influente. Uma vez por rodada, quando você faz um ataque à distância com uma arma de fogo ou de disparo, você pode gastar 2 PE para fazer uma ação de movimento adicional que deve ser para se deslocar imediatamente após o ataque."
+    },
+    {
+        "nome":"Labirinto",
+        "descricao":"Labirinto é um ocultista com capacidades que nem ele mesmo compreende.",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "Bônus":"Uma vez por dia, você recebe +2d4 PE atuais e máximos. Esse bônus dura até o fim do dia e uma nova rolagem deve ser feita no dia seguinte.",
+        "Poder":"Labirinto para o Outro Lado. Você pode gastar 2 PE para a DT de suas habilidades (poderes, rituais etc.) aumentarem em +3 até o fim da cena (sim, combeiro, é cumulativo com A Antena e outras fontes)."
+    },
+    {
+        "nome":"Juan Davo",
+        "descricao":"Juan é um aliado assustador com habilidades ocultistas temidas.",
+        "origem":"Arquivos Secretos",
+        "tag":"Fevereiro-2026",
+        "Bônus":"Você recebe +1d20 em testes de Intimidação e Ocultismo.",
+        "Poder":"Ligado ao Sangue. Você pode conjurar os rituais Armadura de Sangue e Descarnar como se os conhecesse, mas ainda precisa atender aos pré-requisitos de círculo para as formas avançadas. Eles não contam em seu limite de rituais. Se já conhece algum dos dois rituais (ou os dois), em vez disso o custo em PE para conjurá-lo diminui em –1 PE."
+    }
+]
