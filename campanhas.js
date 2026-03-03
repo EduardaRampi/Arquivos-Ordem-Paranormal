@@ -5,11 +5,13 @@ import {
     query, 
     where, 
     getDocs,
+    getDoc,
     doc,        
     updateDoc,
     deleteDoc
 } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 let idCampanhaAberta = null;
+let idFicha = null
 function gerarCodigoCampanha() {
     return Math.random().toString(36).substring(2, 8).toUpperCase();
 }
@@ -34,7 +36,7 @@ async function criarCampanha() {
             nome: nomeInput.value.trim(),
             descricao: descInput ? descInput.value.trim() : "",
             mestreId: user.uid,
-            mestreNome: user.email, // Ou user.displayName se tiver
+            mestreNome: user.displayName,
             codigo: codigo,
             jogadores: [], 
             criadoEm: serverTimestamp()
@@ -138,7 +140,7 @@ async function carregarCampanhas() {
     }
 }
 window.carregarCampanhas = carregarCampanhas;
-window.abrirPainelMestre = function(id, dados) {
+window.abrirPainelMestre = async function(id, dados) {
     console.log("Visualizando campanha:", dados.nome);
     idCampanhaAberta = id;
 
@@ -168,15 +170,141 @@ window.abrirPainelMestre = function(id, dados) {
 
     // 4. Limpar e carregar a lista de jogadores/personagens
     const listaJogadores = document.getElementById('lista-jogadores-campanha');
-    if (listaJogadores) {
-        listaJogadores.innerHTML = ""; // Limpa antes de carregar
-        
-        if (dados.jogadores && dados.jogadores.length > 0) {
-            // Aqui futuramente chamaremos a função para buscar os dados dos personagens
-            listaJogadores.innerHTML = "<p>Carregando agentes conectados...</p>";
-        } else {
-            listaJogadores.innerHTML = "<p class='vazio'>Nenhum agente entrou ainda.</p>";
+    if (!listaJogadores) return;
+
+    listaJogadores.innerHTML = "<p class='loading'>Sincronizando com o Outro Lado...</p>";
+
+    if (dados.jogadores && dados.jogadores.length > 0) {
+        let cardsHTML = "";
+
+        for (const jogador of dados.jogadores) {
+            try {
+                const pSnap = await getDoc(doc(db, "personagens", jogador.personagemId));
+                
+                if (pSnap.exists()) {
+                    const p = pSnap.data();
+                    const atributos = p.atributos || {};
+                    const status = p.status || {};
+                    const deslocamento = p.deslocamento || {};
+                    const defesa = p.defesa || {};
+
+                    window.dadosJogadoresTemp = window.dadosJogadoresTemp || {};
+                    window.dadosJogadoresTemp[jogador.personagemId] = p; ;
+
+                    const usaPD = p.regras?.semSanidade === true;
+                    let barrasHTML = "";
+                    if (usaPD) {
+                        // Layout para Sobrevivente (Apenas Vida e PD)
+                        barrasHTML = `
+                            <div class="barra-container">
+                                <span>VIDA:</span>
+                                <small> ${status.pvAtual ?? 0} / ${status.pvMax ?? 0}</small>
+                                <div class="barra-bg"><div class="barra-fill" id="barra-pv" style="width: ${(status.pvAtual/status.pvMax)*100}%"></div></div>
+                            </div>
+                            <div class="barra-container">
+                                <span>DETERMINAÇÃO: </span>
+                                <small>${status.pdAtual ?? 0} / ${status.pdMax ?? 0}</small>
+                                <div class="barra-bg"><div class="barra-fill" id="barra-pd" style="width: ${(status.pdAtual/status.pdMax)*100}%"></div></div>
+                            </div>
+                        `;
+                    } else {
+                        // Layout Normal (Vida, Sanidade, PE)
+                        barrasHTML = `
+                            <div class="barra-container">
+                                <span>VIDA:</span>
+                                <small> ${status.pvAtual ?? 0} / ${status.pvMax ?? 0}</small>
+                                <div class="barra-bg"><div class="barra-fill" id="barra-pv" style="width: ${(status.pvAtual/status.pvMax)*100}%"></div></div>
+                            </div>
+                            <div class="barra-container">
+                                <span>SANIDADE:</span>
+                                <small>${status.sanAtual ?? 0} / ${status.sanMax ?? 0}</small>
+                                <div class="barra-bg"><div class="barra-fill" id="barra-san" style="width: ${(status.sanAtual/status.sanMax)*100}%"></div></div>
+                            </div>
+                            <div class="barra-container">
+                                <span>ESFORÇO:</span>
+                                <small>${status.peAtual ?? 0} / ${status.peMax ?? 0}</small>
+                                <div class="barra-bg"><div class="barra-fill" id="barra-pe" style="width: ${(status.peAtual/status.peMax)*100}%"></div></div>
+                            </div>
+                        `;
+                    }
+
+                    // Montando o Card com todos os dados que você pediu
+                    cardsHTML += `
+                        <div class="card-agente-mestre">
+                            <div class="card-header">
+                                ${p.foto ? `<img src="${p.foto}" class="foto-agente">` : ""}
+                                <div class="info-principal">
+                                    <h4>${p.nome || "Agente Sem Nome"}</h4>
+                                    <p>${p.classe || "Classe"} ${p.trilha ? '- ' + p.trilha : ''}</p>
+                                    <span>${p.origem || "Origem"} | NEX: ${p.nex || 0}%</span>
+                                </div>
+                            </div>
+
+                            <div class="stats-grid">
+                                <div class="stat"><b>AGI</b> <span>${atributos.AGI || 0}</span></div>
+                                <div class="stat"><b>FOR</b> <span>${atributos.FOR || 0}</span></div>
+                                <div class="stat"><b>INT</b> <span>${atributos.INT || 0}</span></div>
+                                <div class="stat"><b>PRE</b> <span>${atributos.PRE || 0}</span></div>
+                                <div class="stat"><b>VIG</b> <span>${atributos.VIG || 0}</span></div>
+                            </div>
+
+                            <div class="barras-vitais">
+                                ${barrasHTML}
+                            </div>
+
+                            <div class="detalhes-combate">
+                                <span><b>PE/TURNO:</b> ${p.peTurno || 1}</span>
+                                <span><b>DESL:</b> ${deslocamento.metros || 9}m / ${deslocamento.grid || 6}q</span>
+                                <span><b>DEFESA:</b> ${defesa.total || 10}</span>
+                                <span><b>ESQUIVA:</b> ${defesa.esquiva || 10}</span>
+                            </div>
+
+                            <button class="btn-abrir-ficha" onclick="window.abrirFichaPeloMestre('${jogador.personagemId}')">
+                                📄 Abrir Ficha
+                            </button>
+                        </div>
+                    `;
+                }
+            } catch (err) {
+                console.error("Erro ao carregar agente:", err);
+            }
         }
+        listaJogadores.innerHTML = cardsHTML;
+    } else {
+        listaJogadores.innerHTML = "<p>Nenhum agente na área.</p>";
+    }
+};
+window.abrirFichaPeloMestre = function(id) {
+    // 1. Recupera os dados que salvamos temporariamente
+    const dados = window.dadosJogadoresTemp ? window.dadosJogadoresTemp[id] : null;
+
+    if (!dados) {
+        console.error("Dados da ficha não encontrados no cache temporal.");
+        alert("Erro ao recuperar dados do agente.");
+        return;
+    }
+
+    // 2. Define o ID global para o sistema de salvamento
+    idFicha = id; 
+    window.idFichaAberta = id; 
+
+    // 3. Chama a função que você expôs no Passo 1
+    if (typeof window.abrirFichaCompleta === 'function') {
+        window.abrirFichaCompleta(id, dados);
+    } else {
+        console.error("A função abrirFichaCompleta ainda não está acessível no window.");
+        alert("Erro: O sistema de fichas ainda não foi carregado totalmente.");
+    }
+
+    // 4. Troca para a tela da Ficha (ajuste o ID 'Tela-Ficha' para o seu real)
+    const telaFicha = document.getElementById('Visualizar_Ficha'); // Ou o ID que você usa
+    if (telaFicha) {
+        document.querySelectorAll('.tela').forEach(t => {
+            t.classList.add('oculta');
+            t.classList.remove('ativa');
+        });
+        telaFicha.classList.remove('oculta');
+        telaFicha.classList.add('ativa');
     }
 };
 const btnExcluir = document.querySelector('.btn-excluir-campanha');
@@ -271,51 +399,215 @@ async function carregarCampanhasParticipando() {
     const user = auth.currentUser;
     if (!user) return;
 
-    // Procure ou crie um container no HTML para as campanhas que você é jogador
     const listaParticipando = document.querySelector('.lista-campanhas-participando');
     if (!listaParticipando) return;
 
-    listaParticipando.innerHTML = '<p>Buscando missões ativas...</p>';
+    listaParticipando.innerHTML = '<p>Buscando missões...</p>';
 
     try {
-        // BUSCA: Onde o array "jogadores" contém o ID do usuário
-        const q = query(
-            collection(db, "campanhas"), 
-            where("jogadores", "array-contains", user.uid)
-        );
-
+        // Buscamos todas as campanhas (ou você pode limitar a busca se tiver muitas)
+        const q = query(collection(db, "campanhas"));
         const querySnapshot = await getDocs(q);
+        
         listaParticipando.innerHTML = ''; 
 
-        if (querySnapshot.empty) {
-            listaParticipando.innerHTML = '<p>Você ainda não participa de nenhuma missão.</p>';
-            return;
-        }
+        let encontrouAlguma = false;
 
         querySnapshot.forEach((docSnap) => {
             const data = docSnap.data();
-            const idDoc = docSnap.id;
             
-            const card = document.createElement('div');
-            card.className = 'classe-card card-jogador'; 
-            card.style.cursor = 'pointer';
-            
-            card.innerHTML = `
-                <h3>${data.nome}</h3>
-                <p>Mestre: <strong>${data.mestreNome || 'Desconhecido'}</strong></p>
-                <p style="font-size: 0.8em; color: #aaa;">Status: Em missão</p>
-            `;
+            // VERIFICAÇÃO: O usuário está na lista de objetos de jogadores?
+            const euEstouNela = data.jogadores?.some(j => j.usuarioId === user.uid);
 
-            card.addEventListener('click', () => {
-                // Aqui você pode criar uma função 'abrirPainelJogador' no futuro
-                alert("Em breve: Ver detalhes da campanha como jogador!");
-            });
-
-            listaParticipando.appendChild(card);
+            if (euEstouNela) {
+                encontrouAlguma = true;
+                const card = document.createElement('div');
+                card.className = 'classe-card card-jogador'; 
+                
+                card.innerHTML = `
+                    <h3>${data.nome}</h3>
+                    <p>Mestre: <strong>${data.mestreNome || 'Agente Veterano'}</strong></p>
+                    <button class="btn-sair" onclick="sairDaCampanha('${docSnap.id}')" style="margin-top:10px; background:#441111; color:white; border:none; padding:5px; cursor:pointer;">Sair da Missão</button>
+                `;
+                listaParticipando.appendChild(card);
+            }
         });
+
+        if (!encontrouAlguma) {
+            listaParticipando.innerHTML = '<p>Você ainda não participa de nenhuma missão.</p>';
+        }
     } catch (error) {
         console.error("Erro ao carregar participações:", error);
-        listaParticipando.innerHTML = '<p>Erro ao carregar missões.</p>';
     }
 }
 window.carregarCampanhasParticipando = carregarCampanhasParticipando;
+let campanhaEncontradaID = null;
+window.verificarCodigo = async function() {
+    const codigoInput = document.getElementById('codigo-entrada');
+    const codigo = codigoInput.value.trim().toUpperCase();
+    
+    if (codigo.length !== 6) {
+        alert("O código deve ter exatamente 6 caracteres.");
+        return;
+    }
+
+    try {
+        // Busca no Firestore a campanha com o código digitado
+        const q = query(collection(db, "campanhas"), where("codigo", "==", codigo));
+        const querySnapshot = await getDocs(q);
+
+        if (querySnapshot.empty) {
+            alert("Nenhuma missão encontrada com este código. Verifique e tente novamente.");
+            return;
+        }
+
+        // Armazena o ID do documento encontrado
+        campanhaEncontradaID = querySnapshot.docs[0].id;
+        
+        // Carrega os personagens do usuário para o Select
+        const temPersonagem = await preencherSelectPersonagens();
+        
+        if (!temPersonagem) {
+            alert("Você não possui agentes criados. Crie um personagem antes de entrar em uma missão!");
+            return;
+        }
+
+        // Troca as telas: Esconde a parte do código e mostra a do personagem
+        document.getElementById('etapa-codigo').classList.add('oculta');
+        document.getElementById('etapa-personagem').classList.remove('oculta');
+
+    } catch (error) {
+        console.error("Erro ao verificar código:", error);
+        alert("Erro na conexão com o Outro Lado.");
+    }
+};
+async function preencherSelectPersonagens() {
+    const user = auth.currentUser;
+    const select = document.getElementById('select-personagem-entrada');
+    if (!user || !select) return false;
+    console.log("Buscando personagens para o UID:", user.uid);
+
+    try {
+        const q = query(collection(db, "personagens"), where("usuarioId", "==", user.uid));
+        const snap = await getDocs(q);
+        
+        if (snap.empty) return false;
+
+        select.innerHTML = ''; // Limpa opções anteriores
+        snap.forEach(doc => {
+            const p = doc.data();
+            const option = document.createElement('option');
+            option.value = doc.id;
+            option.innerText = `${p.nome} (${p.classe || 'Inexperiente'})`;
+            select.appendChild(option);
+        });
+        
+        return true;
+    } catch (e) {
+        console.error("Erro ao carregar agentes:", e);
+        return false;
+    }
+}
+window.entrarNaCampanha = async function() {
+    const user = auth.currentUser;
+    const select = document.getElementById('select-personagem-entrada');
+    const personagemId = select.value;
+
+    // 1. Verificações básicas
+    if (!user) return alert("Você precisa estar logado!");
+    if (!campanhaEncontradaID) return alert("Erro: ID da campanha não encontrado. Verifique o código novamente.");
+    if (!personagemId) return alert("Selecione um agente para a missão!");
+
+    try {
+        // 2. Pegar os dados ATUAIS da campanha diretamente pelo ID
+        const { getDoc } = await import("https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js");
+        const campanhaRef = doc(db, "campanhas", campanhaEncontradaID);
+        const docSnap = await getDoc(campanhaRef);
+
+        if (!docSnap.exists()) {
+            alert("Erro: A campanha não existe mais.");
+            return;
+        }
+
+        const dadosCampanha = docSnap.data();
+
+        // 3. Verificar se o jogador já está lá (evitar duplicatas)
+        const listaJogadores = dadosCampanha.jogadores || [];
+        const jaEsta = listaJogadores.find(j => j.usuarioId === user.uid);
+        
+        if (jaEsta) {
+            alert("Você já faz parte desta missão!");
+            cancelarEntrada();
+            return;
+        }
+
+        // 4. Criar o novo objeto do jogador
+        const novoParticipante = {
+            usuarioId: user.uid,
+            nomeUsuario: user.displayName || user.email,
+            personagemId: personagemId
+        };
+
+        // 5. Atualizar o array no Firebase
+        const novaLista = [...listaJogadores, novoParticipante];
+
+        await updateDoc(campanhaRef, {
+            jogadores: novaLista
+        });
+
+        alert(`Sucesso! Você entrou na missão: ${dadosCampanha.nome}`);
+        
+        // Limpar interface e atualizar listas
+        cancelarEntrada();
+        if (typeof carregarCampanhasParticipando === 'function') {
+            carregarCampanhasParticipando();
+        }
+
+    } catch (error) {
+        console.error("Erro ao entrar na missão:", error);
+        alert("Erro ao salvar entrada: " + error.message);
+    }
+};
+window.cancelarEntrada = function() {
+    campanhaEncontradaID = null;
+    document.getElementById('codigo-entrada').value = "";
+    document.getElementById('etapa-codigo').classList.remove('oculta');
+    document.getElementById('etapa-personagem').classList.add('oculta');
+};
+window.sairDaCampanha = async function(idCampanha) {
+    const user = auth.currentUser;
+    if (!user) return;
+
+    // Confirmação para evitar cliques acidentais
+    if (!confirm("Tem certeza que deseja abandonar esta missão? Seu personagem será desconectado dela.")) {
+        return;
+    }
+
+    try {
+        const campanhaRef = doc(db, "campanhas", idCampanha);
+        const docSnap = await getDoc(campanhaRef);
+
+        if (docSnap.exists()) {
+            const dados = docSnap.data();
+            const listaJogadores = dados.jogadores || [];
+
+            // Filtra a lista: mantém apenas quem NÃO tem o seu UID
+            const novaLista = listaJogadores.filter(j => j.usuarioId !== user.uid);
+
+            // Atualiza o Firebase com a nova lista reduzida
+            await updateDoc(campanhaRef, {
+                jogadores: novaLista
+            });
+
+            alert("Você saiu da missão com sucesso.");
+            
+            // Atualiza a interface (chama a função que carrega as campanhas que você participa)
+            if (typeof carregarCampanhasParticipando === 'function') {
+                carregarCampanhasParticipando();
+            }
+        }
+    } catch (error) {
+        console.error("Erro ao sair da campanha:", error);
+        alert("Erro ao processar saída: " + error.message);
+    }
+};

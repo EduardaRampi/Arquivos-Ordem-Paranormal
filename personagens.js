@@ -13,7 +13,8 @@ import {
 // Variáveis para armazenar as seleções feitas nas abas
 let escolhaOrigemId = null;
 let escolhaClasseId = null;
-let idFichaAberta = null;
+window.idFichaAberta = window.idFichaAberta || null;
+let carregandoFicha = false;
 const TRILHAS = {
     combatente: ["Aniquilador", "Guerreiro", "Operações Especiais", "Tropa de Choque", "Comandante de Campo", "Agente Secreto", "Caçador", "Monstruoso"],
     especialista: ["Atirador de Elite", "Infiltrador", "Médico de Campo", "Negociador", "Técnico", "Bibliotecario", "Perseverante", "Muambeiro"],
@@ -518,6 +519,8 @@ window.atualizarPatente = atualizarPatente;
    7. FUNÇÕES DE VISUALIZAÇÃO
 ============================================================ */
 function abrirFichaCompleta(id, dados) {
+    carregandoFicha = true;
+    window.idFichaAberta = id;
     idFichaAberta = id;
     console.log("Abrindo ficha completa de:", dados.nome);
 
@@ -743,7 +746,14 @@ function abrirFichaCompleta(id, dados) {
     } else {
         document.getElementById('foto-personagem').src = "https://placehold.co/400";
     }
+
+    // L. Timer
+    setTimeout(() => {
+        carregandoFicha = false; 
+        console.log("Ficha carregada e pronta para edições.");
+    }, 1000);
 }
+window.abrirFichaCompleta = abrirFichaCompleta;
 /* ============================================================
    8. REGRAS ADICIONAIS
 ============================================================ */
@@ -2311,7 +2321,10 @@ window.salvarMudancasRituais = function() {
    32. Salva
 ============================================================ */
 async function salvarFicha() {
-    if (!idFichaAberta || !window.fichaAtualDados) {
+    if (carregandoFicha) return;
+    const idParaSalvar = window.idFichaAberta;
+
+    if (!idParaSalvar || !window.fichaAtualDados) {
         console.warn("Tentativa de salvar sem ficha aberta.");
         return;
     }
@@ -2333,7 +2346,7 @@ async function salvarFicha() {
     };
 
     try {
-        const fichaRef = doc(db, "personagens", idFichaAberta);
+        const fichaRef = doc(db, "personagens", idParaSalvar);
 
         // Coletando dados (Aqui incluímos o NOME que vem do innerText do h1)
         const dadosParaSalvar = {

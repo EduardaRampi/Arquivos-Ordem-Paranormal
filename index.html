@@ -53,11 +53,14 @@
             <h1>Seu Perfil</h1>
             <div class="ficha-card" style="max-width: 500px; margin: 0 auto;">
                 <div class="perfil-info">
+                    <label>Nome de Exibição:</label>
+                    <input type="text" id="edit-display-name" class="input-inline" placeholder="Seu nome...">
                     <p><strong>E-mail:</strong> <span id="perfil-email">Carregando...</span></p>
                     <p><strong>ID do Usuário:</strong> <span id="perfil-id" style="font-size: 0.7rem; opacity: 0.5;"></span></p>
                 </div>
 
                 <div class="cent" style="margin-top: 20px;">
+                    <button onclick="salvarNovoNome()">Atualizar Nome</button>
                     <button id="btn-redefinir-senha" class="btn-perfil">Redefinir Senha</button>
                     <button id="btn-excluir-conta" class="btn-perfil" style="background-color: #444;">Excluir Conta</button>
                 </div>
@@ -161,9 +164,16 @@
             </div>
             <div id="entrar-campanha-section">
                 <h2>Entrar numa Missão</h2>
-                <div class="centralizar">
-                    <input type="text" id="codigo-entrada" class="input-inline" placeholder="Código (Ex: A1B2C3)" maxlength="6">
-                    <button class="btn-navegar" onclick="entrarNaCampanha()">Entrar na Campanha</button>
+                <div id="etapa-codigo" class="centralizar">
+                    <input type="text" id="codigo-entrada" class="input-inline" placeholder="Código de 6 dígitos" maxlength="6">
+                    <button onclick="verificarCodigo()">Verificar Código</button>
+                </div>
+                <div id="etapa-personagem" class="oculta centralizar">
+                    <p>✅ Missão Encontrada!</p>
+                    <label>Selecione seu Agente para esta missão:</label>
+                    <select id="select-personagem-entrada"></select>
+                    <button class="btn-confirmar" onclick="entrarNaCampanha()">Confirmar Entrada na Missão</button>
+                    <button class="btn-voltar-mini" onclick="cancelarEntrada()">Cancelar</button>
                 </div>
             </div>
             <h2>Suas Campanhas</h2>
@@ -1353,8 +1363,7 @@
             <div class="painel-grid">
                 <section class="sessao-jogadores">
                     <h2>Agentes na Missão</h2>
-                    <div id="lista-jogadores-campanha" class="lista-mini">
-                        </div>
+                    <div id="lista-jogadores-campanha" class="lista"></div>
                 </section>
             </div>
             <div class="centralizar">
@@ -1362,7 +1371,7 @@
                     Salvar Alterações
                 </button>
                 <button class="btn-excluir-campanha">
-                    Excluir Ficha
+                    Excluir Campanha
                 </button>
                 <button class="btn-voltar" data-destino="Campanhas">Voltar</button>
             </div>

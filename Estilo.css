@@ -1613,21 +1613,176 @@ input:checked ~ .status-label { color: var(--cor-primaria-clara); }
     border-bottom: 1px solid rgba(131,49,49,0.4);
     padding-bottom: 4px;
 }
-.lista-mini {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    padding: 10px 0;
+#select-personagem-entrada {
+    background: rgba(0,0,0,0.6);
+    border: 1px solid var(--cor-primaria);
+    border-radius: 6px;
+    padding: 10px 12px;
+    color: var(--cor-texto-claro);
+    transition: all 0.2s ease;
 }
-@keyframes fadeInTabela {
-    from {
-        opacity: 0;
-        transform: translateY(5px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+#select-personagem-entrada:focus {
+    border-color: var(--cor-primaria-clara);
+    box-shadow: 0 0 8px rgba(131,49,49,0.7);
+    outline: none;
+    transform: translateY(-2px);
+}
+#etapa-personagem {
+    max-width: 480px;
+    margin: 40px auto;
+    flex-direction: column;
+}
+#etapa-personagem p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--cor-texto-claro);
+}
+#etapa-personagem label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+.card-agente-mestre {
+    background: linear-gradient(
+        180deg,
+        rgba(40, 10, 10, 0.95),
+        rgba(20, 5, 5, 0.95)
+    );
+    border: 1px solid rgba(131,49,49,0.6);
+    border-left: 5px solid var(--cor-primaria);
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow:
+        0 0 25px rgba(131,49,49,0.25),
+        0 15px 35px rgba(0,0,0,0.7);
+    transition: all 0.25s ease;
+}
+.card-agente-mestre:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 0 35px rgba(131,49,49,0.5),
+        0 25px 45px rgba(0,0,0,0.9);
+}
+.card-header {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.foto-agente {
+    width: 75px;
+    height: 75px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 2px solid var(--cor-primaria);
+    box-shadow: 0 0 15px rgba(131,49,49,0.5);
+}
+.info-principal h4 {
+    margin: 0;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+}
+.info-principal p {
+    margin: 2px 0;
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+.info-principal span {
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin: 15px 0;
+}
+.stat {
+    background: rgba(0,0,0,0.5);
+    border-radius: 6px;
+    padding: 6px;
+    text-align: center;
+    font-size: 0.75rem;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.2s ease;
+}
+.stat:hover {
+    background: rgba(131,49,49,0.3);
+    transform: translateY(-2px);
+}
+.stat b {
+    display: block;
+    font-size: 0.7rem;
+    opacity: 0.7;
+}
+.stat span {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+}
+.barras-vitais {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.barra-bg {
+    width: 100%;
+    height: 14px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+.barra-fill {
+    height: 100%;
+    transition: width 0.4s ease;
+    border-radius: 8px;
+}
+.barra-container span {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+.barra-container small {
+    position: absolute;
+    right: 0;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #fff;
+}
+.barra-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: relative;
+    padding-top: 14px;
+}
+.detalhes-combate {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    font-size: 0.75rem;
+    margin-bottom: 15px;
+}
+.detalhes-combate span {
+    background: rgba(0,0,0,0.5);
+    padding: 6px 8px;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+.btn-abrir-ficha {
+    width: 100%;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 @keyframes tremer {
     0% { transform: translate(1px, 1px) rotate(0deg); }

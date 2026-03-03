@@ -1,6 +1,6 @@
 // Importe auth do seu arquivo de configuração
 import { auth } from './firebase-config.js';
-
+import { updateProfile } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
 // IMPORTANTE: Importe as funções específicas do SDK v9
 import { 
     createUserWithEmailAndPassword, 
@@ -48,7 +48,7 @@ document.getElementById('login-form').addEventListener('submit', (e) => {
 });
 
 // Verifique estado de login
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, async (user) => {
     if (user) {
         // Verifica se os elementos existem antes de tentar acessar o estilo
         const authSection = document.getElementById('auth-section');
@@ -67,6 +67,16 @@ onAuthStateChanged(auth, (user) => {
             carregarCampanhas(); 
             carregarCampanhasParticipando();
         }
+
+        if (!user.displayName) {
+            const nomeAleatorio = "Agente_" + Math.floor(Math.random() * 9000 + 1000);
+            await updateProfile(user, { displayName: nomeAleatorio });
+            // Recarrega para aplicar a mudança
+            window.location.reload(); 
+        }
+        // Atualiza o texto na interface onde antes aparecia o email
+        document.getElementById('user-name-display').innerText = user.displayName;
+
     } else {
         const authSection = document.getElementById('auth-section');
         const charSection = document.getElementById('personagem-section');
@@ -82,14 +92,17 @@ onAuthStateChanged(auth, (user) => {
 function carregarDadosPerfil() {
     // No V9, pegamos o usuário atual de dentro do objeto auth
     const user = auth.currentUser;
+    const inputNome = document.getElementById('edit-display-name');
 
-    if (user) {
+    if (user && inputNome) {
         const emailElem = document.getElementById('perfil-email');
         const idElem = document.getElementById('perfil-id');
 
         if(emailElem) emailElem.innerText = user.email;
         if(idElem) idElem.innerText = user.uid;
+        inputNome.value = user.displayName || "";
     }
+
 }
 // Torna global para que o codigo.js consiga chamar
 window.carregarDadosPerfil = carregarDadosPerfil;
@@ -145,3 +158,22 @@ window.toggleSenha = function(idInput, icone) {
         icone.innerText = '👁️'; // Muda o ícone para indicar "mostrar"
     }
 }
+
+window.salvarNovoNome = async function() {
+    const user = auth.currentUser;
+    const novoNome = document.getElementById('edit-display-name').value.trim();
+
+    if (user && novoNome) {
+        try {
+            await updateProfile(user, { displayName: novoNome });
+            alert("Codinome atualizado, Agente!");
+            
+            // Atualiza na tela na hora
+            if(document.getElementById('user-name-display')) {
+                document.getElementById('user-name-display').innerText = novoNome;
+            }
+        } catch (error) {
+            console.error("Erro ao atualizar nome:", error);
+        }
+    }
+};
