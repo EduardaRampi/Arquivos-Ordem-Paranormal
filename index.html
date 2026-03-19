@@ -918,6 +918,10 @@
                     <textarea class="textarea" rows="6" placeholder="Nome, gênero, idade, descrição física..."></textarea>
                 </div>
                 <div class="text-container">
+                    <h3>Personalidade</h3>
+                    <textarea class="textarea" rows="6" placeholder="Traços marcantes, opiniões, ideais..."></textarea>
+                </div>
+                <div class="text-container">
                     <h3>Histórico</h3>
                     <textarea class="textarea" rows="6" placeholder="Infância, relação com a família, contato com o Paranormal, eventos bons e ruins..."></textarea>
                 </div>
@@ -1319,6 +1323,16 @@
                         <button onclick="abrirModalGuia('condicoes')">🤢 Condições</button>
                     </div>
                 </div>
+                <!-- COLUNA 9 - Homebrew -->
+                <div class="ficha-card">
+                    <h3>Homebrew</h3>
+                    <div class="ajuda-sidebar">
+                        <button onclick="abrirModalHomebrew('habilidades')">Habilidades</button>
+                        <button onclick="abrirModalHomebrew('rituais')">Rituais</button>
+                        <button onclick="abrirModalHomebrew('itens')">Itens</button>
+                        <button onclick="abrirModalHomebrew('trilhas')">Trilhas</button>
+                    </div>
+                </div>
             </div>
             <div class="centralizar">
                 <button class="btn-salvar-alteracoes">
@@ -1446,6 +1460,11 @@
             <div class="modal-corpo-editar">
                 <div class="grid-editar">
 
+                    <div class="campo">
+                        <label>Imagem</label>
+                        <input type="text" id="edit-item-foto" placeholder="https://link-da-imagem.png">
+                    </div>
+                    
                     <div class="campo">
                         <label>Nome</label>
                         <input type="text" id="edit-item-nome">

@@ -97,10 +97,17 @@ footer .canto {
     font-size: 10px;
     color: var(--cor-texto);
 }
-.lista, .grid, .per_jor, .ap_his_obj {
+.lista, .grid, .per_jor {
     display: grid;
     margin: 10px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    justify-items: center;
+}
+.ap_his_obj {
+    display: grid;
+    margin: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 15px;
     justify-items: center;
 }
@@ -1468,7 +1475,7 @@ input:checked ~ .status-label { color: var(--cor-primaria-clara); }
     align-items: center;
     gap: 10px;
 }
-.img-ritual-miniatura {
+.img-ritual-miniatura, .img-item-inventario {
     width: 100px;
     height: 100px;
     border-radius: 5px;

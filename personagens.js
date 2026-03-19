@@ -187,6 +187,7 @@ if (btnFinalizar) {
         const aparencia = document.querySelector('textarea[placeholder*="Nome, gênero, idade"]').value;
         const historico = document.querySelector('textarea[placeholder*="Infância, relação"]').value;
         const objetivo = document.querySelector('textarea[placeholder*="Por que ele faz parte"]').value;
+        const personalidade = document.querySelector('textarea[placeholder*="Traços marcantes, opiniões, ideais..."]').value;
 
         if (!nomePersonagem) {
             alert("Dê um nome ao seu personagem!");
@@ -267,7 +268,8 @@ if (btnFinalizar) {
                 detalhes: {
                     aparencia,
                     historico,
-                    objetivo
+                    objetivo,
+                    personalidade
                 },
                 criadoEm: serverTimestamp()
             });
@@ -1309,6 +1311,11 @@ function renderizarInventarioFicha() {
             exibicaoDano += " + 2";
         }
 
+        let htmlFoto = "";
+        if (item.foto && item.foto.trim() !== "") {
+            htmlFoto = `<img src="${item.foto}" class="img-item-inventario" alt="Foto do item">`;
+        }
+
         let htmlMelhorias = "";
         if (item.melhorias && item.melhorias.length > 0) {
             htmlMelhorias = `<div class="container-melhorias-lista">`;
@@ -1362,6 +1369,7 @@ function renderizarInventarioFicha() {
                 <span class="setinha">▼</span>
             </div>
             <div class="detalhes-item">
+                ${htmlFoto}
                 ${item.tipo ? `<p>${item.tipo}</p>` : ''}
                 <p>${item.descricao || ""}</p>
                 ${item.dano ? `<p>⚔️ Dano: ${exibicaoDano} | Crítico: ${item.critico}</p>` : ''}
@@ -1444,6 +1452,7 @@ window.abrirEdicaoItem = function(index) {
     }
 
     // Preenche todos os campos com o que já existe (ou vazio)
+    document.getElementById('edit-item-foto').value = item.foto || "";
     document.getElementById('edit-item-nome').value = item.nome || "";
     document.getElementById('edit-item-espaco').value = item.espaco || 0;
     document.getElementById('edit-item-categoria').value = item.categoria || 0;
@@ -1479,9 +1488,9 @@ window.salvarMudancasItem = function() {
     const item = window.fichaAtualDados.inventario[itemIndexSendoEditado];
 
     // Atualiza o objeto com os novos valores dos inputs
+    item.foto = document.getElementById('edit-item-foto').value;
     item.nome = document.getElementById('edit-item-nome').value;
     item.espaco = parseInt(document.getElementById('edit-item-espaco').value) || 0;
-    item.categoria = parseInt(document.getElementById('edit-item-categoria').value) || 0;
     item.tipo = document.getElementById('edit-item-tipo').value;
     item.dano = document.getElementById('edit-item-dano').value;
     item.critico = document.getElementById('edit-item-critico').value;
@@ -1493,27 +1502,25 @@ window.salvarMudancasItem = function() {
     const textoNomes = document.getElementById('edit-item-melhorias-nome').value;
     const textoDescs = document.getElementById('edit-item-melhorias').value;
 
-    // Criamos listas a partir do que foi digitado
     const listaNomes = textoNomes.split(',').map(n => n.trim()).filter(n => n !== "");
-    // Divide as descrições por linha
     const listaDescs = textoDescs.split('\n').map(d => d.trim()).filter(d => d !== "");
 
-    // Reconstruímos o array de melhorias
-    // Nota: isso manterá os nomes e descrições novos que você digitou
-    item.melhorias = listaNomes.map((nome, i) => {
-        // Tenta pegar a descrição correspondente à linha, ou usa uma padrão
-        let descLimpa = listaDescs[i] || "";
-        // Se a descrição começar com "Nome: ", removemos para não duplicar
-        descLimpa = descLimpa.replace(new RegExp(`^${nome}:?\\s*`, 'i'), '');
+    const valorDigitado = parseInt(document.getElementById('edit-item-categoria').value) || 0;
+    item.categoriaTotal = valorDigitado;
+    item.categoria = valorDigitado;
 
+    item.melhorias = listaNomes.map((nome, i) => {
+        let descLimpa = listaDescs[i] || "";
+        descLimpa = descLimpa.replace(new RegExp(`^${nome}:?\\s*`, 'i'), '');
         return {
             nome: nome,
             descricao: descLimpa,
-            categoriaMod: item.melhorias && item.melhorias[i] ? item.melhorias[i].categoriaMod : 0
+            categoriaMod: 0
         };
     });
 
-    // Se o item tem defesa, precisamos sincronizar a defesa total da ficha
+   item.textoMelhorias = item.melhorias.map(m => m.nome).join(", ");
+
     if (item.defesa > 0) sincronizarDefesaComInventario();
 
     fecharModalEditar();
