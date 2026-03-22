@@ -1752,17 +1752,11 @@
                 <button onclick="fecharModalHomebrew()">X</button>
                 <input type="hidden" id="homebrew-tipo">
             </div>
-
-            <div class="campo">
-                <label>Nome</label>
-                <input type="text" id="hb-nome">
+            <div class="modal-corpo-editar">
+                <div class="grid-editar">
+                    <div id="campos-dinamicos-hb"></div>
+                </div>
             </div>
-            <div id="campos-dinamicos-hb"></div>
-            <div class="campo">
-                <label>Descrição/Efeito</label>
-                <textarea id="hb-desc" rows="4"></textarea>
-            </div>
-
             <div class="footer-modal">
                 <button onclick="salvarHomebrew()" class="btn-salvar">Adicionar à Ficha</button>
             </div>

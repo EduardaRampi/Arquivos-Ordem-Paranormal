@@ -754,6 +754,20 @@ function abrirFichaCompleta(id, dados) {
         carregandoFicha = false; 
         console.log("Ficha carregada e pronta para edições.");
     }, 1000);
+
+    //M. Trilhas
+    function verificarTrilhasHomebrewNoCarregamento() {
+    const ficha = window.fichaAtualDados;
+    if (ficha && ficha.bibliotecaHomebrew) {
+        const classe = ficha.classe;
+        // Percorre as trilhas customizadas que o jogador salvou na ficha
+        Object.keys(ficha.bibliotecaHomebrew).forEach(nomeTrilha => {
+            if (TRILHAS[classe] && !TRILHAS[classe].includes(nomeTrilha)) {
+                TRILHAS[classe].push(nomeTrilha);
+            }
+        });
+    }
+}
 }
 window.abrirFichaCompleta = abrirFichaCompleta;
 /* ============================================================
@@ -2275,12 +2289,9 @@ window.abrirEdicaoRitual = function(index) {
     document.getElementById('edit-ritual-execucao').value = ritual.execucao || "";
     document.getElementById('edit-ritual-alcance').value = ritual.alcance || "";
     document.getElementById('edit-ritual-alvo').value = ritual.alvo || "";
-    document.getElementById('edit-ritual-duração').value = ritual.duracao || ""; // Lembre do çã no HTML
+    document.getElementById('edit-ritual-duração').value = ritual.duracao || ""; 
     document.getElementById('edit-ritual-resistencia').value = ritual.resistencia || "";
-    
-    // ATENÇÃO: Lembre-se de mudar o ID no HTML para 'edit-ritual-desc' como combinamos!
     document.getElementById('edit-ritual-desc').value = ritual.descricao || ""; 
-    
     document.getElementById('edit-ritual-discente').value = ritual.discente || "";
     document.getElementById('edit-ritual-verdadeiro').value = ritual.verdadeiro || "";
 
@@ -2325,7 +2336,185 @@ window.salvarMudancasRituais = function() {
     if (typeof salvarFicha === 'function') salvarFicha();
 };
 /* ============================================================
-   32. Salva
+   32. Homebrew
+============================================================ */
+let tipoHomebrewAtual = "";
+window.abrirModalHomebrew = function(tipo) {
+    tipoHomebrewAtual = tipo;
+    document.getElementById('homebrew-tipo').value = tipo;
+    document.getElementById('titulo-homebrew').innerText = `Criar Novo(a) ${tipo.charAt(0).toUpperCase() + tipo.slice(1)}`;
+    
+    const containerDinamico = document.getElementById('campos-dinamicos-hb');
+    containerDinamico.innerHTML = ""; // Limpa campos anteriores
+
+    // Adiciona campos específicos baseados no tipo
+    if (tipo === 'itens') {
+        containerDinamico.innerHTML = `
+            <div class="campo">
+                <label>Nome</label>
+                <input type="text" id="hb-nome">
+            </div>
+            <div class="campo pequeno">
+                <label>Espaço (Peso):</label>
+                <input type="number" id="hb-espaco" value="1">
+            </div>
+            <div class="campo pequeno">
+                <label>Categoria:</label>
+                <input type="number" id="hb-cat" value="0">
+            </div>
+        `;
+    } else if (tipo === 'rituais') {
+        containerDinamico.innerHTML = `
+            <div class="campo">
+                <label>Nome</label>
+                <input type="text" id="hb-nome">
+            </div>
+            <div class="campo pequeno">
+                <label>Círculo:</label>
+                <input type="number" id="hb-circulo" value="1">
+            </div>
+            <div class="campo pequeno">
+                <label>Elemento:</label>
+                <input type="text" id="hb-elemento" placeholder="Ex: Sangue">
+            </div>
+        `;
+    } else if (tipo === 'habilidades'){
+        containerDinamico.innerHTML = `
+            <div class="campo">
+                <label>Nome</label>
+                <input type="text" id="hb-nome">
+            </div>
+            <div class="campo campo-longo">
+                <label>Descrição</label>
+                <textarea id="hb-desc" rows="4"></textarea>
+            </div>
+        `
+    } else {
+        containerDinamico.innerHTML = `
+            <div class="campo">
+                <label>Nome</label>
+                <input type="text" id="hb-nome">
+            </div>
+            <div class="campo">
+                <label>Habilidade NEX10%</label>
+                <input type="text" id="hb-nex10-nome" placeholder="Nome">
+                <textarea type="text" id="hb-nex10" rows="4"></textarea>
+            </div>
+            <div class="campo">
+                <label>Habilidade NEX40%</label>
+                <input type="text" id="hb-nex40-nome" placeholder="Nome">
+                <textarea type="text" id="hb-nex40" rows="4"></textarea>
+            </div>
+            <div class="campo">
+                <label>Habilidade NEX65%</label>
+                <input type="text" id="hb-nex65-nome" placeholder="Nome">
+                <textarea type="text" id="hb-nex65" rows="4"></textarea>
+            </div>
+            <div class="campo">
+                <label>Habilidade NEX99%</label>
+                <input type="text" id="hb-nex99-nome" placeholder="Nome">
+                <textarea type="text" id="hb-nex99" rows="4"></textarea>
+            </div>
+        `
+    }
+
+    document.getElementById('modal-homebrew').classList.remove('modal-oculto');
+};
+window.fecharModalHomebrew = function() {
+    const modal = document.getElementById('modal-homebrew');
+    if (modal) modal.classList.add('modal-oculto');
+
+    const camposParaLimpar = [
+        'hb-nome', 'hb-desc', 'hb-espaco', 'hb-cat', 
+        'hb-circulo', 'hb-elemento',
+        'hb-nex10-nome', 'hb-nex10', 'hb-nex40-nome', 'hb-nex40',
+        'hb-nex65-nome', 'hb-nex65', 'hb-nex99-nome', 'hb-nex99'
+    ];
+
+    // Limpa apenas os que existirem na tela no momento
+    camposParaLimpar.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.value = ""; 
+    });
+};
+window.salvarHomebrew = function() {
+    const tipo = document.getElementById('homebrew-tipo').value;
+    const nome = document.getElementById('hb-nome').value;
+
+    if (!nome) {
+        alert("Dê um nome ao seu Homebrew!");
+        return;
+    }
+
+    let objetoHomebrew = {
+        nome: nome,
+        homebrew: true,
+        idUnico: Date.now() + Math.random().toString(36).substr(2, 9)
+    };
+
+    // Lógica por tipo
+    if (tipo === 'itens') {
+        objetoHomebrew.espaco = parseInt(document.getElementById('hb-espaco').value) || 0;
+        objetoHomebrew.categoria = parseInt(document.getElementById('hb-cat').value) || 0;
+        objetoHomebrew.categoriaTotal = objetoHomebrew.categoria;
+        objetoHomebrew.descricao = "Item personalizado.";
+        
+        window.fichaAtualDados.inventario.push(objetoHomebrew);
+        renderizarInventarioFicha();
+
+    } else if (tipo === 'rituais') {
+        objetoHomebrew.circulo = document.getElementById('hb-circulo').value;
+        objetoHomebrew.elemento = document.getElementById('hb-elemento').value;
+        objetoHomebrew.descricao = "Ritual personalizado.";
+
+        window.fichaAtualDados.rituais.push(objetoHomebrew);
+        renderizarRituaisFicha();
+
+    } else if (tipo === 'habilidades') {
+        objetoHomebrew.descricao = document.getElementById('hb-desc').value;
+        
+        window.fichaAtualDados.habilidades.push(objetoHomebrew);
+        renderizarHabilidadesFicha();
+
+    } else {
+        const dadosTrilha = {
+            nome: nome,
+            homebrew: true,
+            habilidades: {
+                nex10: { nome: document.getElementById('hb-nex10-nome').value, desc: document.getElementById('hb-nex10').value },
+                nex40: { nome: document.getElementById('hb-nex40-nome').value, desc: document.getElementById('hb-nex40').value },
+                nex65: { nome: document.getElementById('hb-nex65-nome').value, desc: document.getElementById('hb-nex65').value },
+                nex99: { nome: document.getElementById('hb-nex99-nome').value, desc: document.getElementById('hb-nex99').value }
+            }
+        };
+
+        const classeAtual = window.fichaAtualDados.classe;
+        // 1. Adiciona o nome da trilha na lista global TRILHAS para ela aparecer no select
+        if (TRILHAS[classeAtual]) {
+            // Evita duplicatas na lista visual
+            if (!TRILHAS[classeAtual].includes(nome)) {
+                TRILHAS[classeAtual].push(nome);
+            }
+        }
+
+        // 2. Salva os dados pesados da trilha dentro da ficha para não perder as descrições
+        if (!window.fichaAtualDados.bibliotecaHomebrew) window.fichaAtualDados.bibliotecaHomebrew = {};
+        window.fichaAtualDados.bibliotecaHomebrew[nome] = dadosTrilha;
+
+        // 3. Força a atualização do select de trilhas na ficha
+        const nex = window.fichaAtualDados.nex || window.fichaAtualDados.estagio || 0;
+        atualizarOpcoesTrilha(classeAtual, nex, nome);
+        
+        // 4. Define a trilha do personagem como esta que acabou de ser criada
+        window.fichaAtualDados.trilha = nome;
+
+    }
+
+    fecharModalHomebrew();
+    if (typeof salvarFicha === 'function') salvarFicha();
+};
+/* ============================================================
+   33. Salva
 ============================================================ */
 async function salvarFicha() {
     if (carregandoFicha) return;
@@ -2500,7 +2689,7 @@ window.salvarFicha = salvarFicha;
 // Expõe a função para o Window para que o auth.js possa chamá-la no login
 window.carregarPersonagens = carregarPersonagens;
 /* ============================================================
-   33. Ajuda
+   34. Ajuda
 ============================================================ */
 const CONTEUDO_AJUDA = {
     condicoes: {
