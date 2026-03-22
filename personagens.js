@@ -2829,30 +2829,64 @@ const CONTEUDO_AJUDA = {
         `
     },
     acoes: {
-        titulo: "⚔️ Guia de Ações em Combate",
+        titulo: "⚔️ Guia de Ações",
         html: `
             <div class="grid-itens">
                 <div class="card-ajuda">
-                    <h4>🔴 Ação Padrão (1 por turno)</h4>
+                    <h4>Ações de Investigação</h4>
                     <ul>
-                        <li><strong>Atacar:</strong> Realiza um teste de ataque com sua arma.</li>
-                        <li><strong>Lançar Ritual:</strong> Executa um ritual (gasta PE).</li>
-                        <li><strong>Usar Habilidade:</strong> Ativa uma habilidade de classe ou origem.</li>
-                        <li><strong>Preparar:</strong> Escolhe uma ação para gatilho posterior.</li>
+                        <li><strong>Procurar Pistas:</strong> O jogador procura algo ou fala com alguém para encontrar pistas</li>
+                        <li><strong>Facilitar Investigação:</strong> Em vez de procurar pistas, um personagem pode usar uma perícia para realizar uma ação que modifica a cena e facilita a investigação do grupo.</li>
+                        <li><strong>Usar Habilidade e Itens:</strong> Ativa uma habilidade ou usa algum item</li>
+                        <li><strong>Ajudar:</strong> Um personagem pode usar sua ação de investigação para ajudar o teste de outro personagem</li>
+                        <li><strong>Busca Obstinada:</strong> personagem analisa cada local, de cada ângulo possível, de forma extremamente concentrada… Ou obcecada</li>
+                        <li><strong>Recapitular:</strong> O personagem reflete sobre o que já sabe, em busca de uma ideia ou palpite</li>
+                        <li><strong>Compartilhar:</strong> O personagem compartilha o que já sabe com outro</li>
                     </ul>
                 </div>
                 <div class="card-ajuda">
-                    <h4>🔵 Ação de Movimento (1 por turno)</h4>
+                    <h4>Ações Padrão</h4>
                     <ul>
-                        <li><strong>Deslocar:</strong> Movimenta-se até seu limite de metros.</li>
-                        <li><strong>Sacar/Guardar:</strong> Pega ou guarda um item/arma.</li>
-                        <li><strong>Levantar-se:</strong> Caso esteja caído.</li>
-                        <li><strong>Manipular Item:</strong> Abrir porta, pegar algo do chão.</li>
+                        <li><strong>Agredir:</strong> Você faz um ataque com uma arma corpo a corpo ou à distância</li>
+                        <li><strong>Manobra de Combate:</strong> Uma manobra é um ataque corpo a corpo para fazer algo diferente de causar dano</li>
+                        <li><strong>Atropelar:</strong> Você usa uma ação padrão durante um movimento para avançar pelo espaço ocupado</li>
+                        <li><strong>Conjurar um Ritual:</strong> A maioria dos rituais exige uma ação padrão para ser executado</li>
+                        <li><strong>Fintar:</strong> Faça um teste de Enganação oposto ao teste de Reflexos de um ser em alcance curto</li>
+                        <li><strong>Preparar:</strong> Você prepara uma ação para realizar após seu turno, mas antes de seu turno na próxima rodada</li>
+                        <li><strong>Usar Habilidade e Itens:</strong> Ativa uma habilidade ou usa algum item</li>
                     </ul>
                 </div>
                 <div class="card-ajuda">
-                    <h4>🟡 Reações (1 por rodada*)</h4>
-                    <p><small>*Você só pode usar reações especiais de defesa, as listas a baixo, uma vez por rodada, porém qualquer outro tipo de reação é ilimitada.</small></p>
+                    <h4>Ações de Movimento</h4>
+                    <ul>
+                        <li><strong>Levantar-se:</strong> Levantar do chão (ou de uma cama, cadeira…)</li>
+                        <li><strong>Manipular Item:</strong> Pegar um objeto em uma mochila, abrir ou fechar uma porta e atirar uma corda para alguém</li>
+                        <li><strong>Mirar:</strong> Até o fim de seu próximo turno, você anula a penalidade de –1d20 em testes de Pontaria contra aquele alvo caso ele esteja engajado em combate corpo a corpo</li>
+                        <li><strong>Movimentar-se:</strong> Você percorre uma distância igual a seu deslocamento</li>
+                        <li><strong>Sacar ou Guadar Item:</strong> Sacar ou guardar um item</li>
+                    </ul>
+                </div>
+                <div class="card-ajuda">
+                    <h4>Ações Completas</h4>
+                    <ul>
+                        <li><strong>Corrida:</strong> Você corre mais que seu deslocamento normal</li>
+                        <li><strong>Golpe de Misericórdia:</strong> Você desfere um golpe letal em um oponente adjacente e indefeso</li>
+                        <li><strong>Investida:</strong> Você avança até o dobro de seu deslocamento (e no mínimo 3m) em linha reta e, no fim do movimento, faz um ataque corpo a corpo</li>
+                        <li><strong>Conjurar um Ritual:</strong> Ao conjurar rituais com execução maior do que uma ação completa, você gasta uma ação completa a cada rodada</li>
+                    </ul>
+                </div>
+                <div class="card-ajuda">
+                    <h4>Ações Livres</h4>
+                    <ul>
+                        <li><strong>Atrasar:</strong> Escolhendo atrasar sua ação, você age mais tarde na ordem de Iniciativa, em relação à Iniciativa que rolou</li>
+                        <li><strong>Falar:</strong> Frases curtas</li>
+                        <li><strong>Jogar-se no Chão:</strong> Você recebe os benefícios e penalidades normais por estar caído, mas normalmente não sofre dano ao se jogar no chão</li>
+                        <li><strong>Largar um Item:</strong> Deixar cair um item que esteja segurando</li>
+                    </ul>
+                </div>
+                <div class="card-ajuda">
+                    <h4>Reações</h4>
+                    <p><small>Você só pode usar reações especiais de defesa, as listas a baixo, uma vez por rodada, porém qualquer outro tipo de reação é ilimitada.</small></p>
                     <ul>
                         <li><strong>Esquiva:</strong> Soma sua Agilidade na Defesa.</li>
                         <li><strong>Bloqueio:</strong> Soma sua Luta/Fortitude na Resistência a Dano.</li>
@@ -2860,11 +2894,14 @@ const CONTEUDO_AJUDA = {
                     </ul>
                 </div>
                 <div class="card-ajuda">
-                    <h4>⚪ Ações Livres (Ilimitada)</h4>
+                    <h4>Ações em Perseguições</h4>
                     <ul>
-                        <li><strong>Falar:</strong> Frases curtas.</li>
-                        <li><strong>Soltar Item:</strong> Deixar cair no chão.</li>
-                        <li><strong>Gastar PE:</strong> Algumas habilidades são livres.</li>
+                        <li><strong>Cortar Caminho:</strong> O personagem escolhe um caminho mais curto, mas mais difícil</li>
+                        <li><strong>Esforço Extra:</strong> O personagem se esforça ao máximo, exaurindo seu fôlego</li>
+                        <li><strong>Criar Obstáculo:</strong> Se o personagem for uma presa, pode criar um obstáculo para os caçadores</li>
+                        <li><strong>Despistar:</strong> Se o personagem for uma presa, pode se esconder dos caçadores</li>
+                        <li><strong>Sacrifício:</strong> O personagem deixa de correr para atrapalhar os adversários</li>
+                        <li><strong>Atrapalhar:</strong> Se for uma presa, o personagem pode atrapalhar outra presa com o mesmo número de sucessos dele para aumentar sua própria chance de fuga!</li>
                     </ul>
                 </div>
             </div>

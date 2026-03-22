@@ -1464,7 +1464,7 @@
                         <label>Imagem</label>
                         <input type="text" id="edit-item-foto" placeholder="https://link-da-imagem.png">
                     </div>
-                    
+
                     <div class="campo">
                         <label>Nome</label>
                         <input type="text" id="edit-item-nome">
@@ -1737,14 +1737,37 @@
         </div>
     </div>
     <div id="modal-guia-ajuda" class="modal modal-oculto">
-    <div class="modal-conteudo">
-        <div class="modal-cabecalho">
-            <h2 id="titulo-guia">Ajuda</h2>
-            <button onclick="fecharModalGuia()">X</button>
+        <div class="modal-conteudo">
+            <div class="modal-cabecalho">
+                <h2 id="titulo-guia">Ajuda</h2>
+                <button onclick="fecharModalGuia()">X</button>
+            </div>
+            <div id="corpo-guia" class="grid-itens"></div>
         </div>
-        <div id="corpo-guia" class="grid-itens"></div>
     </div>
-</div>
+    <div id="modal-homebrew" class="modal modal-oculto">
+        <div class="modal-conteudo">
+            <div class="modal-cabecalho">
+                <h3 id="titulo-homebrew">Criar Homebrew</h3>
+                <button onclick="fecharModalHomebrew()">X</button>
+                <input type="hidden" id="homebrew-tipo">
+            </div>
+
+            <div class="campo">
+                <label>Nome</label>
+                <input type="text" id="hb-nome">
+            </div>
+            <div id="campos-dinamicos-hb"></div>
+            <div class="campo">
+                <label>Descrição/Efeito</label>
+                <textarea id="hb-desc" rows="4"></textarea>
+            </div>
+
+            <div class="footer-modal">
+                <button onclick="salvarHomebrew()" class="btn-salvar">Adicionar à Ficha</button>
+            </div>
+        </div>
+    </div>
     <script src="código.js"></script>
     <script src="automacoes.js"></script>
 </body>

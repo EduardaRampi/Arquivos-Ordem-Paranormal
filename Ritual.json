@@ -764,7 +764,7 @@
       "alvo": "Esfera de 18m de raio",
       "duracao": "Cena",
       "resistencia": "Permanente até ser dissipado",
-      "descricao": "-------",
+      "descricao": "Você marca um local dentro do alcance com um símbolo de Morte invisível (é necessário um de Intuição ou Ocultismo contra a DT do ritual para perceber). O símbolo capta imagens e sons em um raio de 18m a partir dele. Você pode gastar uma ação padrão para ver e ouvir qualquer coisa captada pelo símbolo, mesmo estando distante dele.",
       "discente": "Acrescenta a opção de gastar uma ação padrão para fazer o símbolo explodir, causando 4d8 de dano de Morte em todos os seres captados por ele no momento da explosão (um teste de resistência de Fortitude contra a DT do ritual reduz o dano à metade). (Custo de +3 PE)",
       "verdadeiro": "Como discente, mas muda o dano para 8d8 pontos de dano de Morte. (Requer 3º Círculo e custo de +7 PE)"
     },

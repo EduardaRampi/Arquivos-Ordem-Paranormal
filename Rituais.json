@@ -822,7 +822,7 @@
     {
         "nome":"Capturar Momento",
         "origem":"Arquivos Secretos",
-        "descricao":"TEXTO INCORRETO NOS ARQUIVOS SECRETOS, ESPERANDO A JAMBO CONSERTAR",
+        "descricao":"Você marca um local dentro do alcance com um símbolo de Morte invisível (é necessário um de Intuição ou Ocultismo contra a DT do ritual para perceber). O símbolo capta imagens e sons em um raio de 18m a partir dele. Você pode gastar uma ação padrão para ver e ouvir qualquer coisa captada pelo símbolo, mesmo estando distante dele.",
         "Circulo":"2º",
         "Elemento":"Morte",
         "tag":"Fevereiro-2026"
