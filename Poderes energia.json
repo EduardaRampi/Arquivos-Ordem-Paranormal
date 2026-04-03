@@ -59,5 +59,12 @@
         "tag": "Fevereiro-2026",
         "descricao": "Você sabe transmitir a Energia através de seus punhos.",
         "PreR": ""
+    },
+    {
+        "nome": "Instrumento Elétrico de Combate",
+        "origem": "Arquivos Secretos",
+        "tag": "Março-2026",
+        "descricao": "Você transforma um instrumento musical em uma versão elétrica de batalha.",
+        "PreR": ""
     }
 ]

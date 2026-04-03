@@ -244,5 +244,19 @@
         "tag":"Fevereiro-2026",
         "descricao":"Suas pancadas são como golpes de marreta.",
         "PreR":"For 2, treinado em Luta, Artista Marcial."
+    },
+    {
+        "nome":"Guardião da Tropa",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "descricao":"Você vai proteger a todos e se sentir bem com isso.",
+        "PreR":"Ataque Especial, Casca Grossa."
+    },
+    {
+        "nome":"Vitalidade Sofrida",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "descricao":"As surras que você já tomou te fizeram ainda mais resistente, mas quebraram parte da sua sanidade.",
+        "PreR":"Ataque Especial."
     }
 ]

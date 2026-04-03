@@ -244,5 +244,19 @@
         "tag":"Fevereiro-2026",
         "descricao":"Você conhece práticas ritualísticas longas que fortalecem seus rituais.",
         "PreR":"Int e Pre 2"
+    },
+    {
+        "nome":"Flagelo Bem Aproveitado",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "descricao":"Cada gota de sangue é melhor aproveitada por você.",
+        "PreR":"Escolhido pelo Outro Lado, Recuperação Flagelante."
+    },
+    {
+        "nome":"Recuperação Flagelante",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "descricao":"Quanto mais você se recupera, mais você pode sofrer.",
+        "PreR":"Escolhido pelo Outro Lado, Poder do Flagelo"
     }
 ]

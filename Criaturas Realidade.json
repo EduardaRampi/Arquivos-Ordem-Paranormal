@@ -580,5 +580,149 @@
         "Tipo": "Pessoa",
         "descricao": "Uma proposta. Um pacto. 'Quebre as minhas correntes.' Você esperou tanto tempo por isso.",
         "tag":"Fevereiro-2026"
+    },
+    {
+        "nome": "Alê",
+        "origem": "Arquivos Secretos",
+        "Vd": "80",
+        "Tipo": "Pessoa",
+        "descricao": "Sempre em Silêncio",
+        "tag":"Março-2026"
+    },
+    {
+        "nome": "Caio Teles",
+        "origem": "Arquivos Secretos",
+        "Vd": "80",
+        "Tipo": "Pessoa",
+        "descricao": "Caio sabia o poder que as palavras tinham, ainda mais quando eram ditas em voz alta.",
+        "tag":"Março-2026"
+    },
+    {
+        "nome": "Eloy Furtado",
+        "origem": "Arquivos Secretos",
+        "Vd": "80",
+        "Tipo": "Pessoa",
+        "descricao": "Eloy nunca odiou o silêncio. A bateria não era uma fuga, era um conforto.",
+        "tag":"Março-2026"
+    },
+    {
+        "nome": "Franco",
+        "origem": "Arquivos Secretos",
+        "Vd": "80",
+        "Tipo": "Pessoa",
+        "descricao": "O fôlego faltava com mais frequência.",
+        "tag":"Março-2026"
+    },
+    {
+        "nome": "Cindy Lopes",
+        "origem": "Arquivos Secretos",
+        "Vd": "80",
+        "Tipo": "Pessoa",
+        "descricao": "Na liderança da banda, só restava um pacto com o Diabo para ter o legado que tanto desejava.",
+        "tag":"Março-2026"
+    },
+    {
+        "nome": "Caíto",
+        "origem": "Arquivos Secretos",
+        "Vd": "20",
+        "Tipo": "Pessoa",
+        "descricao": "Fruto indesejado de um amor repentino.",
+        "tag":"Março-2026"
+    },
+    {
+        "nome": "Ana",
+        "origem": "Arquivos Secretos",
+        "Vd": "100",
+        "Tipo": "Pessoa",
+        "descricao": "Todo mundo quer ser amado, mas nem todos querem se entregar. O caminho em busca de amor e conexão pode durar toda uma vida, sem nenhuma certeza de sucesso.",
+        "tag":"Março-2026"
+    },
+    {
+        "nome": "Argano",
+        "origem": "Arquivos Secretos",
+        "Vd": "100",
+        "Tipo": "Pessoa",
+        "descricao": "Alguns erguem muros e castelos apenas para se esconder ou proteger. Por outro lado, Argano vestia uma muralha apenas para expor seu coração à mulher que amava",
+        "tag":"Março-2026"
+    },
+    {
+        "nome": "Chispa",
+        "origem": "Arquivos Secretos",
+        "Vd": "100",
+        "Tipo": "Pessoa",
+        "descricao": "Mais velocidade. Para Chispa, cada segundo precisava ser ganho. Aceleração. Potência. Risco.",
+        "tag":"Março-2026"
+    },
+    {
+        "nome": "Torvo",
+        "origem": "Arquivos Secretos",
+        "Vd": "20",
+        "Tipo": "Pessoa",
+        "descricao": "Cada segundo era dor. E nela encontrou a resposta. Sua busca compulsiva pela autoridade só o levou ao destino patético que merecia.",
+        "tag":"Março-2026"
+    },
+    {
+        "nome": "Escarlata",
+        "origem": "Arquivos Secretos",
+        "Vd": "120",
+        "Tipo": "Pessoa",
+        "descricao": "Dançar é levar e se deixar ser levado. É submissão e dominação ao mesmo tempo.",
+        "tag":"Março-2026"
+    },
+    {
+        "nome": "Miasma",
+        "origem": "Arquivos Secretos",
+        "Vd": "40",
+        "Tipo": "Pessoa",
+        "descricao": "AS PESSOAS TENTAM SE PROTEGER DO PRAZER, MAS É PRECISO ESTAR EM CARNE VIVA PARA SENTI-LO.",
+        "tag":"Março-2026"
+    },
+    {
+        "nome": "Coruja",
+        "origem": "Arquivos Secretos",
+        "Vd": "40",
+        "Tipo": "Pessoa",
+        "descricao": "O futuro parecia promissor mais uma vez.",
+        "tag":"Março-2026"
+    },
+    {
+        "nome": "Corvo",
+        "origem": "Arquivos Secretos",
+        "Vd": "40",
+        "Tipo": "Pessoa",
+        "descricao": "Não faziam ideia de que, algum tempo depois, morreriam pelos seus desejos.",
+        "tag":"Março-2026"
+    },
+    {
+        "nome": "Papagaio",
+        "origem": "Arquivos Secretos",
+        "Vd": "40",
+        "Tipo": "Pessoa",
+        "descricao": "Pelo menos não estava mais sozinho.",
+        "tag":"Março-2026"
+    },
+    {
+        "nome": "Pomba",
+        "origem": "Arquivos Secretos",
+        "Vd": "40",
+        "Tipo": "Pessoa",
+        "descricao": "O plano ia funcionar. Eu era capaz de tudo pra me assegurar disso.",
+        "tag":"Março-2026"
+    },
+    {
+        "nome": "Harpia",
+        "origem": "Arquivos Secretos",
+        "Vd": "80",
+        "Tipo": "Pessoa",
+        "descricao": "Harpia o chamaria de Pomba. Talvez ele trouxesse a paz que Harpia procurava.",
+        "tag":"Março-2026"
+    },
+    {
+        "nome": "Suellen",
+        "origem": "Arquivos Secretos",
+        "Vd": "20",
+        "Tipo": "Pessoa",
+        "descricao": "Suellen foi uma criança doente. Suellen foi uma adolescente doente. Suellen foi, por fim, uma adulta cruel, que morreu pelo que praticou.",
+        "tag":"Março-2026"
     }
 ]

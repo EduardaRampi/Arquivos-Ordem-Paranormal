@@ -447,5 +447,26 @@
         "tag":"Fevereiro-2026",
         "descricao":"Seu treinamento militar mantém seus sentidos alertas.",
         "PreR":"Pre 2, treinado em Percepção e Tática."
+    },
+    {
+        "nome":"Ambidestria",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "descricao":"Se estiver empunhando duas armas (e pelo menos uma delas for leve) e fizer a ação agredir, você pode fazer dois ataques, um com cada arma.",
+        "PreR":"For 2 ou Agi 2, treinado em Luta."
+    },
+    {
+        "nome":"Entrada Triunfal",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "descricao":"Você sabe como chegar chegando.",
+        "PreR":"Pre 2"
+    },
+    {
+        "nome":"Papinho Sedutor",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "descricao":"Você sabe usar as palavras para seduzir.",
+        "PreR":"Pre 2"
     }
 ]

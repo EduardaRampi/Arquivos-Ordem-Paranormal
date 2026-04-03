@@ -863,6 +863,14 @@ document.addEventListener('change', (e) => {
                     campoPeTurno.value = (novoValor === 99) ? 20 : Math.floor(novoValor / 5);
                 }
             }
+            if (typeof salvarFicha === 'function') salvarFicha();
+        }
+    }
+
+    if (e.target.id === 'edit-trilha') {
+        if (window.fichaAtualDados) {
+            window.fichaAtualDados.trilha = e.target.value;
+            if (typeof salvarFicha === 'function') salvarFicha();
         }
     }
 
