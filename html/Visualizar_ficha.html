@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/Estilo.css" />
+    <link rel="icon" href="../image/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <title>Visualizar Ficha</title>
+    <Style>
+    html, body {
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    </Style>
+    <script src="../javascript/firebase-config.js" type="module"></script>     
+    <script src="../javascript/auth.js" type="module"></script>
+    <script src="../javascript/personagens.js" type="module"></script>
+    <script src="../javascript/campanhas.js" type="module"></script>       
+    <script type="module">
+        import { auth, db } from '../javascript/firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+        import { doc, getDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                const id = localStorage.getItem('idFichaSelecionada');
+                if (id) {
+                    try {
+                        const docRef = doc(db, "personagens", id);
+                        const docSnap = await getDoc(docRef);
+
+                        if (docSnap.exists()) {
+                            abrirFichaCompleta(id, docSnap.data());
+                        } else {
+                            console.error("Ficha não encontrada!");
+                        }
+                    } catch (error) {
+                        console.error("Erro ao carregar:", error);
+                    }
+                }
+            } else {
+                window.location.href = "Fichas_Campanhas.html";
+            }
+        });
+    </script>
+</head>
+<body id="fundo">
+    <input type="checkbox" id="close-menu" class="close-menu-checkbox" hidden>
+    <label for="close-menu" class="close-menu-label"></label>
+    <nav class="sidebar-rapida">
+        <a href="Perfil.html" class="nav-item btn-navegar" data-destino="Perfil" title="Perfil">Seu Perfil</a>
+        <a href="index.html"  class="nav-item btn-navegar" data-destino="tela-inicial" title="Inicio">📜 Inicio</a>
+        <a href="Ficha.html" class="nav-item btn-navegar" data-destino="Fichas" title="Minhas Fichas">👤 Minhas Fichas</a>
+        <a href="Dados.html" class="nav-item btn-navegar" data-destino="Dados" title="Dados">🎲 Dados</a>
+        <a href="Campanhas.html" class="nav-item btn-navegar" data-destino="Campanhas" title="Campanhas">👁️ Campanhas</a>
+        <a href="Equipamentos.html" class="nav-item btn-navegar" data-destino="Equipamentos" title="Equipamentos">⚔️ Equipamentos</a>
+        <a href="Rituais.html" class="nav-item btn-navegar" data-destino="Rituais" title="Rituais">🕯️Rituais</a>
+        <a href="Criaturas.html" class="nav-item btn-navegar" data-destino="Criaturas" title="Bestiário">💀 Bestiário</a>
+    </nav>
+    <div class ="caixa">
+        <div id="Visualizar_Ficha" class="tela ativa">
+            <h1 contenteditable="true" onblur="salvarCampoSimples('nome', this.innerText)" id="view-nome">Sem nome</h1>
+            <div class="ficha-grid">
+                <!-- COLUNA 1 - DADOS -->
+                <div class="ficha-card">
+                    <h3>Informações</h3>
+                    <p><strong>Jogador:</strong> <input type="text" id="edit-jogador" class="input-inline"></p>
+                    <p><strong>Classe:</strong> <span id="view-classe"></span></p>
+                    <p id="container-trilha">
+                        <strong>Trilha:</strong> 
+                        <select id="edit-trilha" class="input-inline" disabled>
+                            <option value="">Selecione o NEX 10%</option>
+                        </select>
+                    </p>
+                    <p><strong>Origem:</strong> <span id="view-origem"></span></p>
+                    <p><strong>Profissão:</strong> <input type="text" id="edit-profissão" class="input-inline" placeholder="Pericia"></p>
+                    <p id="container-afinidade">
+                        <strong>Afinidade:</strong> 
+                        <select id="edit-afinidade" class="input-inline" disabled>
+                            <option value="">Selecione o NEX 50%</option>
+                        </select>
+                    </p>
+                    <div id="container-nex-normal">
+                        <p id="container-nex"><strong>NEX:</strong> 
+                            <select id="edit-nex" class="input-inline">
+                                <option value="0">0%</option>
+                                <option value="5">5%</option>
+                                <option value="10">10%</option>
+                                <option value="15">15%</option>
+                                <option value="20">20%</option>
+                                <option value="25">25%</option>
+                                <option value="30">30%</option>
+                                <option value="35">35%</option>
+                                <option value="40">40%</option>
+                                <option value="45">45%</option>
+                                <option value="50">50%</option>
+                                <option value="55">55%</option>
+                                <option value="60">60%</option>
+                                <option value="65">65%</option>
+                                <option value="70">70%</option>
+                                <option value="75">75%</option>
+                                <option value="80">80%</option>
+                                <option value="85">85%</option>
+                                <option value="90">90%</option>
+                                <option value="95">95%</option>
+                                <option value="99">99%</option>
+                            </select>
+                        </p>
+                        <p id="container-nivel" class="oculta"><strong>Nível:</strong>
+                            <select id="edit-nivel" class="input-inline">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </p>
+                        <p id="container-estagio" class="oculta"><strong>Estágio:</strong>
+                            <select id="edit-estagio" class="input-inline">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </p>
+                    </div>
+                    <div id="campo-pe-turno" class="campo-pe-turno">
+                        <label><strong>PE/Turno</strong></label>
+                        <input type="number" id="edit-pe-turno" class="input-pe-rodada" value="1">
+                    </div>
+                    <div id="campo-pd-limite" class="campo-pd-limite ocuta">
+                        <label><strong>Limite PD</strong></label>
+                        <input type="number" id="edit-pd-limite" class="input-pd-limite" value="1">
+                    </div>
+                    <div class="campo-deslocamento">
+                        <label><strong>Deslocamento</strong></label>
+                        <div class="input-desloc">
+                            <input type="number" id="edit-deslocamento-metros" value="9">
+                            <span>m/</span>
+                            <input type="number" id="edit-deslocamento-grid" value="6">
+                            <span>q</span>
+                        </div>
+                    </div>
+
+                    <h3>Atributos</h3>
+                    <div class="atributos-grid">
+                        <div class="atrib-item">FOR <input type="number" id="edit-for" class="input-atrib"></div>
+                        <div class="atrib-item">AGI <input type="number" id="edit-agi" class="input-atrib"></div>
+                        <div class="atrib-item">INT <input type="number" id="edit-int" class="input-atrib"></div>
+                        <div class="atrib-item">PRE <input type="number" id="edit-pre" class="input-atrib"></div>
+                        <div class="atrib-item">VIG <input type="number" id="edit-vig" class="input-atrib"></div>
+                    </div>
+
+                    <div class="status-box">
+                        <h3>Status</h3>
+                        <div class="barra-status-container">
+                            <div class="status-header-controle">
+                                <div class="setas-grupo">
+                                    <button class="btn-seta" onclick="alterarStatus('pv', -5)" title="-5">«</button>
+                                    <button class="btn-seta" onclick="alterarStatus('pv', -1)" title="-1">‹</button>
+                                </div>
+                                <label>Pontos de Vida</label>
+                                <div class="setas-grupo">
+                                    <button class="btn-seta" onclick="alterarStatus('pv', 1)" title="+1">›</button>
+                                    <button class="btn-seta" onclick="alterarStatus('pv', 5)" title="+5">»</button>
+                                </div>
+                            </div>
+                            <div class="barra-status">
+                                <div id="barra-pv" class="barra-texto" contenteditable="true" onblur="salvarStatusBarra('pv', this.innerText)">0 / 0</div>
+                            </div>
+                            <div id="morte-pv" class="status-emergencia ocuta">
+                                <div class="bolinhas-morte">
+                                    <input type="checkbox" class="check-morte" data-indice="1">
+                                    <input type="checkbox" class="check-morte" data-indice="2">
+                                    <input type="checkbox" class="check-morte" data-indice="3">
+                                </div>
+                                <button class="btn-curar" onclick="alterarStatus('pv', 1)">CURAR</button>
+                            </div>
+                        </div>
+                        <div id="container-sanidade" class="barra-status-container">
+                            <div class="status-header-controle">
+                                <div class="setas-grupo">
+                                    <button class="btn-seta" onclick="alterarStatus('san', -5)">«</button>
+                                    <button class="btn-seta" onclick="alterarStatus('san', -1)">‹</button>
+                                </div>
+                                <label>Sanidade</label>
+                                <div class="setas-grupo">
+                                    <button class="btn-seta" onclick="alterarStatus('san', 1)">›</button>
+                                    <button class="btn-seta" onclick="alterarStatus('san', 5)">»</button>
+                                </div>
+                            </div>
+                            <div class="barra-status">
+                                <div id="barra-san" class="barra-texto" contenteditable="true" onblur="salvarStatusBarra('san', this.innerText)" >0 / 0</div>
+                            </div>
+                            <div id="morte-san" class="status-emergencia ocuta">
+                                <div class="bolinhas">
+                                    <input type="checkbox" class="check-morte" data-indice="1">
+                                    <input type="checkbox" class="check-morte" data-indice="2">
+                                    <input type="checkbox" class="check-morte" data-indice="3">
+                                </div>
+                                <button class="btn-curar" onclick="alterarStatus('san', 1)">CURAR</button>
+                            </div>
+                        </div>
+                        <div id="container-pe" class="barra-status-container">
+                            <div class="status-header-controle">
+                                <div class="setas-grupo">
+                                    <button class="btn-seta" onclick="alterarStatus('pe', -5)">«</button>
+                                    <button class="btn-seta" onclick="alterarStatus('pe', -1)">‹</button>
+                                </div>
+                                <label>Pontos de Esforço</label>
+                                <div class="setas-grupo">
+                                    <button class="btn-seta" onclick="alterarStatus('pe', 1)">›</button>
+                                    <button class="btn-seta" onclick="alterarStatus('pe', 5)">»</button>
+                                </div>
+                            </div>
+                            <div class="barra-status">
+                                <div id="barra-pe" class="barra-texto" contenteditable="true" onblur="salvarStatusBarra('pe', this.innerText)">0 / 0</div>
+                            </div>
+                        </div>
+                        <div id="container-pd" class="barra-status-container ocuta">
+                            <div class="status-header-controle">
+                                <div class="setas-grupo">
+                                    <button class="btn-seta" onclick="alterarStatus('pd', -5)">«</button>
+                                    <button class="btn-seta" onclick="alterarStatus('pd', -1)">‹</button>
+                                </div>
+                                <label>Pontos de Determinação</label>
+                                <div class="setas-grupo">
+                                    <button class="btn-seta" onclick="alterarStatus('pd', 1)">›</button>
+                                    <button class="btn-seta" onclick="alterarStatus('pd', 5)">»</button>
+                                </div>
+                            </div>
+                            <div class="barra-status">
+                                <div id="barra-pd" class="barra-texto" contenteditable="true" onblur="salvarStatusBarra('pd', this.innerText)">0 / 0</div>
+                            </div>
+                            <div id="morte-pd" class="status-emergencia ocuta">
+                                <div class="bolinhas">
+                                    <input type="checkbox" class="check-morte" data-indice="1">
+                                    <input type="checkbox" class="check-morte" data-indice="2">
+                                    <input type="checkbox" class="check-morte" data-indice="3">
+                                </div>
+                                <button class="btn-curar" onclick="alterarStatus('pd', 1)">CURAR</button>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Defesa e Prof</h3>
+                    <div class="defesa-container">
+                        <div class="defesa-principal">
+                            <div class="defesa-valor">
+                                <h2 id="valor-defesa">10</h2>
+                                <span>DEFESA</span>
+                            </div>
+                            <div class="defesa-formula">
+                                = 10 + <span id="txt-agi">0</span> (AGI) + 
+                                <input type="number" id="def-equip" class="input-def" value="0"> (Equip.) + 
+                                <input type="number" id="def-outros" class="input-def" value="0"> (Outros)
+                            </div>
+                        </div>
+
+                        <div class="defesa-detalhes">
+                            <div class="item-detalhe">
+                                <label>BLOQUEIO (Luta)</label>
+                                <div class="input-calculado">
+                                    <span id="valor-bloqueio">0</span>
+                                </div>
+                            </div>
+                            <div class="item-detalhe">
+                                <label>ESQUIVA (Reflexos)</label>
+                                <div class="input-calculado">
+                                    <span id="valor-esquiva">10</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="resistencias-box">
+                            <div class="campo-longo">
+                                <label>PROTEÇÃO</label>
+                                <textarea id="protecao" rows="1"></textarea>
+                            </div>
+                            <div class="campo-longo">
+                                <label>RESISTÊNCIAS</label>
+                                <textarea id="resistencias" rows="2"></textarea>
+                            </div>
+                            <div class="campo-longo">
+                                <label>PROFICIÊNCIAS</label>
+                                <textarea id="proficiencias" rows="2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- COLUNA 2 - PERÍCIAS -->
+                <div class="ficha-card">
+                    <h3>Perícias</h3>
+                    <div id="pericias-agente" class="pericias-grid"></div>
+                </div>
+                <!-- COLUNA 3 - Habilidades -->
+                <div class="ficha-card">
+                    <h3>Habilidades</h3>
+                    <div class="centralizar">
+                        <button type="button" onclick="abrirModalHabilidades()" class="btn-adicionar-item">+ Adicionar Habilidade</button>
+                    </div>
+                    <div class="nao_vaza">
+                        <div id="lista-habilidades-ficha" class="lista-inventario"></div>
+                    </div>
+                </div>
+                <!-- COLUNA 4 - Rituais -->
+                <div class="ficha-card">
+                    <h3>Rituais</h3>
+                    <div class="campo-dt">
+                        <label for="DT">DT:</label>
+                        <input id="DT" class="input-primario" placeholder="0">
+                    </div>
+                    <div class="centralizar">
+                        <button type="button" onclick="abrirModalRituais()" class="btn-adicionar-item">+ Adicionar Ritual</button>
+                    </div>
+                    <div class="nao_vaza">
+                        <div id="lista-ritual-ficha" class="lista-inventario"></div>
+                    </div>
+                </div>
+                <!-- COLUNA 5 - Inventário -->
+                <div class="ficha-card">
+                    <h3>Patente & Prestígio</h3>
+                    <div class="campo-prestigio">
+                        <label>Pontos de Prestígio:</label>
+                        <input class="input-inline" type="number" id="edit-prestigio" value="0" onchange="atualizarPatente()">
+                    </div>
+                    <div class="info-patente">
+                        <p>Patente: <strong id="val-patente">Recruta</strong></p>
+                        <p>Crédito: <strong id="val-credito">Baixo</strong></p>
+                    </div>
+                    <table class="tabela-limites">
+                        <thead>
+                            <tr>
+                                <th>I</th>
+                                <th>II</th>
+                                <th>III</th>
+                                <th>IV</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="linha-limite">
+                                <td id="lim-cat1">2</td>
+                                <td id="lim-cat2">—</td>
+                                <td id="lim-cat3">—</td>
+                                <td id="lim-cat4">—</td>
+                            </tr>
+                            <tr class="linha-atual">
+                                <td id="atual-cat1">0</td>
+                                <td id="atual-cat2">0</td>
+                                <td id="atual-cat3">0</td>
+                                <td id="atual-cat4">0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Inventário</h3>
+                    <div class="carga-container">
+                        <div class="carga-topo">
+                            <label><strong>CARGA (Espaços)</strong></label>
+                            <div class="carga-inputs">
+                                <input class="input-inline" type="number" id="carga-atual" value="0" step="0.1" readonly> 
+                                <span>/</span>
+                                <input class="input-inline" type="number" id="carga-max" value="5" step="1" oninput="atualizarBarraCarga()">
+                            </div>
+                        </div>
+                        <div class="barra-progresso-carga">
+                            <div id="barra-carga-interna"></div>
+                        </div>
+                        <small id="aviso-carga">Peso Excedido!</small>
+                    </div>
+                    <div class="centralizar">
+                        <button type="button" onclick="abrirModalEquip()" class="btn-adicionar-item">+ Adicionar Item</button>
+                    </div>
+                    <div class="nao_vaza_invent">
+                        <div id="lista-inventario" class="lista-inventario"></div>
+                    </div>
+                </div>
+                <!-- COLUNA 6 - DETALHES -->
+                <div class="ficha-card">
+                    <h3>Foto</h3>
+                    <div class="container-avatar">
+                        <div class="avatar-wrapper" onclick="abrirModalFoto()">
+                            <img id="foto-personagem" src="https://placehold.co/400" alt="Avatar">
+                            <div class="overlay-foto">
+                                <span>✦ Trocar Foto</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Notas</h3>
+                    <textarea id="edit-nota" class="textarea-ficha" rows="6"></textarea>
+                    <h3>Aparência</h3>
+                    <textarea id="edit-aparencia" class="textarea-ficha" rows="4"></textarea>
+                    <h3>Personalidade</h3>
+                    <textarea id="edit-personalidade" class="textarea-ficha" rows="4"></textarea>
+                    <h3>Histórico</h3>
+                    <textarea id="edit-historico" class="textarea-ficha" rows="6"></textarea>
+                    <h3>Objetivo</h3>
+                    <textarea id="edit-objetivo" class="textarea-ficha" rows="4"></textarea>
+                </div>
+                <!-- COLUNA 7 - REGRAS EXTRAS -->
+                <div class = "ficha-card">
+                    <h3>Regras da Campanha</h3>
+                    <div class="config-card">
+                        <div class="config-info">
+                            <span class="config-titulo">NEX & Experiência</span>
+                            <p class="config-desc">Substitui NEX por Nível e NEX separados.</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="opt-nex-exp" onchange="toggleRegra('nex-exp')">
+                            <span class="slider"></span>
+                        </label>
+                        <span id="status-nex-exp" class="status-label">DESLIGADO</span>
+                    </div>
+                    <div class="config-card">
+                        <div class="config-info">
+                            <span class="config-titulo">Jogando sem Sanidade</span>
+                            <p class="config-desc">Substitui Sanidade e Esforço por Determinação.</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="opt-sem-sanidade" onchange="toggleRegra('sanidade')">
+                            <span class="slider"></span>
+                        </label>
+                        <span id="status-sanidade" class="status-label">DESLIGADO</span>
+                    </div>
+                </div>
+                <!-- COLUNA 8 - AJUDA -->
+                <div class="ficha-card">
+                    <h3>Ajuda</h3>
+                    <div class="ajuda-sidebar">
+                        <button onclick="abrirModalGuia('evolucao')">📈 Evolução</button>
+                        <button onclick="abrirModalGuia('glossario')">📖 Glossário</button>
+                        <button onclick="abrirModalGuia('acoes')">⚔️ Ações</button>
+                        <button onclick="abrirModalGuia('condicoes')">🤢 Condições</button>
+                    </div>
+                </div>
+                <!-- COLUNA 9 - Homebrew -->
+                <div class="ficha-card">
+                    <h3>Homebrew</h3>
+                    <div class="ajuda-sidebar">
+                        <button onclick="abrirModalHomebrew('habilidades')">Habilidades</button>
+                        <button onclick="abrirModalHomebrew('rituais')">Rituais</button>
+                        <button onclick="abrirModalHomebrew('itens')">Itens</button>
+                        <button onclick="abrirModalHomebrew('trilhas')">Trilhas</button>
+                    </div>
+                </div>
+            </div>
+            <div class="centralizar">
+                <button class="btn-salvar-alteracoes">
+                    Salvar Alterações
+                </button>
+                <button class="btn-excluir-ficha">
+                    Excluir Ficha
+                </button>
+                <a href="Ficha.html" class="btn-voltar" data-destino="Fichas">Voltar</a>
+            </div>
+        </div>
+        <footer class="rodape">
+            <div class="coluna">
+                <p>Ordem Paranormal é um produto da Jambô Editora e seus respectivos criadores, todos os direitos reservados.</p>
+                <p>Arquivos Ordem Paranormal is unofficial Fan Content permitted under the Fan Content Policy.</p>
+            </div>
+            <div class="coluna">
+                <p>Site desenvolvido e Design gráfico por Eduarda Rampi.</p>
+                <p>Email para contato: eduardadnrampi@gamil.com</p>
+            </div>
+        </footer>
+    </div>
+        <div id="modal-equipamentos" class="modal modal-oculto">
+        <div class="modal-conteudo">
+            <div class="modal-cabecalho">
+                <h2>Arsenal da Ordem</h2>
+                <button onclick="fecharModalEquip()">X</button>
+            </div>
+            <div class="modal-filtros">
+                <input type="text" id="busca-item" placeholder="Procurar item..." oninput="filtrarItensModal()">
+                <select id="filtro-categoria" onchange="filtrarItensModal()">
+                    <option value="todos">Todos os Itens</option>
+                    <option value="armas">Armas</option>
+                    <option value="municoes">Munições</option>
+                    <option value="protecoes">Proteções</option>
+                    <option value="acessorios">Acessórios</option>
+                    <option value="explosivos">Explosivos</option>
+                    <option value="operacionais">Itens Operacionais</option>
+                    <option value="paranormais">Itens Paranormais</option>
+                    <option value="amaldicoados">Itens Amaldiçoados</option>
+                </select>
+            </div>
+            <div id="lista-itens-catalogo" class="grid-itens">
+            </div>
+        </div>
+    </div>
+    <div id="modal-melhorias" class="modal modal-oculto">
+        <div class="modal-conteudo">
+            <div class="modal-cabecalho">
+                <h2 id="titulo-melhoria-item">Melhoria item</h2>
+                <button onclick="fecharModalMelhorias()">X</button>
+            </div>
+            <div class="modal-filtros">
+                <input type="text" id="busca-melhoria" placeholder="Buscar modificação ou maldição..." oninput="filtrarMelhorias()">
+            </div>
+
+            <div class="listas-container">
+                <h3>Modificações</h3>
+                <div id="lista-modificacoes" class="grid-itens-2"></div>
+                
+                <h3>Maldições</h3>
+                <div id="lista-maldicoes" class="grid-itens-2"></div>
+            </div>
+
+            <div class="footer-modal">
+                <p>Categoria Final: <span id="categoria-preview">0</span></p>
+                <button class="btn-salvar" onclick="salvarMelhoriasItem()">Salvar Alterações</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal-editar-item" class="modal modal-oculto">
+        <div class="modal-conteudo modal-editar-conteudo">
+            <div class="modal-cabecalho">
+                <h2>Editar Item</h2>
+                <button onclick="fecharModalEditar()">X</button>
+            </div>
+            <div class="modal-corpo-editar">
+                <div class="grid-editar">
+
+                    <div class="campo">
+                        <label>Imagem</label>
+                        <input type="text" id="edit-item-foto" placeholder="https://link-da-imagem.png">
+                    </div>
+
+                    <div class="campo">
+                        <label>Nome</label>
+                        <input type="text" id="edit-item-nome">
+                    </div>
+
+                    <div class="campo pequeno">
+                        <label>Espaço</label>
+                        <input type="number" id="edit-item-espaco">
+                    </div>
+
+                    <div class="campo pequeno">
+                        <label>Categoria</label>
+                        <input type="number" id="edit-item-categoria">
+                    </div>
+
+                    <div class="campo">
+                        <label>Tipo</label>
+                        <input type="text" id="edit-item-tipo" placeholder="Ex: Arma Leve">
+                    </div>
+
+                    <div class="campo">
+                        <label>Dano</label>
+                        <input type="text" id="edit-item-dano" placeholder="Ex: 1d10">
+                    </div>
+
+                    <div class="campo">
+                        <label>Crítico</label>
+                        <input type="text" id="edit-item-critico" placeholder="Ex: 19/x3">
+                    </div>
+
+                    <div class="campo">
+                        <label>Tipo de Dano</label>
+                        <input type="text" id="edit-item-tipoDano" placeholder="Ex: Perfuração">
+                    </div>
+
+                    <div class="campo">
+                        <label>Alcance</label>
+                        <input type="text" id="edit-item-alcance" placeholder="Ex: Curto">
+                    </div>
+
+                    <div class="campo">
+                        <label>Habilidade</label>
+                        <input type="text" id="edit-item-habilidade" placeholder="Ex: Ágil">
+                    </div>
+
+                    <div class="campo pequeno">
+                        <label>Defesa</label>
+                        <input type="number" id="edit-item-defesa" placeholder="3">
+                    </div>
+
+                    <div class="campo campo-longo">
+                        <label>Descrição</label>
+                        <textarea id="edit-item-desc" rows="4"></textarea>
+                    </div>
+
+                    <div class="campo campo-longo">
+                        <label>Melhorias aplicadas</label>
+                        <input type="text" id="edit-item-melhorias-nome">
+                        <textarea id="edit-item-melhorias" rows="4"></textarea>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="footer-modal">
+                <button class="btn-salvar" onclick="salvarMudancasItem()">Salvar</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal-foto" class="modal modal-oculto">
+        <div class="modal-conteudo modal-foto-conteudo">
+            <div class="modal-cabecalho">
+                <h2>Alterar Avatar</h2>
+                <button onclick="fecharModalFoto()">X</button>
+            </div>
+
+            <div class="modal-corpo-foto">
+                <label>URL da Imagem</label>
+                <input type="text" id="input-url-foto" placeholder="Cole o link da imagem aqui...">
+
+                <div class="preview-avatar">
+                    <img id="preview-foto" src="https://placehold.co/400">
+                </div>
+            </div>
+
+            <div class="footer-modal">
+                <button class="btn-salvar" onclick="salvarFoto()">Confirmar</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal-habilidades" class="modal modal-oculto">
+        <div class="modal-conteudo">
+            <div class="modal-cabecalho">
+                <h2>Aprender Habilidade</h2>
+                <button onclick="fecharModalHabilidades()">X</button>
+            </div>
+            <div class="modal-filtros">
+                <input type="text" id="busca-hab" placeholder="Procurar habilidade..." oninput="filtrarHabilidadesModal()">
+                <select id="filtro-categoria-hab" onchange="filtrarHabilidadesModal()">
+                    <option value="todos">Todos as Habilidades</option>
+                    <option value="origem">Origem</option>
+                    <option value="poder-combatente">Poder Combatente</option>
+                    <option value="poder-ocultista">Poder Ocultista</option>
+                    <option value="poder-especialista">Poder Especialista</option>
+                    <option value="habilidade-sobrevivente">Habilidade Sobrevivente</option>
+                    <option value="poder-geral">Poder Geral</option>
+                    <option value="poder-morte">Poder Morte</option>
+                    <option value="poder-sangue">Poder Sangue</option>
+                    <option value="poder-conhecimento">Poder Conhecimento</option>
+                    <option value="poder-energia">Poder Energia</option>
+                    <option value="poder-intencao">Poder Intenção</option>
+                    <option value="trilha-combatente">Trilha Combatente</option>
+                    <option value="trilha-ocultista">Trilha Ocultista</option>
+                    <option value="trilha-especialista">Trilha Especialista</option>
+                    <option value="trilha-sobrevivente">Trilha Sobrevivente</option>
+                    <option value="outras">Outras</option>
+                </select>
+            </div>
+            <div id="lista-habilidades-catalogo" class="grid-itens">
+            </div>
+        </div>
+    </div>
+    <div id="modal-editar-hab" class="modal modal-oculto">
+        <div class="modal-conteudo modal-editar-conteudo">
+            <div class="modal-cabecalho">
+                <h2>Editar Item</h2>
+                <button onclick="fecharModalEditarHab()">X</button>
+            </div>
+            <div class="modal-corpo-editar">
+                <div class="grid-editar">
+
+                    <div class="campo">
+                        <label>Nome</label>
+                        <input type="text" id="edit-hab-nome">
+                    </div>
+
+                    <div class="campo">
+                        <label>Elemento</label>
+                        <input type="text" id="edit-hab-elemento" placeholder="Ex: Sangue">
+                    </div>
+
+                    <div class="campo">
+                        <label>Trilha</label>
+                        <input type="text" id="edit-hab-trilha" placeholder="Ex: Médico de Campo">
+                    </div>
+
+                    <div class="campo">
+                        <label>Requisitos</label>
+                        <input type="text" id="edit-hab-requisitos" placeholder="Ex: For 2">
+                    </div>
+
+                    <div class="campo">
+                        <label>Origem</label>
+                        <input type="text" id="edit-hab-origem" placeholder="Ex: Professor">
+                    </div>
+
+                    <div class="campo campo-longo">
+                        <label>Gatilho</label>
+                        <textarea id="edit-hab-gatilho" rows="4"></textarea>
+                    </div>
+
+                    <div class="campo campo-longo">
+                        <label>Afinidade</label>
+                        <textarea id="edit-hab-afinidade" rows="4"></textarea>
+                    </div>
+
+                    <div class="campo campo-longo">
+                        <label>Descrição</label>
+                        <textarea id="edit-hab-desc" rows="4"></textarea>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="footer-modal">
+                <button class="btn-salvar" onclick="salvarMudancasHab()">Salvar</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal-rituais" class="modal modal-oculto">
+        <div class="modal-conteudo">
+            <div class="modal-cabecalho">
+                <h2>Rituais</h2>
+                <button onclick="fecharModalRituais()">X</button>
+            </div>
+            <div class="modal-filtros">
+                <input type="text" id="busca-ritual" placeholder="Procurar ritual..." oninput="filtrarRitualModal()">
+                <select id="filtro-categoria-ritual" onchange="filtrarRitualModal()">
+                    <option value="todos">Todos os Rituais</option>
+                    <option value="primeiro">1º Circulo</option>
+                    <option value="segundo">2º Circulo</option>
+                    <option value="terceiro">3º Circulo</option>
+                    <option value="quarto">4º Circulo</option>
+                </select>
+            </div>
+            <div id="lista-rituais-catalogo" class="grid-itens">
+            </div>
+        </div>
+    </div>
+    <div id="modal-editar-rituais" class="modal modal-oculto">
+        <div class="modal-conteudo modal-editar-conteudo">
+            <div class="modal-cabecalho">
+                <h2>Editar Item</h2>
+                <button onclick="fecharModalEditarRituais()">X</button>
+            </div>
+            <div class="modal-corpo-editar">
+                <div class="grid-editar">
+
+                    <div class="campo">
+                        <label>Nome</label>
+                        <input type="text" id="edit-ritual-nome">
+                    </div>
+
+                    <div class="campo">
+                        <label>Elemento</label>
+                        <input type="text" id="edit-ritual-elemento" placeholder="Ex: Sangue">
+                    </div>
+
+                    <div class="campo">
+                        <label>Circulo</label>
+                        <input type="number" id="edit-ritual-circulo" placeholder="Ex: 1">
+                    </div>
+
+                    <div class="campo">
+                        <label>Execução</label>
+                        <input type="text" id="edit-ritual-execucao" placeholder="Ex: Completa">
+                    </div>
+
+                    <div class="campo">
+                        <label>Alcance</label>
+                        <input type="text" id="edit-ritual-alcance" placeholder="Ex: Pessoal">
+                    </div>
+
+                    <div class="campo">
+                        <label>Alvo</label>
+                        <input type="text" id="edit-ritual-alvo" placeholder="Ex: Você">
+                    </div>
+
+                    <div class="campo">
+                        <label>Duração</label>
+                        <input type="text" id="edit-ritual-duração" placeholder="Ex: Instantânea">
+                    </div>
+
+                    <div class="campo">
+                        <label>Resistencia</label>
+                        <input type="text" id="edit-ritual-resistencia" placeholder="Ex: Vontade parcial">
+                    </div>
+
+                    <div class="campo campo-longo">
+                        <label>Descrição</label>
+                        <textarea id="edit-ritual-desc" rows="4"></textarea>
+                    </div>
+
+                    <div class="campo campo-longo">
+                        <label>Discente</label>
+                        <textarea id="edit-ritual-discente" rows="4"></textarea>
+                    </div>
+
+                    <div class="campo campo-longo">
+                        <label>Verdadeiro</label>
+                        <textarea id="edit-ritual-verdadeiro" rows="4"></textarea>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="footer-modal">
+                <button class="btn-salvar" onclick="salvarMudancasRituais()">Salvar</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal-guia-ajuda" class="modal modal-oculto">
+        <div class="modal-conteudo">
+            <div class="modal-cabecalho">
+                <h2 id="titulo-guia">Ajuda</h2>
+                <button onclick="fecharModalGuia()">X</button>
+            </div>
+            <div id="corpo-guia" class="grid-itens"></div>
+        </div>
+    </div>
+    <div id="modal-homebrew" class="modal modal-oculto">
+        <div class="modal-conteudo">
+            <div class="modal-cabecalho">
+                <h3 id="titulo-homebrew">Criar Homebrew</h3>
+                <button onclick="fecharModalHomebrew()">X</button>
+                <input type="hidden" id="homebrew-tipo">
+            </div>
+            <div class="modal-corpo-editar">
+                <div class="grid-editar">
+                    <div id="campos-dinamicos-hb"></div>
+                </div>
+            </div>
+            <div class="footer-modal">
+                <button onclick="salvarHomebrew()" class="btn-salvar">Adicionar à Ficha</button>
+            </div>
+        </div>
+    </div>
+    <script src="../javascript/código.js"></script>
+</body>
+</html>

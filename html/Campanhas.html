@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/Estilo.css" />
+    <link rel="icon" href="../image/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <title>Campanhas</title>
+    <Style>
+    html, body {
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    </Style>
+    <script src="../javascript/firebase-config.js" type="module"></script>     
+    <script src="../javascript/auth.js" type="module"></script>
+    <script src="../javascript/personagens.js" type="module"></script>
+    <script src="../javascript/campanhas.js" type="module"></script>       
+</head>
+<body id="fundo">
+    <input type="checkbox" id="close-menu" class="close-menu-checkbox" hidden>
+    <label for="close-menu" class="close-menu-label"></label>
+    <nav class="sidebar-rapida">
+        <a href="Perfil.html" class="nav-item btn-navegar" data-destino="Perfil" title="Perfil">Seu Perfil</a>
+        <a href="index.html"  class="nav-item btn-navegar" data-destino="tela-inicial" title="Inicio">📜 Inicio</a>
+        <a href="Ficha.html" class="nav-item btn-navegar" data-destino="Fichas" title="Minhas Fichas">👤 Minhas Fichas</a>
+        <a href="Dados.html" class="nav-item btn-navegar" data-destino="Dados" title="Dados">🎲 Dados</a>
+        <a href="Campanhas.html" class="nav-item btn-navegar" data-destino="Campanhas" title="Campanhas">👁️ Campanhas</a>
+        <a href="Equipamentos.html" class="nav-item btn-navegar" data-destino="Equipamentos" title="Equipamentos">⚔️ Equipamentos</a>
+        <a href="Rituais.html" class="nav-item btn-navegar" data-destino="Rituais" title="Rituais">🕯️Rituais</a>
+        <a href="Criaturas.html" class="nav-item btn-navegar" data-destino="Criaturas" title="Bestiário">💀 Bestiário</a>
+    </nav>
+    <div class ="caixa">
+        <div id="Campanhas" class="tela ativa">
+        <h1>Campanhas</h1>
+        <div id="campanhas-section" class="oculta">
+            <h2>Criar Nova Campanha</h2>
+            <div class="centralizar">
+            <a href="Criar-campanha.html" class="btn-navegar" data-destino="Criar-Campanha">Criar Campanha</a>
+            </div>
+            <div id="entrar-campanha-section">
+                <h2>Entrar numa Missão</h2>
+                <div id="etapa-codigo" class="centralizar">
+                    <input type="text" id="codigo-entrada" class="input-inline" placeholder="Código de 6 dígitos" maxlength="6">
+                    <button onclick="verificarCodigo()">Verificar Código</button>
+                </div>
+                <div id="etapa-personagem" class="oculta centralizar">
+                    <p>✅ Missão Encontrada!</p>
+                    <label>Selecione seu Agente para esta missão:</label>
+                    <select id="select-personagem-entrada"></select>
+                    <button class="btn-confirmar" onclick="entrarNaCampanha()">Confirmar Entrada na Missão</button>
+                    <button class="btn-voltar-mini" onclick="cancelarEntrada()">Cancelar</button>
+                </div>
+            </div>
+            <h2>Suas Campanhas</h2>
+            <div class="lista-campanhas lista centralizar"></div>
+            <div class="lista-campanhas-participando lista centralizar"></div>
+        </div>
+        <a href="Fichas_Campanhas.html" class="btn-voltar">Voltar</a>
+        </div>
+        <footer class="rodape">
+            <div class="coluna">
+                <p>Ordem Paranormal é um produto da Jambô Editora e seus respectivos criadores, todos os direitos reservados.</p>
+                <p>Arquivos Ordem Paranormal is unofficial Fan Content permitted under the Fan Content Policy.</p>
+            </div>
+            <div class="coluna">
+                <p>Site desenvolvido e Design gráfico por Eduarda Rampi.</p>
+                <p>Email para contato: eduardadnrampi@gamil.com</p>
+            </div>
+        </footer>
+    </div>
+    <script src="../javascript/código.js"></script>
+</body>
+</html>

@@ -14,7 +14,7 @@
     color: var(--cor-texto);
 }
 #fundo {
-    background-image: url('background.jpg');
+    background-image: url('../image/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -39,7 +39,7 @@
     box-sizing: border-box;
     margin-top: 90px;
 }
-button {
+button, .btn-voltar, .btn-navegar {
     background-color: var(--cor-primaria);
     color: var(--cor-texto);
     border: none;
@@ -56,7 +56,7 @@ button {
         transform 0.1s,
         box-shadow 0.1s;
 }
-button:hover {
+button:hover, .btn-voltar:hover , .btn-navegar:hover  {
     background-color: var(--cor-primaria-hover);
     color:var(--cor-texto-claro);
     border: 1px solid rgb(70, 18, 18);
@@ -267,7 +267,7 @@ form input:focus, .input-primario:focus, textarea:focus {
     transform: translateY(-2px);
 }
 .img_atrib {
-    background-image: url('atributos.png');
+    background-image: url('../image/atributos.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -1,48 +1,46 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const botoesIr = document.querySelectorAll('.btn-navegar');
-  const botoesVoltar = document.querySelectorAll('.btn-voltar');
   const Tempo = 250;
   const listas = {
-  classes: 'classes.json',
-  origens: 'Origens.json',
-  poderes: 'Poderes.json',
-  'poderes-ocultista': 'Poderes ocultista.json',
-  'poderes-especialista': 'Poderes especialista.json',
-  'poderes-combatente': 'Poderes combatente.json',
-  'habilidade-sobrevivente': 'habilidades sobrevivente.json',
-  'trilhas-ocultista': 'Trilhas ocultista.json',
-  'trilhas-especialista': 'Trilhas especialista.json',
-  'trilhas-combatente': 'Trilhas combatente.json',
-  'trilhas-sobrevivente': 'Trilhas sobrevivente.json',
-  'poderes-paranormais': 'Poderes Paranormais.json',
-  'poderes-sangue': 'Poderes sangue.json',
-  'poderes-morte': 'Poderes morte.json',
-  'poderes-conhecimento': 'Poderes conhecimento.json',
-  'poderes-energia': 'Poderes energia.json',
-  'poderes-intencao': 'Poderes intencao.json',
-  armas: 'Armas.json',
-  'modificacoes-armas': 'Modificações de Armas.json',
-  'habilidades-armas': 'Habilidades Armas.json',
-  municoes: 'Munições.json',
-  'modificacoes-municoes': 'Modificações de Munições.json',
-  protecoes: 'Proteções.json',
-  'modificacoes-protecoes': 'Modificações de Proteções.json',
-  acessorios: 'Acessórios.json',
-  'modificacoes-acessorios': 'Modificações de Acessórios.json',
-  explosivos: 'Explosivos.json',
-  'itens-operacionais': 'Itens Operacionais.json',
-  'itens-paranormais': 'Itens Paranormais.json',
-  'modificacoes-itens-paranormais': 'Modificações de Itens Paranormais.json',
-  rituais: 'Rituais.json',
-  missoes: 'Missoes.json',
-  'maldicoes-armas': 'Maldições Armas.json',
-  'maldicoes-protecoes': 'Maldições Proteção.json',
-  'maldicoes-acessorios': 'Maldições Acessórios.json',
-  'itens-amaldicoados': 'Itens Amaldiçoados.json',
-  'criaturas-realidade': 'Criaturas Realidade.json',
-  criaturas: 'Criaturas.json',
-  regras: 'Regras.json',
-  aliados: 'Aliados.json'
+  classes: '../json/classes.json',
+  origens: '../json/Origens.json',
+  poderes: '../json/Poderes.json',
+  'poderes-ocultista': '../json/Poderes ocultista.json',
+  'poderes-especialista': '../json/Poderes especialista.json',
+  'poderes-combatente': '../json/Poderes combatente.json',
+  'habilidade-sobrevivente': '../json/habilidades sobrevivente.json',
+  'trilhas-ocultista': '../json/Trilhas ocultista.json',
+  'trilhas-especialista': '../json/Trilhas especialista.json',
+  'trilhas-combatente': '../json/Trilhas combatente.json',
+  'trilhas-sobrevivente': '../json/Trilhas sobrevivente.json',
+  'poderes-paranormais': '../json/Poderes Paranormais.json',
+  'poderes-sangue': '../json/Poderes sangue.json',
+  'poderes-morte': '../json/Poderes morte.json',
+  'poderes-conhecimento': '../json/Poderes conhecimento.json',
+  'poderes-energia': '../json/Poderes energia.json',
+  'poderes-intencao': '../json/Poderes intencao.json',
+  armas: '../json/Armas.json',
+  'modificacoes-armas': '../json/Modificações de Armas.json',
+  'habilidades-armas': '../json/Habilidades Armas.json',
+  municoes: '../json/Munições.json',
+  'modificacoes-municoes': '../json/Modificações de Munições.json',
+  protecoes: '../json/Proteções.json',
+  'modificacoes-protecoes': '../json/Modificações de Proteções.json',
+  acessorios: '../json/Acessórios.json',
+  'modificacoes-acessorios': '../json/Modificações de Acessórios.json',
+  explosivos: '../json/Explosivos.json',
+  'itens-operacionais': '../json/Itens Operacionais.json',
+  'itens-paranormais': '../json/Itens Paranormais.json',
+  'modificacoes-itens-paranormais': '../json/Modificações de Itens Paranormais.json',
+  rituais: '../json/Rituais.json',
+  missoes: '../json/Missoes.json',
+  'maldicoes-armas': '../json/Maldições Armas.json',
+  'maldicoes-protecoes': '../json/Maldições Proteção.json',
+  'maldicoes-acessorios': '../json/Maldições Acessórios.json',
+  'itens-amaldicoados': '../json/Itens Amaldiçoados.json',
+  'criaturas-realidade': '../json/Criaturas Realidade.json',
+  criaturas: '../json/Criaturas.json',
+  regras: '../json/Regras.json',
+  aliados: '../json/Aliados.json'
 };
 const registroBox = document.getElementById("registro-box");
 const loginBox = document.getElementById("login-box");
@@ -56,41 +54,20 @@ const sections = {
     'Toques Finais': document.querySelector('.Toques_Finais')
 };
 
-  // Variável para salvar qual era a tela anterior (ajuda no botão voltar)
-  let telaAnterior = null;
-
   // 1. Lógica para NAVEGAR
-  botoesIr.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const idDestino = btn.getAttribute('data-destino');
-      const telaDestino = document.getElementById(idDestino);
-      const telaAtual = btn.closest('.tela' ) || document.querySelector('.tela.ativa');
-      const checkboxMenu = document.getElementById('close-menu');
-      if (checkboxMenu) checkboxMenu.checked = false;
-
-      if (!telaDestino || telaDestino === telaAtual) return;
-      if (idDestino === "Perfil") {
-        carregarDadosPerfil();
-      }
-      telaAtual.classList.remove('ativa');
-      setTimeout(() => {
-        telaAtual.classList.add('oculta');
-        telaDestino.classList.remove('oculta');
-        telaDestino.offsetHeight; // Força o reflow para garantir que a transição funcione
-        telaDestino.classList.add('ativa');
-      }, Tempo); // Tempo para a transição de fade (ajuste conforme necessário)
+  if (btnIrLogin) {
+    btnIrLogin.addEventListener("click", () => {
+      registroBox.classList.add("oculta");
+      loginBox.classList.remove("oculta");
     });
-  });
+  }
 
-  btnIrLogin.addEventListener("click", () => {
-    registroBox.classList.add("oculta");
-    loginBox.classList.remove("oculta");
-  });
-
-  btnIrRegistro.addEventListener("click", () => {
-    loginBox.classList.add("oculta");
-    registroBox.classList.remove("oculta");
-  });
+  if (btnIrRegistro) {
+    btnIrRegistro.addEventListener("click", () => {
+      loginBox.classList.add("oculta");
+      registroBox.classList.remove("oculta");
+    });
+  }
 
   steps.forEach(step => {
     step.addEventListener('click', () => {
@@ -119,93 +96,7 @@ const sections = {
     });
   });
 
-
-  // 2. Lógica para VOLTAR
-  botoesVoltar.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const telaAtual = btn.closest('.tela');
-      
-      const rotasVoltar = {
-        // Tela Atual: Tela de Destino
-        "Criação_persona": "Arquivos",
-        "Equipamentos": "Arquivos",        
-        "Criaturas": "Arquivos",
-        "Rituais": "Arquivos",
-        "Itens Amaldiçoados": "Arquivos",
-        "Regras": "Arquivos",
-        "Missões": "Arquivos",
-        "Aliados": "Arquivos",
-
-        "Fichas": "Fichas_Campanhas",
-        "Campanhas": "Fichas_Campanhas",
-
-        "Personagem": "Fichas",
-        "Visualizar_Ficha":"Fichas",
-
-        "Criar-Campanha": "Campanhas",
-        "Visualizar_Campanha":"Campanhas",
-
-        "Classes": "Criação_persona",
-        "Origens": "Criação_persona",
-        "Trilhas": "Criação_persona",
-        "Poderes": "Criação_persona",
-        "Poderes Paranormais": "Criação_persona",
-        
-        "Poderes ocultista": "Poderes",
-        "Poderes especialista": "Poderes",
-        "Poderes combatente": "Poderes",
-        "Habilidade sobrevivente": "Poderes",
-        
-        "Trilhas ocultista": "Trilhas",
-        "Trilhas especialista": "Trilhas",
-        "Trilhas combatente": "Trilhas",
-        "Trilhas sobrevivente": "Trilhas",
-        
-        "Poderes Sangue": "Poderes Paranormais",
-        "Poderes Morte": "Poderes Paranormais",
-        "Poderes Conhecimento": "Poderes Paranormais",
-        "Poderes Energia": "Poderes Paranormais",
-        "Poderes Intenção": "Poderes Paranormais",
-        
-        "Armas": "Equipamentos",
-        "Proteções": "Equipamentos",
-        "Acessórios": "Equipamentos",
-        "Explosivos": "Equipamentos",
-        "Itens Operacionais": "Equipamentos",
-        "Itens Paranormais": "Equipamentos",
-        
-        "Modificações para Armas": "Armas",
-        "Maldições para Armas": "Armas",
-        "Habilidades Armas": "Armas",
-        "Munições": "Armas",
-        
-        "Modificações para Munições": "Munições",
-        
-        "Modificações para Proteções": "Proteções",
-        "Maldições para Proteções": "Proteções",
-        
-        "Modificações para Acessórios": "Acessórios",
-        "Maldições para Acessórios": "Acessórios",
-        
-        "Modificações para Itens Paranormais": "Itens Paranormais",
-        
-        "Criaturas Realidade": "Criaturas"
-      };
-      const idDestino = rotasVoltar[telaAtual.id] || "tela-inicial";
-      const telaDestino = document.getElementById(idDestino);
-      if (!telaDestino) return;
-
-      telaAtual.classList.remove('ativa');
-      setTimeout(() => {
-        telaAtual.classList.add('oculta');
-        telaDestino.classList.remove('oculta');
-        telaDestino.offsetHeight; // Força o reflow para garantir que a transição funcione
-        telaDestino.classList.add('ativa');
-      }, Tempo); // Tempo para a transição de fade (ajuste conforme necessário)
-    });
-  });
-
-  // 3. Lógica para CARREGAR OS CARDS
+  // 2. Lógica para CARREGAR OS CARDS
   function carregarCards({ arquivo, container, erroMsg, tituloDescricao = "Resumo" }) {
   fetch(arquivo)
     .then(response => {
@@ -294,7 +185,7 @@ const sections = {
     })
   }
 
-  // 4. Lógica para Busca e Filtros funcionarem juntos
+  // 3. Lógica para Busca e Filtros funcionarem juntos
   function aplicarFiltros(container, termoBusca = '', filtrosAtivos = []) {
     const cards = container.querySelectorAll('.classe-card');
     const termo = termoBusca.toLowerCase();
@@ -316,7 +207,7 @@ const sections = {
     });
 }
 
-  // 5. Lógica de Busca Simples
+  // 4. Lógica de Busca Simples
   let timerBusca;
   document.addEventListener('input', (e) => {
     if (e.target.classList.contains('input-busca')) {
@@ -347,7 +238,7 @@ const sections = {
   });
   
   
-  // 6. Configuração Sistema Multi-Filtros
+  // 5. Configuração Sistema Multi-Filtros
   const categoriasParaBuscar = {
       'Elemento': 'Elemento',
       'Círculo': 'Círculo',
@@ -361,7 +252,7 @@ const sections = {
 
   const botoesFiltro = document.querySelectorAll('.btn-abrir-filtros');
 
-  // 6.1. Ao clicar no botão Filtros
+  // 5.1. Ao clicar no botão Filtros
   botoesFiltro.forEach(botao => {
       botao.addEventListener('click', (e) => {
           e.stopPropagation();
@@ -385,7 +276,7 @@ const sections = {
       });
   });
 
-  // 6.2. Função que cria a lista (Executada apenas na 1ª vez)
+  // 5.2. Função que cria a lista (Executada apenas na 1ª vez)
   function gerarMenuDeFiltros(container, menuElemento) {
       const cards = container.querySelectorAll('.classe-card');
       const dadosEncontrados = {};
@@ -408,7 +299,7 @@ const sections = {
           });
       });
 
-      // 6.3. Monta o HTML do Menu
+      // 5.3. Monta o HTML do Menu
       let htmlMenu = '';
       htmlMenu += `<div class="item-filtro limpar" data-valor="limpar">Limpar Filtros 🗑️</div>`;
 
@@ -432,7 +323,7 @@ const sections = {
       menuElemento.innerHTML = htmlMenu;
   }
 
-  // 6.4. Lógica do Clique (AGORA COM MULTI-SELEÇÃO)
+  // 5.4. Lógica do Clique (AGORA COM MULTI-SELEÇÃO)
   document.addEventListener('click', (e) => {
       if (e.target.classList.contains('item-filtro')) {
           e.stopPropagation();
@@ -459,7 +350,7 @@ const sections = {
   });
 
 
-  // 6.5. Fecha menu ao clicar fora
+  // 5.5. Fecha menu ao clicar fora
   document.addEventListener('click', (e) => {
       if (!e.target.classList.contains('btn-abrir-filtros') && !e.target.closest('.container-botao-filtro')) {
           document.querySelectorAll('.menu-filtros-flutuante').forEach(menu => {
@@ -468,7 +359,7 @@ const sections = {
       }
   });
 
-  // 7. Rolagem de dados
+  // 6. Rolagem de dados
   function rolarDado(lados) {
     const display = document.getElementById('valor-dado');
     const tipo = document.getElementById('tipo-dado');
@@ -510,7 +401,7 @@ const sections = {
   window.rolarDado = rolarDado;
 });
 
-//8. ver detalhes origens e classes
+//7. ver detalhes origens e classes
 // Adicione este ouvinte de eventos ao seu documento
 document.addEventListener('click', (e) => {
     // Verifica se o que foi clicado é o nosso botão "Ver Detalhes"

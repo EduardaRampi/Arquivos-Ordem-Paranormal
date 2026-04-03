@@ -8,7 +8,7 @@ import {
     getDocs,
     doc,        
     updateDoc,
-    deleteDoc
+    deleteDoc,
 } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 // Variáveis para armazenar as seleções feitas nas abas
 let escolhaOrigemId = null;
@@ -276,15 +276,8 @@ if (btnFinalizar) {
 
             alert("Ficha criada com sucesso!");
 
-            // Lógica para voltar à tela de listagem
-            const telaAtual = document.getElementById('Personagem');
-            const telaFichas = document.getElementById('Fichas');
-
-            telaAtual.classList.remove('ativa');
             setTimeout(() => {
-                telaAtual.classList.add('oculta');
-                telaFichas.classList.remove('oculta');
-                telaFichas.classList.add('ativa');
+                window.location.href = "Ficha.html";
                 carregarPersonagens(); // Atualiza a lista na tela de Fichas
             }, 250);
 
@@ -296,7 +289,7 @@ if (btnFinalizar) {
 }
 async function buscarDescricaoHabilidade(nomePoder) {
     try {
-        const resposta = await fetch('habilidades.json');
+        const resposta = await fetch('../json/habilidades.json');
         const dados = await resposta.json();
         
         // Procura em todas as categorias do JSON (Origens, Classe, Geral, etc)
@@ -521,26 +514,18 @@ window.atualizarPatente = atualizarPatente;
    7. FUNÇÕES DE VISUALIZAÇÃO
 ============================================================ */
 function abrirFichaCompleta(id, dados) {
+    if (!window.location.pathname.includes("Visualizar_ficha.html")) {
+        console.log("Redirecionando para visualização...");
+        localStorage.setItem('idFichaSelecionada', id);
+        // Opcional: Salvar os dados temporariamente para carregar instantaneamente
+        localStorage.setItem('dadosFichaTemporarios', JSON.stringify(dados));
+        window.location.href = "Visualizar_ficha.html";
+        return; // Para a execução aqui para não dar erro de "elemento não encontrado"
+    }
     carregandoFicha = true;
     window.idFichaAberta = id;
     idFichaAberta = id;
-    console.log("Abrindo ficha completa de:", dados.nome);
-
-    // 1. Esconde todas as telas e ativa a de visualização
-    const todasAsTelas = document.querySelectorAll('.tela');
-    todasAsTelas.forEach(tela => {
-        tela.classList.add('oculta');
-        tela.classList.remove('ativa');
-    });
-
-    const telaFicha = document.getElementById('Visualizar_Ficha');
-    if (!telaFicha) {
-        console.error("A tela #Visualizar_Ficha não foi encontrada!");
-        return;
-    }
-
-    telaFicha.classList.remove('oculta');
-    telaFicha.classList.add('ativa');
+    console.log("Abrindo ficha completa de:", dados.nome);;
 
     // --- PREENCHIMENTO DOS DADOS ---
 
@@ -1125,17 +1110,21 @@ const inputGrid = document.getElementById('edit-deslocamento-grid');
 /* ============================================================
    18. Mudo metros, calcula quadrados
 ============================================================ */
-inputMetros.addEventListener('input', () => {
-    const metros = parseFloat(inputMetros.value) || 0;
-    inputGrid.value = Math.floor(metros / 1.5);
-});
+if (inputMetros) {
+    inputMetros.addEventListener('input', () => {
+        const metros = parseFloat(inputMetros.value) || 0;
+        inputGrid.value = Math.floor(metros / 1.5);
+    });
+}
 /* ============================================================
    19. Mudo quadrados, calcula metros
 ============================================================ */
-inputGrid.addEventListener('input', () => {
-    const quadrados = parseFloat(inputGrid.value) || 0;
-    inputMetros.value = quadrados * 1.5;
-});
+if (inputGrid) {
+    inputGrid.addEventListener('input', () => {
+        const quadrados = parseFloat(inputGrid.value) || 0;
+        inputMetros.value = quadrados * 1.5;
+    });
+}
 /* ============================================================
    20. Carga
 ============================================================ */
@@ -1184,7 +1173,7 @@ async function carregarBancoItens() {
     if (bancoDeDadosItens) return bancoDeDadosItens; // Já carregou antes
 
     try {
-        const resposta = await fetch('equipamentos.json');
+        const resposta = await fetch('../json/equipamentos.json');
         bancoDeDadosItens = await resposta.json();
         console.log("Banco de itens carregado com sucesso!");
         return bancoDeDadosItens;
@@ -1582,7 +1571,7 @@ let itemSendoMelhoradoIndex = null;
 let melhoriasSelecionadas = [];
 async function carregarMelhorias() {
     try {
-        const response = await fetch('melhorias.json'); // Caminho do seu arquivo
+        const response = await fetch('../json/melhorias.json'); // Caminho do seu arquivo
         const dados = await response.json();
         return dados;
     } catch (erro) {
@@ -1785,12 +1774,15 @@ window.fecharModalMelhorias = fecharModalMelhorias;
 /* ============================================================
    25. Pulo de linha
 ============================================================ */
-document.getElementById('view-nome').addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-        e.preventDefault(); // Cancela o Enter
-        e.target.blur();    // Tira o foco para disparar o onblur e salvar
-    }
-});
+const campoNome = document.getElementById('view-nome');
+if (campoNome) {
+    campoNome.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault(); // Cancela o Enter
+            e.target.blur();    // Tira o foco para disparar o onblur e salvar
+        }
+    });
+}
 document.querySelectorAll('[id^="barra-"]').forEach(barra => {
     barra.addEventListener('keydown', (e) => {
         // Se apertar Enter, salva e sai da edição
@@ -1863,25 +1855,7 @@ if (btnExcluir) {
     });
 }
 function voltarParaLista() {
-    // Esconde a tela de visualização
-    document.getElementById('Visualizar_Ficha').classList.add('oculta');
-    document.getElementById('Visualizar_Ficha').classList.remove('ativa');
-
-    // Mostra a tela de seleção/lista (ajuste o ID conforme seu HTML)
-    const telaLista = document.getElementById('Fichas')
-    if (telaLista) {
-        telaLista.classList.remove('oculta');
-        telaLista.classList.add('ativa');
-    }
-
-    // Limpa os dados da memória
-    idFichaAberta = null;
-    window.fichaAtualDados = null;
-
-    // Recarrega a lista de cards para não mostrar a ficha que acabou de ser deletada
-    if (typeof carregarPersonagens === 'function') {
-        carregarPersonagens();
-    }
+    window.location.href = "Ficha.html";
 }
 /* ============================================================
    28. Habilidades
@@ -1891,7 +1865,7 @@ async function carregarBancoHabilidades() {
     if (bancoDeDadosHabilidades) return bancoDeDadosHabilidades; 
 
     try {
-        const resposta = await fetch('Habilidades.json');
+        const resposta = await fetch('../json/Habilidades.json');
         bancoDeDadosHabilidades = await resposta.json();
         console.log("Banco de habilidades carregado com sucesso!");
         return bancoDeDadosHabilidades;
@@ -2119,7 +2093,7 @@ let bancoDeDadosRituais = null;
 window.carregarBancoRituais = async function() {
     if (bancoDeDadosRituais) return bancoDeDadosRituais; 
     try {
-        const resposta = await fetch('Ritual.json');
+        const resposta = await fetch('../json/Ritual.json');
         bancoDeDadosRituais = await resposta.json();
         return bancoDeDadosRituais;
     } catch (erro) {

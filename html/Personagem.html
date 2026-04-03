@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/Estilo.css" />
+    <link rel="icon" href="../image/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <title>Criar Personagem</title>
+    <Style>
+    html, body {
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    </Style>
+    <script src="../javascript/firebase-config.js" type="module"></script>     
+    <script src="../javascript/auth.js" type="module"></script>
+    <script src="../javascript/personagens.js" type="module"></script>
+    <script src="../javascript/campanhas.js" type="module"></script>       
+</head>
+<body id="fundo">
+    <input type="checkbox" id="close-menu" class="close-menu-checkbox" hidden>
+    <label for="close-menu" class="close-menu-label"></label>
+    <nav class="sidebar-rapida">
+        <a href="Perfil.html" class="nav-item btn-navegar" data-destino="Perfil" title="Perfil">Seu Perfil</a>
+        <a href="index.html"  class="nav-item btn-navegar" data-destino="tela-inicial" title="Inicio">📜 Inicio</a>
+        <a href="Ficha.html" class="nav-item btn-navegar" data-destino="Fichas" title="Minhas Fichas">👤 Minhas Fichas</a>
+        <a href="Dados.html" class="nav-item btn-navegar" data-destino="Dados" title="Dados">🎲 Dados</a>
+        <a href="Campanhas.html" class="nav-item btn-navegar" data-destino="Campanhas" title="Campanhas">👁️ Campanhas</a>
+        <a href="Equipamentos.html" class="nav-item btn-navegar" data-destino="Equipamentos" title="Equipamentos">⚔️ Equipamentos</a>
+        <a href="Rituais.html" class="nav-item btn-navegar" data-destino="Rituais" title="Rituais">🕯️Rituais</a>
+        <a href="Criaturas.html" class="nav-item btn-navegar" data-destino="Criaturas" title="Bestiário">💀 Bestiário</a>
+    </nav>
+    <div class ="caixa">
+        <div id="Personagem" class="tela ativa">
+        <h1>Personagem</h1>
+        <div class="cent">
+            <div class="stepper-container">
+                <div class="step-wrapper">
+                    <div class="step-container">
+                        <h3  class="title active">Atributos</h3>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <div class="step-wrapper">
+                    <div class="step-container">
+                        <h3 class="title">Origem</h3>
+                    </div>
+                    <div data-v-e0f1eafc="" class="line"></div>
+                </div>
+                <div class="step-wrapper">
+                    <div class="step-container">
+                        <h3 class="title">Classe</h3>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <div class="step-wrapper">
+                    <div class="step-container">
+                        <h3 data-v-e0f1eafc="" class="title">Toques Finais</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Atributos">
+            <div class="grid">
+                <p class="centralizar size_m">
+                    Quando você cria um personagem, todos os seus atributos começam em 1 e você recebe 4 pontos para distribuir entre eles como quiser. Você também pode reduzir um atributo para 0 para receber 1 ponto adicional. O valor máximo inicial que você pode ter em cada atributo é 3.
+                </p>
+                <div class="img_atrib">
+                <input type="number" class="input for" value="1">
+                <input type="number" class="input agi" value="1">
+                <input type="number" class="input int" value="1">
+                <input type="number" class="input vig" value="1">
+                <input type="number" class="input pre" value="1">
+                </div>
+            </div>
+        </div>
+        <div class="Origem">
+            <p class="centralizar">
+                O que seu personagem fazia antes de se envolver com o paranormal e ingressar na Ordem da Realidade? A origem representa como a vida pregressa influencia sua carreira de investigador. Escolha uma origem que se encaixe com o conceito de seu personagem ou escolha uma aleatoriamente.
+            </p><p class="centralizar">
+                Ao escolher uma origem, você recebe duas perícias treinadas e um poder da origem.
+            </p><p class="centralizar">                
+                Cada origem apresentada a seguir é intencionalmente vaga, apenas uma ideia por onde começar. Você pode usá-la como está, para jogar rapidamente, ou colorir com quantos detalhes quiser, conforme o conceito de seu agente.
+            </p><p class="centralizar">
+                Perícias concedidas serão adicionadas automaticamente. Perícias opcionais podem ser adicionadas ao agente após sua criação.
+            </p>
+            <div class="search-box">
+            <input type="text" class="input-busca" data-container="lista-origens" placeholder="Pesquisar por palavra chave..."> 
+            <div class="container-botao-filtro">
+                <button class="btn-filtro-geral btn-abrir-filtros">
+                    <i class="fas fa-filter"></i> Filtros
+                </button>
+                <div class="menu-filtros menu-filtros-flutuante oculta"></div>  
+            </div>     
+        </div>        
+        <div class="lista-origens lista lista-click"></div>
+        </div>
+        <div class="Classe">
+            <p class="centralizar">
+                Sua classe indica o treinamento que você recebeu na Ordem para enfrentar os perigos do Outro Lado.
+            </p><p class="centralizar">
+                Em termos de jogo, é a sua característica mais importante, pois define o que você faz e qual é o seu papel no grupo de investigadores.
+            </p><p class="centralizar">                
+                Perícias concedidas serão adicionadas automaticamente. Perícias opcionais podem ser adicionadas ao agente após sua criação.
+            </p><p class="centralizar">
+                Como uma alternativa, você pode não escolher uma classe e começar como uma pessoa comum.
+            </p>          
+        <div class="lista-classes lista lista-click"></div>
+        </div>
+        <div class="Toques_Finais">
+            <p class="centralizar">
+                Até aqui, você definiu as características mecânicas de sua ficha — mas um bom personagem é mais do que apenas números. Agora, vamos trabalhar na descrição de seu agente, definindo aspectos como nome, gênero e idade. Esses aspectos não possuem efeito em regras, mas deixam o jogo mais envolvente e divertido.
+            </p>
+            <div class="centralizar">
+                <button class="btn-finalizar">Finalizar</button>
+            </div>
+            <div class="per_jor">
+                <div class="input-container">
+                    <h3>Personagem</h3>
+                    <input type="text" class="input-primario" placeholder="Nome do personagem">
+                </div>
+                <div class="input-container">
+                    <h3>Jogador</h3>
+                    <input type="text" class="input-primario" placeholder="Nome do Jogador">
+                </div>
+            </div><div class="ap_his_obj">
+                <div class="text-container">
+                    <h3>Aparência</h3>
+                    <textarea class="textarea" rows="6" placeholder="Nome, gênero, idade, descrição física..."></textarea>
+                </div>
+                <div class="text-container">
+                    <h3>Personalidade</h3>
+                    <textarea class="textarea" rows="6" placeholder="Traços marcantes, opiniões, ideais..."></textarea>
+                </div>
+                <div class="text-container">
+                    <h3>Histórico</h3>
+                    <textarea class="textarea" rows="6" placeholder="Infância, relação com a família, contato com o Paranormal, eventos bons e ruins..."></textarea>
+                </div>
+                <div class="text-container">
+                    <h3>Objetivo</h3>
+                    <textarea class="textarea" rows="6" placeholder="Por que ele faz parte da Ordem? Porque luta contra o Outro Lado?"></textarea>
+                </div>
+             </div>
+        <a href="Ficha.html" class="btn-voltar">Voltar</a>
+        </div>
+        </div>
+        <footer class="rodape">
+            <div class="coluna">
+                <p>Ordem Paranormal é um produto da Jambô Editora e seus respectivos criadores, todos os direitos reservados.</p>
+                <p>Arquivos Ordem Paranormal is unofficial Fan Content permitted under the Fan Content Policy.</p>
+            </div>
+            <div class="coluna">
+                <p>Site desenvolvido e Design gráfico por Eduarda Rampi.</p>
+                <p>Email para contato: eduardadnrampi@gamil.com</p>
+            </div>
+        </footer>
+    </div>
+    <script src="../javascript/código.js"></script>
+</body>
+</html>

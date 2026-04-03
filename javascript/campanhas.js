@@ -50,15 +50,8 @@ async function criarCampanha() {
         nomeInput.value = "";
         if(descInput) descInput.value = "";
 
-        // Lógica para voltar à tela de listagem
-        const telaAtual = document.getElementById('Criar-Campanha');
-        const telaCampanhas = document.getElementById('Campanhas');
-
-        telaAtual.classList.remove('ativa');
         setTimeout(() => {
-            telaAtual.classList.add('oculta');
-            telaCampanhas.classList.remove('oculta');
-            telaCampanhas.classList.add('ativa');
+            window.location.href = "Campanhas.html";
             carregarCampanhas(); 
         }, 250);
         
@@ -141,21 +134,16 @@ async function carregarCampanhas() {
 }
 window.carregarCampanhas = carregarCampanhas;
 window.abrirPainelMestre = async function(id, dados) {
+    if (!window.location.pathname.includes("Visualizar-campanha.html")) {
+        console.log("Redirecionando para visualização...");
+        localStorage.setItem('idCampanhaSelecionada', id);
+        // Opcional: Salvar os dados temporariamente para carregar instantaneamente
+        localStorage.setItem('dadosFichaTemporarios', JSON.stringify(dados));
+        window.location.href = "Visualizar-campanha.html";
+        return; // Para a execução aqui para não dar erro de "elemento não encontrado"
+    }
     console.log("Visualizando campanha:", dados.nome);
     idCampanhaAberta = id;
-
-    // 1. Lógica de Troca de Tela (Seguindo seu padrão)
-    const todasAsTelas = document.querySelectorAll('.tela');
-    todasAsTelas.forEach(tela => {
-        tela.classList.add('oculta');
-        tela.classList.remove('ativa');
-    });
-
-    const telaCampanha = document.getElementById('Visualizar_Campanha');
-    if (telaCampanha) {
-        telaCampanha.classList.remove('oculta');
-        telaCampanha.classList.add('ativa');
-    }
 
     // 2. Preenchimento dos Campos (A lógica que você queria)
     document.getElementById('view-campanha-nome').innerText = dados.nome || "Missão Sem Nome";
@@ -297,15 +285,10 @@ window.abrirFichaPeloMestre = function(id) {
     }
 
     // 4. Troca para a tela da Ficha (ajuste o ID 'Tela-Ficha' para o seu real)
-    const telaFicha = document.getElementById('Visualizar_Ficha'); // Ou o ID que você usa
-    if (telaFicha) {
-        document.querySelectorAll('.tela').forEach(t => {
-            t.classList.add('oculta');
-            t.classList.remove('ativa');
-        });
-        telaFicha.classList.remove('oculta');
-        telaFicha.classList.add('ativa');
-    }
+    // Salva o ID do personagem no localStorage (o mesmo que a ficha usa)
+    localStorage.setItem('idFichaSelecionada', personagemId);
+    // Redireciona para a página de visualização de ficha
+    window.location.href = "Visualizar_ficha.html";
 };
 const btnExcluir = document.querySelector('.btn-excluir-campanha');
 if (btnExcluir) {

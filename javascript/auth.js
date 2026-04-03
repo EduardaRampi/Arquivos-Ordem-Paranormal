@@ -11,41 +11,47 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
 
 // Função de registro
-document.getElementById('registro-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = document.getElementById('email').value;
-    const senha = document.getElementById('senha').value;
+const registroForm = document.getElementById('registro-form');
+if (registroForm) {
+    registroForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const senha = document.getElementById('senha').value;
 
-    // FORMA CORRETA V9: a função recebe 'auth' como primeiro parâmetro
-    createUserWithEmailAndPassword(auth, email, senha)
-        .then((userCredential) => {
-            console.log("Usuário registrado:", userCredential.user);
-            alert("Registrado com sucesso! Faça login.");
-        })
-        .catch((error) => {
-            console.error("Erro no registro:", error);
-            alert("Erro: " + error.message);
-        });
-});
+        // FORMA CORRETA V9: a função recebe 'auth' como primeiro parâmetro
+        createUserWithEmailAndPassword(auth, email, senha)
+            .then((userCredential) => {
+                console.log("Usuário registrado:", userCredential.user);
+                alert("Registrado com sucesso! Faça login.");
+            })
+            .catch((error) => {
+                console.error("Erro no registro:", error);
+                alert("Erro: " + error.message);
+            });
+    });
+}
 
 // Função de login
-document.getElementById('login-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = document.getElementById('email-login').value;
-    const senha = document.getElementById('senha-login').value;
+const loginForm = document.getElementById('login-form');
+if (loginForm) {
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('email-login').value;
+        const senha = document.getElementById('senha-login').value;
 
-    // FORMA CORRETA V9
-    signInWithEmailAndPassword(auth, email, senha)
-        .then((userCredential) => {
-            console.log("Logado:", userCredential.user);
-            alert("Logado com sucesso!");
-            mostrarSecaoPersonagens();
-        })
-        .catch((error) => {
-            console.error("Erro no login:", error);
-            alert("Erro: " + error.message);
-        });
-});
+        // FORMA CORRETA V9
+        signInWithEmailAndPassword(auth, email, senha)
+            .then((userCredential) => {
+                console.log("Logado:", userCredential.user);
+                alert("Logado com sucesso!");
+                mostrarSecaoPersonagens();
+            })
+            .catch((error) => {
+                console.error("Erro no login:", error);
+                alert("Erro: " + error.message);
+            });
+    });
+}
 
 // Verifique estado de login
 onAuthStateChanged(auth, async (user) => {
@@ -75,8 +81,11 @@ onAuthStateChanged(auth, async (user) => {
             window.location.reload(); 
         }
         // Atualiza o texto na interface onde antes aparecia o email
-        document.getElementById('user-name-display').innerText = user.displayName;
-
+        const nomeExibicao = document.getElementById('user-name-display');
+        if (nomeExibicao) {
+            nomeExibicao.innerText = user.displayName || "Agente";
+        }
+        carregarDadosPerfil()
     } else {
         const authSection = document.getElementById('auth-section');
         const charSection = document.getElementById('personagem-section');
