@@ -629,6 +629,19 @@
             "tipoDano": "Perfuração",
             "alcance": "Curto",
             "habilidade": ""
+        },
+        {
+            "nome": "Garra do Harpia",
+            "origem": "Arquivos Secretos",
+            "descricao": "Um rastelo transformado em uma arma estratégica, decorado com penas escuras e badulaques coloridos. A garra do harpia é uma arma tática ágil corpo a corpo e de duas mãos. Ela causa 2d8 pontos de dano de corte, pode ser arremessada em alcance curto e tem crítico 19/x2. O formato estranho permite que, ao causar dano em um alvo, você possa gastar 2 PE para fazer uma manobra de agarrar contra ele como ação livre (a manobra não precisa ser feita desarmada, não sendo necessário soltar esta arma). Além disso, pode ser usada com Combater com Duas Armas (e poderes similares) para fazer ataques adicionais, como se fosse uma arma de uma mão e uma arma leve. Este é um item único (apenas um agente pode escolhê-lo).",            "espaco": 2,
+            "categoria": 2,
+            "tipo": "Arma Tática - Corpo a Corpo - Duas Mãos",
+            "tag": "",
+            "dano": "2d8",
+            "critico": "19",
+            "tipoDano": "Corte",
+            "alcance": "Curto",
+            "habilidade": "Ágil"
         }
     ],
     "municoes":[
@@ -1280,6 +1293,22 @@
             "tag":"Fevereiro-2026",
             "espaco": 0.5,
             "categoria": 1
+        },
+        {
+            "nome":"Bloody Mary Batizada",
+            "origem":"Arquivos Secretos",
+            "descricao":"Uma versão especial da bebida Bloody Mary, preparada com “carinho” para expurgar todas as mazelas de um corpo. Se beber, você se livra de uma condição mental e/ou de medo que o esteja afetando. Porém, sofre 2d4 pontos de dano mental.",
+            "tag":"Março-2026",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Paçoca",
+            "origem":"Arquivos Secretos",
+            "descricao":"Uma iguaria típica brasileira, muito popular nas festas juninas. Este delicioso doce é feito à base de amendoim torrado e moído, açúcar e farinha de mandioca. Dizem que é impossível comer uma só. A paçoca conta como um prato rápido (OPRPG, p. 93), mas em ocasiões especiais, a critério do mestre, a paçoca pode surpreender: uma vez por dia, ao comer ela, o personagem recupera 1d8+1 PV, PE e SAN.",
+            "tag":"Março-2026",
+            "espaco": 0.5,
+            "categoria": 0
         }
     ], 
     "paranormais": [
@@ -1465,6 +1494,22 @@
             "descricao": "Este tipo de catalisador ritualístico (SaH, p. 44) foi intensamente horrorizado pelo Outro Lado e pode ser usado como uma vestimenta semelhante a uma bijuteria ou acessório, não sendo necessário empunhá-lo. Além disso, ele não é consumido quando usado. Uma vez por cena, você recebe 3d6. Você pode gastar 1d6, como ação livre, para: * Aumentar o dano de um ritual em +1d6. * Aumentar a recuperação de PV de um ritual em +1d6. * Aumentar a DT de um ritual em +1d6. Você só pode gastar 1d6 no mesmo ritual, e apenas no momento em que conjurá-lo. No fim da cena, d6 não gastos são perdidos.",
             "tag": "Fevereiro-2026",
             "espaco": 1,
+            "categoria": 3
+        },
+        {
+            "nome": "Crânio Dominador",
+            "origem": "Arquivos Secretos",
+            "descricao": "O crânio nefasto de quem outrora conheceu a submissão, agora tomado pela podridão e pelas correntes que o aprisionavam em vida, transbordando o desejo de retribuir cada gota de sofrimento. Se estiver empunhando este item, você pode gastar uma ação padrão e 2 PE para invocar correntes que envolvem até dois alvos em alcance curto. Eles ficam paralisados (Reflexos DT Pre evita). A única forma de se libertar é com o rompimento da corrente (Defesa 10, RD 10, 20 PV). O crânio não pode ser usado novamente por 24 horas e quando voltar a ser útil, as correntes já existentes desaparecem.",
+            "tag": "Março-2026",
+            "espaco": 1,
+            "categoria": 3
+        },
+        {
+            "nome": "Gaiola do Corvo",
+            "origem": "Arquivos Secretos",
+            "descricao": "Uma gaiola de pássaros feita de ossos e originada da morte daquele que perdeu sua liberdade. Dentro dela, uma nuvem de cinzas inquieta sussurra os lamentos daqueles que se foram. Se estiver empunhando este item, você pode gastar uma ação padrão para colocá-lo no chão e abrir sua portinhola. Ao fazer isso, todo o solo em um raio de 18m da gaiola é tomado por Lodo e se torna terreno difícil. No começo de toda rodada, aqueles que se encontrarem no Lodo sofrem 3d10 pontos de dano de Morte (Fortitude DT Vig reduz à metade). Se alguém ficar morrendo enquanto está no Lodo, seu corpo é consumido, transformado em cinzas e levado para dentro da gaiola, onde permanecerá para sempre. Após isso, a gaiola se fecha e seus efeitos acabam. É possível fechar a gaiola a qualquer momento como ação padrão.",
+            "tag": "Março-2026",
+            "espaco": 2,
             "categoria": 3
         }
     ],
@@ -2043,6 +2088,33 @@
             "tag":"Fevereiro-2026",
             "espaco": 1,
             "categoria": 4
+        },
+        {
+            "nome":"Camiseta Psikolera",
+            "origem":"Arquivos Secretos",
+            "descricao":"Manchada de sangue dos vários mosh pits na qual já esteve presente, uma simples merch de uma banda se torna um símbolo de resistência e adrenalina. Quanto mais ela se suja, mais você se deleita. Se estiver machucado enquanto usa esta vestimenta, todas as suas rolagens de dano causam +2d8 pontos de dano de Sangue.",
+            "Elemento":"Sangue",
+            "tag":"Março-2026",
+            "espaco": 1,
+            "categoria": 2
+        },
+        {
+            "nome":"Dupla Obsessiva",
+            "origem":"Arquivos Secretos",
+            "descricao":"Maça e florete. Essa dupla de armas enferrujadas parecem não conseguir ficar longe uma da outra, obcecadas por si mesmas e seu único propósito: proteger aqueles que amam com fervor. A maça é uma arma tática corpo a corpo e de uma mão. Ela causa 2d4 pontos de dano de perfuração mais 1d6 pontos de dano de Sangue, multiplicado em caso de acerto crítico, e tem crítico 20/x3. O florete é uma arma tática ágil corpo a corpo e de uma mão. Ela causa 1d6 pontos de dano de perfuração mais 2d4 pontos de dano de Sangue, multiplicado em caso de acerto crítico, e tem crítico 18/x2. Se estiver empunhando as duas armas, pode gastar uma ação padrão para realizar dois ataques, um com cada arma. Além disso, se um aliado em alcance curto de você for alvo de um ataque, você pode gastar 2 PE como reação para se tornar o alvo do ataque. Se fizer isso e a fonte do ataque estiver em alcance corpo a corpo, você pode gastar 2 PE para atacar a fonte com a maça. Se tiver Combater com Duas Armas e/ou Ambidestria, os custos mudam para 1 PE.",
+            "Elemento":"Sangue",
+            "tag":"Março-2026",
+            "espaco": 2,
+            "categoria": 3
+        },
+        {
+            "nome":"Armaduras dos Couraças",
+            "origem":"Arquivos Secretos",
+            "descricao":"Chamadas de Armaduras de Guevara, essas peças têm partes orgânicas, abrem e fecham conforme a vontade do usuário e contam como proteções pesadas amaldiçoadas de Sangue com aparências diversas e as seguintes características específicas: * Defesa: +10, além de +1 para cada semana usando a armadura até o limite de +20. * Categoria: III * Espaços: a armadura se movimenta com vontade própria, não pesando sobre o usuário, não aplicando penalidades, ocupando 0 espaços e não dificultando conjurações. * Proficiência: a armadura se adapta ao alvo, dispensando a necessidade de ser proficiente em proteções pesadas. * Resistências: usuário recebe RD balístico, impacto, perfuração 5, Sangue 10. * Vulnerabilidade: usuário fica vulnerável a Morte.  * Especial: uma pessoa que toque uma dessas armaduras precisa fazer um teste de Vontade (role 6d6 para determinar a DT). Se falhar, um desejo incontrolável força a pessoa a equipá-la. Se passar, pode escolher equipá-la ou não. Uma pessoa equipada com a armadura precisa fazer um teste de Fortitude (DT 6d6). Se falhar, o Sangue poderá, inesperadamente, controlar a pessoa como e quando achar melhor. Se passar, fica imune ao controle do Sangue. Tentar tirar a armadura equipada é quase impossível. Um dos métodos envolve o usuário sofrer dano de Morte até ficar com 0 PV e ser removido de dentro da proteção maldita. Independentemente de sucessos ou falhas, todos os testes envolvendo a armadura devem ser repetidos após uma semana ou no início de uma nova missão (o que acontecer primeiro).",
+            "Elemento":"Sangue",
+            "tag":"Março-2026",
+            "espaco": 0,
+            "categoria": 3
         }
     ]      
 }

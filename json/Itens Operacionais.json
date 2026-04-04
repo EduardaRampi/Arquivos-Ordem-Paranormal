@@ -220,5 +220,17 @@
         "origem":"Arquivos Secretos",
         "descricao":"Ferramenta abrasiva, natural ou sintética, usada para restaurar o fio de lâminas.",
         "tag":"Fevereiro-2026"
+    },
+    {
+        "nome":"Bloody Mary Batizada",
+        "origem":"Arquivos Secretos",
+        "descricao":"Uma versão especial da bebida Bloody Mary, preparada com “carinho” para expurgar todas as mazelas de um corpo.",
+        "tag":"Março-2026"
+    },
+    {
+        "nome":"Paçoca",
+        "origem":"Arquivos Secretos",
+        "descricao":"Uma iguaria típica brasileira, muito popular nas festas juninas. Este delicioso doce é feito à base de amendoim torrado e moído, açúcar e farinha de mandioca. Dizem que é impossível comer uma só.",
+        "tag":"Março-2026"
     }
 ]

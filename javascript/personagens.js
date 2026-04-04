@@ -16,9 +16,9 @@ let escolhaClasseId = null;
 window.idFichaAberta = window.idFichaAberta || null;
 let carregandoFicha = false;
 const TRILHAS = {
-    combatente: ["Aniquilador", "Guerreiro", "Operações Especiais", "Tropa de Choque", "Comandante de Campo", "Agente Secreto", "Caçador", "Monstruoso"],
-    especialista: ["Atirador de Elite", "Infiltrador", "Médico de Campo", "Negociador", "Técnico", "Bibliotecario", "Perseverante", "Muambeiro"],
-    ocultista: ["Conduíte", "Flagelador", "Graduado", "Lâmina Paranormal", "Intuitivo", "Exorcista", "Possuido", "Parapsicólogo", "Maledictólogo"], 
+    combatente: ["Aniquilador", "Guerreiro", "Operações Especiais", "Tropa de Choque", "Comandante de Campo", "Agente Secreto", "Caçador", "Monstruoso", "Combatente Perfomático"],
+    especialista: ["Atirador de Elite", "Infiltrador", "Médico de Campo", "Negociador", "Técnico", "Bibliotecario", "Perseverante", "Muambeiro", "Especialista Perfomático"],
+    ocultista: ["Conduíte", "Flagelador", "Graduado", "Lâmina Paranormal", "Intuitivo", "Exorcista", "Possuido", "Parapsicólogo", "Maledictólogo", "Ocultista Perfomático"], 
     sobrevivente: ["Durão", "Esperto", "Esotérico"]
 };
 const AFINIDADE = [
@@ -1919,7 +1919,7 @@ async function renderizarHabilidadesModal() {
                         </div>
                         <div class="detalhes-item-modal">
                             <p><strong>Tipo:</strong> ${categoria.replace('-', ' ').toUpperCase()}</p>
-                            ${hab.trilhas ? `<p><strong>Trilha:</strong> ${hab.trilha}</p>` : ''}
+                            ${hab.trilha ? `<p><strong>Trilha:</strong> ${hab.trilha}</p>` : ''}
                             ${hab.requisito ? `<p><strong>Requisito:</strong> ${hab.requisito}</p>` : ''}
                             ${hab.origem ? `<p><strong>Origem:</strong> ${hab.origem}</p>` : ''}
                             <p>${hab.descricao || "Sem descrição."}</p>
@@ -2694,6 +2694,11 @@ const CONTEUDO_AJUDA = {
                 </div>
 
                 <div class="card-ajuda">
+                    <h4>Apaixonado</h4>
+                    <p>O personagem passa a sentir paixão por alguém. Ele sofre penalidade igual à soma dos PV e PE recebidos durante uma relação íntima em todos os testes contra a pessoa pela qual estiver apaixonado.</p>
+                </div>
+
+                <div class="card-ajuda">
                     <h4>Apavorado</h4>
                     <p>O personagem sofre –2d20 em testes de perícia e deve fugir da fonte do medo da maneira mais eficiente possível (mas pode parar de fazê-lo assim que a perder de vista ou se afastar mais do que alcance médio). Se não puder, poderá agir, mas não poderá se aproximar voluntariamente da fonte do medo. Condição de medo.</p>
                 </div>
@@ -2861,6 +2866,11 @@ const CONTEUDO_AJUDA = {
                 <div class="card-ajuda">
                     <h4>Surpreendido</h4>
                     <p>Não ciente de seus inimigos. O personagem fica desprevenido e não pode fazer ações.</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h4>Trêmulo</h4>
+                    <p>O personagem fica nervoso, tomado por tremeliques. Ele sofre –1d20 em testes baseados em Força e Vigor por 3 rodadas.</p>
                 </div>
 
                 <div class="card-ajuda">

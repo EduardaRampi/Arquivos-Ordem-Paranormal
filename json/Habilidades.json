@@ -2230,6 +2230,67 @@
             "gatilho":"Ouvir o grito de morte de alguém que você tentou proteger. Em termos de regras, um aliado deve estar morrendo e você deve escutar o grito dele ou conseguir enxergá-lo.."
         }
     ],
+    "poder-sacrificio":[
+        {
+            "nome": "Arrogância Diabólica",
+            "elemento": "'Sacrifício'",
+            "trilha": "",
+            "descricao": "Você pode gastar uma ação padrão e 3 PE para dizer à uma pessoa dentro de alcance médio que ela pode fazer tudo que quiser, “basta ter o mindset certo”. A pessoa deve fazer um teste de Vontade (DT Pre -5). Se falhar, deve fazer uma ação extremamente imprudente em seu próximo turno, como atacar alguém mais poderoso ou saltar de um lugar alto. A pessoa vai fazer isso apenas para provar que “pode” — mesmo que não possa de verdade! Se o alvo passar, ainda assim se sente muito inseguro e sofre 2d6 pontos de dano mental que não podem ser evitados, reduzidos ou resistidos.",
+            "requisito": "Ser o sacrifício do Orgulho",
+            "afinidade": "",
+            "origem": "",
+            "gatilho":""
+        },
+        {
+            "nome": "Causar Culpa",
+            "elemento": "'Sacrifício'",
+            "trilha": "",
+            "descricao": "Você pode gastar uma ação padrão e 3 PE para causar um sentimento de culpa terrível em uma pessoa emalcance curto até o fim da cena. O alvo pode fazer um teste de Vontade (DT Pre +5) para evitar. Se falhar, tem memórias vívidas das piores coisas que já fez e se sente merecedor de todo sofrimento do mundo, se deixando indefeso. O alvo pode fazer um novo teste no início de seus turnos para se libertar da condição",
+            "requisito": "Ser o sacrifício da Culpa",
+            "afinidade": "",
+            "origem": "",
+            "gatilho":""
+        },
+        {
+            "nome": "Despertar Obsessão",
+            "elemento": "'Sacrifício'",
+            "trilha": "",
+            "descricao": "Você pode gastar uma ação padrão e 3 PE para encarar uma pessoa em alcance curto. O alvo pode desviar o olhar ou encará-lo de volta. Desvia o olhar: o alvo fica desprevenido contra ataques feitos por você e seus aliados por 1 rodada. Encarar: o alvo deve fazer um teste de Vontade (DT Pre +5). Se passar, nada acontece. Se falhar, seu coração acelera e suas emoções são inundadas por uma obsessão perturbadora. Por 1 rodada, o alvo deve gastar todas as suas ações para se aproximar de você e adorá-lo. Se não quiser fazer isso, terá um impulso incontrolável de se automutilar, devendo fazer um ataque contra si mesmo. Uma vez que faça esse ataque, este efeito termina.",
+            "requisito": "Ser o sacrifício da Obsessão",
+            "afinidade": "",
+            "origem": "",
+            "gatilho":""
+        },
+        {
+            "nome": "Estimular Hedonismo",
+            "elemento": "'Sacrifício'",
+            "trilha": "",
+            "descricao": "Você pode gastar uma ação padrão e 3 PE para fazer uma pessoa em alcance curto ser tomada por uma onda de prazer insana. O alvo pode fazer um teste de Vontade (DT Pre +5) para evitar. Se falhar, todos os sentidos e alertas biológicos do alvo (como reflexos de urgência ou dor) só transmitem prazer, euforia, alegria intensa e viciante. O alvo perde qualquer senso de autopreservação, ficando indefeso por 1 rodada, além de só poder fazer ações que resultem em prazer fácil e imediato, a critério do mestre.",            "requisito": "",
+            "afinidade": "Ser o sacrifício do Prazer",
+            "origem": "",
+            "gatilho":""
+        },
+        {
+            "nome": "Fruto da Ambição",
+            "elemento": "'Sacrifício'",
+            "trilha": "",
+            "descricao": "Escolha um poder ou ritual que conheça. Além do efeito padrão, a habilidade se torna um gatilho para assumir uma forma poderosíssima. Em termos de regras, a habilidade funciona como As Máscaras (AS #2, p. 97) e, ao usá-la, é como se você estivesse vestindo a sua máscara. Se já tiver a habilidade da máscara, em vez disso você recebe 1 ritual de Sangue de 4º círculo à sua escolha (é capaz de conjurá-lo, mas ainda precisa gastar PE normalmente para fazê-lo).",
+            "requisito": "Ser o sacrifício do Desejo",
+            "afinidade": "",
+            "origem": "",
+            "gatilho":""
+        },
+        {
+            "nome": "Ódio Suprimido",
+            "elemento": "'Sacrifício'",
+            "trilha": "",
+            "descricao": "Você pode gastar uma ação completa e 3 PE para explodir de raiva, gritando, correndo e saltando para cima de quem estiver em seu caminho. A força do Sangue impulsiona seu ímpeto violento. Qualquer ser em alcance curto deve fazer um teste de Fortitude e um teste de Reflexos (ambos contra DT Pre +5). Falhou no teste de Fortitude: o ser é espancado por você, ficando caído e sofrendo seu dano corpo a corpo (desarmado ou da arma que estiver empunhando). Falhou no teste de Reflexos: o ser é atingido por algo atirado por você e sofre seu dano à distância (você precisa estar empunhando alguma arma à distância ou, pelo menos, ser capaz de jogar pedras que causam 1d4 pontos de dano de impacto). Depois da explosão, você cai no chão, chorando e tremendo (fica exausto até o fim da cena).",
+            "requisito": "Ser o sacrifício do Rancor",
+            "afinidade": "",
+            "origem": "",
+            "gatilho":""
+        }
+    ],
     "poder-energia":[
         {
             "nome": "Afortunado",
@@ -3270,6 +3331,44 @@
             "elemento": "",
             "trilha": "Esotérico",
             "descricao": "Você aprende e pode conjurar um ritual de 1º círculo a sua escolha. Se você se tornar um ocultista, soma este ritual aos três rituais que aprende com Escolhido pelo Outro Lado.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        }
+    ],
+    "trilha-geral":[
+        {
+            "nome": "NEX 10% – Ensaio",
+            "elemento": "",
+            "trilha": "Combatente/Especialista/Ocultista Performático",
+            "descricao": "Você sabe que a prática leva à perfeição em qualquer contexto. Você recebe uma nova opção de ação de interlúdio: ensaiar combate. Quando fizer ela, você recebe +1 na margem de ameaça de seus ataques até o início da próxima cena de interlúdio. Esse bônus aumenta para +2 em NEX 40%, para +3 em NEX 65% e +4 em NEX 99%. Você só pode ensaiar uma vez por cena. Outros personagens podem gastar uma ação de interlúdio para ensaiar com você, recebendo o mesmo bônus pela mesma duração.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 40% – Frase de Efeito",
+            "elemento": "",
+            "trilha": "Combatente/Especialista/Ocultista Performático",
+            "descricao": "Você tem uma frase de efeito que ilustra perfeitamente os momentos de maior performance. Quando você ou um aliado em alcance curto obter um acerto crítico, você pode gastar 2 PE para exclamar sua grande frase e mudar o multiplicador de crítico do ataque. Se o multiplicador for menor que sua Presença, ele aumenta em +2. Se for maior ou igual a sua Presença, ele aumenta em +1.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 65% – Mosh Pit",
+            "elemento": "",
+            "trilha": "Combatente/Especialista/Ocultista Performático",
+            "descricao": "Conforme a música fica mais pesada, o clima fica cada vez mais violento. Quando está flanqueando um alvo, você e todos os seus aliados flanqueando ou adjacentes ao mesmo alvo recebem +1d6 nas rolagens de dano contra ele para cada aliado cercando-o (até o limite de +5d6). Por exemplo, se você está flanqueando o inimigo com um aliado e há mais dois aliados adjacentes ao inimigo, todos vocês recebem +4d6 nas rolagens de dano contra este inimigo.",
+            "requisito": "",
+            "afinidade": "",
+            "origem": ""
+        },
+        {
+            "nome": "NEX 99% – Ritmo Contagiante",
+            "elemento": "",
+            "trilha": "Combatente/Especialista/Ocultista Performático",
+            "descricao": "Você e todos os membros da sua equipe já sabem de cor as suas coreografias icônicas, seu ritmo se torna contagiante e inevitável. No início de uma cena de combate, você e todos os aliados em alcance médio recebem +5 na Defesa até o fim do combate. Sempre que você obter um acerto crítico, esse bônus aumenta em +1 (até o limite total de +10 na Defesa).",
             "requisito": "",
             "afinidade": "",
             "origem": ""

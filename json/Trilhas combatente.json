@@ -54,5 +54,12 @@
         "origem":"Sobrivivendo ao Horror",
         "tag":"",
         "descricao":"Muito se fala sobre os ocultistas escolherem o caminho de tornarem sua mente uma porta para o paranormal, na tentativa de usá-lo contra ele mesmo, mas de vez em quando, um combatente é corajoso ou insano o bastante para fazer o mesmo com seu corpo. Você propositalmente desfigura e altera seu corpo para que as Entidades o invadam com maior intensidade; contudo, para sua infelicidade, os métodos para isso costumam ser brutais. Combatentes dessa trilha que chegam aos níveis mais altos de exposição inevitavelmente perdem o controle e se tornam inimigos da Ordem. Especial: esta trilha usa a “Progressão de NEX” apresentada na regra opcional Nível de Experiência e Nível de Exposição (p. 98)"
+    }, 
+    {
+        "id":"combatente_performatico",
+        "nome":"Combatente Perfomático",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "descricao":"Você gosta de glamour, ritmo e trabalhar em sinergia com a sua trupe durante conflitos. Uma luta é uma performance violentamente cativante e colaborativa, digna de ser observada por uma plateia."
     }
 ]

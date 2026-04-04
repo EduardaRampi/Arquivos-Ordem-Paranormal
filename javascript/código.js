@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   'poderes-conhecimento': '../json/Poderes conhecimento.json',
   'poderes-energia': '../json/Poderes energia.json',
   'poderes-intencao': '../json/Poderes intencao.json',
+  'poderes-sacrificio': '../json/Poderes sacrificio.json',
   armas: '../json/Armas.json',
   'modificacoes-armas': '../json/Modificações de Armas.json',
   'habilidades-armas': '../json/Habilidades Armas.json',

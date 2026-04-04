@@ -61,5 +61,68 @@
         "descricao": "Pouco se sabe sobre o novo elemento de Intenção e quais mistérios ele esconde.",
         "tag": "Fevereiro-2026",
         "Comp": "Livro de regras- pg.114"
+    },
+    {
+        "nome": "Poderes de Sacrifício",
+        "origem": "Arquivos Secretos",
+        "descricao": "Quando um ser se torna um sacrifício do Hexatombe, ele recebe um dos poderes, correspondente ao seu estigma",
+        "tag": "Março-2026",
+        "Comp": "Livro de regras- pg.114"
+    },
+    {
+        "nome": "Trilha Geral",
+        "origem": "Arquivos Secretos",
+        "descricao": "Em termos de regras, ela pertence às três classes e pode ser escolhida por qualquer uma delas",
+        "tag": "Março-2026",
+        "Comp": ""
+    },
+    {
+        "nome": "Batalha de Intenções",
+        "origem": "Arquivos Secretos",
+        "descricao": "Durante o Hexatombe, a influência da Coroa de Espinhos é poderosa o bastante para tornar as intenções dos envolvidos no ritual quase palpáveis. Em situações extremas em que intenções estão diretamente envolvidas, como no momento em que uma pessoa quer enfrentar outra, a manifestação do sino transmite tais intenções, criando uma batalha entre as duas pessoas.",
+        "tag": "Março-2026",
+        "Comp": ""
+    },
+    {
+        "nome": "Troca de Recursos",
+        "origem": "Arquivos Secretos",
+        "descricao": "Durante o Hexatombe, Giovanni Opspor fez o papel de ser um NPC disposto a negociar com as demais equipes, trocando as informações que investigou antes do ritual começar por recursos (água, comida ou sucata). A mesma lógica pode ser aplicada a qualquer versão de Hexatombe que desejar para sua mesa, inclusive não se limitando a apenas um NPC. Toda uma rede de comércio de recursos e informações pode ser o foco de um jogo em que os personagens dos jogadores são mais sociais e menos combatentes.",
+        "tag": "Março-2026",
+        "Comp": ""
+    },
+    {
+        "nome": "Tempo de Construção da Base",
+        "origem": "Arquivos Secretos",
+        "descricao": "As regras de base apresentadas nos Arquivos Secretos #2 (p. 16) levam em consideração o que foi feito durante a série Hexatombe. Entretanto, tudo que os personagens podiam fazer era gastar períodos da tarde para melhorar um cômodo usando sucata. Cada melhoria era, em resumo, remendos improvisados que tornavam o ambiente um pouco melhor.",
+        "tag": "Março-2026",
+        "Comp": ""
+    },
+    {
+        "nome": "Jogos do Circo dos Irmãos Davo",
+        "origem": "Arquivos Secretos",
+        "descricao": "Durante o ritual de Hexatombe, Dalmo e Kemi, acompanhados pelos PSIKOLERA, jogam alguns dos poucos jogos ainda em funcionamento no circo abandonado. Veja as regras dos jogos a seguir e use-as à vontade ou se inspire nelas para criar seus próprios minigames.",
+        "tag": "Março-2026",
+        "Comp": ""
+    },
+    {
+        "nome": "Regra da Paixão",
+        "origem": "Arquivos Secretos",
+        "descricao": "As relações entre pessoas durante missões da Ordem podem se desenrolar de diversas formas. Com a tensão constante provocada pelos horrores do Outro Lado, um bom momento de alívio entre flertes e beijos pode ser bem-vindo.",
+        "tag": "Março-2026",
+        "Comp": ""
+    },
+    {
+        "nome": "Veículos Operacionais",
+        "origem": "Arquivos Secretos",
+        "descricao": "Algumas missões são longas e percorrem grandes distâncias ao redor do país. Em situações como essa, é essencial ter um meio de locomoção que supra ao máximo as necessidades dos agentes em campo. A Ordem pode fornecer veículos operacionais para missões nas estradas, transportes espaçosos que carregam regalias especiais para auxiliar na resolução dos mais variados casos.",
+        "tag": "Março-2026",
+        "Comp": ""
+    },
+    {
+        "nome": "Animais Treinados",
+        "origem": "Arquivos Secretos",
+        "descricao": "Qualquer um que ame seu animal de estimação jamais envolveria ele em confrontos com o Outro Lado, principalmente estando ciente dos riscos que isso apresenta, sem o devido treinamento. Essa regra não é para gatinhos acomodados ou cachorros de madame.",
+        "tag": "Março-2026",
+        "Comp": ""
     }
 ]

@@ -268,5 +268,11 @@
         "origem":"Sobrevivendo ao Horror",
         "descricao":"Projéteis metálicos, ataque extra gastando 1 PE. Pacote dura duas cenas.",
         "tag":"Arma Tática"
+    },
+    {
+        "nome":"Garra do Harpia",
+        "origem":"Arquivos Secretos/Março-2026",
+        "descricao":"Um rastelo transformado em uma arma estratégica, decorado com penas escuras e badulaques coloridos.",
+        "tag":"Arma Tática"
     }
 ]

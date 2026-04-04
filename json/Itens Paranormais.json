@@ -87,5 +87,17 @@
         "origem":"Arquivos Secretos",
         "descricao":"Este tipo de catalisador ritualístico (SaH, p. 44) foi intensamente horrorizado pelo Outro Lado.",
         "tag":"Fevereiro-2026"
+    },
+    {
+        "nome":"Crânio Dominador",
+        "origem":"Arquivos Secretos",
+        "descricao":"O crânio nefasto de quem outrora conheceu a submissão, agora tomado pela podridão e pelas correntes que o aprisionavam em vida, transbordando o desejo de retribuir cada gota de sofrimento.",
+        "tag":"Março-2026"
+    },
+    {
+        "nome":"Gaiola do Corvo",
+        "origem":"Arquivos Secretos",
+        "descricao":"Uma gaiola de pássaros feita de ossos e originada da morte daquele que perdeu sua liberdade. Dentro dela, uma nuvem de cinzas inquieta sussurra os lamentos daqueles que se foram.",
+        "tag":"Março-2026"
     }
 ]

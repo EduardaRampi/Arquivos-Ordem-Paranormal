@@ -86,5 +86,149 @@
         "tag":"Fevereiro-2026",
         "Bônus":"Você recebe +1d20 em testes de Intimidação e Ocultismo.",
         "Poder":"Ligado ao Sangue. Você pode conjurar os rituais Armadura de Sangue e Descarnar como se os conhecesse, mas ainda precisa atender aos pré-requisitos de círculo para as formas avançadas. Eles não contam em seu limite de rituais. Se já conhece algum dos dois rituais (ou os dois), em vez disso o custo em PE para conjurá-lo diminui em –1 PE."
+    },
+    {
+        "nome":"Ana",
+        "descricao":"Ana é uma combatente sanguinária, habilidosa, apaixonada e fiel.",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "Bônus":"Sempre que causa dano com um ataque corpo a corpo, você também causa +1 dado extra de dano do mesmo tipo.",
+        "Poder":"Dupla Empunhadura. Você pode gastar 1 PE para usufruir da habilidade Combater com Duas Armas como se a tivesse. Se já tiver a habilidade, em vez disso não sofre a penalidade de –1d20."
+    },
+    {
+        "nome":"Argano",
+        "descricao":"Argano é um amante leal, obstinado e principalmente forte. Seus ataques são devastadores e seu tamanho serve como uma ótima cobertura.",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "Bônus":"Sempre que causa dano, também causa +1d12 pontos de dano extras de perfuração.",
+        "Poder":"Cobertura Viva. Você pode gastar 1 PE para receber cobertura leve. O efeito dura até você se mover."
+    },
+    {
+        "nome":"Chispa",
+        "descricao":"Chispa é inteligente, rápido, eficiente e sempre tem uma traquitana útil que você não esperava.",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "Bônus":"Você recebe +9m de deslocamento.",
+        "Poder":"Traquitana Explosiva. Uma vez por cena de combate, você pode gastar 1 PE para Chispa te dar uma granada (escolha o tipo em OPRPG, p. 64)."
+    },
+    {
+        "nome":"Escarlata",
+        "descricao":"Escarlata seduz e manipula aqueles que considera interessantes para benefício próprio, mas isso sempre vem com algum bônus.",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "Bônus":"Todo teste feito com o intuito de proteger ou beneficiar a Escarlata recebe +5.",
+        "Poder":"A Dor do Amor. Uma vez por cena, você pode perder 1d8+1 pontos de vida para agraciar Escarlata. Ao fazer isso, ela te retribui com 10 PE temporários."
+    },
+    {
+        "nome":"Torvo",
+        "descricao":"Torvo não serve para nada além de acompanhar aquele que o mantém na coleira. Seu sofrimento não passa de uma fonte poderosa ao Outro Lado.",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "Bônus":"Rituais de Sangue dispensam a necessidade de componentes ritualísticos e têm seus custos em PE reduzidos em 1 (cumulativo com outras reduções).",
+        "Poder":"Catalisador Vivo. Quando conjurar um ritual de Sangue, você pode gastar 1 PE para aplicar um efeito de um catalisador ritualístico à sua escolha ao ritual."
+    },
+    {
+        "nome":"Coruja",
+        "descricao":"Coruja é esperta, observadora e sempre disposta a compartilhar os conhecimentos que possui.",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "Bônus":"Escolha duas perícias do atributo Intelecto. Você é considerado treinado nessas perícias.",
+        "Poder":"Olhos Treinados. Quando ataca, você pode gastar 2 PE para ignorar efeitos de cobertura leve e camuflagem leve."
+    },
+    {
+        "nome":"Corvo",
+        "descricao":"Corvo é um ocultista didático e fascinado pelo fim inevitável de todas as coisas.",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "Bônus":"Uma vez por cena, quando sofre um dano que te deixaria com 0 PV, em vez disso você fica com 1 PV.",
+        "Poder":"Pela Hora da Morte. Uma vez por rodada, você pode gastar 2 PE para causar a perda de 1d8 PV a todos os seres à sua escolha machucados na cena."
+    },
+    {
+        "nome":"Harpia",
+        "descricao":"Harpia é um líder atento e convicto, sempre cuidando de seus companheiros.",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "Bônus":"Você não fica desprevenido contra inimigos que não possa ver e, sempre que erra um ataque devido a camuflagem, pode rolar mais uma vez o dado da chance de falha.",
+        "Poder":"Aves de Rapina. Quando faz um ataque, você pode gastar 2 PE para que as aves adestradas por Harpia deixem o alvo do seu ataque desprevenido."
+    },
+    {
+        "nome":"Papagaio",
+        "descricao":"Papagaio é um malandro que sabe se virar em qualquer situação, consegue preparar um bom chá e acalmar os ânimos exaltados com suas piadinhas.",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "Bônus":"No fim de uma cena de interlúdio, você recupera 1d6 PE.",
+        "Poder":"Meter o Migué. Uma vez por cena, quando faz um teste de perícia, você pode gastar 2 PE para trocar o atributo usado no teste por outro a sua escolha."
+    },
+    {
+        "nome":"Pomba",
+        "descricao":"Pomba é um explorador nato que sabe se virar pelos caminhos urbanos e da natureza.",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "Bônus":"Você é considerado treinado em Crime e Sobrevivência. Se já for treinado, em vez disso recebe +2.",
+        "Poder":"Atalhos em Todo Lugar. Uma vez por rodada, você pode gastar 2 PE para fazer uma ação de movimento adicional, mas apenas para se deslocar."
+    },
+    {
+        "nome":"Alê",
+        "descricao":"Alguém dotado de grande intuição ou vislumbres proféticos, que parece saber tudo que pode dar errado.",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "Bônus":"Uma vez por cena, você pode rolar um teste novamente e escolher o melhor resultado.",
+        "Poder":"Prever Resultados. Uma vez por missão, você pode gastar 2 PE para rolar 2d20. Anote os resultados. Até o fim da missão, em qualquer teste seu ou de outro ser (mesmo fora da sua linha de visão), você pode trocar o resultado do d20 mais alto por um dos dois resultados que anotou (ele deve ser usado no lugar, mesmo que seja mais baixo do que os outros d20 do teste do alvo). Ao fazer isso, você gasta o valor anotado, não podendo usá-lo novamente."
+    },
+    {
+        "nome":"Caio",
+        "descricao":"Alguém que não se importa em ficar para trás se for para causar um estardalhaço e distrair quem puder.",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "Bônus":"Você recebe +1d20 em testes de Furtividade (Caio chama mais atenção que você).",
+        "Poder":"Barulheira. Uma vez por cena, você pode gastar 1 PE para que o aliado provoque uma barulheira atordoante e chamativa no ambiente. Qualquer teste feito por inimigos na cena que não tenha Caio como único alvo (como um teste de Percepção para te ouvir ou um teste de ataque para te acertar) sofre –1d20."
+    },
+    {
+        "nome":"Cindy",
+        "descricao":"A garota que arma o palco, move as cordas dos seus bonequinhos e garante o sucesso a qualquer custo.",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "Bônus":"Você recebe +5 em Diplomacia, Enganação e Intimidação, exceto contra a Cindy.",
+        "Poder":"Tiro de Aviso. Quando acerta um ataque, você pode gastar 2 PE para que Cindy dispare uma rajada de balas, abrindo a guarda do alvo. Você causa +2d8 pontos de dano balístico."
+    },
+    {
+        "nome":"Eloy",
+        "descricao":"Braços largos, energia ilimitada, personalidade cativante, um baterista capaz de esmagar crânios.",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "Bônus":"Você recebe resistência a dano 5.",
+        "Poder":"Porrada Rítmica. Seguindo o ritmo dos golpes de Eloy, uma vez por rolagem de dano, você pode gastar 1 PE para rolar novamente todos os resultados 1 ou 2. Você deve ficar com os novos resultados de dano, mesmo sendo menores do que os anteriores."
+    },
+    {
+        "nome":"Franco",
+        "descricao":"Um fanático por fogo e explosivos que está sempre disposto a ver tudo queimar.",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "Bônus":"Você recebe +1d20 em testes para quebrar objetos e causa +1d6 pontos de dano do mesmo tipo neles.",
+        "Poder":"Fogo em Geral. Quando ataca um alvo, você pode gastar 1 PE para deixá-lo em chamas."
+    },
+    {
+        "nome":"Corvo",
+        "descricao":"Uma ave inteligente e onívora do gênero Corvus, conhecida por sua plumagem geralmente preta, grande porte e notável inteligência.",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "Bônus":"Você recebe +2 em Percepção e Sobrevivência.",
+        "Poder":"Ataque os Olhos. Quando você causa dano em um alvo, pode gastar 1 PE para deixá-lo ofuscado por 1 rodada. Se causar dano de um acerto crítico, em vez disso, o alvo fica cego por 1 rodada."
+    },
+    {
+        "nome":"Gato",
+        "descricao":"Um mamífero carnívoro da família Felidae, conhecidos pela agilidade, garras retráteis, caça e independência.",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "Bônus":"Você recebe +2 em Percepção e Reflexos.",
+        "Poder":"Visão Noturna. Quando está em escuridão (exceto escuridão paranormal), você pode gastar 1 PE para que seu gato fique alerta por você até o fim da cena. É como se você tivesse visão na penumbra (OPRPG, p. 180)."
+    },
+    {
+        "nome":"Serpente",
+        "descricao":"Um réptil ovíparo da ordem Squamata, caracterizado pelo corpo alongado, escamoso, sem patas e sem pálpebras.",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "Bônus":"Você recebe +2 em Enganação e Intimidação.",
+        "Poder":"Peçonhenta. Quando você causa dano em um alvo, pode gastar 1 PE para também causar a perda de 1d12 pontos de vida por veneno."
     }
 ]

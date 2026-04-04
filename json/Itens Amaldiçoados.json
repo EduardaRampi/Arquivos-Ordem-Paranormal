@@ -418,5 +418,26 @@
         "descricao":"Uma faca de cabo escuro ornamentada com várias ondas em sua lâmina.",
         "Elemento":"Sangue",
         "tag":"Fevereiro-2026"
+    },
+    {
+        "nome":"Camiseta Psikolera",
+        "origem":"Arquivos Secretos",
+        "descricao":"Manchada de sangue dos vários mosh pits na qual já esteve presente, uma simples merch de uma banda se torna um símbolo de resistência e adrenalina. Quanto mais ela se suja, mais você se deleita.",
+        "Elemento":"Sangue",
+        "tag":"Março-2026"
+    },
+    {
+        "nome":"Dupla Obsessiva",
+        "origem":"Arquivos Secretos",
+        "descricao":"Maça e florete. Essa dupla de armas enferrujadas parecem não conseguir ficar longe uma da outra, obcecadas por si mesmas e seu único propósito: proteger aqueles que amam com fervor.",
+        "Elemento":"Sangue",
+        "tag":"Março-2026"
+    },
+    {
+        "nome":"Armaduras dos Couraças",
+        "origem":"Arquivos Secretos",
+        "descricao":"Chamadas de Armaduras de Guevara, essas peças têm partes orgânicas, abrem e fecham conforme a vontade do usuário e contam como proteções pesadas amaldiçoadas de Sangue com aparências diversas",
+        "Elemento":"Sangue",
+        "tag":"Março-2026"
     }
 ]

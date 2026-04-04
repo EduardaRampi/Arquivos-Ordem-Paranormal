@@ -54,5 +54,12 @@
         "origem":"Sobrivivendo ao Horror",
         "tag":"",
         "descricao":"Você sempre foi bom em lidar com equipamentos, e aprendeu como produzir ou encontrar, os itens certos em qualquer ocasião. Esse talento pode ser fundamental para manter todos em sua equipe vivos."
+    }, 
+    {
+        "id":"especialista_performatico",
+        "nome":"Especialista Perfomático",
+        "origem":"Arquivos Secretos",
+        "tag":"Março-2026",
+        "descricao":"Você gosta de glamour, ritmo e trabalhar em sinergia com a sua trupe durante conflitos. Uma luta é uma performance violentamente cativante e colaborativa, digna de ser observada por uma plateia."
     }
 ]
