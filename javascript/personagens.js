@@ -92,7 +92,6 @@ const DADOS_ORIGENS = {
     ferido_por_ritual: { pericias: ["Ocultismo"], poder: "Mácula Ritualística" }, 
     transtornado_arrependido: { pericias: ["Luta", "Ocultismo"], poder: "Sofrimento de Sangue" }
 };
-
 /* ============================================================
    1. GERENCIAMENTO DE SELEÇÃO DE ORIGEM E CLASSE
    - Marca a escolha do usuário e garante que apenas um card esteja selecionado
@@ -573,12 +572,11 @@ function abrirFichaCompleta(id, dados) {
     }
     document.getElementById('edit-pe-turno').value = dados.peTurno || limiteCalculado;
 
+    window.fichaAtualDados = dados;
+
     atualizarOpcoesTrilha(dados.classe, valorNivel, dados.trilha);
     atualizarOpcoesAfinidade(valorNivel, dados.afinidade);
 
-    // Criar uma variável global ou acessível para os dados da ficha atual
-    // Isso ajuda a recalcular sem precisar ler do banco de novo
-    window.fichaAtualDados = dados;
 
     // B. Atributos (FOR, AGI, INT, VIG, PRE)
     if (dados.atributos) {
@@ -739,20 +737,6 @@ function abrirFichaCompleta(id, dados) {
         carregandoFicha = false; 
         console.log("Ficha carregada e pronta para edições.");
     }, 1000);
-
-    //M. Trilhas
-    function verificarTrilhasHomebrewNoCarregamento() {
-    const ficha = window.fichaAtualDados;
-    if (ficha && ficha.bibliotecaHomebrew) {
-        const classe = ficha.classe;
-        // Percorre as trilhas customizadas que o jogador salvou na ficha
-        Object.keys(ficha.bibliotecaHomebrew).forEach(nomeTrilha => {
-            if (TRILHAS[classe] && !TRILHAS[classe].includes(nomeTrilha)) {
-                TRILHAS[classe].push(nomeTrilha);
-            }
-        });
-    }
-}
 }
 window.abrirFichaCompleta = abrirFichaCompleta;
 /* ============================================================
@@ -978,7 +962,17 @@ function atualizarOpcoesTrilha(classe, nexOuEstagio, trilhaAtual = "") {
 
     if (desbloqueado) {
         selectTrilha.disabled = false;
-        const listaTrilhas = TRILHAS[classe] || [];
+        let listaTrilhas = [...(TRILHAS[classe] || [])];
+
+        const biblioteca = window.fichaAtualDados?.bibliotecaHomebrew || {};
+        Object.keys(biblioteca).forEach(nomeHb => {
+            const hb = biblioteca[nomeHb];
+            const classeAlvo = (hb.classeAlvo || "").toLowerCase();
+            const classePersonagem = (classe || "").toLowerCase();
+            if ((classeAlvo === classePersonagem || classeAlvo === "geral") && !listaTrilhas.includes(nomeHb)) {
+                listaTrilhas.push(nomeHb);
+            }
+        });
         
         selectTrilha.innerHTML = '<option value="">Escolha uma Trilha</option>';
         listaTrilhas.forEach(trilha => {
@@ -1887,15 +1881,32 @@ window.fecharModalHabilidades = function() {
     }
 };
 async function renderizarHabilidadesModal() {
-    const dados = await carregarBancoHabilidades();
+    let dados = await carregarBancoHabilidades();
     const container = document.getElementById('lista-habilidades-catalogo');
-    
-    // MUDANÇA AQUI: Agora buscando os IDs corretos do HTML de Habilidades
     const filtroCat = document.getElementById('filtro-categoria-hab');
     const buscaInput = document.getElementById('busca-hab');
 
-    // Segurança: se não achar os elementos, ele para para não dar erro invisível
     if (!container || !dados || !filtroCat || !buscaInput) return;
+    
+    dados["Homebrew"] = [];
+    const biblioteca = window.fichaAtualDados?.bibliotecaHomebrew || {};
+    Object.keys(biblioteca).forEach(nomeTrilha => {
+        const trilhaHb = biblioteca[nomeTrilha];
+        if (!dados["Homebrew"]) dados["Homebrew"] = [];
+        
+        Object.keys(trilhaHb.habilidades).forEach(nexKey => {
+            const habHb = trilhaHb.habilidades[nexKey];
+            const nexFormatado = nexKey.replace('nex', 'NEX ');
+            if (habHb.nome && habHb.desc) {
+                dados["Homebrew"].push({
+                    nome: `${nexFormatado}% - ${habHb.nome}`,
+                    descricao: habHb.desc,
+                    trilha: nomeTrilha,
+                    homebrew: true
+                });
+            }
+        });
+    });
 
     const categoriaSelecionada = filtroCat.value;
     const busca = buscaInput.value.toLowerCase();
@@ -2109,7 +2120,7 @@ window.renderizarRituaisFicha = function() {
 
     rituais.forEach((ritual, index) => {
         const card = document.createElement('div');
-        const caminhoFoto = window.gerarCaminhoImagem(ritual.nome);
+        const fotoFinal = ritual.imagem ? ritual.imagem : window.gerarCaminhoImagem(ritual.nome);
         card.className = 'card-item';
         card.setAttribute('draggable', 'true'); 
 
@@ -2136,7 +2147,7 @@ window.renderizarRituaisFicha = function() {
                 <span class="setinha">▼</span>
             </div>
             <div class="detalhes-item">
-                <img src="${caminhoFoto}" alt="${ritual.nome}" class="img-ritual-miniatura" onerror="this.src='imagens/padrao.png'">
+                <img src="${fotoFinal}" alt="${ritual.nome}" class="img-ritual-miniatura" onerror="this.src='../imagens/padrao.png'">
                 <p><small><strong>Círculo:</strong> ${ritual.circulo}º | <strong>Elemento:</strong> ${ritual.elemento}</p>
                 <p><small><strong>Alcance:</strong> ${ritual.alcance} | <strong>Execução:</strong> ${ritual.execucao}</small></p>
                 <p><small><strong>Alvo:</strong> ${ritual.alvo} | <strong>Duração:</strong> ${ritual.duracao}</small></p>
@@ -2252,7 +2263,7 @@ window.gerarCaminhoImagem = function(nomeRitual) {
         .replace(/[\u0300-\u036f]/g, "") 
         .replace(/\s+/g, '-'); // Troca espaço por -
 
-    return `imagens/${nomeArquivo}.png`; 
+    return `../imagens/${nomeArquivo}.png`; 
 };
 /* ============================================================
    31. Editar Rituais
@@ -2320,180 +2331,141 @@ window.salvarMudancasRituais = function() {
 /* ============================================================
    32. Homebrew
 ============================================================ */
-let tipoHomebrewAtual = "";
-window.abrirModalHomebrew = function(tipo) {
-    tipoHomebrewAtual = tipo;
-    document.getElementById('homebrew-tipo').value = tipo;
-    document.getElementById('titulo-homebrew').innerText = `Criar Novo(a) ${tipo.charAt(0).toUpperCase() + tipo.slice(1)}`;
-    
-    const containerDinamico = document.getElementById('campos-dinamicos-hb');
-    containerDinamico.innerHTML = ""; // Limpa campos anteriores
-
-    // Adiciona campos específicos baseados no tipo
-    if (tipo === 'itens') {
-        containerDinamico.innerHTML = `
-            <div class="campo">
-                <label>Nome</label>
-                <input type="text" id="hb-nome">
-            </div>
-            <div class="campo pequeno">
-                <label>Espaço (Peso):</label>
-                <input type="number" id="hb-espaco" value="1">
-            </div>
-            <div class="campo pequeno">
-                <label>Categoria:</label>
-                <input type="number" id="hb-cat" value="0">
-            </div>
-        `;
-    } else if (tipo === 'rituais') {
-        containerDinamico.innerHTML = `
-            <div class="campo">
-                <label>Nome</label>
-                <input type="text" id="hb-nome">
-            </div>
-            <div class="campo pequeno">
-                <label>Círculo:</label>
-                <input type="number" id="hb-circulo" value="1">
-            </div>
-            <div class="campo pequeno">
-                <label>Elemento:</label>
-                <input type="text" id="hb-elemento" placeholder="Ex: Sangue">
-            </div>
-        `;
-    } else if (tipo === 'habilidades'){
-        containerDinamico.innerHTML = `
-            <div class="campo">
-                <label>Nome</label>
-                <input type="text" id="hb-nome">
-            </div>
-            <div class="campo campo-longo">
-                <label>Descrição</label>
-                <textarea id="hb-desc" rows="4"></textarea>
-            </div>
-        `
-    } else {
-        containerDinamico.innerHTML = `
-            <div class="campo">
-                <label>Nome</label>
-                <input type="text" id="hb-nome">
-            </div>
-            <div class="campo">
-                <label>Habilidade NEX10%</label>
-                <input type="text" id="hb-nex10-nome" placeholder="Nome">
-                <textarea type="text" id="hb-nex10" rows="4"></textarea>
-            </div>
-            <div class="campo">
-                <label>Habilidade NEX40%</label>
-                <input type="text" id="hb-nex40-nome" placeholder="Nome">
-                <textarea type="text" id="hb-nex40" rows="4"></textarea>
-            </div>
-            <div class="campo">
-                <label>Habilidade NEX65%</label>
-                <input type="text" id="hb-nex65-nome" placeholder="Nome">
-                <textarea type="text" id="hb-nex65" rows="4"></textarea>
-            </div>
-            <div class="campo">
-                <label>Habilidade NEX99%</label>
-                <input type="text" id="hb-nex99-nome" placeholder="Nome">
-                <textarea type="text" id="hb-nex99" rows="4"></textarea>
-            </div>
-        `
-    }
-
-    document.getElementById('modal-homebrew').classList.remove('modal-oculto');
+window.abrirModalImportarHB = function() {
+    document.getElementById('modal-importar-ficha').classList.remove('modal-oculto');
 };
-window.fecharModalHomebrew = function() {
-    const modal = document.getElementById('modal-homebrew');
-    if (modal) modal.classList.add('modal-oculto');
+window.processarImportacaoFicha = async function() {
+    const campo = document.getElementById('input-codigo-importar');
+    const codigo = campo.value.trim().toUpperCase();
 
-    const camposParaLimpar = [
-        'hb-nome', 'hb-desc', 'hb-espaco', 'hb-cat', 
-        'hb-circulo', 'hb-elemento',
-        'hb-nex10-nome', 'hb-nex10', 'hb-nex40-nome', 'hb-nex40',
-        'hb-nex65-nome', 'hb-nex65', 'hb-nex99-nome', 'hb-nex99'
-    ];
-
-    // Limpa apenas os que existirem na tela no momento
-    camposParaLimpar.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.value = ""; 
-    });
-};
-window.salvarHomebrew = function() {
-    const tipo = document.getElementById('homebrew-tipo').value;
-    const nome = document.getElementById('hb-nome').value;
-
-    if (!nome) {
-        alert("Dê um nome ao seu Homebrew!");
+    if (codigo.length !== 6) {
+        alert("Insira um código de 6 dígitos.");
         return;
     }
 
-    let objetoHomebrew = {
-        nome: nome,
-        homebrew: true,
-        idUnico: Date.now() + Math.random().toString(36).substr(2, 9)
-    };
+    try {
+        const q = query(collection(db, "homebrews"), where("codigoCurto", "==", codigo));
+        const querySnapshot = await getDocs(q);
 
-    // Lógica por tipo
-    if (tipo === 'itens') {
-        objetoHomebrew.espaco = parseInt(document.getElementById('hb-espaco').value) || 0;
-        objetoHomebrew.categoria = parseInt(document.getElementById('hb-cat').value) || 0;
-        objetoHomebrew.categoriaTotal = objetoHomebrew.categoria;
-        objetoHomebrew.descricao = "Item personalizado.";
-        
-        window.fichaAtualDados.inventario.push(objetoHomebrew);
-        renderizarInventarioFicha();
-
-    } else if (tipo === 'rituais') {
-        objetoHomebrew.circulo = document.getElementById('hb-circulo').value;
-        objetoHomebrew.elemento = document.getElementById('hb-elemento').value;
-        objetoHomebrew.descricao = "Ritual personalizado.";
-
-        window.fichaAtualDados.rituais.push(objetoHomebrew);
-        renderizarRituaisFicha();
-
-    } else if (tipo === 'habilidades') {
-        objetoHomebrew.descricao = document.getElementById('hb-desc').value;
-        
-        window.fichaAtualDados.habilidades.push(objetoHomebrew);
-        renderizarHabilidadesFicha();
-
-    } else {
-        const dadosTrilha = {
-            nome: nome,
-            homebrew: true,
-            habilidades: {
-                nex10: { nome: document.getElementById('hb-nex10-nome').value, desc: document.getElementById('hb-nex10').value },
-                nex40: { nome: document.getElementById('hb-nex40-nome').value, desc: document.getElementById('hb-nex40').value },
-                nex65: { nome: document.getElementById('hb-nex65-nome').value, desc: document.getElementById('hb-nex65').value },
-                nex99: { nome: document.getElementById('hb-nex99-nome').value, desc: document.getElementById('hb-nex99').value }
-            }
-        };
-
-        const classeAtual = window.fichaAtualDados.classe;
-        // 1. Adiciona o nome da trilha na lista global TRILHAS para ela aparecer no select
-        if (TRILHAS[classeAtual]) {
-            // Evita duplicatas na lista visual
-            if (!TRILHAS[classeAtual].includes(nome)) {
-                TRILHAS[classeAtual].push(nome);
-            }
+        if (querySnapshot.empty) {
+            alert("Homebrew não encontrado!");
+            return;
         }
 
-        // 2. Salva os dados pesados da trilha dentro da ficha para não perder as descrições
-        if (!window.fichaAtualDados.bibliotecaHomebrew) window.fichaAtualDados.bibliotecaHomebrew = {};
-        window.fichaAtualDados.bibliotecaHomebrew[nome] = dadosTrilha;
+        const docHB = querySnapshot.docs[0].data();
+        const tipo = docHB.tipo;
+        const info = docHB.dados;
 
-        // 3. Força a atualização do select de trilhas na ficha
-        const nex = window.fichaAtualDados.nex || window.fichaAtualDados.estagio || 0;
-        atualizarOpcoesTrilha(classeAtual, nex, nome);
-        
-        // 4. Define a trilha do personagem como esta que acabou de ser criada
-        window.fichaAtualDados.trilha = nome;
+        const novoItem = {
+            nome: docHB.nome,
+            homebrew: true,
+            idUnico: Date.now() + Math.random().toString(36).substr(2, 5),
+            descricao: info.descricao || "",
+            imagem: info.imagem || ""
+        };
 
+        if (tipo === 'itens') {
+            const novoItem = {
+                idUnico: Date.now() + Math.random().toString(36).substr(2, 9),
+                homebrew: true,
+                nome: docHB.nome,
+                foto: info.foto || "",
+                origemEquipamento: info.subtipo, // O 'subtipo' do HB (ex: armas) vira a origem na ficha
+                tipo: info.tipo || "",           // O texto "Arma Leve"
+                espaco: info.espaco || 0,
+                categoria: parseInt(info.categoria) || 0,
+                categoriaTotal: parseInt(info.categoria) || 0, // Essencial para melhorias
+                dano: info.dano || "",
+                critico: info.critico || "",
+                tipoDano: info.tipoDano || "",
+                alcance: info.alcance || "",
+                habilidade: info.habilidade || "",
+                defesa: parseInt(info.defesa) || 0,
+                descricao: info.descricao || ""
+            };
+            window.fichaAtualDados.inventario.push(novoItem);
+            renderizarInventarioFicha();
+
+        } else if (tipo === 'rituais') {
+            const novoItem = {
+                idUnico: Date.now() + Math.random().toString(36).substr(2, 9),
+                homebrew: true,
+                nome: docHB.nome,
+                imagem: info.imagem || "../imagens/padrao.png",
+                circulo: parseInt(info.circulo) || 1,
+                elemento: info.elemento || "Medo",
+                execucao: info.execucao || "Padrão",
+                alcance: info.alcance || "Curto",
+                alvo: info.alvo || "1 ser",
+                resistencia: info.resistencia || "Nenhuma",
+                duracao: info.duracao || "Instantânea",
+                descricao: info.descricao || "",
+                discente: info.discente || "",
+                verdadeiro: info.verdadeiro || ""
+            };
+            window.fichaAtualDados.rituais.push(novoItem);
+            renderizarRituaisFicha();
+
+        } else if (tipo === 'habilidades') {
+            window.fichaAtualDados.habilidades.push(novoItem);
+            renderizarHabilidadesFicha();
+
+        } else if (tipo === 'trilhas') {
+            if (!window.fichaAtualDados.bibliotecaHomebrew) {
+                window.fichaAtualDados.bibliotecaHomebrew = {};
+            }
+
+            // Armazenamos os dados da trilha e a classe alvo
+            window.fichaAtualDados.bibliotecaHomebrew[docHB.nome] = {
+                classeAlvo: info.classeAlvo,
+                habilidades: info.habilidades // NEX 10, 40, 65, 99
+            };
+
+            // Adicionamos o nome da trilha na lista de opções (se a classe bater)
+            const classePersonagem = window.fichaAtualDados.classe?.toLowerCase();
+            if (info.classeAlvo === "geral" || info.classeAlvo === classePersonagem) {
+                alert(`Trilha "${docHB.nome}" adicionada à sua biblioteca de ${info.classeAlvo}!`);
+            } else {
+                alert(`Trilha "${docHB.nome}" importada, mas ela pertence à classe ${info.classeAlvo}.`);
+            }
+            atualizarOpcoesTrilha(window.fichaAtualDados.classe, window.fichaAtualDados.nex, window.fichaAtualDados.trilha);
+        }
+
+        salvarFicha();
+        document.getElementById('modal-importar-ficha').classList.add('modal-oculto');
+        hbEncontradoTemporario = null;
+        campo.value = "";
+
+    } catch (error) {
+        console.error("Erro:", error);
+        alert("Erro ao importar.");
     }
+};
+let hbEncontradoTemporario = null;
+window.buscarPreviaHomebrew = async function() {
+    const codigo = document.getElementById('input-codigo-importar').value.trim().toUpperCase();
+    const containerPrevia = document.getElementById('container-previa-hb');
+    const detalhes = document.getElementById('detalhes-previa');
 
-    fecharModalHomebrew();
-    if (typeof salvarFicha === 'function') salvarFicha();
+    if (codigo.length !== 6) return alert("Código inválido");
+
+    const q = query(collection(db, "homebrews"), where("codigoCurto", "==", codigo));
+    const snap = await getDocs(q);
+
+    if (snap.empty) return alert("Nada encontrado!");
+
+    const docHB = snap.docs[0].data();
+    hbEncontradoTemporario = { id: snap.docs[0].id, ...docHB };
+
+    // Monta o visual da prévia
+    containerPrevia.style.display = "block";
+    detalhes.innerHTML = `
+        <div class="card-previa">
+            ${docHB.dados.imagem ? `<img src="${docHB.dados.imagem}" style="width:50px; border-radius:5px;">` : ''}
+            <p><strong>${docHB.nome}</strong> (${docHB.tipo})</p>
+            <p><small>${docHB.dados.descricao.substring(0, 50)}...</small></p>
+        </div>
+    `;
 };
 /* ============================================================
    33. Salva
@@ -2573,7 +2545,8 @@ async function salvarFicha() {
             },
             inventario: window.fichaAtualDados.inventario || [],
             habilidades: window.fichaAtualDados.habilidades || [],
-            rituais: window.fichaAtualDados.rituais || []
+            rituais: window.fichaAtualDados.rituais || [],
+            bibliotecaHomebrew: window.fichaAtualDados.bibliotecaHomebrew || {}
         };
 
         // Coleta das barras (PV, PE, SAN, PD)
@@ -2615,7 +2588,7 @@ async function salvarFicha() {
         dadosParaSalvar.regras = {
             semSanidade: document.getElementById('opt-sem-sanidade').checked,
             nexExp: document.getElementById('opt-nex-exp').checked
-        },
+        };
 
         // Executa o update
         await updateDoc(fichaRef, dadosParaSalvar);

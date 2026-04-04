@@ -1071,8 +1071,12 @@ input:checked ~ .status-label { color: var(--cor-primaria-clara); }
     box-sizing: border-box;
     flex-wrap: wrap;
 }
+.filtros{
+    display: flex;
+    gap: 15px;
+}
 .modal-filtros input,
-.modal-filtros select {
+.modal-filtros select, .filtros select{
     flex: 1;
     padding: 10px 12px;
 
@@ -1086,7 +1090,7 @@ input:checked ~ .status-label { color: var(--cor-primaria-clara); }
     transition: all 0.2s ease;
 }
 .modal-filtros input:focus,
-.modal-filtros select:focus {
+.modal-filtros select:focus, .filtros select:focus{
     border-color: var(--cor-primaria-clara);
     box-shadow: 0 0 8px rgba(131,49,49,0.6);
     outline: none;

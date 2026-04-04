@@ -21,7 +21,8 @@
     <script src="../javascript/firebase-config.js" type="module"></script>     
     <script src="../javascript/auth.js" type="module"></script>
     <script src="../javascript/personagens.js" type="module"></script>
-    <script src="../javascript/campanhas.js" type="module"></script>       
+    <script src="../javascript/campanhas.js" type="module"></script>
+    <script src="../javascript/homebrews.js" type="module"></script>       
     <script type="module">
         import { auth, db } from '../javascript/firebase-config.js';
         import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
@@ -457,10 +458,7 @@
                 <div class="ficha-card">
                     <h3>Homebrew</h3>
                     <div class="ajuda-sidebar">
-                        <button onclick="abrirModalHomebrew('habilidades')">Habilidades</button>
-                        <button onclick="abrirModalHomebrew('rituais')">Rituais</button>
-                        <button onclick="abrirModalHomebrew('itens')">Itens</button>
-                        <button onclick="abrirModalHomebrew('trilhas')">Trilhas</button>
+                        <button onclick="abrirModalImportarHB()" class="btn-importar-ficha">📥 Importar Homebrew</button>
                     </div>
                 </div>
             </div>
@@ -485,7 +483,7 @@
             </div>
         </footer>
     </div>
-        <div id="modal-equipamentos" class="modal modal-oculto">
+    <div id="modal-equipamentos" class="modal modal-oculto">
         <div class="modal-conteudo">
             <div class="modal-cabecalho">
                 <h2>Arsenal da Ordem</h2>
@@ -829,20 +827,24 @@
             <div id="corpo-guia" class="grid-itens"></div>
         </div>
     </div>
-    <div id="modal-homebrew" class="modal modal-oculto">
+    <div id="modal-importar-ficha" class="modal modal-oculto">
         <div class="modal-conteudo">
             <div class="modal-cabecalho">
-                <h3 id="titulo-homebrew">Criar Homebrew</h3>
-                <button onclick="fecharModalHomebrew()">X</button>
-                <input type="hidden" id="homebrew-tipo">
+                <h2>Importar do Acervo</h2>
+                <button onclick="document.getElementById('modal-importar-ficha').classList.add('modal-oculto')">X</button>
             </div>
             <div class="modal-corpo-editar">
                 <div class="grid-editar">
-                    <div id="campos-dinamicos-hb"></div>
+                    <input type="text" class="input-inline" id="input-codigo-importar" placeholder="Código de 6 dígitos (ex: AB12C3)">
+                    <button onclick="buscarPreviaHomebrew()" class="btn-perfil">Buscar</button>
+                </div>
+                <div id="container-previa-hb" class="previa-hb-container" style="display:none;">
+                    <hr>
+                    <div id="detalhes-previa"></div>
                 </div>
             </div>
             <div class="footer-modal">
-                <button onclick="salvarHomebrew()" class="btn-salvar">Adicionar à Ficha</button>
+                <button onclick="processarImportacaoFicha()" class="btn-salvar">Adicionar à Ficha</button>
             </div>
         </div>
     </div>

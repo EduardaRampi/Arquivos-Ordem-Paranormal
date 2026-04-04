@@ -322,19 +322,7 @@ if (btnExcluir) {
     });
 }
 function voltarParaLista() {
-    // Esconde a tela de visualização
-    document.getElementById('Visualizar_Campanha').classList.add('oculta');
-    document.getElementById('Visualizar_Campanha').classList.remove('ativa');
-
-    // Mostra a tela de seleção/lista (ajuste o ID conforme seu HTML)
-    const telaLista = document.getElementById('Campanhas')
-    if (telaLista) {
-        telaLista.classList.remove('oculta');
-        telaLista.classList.add('ativa');
-    }
-    if (typeof carregarCampanhas === 'function') {
-        carregarCampanhas();
-    }
+    window.location.href = "Campanhas.html";
 }
 window.entrarNaCampanha = async function() {
     const user = auth.currentUser;

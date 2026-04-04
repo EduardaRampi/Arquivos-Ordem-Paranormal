@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-    <title>Criar Campanha</title>
+    <title>Homebrews</title>
     <Style>
     html, body {
         min-height: 100%;
@@ -38,22 +38,27 @@
         <a href="Criaturas.html" class="nav-item btn-navegar" data-destino="Criaturas" title="Bestiário">💀 Bestiário</a>
     </nav>
     <div class ="caixa">
-        <div id="Criar-Campanha" class="tela ativa">
-            <h2>Nova Jornada Paranormal</h2>
-            <div class="centralizar">
-                <div class="input-container">
-                    <h3>Nome</h3>
-                    <input type="text" id="nome-campanha" class="input-primario" placeholder="Nome da Campanha (Ex: Calamidade)">
-                </div>
-                <div class="text-container">
-                    <h3>Descrição</h3>
-                    <textarea id="desc-campanha"  rows="6" class="textarea"  placeholder="Breve descrição..."></textarea>
+        <div id="Homebrews" class="tela ativa">
+        <h1>Homebrews</h1>
+        <div class="centralizar">
+            <div class="importar-codigo">
+                <input type="text" id="input-codigo-hb" class="input-inline" placeholder="Código de 6 dígitos" maxlength="6">
+                <button onclick="importarHomebrewPorCodigo()">Importar</button>
+            </div>
+            <div class="ajuda-sidebar">
+                        <button onclick="abrirModalHomebrew('habilidades')">Habilidades</button>
+                        <button onclick="abrirModalHomebrew('rituais')">Rituais</button>
+                        <button onclick="abrirModalHomebrew('itens')">Itens</button>
+                        <button onclick="abrirModalHomebrew('trilhas')">Trilhas</button>
+            </div>
+            <div class="secao-lista">
+                <h3>Minhas Criações & Salvos</h3>
+                <div id="lista-homebrews" class="lista" class="grid-campanhas">
+                    <p class="loading">Sincronizando com o banco de dados...</p>
                 </div>
             </div>
-            <div class="centralizar">
-                <button id="btn-confirmar-campanha">Criar Campanha</button>
-                <a href="Campanhas.html" class="btn-voltar">Cancelar</a>
-            </div>
+            <a href="Fichas_Campanhas.html" class="btn-voltar">Voltar</a>
+        </div> 
         </div>
         <footer class="rodape">
             <div class="coluna">
@@ -65,6 +70,38 @@
                 <p>Email para contato: eduardadnrampi@gamil.com</p>
             </div>
         </footer>
+    </div>
+    <div id="modal-homebrew" class="modal modal-oculto">
+        <div class="modal-conteudo">
+            <div class="modal-cabecalho">
+                <h3 id="titulo-homebrew">Criar Homebrew</h3>
+                <button onclick="fecharModalHomebrew()">X</button>
+                <input type="hidden" id="homebrew-tipo">
+            </div>
+            <div class="modal-corpo-editar">
+                <div class="grid-editar">
+                    <div id="campos-dinamicos-hb"></div>
+                </div>
+            </div>
+            <div class="footer-modal">
+                <button onclick="salvarNovoHomebrew()" class="btn-salvar">Salvar</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal-detalhes-hb" class="modal modal-oculto">
+    <div class="modal-conteudo">
+        <div class="modal-cabecalho">
+            <h3 id="detalhe-nome">Nome do Homebrew</h3>
+            <button onclick="fecharModalDetalhes()">X</button>
+        </div>
+        <div id="detalhe-corpo" class="modal-corpo-editar">
+        </div>
+        <div class="footer-modal">
+            <button id="btn-salvar-edicao-hb" class="btn-salvar">Salvar</button>
+            <button id="btn-copiar-codigo" class="btn-copiar">Copiar Código</button>
+            <button id="btn-excluir-hb" class="btn-excluir">Excluir</button>
+        </div>
+    </div>
     </div>
     <script src="../javascript/código.js"></script>
 </body>
