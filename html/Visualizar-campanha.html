@@ -66,18 +66,29 @@
     </nav>
     <div class ="caixa">
         <div id="Visualizar_Campanha" class="tela ativa">
-            <h1 id="view-campanha-nome">Nome da Campanha</h1>
+            <div class="campo-titulo">
+                <h1 id="view-campanha-nome">Nome da Campanha</h1>
+                <input type="text" id="edit-nome-input" class="input-inline ocuta centro">
+            </div>
             <div class="cabecalho-campanha">
                 <div class="grid-campanha">
-                    <img id="view-campanha-capa" class="capa-campanha-detalhe">
+                    <div class="coluna-imagem">
+                        <img id="view-campanha-capa" class="capa-campanha-detalhe">
+                        <div id="container-edit-foto" class="ocuta">
+                            <label>URL da Nova Foto:</label>
+                            <input type="text" id="edit-foto-input" class="input-inline">
+                        </div>
+                    </div>
                     <p id="view-campanha-desc">Descrição da campanha...</p>
+                    <textarea id="edit-desc-input" class="textarea-edicao ocuta" rows="4"></textarea>
                 </div>
 
                 <div class="codigo-badge">
                     <span>Código de Convite:</span>
                     <strong id="view-campanha-codigo">------</strong>
                 </div>
-                <button id="btn-editar">Editar Campanha</button>
+                <button id="btn-editar" class="ocuta" onclick="configurarBotaoEditar()">Editar Campanha</button>
+                <button id="btn-salvar-edicao" class="ocuta">Salvar Alterações</button>
             </div>
 
             <div class="painel-grid">
@@ -87,9 +98,6 @@
                 </section>
             </div>
             <div class="centralizar">
-                <button class="btn-salvar-alteracoes">
-                    Salvar Alterações
-                </button>
                 <button class="btn-excluir-campanha">
                     Excluir Campanha
                 </button>

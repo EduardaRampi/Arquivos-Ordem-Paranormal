@@ -10,8 +10,9 @@ import {
     updateDoc,
     deleteDoc
 } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-let idCampanhaAberta = null;
-let idFicha = null
+let idCampanhaAberta = localStorage.getItem('idCampanhaSelecionada');
+let idFicha = null;
+const souMestre = localStorage.getItem('ehMestre');
 function gerarCodigoCampanha() {
     return Math.random().toString(36).substring(2, 8).toUpperCase();
 }
@@ -122,6 +123,7 @@ async function carregarCampanhas() {
             card.addEventListener('click', () => {
                 // Aqui chamaremos a função para abrir o painel do mestre
                 if (typeof window.abrirPainelMestre === 'function') {
+                    localStorage.setItem('ehMestre', 'true');
                     window.abrirPainelMestre(idDoc, data);
                 } else {
                     alert(`Gerenciar Campanha: ${data.nome}\nCódigo: ${data.codigo}`);
@@ -266,6 +268,12 @@ window.abrirPainelMestre = async function(id, dados) {
     } else {
         listaJogadores.innerHTML = "<p>Nenhum agente na área.</p>";
     }
+
+    if (souMestre == 'true') {
+        document.getElementById('btn-editar').classList.remove('ocuta');
+        window.configurarBotaoEditar(dados);
+    }
+
 };
 window.abrirFichaPeloMestre = function(id) {
     // 1. Recupera os dados que salvamos temporariamente
@@ -391,6 +399,7 @@ async function carregarCampanhasParticipando() {
 
         querySnapshot.forEach((docSnap) => {
             const data = docSnap.data();
+            const idDoc = docSnap.id;
             
             // VERIFICAÇÃO: O usuário está na lista de objetos de jogadores?
             const euEstouNela = data.jogadores?.some(j => j.usuarioId === user.uid);
@@ -405,6 +414,18 @@ async function carregarCampanhasParticipando() {
                     <p>Mestre: <strong>${data.mestreNome || 'Agente Veterano'}</strong></p>
                     <button class="btn-sair" onclick="sairDaCampanha('${docSnap.id}')" style="margin-top:10px; background:#441111; color:white; border:none; padding:5px; cursor:pointer;">Sair da Missão</button>
                 `;
+
+                // EVENTO DE CLIQUE PARA GERENCIAR A CAMPANHA
+                card.addEventListener('click', () => {
+                    // Aqui chamaremos a função para abrir o painel do mestre
+                    if (typeof window.abrirPainelMestre === 'function') {
+                        localStorage.setItem('ehMestre', 'false');
+                        window.abrirPainelMestre(idDoc, data);
+                    } else {
+                        alert(`Gerenciar Campanha: ${data.nome}\nCódigo: ${data.codigo}`);
+                    }
+                });
+
                 listaParticipando.appendChild(card);
             }
         });
@@ -412,6 +433,7 @@ async function carregarCampanhasParticipando() {
         if (!encontrouAlguma) {
             listaParticipando.innerHTML = '<p>Você ainda não participa de nenhuma missão.</p>';
         }
+        
     } catch (error) {
         console.error("Erro ao carregar participações:", error);
     }
@@ -586,4 +608,64 @@ window.sairDaCampanha = async function(idCampanha) {
         console.error("Erro ao sair da campanha:", error);
         alert("Erro ao processar saída: " + error.message);
     }
+};
+window.configurarBotaoEditar = function(dados) {
+    const btnEditar = document.getElementById('btn-editar');
+    const btnSalvar = document.getElementById('btn-salvar-edicao');
+    
+    const nomeTxt = document.getElementById('view-campanha-nome');
+    const nomeInput = document.getElementById('edit-nome-input');
+    
+    const descTxt = document.getElementById('view-campanha-desc');
+    const descInput = document.getElementById('edit-desc-input');
+    
+    const fotoCapa = document.getElementById('view-campanha-capa');
+    const fotoContainer = document.getElementById('container-edit-foto');
+    const fotoInput = document.getElementById('edit-foto-input');
+
+    // Ao clicar em EDITAR
+    btnEditar.onclick = () => {
+        // Alterna visibilidade
+        nomeTxt.classList.add('ocuta');
+        nomeInput.classList.remove('ocuta');
+        nomeInput.value = nomeTxt.innerText;
+
+        descTxt.classList.add('ocuta');
+        descInput.classList.remove('ocuta');
+        descInput.value = descTxt.innerText;
+
+        fotoCapa.classList.add('ocuta');
+        fotoContainer.classList.remove('ocuta');
+        fotoInput.value = dados.foto || "";
+
+        btnEditar.classList.add('ocuta');
+        btnSalvar.classList.remove('ocuta');
+    };
+
+    // Ao clicar em SALVAR
+    btnSalvar.onclick = async () => {
+        const novoNome = nomeInput.value.trim();
+        const novaDesc = descInput.value.trim();
+        const novaFoto = fotoInput.value.trim();
+
+        if (!novoNome) return alert("A campanha não pode ficar sem nome!");
+
+        try {
+            const campRef = doc(db, "campanhas", idCampanhaAberta);
+            await updateDoc(campRef, {
+                nome: novoNome,
+                descricao: novaDesc,
+                foto: novaFoto
+            });
+
+            alert("Campanha atualizada com sucesso!");
+            
+            // Recarrega a página para aplicar as mudanças
+            window.location.reload(); 
+            
+        } catch (error) {
+            console.error("Erro ao atualizar:", error);
+            alert("Erro ao salvar alterações.");
+        }
+    };
 };
