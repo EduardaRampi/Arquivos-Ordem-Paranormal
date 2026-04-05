@@ -23,6 +23,7 @@ async function criarCampanha() {
     }
 
     const nomeInput = document.getElementById('nome-campanha');
+    const fotoInput = document.getElementById('foto-campanha');
     const descInput = document.getElementById('desc-campanha');
 
     if (!nomeInput || !nomeInput.value.trim()) {
@@ -34,6 +35,7 @@ async function criarCampanha() {
         const codigo = gerarCodigoCampanha();
         const novaCampanha = {
             nome: nomeInput.value.trim(),
+            foto: fotoInput.value.trim(),
             descricao: descInput ? descInput.value.trim() : "",
             mestreId: user.uid,
             mestreNome: user.displayName,
@@ -48,6 +50,7 @@ async function criarCampanha() {
         
         // Limpa os campos
         nomeInput.value = "";
+        fotoInput.value = "";
         if(descInput) descInput.value = "";
 
         setTimeout(() => {
@@ -145,10 +148,12 @@ window.abrirPainelMestre = async function(id, dados) {
     console.log("Visualizando campanha:", dados.nome);
     idCampanhaAberta = id;
 
-    // 2. Preenchimento dos Campos (A lógica que você queria)
+    // 2. Preenchimento dos Campos
     document.getElementById('view-campanha-nome').innerText = dados.nome || "Missão Sem Nome";
     document.getElementById('view-campanha-desc').innerText = dados.descricao || "Sem descrição disponível.";
     document.getElementById('view-campanha-codigo').innerText = dados.codigo || "------";
+    const fotoUrl = (dados.foto && dados.foto.trim() !== "") ? dados.foto : "../image/padrao.png";
+    document.getElementById('view-campanha-capa').src = `${fotoUrl}`;
 
     // 3. Configurar o botão de excluir para esta campanha específica
     const btnExcluir = document.getElementById('btn-excluir-campanha-real');

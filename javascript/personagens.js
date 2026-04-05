@@ -1328,7 +1328,7 @@ function renderizarInventarioFicha() {
                 htmlMelhorias += `
                     <div class="melhoria-item-ficha">
                         <strong>Melhoria: ${mod.nome.toUpperCase()}</strong>
-                        <p>${mod.descricao || "Sem descrição."}</p>
+                        <p style="white-space: pre-wrap;">${mod.descricao || "Sem descrição."}</p>
                     </div>`;
             });
             htmlMelhorias += `</div>`;
@@ -1376,7 +1376,7 @@ function renderizarInventarioFicha() {
             <div class="detalhes-item">
                 ${htmlFoto}
                 ${item.tipo ? `<p>${item.tipo}</p>` : ''}
-                <p>${item.descricao || ""}</p>
+                <p style="white-space: pre-wrap;">${item.descricao || ""}</p>
                 ${item.dano ? `<p>⚔️ Dano: ${exibicaoDano} | Crítico: ${item.critico}</p>` : ''}
                 ${item.tipoDano ? `<p>⚔️ Tipo de Dano: ${item.tipoDano} | Alcance: ${item.alcance}</p>` : ''}
                 ${item.defesa ? `<p>🛡️ Defesa: ${item.defesa}</p>` : ''}
@@ -2025,10 +2025,10 @@ window.renderizarHabilidadesFicha = function() {
             <div class="detalhes-item">
                 ${hab.origem ? `<p><strong>Origem:</strong> ${hab.origem}</p>` : ''}
                 ${hab.trilhas ? `<p><strong>Trilha:</strong> ${hab.trilha}</p>` : ''}
-                ${hab.requisito ? `<p><small><strong>Requisito:</strong> ${hab.requisito}</small></p>` : ''}
-                ${hab.gatilho ? `<p><small><strong>Gatilho:</strong> ${hab.gatilho}</small></p>` : ''}
-                <p>${hab.descricao}</p>
-                ${hab.afinidade ? `<p><small><strong>Afinidade:</strong> ${hab.afinidade}</small></p>` : ''}
+                ${hab.requisito ? `<p style="white-space: pre-wrap;"><small><strong>Requisito:</strong> ${hab.requisito}</small></p>` : ''}
+                ${hab.gatilho ? `<p style="white-space: pre-wrap;"><small><strong>Gatilho:</strong> ${hab.gatilho}</small></p>` : ''}
+                <p style="white-space: pre-wrap;">${hab.descricao}</p>
+                ${hab.afinidade ? `<p style="white-space: pre-wrap;"><small><strong>Afinidade:</strong> ${hab.afinidade}</small></p>` : ''}
                 <div class="acoes-hab">
                     <button class="btn-remover" onclick="removerHabilidade(${index})">Remover</button>
                     <button class="btn-editar" onclick="abrirEdicaoHabilidade(${index})">✏️ Editar</button>
@@ -2152,9 +2152,9 @@ window.renderizarRituaisFicha = function() {
                 <p><small><strong>Alcance:</strong> ${ritual.alcance} | <strong>Execução:</strong> ${ritual.execucao}</small></p>
                 <p><small><strong>Alvo:</strong> ${ritual.alvo} | <strong>Duração:</strong> ${ritual.duracao}</small></p>
                 ${ritual.resistencia ? `<p><strong>Resistencia:</strong> ${ritual.resistencia}</p>` : ''}
-                <p>${ritual.descricao || "Sem descrição."}</p>
-                ${ritual.discente ? `<p><strong>Discente:</strong> ${ritual.discente}</p>` : ''}
-                ${ritual.verdadeiro ? `<p><strong>Verdadeiro:</strong> ${ritual.verdadeiro}</p>` : ''}
+                <p style="white-space: pre-wrap;">${ritual.descricao || "Sem descrição."}</p>
+                ${ritual.discente ? `<p style="white-space: pre-wrap;"><strong>Discente:</strong> ${ritual.discente}</p>` : ''}
+                ${ritual.verdadeiro ? `<p style="white-space: pre-wrap;"><strong>Verdadeiro:</strong> ${ritual.verdadeiro}</p>` : ''}
                 <div class="acoes-hab">
                     <button class="btn-remover" onclick="removerRitual(${index})">Remover</button>
                     <button class="btn-editar" onclick="abrirEdicaoRitual(${index})">✏️ Editar</button>
